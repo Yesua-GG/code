@@ -3,7 +3,7 @@
 .source "FloatingMenu.java"
 
 # interfaces
-.implements Landroid/widget/CompoundButton$OnCheckedChangeListener;
+.implements Landroid/view/View$OnClickListener;
 
 # direct methods
 .method constructor <init>()V
@@ -13,13 +13,17 @@
 .end method
 
 # virtual methods
-.method public onCheckedChanged(Landroid/widget/CompoundButton;Z)V
+.method public onClick(Landroid/view/View;)V
     .registers 4
-    .param p1, "buttonView"    # Landroid/widget/CompoundButton;
-    .param p2, "isChecked"    # Z
+    .param p1, "v"    # Landroid/view/View;
 
-    # If checked, Paused = false. If unchecked, Paused = true.
-    xor-int/lit8 v0, p2, 0x1
+    # Toggle state
+    sget-boolean v0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->isPaused:Z
+    xor-int/lit8 v0, v0, 0x1
     sput-boolean v0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->isPaused:Z
+    
+    # Update UI
+    invoke-static {v0}, Lsinet/startup/inDriver/ui/FloatingMenu;->updateUiState(Z)V
+    
     return-void
 .end method
