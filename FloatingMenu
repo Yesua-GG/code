@@ -68,7 +68,8 @@
     sput-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->wm:Landroid/view/WindowManager;
 
     new-instance v0, Landroid/view/WindowManager$LayoutParams;
-    const/4 v1, -0x2 
+    # --- CAMBIO AQUI: Ancho fijo de 320px (0x140) en vez de WRAP_CONTENT ---
+    const/16 v1, 0x140 
     const/4 v2, -0x2 
     const/16 v3, 0x7f6 
     const/16 v4, 0x8 
@@ -171,7 +172,7 @@
     
     # Margin Top 8px
     new-instance v2, Landroid/widget/LinearLayout$LayoutParams;
-    const/4 v3, -0x2
+    const/4 v3, -0x1 # MATCH_PARENT para ocupar el ancho fijo de 320px
     const/4 v4, -0x2
     invoke-direct {v2, v3, v4}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
     const/16 v3, 0x8
@@ -184,9 +185,12 @@
     sput-object v3, Lsinet/startup/inDriver/ui/FloatingMenu;->toggleButton:Landroid/widget/TextView;
     const/16 v4, 0x11
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setGravity(I)V
-    const/16 v4, 0x8 # H-Padding 8
-    const/4 v5, 0x4 # V-Padding 4
+    
+    # --- CAMBIO AQUI: Reducido padding horizontal a 5px ---
+    const/4 v4, 0x5 
+    const/4 v5, 0x4 
     invoke-virtual {v3, v4, v5, v4, v5}, Landroid/widget/TextView;->setPadding(IIII)V
+    
     const/4 v4, -0x1
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setTextColor(I)V
     const/high16 v4, 0x41300000 # 11.0f
@@ -215,9 +219,12 @@
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
     const/16 v5, 0x11
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setGravity(I)V
-    const/16 v5, 0x8 # H-Padding 8
-    const/4 v6, 0x4 # V-Padding 4
+    
+    # --- CAMBIO AQUI: Reducido padding horizontal a 5px ---
+    const/4 v5, 0x5 
+    const/4 v6, 0x4 
     invoke-virtual {v4, v5, v6, v5, v6}, Landroid/widget/TextView;->setPadding(IIII)V
+    
     const/4 v5, -0x1
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setTextColor(I)V
     const/high16 v5, 0x41300000 # 11.0f
@@ -346,4 +353,3 @@
     sget-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->rootView:Landroid/view/View;
     return-object v0
 .end method
-
