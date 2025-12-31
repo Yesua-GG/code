@@ -95,8 +95,8 @@
     const/4 v1, 0x1
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
     
-    # Padding general del contenedor (12px)
-    const/16 v1, 0xc
+    # --- CAMBIO: Padding +40% (17px = 0x11) ---
+    const/16 v1, 0x11
     invoke-virtual {v0, v1, v1, v1, v1}, Landroid/widget/LinearLayout;->setPadding(IIII)V
     
     new-instance v1, Lsinet/startup/inDriver/ui/FloatingMenu$3;
@@ -118,8 +118,8 @@
     const/4 v4, -0x1
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setTextColor(I)V
     
-    # CAMBIO: Titulo mas grande (14.0f)
-    const/high16 v4, 0x41600000 # 14.0f
+    # --- CAMBIO: Titulo +40% (20.0f) ---
+    const/high16 v4, 0x41a00000 # 20.0f
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setTextSize(F)V
     const/4 v4, 0x0
     const/4 v5, 0x1
@@ -133,8 +133,8 @@
     const v5, -0xff0100
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setTextColor(I)V
     
-    # CAMBIO: Ping un poco mas grande (10.0f)
-    const/high16 v5, 0x41200000 # 10.0f
+    # --- CAMBIO: Ping +40% (14.0f) ---
+    const/high16 v5, 0x41600000 # 14.0f
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setTextSize(F)V
 
     invoke-virtual {v1, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
@@ -148,8 +148,8 @@
     invoke-direct {v1, p0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
     sput-object v1, Lsinet/startup/inDriver/ui/FloatingMenu;->statusView:Landroid/widget/TextView;
     
-    # CAMBIO: Texto de estado mas grande (14.0f)
-    const/high16 v2, 0x41600000 # 14.0f
+    # --- CAMBIO: Status +40% (20.0f) ---
+    const/high16 v2, 0x41a00000 # 20.0f
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextSize(F)V
     
     const/4 v2, 0x0
@@ -158,12 +158,12 @@
     const/16 v2, 0x11
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setGravity(I)V
     
-    # Margin Top 5px
+    # Margin Top 5px -> 7px (aprox)
     new-instance v2, Landroid/widget/LinearLayout$LayoutParams;
     const/4 v3, -0x2
     const/4 v4, -0x2
     invoke-direct {v2, v3, v4}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
-    const/4 v3, 0x5
+    const/4 v3, 0x7
     iput v3, v2, Landroid/widget/LinearLayout$LayoutParams;->topMargin:I
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
@@ -178,12 +178,12 @@
     const/16 v2, 0x11
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->setGravity(I)V
     
-    # Margin Top 8px
+    # Margin Top 8px -> 11px (aprox)
     new-instance v2, Landroid/widget/LinearLayout$LayoutParams;
     const/4 v3, -0x2
     const/4 v4, -0x2
     invoke-direct {v2, v3, v4}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
-    const/16 v3, 0x8
+    const/16 v3, 0xb
     iput v3, v2, Landroid/widget/LinearLayout$LayoutParams;->topMargin:I
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
     
@@ -194,16 +194,16 @@
     const/16 v4, 0x11
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setGravity(I)V
     
-    # CAMBIO: Padding del botón AUMENTADO (12px horiz, 8px vert)
-    const/16 v4, 0xc
-    const/16 v5, 0x8
+    # --- CAMBIO: Padding +40% (17px horiz / 11px vert) ---
+    const/16 v4, 0x11
+    const/16 v5, 0xb
     invoke-virtual {v3, v4, v5, v4, v5}, Landroid/widget/TextView;->setPadding(IIII)V
     
     const/4 v4, -0x1
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setTextColor(I)V
     
-    # CAMBIO: Texto de boton mas grande (13.0f)
-    const/high16 v4, 0x41500000 # 13.0f
+    # --- CAMBIO: Texto boton +40% (18.0f) ---
+    const/high16 v4, 0x41900000 # 18.0f
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setTextSize(F)V
     
     const/4 v4, 0x0
@@ -218,7 +218,7 @@
     const/4 v5, -0x2
     const/4 v6, -0x2
     invoke-direct {v4, v5, v6}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
-    const/16 v5, 0x5 # Margin Right 5
+    const/16 v5, 0x7 # Margin Right 7
     iput v5, v4, Landroid/widget/LinearLayout$LayoutParams;->rightMargin:I
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
@@ -231,16 +231,16 @@
     const/16 v5, 0x11
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setGravity(I)V
     
-    # CAMBIO: Padding del botón AUMENTADO (12px horiz, 8px vert)
-    const/16 v5, 0xc
-    const/16 v6, 0x8
+    # --- CAMBIO: Padding +40% (17px horiz / 11px vert) ---
+    const/16 v5, 0x11
+    const/16 v6, 0xb
     invoke-virtual {v4, v5, v6, v5, v6}, Landroid/widget/TextView;->setPadding(IIII)V
     
     const/4 v5, -0x1
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setTextColor(I)V
     
-    # CAMBIO: Texto de boton mas grande (13.0f)
-    const/high16 v5, 0x41500000 # 13.0f
+    # --- CAMBIO: Texto boton +40% (18.0f) ---
+    const/high16 v5, 0x41900000 # 18.0f
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setTextSize(F)V
     
     const v5, -0xd9d9da 
