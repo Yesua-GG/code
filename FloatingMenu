@@ -61,6 +61,7 @@
     :cond_setup
     const/4 v0, 0x1
     sput-boolean v0, Lsinet/startup/inDriver/ui/FloatingMenu;->isShown:Z
+    sput-object p0, Lsinet/startup/inDriver/ui/FloatingMenu;->context:Landroid/app/Activity;
 
     const-string v0, "window"
     invoke-virtual {p0, v0}, Landroid/app/Activity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
