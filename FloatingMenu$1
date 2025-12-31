@@ -25,5 +25,17 @@
     # Update UI
     invoke-static {v0}, Lsinet/startup/inDriver/ui/FloatingMenu;->updateUiState(Z)V
     
+    # Restart if Active (v0 == false)
+    if-nez v0, :cond_skip_restart
+    invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->access$getContext()Landroid/app/Activity;
+    move-result-object v1
+    new-instance v2, Landroid/content/Intent;
+    const-class v3, Lsinet/startup/inDriver/ui/driver/main/DriverActivity;
+    invoke-direct {v2, v1, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+    const v3, 0x10008000 
+    invoke-virtual {v2, v3}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+    invoke-virtual {v1, v2}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
+    :cond_skip_restart
+    
     return-void
 .end method
