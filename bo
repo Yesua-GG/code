@@ -3084,8 +3084,8 @@
 
     :cond_61
     sget-boolean v0, Lf01/Config;->isOffering:Z
-    sget-boolean v1, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->isPaused:Z
-    or-int/2addr v0, v1
+    sget-boolean v8, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->isPaused:Z
+    or-int/2addr v0, v8
 
     if-eqz v0, :cond_6d
 
@@ -3142,8 +3142,8 @@
     invoke-static {v0, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     sget-boolean v0, Lf01/Config;->isOffering:Z
-    sget-boolean v1, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->isPaused:Z
-    or-int/2addr v0, v1
+    sget-boolean v8, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->isPaused:Z
+    or-int/2addr v0, v8
 
     if-nez v0, :cond_b5
 
