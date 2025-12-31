@@ -1,0 +1,5 @@
+.method static synthetic access$getContext()Landroid/app/Activity;
+    .registers 1
+    sget-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->context:Landroid/app/Activity;
+    return-object v0
+.end method
