@@ -68,7 +68,6 @@
     sput-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->wm:Landroid/view/WindowManager;
 
     new-instance v0, Landroid/view/WindowManager$LayoutParams;
-    # --- CAMBIO IMPORTANTE: Volvemos a -0x2 (WRAP_CONTENT) para que se ajuste apretado ---
     const/4 v1, -0x2 
     const/4 v2, -0x2 
     const/16 v3, 0x7f6 
@@ -90,21 +89,21 @@
     sput-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->rootView:Landroid/view/View;
     sput-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->containerView:Landroid/widget/LinearLayout;
     
-    # Nos aseguramos que el minimo sea 0 para que pueda encogerse bien
     const/4 v1, 0x0
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setMinimumWidth(I)V
     
     const/4 v1, 0x1
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
-    # Padding pequeño (5px) para que el borde negro quede pegadito a los botones
-    const/4 v1, 0x5 
+    
+    # --- CAMBIO AQUI: Padding aumentado a 12px (0xC) para más aire ---
+    const/16 v1, 0xc
     invoke-virtual {v0, v1, v1, v1, v1}, Landroid/widget/LinearLayout;->setPadding(IIII)V
     
     new-instance v1, Lsinet/startup/inDriver/ui/FloatingMenu$3;
     invoke-direct {v1}, Lsinet/startup/inDriver/ui/FloatingMenu$3;-><init>()V
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    # --- Header (Titulo) ---
+    # --- Header ---
     new-instance v1, Landroid/widget/LinearLayout;
     invoke-direct {v1, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
     const/4 v2, 0x0
@@ -140,7 +139,7 @@
     sget-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->containerView:Landroid/widget/LinearLayout;
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    # --- Status (Bot Activo) ---
+    # --- Status ---
     new-instance v1, Landroid/widget/TextView;
     invoke-direct {v1, p0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
     sput-object v1, Lsinet/startup/inDriver/ui/FloatingMenu;->statusView:Landroid/widget/TextView;
@@ -152,6 +151,7 @@
     const/16 v2, 0x11
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setGravity(I)V
     
+    # Margin Top 5px
     new-instance v2, Landroid/widget/LinearLayout$LayoutParams;
     const/4 v3, -0x2
     const/4 v4, -0x2
@@ -163,7 +163,7 @@
     sget-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->containerView:Landroid/widget/LinearLayout;
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    # --- Actions (Botones) ---
+    # --- Actions ---
     new-instance v1, Landroid/widget/LinearLayout;
     invoke-direct {v1, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
     const/4 v2, 0x0
@@ -171,7 +171,7 @@
     const/16 v2, 0x11
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->setGravity(I)V
     
-    # LayoutParams para los botones: WRAP_CONTENT (-0x2)
+    # Margin Top 8px
     new-instance v2, Landroid/widget/LinearLayout$LayoutParams;
     const/4 v3, -0x2
     const/4 v4, -0x2
@@ -180,16 +180,16 @@
     iput v3, v2, Landroid/widget/LinearLayout$LayoutParams;->topMargin:I
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
     
-    # Toggle Button (STOP/INICIAR)
+    # Toggle Button
     new-instance v3, Landroid/widget/TextView;
     invoke-direct {v3, p0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
     sput-object v3, Lsinet/startup/inDriver/ui/FloatingMenu;->toggleButton:Landroid/widget/TextView;
     const/16 v4, 0x11
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setGravity(I)V
     
-    # Padding interno del boton
-    const/16 v4, 0x8 
-    const/4 v5, 0x4 
+    # --- CAMBIO AQUI: Padding de botón aumentado a 10px horiz, 6px vert ---
+    const/16 v4, 0xa
+    const/4 v5, 0x6
     invoke-virtual {v3, v4, v5, v4, v5}, Landroid/widget/TextView;->setPadding(IIII)V
     
     const/4 v4, -0x1
@@ -212,7 +212,7 @@
     iput v5, v4, Landroid/widget/LinearLayout$LayoutParams;->rightMargin:I
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    # Settings Button (AJUSTES)
+    # Settings Button
     new-instance v4, Landroid/widget/TextView;
     invoke-direct {v4, p0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
     sput-object v4, Lsinet/startup/inDriver/ui/FloatingMenu;->settingsButton:Landroid/widget/TextView;
@@ -221,8 +221,9 @@
     const/16 v5, 0x11
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setGravity(I)V
     
-    const/16 v5, 0x8 # Padding
-    const/4 v6, 0x4 
+    # --- CAMBIO AQUI: Padding de botón aumentado a 10px horiz, 6px vert ---
+    const/16 v5, 0xa
+    const/4 v6, 0x6
     invoke-virtual {v4, v5, v6, v5, v6}, Landroid/widget/TextView;->setPadding(IIII)V
     
     const/4 v5, -0x1
