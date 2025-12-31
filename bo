@@ -4827,6 +4827,12 @@
     .registers 4
 
     .line 1
+    sget-boolean v0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->isPaused:Z
+
+    if-eqz v0, :cond_bot_paused_i
+    return-void
+
+    :cond_bot_paused_i
     iget-object v0, p0, Lf01/b0;->l1:Lpz0/e;
 
     .line 3
@@ -4976,6 +4982,12 @@
 
     .line 1
     move-object/from16 v0, p0
+
+    sget-boolean v1, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->isPaused:Z
+    if-eqz v1, :cond_bot_paused_x0
+    return-void
+
+    :cond_bot_paused_x0
 
     .line 3
     iget-object v1, v0, Lf01/b0;->l1:Lpz0/e;
