@@ -1540,7 +1540,34 @@
     .line 128
     invoke-virtual {p1, p0}, Lc52/a;->b(Lc52/b;)V
 
+    # Check Overlay Permission
+    invoke-static {p0}, Landroid/provider/Settings;->canDrawOverlays(Landroid/content/Context;)Z
+    move-result v0
+    
+    if-eqz v0, :cond_request_overlay
+    
+    # Granted: Show Menu
     invoke-static {p0}, Lsinet/startup/inDriver/ui/FloatingMenu;->show(Landroid/app/Activity;)V
+    goto :goto_overlay_done
+    
+    :cond_request_overlay
+    # Not Granted: Request Permission
+    new-instance v0, Landroid/content/Intent;
+    const-string v1, "android.settings.action.MANAGE_OVERLAY_PERMISSION"
+    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+    
+    const-string v1, "package"
+    invoke-virtual {p0}, Landroid/app/Activity;->getPackageName()Ljava/lang/String;
+    move-result-object v2
+    const/4 v3, 0x0
+    invoke-static {v1, v2, v3}, Landroid/net/Uri;->fromParts(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;
+    move-result-object v1
+    
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
+    
+    invoke-virtual {p0, v0}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
+    
+    :goto_overlay_done
 
     return-void
 .end method
@@ -1659,6 +1686,156 @@
     invoke-super {p0}, Lsinet/startup/inDriver/ui/common/AbstractionAppCompatActivity;->onPause()V
 
     .line 18
+    return-void
+.end method
+
+.method public injectInfoCard()V
+    .registers 8
+
+    .line 1
+    invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+
+    move-result-object v0
+
+    .line 2
+    const-string v1, "bot_info_card"
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewWithTag(Ljava/lang/Object;)Landroid/view/View;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_12
+
+    return-void
+
+    .line 3
+    :cond_12
+    new-instance v0, Landroid/widget/LinearLayout;
+
+    invoke-direct {v0, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
+
+    .line 4
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
+
+    .line 5
+    const/4 v1, -0x1
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundColor(I)V
+
+    .line 6
+    const/16 v1, 0x14
+
+    invoke-virtual {v0, v1, v1, v1, v1}, Landroid/view/View;->setPadding(IIII)V
+
+    .line 7
+    const-string v1, "bot_info_card"
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
+
+    .line 8
+    new-instance v1, Landroid/widget/FrameLayout$LayoutParams;
+
+    const/4 v2, -0x1
+
+    const/4 v3, -0x2
+
+    invoke-direct {v1, v2, v3}, Landroid/widget/FrameLayout$LayoutParams;-><init>(II)V
+
+    .line 9
+    const/16 v2, 0x50
+
+    iput v2, v1, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
+
+    .line 10
+    invoke-virtual {v0, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 11
+    new-instance v2, Landroid/widget/TextView;
+
+    invoke-direct {v2, p0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+
+    const-string v3, "Precio Mínimo: --"
+
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    const/high16 v3, -0x1000000
+
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextColor(I)V
+
+    const-string v4, "bot_tv_min_price"
+
+    invoke-virtual {v2, v4}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
+
+    invoke-virtual {v0, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+
+    .line 12
+    new-instance v2, Landroid/widget/TextView;
+
+    invoke-direct {v2, p0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+
+    const-string v4, "Dist Mínima: --"
+
+    invoke-virtual {v2, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextColor(I)V
+
+    const-string v4, "bot_tv_max_dist"
+
+    invoke-virtual {v2, v4}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
+
+    invoke-virtual {v0, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+
+    .line 13
+    new-instance v2, Landroid/widget/TextView;
+
+    invoke-direct {v2, p0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+
+    const-string v4, "Precio/KM: --"
+
+    invoke-virtual {v2, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextColor(I)V
+
+    const-string v3, "bot_tv_price_km"
+
+    invoke-virtual {v2, v3}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
+
+    invoke-virtual {v0, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+
+    .line 14
+    invoke-virtual {p0, v0, v1}, Landroid/app/Activity;->addContentView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 15
+    return-void
+.end method
+
+.method protected onResume()V
+    .registers 4
+
+    .line 1
+    invoke-super {p0}, Lsinet/startup/inDriver/ui/common/NavigationDrawerActivity;->onResume()V
+
+    .line 2
+    invoke-virtual {p0}, Lsinet/startup/inDriver/ui/driver/main/DriverActivity;->injectInfoCard()V
+
+    .line 3
+    new-instance v0, Ljava/lang/Thread;
+
+    new-instance v1, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$ConfigFetcher;
+
+    invoke-direct {v1, p0}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$ConfigFetcher;-><init>(Landroid/app/Activity;)V
+
+    invoke-direct {v0, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
+
+    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
+
+    .line 4
     return-void
 .end method
 
