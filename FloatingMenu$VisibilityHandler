@@ -46,14 +46,14 @@
     iget-boolean v1, p0, Lsinet/startup/inDriver/ui/FloatingMenu$VisibilityHandler;->val$isPaused:Z
     if-eqz v1, :cond_hide
     
-    # Hide (GONE = 8)
-    const/16 v1, 0x8
+    # Active (False) -> Show (VISIBLE = 0)
+    const/4 v1, 0x0
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
     goto :goto_end
 
     :cond_hide
-    # Show (VISIBLE = 0)
-    const/4 v1, 0x0
+    # Paused (True) -> Hide (GONE = 8)
+    const/16 v1, 0x8
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
     :goto_end
