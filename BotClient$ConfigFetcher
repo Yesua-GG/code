@@ -88,14 +88,14 @@
     move-result-object v0
 
     .line 9
-    const-string v2, "max_dist_pickup"
+    const-string v2, "max_pickup_dist"
 
     invoke-virtual {v1, v2}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
     .line 10
-    const-string v3, "price_per_km"
+    const-string v3, "base_price_km"
 
     invoke-virtual {v1, v3}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
 
@@ -106,7 +106,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "Precio Mínimo: "
+    const-string v4, "\ud83d\udcb2 Precio Mínimo: "
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -121,7 +121,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "Dist Mínima: "
+    const-string v4, "\ud83d\udccd Dist. Máxima: "
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -140,7 +140,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "Precio/KM: "
+    const-string v4, "\ud83d\ude97 Precio/KM: "
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
