@@ -212,3 +212,11 @@
     :catch_be
     goto :goto_0
 .end method
+
+.method public static stop()V
+    .registers 2
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    move-result-wide v0
+    sput-wide v0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$ConfigFetcher;->currentThreadId:J
+    return-void
+.end method
