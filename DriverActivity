@@ -1760,6 +1760,7 @@
     const/16 v3, 0x20
     iput v3, v1, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
     iput v3, v1, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
+    const/16 v3, 0xFA
     iput v3, v1, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
     invoke-virtual {v0, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
