@@ -1760,7 +1760,7 @@
     const/16 v3, 0x20
     iput v3, v1, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
     iput v3, v1, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
-    const/16 v3, 0xFA
+    const/16 v3, 0x190
     iput v3, v1, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
     invoke-virtual {v0, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
@@ -1855,26 +1855,11 @@
 .end method
 
 .method protected onResume()V
-    .registers 4
+    .registers 1
 
     .line 1
     invoke-super {p0}, Lsinet/startup/inDriver/ui/common/NavigationDrawerActivity;->onResume()V
 
-    .line 2
-    invoke-virtual {p0}, Lsinet/startup/inDriver/ui/driver/main/DriverActivity;->injectInfoCard()V
-
-    .line 3
-    new-instance v0, Ljava/lang/Thread;
-
-    new-instance v1, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$ConfigFetcher;
-
-    invoke-direct {v1, p0}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$ConfigFetcher;-><init>(Landroid/app/Activity;)V
-
-    invoke-direct {v0, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
-
-    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
-
-    .line 4
     return-void
 .end method
 
