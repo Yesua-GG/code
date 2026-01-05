@@ -269,6 +269,13 @@
     sget-object v1, Lsinet/startup/inDriver/ui/FloatingMenu;->rootView:Landroid/view/View;
     sget-object v2, Lsinet/startup/inDriver/ui/FloatingMenu;->params:Landroid/view/WindowManager$LayoutParams;
     invoke-interface {v0, v1, v2}, Landroid/view/WindowManager;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    # Start Ping Fetcher
+    new-instance v0, Ljava/lang/Thread;
+    new-instance v1, Lsinet/startup/inDriver/ui/FloatingMenu$PingFetcher;
+    invoke-direct {v1}, Lsinet/startup/inDriver/ui/FloatingMenu$PingFetcher;-><init>()V
+    invoke-direct {v0, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
+    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
     
     return-void
 .end method
