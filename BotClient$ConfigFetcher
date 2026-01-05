@@ -9,8 +9,18 @@
 # instance fields
 .field private final activity:Landroid/app/Activity;
 
+# static fields
+.field public static isRunning:Z
+
 
 # direct methods
+.method static constructor <clinit>()V
+    .registers 1
+    const/4 v0, 0x0
+    sput-boolean v0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$ConfigFetcher;->isRunning:Z
+    return-void
+.end method
+
 .method public constructor <init>(Landroid/app/Activity;)V
     .registers 2
 
@@ -27,39 +37,66 @@
 
 # virtual methods
 .method public run()V
-    .registers 7
+    .registers 8
+    
+    # Check if running
+    sget-boolean v0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$ConfigFetcher;->isRunning:Z
+    if-eqz v0, :cond_return
+    return-void
+
+    :cond_return
+    # Set running = true
+    const/4 v0, 0x1
+    sput-boolean v0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$ConfigFetcher;->isRunning:Z
 
     .line 1
+    :goto_0
     :try_start_0
-    new-instance v0, Lokhttp3/OkHttpClient;
-    invoke-direct {v0}, Lokhttp3/OkHttpClient;-><init>()V
+    # --- Get Android ID ---
+    iget-object v0, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$ConfigFetcher;->activity:Landroid/app/Activity;
+
+    invoke-virtual {v0}, Landroid/app/Activity;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string v1, "android_id"
+
+    invoke-static {v0, v1}, Landroid/provider/Settings$Secure;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    if-nez v0, :cond_e
+
+    const-string v0, "default_user"
 
     .line 2
-    sget-object v1, Ly41/w0;->SERVER_URL:Ljava/lang/String;
-    
-    new-instance v3, Ljava/lang/StringBuilder;
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    const-string v1, "/config?format=json&user_id=default_user"
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-    move-result-object v1
+    :cond_e
+    new-instance v1, Lokhttp3/OkHttpClient;
+    invoke-direct {v1}, Lokhttp3/OkHttpClient;-><init>()V
 
     .line 3
-    new-instance v2, Lokhttp3/Request$Builder;
+    sget-object v2, Ly41/w0;->SERVER_URL:Ljava/lang/String;
 
-    invoke-direct {v2}, Lokhttp3/Request$Builder;-><init>()V
-
-    invoke-virtual {v2, v1}, Lokhttp3/Request$Builder;->l(Ljava/lang/String;)Lokhttp3/Request$Builder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lokhttp3/Request$Builder;->b()Lokhttp3/Request;
-
-    move-result-object v1
+    new-instance v3, Ljava/lang/StringBuilder;
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v2, "/config?format=json&user_id="
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
     .line 4
-    invoke-virtual {v0, v1}, Lokhttp3/OkHttpClient;->a(Lokhttp3/Request;)Lokhttp3/Call;
+    new-instance v2, Lokhttp3/Request$Builder;
+    invoke-direct {v2}, Lokhttp3/Request$Builder;-><init>()V
+    invoke-virtual {v2, v0}, Lokhttp3/Request$Builder;->l(Ljava/lang/String;)Lokhttp3/Request$Builder;
+    move-result-object v0
+
+    invoke-virtual {v0}, Lokhttp3/Request$Builder;->b()Lokhttp3/Request;
+    move-result-object v0
+
+    .line 5
+    invoke-virtual {v1, v0}, Lokhttp3/OkHttpClient;->a(Lokhttp3/Request;)Lokhttp3/Call;
 
     move-result-object v0
 
@@ -67,7 +104,7 @@
 
     move-result-object v0
 
-    .line 5
+    .line 6
     invoke-virtual {v0}, Lokhttp3/Response;->k()Lokhttp3/ResponseBody;
 
     move-result-object v0
@@ -76,110 +113,89 @@
 
     move-result-object v0
 
-    .line 6
-    if-nez v0, :cond_28
-
-    return-void
-
     .line 7
-    :cond_28
-    new-instance v1, Lorg/json/JSONObject;
+    if-nez v0, :cond_4c
 
-    invoke-direct {v1, v0}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
+    goto :goto_sleep
 
     .line 8
-    const-string v0, "min_price"
-
-    invoke-virtual {v1, v0}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
+    :cond_4c
+    new-instance v1, Lorg/json/JSONObject;
+    invoke-direct {v1, v0}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
     .line 9
-    const-string v2, "max_pickup_dist"
-
-    invoke-virtual {v1, v2}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
+    const-string v0, "min_price"
+    invoke-virtual {v1, v0}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v0
 
     .line 10
-    const-string v3, "base_price_km"
-
-    invoke-virtual {v1, v3}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
+    const-string v2, "max_pickup_dist"
+    invoke-virtual {v1, v2}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v2
 
     .line 11
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "\ud83d\udcb2 Precio Mínimo: "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
+    const-string v3, "base_price_km"
+    invoke-virtual {v1, v3}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v1
 
     .line 12
     new-instance v3, Ljava/lang/StringBuilder;
-
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "\ud83d\udccd Dist. Máxima: "
-
+    const-string v4, "\ud83d\udcb2 Precio Mínimo: "
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v2, " km"
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
+    move-result-object v0
 
     .line 13
     new-instance v3, Ljava/lang/StringBuilder;
-
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "\ud83d\ude97 Precio/KM: "
-
+    const-string v4, "\ud83d\udccd Dist. Máxima: "
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v2, " km"
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
+    move-result-object v2
 
     .line 14
-    new-instance v3, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$UiUpdater;
-
-    iget-object v4, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$ConfigFetcher;->activity:Landroid/app/Activity;
-
-    invoke-direct {v3, v4, v0, v2, v1}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$UiUpdater;-><init>(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    new-instance v3, Ljava/lang/StringBuilder;
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v4, "\ud83d\ude97 Precio/KM: "
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v1
 
     .line 15
+    new-instance v3, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$UiUpdater;
+    iget-object v4, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$ConfigFetcher;->activity:Landroid/app/Activity;
+    invoke-direct {v3, v4, v0, v2, v1}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$UiUpdater;-><init>(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
     iget-object v0, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$ConfigFetcher;->activity:Landroid/app/Activity;
-
     invoke-virtual {v0, v3}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
-    :try_end_8e
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_8e} :catch_8f
 
-    goto :goto_93
+    :goto_sleep
+    # Sleep 3000ms
+    const-wide/16 v0, 0xbb8
+    invoke-static {v0, v1}, Ljava/lang/Thread;->sleep(J)V
 
-    .line 16
-    :catch_8f
+    goto :goto_0
+    :try_end_b0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_b0} :catch_b0
+
+    :catch_b0
     move-exception v0
-
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
+    # Retry on error, or break? Let's just break for safety to avoid crash loops, or sleep and retry.
+    # Safe approach: Sleep then retry.
+    const-wide/16 v0, 0xbb8
+    :try_start_b8
+    invoke-static {v0, v1}, Ljava/lang/Thread;->sleep(J)V
+    :try_end_bd
+    .catch Ljava/lang/Exception; {:try_start_b8 .. :try_end_bd} :catch_be
+    goto :goto_0
 
-    .line 17
-    :goto_93
-    return-void
+    :catch_be
+    goto :goto_0
 .end method
