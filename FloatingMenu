@@ -285,6 +285,15 @@
     .param p0, "isPaused"    # Z
     
     const/high16 v3, 0x41900000 # 18.0f Button Radius (matches height approx)
+    
+    # Update Info Card Visibility
+    new-instance v0, Landroid/os/Handler;
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+    move-result-object v1
+    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+    new-instance v1, Lsinet/startup/inDriver/ui/FloatingMenu$VisibilityHandler;
+    invoke-direct {v1, p0}, Lsinet/startup/inDriver/ui/FloatingMenu$VisibilityHandler;-><init>(Z)V
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     if-eqz p0, :cond_inactive
     
