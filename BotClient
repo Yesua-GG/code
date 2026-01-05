@@ -6,7 +6,7 @@
 
 
 # static fields
-.field private static final client:Lokhttp3/OkHttpClient;
+.field public static final client:Lokhttp3/OkHttpClient;
 
 .field private static final executor:Ljava/util/concurrent/ExecutorService;
 
@@ -46,6 +46,38 @@
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    return-void
+.end method
+
+.method public static final fetchAndDisplayDistance(Landroid/widget/TextView;)V
+    .registers 4
+    .param p0, "textView"  # Landroid/widget/TextView;
+
+    .line 1
+    if-nez p0, :cond_4
+
+    .line 2
+    return-void
+
+    .line 4
+    :cond_4
+    const-string v0, "Buscando viajes..."
+
+    invoke-virtual {p0, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 7
+    sget-object v1, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->executor:Ljava/util/concurrent/ExecutorService;
+
+    .line 9
+    new-instance v2, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$DistanceFetcher;
+
+    .line 11
+    invoke-direct {v2, p0}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$DistanceFetcher;-><init>(Landroid/widget/TextView;)V
+
+    .line 14
+    invoke-interface {v1, v2}, Ljava/util/concurrent/ExecutorService;->execute(Ljava/lang/Runnable;)V
+
+    .line 17
     return-void
 .end method
 
