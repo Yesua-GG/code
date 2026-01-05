@@ -10,14 +10,14 @@
 .field private final activity:Landroid/app/Activity;
 
 # static fields
-.field public static isRunning:Z
+.field public static currentThreadId:J
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
-    const/4 v0, 0x0
-    sput-boolean v0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$ConfigFetcher;->isRunning:Z
+    .registers 2
+    const-wide/16 v0, 0x0
+    sput-wide v0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$ConfigFetcher;->currentThreadId:J
     return-void
 .end method
 
@@ -38,23 +38,37 @@
 # virtual methods
 .method public run()V
     .registers 8
-    
-    # Check if running
-    sget-boolean v0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$ConfigFetcher;->isRunning:Z
-    if-eqz v0, :cond_return
-    return-void
 
-    :cond_return
-    # Set running = true
-    const/4 v0, 0x1
-    sput-boolean v0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$ConfigFetcher;->isRunning:Z
+    # Generate unique ID for this thread instance
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    move-result-wide v5
+    sput-wide v5, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$ConfigFetcher;->currentThreadId:J
 
     .line 1
     :goto_0
     :try_start_0
+    # Check if this thread is still the leader
+    sget-wide v0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$ConfigFetcher;->currentThreadId:J
+    cmp-long v2, v0, v5
+    if-eqz v2, :cond_stop
+    return-void
+
+    :cond_stop
+    # Check if activity is dead
+    iget-object v0, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$ConfigFetcher;->activity:Landroid/app/Activity;
+    invoke-virtual {v0}, Landroid/app/Activity;->isFinishing()Z
+    move-result v1
+    if-nez v1, :cond_destroyed
+    invoke-virtual {v0}, Landroid/app/Activity;->isDestroyed()Z
+    move-result v1
+    if-eqz v1, :cond_live
+
+    :cond_destroyed
+    return-void
+
+    :cond_live
     # --- Get Android ID ---
     iget-object v0, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$ConfigFetcher;->activity:Landroid/app/Activity;
-
     invoke-virtual {v0}, Landroid/app/Activity;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -187,8 +201,7 @@
     :catch_b0
     move-exception v0
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
-    # Retry on error, or break? Let's just break for safety to avoid crash loops, or sleep and retry.
-    # Safe approach: Sleep then retry.
+    # Retry after sleep
     const-wide/16 v0, 0xbb8
     :try_start_b8
     invoke-static {v0, v1}, Ljava/lang/Thread;->sleep(J)V
