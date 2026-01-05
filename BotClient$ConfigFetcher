@@ -32,11 +32,18 @@
     .line 1
     :try_start_0
     new-instance v0, Lokhttp3/OkHttpClient;
-
     invoke-direct {v0}, Lokhttp3/OkHttpClient;-><init>()V
 
     .line 2
     sget-object v1, Ly41/w0;->SERVER_URL:Ljava/lang/String;
+    
+    new-instance v3, Ljava/lang/StringBuilder;
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v1, "/config?format=json&user_id=default_user"
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v1
 
     .line 3
     new-instance v2, Lokhttp3/Request$Builder;
