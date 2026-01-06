@@ -37,5 +37,6 @@
     invoke-virtual {v1, v2}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
     :cond_skip_restart
     
+    invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->scheduleAutoHide()V
     return-void
 .end method
