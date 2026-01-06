@@ -55,7 +55,7 @@
     invoke-virtual {v0}, Landroidx/fragment/app/FragmentActivity;->getSupportFragmentManager()Landroidx/fragment/app/i0;
     move-result-object v2
     
-    invoke-virtual {v2}, Landroidx/fragment/app/i0;->t0()Ljava/util/List;
+    invoke-virtual {v2}, Landroidx/fragment/app/i0;->E0()Ljava/util/List;
     move-result-object v2
     
     invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
