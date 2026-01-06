@@ -53,6 +53,12 @@
 
     check-cast v0, Landroidx/fragment/app/FragmentActivity;
     
+    # -- Check Pause State --
+    sget-boolean v2, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->isPaused:Z
+    if-eqz v2, :cond_check_fragments
+    goto :cond_loop_end # If Paused, skip checks (v1 stays 0 -> Hide)
+    
+    :cond_check_fragments
     # Create Queue (LinkedList)
     new-instance v2, Ljava/util/LinkedList;
     invoke-direct {v2}, Ljava/util/LinkedList;-><init>()V
