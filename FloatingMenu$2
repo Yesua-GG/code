@@ -139,6 +139,8 @@
 
     invoke-virtual {v0}, Landroid/app/Dialog;->show()V
 
+    invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->scheduleAutoHide()V
+
     return-void
     .catch Ljava/lang/SecurityException; {:try_start_location .. :goto_end_loc} :catch_error
 .end method
