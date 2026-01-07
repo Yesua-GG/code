@@ -13,6 +13,8 @@
 
 .field private final reason:Ljava/lang/String;
 
+.field private static lastToast:Landroid/widget/Toast;
+
 .field private final orderId:Ljava/lang/String;
 
 .field private final viewModel:Ly41/w0;
@@ -110,9 +112,17 @@
     # Toast Logic
     iget-object v1, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Rejecter;->reason:Ljava/lang/String;
     if-eqz v1, :cond_back
+    
+    # Cancel previous toast if exists
+    sget-object v3, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Rejecter;->lastToast:Landroid/widget/Toast;
+    if-eqz v3, :cond_make_toast
+    invoke-virtual {v3}, Landroid/widget/Toast;->cancel()V
+    
+    :cond_make_toast
     const/4 v2, 0x1
     invoke-static {v6, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
     move-result-object v1
+    sput-object v1, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Rejecter;->lastToast:Landroid/widget/Toast;
     invoke-virtual {v1}, Landroid/widget/Toast;->show()V
 
     :cond_back
