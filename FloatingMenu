@@ -500,24 +500,26 @@
     sget-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->wm:Landroid/view/WindowManager;
     sget-object v1, Lsinet/startup/inDriver/ui/FloatingMenu;->rootView:Landroid/view/View;
     
-    :try_start
+    :try_start_menu
     invoke-interface {v0, v1}, Landroid/view/WindowManager;->removeView(Landroid/view/View;)V
-    :try_end
-    .catch Ljava/lang/IllegalArgumentException; {:try_start .. :try_end} :catch_ignored
+    :try_end_menu
+    .catch Ljava/lang/Exception; {:try_start_menu .. :try_end_menu} :catch_menu_ignored
     
-    :catch_ignored
+    :catch_menu_ignored
     
-    # Add Logo (Try-Catch safe)
+    # Add Logo (Ensure removed first to avoid "already added" crash)
     sget-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->wm:Landroid/view/WindowManager;
     sget-object v1, Lsinet/startup/inDriver/ui/FloatingMenu;->logoView:Landroid/widget/ImageView;
     sget-object v2, Lsinet/startup/inDriver/ui/FloatingMenu;->logoParams:Landroid/view/WindowManager$LayoutParams;
     
-    :try_start_add_logo
-    invoke-interface {v0, v1, v2}, Landroid/view/WindowManager;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-    :try_end_add_logo
-    .catch Ljava/lang/IllegalStateException; {:try_start_add_logo .. :try_end_add_logo} :catch_logo_added
+    :try_start_logo_rem
+    invoke-interface {v0, v1}, Landroid/view/WindowManager;->removeView(Landroid/view/View;)V
+    :try_end_logo_rem
+    .catch Ljava/lang/Exception; {:try_start_logo_rem .. :try_end_logo_rem} :catch_logo_rem_ignored
 
-    :catch_logo_added
+    :catch_logo_rem_ignored
+    invoke-interface {v0, v1, v2}, Landroid/view/WindowManager;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    
     return-void
 .end method
 
@@ -538,28 +540,17 @@
     iget v1, v1, Landroid/view/WindowManager$LayoutParams;->y:I
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->y:I
 
-    # Remove Logo (Try-Catch safe)
+    # Remove Logo
     sget-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->wm:Landroid/view/WindowManager;
     sget-object v1, Lsinet/startup/inDriver/ui/FloatingMenu;->logoView:Landroid/widget/ImageView;
-    
-    :try_start_rem_logo
     invoke-interface {v0, v1}, Landroid/view/WindowManager;->removeView(Landroid/view/View;)V
-    :try_end_rem_logo
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_rem_logo .. :try_end_rem_logo} :catch_rem_logo
     
-    :catch_rem_logo
-    
-    # Add Menu (Try-Catch safe)
+    # Add Menu
     sget-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->wm:Landroid/view/WindowManager;
     sget-object v1, Lsinet/startup/inDriver/ui/FloatingMenu;->rootView:Landroid/view/View;
     sget-object v2, Lsinet/startup/inDriver/ui/FloatingMenu;->params:Landroid/view/WindowManager$LayoutParams;
-    
-    :try_start_add_menu
     invoke-interface {v0, v1, v2}, Landroid/view/WindowManager;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-    :try_end_add_menu
-    .catch Ljava/lang/IllegalStateException; {:try_start_add_menu .. :try_end_add_menu} :catch_menu_added
     
-    :catch_menu_added
     invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->scheduleAutoHide()V
     return-void
 .end method
