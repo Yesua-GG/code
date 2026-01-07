@@ -86,7 +86,13 @@
     move-result-object v1
     invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->access$getParams()Landroid/view/WindowManager$LayoutParams;
     move-result-object v2
+    
+    :try_start_update
     invoke-interface {v0, v1, v2}, Landroid/view/WindowManager;->updateViewLayout(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    :try_end_update
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_update .. :try_end_update} :catch_update_ignored
+
+    :catch_update_ignored
     
     const/4 v1, 0x1
     return v1
