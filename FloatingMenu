@@ -10,6 +10,10 @@
 
 # UI Elements
 .field private static containerView:Landroid/widget/LinearLayout;
+# Trash UI
+.field public static trashView:Landroid/widget/ImageView;
+.field public static trashParams:Landroid/view/WindowManager$LayoutParams;
+.field public static isTrashShown:Z
 .field private static pingView:Landroid/widget/TextView;
 .field private static statusView:Landroid/widget/TextView;
 .field private static toggleButton:Landroid/widget/TextView;
@@ -283,6 +287,7 @@
     sput-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->hideRunnable:Ljava/lang/Runnable;
     
     invoke-static {p0}, Lsinet/startup/inDriver/ui/FloatingMenu;->createLogoView(Landroid/app/Activity;)V
+    invoke-static {p0}, Lsinet/startup/inDriver/ui/FloatingMenu;->createTrashView(Landroid/app/Activity;)V
     invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->scheduleAutoHide()V
 
     return-void
@@ -534,5 +539,142 @@
     invoke-interface {v0, v1, v2}, Landroid/view/WindowManager;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
     
     invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->scheduleAutoHide()V
+    return-void
+.end method
+
+.method public static createTrashView(Landroid/app/Activity;)V
+    .registers 7
+    .param p0, "activity"    # Landroid/app/Activity;
+
+    new-instance v0, Landroid/widget/ImageView;
+    invoke-direct {v0, p0}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
+    sput-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->trashView:Landroid/widget/ImageView;
+
+    # Icono de basura nativo (android.R.drawable.ic_menu_delete = 17301564 = 0x108003c)
+    const v1, 0x108003c
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
+    
+    # Fondo rojo circular suave para mejor visibilidad
+    const/high16 v1, -0x10000          # Red
+    const/4 v2, -0x1                   # White stroke
+    const/high16 v3, 0x42c80000        # 100f Radius (Circle)
+    invoke-static {v1, v2, v3}, Lsinet/startup/inDriver/ui/FloatingMenu;->createBackground(IIF)Landroid/graphics/drawable/GradientDrawable;
+    # move-result-object v1 # No need, just use directly if createBackground is static and returns it.
+    # Actually createBackground takes int int float.
+    # Let's adjust colors. Gray background might be better or semi-transparent red.
+    # Let's use darker gray: 0xaa444444
+    const v1, -0x55555556 # Dark Gray Alpha
+    const/4 v2, 0x0       # No stroke
+    invoke-static {v1, v2, v3}, Lsinet/startup/inDriver/ui/FloatingMenu;->createBackground(IIF)Landroid/graphics/drawable/GradientDrawable;
+    move-result-object v1
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    
+    const/16 v1, 0x14 # Padding 20
+    invoke-virtual {v0, v1, v1, v1, v1}, Landroid/widget/ImageView;->setPadding(IIII)V
+
+    new-instance v0, Landroid/view/WindowManager$LayoutParams;
+    const/16 v1, 0xa0 # Width 160
+    const/16 v2, 0xa0 # Height 160
+    const/16 v3, 0x7f6 # TYPE_APPLICATION_OVERLAY
+    const/16 v4, 0x8   # FLAG_NOT_FOCUSABLE
+    const/4 v5, -0x3   # TRANSLUCENT
+    invoke-direct/range {v0 .. v5}, Landroid/view/WindowManager$LayoutParams;-><init>(IIIII)V
+    sput-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->trashParams:Landroid/view/WindowManager$LayoutParams;
+    
+    sget-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->trashParams:Landroid/view/WindowManager$LayoutParams;
+    const/16 v1, 0x51 # BOTTOM | CENTER_HORIZONTAL
+    iput v1, v0, Landroid/view/WindowManager$LayoutParams;->gravity:I
+    
+    const/16 v1, 0x32 # Y Margin 50
+    iput v1, v0, Landroid/view/WindowManager$LayoutParams;->y:I
+    
+    return-void
+.end method
+
+.method public static showTrash()V
+    .registers 3
+    sget-boolean v0, Lsinet/startup/inDriver/ui/FloatingMenu;->isTrashShown:Z
+    if-eqz v0, :cond_ret
+    return-void
+    :cond_ret
+    
+    sget-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->wm:Landroid/view/WindowManager;
+    if-eqz v0, :cond_end
+    sget-object v1, Lsinet/startup/inDriver/ui/FloatingMenu;->trashView:Landroid/widget/ImageView;
+    sget-object v2, Lsinet/startup/inDriver/ui/FloatingMenu;->trashParams:Landroid/view/WindowManager$LayoutParams;
+    invoke-interface {v0, v1, v2}, Landroid/view/WindowManager;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    const/4 v0, 0x1
+    sput-boolean v0, Lsinet/startup/inDriver/ui/FloatingMenu;->isTrashShown:Z
+    :cond_end
+    return-void
+.end method
+
+.method public static hideTrash()V
+    .registers 2
+    sget-boolean v0, Lsinet/startup/inDriver/ui/FloatingMenu;->isTrashShown:Z
+    if-nez v0, :cond_ret
+    return-void
+    :cond_ret
+    
+    sget-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->wm:Landroid/view/WindowManager;
+    if-eqz v0, :cond_end
+    sget-object v1, Lsinet/startup/inDriver/ui/FloatingMenu;->trashView:Landroid/widget/ImageView;
+    invoke-interface {v0, v1}, Landroid/view/WindowManager;->removeView(Landroid/view/View;)V
+    const/4 v0, 0x0
+    sput-boolean v0, Lsinet/startup/inDriver/ui/FloatingMenu;->isTrashShown:Z
+    :cond_end
+    return-void
+.end method
+
+.method public static updateTrashFeedback(Z)V
+    .registers 3
+    .param p0, "isHovering"    # Z
+    
+    sget-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->trashView:Landroid/widget/ImageView;
+    if-nez v0, :cond_ret
+    return-void
+    :cond_ret
+    
+    if-eqz p0, :cond_large
+    const/high16 v1, 0x3fc00000 # 1.5f
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleX(F)V
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleY(F)V
+    const/high16 v1, -0x10000 # Red Color Filter
+    # Ideally set color filter or change background. 
+    # Let's keep it simple with scale for now.
+    return-void
+    
+    :cond_large
+    const/high16 v1, 0x3f800000 # 1.0f
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleX(F)V
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleY(F)V
+    return-void
+.end method
+
+.method public static closeApplication()V
+    .registers 2
+    # Hide Trash First
+    invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->hideTrash()V
+    
+    # Remove Logo
+    sget-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->wm:Landroid/view/WindowManager;
+    if-eqz v0, :cond_logo
+    sget-object v1, Lsinet/startup/inDriver/ui/FloatingMenu;->logoView:Landroid/widget/ImageView;
+    invoke-interface {v0, v1}, Landroid/view/WindowManager;->removeView(Landroid/view/View;)V
+    :cond_logo
+    
+    # Remove Menu (if shown? usually logo is shown when dragging logo)
+    # Just in case safely remove both?
+    # Logic in hideMenuAndShowLogo removes one. logic below removes logo.
+    
+    const/4 v0, 0x0
+    sput-boolean v0, Lsinet/startup/inDriver/ui/FloatingMenu;->isShown:Z
+    
+    # Stop Handlers
+    invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->cancelAutoHide()V
+    
+    # Optional: Exit Process
+    # const/4 v0, 0x0
+    # invoke-static {v0}, Ljava/lang/System;->exit(I)V
     return-void
 .end method
