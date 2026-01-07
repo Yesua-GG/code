@@ -161,6 +161,16 @@
     move-result-wide v1
 
     invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+    const-string v1, ",\"max_price\":"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v1, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Runner;->order:Lu41/p1;
+    invoke-virtual {v1}, Lu41/p1;->r()Lsinet/startup/inDriver/city/common/domain/entity/Price;
+    move-result-object v1
+    invoke-virtual {v1}, Lsinet/startup/inDriver/city/common/domain/entity/Price;->i()Ljava/math/BigDecimal;
+    move-result-object v1
+    invoke-virtual {v1}, Ljava/math/BigDecimal;->doubleValue()D
+    move-result-wide v1
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
 
     const-string v1, ",\"app_dist_a\":"
 
@@ -628,8 +638,8 @@
     invoke-static {v3, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     invoke-static {v1, v2}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
-    move-result-object v_ping
-    invoke-static {v_ping}, Lsinet/startup/inDriver/ui/FloatingMenu;->updatePing(Ljava/lang/String;)V
+    move-result-object v5
+    invoke-static {v5}, Lsinet/startup/inDriver/ui/FloatingMenu;->updatePing(Ljava/lang/String;)V
 
     const-string v3, "ConfigDebug"
 
