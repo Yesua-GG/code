@@ -80,32 +80,39 @@
     sput-boolean v4, Lf01/Config;->isBidding:Z
 
     :cond_26
-    iget-object v0, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Rejecter;->fragment:Lsinet/startup/inDriver/city/driver/order/ui/info/OrderInfoFragment;
+    # v6 will hold the Context (Activity). Initialize to null.
+    const/4 v6, 0x0
 
-    if-eqz v0, :cond_get_activity
-    invoke-virtual {v0}, Landroidx/fragment/app/Fragment;->getActivity()Landroidx/fragment/app/FragmentActivity;
-    move-result-object v0
+    # Load fragment into v7
+    iget-object v7, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Rejecter;->fragment:Lsinet/startup/inDriver/city/driver/order/ui/info/OrderInfoFragment;
+
+    # If fragment exists, try to get activity
+    if-eqz v7, :cond_check_global
+    invoke-virtual {v7}, Landroidx/fragment/app/Fragment;->getActivity()Landroidx/fragment/app/FragmentActivity;
+    move-result-object v6
     
-    :cond_get_activity
-    if-nez v0, :cond_use_global
+    :cond_check_global
+    # If v6 is still null, try global context
+    if-nez v6, :cond_has_context
     invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->getContext()Landroid/app/Activity;
-    move-result-object v0
-    :cond_use_global
+    move-result-object v6
     
-    if-eqz v0, :cond_34
-
+    :cond_has_context
+    # If we have a context (v6), proceed
+    if-eqz v6, :cond_finish
+    
+    # Toast Logic
     iget-object v1, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Rejecter;->reason:Ljava/lang/String;
-    if-eqz v1, :cond_skip_toast
-    
+    if-eqz v1, :cond_close
     const/4 v2, 0x1
-    invoke-static {v0, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    invoke-static {v6, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
     move-result-object v1
     invoke-virtual {v1}, Landroid/widget/Toast;->show()V
-    
-    :cond_skip_toast
-    invoke-virtual {v0}, Landroid/app/Activity;->onBackPressed()V
-    const/4 v8, 0x0
 
-    :cond_34
+    :cond_close
+    # Close
+    invoke-virtual {v6}, Landroid/app/Activity;->onBackPressed()V
+
+    :cond_finish
     return-void
 .end method
