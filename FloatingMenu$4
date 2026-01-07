@@ -48,9 +48,55 @@
     move-result v2
     iput v2, p0, Lsinet/startup/inDriver/ui/FloatingMenu$4;->initialTouchY:F
     
+    # Show Trash
+    invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->showTrash()V
+    
     return v1
 
     :pswitch_up
+    # Hide Trash
+    invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->hideTrash()V
+    
+    # Get Screen Dimensions for Drop Check
+    invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
+    move-result-object v2
+    invoke-virtual {v2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+    move-result-object v2
+    
+    # Calculate Dist to Bottom Center
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getRawX()F
+    move-result v3
+    iget v4, v2, Landroid/util/DisplayMetrics;->widthPixels:I
+    div-int/lit8 v4, v4, 0x2
+    int-to-float v4, v4
+    sub-float/2addr v3, v4
+    
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getRawY()F
+    move-result v4
+    iget v2, v2, Landroid/util/DisplayMetrics;->heightPixels:I
+    # Target Y approx Height - 100 (padding + half trash size)
+    const/16 v5, 0x64 
+    sub-int/2addr v2, v5
+    int-to-float v2, v2
+    sub-float/2addr v4, v2
+    
+    # Dist^2
+    mul-float/2addr v3, v3
+    mul-float/2addr v4, v4
+    add-float/2addr v3, v4
+    
+    # Threshold^2 (Radius ~150px)
+    const v2, 0x46af0000 # 22400.0f (150^2 approx)
+    
+    cmpg-float v3, v3, v2
+    if-gez v3, :cond_drop_trash
+    
+    # Dropped on Trash -> Close App
+    invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->closeApplication()V
+    return v1
+    
+    :cond_drop_trash
+    
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getRawX()F
     move-result v2
     iget v3, p0, Lsinet/startup/inDriver/ui/FloatingMenu$4;->initialTouchX:F
@@ -106,8 +152,51 @@
     invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->access$getLogoParams()Landroid/view/WindowManager$LayoutParams;
     move-result-object v2
     invoke-interface {v0, v1, v2}, Landroid/view/WindowManager;->updateViewLayout(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    # Check Distance for Feedback
+    invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
+    move-result-object v0
+    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+    move-result-object v0
+    
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getRawX()F
+    move-result v1
+    iget v2, v0, Landroid/util/DisplayMetrics;->widthPixels:I
+    div-int/lit8 v2, v2, 0x2
+    int-to-float v2, v2
+    sub-float/2addr v1, v2
+    
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getRawY()F
+    move-result v2
+    iget v0, v0, Landroid/util/DisplayMetrics;->heightPixels:I
+    const/16 v3, 0x64
+    sub-int/2addr v0, v3
+    int-to-float v0, v0
+    sub-float/2addr v2, v0
+    
+    mul-float/2addr v1, v1
+    mul-float/2addr v2, v2
+    add-float/2addr v1, v2
+    
+    # Radius^2 (150^2)
+    const v0, 0x46af0000 # 22400.0f
+    
+    cmpg-float v1, v1, v0
+    if-gez v1, :cond_hover
+    
+    # Feedback ON
     const/4 v1, 0x1
-    return v1
+    invoke-static {v1}, Lsinet/startup/inDriver/ui/FloatingMenu;->updateTrashFeedback(Z)V
+    goto :cond_move_end
+    
+    :cond_hover
+    # Feedback OFF
+    const/4 v1, 0x0
+    invoke-static {v1}, Lsinet/startup/inDriver/ui/FloatingMenu;->updateTrashFeedback(Z)V
+    
+    :cond_move_end
+    const/4 v1, 0x1
+    return v1 # Fix: return true
 
     :pswitch_data_1e
     .packed-switch 0x0
