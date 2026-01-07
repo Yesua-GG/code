@@ -74,8 +74,8 @@
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getRawY()F
     move-result v4
     iget v2, v2, Landroid/util/DisplayMetrics;->heightPixels:I
-    # Target Y approx Height - 100 (padding + half trash size)
-    const/16 v5, 0x64 
+    # Target Y approx Height - 170 (padding 50 + half trash size 120)
+    const/16 v5, 0xaa 
     sub-int/2addr v2, v5
     int-to-float v2, v2
     sub-float/2addr v4, v2
@@ -85,8 +85,8 @@
     mul-float/2addr v4, v4
     add-float/2addr v3, v4
     
-    # Threshold^2 (Radius ~300px)
-    const v2, 0x15f90 # 90000.0f
+    # Threshold^2 (Radius 300px -> 90000.0f = 0x47afc800)
+    const v2, 0x47afc800
     
     cmpg-float v3, v3, v2
     if-gez v3, :cond_drop_trash
@@ -169,7 +169,7 @@
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getRawY()F
     move-result v2
     iget v0, v0, Landroid/util/DisplayMetrics;->heightPixels:I
-    const/16 v3, 0x64
+    const/16 v3, 0xaa
     sub-int/2addr v0, v3
     int-to-float v0, v0
     sub-float/2addr v2, v0
@@ -178,8 +178,8 @@
     mul-float/2addr v2, v2
     add-float/2addr v1, v2
     
-    # Radius^2 (300^2)
-    const v0, 0x15f90 # 90000.0f
+    # Radius^2 (300^2 = 90000.0f)
+    const v0, 0x47afc800
     
     cmpg-float v1, v1, v0
     if-gez v1, :cond_hover
