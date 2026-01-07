@@ -220,7 +220,7 @@
 .end method
 
 .method public static final performDirectBidWithTime(Ly41/w0;DLsinet/startup/inDriver/city/common/domain/entity/Price;I)V
-    .registers 12
+    .registers 24
     .param p0, "viewModel"  # Ly41/w0;
     .param p1, "price"  # D
     .param p3, "priceEntity"  # Lsinet/startup/inDriver/city/common/domain/entity/Price;
@@ -335,13 +335,17 @@
 
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v8, p1, p2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+    move-wide v10, p1  # Copy price (p1,p2) to v10,v11 (low regs)
+
+    invoke-virtual {v8, v10, v11}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
 
     const-string v9, " | Price Obj: [Val="
 
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p3}, Lsinet/startup/inDriver/city/common/domain/entity/Price;->i()Ljava/math/BigDecimal;
+    move-object v12, p3 # Copy Price object (p3) to v12 (low reg)
+
+    invoke-virtual {v12}, Lsinet/startup/inDriver/city/common/domain/entity/Price;->i()Ljava/math/BigDecimal;
 
     move-result-object v9
 
@@ -351,7 +355,7 @@
 
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p3}, Lsinet/startup/inDriver/city/common/domain/entity/Price;->g()Ljava/math/BigDecimal;
+    invoke-virtual {v12}, Lsinet/startup/inDriver/city/common/domain/entity/Price;->g()Ljava/math/BigDecimal;
 
     move-result-object v9
 
@@ -371,7 +375,7 @@
 
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p3}, Lsinet/startup/inDriver/city/common/domain/entity/Price;->h()Ljava/math/BigDecimal;
+    invoke-virtual {v12}, Lsinet/startup/inDriver/city/common/domain/entity/Price;->h()Ljava/math/BigDecimal;
 
     move-result-object v9
 
@@ -381,7 +385,7 @@
 
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p3}, Lsinet/startup/inDriver/city/common/domain/entity/Price;->e()Ljava/math/BigDecimal;
+    invoke-virtual {v12}, Lsinet/startup/inDriver/city/common/domain/entity/Price;->e()Ljava/math/BigDecimal;
 
     move-result-object v9
 
