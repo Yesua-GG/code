@@ -792,40 +792,38 @@
 
     invoke-static {v4}, Lf01/Config;->banOrder(Ljava/lang/String;)V
 
-    # TTS LOGIC START
-    const-string v4, "reasons"
-    invoke-virtual {v2, v4}, Lorg/json/JSONObject;->optJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
-    move-result-object v4
+    const-string v9, "reasons"
 
-    if-eqz v4, :cond_tts_skip
-    invoke-virtual {v4}, Lorg/json/JSONArray;->length()I
-    move-result v5
-    if-lez v5, :cond_tts_skip
+    invoke-virtual {v2, v9}, Lorg/json/JSONObject;->optJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
 
-    const/4 v5, 0x0
-    invoke-virtual {v4, v5}, Lorg/json/JSONArray;->getString(I)Ljava/lang/String;
-    move-result-object v4
+    move-result-object v9
 
-    iget-object v5, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Runner;->fragment:Lsinet/startup/inDriver/city/driver/order/ui/info/OrderInfoFragment;
-    if-eqz v5, :cond_tts_skip
-    invoke-virtual {v5}, Landroidx/fragment/app/Fragment;->getContext()Landroid/content/Context;
-    move-result-object v5
-    if-eqz v5, :cond_tts_skip
+    const-string v8, ""
 
-    invoke-static {v5, v4}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->toast(Landroid/content/Context;Ljava/lang/String;)V
+    if-eqz v9, :cond_json_check
 
-    :cond_tts_skip
-    # TTS LOGIC END
+    invoke-virtual {v9}, Lorg/json/JSONArray;->length()I
 
+    move-result v10
+
+    if-lez v10, :cond_json_check
+
+    const/4 v10, 0x0
+
+    invoke-virtual {v9, v10}, Lorg/json/JSONArray;->optString(I)Ljava/lang/String;
+
+    move-result-object v8
+
+    :cond_json_check
     new-instance v3, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
-    move-result-object v4
+    move-result-object v11
 
-    invoke-direct {v3, v4}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+    invoke-direct {v3, v11}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    new-instance v4, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Rejecter;
+    new-instance v11, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Rejecter;
 
     iget-object v5, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Runner;->fragment:Lsinet/startup/inDriver/city/driver/order/ui/info/OrderInfoFragment;
 
@@ -837,7 +835,7 @@
 
     move-result-object v7
 
-    const-string v8, ""
+    const-string v12, ""
 
     if-eqz v7, :cond_321
 
@@ -848,12 +846,14 @@
     if-nez v7, :cond_322
 
     :cond_321
-    move-object v7, v8
+    move-object v7, v12
 
     :cond_322
-    invoke-direct {v4, v5, v6, v7}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Rejecter;-><init>(Lsinet/startup/inDriver/city/driver/order/ui/info/OrderInfoFragment;Ly41/w0;Ljava/lang/String;)V
+    invoke-direct {v11, v5, v6, v7, v8}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Rejecter;-><init>(Lsinet/startup/inDriver/city/driver/order/ui/info/OrderInfoFragment;Ly41/w0;Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-virtual {v3, v4}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    invoke-virtual {v3, v11}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    goto :goto_36e
 
     goto :goto_36e
 
