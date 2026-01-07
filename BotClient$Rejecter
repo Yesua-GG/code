@@ -91,11 +91,30 @@
     if-eqz v0, :cond_34
 
     # TOAST LOGIC START
+    const-string v4, "ConfigDebug"
+    new-instance v5, Ljava/lang/StringBuilder;
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v6, "Rejecter: Preparing Toast. Reason: "
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v6, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Rejecter;->reason:Ljava/lang/String;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v5
+    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
     iget-object v1, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Rejecter;->reason:Ljava/lang/String;
+    if-eqz v1, :cond_skip_toast
+    
     const/4 v2, 0x1
     invoke-static {v0, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
     move-result-object v1
     invoke-virtual {v1}, Landroid/widget/Toast;->show()V
+    
+    const-string v4, "ConfigDebug"
+    const-string v5, "Rejecter: Toast shown"
+    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_skip_toast
     # TOAST LOGIC END
 
     invoke-virtual {v0}, Landroid/app/Activity;->onBackPressed()V
@@ -103,5 +122,10 @@
     const/4 v8, 0x0
 
     :cond_34
+    const-string v4, "ConfigDebug"
+    const-string v5, "Rejecter: Activity or Fragment was null?"
+    if-nez v0, :cond_log_null
+    invoke-static {v4, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    :cond_log_null
     return-void
 .end method
