@@ -34,6 +34,12 @@
     return-void
 .end method
 
+.method public static getContext()Landroid/app/Activity;
+    .registers 1
+    sget-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->context:Landroid/app/Activity;
+    return-object v0
+.end method
+
 .method public static createBackground(IIF)Landroid/graphics/drawable/GradientDrawable;
     .registers 5
     .param p0, "color"   # I
