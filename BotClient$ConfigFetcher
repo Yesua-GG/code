@@ -67,24 +67,17 @@
     return-void
 
     :cond_live
-    # --- Get Android ID ---
+    # --- Get Phone Number ---
     iget-object v0, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$ConfigFetcher;->activity:Landroid/app/Activity;
-    invoke-virtual {v0}, Landroid/app/Activity;->getContentResolver()Landroid/content/ContentResolver;
+    invoke-static {v0}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->getPhoneNumber(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
-    const-string v1, "android_id"
+    # Ensure v0 is not null (though getPhoneNumber handles it)
+    if-nez v0, :cond_default_phone
+    const-string v0, "+00000000000"
 
-    invoke-static {v0, v1}, Landroid/provider/Settings$Secure;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    if-nez v0, :cond_e
-
-    const-string v0, "default_user"
-
-    .line 2
-    :cond_e
+    :cond_default_phone
     new-instance v1, Lokhttp3/OkHttpClient;
     invoke-direct {v1}, Lokhttp3/OkHttpClient;-><init>()V
 
@@ -94,6 +87,17 @@
     new-instance v3, Ljava/lang/StringBuilder;
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
     invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    # Change param name to 'phone' or keep 'user_id' but send phone value?
+    # User said: "remplazar toda la logica que usa el id como identificador... ahora use el numero"
+    # To be safe and consistent with server changes, I should send 'phone' as the param or 'user_id' with phone value.
+    # Server.py looks for 'phone' in valid_membership but falls back to 'user_id'.
+    # However, 'load_config' in server.py likely uses 'user_id' arg.
+    # Let's check server.py again? No, let's look at Step 115.
+    # Step 115 server.py change was in /decide endpoint.
+    # The /config endpoint might still rely on 'user_id'.
+    # Sending 'user_id=' + phone is the safest way to "replace the ID with the number" without breaking server arg parsing if it expects 'user_id'.
+    # Wait, if I change the param name to 'phone', I must update server's /config endpoint too.
+    # Let's stick to sending the PHONE NUMBER as the value for 'user_id' param for now, effectively replacing the ID.
     const-string v2, "/config?format=json&user_id="
     invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
     invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
