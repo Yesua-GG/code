@@ -550,42 +550,36 @@
     invoke-direct {v0, p0}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
     sput-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->trashView:Landroid/widget/ImageView;
 
-    # Icono de basura nativo (android.R.drawable.ic_menu_delete = 17301564 = 0x108003c)
+    # Icono de basura nativo
     const v1, 0x108003c
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
     
-    # Fondo rojo circular suave para mejor visibilidad
-    const/high16 v1, -0x10000          # Red
-    const/4 v2, -0x1                   # White stroke
-    const/high16 v3, 0x42c80000        # 100f Radius (Circle)
-    invoke-static {v1, v2, v3}, Lsinet/startup/inDriver/ui/FloatingMenu;->createBackground(IIF)Landroid/graphics/drawable/GradientDrawable;
-    # move-result-object v1 # No need, just use directly if createBackground is static and returns it.
-    # Actually createBackground takes int int float.
-    # Let's adjust colors. Gray background might be better or semi-transparent red.
-    # Let's use darker gray: 0xaa444444
-    const v1, -0x55555556 # Dark Gray Alpha
-    const/4 v2, 0x0       # No stroke
+    # Fondo INICIAL: Gris (0xAA555555) -> -1437223595
+    const v1, -0x55aaaaab
+    const/4 v2, 0x0
+    const/high16 v3, 0x42f00000 # 120.0f Radius (Half of 240)
     invoke-static {v1, v2, v3}, Lsinet/startup/inDriver/ui/FloatingMenu;->createBackground(IIF)Landroid/graphics/drawable/GradientDrawable;
     move-result-object v1
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
     
-    const/16 v1, 0x14 # Padding 20
+    # Padding proportional
+    const/16 v1, 0x28 # Padding 40 (increased from 20)
     invoke-virtual {v0, v1, v1, v1, v1}, Landroid/widget/ImageView;->setPadding(IIII)V
 
     new-instance v0, Landroid/view/WindowManager$LayoutParams;
-    const/16 v1, 0xa0 # Width 160
-    const/16 v2, 0xa0 # Height 160
-    const/16 v3, 0x7f6 # TYPE_APPLICATION_OVERLAY
-    const/16 v4, 0x8   # FLAG_NOT_FOCUSABLE
-    const/4 v5, -0x3   # TRANSLUCENT
+    const/16 v1, 0xf0 # Width 240
+    const/16 v2, 0xf0 # Height 240
+    const/16 v3, 0x7f6 
+    const/16 v4, 0x8   
+    const/4 v5, -0x3   
     invoke-direct/range {v0 .. v5}, Landroid/view/WindowManager$LayoutParams;-><init>(IIIII)V
     sput-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->trashParams:Landroid/view/WindowManager$LayoutParams;
     
     sget-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->trashParams:Landroid/view/WindowManager$LayoutParams;
-    const/16 v1, 0x51 # BOTTOM | CENTER_HORIZONTAL
+    const/16 v1, 0x51 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->gravity:I
     
-    const/16 v1, 0x32 # Y Margin 50
+    const/16 v1, 0x32 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->y:I
     
     return-void
@@ -627,7 +621,7 @@
 .end method
 
 .method public static updateTrashFeedback(Z)V
-    .registers 3
+    .registers 5
     .param p0, "isHovering"    # Z
     
     sget-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->trashView:Landroid/widget/ImageView;
@@ -635,16 +629,29 @@
     return-void
     :cond_ret
     
-    if-eqz p0, :cond_large
-    const/high16 v1, 0x3fc00000 # 1.5f
+    const/4 v2, 0x0
+    const/high16 v3, 0x42f00000 # 120.0f Radius
+    
+    if-eqz p0, :cond_active
+    
+    # ACTIVO: Rojo (0xAAFF0000) -> -1426063360
+    const v1, -0x55010000
+    invoke-static {v1, v2, v3}, Lsinet/startup/inDriver/ui/FloatingMenu;->createBackground(IIF)Landroid/graphics/drawable/GradientDrawable;
+    move-result-object v1
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    
+    const/high16 v1, 0x3f99999a # 1.2f
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleX(F)V
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleY(F)V
-    const/high16 v1, -0x10000 # Red Color Filter
-    # Ideally set color filter or change background. 
-    # Let's keep it simple with scale for now.
     return-void
     
-    :cond_large
+    :cond_active
+    # INACTIVO: Gris (0xAA555555) -> -1437223595
+    const v1, -0x55aaaaab
+    invoke-static {v1, v2, v3}, Lsinet/startup/inDriver/ui/FloatingMenu;->createBackground(IIF)Landroid/graphics/drawable/GradientDrawable;
+    move-result-object v1
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    
     const/high16 v1, 0x3f800000 # 1.0f
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleX(F)V
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleY(F)V
