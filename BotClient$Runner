@@ -91,6 +91,7 @@
     # If context is null, we can't get info. Use "unknown"
     const-string v1, "unknown"
     const-string v2, "Unknown Driver"
+    move-object v14, v2 # Fix: Ensure v14 is defined for the merge path
     goto :goto_build_json
 
     :goto_get_info
