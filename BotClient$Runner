@@ -849,6 +849,16 @@
     invoke-virtual {v10, v11}, Lorg/json/JSONArray;->getString(I)Ljava/lang/String;
 
     move-result-object v9
+    
+    const-string v11, "ConfigDebug"
+    new-instance v12, Ljava/lang/StringBuilder;
+    invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v13, "Runner: Extracted Reason: "
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v12, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v12
+    invoke-static {v11, v12}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_reason_ok
 
