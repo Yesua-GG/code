@@ -792,6 +792,31 @@
 
     invoke-static {v4}, Lf01/Config;->banOrder(Ljava/lang/String;)V
 
+    # TTS LOGIC START
+    const-string v4, "reasons"
+    invoke-virtual {v2, v4}, Lorg/json/JSONObject;->optJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
+    move-result-object v4
+
+    if-eqz v4, :cond_tts_skip
+    invoke-virtual {v4}, Lorg/json/JSONArray;->length()I
+    move-result v5
+    if-lez v5, :cond_tts_skip
+
+    const/4 v5, 0x0
+    invoke-virtual {v4, v5}, Lorg/json/JSONArray;->getString(I)Ljava/lang/String;
+    move-result-object v4
+
+    iget-object v5, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Runner;->fragment:Lsinet/startup/inDriver/city/driver/order/ui/info/OrderInfoFragment;
+    if-eqz v5, :cond_tts_skip
+    invoke-virtual {v5}, Landroidx/fragment/app/Fragment;->getContext()Landroid/content/Context;
+    move-result-object v5
+    if-eqz v5, :cond_tts_skip
+
+    invoke-static {v5, v4}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->speak(Landroid/content/Context;Ljava/lang/String;)V
+
+    :cond_tts_skip
+    # TTS LOGIC END
+
     new-instance v3, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
