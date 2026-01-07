@@ -812,7 +812,7 @@
     move-result-object v5
     if-eqz v5, :cond_tts_skip
 
-    invoke-static {v5, v4}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->speak(Landroid/content/Context;Ljava/lang/String;)V
+    invoke-static {v5, v4}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->toast(Landroid/content/Context;Ljava/lang/String;)V
 
     :cond_tts_skip
     # TTS LOGIC END
