@@ -133,6 +133,10 @@
 
     if-eqz v0, :cond_fallback
     
+    # Log valid phone
+    const-string v1, "BotPhoneDebug"
+    invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
     # Return real phone
     return-object v0
 
@@ -175,6 +179,10 @@
 
     if-eqz v0, :cond_fallback
     
+    # Log valid name
+    const-string v1, "BotPhoneDebug"
+    invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
     # Return real name
     return-object v0
 
