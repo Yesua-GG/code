@@ -13,6 +13,10 @@
 
 .field private final reason:Ljava/lang/String;
 
+.field private final orderId:Ljava/lang/String;
+
+.field private final viewModel:Ly41/w0;
+
 # direct methods
 .method public constructor <init>(Lsinet/startup/inDriver/city/driver/order/ui/info/OrderInfoFragment;Ly41/w0;Ljava/lang/String;Ljava/lang/String;)V
     .registers 5
