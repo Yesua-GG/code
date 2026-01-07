@@ -43,6 +43,7 @@
     .line 1
     .line 1
     .line 1
+    .line 1
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v12
@@ -53,91 +54,91 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "{"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, "\"user_id\":\""
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
+    # Get Context
     iget-object v1, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Runner;->fragment:Lsinet/startup/inDriver/city/driver/order/ui/info/OrderInfoFragment;
 
-    if-eqz v1, :cond_25
-
+    if-eqz v1, :cond_context_ok
     invoke-virtual {v1}, Landroidx/fragment/app/Fragment;->getContext()Landroid/content/Context;
-
     move-result-object v1
+    if-eqz v1, :cond_context_ok
+    goto :goto_get_info
 
-    if-eqz v1, :cond_25
-
-    goto :goto_44
-
-    :cond_25
+    :cond_context_ok
+    # Fallback to get global context via ActivityThread if fragment context is null
     :try_start_25
     const-string v1, "android.app.ActivityThread"
-
     invoke-static {v1}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
-
     move-result-object v1
-
     const-string v2, "currentApplication"
-
     const/4 v3, 0x0
-
     new-array v4, v3, [Ljava/lang/Class;
-
     invoke-virtual {v1, v2, v4}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
     move-result-object v1
-
     const/4 v2, 0x0
-
     new-array v3, v3, [Ljava/lang/Object;
-
     invoke-virtual {v1, v2, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-
     move-result-object v1
-
     check-cast v1, Landroid/content/Context;
     :try_end_3d
     .catch Ljava/lang/Exception; {:try_start_25 .. :try_end_3d} :catch_40
 
     if-eqz v1, :cond_41
-
-    goto :goto_44
+    goto :goto_get_info
 
     :catch_40
     move-exception v1
-
     :cond_41
-    const-string v1, "unknown_user"
+    # If context is null, we can't get info. Use "unknown"
+    const-string v1, "unknown"
+    const-string v2, "Unknown Driver"
+    goto :goto_build_json
 
-    goto :goto_52
-
-    :goto_44
-    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
+    :goto_get_info
+    # Call new BotClient methods
+    invoke-static {v1}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->getPhoneNumber(Landroid/content/Context;)Ljava/lang/String;
+    move-result-object v2
+    invoke-static {v1}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->getUserName(Landroid/content/Context;)Ljava/lang/String;
     move-result-object v1
 
-    const-string v2, "android_id"
+    # Swap variables to match expected register usage in original (v1 was ID)
+    # Here: v2 is phone, v1 is name.
+    # Let's verify string build below matches. IT DOES NOT.
+    # Original below: append(v1) which was ID.
+    # We want: "phone":"<v2>", "user_name":"<v1>"
 
-    invoke-static {v1, v2}, Landroid/provider/Settings$Secure;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+    # Let's adjust registers for safety or just overwrite
+    move-object v14, v1 # Save Name in v14 (unused?)
+    move-object v1, v2  # Put Phone in v1 for existing code flow if we only replaced ID
 
-    move-result-object v1
+    # But we want to change keys too. So we continue constructing here.
 
-    if-nez v1, :cond_52
+    :goto_build_json
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "unknown_id_null"
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    :cond_52
-    :goto_52
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v2, "{"
 
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    # User Phone
+    const-string v2, "\"phone\":\""
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder; # v1 is Phone now
+    const-string v2, "\","
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    # User Name
+    const-string v2, "\"user_name\":\""
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    # Retrieve name again if we messed up registers, but simpler:
+    # If we are here, v1 is phone. Where is name?
+    # Let's re-retrieve it to be safe or store it in v14 above.
+    # Actually, let's just use BotClient.getUserName call directly here if we have context?
+    # No, we might not have context in this block easily if we jumped.
+    # Let's use the v14 trick.
+    invoke-virtual {v0, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
     const-string v1, "\","
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
