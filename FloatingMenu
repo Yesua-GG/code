@@ -692,6 +692,9 @@
     return-void
     
     :cond_start
+    # Call closeApplication first to prevent duplicates
+    invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->closeApplication()V
+
     # Force reset state to allow re-initialization
     const/4 v0, 0x0
     sput-boolean v0, Lsinet/startup/inDriver/ui/FloatingMenu;->isShown:Z
@@ -711,12 +714,31 @@
     # Hide Trash First
     invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->hideTrash()V
     
-    # Remove Logo
+    # Remove Logo (Try-Catch safe)
     sget-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->wm:Landroid/view/WindowManager;
     if-eqz v0, :cond_logo
     sget-object v1, Lsinet/startup/inDriver/ui/FloatingMenu;->logoView:Landroid/widget/ImageView;
+    
+    :try_start_rem_logo
     invoke-interface {v0, v1}, Landroid/view/WindowManager;->removeView(Landroid/view/View;)V
+    :try_end_rem_logo
+    .catch Ljava/lang/Exception; {:try_start_rem_logo .. :try_end_rem_logo} :catch_rem_logo_ignored
+    
+    :catch_rem_logo_ignored
     :cond_logo
+    
+    # Remove Menu (Try-Catch safe)
+    sget-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->wm:Landroid/view/WindowManager;
+    if-eqz v0, :cond_menu
+    sget-object v1, Lsinet/startup/inDriver/ui/FloatingMenu;->rootView:Landroid/view/View;
+    
+    :try_start_rem_menu
+    invoke-interface {v0, v1}, Landroid/view/WindowManager;->removeView(Landroid/view/View;)V
+    :try_end_rem_menu
+    .catch Ljava/lang/Exception; {:try_start_rem_menu .. :try_end_rem_menu} :catch_rem_menu_ignored
+    
+    :catch_rem_menu_ignored
+    :cond_menu
     
     # Remove Menu (if shown? usually logo is shown when dragging logo)
     # Just in case safely remove both?
