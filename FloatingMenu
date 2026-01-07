@@ -496,10 +496,16 @@
     iget v1, v1, Landroid/view/WindowManager$LayoutParams;->y:I
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->y:I
 
-    # Remove Menu
+    # Remove Menu (Try-Catch safe)
     sget-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->wm:Landroid/view/WindowManager;
     sget-object v1, Lsinet/startup/inDriver/ui/FloatingMenu;->rootView:Landroid/view/View;
+    
+    :try_start
     invoke-interface {v0, v1}, Landroid/view/WindowManager;->removeView(Landroid/view/View;)V
+    :try_end
+    .catch Ljava/lang/IllegalArgumentException; {:try_start .. :try_end} :catch_ignored
+    
+    :catch_ignored
     
     # Add Logo
     sget-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->wm:Landroid/view/WindowManager;
@@ -640,7 +646,7 @@
     move-result-object v1
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
     
-    const/high16 v1, 0x3f99999a # 1.2f
+    const v1, 0x3f99999a # 1.2f (Changed from const/high16 because low bits are not zero)
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleX(F)V
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleY(F)V
     return-void
@@ -655,6 +661,28 @@
     const/high16 v1, 0x3f800000 # 1.0f
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleX(F)V
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleY(F)V
+    return-void
+.end method
+
+.method public static showFloatingButton()V
+    .registers 1
+    
+    sget-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->context:Landroid/app/Activity;
+    if-nez v0, :cond_start
+    return-void
+    
+    :cond_start
+    # Force reset state to allow re-initialization
+    const/4 v0, 0x0
+    sput-boolean v0, Lsinet/startup/inDriver/ui/FloatingMenu;->isShown:Z
+    
+    # Initialize UI
+    sget-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->context:Landroid/app/Activity;
+    invoke-static {v0}, Lsinet/startup/inDriver/ui/FloatingMenu;->show(Landroid/app/Activity;)V
+    
+    # Immediately switch to Logo (Bubble) view
+    invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->hideMenuAndShowLogo()V
+    
     return-void
 .end method
 
@@ -685,3 +713,4 @@
     # invoke-static {v0}, Ljava/lang/System;->exit(I)V
     return-void
 .end method
+.
