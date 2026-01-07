@@ -220,7 +220,7 @@
 .end method
 
 .method public static final performDirectBidWithTime(Ly41/w0;DLsinet/startup/inDriver/city/common/domain/entity/Price;I)V
-    .registers 24
+    .registers 12
     .param p0, "viewModel"  # Ly41/w0;
     .param p1, "price"  # D
     .param p3, "priceEntity"  # Lsinet/startup/inDriver/city/common/domain/entity/Price;
@@ -228,12 +228,6 @@
 
     .prologue
     .line 1
-    # Alias parameters to low registers for invoke-virtual compatibility (max v15)
-    move-object v10, p0
-    move-wide v11, p1
-    move-object v13, p3
-    move v14, p4
-
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -269,13 +263,13 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v11, v12}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p1, p2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
 
     const-string v2, " Time: "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -285,9 +279,9 @@
 
     new-instance v0, Ljava/math/BigDecimal;
 
-    invoke-direct {v0, v11, v12}, Ljava/math/BigDecimal;-><init>(D)V
+    invoke-direct {v0, p1, p2}, Ljava/math/BigDecimal;-><init>(D)V
 
-    invoke-virtual {v10}, Ly41/w0;->getOrderStore()Lo62/j0;
+    invoke-virtual {p0}, Ly41/w0;->getOrderStore()Lo62/j0;
 
     move-result-object v1
 
@@ -303,142 +297,39 @@
 
     move-object v3, v0
 
-    invoke-virtual {v13}, Lsinet/startup/inDriver/city/common/domain/entity/Price;->f()Lsinet/startup/inDriver/city/common/domain/entity/Currency;
+    invoke-virtual {p3}, Lsinet/startup/inDriver/city/common/domain/entity/Price;->f()Lsinet/startup/inDriver/city/common/domain/entity/Currency;
 
     move-result-object v4
 
-    invoke-virtual {v13}, Lsinet/startup/inDriver/city/common/domain/entity/Price;->g()Ljava/math/BigDecimal;
+    invoke-virtual {p3}, Lsinet/startup/inDriver/city/common/domain/entity/Price;->g()Ljava/math/BigDecimal;
 
     move-result-object v5
 
-    invoke-virtual {v0, v5}, Ljava/math/BigDecimal;->compareTo(Ljava/math/BigDecimal;)I
-
-    move-result v1
-
-    if-lez v1, :cond_clamp_skip
-
-    move-object v5, v0
-
-    const-string v1, "BotClient_Fix"
-
-    const-string v2, "Upgrading Max Price to Bid Price"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_clamp_skip
-
-    invoke-virtual {v13}, Lsinet/startup/inDriver/city/common/domain/entity/Price;->d()Ljava/math/BigDecimal;
+    invoke-virtual {p3}, Lsinet/startup/inDriver/city/common/domain/entity/Price;->d()Ljava/math/BigDecimal;
 
     move-result-object v6
 
-    const-string v7, "BotClient_PriceDebug"
+    invoke-virtual {p3}, Lsinet/startup/inDriver/city/common/domain/entity/Price;->h()Ljava/math/BigDecimal;
 
-    new-instance v8, Ljava/lang/StringBuilder;
+    move-result-object p0
 
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {p3}, Lsinet/startup/inDriver/city/common/domain/entity/Price;->e()Ljava/math/BigDecimal;
 
-    const-string v9, "Bid Price: "
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8, v11, v12}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
-
-    const-string v9, " | Price Obj: [Val="
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v13}, Lsinet/startup/inDriver/city/common/domain/entity/Price;->i()Ljava/math/BigDecimal;
-
-    move-result-object v9
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v9, ", Disc="
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v13}, Lsinet/startup/inDriver/city/common/domain/entity/Price;->g()Ljava/math/BigDecimal;
-
-    move-result-object v9
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v9, ", Bonus="
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6}, Ljava/lang/Object;->toString()Ljava/lang/String; 
-
-    move-result-object v9
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v9, ", Tips="
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v13}, Lsinet/startup/inDriver/city/common/domain/entity/Price;->h()Ljava/math/BigDecimal;
-
-    move-result-object v9
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v9, ", Fee="
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v13}, Lsinet/startup/inDriver/city/common/domain/entity/Price;->e()Ljava/math/BigDecimal;
-
-    move-result-object v9
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v9, "]"
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    invoke-virtual {v13}, Lsinet/startup/inDriver/city/common/domain/entity/Price;->h()Ljava/math/BigDecimal;
-
-    move-result-object p0 # p0 is local logic here, overwritten by p.e(). WAIT, p0 register was v19? But method signature used p0 for ViewModel. The generated code logic here seems to override p0. Oh, local vars in existing code might reuse registers.
-    # Original code had p0 being overwritten? No, original had `sget-object p0` maybe? 
-    # Let's check original lines roughly. `move-result-object p1` etc.
-    # The original smali compiler often reuses parameter registers as scratch variables if they are not needed.
-    # BUT, since I alliased parameters to v10-v14, I should be wary of registers p0-p4 being reused as locals if they are high registers.
-    # Wait, p0 is v19. If I write to v19, it's fine as long as I don't need ViewModel anymore.
-    # The construction of `new-instance v2, Lsinet/.../Price` takes parameters.
-    # <init>(BigDecimal, Currency, BigDecimal, BigDecimal, BigDecimal, BigDecimal)
-    # The arguments must be in registers.
-    # I need to ensure the arguments passed to <init> are correct.
-
-    invoke-virtual {v13}, Lsinet/startup/inDriver/city/common/domain/entity/Price;->e()Ljava/math/BigDecimal;
-
-    move-result-object p1 
+    move-result-object p1
 
     new-instance v2, Lsinet/startup/inDriver/city/common/domain/entity/Price;
 
     invoke-direct/range {v2 .. v8}, Lsinet/startup/inDriver/city/common/domain/entity/Price;-><init>(Ljava/math/BigDecimal;Lsinet/startup/inDriver/city/common/domain/entity/Currency;Ljava/math/BigDecimal;Ljava/math/BigDecimal;Ljava/math/BigDecimal;Ljava/math/BigDecimal;)V
 
-    move-object v0, v2 # Move result to v0? No, v2 is the new object. Wait, original logic: `move-object p1, v2`.
-    # It reused p1 register to store the new price. Since p1 is high (v20), we should avoid using it for anything other than move-object if possible.
-    # But wait, `new-instance v2, Lu41/s` takes Price. `invoke-direct {v2, p4, v3, p1}`.
-    # This uses `p4` (v23) and `p1` (v20).
-    # Since I have `v14` for `p4`, and `v2` holds the price.
-    # I should use `v2` directly instead of moving to `p1`.
-    # And use `v14` instead of `p4`.
+    move-object p1, v2
 
-    new-instance v3, Lu41/s;
+    new-instance v2, Lu41/s;
 
-    const/4 v4, 0x1
+    const/4 v3, 0x1
 
-    invoke-direct {v3, v14, v4, v2}, Lu41/s;-><init>(IZLsinet/startup/inDriver/city/common/domain/entity/Price;)V
+    invoke-direct {v2, p4, v3, p1}, Lu41/s;-><init>(IZLsinet/startup/inDriver/city/common/domain/entity/Price;)V
 
-    invoke-virtual {v1, v3}, Lo62/j0;->n(Ljava/lang/Object;)V
+    invoke-virtual {v1, v2}, Lo62/j0;->n(Ljava/lang/Object;)V
 
     return-void
 .end method
