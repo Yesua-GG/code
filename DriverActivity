@@ -1588,9 +1588,6 @@
     .line 1
     invoke-super {p0}, Lsinet/startup/inDriver/ui/common/NavigationDrawerActivity;->onDestroy()V
 
-    # Clean up Floating Menu
-    invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->dismiss()V
-
     .line 4
     invoke-virtual {p0}, Lsinet/startup/inDriver/ui/driver/main/DriverActivity;->L3()Lc52/a;
 
