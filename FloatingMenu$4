@@ -67,36 +67,6 @@
 
     const/high16 v4, 0x41200000 # 10.0f
     
-    # --- Check for Dismiss (Drop at Bottom) ---
-    invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->access$getContext()Landroid/app/Activity;
-    move-result-object v5
-    if-eqz v5, :cond_check_click
-    
-    invoke-virtual {v5}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
-    move-result-object v5
-    invoke-virtual {v5}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-    move-result-object v5
-    iget v5, v5, Landroid/util/DisplayMetrics;->heightPixels:I
-    
-    # Threshold: Bottom 250px
-    const/16 v6, 0xfa # 250px
-    sub-int/2addr v5, v6
-    int-to-float v5, v5
-    
-    # Current Y
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getRawY()F
-    move-result v6
-    
-    cmpl-float v5, v6, v5
-    if-lez v5, :cond_check_click
-    
-    # Dropped at bottom -> Dismiss
-    invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->dismiss()V
-    return v1
-    
-    :cond_check_click
-    # --- End Dismiss Check ---
-
     cmpg-float v5, v2, v4
     if-gez v5, :cond_click
     cmpg-float v5, v3, v4
