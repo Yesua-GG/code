@@ -772,10 +772,23 @@
     invoke-direct {v4, v5}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Accepter;-><init>(Ly41/w0;)V
 
     invoke-virtual {v3, v4}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
+    
     goto/16 :goto_36e
 
     :cond_2f1
+    const-string v4, "EXPIRED"
+    invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result v4
+    if-eqz v4, :cond_reject
+    
+    const-string v3, "BotClient"
+    const-string v4, "MEMBERSHIP EXPIRED"
+    invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    
+    invoke-static {}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->handleExpired()V
+    goto/16 :goto_36e
+
+    :cond_reject
     const-string v4, "REJECT"
 
     invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
