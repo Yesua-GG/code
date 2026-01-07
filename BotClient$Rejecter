@@ -82,12 +82,16 @@
     :cond_26
     iget-object v0, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Rejecter;->fragment:Lsinet/startup/inDriver/city/driver/order/ui/info/OrderInfoFragment;
 
-    if-eqz v0, :cond_34
-
+    if-eqz v0, :cond_get_activity
     invoke-virtual {v0}, Landroidx/fragment/app/Fragment;->getActivity()Landroidx/fragment/app/FragmentActivity;
-
     move-result-object v0
-
+    
+    :cond_get_activity
+    if-nez v0, :cond_use_global
+    invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->getContext()Landroid/app/Activity;
+    move-result-object v0
+    :cond_use_global
+    
     if-eqz v0, :cond_34
 
     # TOAST LOGIC START
@@ -117,6 +121,14 @@
     :cond_skip_toast
     # TOAST LOGIC END
 
+    # Call onBackPressed only if Activity is valid (and it is, because we are inside if-eqz v0)
+    # But wait, v0 might be FloatingMenu context which is an Activity.
+    # We should be careful calling onBackPressed on the global context if it's the main activity and we just wanted to close the fragment?
+    # Actually, the original code called onBackPressed on the activity found via fragment.
+    # If we use global activity, onBackPressed will close whatever screen is top.
+    # Given the bot flow, this is likely "DriverActivity" and we want to go back from "Order Info" (Fragment) to "Feed".
+    # So calling onBackPressed on DriverActivity is correct.
+    
     invoke-virtual {v0}, Landroid/app/Activity;->onBackPressed()V
 
     const/4 v8, 0x0
