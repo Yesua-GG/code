@@ -536,3 +536,26 @@
     invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->scheduleAutoHide()V
     return-void
 .end method
+
+.method public static dismiss()V
+    .registers 2
+
+    # Reset shown flag
+    const/4 v0, 0x0
+    sput-boolean v0, Lsinet/startup/inDriver/ui/FloatingMenu;->isShown:Z
+
+    # Cancel auto hide callbacks
+    invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->cancelAutoHide()V
+
+    # Remove logo view
+    sget-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->wm:Landroid/view/WindowManager;
+    if-eqz v0, :cond_skip_remove
+    
+    sget-object v1, Lsinet/startup/inDriver/ui/FloatingMenu;->logoView:Landroid/widget/ImageView;
+    if-eqz v1, :cond_skip_remove
+    
+    invoke-interface {v0, v1}, Landroid/view/WindowManager;->removeView(Landroid/view/View;)V
+    
+    :cond_skip_remove
+    return-void
+.end method
