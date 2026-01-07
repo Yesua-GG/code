@@ -80,8 +80,10 @@
     sput-boolean v4, Lf01/Config;->isBidding:Z
 
     :cond_26
-    # v6 will hold the Context (Activity). Initialize to null.
+    # v6 will hold the Context. Initialize to null.
     const/4 v6, 0x0
+    # v8 will be our flag: 1 = from fragment (safe to close), 0 = global fallback (unsafe to close)
+    const/4 v8, 0x0
 
     # Load fragment into v7
     iget-object v7, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Rejecter;->fragment:Lsinet/startup/inDriver/city/driver/order/ui/info/OrderInfoFragment;
@@ -90,12 +92,16 @@
     if-eqz v7, :cond_check_global
     invoke-virtual {v7}, Landroidx/fragment/app/Fragment;->getActivity()Landroidx/fragment/app/FragmentActivity;
     move-result-object v6
+    if-eqz v6, :cond_check_global
+    # Use v8 as flag for "Safe to Call Back"
+    const/4 v8, 0x1
     
     :cond_check_global
     # If v6 is still null, try global context
     if-nez v6, :cond_has_context
     invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->getContext()Landroid/app/Activity;
     move-result-object v6
+    # v8 remains 0
     
     :cond_has_context
     # If we have a context (v6), proceed
@@ -103,14 +109,15 @@
     
     # Toast Logic
     iget-object v1, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Rejecter;->reason:Ljava/lang/String;
-    if-eqz v1, :cond_close
+    if-eqz v1, :cond_back
     const/4 v2, 0x1
     invoke-static {v6, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
     move-result-object v1
     invoke-virtual {v1}, Landroid/widget/Toast;->show()V
 
-    :cond_close
-    # Close
+    :cond_back
+    # Close ONLY if flag (v8) is set
+    if-eqz v8, :cond_finish
     invoke-virtual {v6}, Landroid/app/Activity;->onBackPressed()V
 
     :cond_finish
