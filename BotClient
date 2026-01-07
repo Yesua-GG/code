@@ -14,6 +14,8 @@
 
 .field public static isPaused:Z
 
+.field private static tts:Landroid/speech/tts/TextToSpeech;
+
 
 # direct methods
 .method static constructor <clinit>()V
@@ -124,6 +126,45 @@
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public static speak(Landroid/content/Context;Ljava/lang/String;)V
+    .registers 5
+    .param p0, "context"    # Landroid/content/Context;
+    .param p1, "text"    # Ljava/lang/String;
+
+    .prologue
+    .line 1
+    if-nez p0, :cond_check_tts
+    return-void
+
+    :cond_check_tts
+    sget-object v0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->tts:Landroid/speech/tts/TextToSpeech;
+
+    if-nez v0, :cond_init_tts
+
+    new-instance v0, Landroid/speech/tts/TextToSpeech;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p0, v1}, Landroid/speech/tts/TextToSpeech;-><init>(Landroid/content/Context;Landroid/speech/tts/TextToSpeech$OnInitListener;)V
+
+    sput-object v0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->tts:Landroid/speech/tts/TextToSpeech;
+
+    # Cannot speak immediately after init with null listener (async)
+    # Just return and wait for next call
+    return-void
+
+    :cond_init_tts
+    sget-object v0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->tts:Landroid/speech/tts/TextToSpeech;
+
+    const/4 v1, 0x1 # QUEUE_ADD
+    
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, p1, v1, v2}, Landroid/speech/tts/TextToSpeech;->speak(Ljava/lang/String;ILjava/util/HashMap;)I
+
+    return-void
 .end method
 
 .method public static final performBid(Lsinet/startup/inDriver/city/driver/order/ui/info/OrderInfoFragment;D)V
