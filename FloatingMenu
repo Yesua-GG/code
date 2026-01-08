@@ -15,7 +15,7 @@
 .field public static trashParams:Landroid/view/WindowManager$LayoutParams;
 .field public static isTrashShown:Z
 .field private static pingView:Landroid/widget/TextView;
-.field private static statusView:Landroid/widget/TextView;
+.field public static statusView:Landroid/widget/TextView;
 .field private static toggleButton:Landroid/widget/TextView;
 .field private static settingsButton:Landroid/widget/TextView;
 .field private static context:Landroid/app/Activity;
@@ -753,5 +753,32 @@
     # Optional: Exit Process
     # const/4 v0, 0x0
     # invoke-static {v0}, Ljava/lang/System;->exit(I)V
+    return-void
+.end method
+
+.method public static ensureShown(Landroid/app/Activity;)V
+    .registers 2
+    .param p0, "activity"    # Landroid/app/Activity;
+    
+    # Check Permission
+    invoke-static {p0}, Landroid/provider/Settings;->canDrawOverlays(Landroid/content/Context;)Z
+    move-result v0
+    
+    if-nez v0, :cond_perm
+    return-void
+    
+    :cond_perm
+    # Check if already shown
+    sget-boolean v0, Lsinet/startup/inDriver/ui/FloatingMenu;->isShown:Z
+    if-eqz v0, :cond_shown
+    return-void
+    
+    :cond_shown
+    # Set Context explicitly so showFloatingButton works
+    sput-object p0, Lsinet/startup/inDriver/ui/FloatingMenu;->context:Landroid/app/Activity;
+    
+    # Show it
+    invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->showFloatingButton()V
+    
     return-void
 .end method
