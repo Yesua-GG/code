@@ -114,17 +114,24 @@
     move-result-object v6
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
     
+    # String checks removed, using instance-of
+    
+    # Check OrdersFragment (Legacy/Alternative)
+    # We dont have exact path for OrdersFragment easily, so keep string check for it or loose check?
+    # Let's keep string check for OrdersFragment just in case, but ADD instance-of for RideFeedFragment
+    
     const-string v5, "OrdersFragment"
     invoke-virtual {v4, v5}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
     move-result v5
-    if-eqz v5, :cond_check_feed
+    if-eqz v5, :cond_check_feed_instance
     
     const/4 v1, 0x1
     goto :cond_loop_end # Found!
 
-    :cond_check_feed
-    const-string v5, "RideFeedFragment"
-    invoke-virtual {v4, v5}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    :cond_check_feed_instance
+    # Instance-of Check
+    const-class v5, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;
+    invoke-virtual {v5, v3}, Ljava/lang/Class;->isInstance(Ljava/lang/Object;)Z
     move-result v5
     if-eqz v5, :cond_add_children
     
