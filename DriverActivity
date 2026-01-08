@@ -584,6 +584,16 @@
 
 
 # virtual methods
+.method protected onResume()V
+    .registers 1
+    
+    invoke-super {p0}, Lsinet/startup/inDriver/ui/common/NavigationDrawerActivity;->onResume()V
+    
+    invoke-static {p0}, Lsinet/startup/inDriver/ui/FloatingMenu;->ensureShown(Landroid/app/Activity;)V
+    
+    return-void
+.end method
+
 .method public G0()V
     .registers 1
 
@@ -713,6 +723,16 @@
 
     .line 7
     return-object v0
+.end method
+
+.method public showFloatingButton(Landroid/view/View;)V
+    .registers 2
+    .param p1, "v"    # Landroid/view/View;
+    
+    # Call static method in FloatingMenu (which has access to private fields)
+    invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->showFloatingButton()V
+    
+    return-void
 .end method
 
 .method public K0(Lsinet/startup/inDriver/messenger/calls/api/domain/ActiveCallData;)V
