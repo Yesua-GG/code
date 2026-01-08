@@ -2561,6 +2561,10 @@
 
     invoke-super {p0}, Landroidx/fragment/app/Fragment;->onResume()V
 
+    const-string v0, "AutoRefresh"
+    const-string v1, "Iniciando auto refresh (onResume)..."
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
     iget-object v0, p0, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->autoRefreshHandler:Landroid/os/Handler;
 
     if-eqz v0, :cond_10
@@ -2581,6 +2585,10 @@
     .registers 3
 
     invoke-super {p0}, Landroidx/fragment/app/Fragment;->onPause()V
+
+    const-string v0, "AutoRefresh"
+    const-string v1, "Deteniendo auto refresh (onPause)..."
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     iget-object v0, p0, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->autoRefreshHandler:Landroid/os/Handler;
 
