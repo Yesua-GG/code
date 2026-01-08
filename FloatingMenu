@@ -73,6 +73,11 @@
 
     sget-boolean v0, Lsinet/startup/inDriver/ui/FloatingMenu;->isShown:Z
     if-eqz v0, :cond_setup
+    
+    # Force update UI state on re-entry (fixes Info Card visibility on App Restart)
+    sget-boolean v0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->isPaused:Z
+    invoke-static {v0}, Lsinet/startup/inDriver/ui/FloatingMenu;->updateUiState(Z)V
+    
     return-void
 
     :cond_setup
