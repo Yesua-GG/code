@@ -13,9 +13,13 @@
 
 .method public run()V
     .registers 5
+    const-string v0, "AutoRefresh"
+    const-string v1, "Ejecutando auto refresh..."
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
     iget-object v0, p0, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$AutoRefreshRunnable;->this$0:Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;
     const/4 v1, 0x0
-    invoke-static {v0, v1}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->j7(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;I)V
+    invoke-static {v0, v1}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->U5(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;I)V
 
     iget-object v0, p0, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$AutoRefreshRunnable;->this$0:Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;
     iget-object v0, v0, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->autoRefreshHandler:Landroid/os/Handler;
