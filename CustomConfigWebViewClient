@@ -18,12 +18,16 @@
     .param p4, "failingUrl"    # Ljava/lang/String;
 
     # HTML Content for Error
-    const-string v0, "<html><head><meta name='viewport' content='width=device-width, initial-scale=1.0'><style>body{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;font-family:-apple-system,sans-serif;background:#f3f4f6;color:#1f2937;margin:0;} .icon{font-size:48px;margin-bottom:16px;} h2{margin:0 0 8px 0;font-size:20px;} p{margin:0;color:#6b7280;text-align:center;} .btn{margin-top:24px;background:#2563eb;color:white;border:none;padding:12px 24px;border-radius:12px;font-weight:bold;font-size:16px;}</style></head><body><div class='icon'>📡</div><h2>Sin Conexi\u00f3n</h2><p>No se pudo conectar con el servidor.</p><p>Verifica tu internet.</p><button class='btn' onclick='location.reload()'>Reintentar</button></body></html>"
+    const-string v2, "<html><head><meta name='viewport' content='width=device-width, initial-scale=1.0'><style>body{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;font-family:-apple-system,sans-serif;background:#f3f4f6;color:#1f2937;margin:0;} .icon{font-size:48px;margin-bottom:16px;} h2{margin:0 0 8px 0;font-size:20px;} p{margin:0;color:#6b7280;text-align:center;} .btn{margin-top:24px;background:#2563eb;color:white;border:none;padding:12px 24px;border-radius:12px;font-weight:bold;font-size:16px;}</style></head><body><div class='icon'>📡</div><h2>Sin Conexi\u00f3n</h2><p>No se pudo conectar con el servidor.</p><p>Verifica tu internet.</p><button class='btn' onclick='location.reload()'>Reintentar</button></body></html>"
     
-    # Load Data
-    const-string v1, "text/html"
-    const-string v2, "UTF-8"
-    invoke-virtual {p1, v0, v1, v2}, Landroid/webkit/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    # Load Data with Base URL (Fixes blank screen)
+    const/4 v1, 0x0 # Base URL (null)
+    const-string v3, "text/html"
+    const-string v4, "UTF-8"
+    const/4 v5, 0x0 # History URL (null)
+    
+    move-object v0, p1
+    invoke-virtual/range {v0 .. v5}, Landroid/webkit/WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     
     return-void
 .end method
