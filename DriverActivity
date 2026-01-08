@@ -1744,6 +1744,10 @@
 
     .line 3
     :cond_12
+    const-string v2, "BotCardDebug"
+    const-string v3, "InfoCard: Creating View Logic Started"
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
     # --- Root Card Layout (LinearLayout) --- v0
     new-instance v0, Landroid/widget/LinearLayout;
 
