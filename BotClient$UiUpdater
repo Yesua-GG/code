@@ -52,7 +52,12 @@
     const/4 v1, 0x0 # isVisible flag
 
     check-cast v0, Landroidx/fragment/app/FragmentActivity;
-    
+
+    # DEBUG LOG
+    const-string v2, "BotCardDebug"
+    const-string v3, "UiUpdater: Run started"
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
     # -- Check Pause State --
     sget-boolean v2, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->isPaused:Z
     if-eqz v2, :cond_check_fragments
@@ -98,6 +103,17 @@
     invoke-virtual {v4}, Ljava/lang/Class;->getName()Ljava/lang/String;
     move-result-object v4
     
+    # DEBUG LOG
+    const-string v5, "BotCardDebug"
+    new-instance v6, Ljava/lang/StringBuilder;
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v7, "Checking Fragment: "
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v6
+    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    
     const-string v5, "OrdersFragment"
     invoke-virtual {v4, v5}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
     move-result v5
@@ -140,10 +156,18 @@
     move-result-object v6
     
     if-nez v6, :cond_find_fail
+    
+    const-string v2, "BotCardDebug"
+    const-string v3, "Card View NOT FOUND by tag"
+    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
     return-void
     
     :cond_find_fail
     if-eqz v1, :cond_hide
+    
+    const-string v2, "BotCardDebug"
+    const-string v3, "Setting Card VISIBLE"
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
     
     const/4 v2, 0x0
     invoke-virtual {v6, v2}, Landroid/view/View;->setVisibility(I)V
