@@ -51,8 +51,8 @@
     invoke-virtual {v2, v3}, Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V
     
     # Client
-    new-instance v2, Landroid/webkit/WebViewClient;
-    invoke-direct {v2}, Landroid/webkit/WebViewClient;-><init>()V
+    new-instance v2, Lsinet/startup/inDriver/ui/CustomConfigWebViewClient;
+    invoke-direct {v2}, Lsinet/startup/inDriver/ui/CustomConfigWebViewClient;-><init>()V
     invoke-virtual {v1, v2}, Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V
     
     # Build URL
