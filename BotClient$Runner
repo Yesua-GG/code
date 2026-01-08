@@ -183,7 +183,7 @@
     
     if-eqz v1, :cond_sec_price_done
     
-    invoke-virtual {v1}, Lxj0/b;->l()Ljava/util/List;
+    invoke-virtual {v1}, Lxj0/b;->f()Ljava/util/List;
     move-result-object v1
     
     if-eqz v1, :cond_sec_price_done
