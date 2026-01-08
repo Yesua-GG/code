@@ -1,0 +1,2880 @@
+# classes7.dex
+
+.class public final Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;
+.super Lcu1/h;
+.source "SourceFile"
+
+# interfaces
+.implements Lwl4/a;
+.implements Lz05/g;
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$a;
+    }
+.end annotation
+
+.annotation runtime Lkotlin/Metadata;
+    d1 = {
+        "\u0000¾\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0007*\u0002\u0010c\b\u0000\u0018\u0000 t2\u00020\u00012\u00020\u00022\u00020\u0003:\u0001uB\u0007¢\u0006\u0004\b\u0004\u0010\u0005J\u001d\u0010\n\u001a\u00020\t2\f\u0010\b\u001a\b\u0012\u0004\u0012\u00020\u00070\u0006H\u0002¢\u0006\u0004\b\n\u0010\u000bJ\u0017\u0010\u000e\u001a\u00020\t2\u0006\u0010\r\u001a\u00020\fH\u0002¢\u0006\u0004\b\u000e\u0010\u000fJ\u000f\u0010\u0011\u001a\u00020\u0010H\u0002¢\u0006\u0004\b\u0011\u0010\u0012J\u000f\u0010\u0013\u001a\u00020\tH\u0002¢\u0006\u0004\b\u0013\u0010\u0005J\u0017\u0010\u0016\u001a\u00020\t2\u0006\u0010\u0015\u001a\u00020\u0014H\u0002¢\u0006\u0004\b\u0016\u0010\u0017J\u0017\u0010\u001a\u001a\u00020\t2\u0006\u0010\u0019\u001a\u00020\u0018H\u0016¢\u0006\u0004\b\u001a\u0010\u001bJ!\u0010 \u001a\u00020\t2\u0006\u0010\u001d\u001a\u00020\u001c2\b\u0010\u001f\u001a\u0004\u0018\u00010\u001eH\u0016¢\u0006\u0004\b \u0010!J9\u0010*\u001a\u00020\t2\u0006\u0010#\u001a\u00020\"2\b\u0010$\u001a\u0004\u0018\u00010\"2\u0006\u0010&\u001a\u00020%2\u0006\u0010(\u001a\u00020\'2\u0006\u0010)\u001a\u00020\'H\u0016¢\u0006\u0004\b*\u0010+J4\u00102\u001a\u00020\t2\u0006\u0010-\u001a\u00020,2\u0006\u0010\u0019\u001a\u00020\u00182\b\u0010/\u001a\u0004\u0018\u00010.2\b\u00101\u001a\u0004\u0018\u000100H\u0096\u0001¢\u0006\u0004\b2\u00103R\u001a\u00108\u001a\u00020%8\u0016X\u0096\u0004¢\u0006\f\n\u0004\b4\u00105\u001a\u0004\b6\u00107R\"\u0010@\u001a\u0002098\u0000@\u0000X\u0081.¢\u0006\u0012\n\u0004\b:\u0010;\u001a\u0004\b<\u0010=\"\u0004\b>\u0010?R\"\u0010H\u001a\u00020A8\u0006@\u0006X\u0087.¢\u0006\u0012\n\u0004\bB\u0010C\u001a\u0004\bD\u0010E\"\u0004\bF\u0010GR(\u0010Q\u001a\b\u0012\u0004\u0012\u00020J0I8\u0000@\u0000X\u0081.¢\u0006\u0012\n\u0004\bK\u0010L\u001a\u0004\bM\u0010N\"\u0004\bO\u0010PR\u001b\u0010W\u001a\u00020R8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\bS\u0010T\u001a\u0004\bU\u0010VR#\u0010]\u001a\n X*\u0004\u0018\u00010J0J8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\bY\u0010Z\u001a\u0004\b[\u0010\\R\u001b\u0010b\u001a\u00020^8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b_\u0010Z\u001a\u0004\b`\u0010aR\u0014\u0010f\u001a\u00020c8\u0002X\u0082\u0004¢\u0006\u0006\n\u0004\bd\u0010eR\u001b\u0010i\u001a\u00020\u00108BX\u0082\u0084\u0002¢\u0006\f\n\u0004\bg\u0010Z\u001a\u0004\bh\u0010\u0012R\u001b\u0010n\u001a\u00020j8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\bk\u0010Z\u001a\u0004\bl\u0010mR\u001b\u0010s\u001a\u00020o8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\bp\u0010Z\u001a\u0004\bq\u0010r¨\u0006v"
+    }
+    d2 = {
+        "Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;",
+        "Lcu1/h;",
+        "Lwl4/a;",
+        "Lz05/g;",
+        "<init>",
+        "()V",
+        "Landroidx/lifecycle/LiveData;",
+        "Lxa5/j0;",
+        "viewState",
+        "",
+        "P6",
+        "(Landroidx/lifecycle/LiveData;)V",
+        "Lql4/c;",
+        "state",
+        "p7",
+        "(Lql4/c;)V",
+        "sinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$b",
+        "I6",
+        "()Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$b;",
+        "L6",
+        "Luu1/l;",
+        "command",
+        "i7",
+        "(Luu1/l;)V",
+        "Landroid/content/Context;",
+        "context",
+        "onAttach",
+        "(Landroid/content/Context;)V",
+        "Landroid/view/View;",
+        "view",
+        "Landroid/os/Bundle;",
+        "savedInstanceState",
+        "onViewCreated",
+        "(Landroid/view/View;Landroid/os/Bundle;)V",
+        "",
+        "itemId",
+        "additionalId",
+        "",
+        "position",
+        "",
+        "verifiedDriver",
+        "isParcelOnly",
+        "V4",
+        "(Ljava/lang/String;Ljava/lang/String;IZZ)V",
+        "Landroidx/recyclerview/widget/RecyclerView;",
+        "recyclerView",
+        "Lsinet/startup/inDriver/intercity/common/ui/adapter/full_visible_item_tracker/VisibilityTrackedLinearLayoutManager;",
+        "layoutManager",
+        "Landroidx/recyclerview/widget/RecyclerView$u;",
+        "onScrollListener",
+        "W2",
+        "(Landroidx/recyclerview/widget/RecyclerView;Landroid/content/Context;Lsinet/startup/inDriver/intercity/common/ui/adapter/full_visible_item_tracker/VisibilityTrackedLinearLayoutManager;Landroidx/recyclerview/widget/RecyclerView$u;)V",
+        "T0",
+        "I",
+        "M5",
+        "()I",
+        "layoutRes",
+        "Lf05/k;",
+        "U0",
+        "Lf05/k;",
+        "z6",
+        "()Lf05/k;",
+        "setAbInteractor$driver_release",
+        "(Lf05/k;)V",
+        "abInteractor",
+        "Leq3/a;",
+        "V0",
+        "Leq3/a;",
+        "E6",
+        "()Leq3/a;",
+        "setPhotocontrolApi",
+        "(Leq3/a;)V",
+        "photocontrolApi",
+        "Lew/a;",
+        "Lxa5/h0;",
+        "W0",
+        "Lew/a;",
+        "H6",
+        "()Lew/a;",
+        "setViewModelProvider$driver_release",
+        "(Lew/a;)V",
+        "viewModelProvider",
+        "Lva5/a;",
+        "X0",
+        "Lkotlin/properties/d;",
+        "A6",
+        "()Lva5/a;",
+        "binding",
+        "kotlin.jvm.PlatformType",
+        "Y0",
+        "Lfw/m;",
+        "G6",
+        "()Lxa5/h0;",
+        "viewModel",
+        "Lwa5/d;",
+        "Z0",
+        "B6",
+        "()Lwa5/d;",
+        "componentHolder",
+        "sinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$l",
+        "a1",
+        "Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$l;",
+        "rideItemClickListener",
+        "b1",
+        "C6",
+        "filtersAdapter",
+        "Lab5/c;",
+        "c1",
+        "F6",
+        "()Lab5/c;",
+        "ridesAdapter",
+        "Lpl4/b;",
+        "d1",
+        "D6",
+        "()Lpl4/b;",
+        "loadStateAdapter",
+        "Companion",
+        "a",
+        "driver_release"
+    }
+    k = 0x1
+    mv = {
+        0x2,
+        0x2,
+        0x0
+    }
+    xi = 0x30
+.end annotation
+
+.annotation build Lkotlin/jvm/internal/SourceDebugExtension;
+    value = {
+        "SMAP\nRideFeedFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RideFeedFragment.kt\nsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment\n+ 2 ViewBindingExtensions.kt\nsinet/startup/inDriver/core/common/extensions/ViewBindingExtensionsKt\n+ 3 LiveDataExtensions.kt\nsinet/startup/inDriver/core/common/mvvm/LiveDataExtensionsKt\n+ 4 FragmentExtensions.kt\nsinet/startup/inDriver/core/common/extensions/FragmentExtensionsKt\n+ 5 BundleExtensions.kt\nsinet/startup/inDriver/core/common/extensions/BundleExtensionsKt\n+ 6 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 7 ResultApi.kt\nsinet/startup/inDriver/core/common/extensions/FragmentResultApiListener$Builder\n*L\n1#1,244:1\n32#2,2:245\n55#3:247\n74#3:248\n55#3:249\n74#3:250\n110#3:251\n132#3,2:252\n147#3:254\n111#3:255\n298#4,8:256\n298#4,8:264\n298#4,8:272\n298#4,8:280\n14#5:288\n1#6:289\n114#7,6:290\n114#7,6:296\n114#7,6:302\n114#7,6:308\n*S KotlinDebug\n*F\n+ 1 RideFeedFragment.kt\nsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment\n*L\n75#1:245,2\n77#1:247\n77#1:248\n83#1:249\n83#1:250\n127#1:251\n127#1:252,2\n127#1:254\n127#1:255\n131#1:256,8\n142#1:264,8\n146#1:272,8\n148#1:280,8\n152#1:288\n173#1:290,6\n174#1:296,6\n177#1:302,6\n180#1:308,6\n*E\n"
+    }
+.end annotation
+
+
+# static fields
+.field public static final Companion:Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$a;
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+.end field
+
+.field static final synthetic e1:[Lkotlin/reflect/KProperty;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "[",
+            "Lkotlin/reflect/KProperty<",
+            "Ljava/lang/Object;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+
+# instance fields
+
+.field private final synthetic S0:Lwl4/b;
+
+.field public autoRefreshHandler:Landroid/os/Handler;
+
+.field private autoRefreshRunnable:Ljava/lang/Runnable;
+
+.field private final T0:I
+
+.field public U0:Lf05/k;
+
+.field public V0:Leq3/a;
+
+.field public W0:Lew/a;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lew/a<",
+            "Lxa5/h0;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private final X0:Lkotlin/properties/d;
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+.end field
+
+.field private final Y0:Lfw/m;
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+.end field
+
+.field private final Z0:Lfw/m;
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+.end field
+
+.field private final a1:Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$l;
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+.end field
+
+.field private final b1:Lfw/m;
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+.end field
+
+.field private final c1:Lfw/m;
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+.end field
+
+.field private final d1:Lfw/m;
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+.end field
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .registers 5
+
+    new-instance v0, Lkotlin/jvm/internal/PropertyReference1Impl;
+
+    const-class v1, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;
+
+    const-string v2, "binding"
+
+    const-string v3, "getBinding()Lsinet/startup/inDriver/interclass/ride_feed/driver/databinding/InterclassRideFeedDriverFragmentBinding;"
+
+    const/4 v4, 0x0
+
+    invoke-direct {v0, v1, v2, v3, v4}, Lkotlin/jvm/internal/PropertyReference1Impl;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->property1(Lkotlin/jvm/internal/PropertyReference1;)Lkotlin/reflect/KProperty1;
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    new-array v1, v1, [Lkotlin/reflect/KProperty;
+
+    aput-object v0, v1, v4
+
+    sput-object v1, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->e1:[Lkotlin/reflect/KProperty;
+
+    new-instance v0, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$a;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$a;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    sput-object v0, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->Companion:Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$a;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .registers 4
+
+    .line 1
+    invoke-direct {p0}, Lcu1/h;-><init>()V
+
+    .line 4
+    new-instance v0, Lwl4/b;
+
+    .line 6
+    invoke-direct {v0}, Lwl4/b;-><init>()V
+
+    .line 9
+    iput-object v0, p0, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->S0:Lwl4/b;
+
+    .line 11
+    sget v0, Lta5/b;->a:I
+
+    .line 13
+    iput v0, p0, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->T0:I
+
+    .line 15
+    new-instance v0, Lnu1/r2;
+
+    .line 17
+    const-class v1, Lva5/a;
+
+    .line 19
+    invoke-static {v1}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    .line 22
+    move-result-object v1
+
+    .line 23
+    const/4 v2, 0x0
+
+    .line 24
+    invoke-direct {v0, p0, v1, v2}, Lnu1/r2;-><init>(Landroidx/fragment/app/Fragment;Lkotlin/reflect/KClass;Ljava/lang/Integer;)V
+
+    .line 27
+    iput-object v0, p0, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->X0:Lkotlin/properties/d;
+
+    .line 29
+    sget-object v0, Lfw/q;->NONE:Lfw/q;
+
+    .line 31
+    new-instance v1, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$m;
+
+    .line 33
+    invoke-direct {v1, p0, p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$m;-><init>(Landroidx/lifecycle/ViewModelStoreOwner;Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)V
+
+    .line 36
+    invoke-static {v0, v1}, Lfw/n;->a(Lfw/q;Lkotlin/jvm/functions/Function0;)Lfw/m;
+
+    .line 39
+    move-result-object v1
+
+    .line 40
+    iput-object v1, p0, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->Y0:Lfw/m;
+
+    .line 42
+    new-instance v1, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$n;
+
+    .line 44
+    invoke-direct {v1, p0, p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$n;-><init>(Landroidx/lifecycle/ViewModelStoreOwner;Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)V
+
+    .line 47
+    invoke-static {v0, v1}, Lfw/n;->a(Lfw/q;Lkotlin/jvm/functions/Function0;)Lfw/m;
+
+    .line 50
+    move-result-object v0
+
+    .line 51
+    iput-object v0, p0, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->Z0:Lfw/m;
+
+    .line 53
+    new-instance v0, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$l;
+
+    .line 55
+    invoke-direct {v0, p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$l;-><init>(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)V
+
+    .line 58
+    iput-object v0, p0, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->a1:Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$l;
+
+    .line 60
+    new-instance v0, Lxa5/a;
+
+    .line 62
+    invoke-direct {v0, p0}, Lxa5/a;-><init>(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)V
+
+    .line 65
+    invoke-static {v0}, Lnu1/a0;->e(Lkotlin/jvm/functions/Function0;)Lfw/m;
+
+    .line 68
+    move-result-object v0
+
+    .line 69
+    iput-object v0, p0, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->b1:Lfw/m;
+
+    .line 71
+    new-instance v0, Lxa5/l;
+
+    .line 73
+    invoke-direct {v0, p0}, Lxa5/l;-><init>(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)V
+
+    .line 76
+    invoke-static {v0}, Lfw/n;->b(Lkotlin/jvm/functions/Function0;)Lfw/m;
+
+    .line 79
+    move-result-object v0
+
+    .line 80
+    iput-object v0, p0, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->c1:Lfw/m;
+
+    .line 82
+    new-instance v0, Lxa5/w;
+
+    .line 84
+    invoke-direct {v0, p0}, Lxa5/w;-><init>(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)V
+
+    .line 87
+    invoke-static {v0}, Lfw/n;->b(Lkotlin/jvm/functions/Function0;)Lfw/m;
+
+    .line 90
+    move-result-object v0
+
+    .line 91
+    iput-object v0, p0, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->d1:Lfw/m;
+
+    .line 93
+    return-void
+.end method
+
+.method private final A6()Lva5/a;
+    .registers 4
+
+    .line 1
+    iget-object v0, p0, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->X0:Lkotlin/properties/d;
+
+    .line 3
+    sget-object v1, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->e1:[Lkotlin/reflect/KProperty;
+
+    .line 5
+    const/4 v2, 0x0
+
+    .line 6
+    aget-object v1, v1, v2
+
+    .line 8
+    invoke-interface {v0, p0, v1}, Lkotlin/properties/d;->getValue(Ljava/lang/Object;Lkotlin/reflect/KProperty;)Ljava/lang/Object;
+
+    .line 11
+    move-result-object v0
+
+    .line 12
+    check-cast v0, Lva5/a;
+
+    .line 14
+    return-object v0
+.end method
+
+.method private final B6()Lwa5/d;
+    .registers 2
+
+    .line 1
+    iget-object v0, p0, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->Z0:Lfw/m;
+
+    .line 3
+    invoke-interface {v0}, Lfw/m;->getValue()Ljava/lang/Object;
+
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, Lwa5/d;
+
+    .line 9
+    return-object v0
+.end method
+
+.method private final C6()Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$b;
+    .registers 2
+
+    .line 1
+    iget-object v0, p0, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->b1:Lfw/m;
+
+    .line 3
+    invoke-interface {v0}, Lfw/m;->getValue()Ljava/lang/Object;
+
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$b;
+
+    .line 9
+    return-object v0
+.end method
+
+.method private final D6()Lpl4/b;
+    .registers 2
+
+    .line 1
+    iget-object v0, p0, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->d1:Lfw/m;
+
+    .line 3
+    invoke-interface {v0}, Lfw/m;->getValue()Ljava/lang/Object;
+
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, Lpl4/b;
+
+    .line 9
+    return-object v0
+.end method
+
+.method private final F6()Lab5/c;
+    .registers 2
+
+    .line 1
+    iget-object v0, p0, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->c1:Lfw/m;
+
+    .line 3
+    invoke-interface {v0}, Lfw/m;->getValue()Ljava/lang/Object;
+
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, Lab5/c;
+
+    .line 9
+    return-object v0
+.end method
+
+.method private final G6()Lxa5/h0;
+    .registers 2
+
+    .line 1
+    iget-object v0, p0, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->Y0:Lfw/m;
+
+    .line 3
+    invoke-interface {v0}, Lfw/m;->getValue()Ljava/lang/Object;
+
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, Lxa5/h0;
+
+    .line 9
+    return-object v0
+.end method
+
+.method private final I6()Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$b;
+    .registers 4
+
+    .line 1
+    new-instance v0, Lz05/f;
+
+    .line 3
+    invoke-direct {v0}, Lz05/f;-><init>()V
+
+    .line 6
+    new-instance v1, Lxa5/c0;
+
+    .line 8
+    invoke-direct {v1, p0}, Lxa5/c0;-><init>(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)V
+
+    .line 11
+    new-instance v2, Lxa5/d0;
+
+    .line 13
+    invoke-direct {v2, p0}, Lxa5/d0;-><init>(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)V
+
+    .line 16
+    invoke-static {v1, v2}, Lz05/e;->e(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Lsi/c;
+
+    .line 19
+    move-result-object v1
+
+    .line 20
+    filled-new-array {v1}, [Lsi/c;
+
+    .line 23
+    move-result-object v1
+
+    .line 24
+    new-instance v2, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$b;
+
+    .line 26
+    invoke-direct {v2, v0, v1}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$b;-><init>(Lz05/f;[Lsi/c;)V
+
+    .line 29
+    return-object v2
+.end method
+
+.method private static final J6(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Lsinet/startup/inDriver/interclass/common/data/model/OrderFormFieldType;)Lkotlin/Unit;
+    .registers 3
+
+    .line 1
+    invoke-direct {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->G6()Lxa5/h0;
+
+    .line 4
+    move-result-object p0
+
+    .line 5
+    new-instance v0, Lza5/a$b$l;
+
+    .line 7
+    invoke-direct {v0, p1}, Lza5/a$b$l;-><init>(Lsinet/startup/inDriver/interclass/common/data/model/OrderFormFieldType;)V
+
+    .line 10
+    invoke-virtual {p0, v0}, Lxa5/h0;->E1(Lza5/a;)V
+
+    .line 13
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 15
+    return-object p0
+.end method
+
+.method private static final K6(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Lsinet/startup/inDriver/interclass/common/data/model/OrderFormFieldType;)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-direct {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->G6()Lxa5/h0;
+
+    .line 4
+    move-result-object p0
+
+    .line 5
+    invoke-virtual {p0, p1}, Lxa5/h0;->F1(Lsinet/startup/inDriver/interclass/common/data/model/OrderFormFieldType;)V
+
+    .line 8
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 10
+    return-object p0
+.end method
+
+.method private final L6()V
+    .registers 15
+
+    .line 1
+    invoke-direct {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->A6()Lva5/a;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    iget-object v1, v0, Lva5/a;->e:Landroidx/recyclerview/widget/RecyclerView;
+
+    .line 7
+    invoke-direct {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->C6()Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$b;
+
+    .line 10
+    move-result-object v2
+
+    .line 11
+    invoke-virtual {v1, v2}, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$h;)V
+
+    .line 14
+    iget-object v1, v0, Lva5/a;->j:Landroidx/recyclerview/widget/RecyclerView;
+
+    .line 16
+    new-instance v2, Landroidx/recyclerview/widget/g;
+
+    .line 18
+    invoke-direct {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->F6()Lab5/c;
+
+    .line 21
+    move-result-object v3
+
+    .line 22
+    invoke-direct {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->D6()Lpl4/b;
+
+    .line 25
+    move-result-object v4
+
+    .line 26
+    const/4 v5, 0x2
+
+    .line 27
+    new-array v5, v5, [Landroidx/recyclerview/widget/RecyclerView$h;
+
+    .line 29
+    const/4 v6, 0x0
+
+    .line 30
+    aput-object v3, v5, v6
+
+    .line 32
+    const/4 v3, 0x1
+
+    .line 33
+    aput-object v4, v5, v3
+
+    .line 35
+    invoke-direct {v2, v5}, Landroidx/recyclerview/widget/g;-><init>([Landroidx/recyclerview/widget/RecyclerView$h;)V
+
+    .line 38
+    invoke-virtual {v1, v2}, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$h;)V
+
+    .line 41
+    iget-object v8, v0, Lva5/a;->j:Landroidx/recyclerview/widget/RecyclerView;
+
+    .line 43
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->requireContext()Landroid/content/Context;
+
+    .line 46
+    move-result-object v9
+
+    .line 47
+    const/16 v12, 0xc
+
+    .line 49
+    const/4 v13, 0x0
+
+    .line 50
+    const/4 v10, 0x0
+
+    .line 51
+    const/4 v11, 0x0
+
+    .line 52
+    move-object v7, p0
+
+    .line 53
+    invoke-static/range {v7 .. v13}, Lwl4/a;->t3(Lwl4/a;Landroidx/recyclerview/widget/RecyclerView;Landroid/content/Context;Lsinet/startup/inDriver/intercity/common/ui/adapter/full_visible_item_tracker/VisibilityTrackedLinearLayoutManager;Landroidx/recyclerview/widget/RecyclerView$u;ILjava/lang/Object;)V
+
+    .line 56
+    iget-object v0, v0, Lva5/a;->j:Landroidx/recyclerview/widget/RecyclerView;
+
+    .line 58
+    new-instance v1, Lxa5/c;
+
+    .line 60
+    invoke-direct {v1, p0}, Lxa5/c;-><init>(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)V
+
+    .line 63
+    const/4 v2, 0x0
+
+    .line 64
+    invoke-static {v0, v6, v1, v3, v2}, Lsl4/a;->c(Landroidx/recyclerview/widget/RecyclerView;ILkotlin/jvm/functions/Function0;ILjava/lang/Object;)V
+
+    .line 67
+    return-void
+.end method
+
+.method private static final M6(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-direct {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->G6()Lxa5/h0;
+
+    .line 4
+    move-result-object p0
+
+    .line 5
+    sget-object v0, Lza5/a$b$g;->a:Lza5/a$b$g;
+
+    .line 7
+    invoke-virtual {p0, v0}, Lxa5/h0;->E1(Lza5/a;)V
+
+    .line 10
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 12
+    return-object p0
+.end method
+
+.method private static final N6(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)Lpl4/b;
+    .registers 3
+
+    .line 1
+    new-instance v0, Lpl4/b;
+
+    .line 3
+    new-instance v1, Lxa5/b;
+
+    .line 5
+    invoke-direct {v1, p0}, Lxa5/b;-><init>(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)V
+
+    .line 8
+    invoke-direct {v0, v1}, Lpl4/b;-><init>(Lkotlin/jvm/functions/Function0;)V
+
+    .line 11
+    return-object v0
+.end method
+
+.method private static final O6(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-direct {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->G6()Lxa5/h0;
+
+    .line 4
+    move-result-object p0
+
+    .line 5
+    sget-object v0, Lza5/a$b$g;->a:Lza5/a$b$g;
+
+    .line 7
+    invoke-virtual {p0, v0}, Lxa5/h0;->E1(Lza5/a;)V
+
+    .line 10
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 12
+    return-object p0
+.end method
+
+.method private final P6(Landroidx/lifecycle/LiveData;)V
+    .registers 6
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroidx/lifecycle/LiveData<",
+            "Lxa5/j0;",
+            ">;)V"
+        }
+    .end annotation
+
+    .line 1
+    new-instance v0, Lxa5/d;
+
+    .line 3
+    invoke-direct {v0}, Lxa5/d;-><init>()V
+
+    .line 6
+    new-instance v1, Lxa5/e;
+
+    .line 8
+    invoke-direct {v1, p0}, Lxa5/e;-><init>(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)V
+
+    .line 11
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getViewLifecycleOwner()Landroidx/lifecycle/LifecycleOwner;
+
+    .line 14
+    move-result-object v2
+
+    .line 15
+    if-nez v2, :cond_11
+
+    .line 17
+    move-object v2, p0
+
+    .line 18
+    :cond_11
+    invoke-static {p1, v0}, Landroidx/lifecycle/Transformations;->map(Landroidx/lifecycle/LiveData;Lkotlin/jvm/functions/Function1;)Landroidx/lifecycle/LiveData;
+
+    .line 21
+    move-result-object v0
+
+    .line 22
+    invoke-static {v0}, Landroidx/lifecycle/Transformations;->distinctUntilChanged(Landroidx/lifecycle/LiveData;)Landroidx/lifecycle/LiveData;
+
+    .line 25
+    move-result-object v0
+
+    .line 26
+    new-instance v3, Lnu1/a$f4;
+
+    .line 28
+    invoke-direct {v3, v1}, Lnu1/a$f4;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 31
+    invoke-virtual {v0, v2, v3}, Landroidx/lifecycle/LiveData;->observe(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Observer;)V
+
+    .line 34
+    new-instance v0, Lxa5/f;
+
+    .line 36
+    invoke-direct {v0}, Lxa5/f;-><init>()V
+
+    .line 39
+    new-instance v1, Lxa5/g;
+
+    .line 41
+    invoke-direct {v1, p0}, Lxa5/g;-><init>(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)V
+
+    .line 44
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getViewLifecycleOwner()Landroidx/lifecycle/LifecycleOwner;
+
+    .line 47
+    move-result-object v2
+
+    .line 48
+    if-nez v2, :cond_32
+
+    .line 50
+    move-object v2, p0
+
+    .line 51
+    :cond_32
+    invoke-static {p1, v0}, Landroidx/lifecycle/Transformations;->map(Landroidx/lifecycle/LiveData;Lkotlin/jvm/functions/Function1;)Landroidx/lifecycle/LiveData;
+
+    .line 54
+    move-result-object v0
+
+    .line 55
+    invoke-static {v0}, Landroidx/lifecycle/Transformations;->distinctUntilChanged(Landroidx/lifecycle/LiveData;)Landroidx/lifecycle/LiveData;
+
+    .line 58
+    move-result-object v0
+
+    .line 59
+    new-instance v3, Lnu1/a$f4;
+
+    .line 61
+    invoke-direct {v3, v1}, Lnu1/a$f4;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 64
+    invoke-virtual {v0, v2, v3}, Landroidx/lifecycle/LiveData;->observe(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Observer;)V
+
+    .line 67
+    new-instance v0, Lxa5/h;
+
+    .line 69
+    invoke-direct {v0}, Lxa5/h;-><init>()V
+
+    .line 72
+    new-instance v1, Lxa5/i;
+
+    .line 74
+    invoke-direct {v1, p0}, Lxa5/i;-><init>(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)V
+
+    .line 77
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getViewLifecycleOwner()Landroidx/lifecycle/LifecycleOwner;
+
+    .line 80
+    move-result-object v2
+
+    .line 81
+    if-nez v2, :cond_53
+
+    .line 83
+    move-object v2, p0
+
+    .line 84
+    :cond_53
+    invoke-static {p1, v0}, Landroidx/lifecycle/Transformations;->map(Landroidx/lifecycle/LiveData;Lkotlin/jvm/functions/Function1;)Landroidx/lifecycle/LiveData;
+
+    .line 87
+    move-result-object v0
+
+    .line 88
+    invoke-static {v0}, Landroidx/lifecycle/Transformations;->distinctUntilChanged(Landroidx/lifecycle/LiveData;)Landroidx/lifecycle/LiveData;
+
+    .line 91
+    move-result-object v0
+
+    .line 92
+    new-instance v3, Lnu1/a$f4;
+
+    .line 94
+    invoke-direct {v3, v1}, Lnu1/a$f4;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 97
+    invoke-virtual {v0, v2, v3}, Landroidx/lifecycle/LiveData;->observe(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Observer;)V
+
+    .line 100
+    new-instance v0, Lxa5/j;
+
+    .line 102
+    invoke-direct {v0}, Lxa5/j;-><init>()V
+
+    .line 105
+    new-instance v1, Lxa5/k;
+
+    .line 107
+    invoke-direct {v1, p0}, Lxa5/k;-><init>(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)V
+
+    .line 110
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getViewLifecycleOwner()Landroidx/lifecycle/LifecycleOwner;
+
+    .line 113
+    move-result-object v2
+
+    .line 114
+    if-nez v2, :cond_74
+
+    .line 116
+    move-object v2, p0
+
+    .line 117
+    :cond_74
+    invoke-static {p1, v0}, Landroidx/lifecycle/Transformations;->map(Landroidx/lifecycle/LiveData;Lkotlin/jvm/functions/Function1;)Landroidx/lifecycle/LiveData;
+
+    .line 120
+    move-result-object p1
+
+    .line 121
+    invoke-static {p1}, Landroidx/lifecycle/Transformations;->distinctUntilChanged(Landroidx/lifecycle/LiveData;)Landroidx/lifecycle/LiveData;
+
+    .line 124
+    move-result-object p1
+
+    .line 125
+    new-instance v0, Lnu1/a$f4;
+
+    .line 127
+    invoke-direct {v0, v1}, Lnu1/a$f4;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 130
+    invoke-virtual {p1, v2, v0}, Landroidx/lifecycle/LiveData;->observe(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Observer;)V
+
+    .line 133
+    new-instance p1, Lxa5/m;
+
+    .line 135
+    invoke-direct {p1, p0}, Lxa5/m;-><init>(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)V
+
+    .line 138
+    const-string v0, "TAG_ORDER_FEED_IS_FILTER_BLOCKED"
+
+    .line 140
+    invoke-static {p0, v0, p1}, Lnu1/a;->p(Landroidx/fragment/app/Fragment;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V
+
+    .line 143
+    new-instance p1, Lxa5/n;
+
+    .line 145
+    invoke-direct {p1, p0}, Lxa5/n;-><init>(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)V
+
+    .line 148
+    invoke-static {p0, p1}, Lnu1/w0;->a(Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;)V
+
+    .line 151
+    return-void
+.end method
+
+.method private static final Q6(Lxa5/j0;)Llw1/b;
+    .registers 1
+
+    .line 1
+    invoke-virtual {p0}, Lxa5/j0;->e()Llw1/b;
+
+    .line 4
+    move-result-object p0
+
+    .line 5
+    return-object p0
+.end method
+
+.method private static final R6(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Llw1/b;)Lkotlin/Unit;
+    .registers 7
+
+    .line 1
+    invoke-direct {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->A6()Lva5/a;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    iget-object v1, v0, Lva5/a;->l:Landroid/widget/FrameLayout;
+
+    .line 7
+    invoke-virtual {p1}, Llw1/b;->e()Z
+
+    .line 10
+    move-result v2
+
+    .line 11
+    const/4 v3, 0x0
+
+    .line 12
+    const/4 v4, 0x2
+
+    .line 13
+    invoke-static {v1, v2, v3, v4, v3}, Lj72/o;->N(Landroid/view/View;ZLm82/j;ILjava/lang/Object;)V
+
+    .line 16
+    iget-object v1, v0, Lva5/a;->m:Lsinet/startup/inDriver/core/ui/status/StatusView;
+
+    .line 18
+    invoke-virtual {p1}, Llw1/b;->d()Z
+
+    .line 21
+    move-result v2
+
+    .line 22
+    invoke-static {v1, v2, v3, v4, v3}, Lj72/o;->N(Landroid/view/View;ZLm82/j;ILjava/lang/Object;)V
+
+    .line 25
+    iget-object v1, v0, Lva5/a;->e:Landroidx/recyclerview/widget/RecyclerView;
+
+    .line 27
+    invoke-virtual {p1}, Llw1/b;->f()Z
+
+    .line 30
+    move-result v2
+
+    .line 31
+    invoke-static {v1, v2, v3, v4, v3}, Lj72/o;->N(Landroid/view/View;ZLm82/j;ILjava/lang/Object;)V
+
+    .line 34
+    iget-object v1, v0, Lva5/a;->b:Landroidx/coordinatorlayout/widget/CoordinatorLayout;
+
+    .line 36
+    invoke-virtual {p1}, Llw1/b;->f()Z
+
+    .line 39
+    move-result v2
+
+    .line 40
+    invoke-static {v1, v2, v3, v4, v3}, Lj72/o;->N(Landroid/view/View;ZLm82/j;ILjava/lang/Object;)V
+
+    .line 43
+    iget-object v0, v0, Lva5/a;->c:Lsinet/startup/inDriver/core/ui/button/FloatingButton;
+
+    .line 45
+    invoke-virtual {p1}, Llw1/b;->f()Z
+
+    .line 48
+    move-result v1
+
+    .line 49
+    invoke-static {v0, v1, v3, v4, v3}, Lj72/o;->N(Landroid/view/View;ZLm82/j;ILjava/lang/Object;)V
+
+    .line 52
+    invoke-direct {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->C6()Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$b;
+
+    .line 55
+    move-result-object p0
+
+    .line 56
+    invoke-virtual {p1}, Llw1/b;->b()Ljava/lang/Object;
+
+    .line 59
+    move-result-object p1
+
+    .line 60
+    check-cast p1, Ljava/util/List;
+
+    .line 62
+    invoke-virtual {p0, p1}, Lsi/e;->setItems(Ljava/util/List;)V
+
+    .line 65
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 67
+    return-object p0
+.end method
+
+.method public static synthetic S5(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Landroid/view/View;)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-static {p0, p1}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->m7(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Landroid/view/View;)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private static final S6(Lxa5/j0;)Ljava/util/List;
+    .registers 1
+
+    .line 1
+    invoke-virtual {p0}, Lxa5/j0;->f()Ljava/util/List;
+
+    .line 4
+    move-result-object p0
+
+    .line 5
+    return-object p0
+.end method
+
+.method public static synthetic T5(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Llw1/b;)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-static {p0, p1}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->R6(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Llw1/b;)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private static final T6(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Ljava/util/List;)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-direct {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->F6()Lab5/c;
+
+    .line 4
+    move-result-object p0
+
+    .line 5
+    invoke-virtual {p0, p1}, Landroidx/recyclerview/widget/u;->submitList(Ljava/util/List;)V
+
+    .line 8
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 10
+    return-object p0
+.end method
+
+.method public static synthetic U5(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;I)V
+    .registers 2
+
+    .line 1
+    invoke-static {p0, p1}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->j7(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;I)V
+
+    return-void
+.end method
+
+.method private static final U6(Lxa5/j0;)Lql4/c;
+    .registers 1
+
+    .line 1
+    invoke-virtual {p0}, Lxa5/j0;->g()Lql4/c;
+
+    .line 4
+    move-result-object p0
+
+    .line 5
+    return-object p0
+.end method
+
+.method public static synthetic V5(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Lnu1/l0$a;)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-static {p0, p1}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->d7(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Lnu1/l0$a;)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private static final V6(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Lql4/c;)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-direct {p0, p1}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->p7(Lql4/c;)V
+
+    .line 4
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 6
+    return-object p0
+.end method
+
+.method public static synthetic W5(Lxa5/j0;)Lql4/c;
+    .registers 1
+
+    .line 1
+    invoke-static {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->U6(Lxa5/j0;)Lql4/c;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private static final W6(Lxa5/j0;)Z
+    .registers 1
+
+    .line 1
+    invoke-virtual {p0}, Lxa5/j0;->h()Z
+
+    .line 4
+    move-result p0
+
+    .line 5
+    return p0
+.end method
+
+.method public static synthetic X5(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Landroid/view/View;)V
+    .registers 2
+
+    .line 1
+    invoke-static {p0, p1}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->l7(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Landroid/view/View;)V
+
+    return-void
+.end method
+
+.method private static final X6(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Z)Lkotlin/Unit;
+    .registers 4
+
+    .line 1
+    invoke-direct {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->A6()Lva5/a;
+
+    .line 4
+    move-result-object p0
+
+    .line 5
+    iget-object p0, p0, Lva5/a;->d:Lsinet/startup/inDriver/core/ui/inline_alert/InlineAlertView;
+
+    .line 7
+    const/4 v0, 0x0
+
+    .line 8
+    const/4 v1, 0x2
+
+    .line 9
+    invoke-static {p0, p1, v0, v1, v0}, Lj72/o;->N(Landroid/view/View;ZLm82/j;ILjava/lang/Object;)V
+
+    .line 12
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 14
+    return-object p0
+.end method
+
+.method public static synthetic Y5(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)Lpl4/b;
+    .registers 1
+
+    .line 1
+    invoke-static {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->N6(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)Lpl4/b;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private static final Y6(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Landroid/os/Bundle;)Lkotlin/Unit;
+    .registers 3
+
+    .line 1
+    const-string v0, "TAG_ORDER_FEED_IS_FILTER_BLOCKED"
+
+    .line 3
+    invoke-virtual {p1, v0}, Landroid/os/BaseBundle;->get(Ljava/lang/String;)Ljava/lang/Object;
+
+    .line 6
+    move-result-object p1
+
+    .line 7
+    instance-of v0, p1, Ljava/lang/Boolean;
+
+    .line 9
+    if-nez v0, :cond_b
+
+    .line 11
+    const/4 p1, 0x0
+
+    .line 12
+    :cond_b
+    check-cast p1, Ljava/lang/Boolean;
+
+    .line 14
+    if-eqz p1, :cond_1f
+
+    .line 16
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    .line 19
+    move-result p1
+
+    .line 20
+    invoke-direct {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->G6()Lxa5/h0;
+
+    .line 23
+    move-result-object p0
+
+    .line 24
+    new-instance v0, Lza5/a$b$f;
+
+    .line 26
+    invoke-direct {v0, p1}, Lza5/a$b$f;-><init>(Z)V
+
+    .line 29
+    invoke-virtual {p0, v0}, Lxa5/h0;->E1(Lza5/a;)V
+
+    .line 32
+    :cond_1f
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 34
+    return-object p0
+.end method
+
+.method public static synthetic Z5(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Lhq3/b;)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-static {p0, p1}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->h7(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Lhq3/b;)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private static final Z6(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Lnu1/h0$a;)Lkotlin/Unit;
+    .registers 18
+
+    .line 1
+    move-object/from16 v0, p0
+
+    .line 3
+    new-instance v3, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$c;
+
+    .line 5
+    invoke-direct {v0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->G6()Lxa5/h0;
+
+    .line 8
+    move-result-object v1
+
+    .line 9
+    invoke-direct {v3, v1}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$c;-><init>(Ljava/lang/Object;)V
+
+    .line 12
+    new-instance v5, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$d;
+
+    .line 14
+    invoke-direct {v0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->G6()Lxa5/h0;
+
+    .line 17
+    move-result-object v1
+
+    .line 18
+    invoke-direct {v5, v1}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$d;-><init>(Ljava/lang/Object;)V
+
+    .line 21
+    new-instance v8, Lxa5/o;
+
+    .line 23
+    invoke-direct {v8, v0}, Lxa5/o;-><init>(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)V
+
+    .line 26
+    const/16 v14, 0xfb4
+
+    .line 28
+    const/4 v15, 0x0
+
+    .line 29
+    const-string v2, "TAG_RIDE_FEED_ADDRESS_DIALOG_FROM"
+
+    .line 31
+    const/4 v4, 0x0
+
+    .line 32
+    const/4 v6, 0x0
+
+    .line 33
+    const/4 v7, 0x0
+
+    .line 34
+    const/4 v9, 0x0
+
+    .line 35
+    const/4 v10, 0x0
+
+    .line 36
+    const/4 v11, 0x0
+
+    .line 37
+    const/4 v12, 0x0
+
+    .line 38
+    const/4 v13, 0x0
+
+    .line 39
+    move-object/from16 v1, p1
+
+    .line 41
+    invoke-static/range {v1 .. v15}, Lqj4/z;->z(Lnu1/h0$a;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+
+    .line 44
+    new-instance v3, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$e;
+
+    .line 46
+    invoke-direct {v0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->G6()Lxa5/h0;
+
+    .line 49
+    move-result-object v1
+
+    .line 50
+    invoke-direct {v3, v1}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$e;-><init>(Ljava/lang/Object;)V
+
+    .line 53
+    new-instance v5, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$f;
+
+    .line 55
+    invoke-direct {v0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->G6()Lxa5/h0;
+
+    .line 58
+    move-result-object v1
+
+    .line 59
+    invoke-direct {v5, v1}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$f;-><init>(Ljava/lang/Object;)V
+
+    .line 62
+    new-instance v8, Lxa5/p;
+
+    .line 64
+    invoke-direct {v8, v0}, Lxa5/p;-><init>(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)V
+
+    .line 67
+    const-string v2, "TAG_RIDE_FEED_ADDRESS_DIALOG_TO"
+
+    .line 69
+    move-object/from16 v1, p1
+
+    .line 71
+    invoke-static/range {v1 .. v15}, Lqj4/z;->z(Lnu1/h0$a;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+
+    .line 74
+    new-instance v3, Lxa5/q;
+
+    .line 76
+    invoke-direct {v3, v0}, Lxa5/q;-><init>(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)V
+
+    .line 79
+    const/16 v8, 0x3c
+
+    .line 81
+    const-string v2, "TAG_RIDE_FEED_REGISTRATION_DIALOG"
+
+    .line 83
+    const/4 v5, 0x0
+
+    .line 84
+    invoke-static/range {v1 .. v9}, Lmi3/o;->m(Lnu1/h0$a;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)V
+
+    .line 87
+    new-instance v2, Lxa5/r;
+
+    .line 89
+    invoke-direct {v2, v0}, Lxa5/r;-><init>(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)V
+
+    .line 92
+    const-string v3, "TAG_DATE_TIME_PICKER_DIALOG_RIDE_FORM"
+
+    .line 94
+    invoke-virtual {v1, v3, v2}, Lnu1/h0$a;->b(Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V
+
+    .line 97
+    new-instance v2, Lxa5/s;
+
+    .line 99
+    invoke-direct {v2, v0}, Lxa5/s;-><init>(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)V
+
+    .line 102
+    const-string v3, "TAG_ORDER_FORM"
+
+    .line 104
+    invoke-virtual {v1, v3, v2}, Lnu1/h0$a;->b(Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V
+
+    .line 107
+    new-instance v2, Lxa5/t;
+
+    .line 109
+    invoke-direct {v2, v0}, Lxa5/t;-><init>(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)V
+
+    .line 112
+    const-string v3, "TAG_RIDE_INFO_RIDE_DELETED_RESULT"
+
+    .line 114
+    invoke-virtual {v1, v3, v2}, Lnu1/h0$a;->b(Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V
+
+    .line 117
+    invoke-virtual {v0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->E6()Leq3/a;
+
+    .line 120
+    move-result-object v2
+
+    .line 121
+    invoke-interface {v2}, Leq3/a;->getTag()Ljava/lang/String;
+
+    .line 124
+    move-result-object v2
+
+    .line 125
+    new-instance v3, Lxa5/u;
+
+    .line 127
+    invoke-direct {v3, v0}, Lxa5/u;-><init>(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)V
+
+    .line 130
+    invoke-static {v1, v2, v3}, Leq3/c;->b(Lnu1/h0$a;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V
+
+    .line 133
+    sget-object v0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 135
+    return-object v0
+.end method
+
+.method public static synthetic a6(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Landroid/os/Bundle;)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-static {p0, p1}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->Y6(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Landroid/os/Bundle;)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private static final a7(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-direct {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->G6()Lxa5/h0;
+
+    .line 4
+    move-result-object p0
+
+    .line 5
+    sget-object v0, Lza5/a$b$h;->a:Lza5/a$b$h;
+
+    .line 7
+    invoke-virtual {p0, v0}, Lxa5/h0;->E1(Lza5/a;)V
+
+    .line 10
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 12
+    return-object p0
+.end method
+
+.method public static synthetic b6(Lxa5/j0;)Z
+    .registers 1
+
+    .line 1
+    invoke-static {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->W6(Lxa5/j0;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method private static final b7(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-direct {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->G6()Lxa5/h0;
+
+    .line 4
+    move-result-object p0
+
+    .line 5
+    sget-object v0, Lza5/a$b$i;->a:Lza5/a$b$i;
+
+    .line 7
+    invoke-virtual {p0, v0}, Lxa5/h0;->E1(Lza5/a;)V
+
+    .line 10
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 12
+    return-object p0
+.end method
+
+.method public static synthetic c6(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Lnu1/l0$a;)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-static {p0, p1}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->f7(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Lnu1/l0$a;)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private static final c7(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Landroid/os/Parcelable;)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-direct {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->G6()Lxa5/h0;
+
+    .line 4
+    move-result-object p0
+
+    .line 5
+    sget-object p1, Lza5/a$b$n;->a:Lza5/a$b$n;
+
+    .line 7
+    invoke-virtual {p0, p1}, Lxa5/h0;->E1(Lza5/a;)V
+
+    .line 10
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 12
+    return-object p0
+.end method
+
+.method public static synthetic d6(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Lsinet/startup/inDriver/interclass/common/data/model/OrderFormFieldType;)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-static {p0, p1}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->K6(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Lsinet/startup/inDriver/interclass/common/data/model/OrderFormFieldType;)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private static final d7(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Lnu1/l0$a;)Lkotlin/Unit;
+    .registers 5
+
+    .line 1
+    new-instance v0, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$g;
+
+    .line 3
+    invoke-direct {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->G6()Lxa5/h0;
+
+    .line 6
+    move-result-object v1
+
+    .line 7
+    invoke-direct {v0, v1}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$g;-><init>(Ljava/lang/Object;)V
+
+    .line 10
+    new-instance v1, Lnu1/i0;
+
+    .line 12
+    const-class v2, Lzb3/g;
+
+    .line 14
+    invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    .line 17
+    move-result-object v2
+
+    .line 18
+    invoke-direct {v1, v0, v2}, Lnu1/i0;-><init>(Lkotlin/jvm/functions/Function1;Lkotlin/reflect/KClass;)V
+
+    .line 21
+    invoke-virtual {p1}, Lnu1/l0$a;->e()Ljava/util/List;
+
+    .line 24
+    move-result-object v0
+
+    .line 25
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 28
+    new-instance v0, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$h;
+
+    .line 30
+    invoke-direct {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->G6()Lxa5/h0;
+
+    .line 33
+    move-result-object p0
+
+    .line 34
+    invoke-direct {v0, p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$h;-><init>(Ljava/lang/Object;)V
+
+    .line 37
+    new-instance p0, Lnu1/i0;
+
+    .line 39
+    const-class v1, Lg72/a;
+
+    .line 41
+    invoke-static {v1}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    .line 44
+    move-result-object v1
+
+    .line 45
+    invoke-direct {p0, v0, v1}, Lnu1/i0;-><init>(Lkotlin/jvm/functions/Function1;Lkotlin/reflect/KClass;)V
+
+    .line 48
+    invoke-virtual {p1}, Lnu1/l0$a;->e()Ljava/util/List;
+
+    .line 51
+    move-result-object p1
+
+    .line 52
+    invoke-interface {p1, p0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 55
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 57
+    return-object p0
+.end method
+
+.method public static synthetic e6(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)Lkotlin/Unit;
+    .registers 1
+
+    .line 1
+    invoke-static {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->b7(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private static final e7(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Lnu1/l0$a;)Lkotlin/Unit;
+    .registers 4
+
+    .line 1
+    new-instance v0, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$i;
+
+    .line 3
+    invoke-direct {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->G6()Lxa5/h0;
+
+    .line 6
+    move-result-object p0
+
+    .line 7
+    invoke-direct {v0, p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$i;-><init>(Ljava/lang/Object;)V
+
+    .line 10
+    new-instance p0, Lnu1/i0;
+
+    .line 12
+    const-class v1, Lx05/t;
+
+    .line 14
+    invoke-static {v1}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    .line 17
+    move-result-object v1
+
+    .line 18
+    invoke-direct {p0, v0, v1}, Lnu1/i0;-><init>(Lkotlin/jvm/functions/Function1;Lkotlin/reflect/KClass;)V
+
+    .line 21
+    invoke-virtual {p1}, Lnu1/l0$a;->e()Ljava/util/List;
+
+    .line 24
+    move-result-object p1
+
+    .line 25
+    invoke-interface {p1, p0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 28
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 30
+    return-object p0
+.end method
+
+.method public static synthetic f6(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Z)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-static {p0, p1}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->X6(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Z)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private static final f7(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Lnu1/l0$a;)Lkotlin/Unit;
+    .registers 4
+
+    .line 1
+    new-instance v0, Lxa5/v;
+
+    .line 3
+    invoke-direct {v0, p0}, Lxa5/v;-><init>(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)V
+
+    .line 6
+    new-instance p0, Lnu1/i0;
+
+    .line 8
+    const-class v1, Ljava/lang/String;
+
+    .line 10
+    invoke-static {v1}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    .line 13
+    move-result-object v1
+
+    .line 14
+    invoke-direct {p0, v0, v1}, Lnu1/i0;-><init>(Lkotlin/jvm/functions/Function1;Lkotlin/reflect/KClass;)V
+
+    .line 17
+    invoke-virtual {p1}, Lnu1/l0$a;->e()Ljava/util/List;
+
+    .line 20
+    move-result-object p1
+
+    .line 21
+    invoke-interface {p1, p0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 24
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 26
+    return-object p0
+.end method
+
+.method public static synthetic g6(Lxa5/j0;)Llw1/b;
+    .registers 1
+
+    .line 1
+    invoke-static {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->Q6(Lxa5/j0;)Llw1/b;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private static final g7(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Ljava/lang/String;)Lkotlin/Unit;
+    .registers 3
+
+    .line 1
+    invoke-direct {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->G6()Lxa5/h0;
+
+    .line 4
+    move-result-object p0
+
+    .line 5
+    new-instance v0, Lza5/a$b$a;
+
+    .line 7
+    invoke-direct {v0, p1}, Lza5/a$b$a;-><init>(Ljava/lang/String;)V
+
+    .line 10
+    invoke-virtual {p0, v0}, Lxa5/h0;->E1(Lza5/a;)V
+
+    .line 13
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 15
+    return-object p0
+.end method
+
+.method public static synthetic h6(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)Lab5/c;
+    .registers 1
+
+    .line 1
+    invoke-static {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->o7(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)Lab5/c;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private static final h7(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Lhq3/b;)Lkotlin/Unit;
+    .registers 3
+
+    .line 1
+    invoke-direct {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->G6()Lxa5/h0;
+
+    .line 4
+    move-result-object p0
+
+    .line 5
+    new-instance v0, Lza5/a$b$k;
+
+    .line 7
+    invoke-direct {v0, p1}, Lza5/a$b$k;-><init>(Lhq3/b;)V
+
+    .line 10
+    invoke-virtual {p0, v0}, Lxa5/h0;->E1(Lza5/a;)V
+
+    .line 13
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 15
+    return-object p0
+.end method
+
+.method public static synthetic i6(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)Lkotlin/Unit;
+    .registers 1
+
+    .line 1
+    invoke-static {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->O6(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private final i7(Luu1/l;)V
+    .registers 2
+
+    .line 1
+    return-void
+.end method
+
+.method public static synthetic j6(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Ljava/lang/String;)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-static {p0, p1}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->g7(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Ljava/lang/String;)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private static final j7(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;I)V
+    .registers 3
+
+    .line 1
+    invoke-direct {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->G6()Lxa5/h0;
+
+    .line 4
+    move-result-object p0
+
+    .line 5
+    new-instance p1, Lza5/a$b$m;
+
+    .line 7
+    const/4 v0, 0x0
+
+    .line 8
+    invoke-direct {p1, v0}, Lza5/a$b$m;-><init>(Z)V
+
+    .line 11
+    invoke-virtual {p0, p1}, Lxa5/h0;->E1(Lza5/a;)V
+
+    .line 14
+    return-void
+.end method
+
+.method public static synthetic k6(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Ljava/util/List;)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-static {p0, p1}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->T6(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Ljava/util/List;)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private static final k7(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Landroid/view/View;)V
+    .registers 2
+
+    .line 1
+    invoke-direct {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->G6()Lxa5/h0;
+
+    .line 4
+    move-result-object p0
+
+    .line 5
+    sget-object p1, Lza5/a$b$e;->a:Lza5/a$b$e;
+
+    .line 7
+    invoke-virtual {p0, p1}, Lxa5/h0;->E1(Lza5/a;)V
+
+    .line 10
+    return-void
+.end method
+
+.method public static synthetic l6(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Lnu1/h0$a;)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-static {p0, p1}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->Z6(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Lnu1/h0$a;)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private static final l7(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Landroid/view/View;)V
+    .registers 3
+
+    .line 1
+    invoke-direct {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->G6()Lxa5/h0;
+
+    .line 4
+    move-result-object p0
+
+    .line 5
+    new-instance p1, Lza5/a$b$m;
+
+    .line 7
+    const/4 v0, 0x1
+
+    .line 8
+    invoke-direct {p1, v0}, Lza5/a$b$m;-><init>(Z)V
+
+    .line 11
+    invoke-virtual {p0, p1}, Lxa5/h0;->E1(Lza5/a;)V
+
+    .line 14
+    return-void
+.end method
+
+.method public static synthetic m6(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$b;
+    .registers 1
+
+    .line 1
+    invoke-static {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->y6(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$b;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private static final m7(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Landroid/view/View;)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-direct {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->G6()Lxa5/h0;
+
+    .line 4
+    move-result-object p0
+
+    .line 5
+    sget-object p1, Lza5/a$b$d;->a:Lza5/a$b$d;
+
+    .line 7
+    invoke-virtual {p0, p1}, Lxa5/h0;->E1(Lza5/a;)V
+
+    .line 10
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 12
+    return-object p0
+.end method
+
+.method public static synthetic n6(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Landroid/os/Parcelable;)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-static {p0, p1}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->c7(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Landroid/os/Parcelable;)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private static final n7(Lva5/a;)Lkotlin/Unit;
+    .registers 4
+
+    .line 1
+    iget-object p0, p0, Lva5/a;->d:Lsinet/startup/inDriver/core/ui/inline_alert/InlineAlertView;
+
+    .line 3
+    const/4 v0, 0x0
+
+    .line 4
+    const/4 v1, 0x2
+
+    .line 5
+    const/4 v2, 0x0
+
+    .line 6
+    invoke-static {p0, v2, v0, v1, v0}, Lj72/o;->N(Landroid/view/View;ZLm82/j;ILjava/lang/Object;)V
+
+    .line 9
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 11
+    return-object p0
+.end method
+
+.method public static synthetic o6(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)Lkotlin/Unit;
+    .registers 1
+
+    .line 1
+    invoke-static {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->a7(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private static final o7(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)Lab5/c;
+    .registers 3
+
+    .line 1
+    new-instance v0, Lab5/c;
+
+    .line 3
+    iget-object v1, p0, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->a1:Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$l;
+
+    .line 5
+    invoke-direct {v0, v1, p0}, Lab5/c;-><init>(Lab5/d;Lz05/g;)V
+
+    .line 8
+    return-object v0
+.end method
+
+.method public static synthetic p6(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Landroid/view/View;)V
+    .registers 2
+
+    .line 1
+    invoke-static {p0, p1}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->k7(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Landroid/view/View;)V
+
+    return-void
+.end method
+
+.method private final p7(Lql4/c;)V
+    .registers 8
+
+    .line 1
+    invoke-direct {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->A6()Lva5/a;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    invoke-direct {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->D6()Lpl4/b;
+
+    .line 8
+    move-result-object v1
+
+    .line 9
+    invoke-virtual {v1, p1}, Lpl4/b;->h(Lql4/c;)V
+
+    .line 12
+    iget-object v1, v0, Lva5/a;->h:Lsinet/startup/inDriver/core/ui/loader/LoaderView;
+
+    .line 14
+    invoke-virtual {p1}, Lql4/c;->e()Z
+
+    .line 17
+    move-result v2
+
+    .line 18
+    const/4 v3, 0x0
+
+    .line 19
+    const/4 v4, 0x2
+
+    .line 20
+    invoke-static {v1, v2, v3, v4, v3}, Lj72/o;->N(Landroid/view/View;ZLm82/j;ILjava/lang/Object;)V
+
+    .line 23
+    invoke-virtual {p1}, Lql4/c;->b()Z
+
+    .line 26
+    move-result v1
+
+    .line 27
+    const/4 v2, 0x1
+
+    .line 28
+    if-eqz v1, :cond_22
+
+    .line 30
+    iget-object v1, v0, Lva5/a;->g:Lcom/google/android/material/appbar/AppBarLayout;
+
+    .line 32
+    invoke-virtual {v1, v2}, Lcom/google/android/material/appbar/AppBarLayout;->setExpanded(Z)V
+
+    .line 35
+    :cond_22
+    iget-object v1, v0, Lva5/a;->n:Lsinet/startup/inDriver/core/ui/swipy_refresh/SwipyRefreshLayout;
+
+    .line 37
+    invoke-virtual {p1}, Lql4/c;->i()Z
+
+    .line 40
+    move-result v5
+
+    .line 41
+    invoke-virtual {v1, v5}, Lsinet/startup/inDriver/core/ui/swipy_refresh/SwipyRefreshLayout;->setRefreshing(Z)V
+
+    .line 44
+    iget-object v1, v0, Lva5/a;->j:Landroidx/recyclerview/widget/RecyclerView;
+
+    .line 46
+    invoke-virtual {p1}, Lql4/c;->a()Z
+
+    .line 49
+    move-result v5
+
+    .line 50
+    if-nez v5, :cond_4e
+
+    .line 52
+    invoke-virtual {p1}, Lql4/c;->g()Z
+
+    .line 55
+    move-result v5
+
+    .line 56
+    if-nez v5, :cond_4e
+
+    .line 58
+    invoke-virtual {p1}, Lql4/c;->d()Z
+
+    .line 61
+    move-result v5
+
+    .line 62
+    if-nez v5, :cond_4e
+
+    .line 64
+    invoke-virtual {p1}, Lql4/c;->j()Z
+
+    .line 67
+    move-result v5
+
+    .line 68
+    if-nez v5, :cond_4e
+
+    .line 70
+    invoke-virtual {p1}, Lql4/c;->h()Z
+
+    .line 73
+    move-result v5
+
+    .line 74
+    if-eqz v5, :cond_4c
+
+    .line 76
+    goto :goto_4e
+
+    .line 77
+    :cond_4c
+    const/4 v5, 0x0
+
+    .line 78
+    goto :goto_4f
+
+    .line 79
+    :cond_4e
+    :goto_4e
+    move v5, v2
+
+    .line 80
+    :goto_4f
+    invoke-static {v1, v5, v3, v4, v3}, Lj72/o;->N(Landroid/view/View;ZLm82/j;ILjava/lang/Object;)V
+
+    .line 83
+    iget-object v1, v0, Lva5/a;->k:Lsinet/startup/inDriver/core/ui/status/StatusView;
+
+    .line 85
+    invoke-virtual {p1}, Lql4/c;->c()Z
+
+    .line 88
+    move-result v5
+
+    .line 89
+    invoke-static {v1, v5, v3, v4, v3}, Lj72/o;->N(Landroid/view/View;ZLm82/j;ILjava/lang/Object;)V
+
+    .line 92
+    iget-object v1, v0, Lva5/a;->i:Lsinet/startup/inDriver/core/ui/status/StatusView;
+
+    .line 94
+    invoke-virtual {p1}, Lql4/c;->b()Z
+
+    .line 97
+    move-result v5
+
+    .line 98
+    invoke-static {v1, v5, v3, v4, v3}, Lj72/o;->N(Landroid/view/View;ZLm82/j;ILjava/lang/Object;)V
+
+    .line 101
+    iget-object v0, v0, Lva5/a;->n:Lsinet/startup/inDriver/core/ui/swipy_refresh/SwipyRefreshLayout;
+
+    .line 103
+    invoke-virtual {p1}, Lql4/c;->k()Z
+
+    .line 106
+    move-result p1
+
+    .line 107
+    xor-int/2addr p1, v2
+
+    .line 108
+    invoke-virtual {v0, p1}, Lsinet/startup/inDriver/core/ui/swipy_refresh/SwipyRefreshLayout;->setEnabled(Z)V
+
+    .line 111
+    return-void
+.end method
+
+.method public static synthetic q6(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Lql4/c;)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-static {p0, p1}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->V6(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Lql4/c;)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static synthetic r6(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Lsinet/startup/inDriver/interclass/common/data/model/OrderFormFieldType;)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-static {p0, p1}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->J6(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Lsinet/startup/inDriver/interclass/common/data/model/OrderFormFieldType;)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static synthetic s6(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)Lkotlin/Unit;
+    .registers 1
+
+    .line 1
+    invoke-static {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->M6(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static synthetic t6(Lxa5/j0;)Ljava/util/List;
+    .registers 1
+
+    .line 1
+    invoke-static {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->S6(Lxa5/j0;)Ljava/util/List;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static synthetic u6(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Lnu1/l0$a;)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-static {p0, p1}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->e7(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Lnu1/l0$a;)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static synthetic v6(Lva5/a;)Lkotlin/Unit;
+    .registers 1
+
+    .line 1
+    invoke-static {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->n7(Lva5/a;)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static final synthetic w6(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)Lxa5/h0;
+    .registers 1
+
+    .line 1
+    invoke-direct {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->G6()Lxa5/h0;
+
+    .line 4
+    move-result-object p0
+
+    .line 5
+    return-object p0
+.end method
+
+.method public static final synthetic x6(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;Luu1/l;)V
+    .registers 2
+
+    .line 1
+    invoke-direct {p0, p1}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->i7(Luu1/l;)V
+
+    .line 4
+    return-void
+.end method
+
+.method private static final y6(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$b;
+    .registers 1
+
+    .line 1
+    invoke-direct {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->I6()Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$b;
+
+    .line 4
+    move-result-object p0
+
+    .line 5
+    return-object p0
+.end method
+
+
+# virtual methods
+.method public final E6()Leq3/a;
+    .registers 2
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->V0:Leq3/a;
+
+    .line 3
+    if-eqz v0, :cond_5
+
+    .line 5
+    return-object v0
+
+    .line 6
+    :cond_5
+    const/4 v0, 0x0
+
+    .line 7
+    return-object v0
+.end method
+
+.method public final H6()Lew/a;
+    .registers 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lew/a<",
+            "Lxa5/h0;",
+            ">;"
+        }
+    .end annotation
+
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->W0:Lew/a;
+
+    .line 3
+    if-eqz v0, :cond_5
+
+    .line 5
+    return-object v0
+
+    .line 6
+    :cond_5
+    const/4 v0, 0x0
+
+    .line 7
+    return-object v0
+.end method
+
+.method public M5()I
+    .registers 2
+
+    .line 1
+    iget v0, p0, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->T0:I
+
+    .line 3
+    return v0
+.end method
+
+.method public V4(Ljava/lang/String;Ljava/lang/String;IZZ)V
+    .registers 6
+    .param p1  # Ljava/lang/String;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+    .param p2  # Ljava/lang/String;
+        .annotation build Lorg/jetbrains/annotations/Nullable;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-direct {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->G6()Lxa5/h0;
+
+    .line 4
+    move-result-object p2
+
+    .line 5
+    new-instance p4, Lza5/a$b$j;
+
+    .line 7
+    invoke-direct {p4, p1, p3}, Lza5/a$b$j;-><init>(Ljava/lang/String;I)V
+
+    .line 10
+    invoke-virtual {p2, p4}, Lxa5/h0;->E1(Lza5/a;)V
+
+    .line 13
+    return-void
+.end method
+
+.method public W2(Landroidx/recyclerview/widget/RecyclerView;Landroid/content/Context;Lsinet/startup/inDriver/intercity/common/ui/adapter/full_visible_item_tracker/VisibilityTrackedLinearLayoutManager;Landroidx/recyclerview/widget/RecyclerView$u;)V
+    .registers 6
+    .param p1  # Landroidx/recyclerview/widget/RecyclerView;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+    .param p2  # Landroid/content/Context;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+    .param p3  # Lsinet/startup/inDriver/intercity/common/ui/adapter/full_visible_item_tracker/VisibilityTrackedLinearLayoutManager;
+        .annotation build Lorg/jetbrains/annotations/Nullable;
+        .end annotation
+    .end param
+    .param p4  # Landroidx/recyclerview/widget/RecyclerView$u;
+        .annotation build Lorg/jetbrains/annotations/Nullable;
+        .end annotation
+    .end param
+
+    .line 1
+    iget-object v0, p0, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->S0:Lwl4/b;
+
+    invoke-virtual {v0, p1, p2, p3, p4}, Lwl4/b;->W2(Landroidx/recyclerview/widget/RecyclerView;Landroid/content/Context;Lsinet/startup/inDriver/intercity/common/ui/adapter/full_visible_item_tracker/VisibilityTrackedLinearLayoutManager;Landroidx/recyclerview/widget/RecyclerView$u;)V
+
+    return-void
+.end method
+
+.method public onResume()V
+    .registers 5
+
+    invoke-super {p0}, Landroidx/fragment/app/Fragment;->onResume()V
+
+    iget-object v0, p0, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->autoRefreshHandler:Landroid/os/Handler;
+
+    if-eqz v0, :cond_10
+
+    iget-object v1, p0, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->autoRefreshRunnable:Ljava/lang/Runnable;
+
+    if-eqz v1, :cond_10
+
+    const-wide/16 v2, 0x3e8
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    :cond_10
+    return-void
+.end method
+
+.method public onPause()V
+    .registers 3
+
+    invoke-super {p0}, Landroidx/fragment/app/Fragment;->onPause()V
+
+    iget-object v0, p0, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->autoRefreshHandler:Landroid/os/Handler;
+
+    if-eqz v0, :cond_10
+
+    iget-object v1, p0, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->autoRefreshRunnable:Ljava/lang/Runnable;
+
+    if-eqz v1, :cond_10
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
+
+    :cond_10
+    return-void
+.end method
+
+.method public onAttach(Landroid/content/Context;)V
+    .registers 2
+    .param p1  # Landroid/content/Context;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-super {p0, p1}, Lcu1/h;->onAttach(Landroid/content/Context;)V
+
+    .line 4
+    invoke-direct {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->B6()Lwa5/d;
+
+    .line 7
+    move-result-object p1
+
+    .line 8
+    invoke-virtual {p1}, Lwa5/d;->q1()Lwa5/c;
+
+    .line 11
+    move-result-object p1
+
+    .line 12
+    invoke-interface {p1, p0}, Lwa5/c;->a(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)V
+
+    .line 15
+    return-void
+.end method
+
+.method public onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
+    .registers 10
+    .param p1  # Landroid/view/View;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+    .param p2  # Landroid/os/Bundle;
+        .annotation build Lorg/jetbrains/annotations/Nullable;
+        .end annotation
+    .end param
+
+    invoke-super {p0, p1, p2}, Lcu1/h;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
+
+    new-instance v0, Landroid/os/Handler;
+
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+
+    iput-object v0, p0, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->autoRefreshHandler:Landroid/os/Handler;
+
+    new-instance v0, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$AutoRefreshRunnable;
+
+    invoke-direct {v0, p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$AutoRefreshRunnable;-><init>(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)V
+
+    iput-object v0, p0, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->autoRefreshRunnable:Ljava/lang/Runnable;
+
+    .line 4
+    invoke-direct {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->L6()V
+
+    .line 7
+    invoke-direct {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->A6()Lva5/a;
+
+    .line 10
+    move-result-object p1
+
+    .line 11
+    iget-object p2, p1, Lva5/a;->n:Lsinet/startup/inDriver/core/ui/swipy_refresh/SwipyRefreshLayout;
+
+    .line 13
+    new-instance v0, Lxa5/x;
+
+    .line 15
+    invoke-direct {v0, p0}, Lxa5/x;-><init>(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)V
+
+    .line 18
+    invoke-virtual {p2, v0}, Lsinet/startup/inDriver/core/ui/swipy_refresh/SwipyRefreshLayout;->setOnRefreshListener(Lsinet/startup/inDriver/core/ui/swipy_refresh/SwipyRefreshLayout$f;)V
+
+    .line 21
+    iget-object p2, p1, Lva5/a;->m:Lsinet/startup/inDriver/core/ui/status/StatusView;
+
+    .line 23
+    new-instance v0, Lxa5/y;
+
+    .line 25
+    invoke-direct {v0, p0}, Lxa5/y;-><init>(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)V
+
+    .line 28
+    invoke-virtual {p2, v0}, Lsinet/startup/inDriver/core/ui/status/StatusView;->setOnButtonClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 31
+    iget-object p2, p1, Lva5/a;->k:Lsinet/startup/inDriver/core/ui/status/StatusView;
+
+    .line 33
+    new-instance v0, Lxa5/z;
+
+    .line 35
+    invoke-direct {v0, p0}, Lxa5/z;-><init>(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)V
+
+    .line 38
+    invoke-virtual {p2, v0}, Lsinet/startup/inDriver/core/ui/status/StatusView;->setOnButtonClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 41
+    iget-object v1, p1, Lva5/a;->c:Lsinet/startup/inDriver/core/ui/button/FloatingButton;
+
+    .line 43
+    new-instance v4, Lxa5/a0;
+
+    .line 45
+    invoke-direct {v4, p0}, Lxa5/a0;-><init>(Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;)V
+
+    .line 48
+    const/4 v5, 0x1
+
+    .line 49
+    const/4 v6, 0x0
+
+    .line 50
+    const-wide/16 v2, 0x0
+
+    .line 52
+    invoke-static/range {v1 .. v6}, Lj72/o;->I(Landroid/view/View;JLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+
+    .line 55
+    iget-object p2, p1, Lva5/a;->d:Lsinet/startup/inDriver/core/ui/inline_alert/InlineAlertView;
+
+    .line 57
+    new-instance v0, Lxa5/b0;
+
+    .line 59
+    invoke-direct {v0, p1}, Lxa5/b0;-><init>(Lva5/a;)V
+
+    .line 62
+    invoke-virtual {p2, v0}, Lsinet/startup/inDriver/core/ui/inline_alert/InlineAlertView;->setOnCloseClickListener(Lkotlin/jvm/functions/Function0;)V
+
+    .line 65
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getChildFragmentManager()Landroidx/fragment/app/i0;
+
+    .line 68
+    move-result-object p1
+
+    .line 69
+    invoke-virtual {p1}, Landroidx/fragment/app/i0;->E0()Ljava/util/List;
+
+    .line 72
+    move-result-object p1
+
+    .line 73
+    invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
+
+    .line 76
+    move-result p1
+
+    .line 77
+    if-eqz p1, :cond_71
+
+    .line 79
+    invoke-virtual {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->z6()Lf05/k;
+
+    .line 82
+    move-result-object p1
+
+    .line 83
+    invoke-virtual {p1}, Lf05/k;->t()Z
+
+    .line 86
+    move-result p1
+
+    .line 87
+    if-eqz p1, :cond_71
+
+    .line 89
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getChildFragmentManager()Landroidx/fragment/app/i0;
+
+    .line 92
+    move-result-object p1
+
+    .line 93
+    invoke-virtual {p1}, Landroidx/fragment/app/i0;->s()Landroidx/fragment/app/t0;
+
+    .line 96
+    move-result-object p1
+
+    .line 97
+    sget p2, Lta5/a;->o:I
+
+    .line 99
+    invoke-virtual {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->E6()Leq3/a;
+
+    .line 102
+    move-result-object v0
+
+    .line 103
+    invoke-interface {v0}, Leq3/a;->a()Landroidx/fragment/app/Fragment;
+
+    .line 106
+    move-result-object v0
+
+    .line 107
+    invoke-virtual {p1, p2, v0}, Landroidx/fragment/app/t0;->b(ILandroidx/fragment/app/Fragment;)Landroidx/fragment/app/t0;
+
+    .line 110
+    move-result-object p1
+
+    .line 111
+    invoke-virtual {p1}, Landroidx/fragment/app/t0;->l()V
+
+    .line 114
+    :cond_71
+    invoke-direct {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->G6()Lxa5/h0;
+
+    .line 117
+    move-result-object p1
+
+    .line 118
+    invoke-virtual {p1}, Luu1/d;->f1()Landroidx/lifecycle/LiveData;
+
+    .line 121
+    move-result-object p1
+
+    .line 122
+    invoke-direct {p0, p1}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->P6(Landroidx/lifecycle/LiveData;)V
+
+    .line 125
+    invoke-direct {p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->G6()Lxa5/h0;
+
+    .line 128
+    move-result-object p1
+
+    .line 129
+    invoke-virtual {p1}, Luu1/d;->f0()Luu1/e;
+
+    .line 132
+    move-result-object p1
+
+    .line 133
+    new-instance p2, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$k;
+
+    .line 135
+    invoke-direct {p2, p0}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$k;-><init>(Ljava/lang/Object;)V
+
+    .line 138
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getViewLifecycleOwner()Landroidx/lifecycle/LifecycleOwner;
+
+    .line 141
+    move-result-object v0
+
+    .line 142
+    new-instance v1, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$j;
+
+    .line 144
+    invoke-direct {v1, p2}, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment$j;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 147
+    invoke-virtual {p1, v0, v1}, Landroidx/lifecycle/LiveData;->observe(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Observer;)V
+
+    .line 150
+    return-void
+.end method
+
+.method public final z6()Lf05/k;
+    .registers 2
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;->U0:Lf05/k;
+
+    .line 3
+    if-eqz v0, :cond_5
+
+    .line 5
+    return-object v0
+
+    .line 6
+    :cond_5
+    const/4 v0, 0x0
+
+    .line 7
+    return-object v0
+.end method
