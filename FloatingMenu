@@ -535,16 +535,6 @@
 
     sput-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->containerView:Landroid/widget/LinearLayout;
 
-    new-instance v2, Ljava/lang/Thread;
-
-    new-instance v3, Lsinet/startup/inDriver/ui/FloatingMenu$PingFetcher;
-
-    invoke-direct {v3}, Lsinet/startup/inDriver/ui/FloatingMenu$PingFetcher;-><init>()V
-
-    invoke-direct {v2, v3}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
-
-    invoke-virtual {v2}, Ljava/lang/Thread;->start()V
-
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setMinimumWidth(I)V
@@ -598,6 +588,16 @@
     invoke-virtual {v3, v4, v5}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;I)V
 
     invoke-virtual {v1, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+
+    new-instance v8, Ljava/lang/Thread;
+
+    new-instance v9, Lsinet/startup/inDriver/ui/FloatingMenu$PingFetcher;
+
+    invoke-direct {v9}, Lsinet/startup/inDriver/ui/FloatingMenu$PingFetcher;-><init>()V
+
+    invoke-direct {v8, v9}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
+
+    invoke-virtual {v8}, Ljava/lang/Thread;->start()V
 
     sget-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->containerView:Landroid/widget/LinearLayout;
 
