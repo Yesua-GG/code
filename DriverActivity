@@ -1311,13 +1311,13 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    new-instance v1, Landroid/widget/LinearLayout;
+    new-instance v10, Landroid/widget/LinearLayout;
 
-    invoke-direct {v1, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
+    invoke-direct {v10, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->setOrientation(I)V
+    invoke-virtual {v10, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
     new-instance v2, Landroid/widget/TextView;
 
@@ -1341,21 +1341,21 @@
 
     invoke-virtual {v2, v4, v5}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;I)V
 
-    new-instance v4, Landroid/widget/LinearLayout$LayoutParams;
+    new-instance v11, Landroid/widget/LinearLayout$LayoutParams;
 
     const/4 v5, 0x0
 
     const/4 v6, -0x2
 
-    invoke-direct {v4, v5, v6}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
+    invoke-direct {v11, v5, v6}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
 
     const/high16 v5, 0x3f800000  # 1.0f
 
-    iput v5, v4, Landroid/widget/LinearLayout$LayoutParams;->weight:F
+    iput v5, v11, Landroid/widget/LinearLayout$LayoutParams;->weight:F
 
-    invoke-virtual {v2, v4}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v2, v11}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+    invoke-virtual {v10, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     new-instance v2, Landroid/widget/TextView;
 
@@ -1377,9 +1377,11 @@
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+    invoke-virtual {v10, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+    check-cast v0, Landroid/view/ViewGroup;
+
+    invoke-virtual {v0, v10}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     new-instance v2, Landroid/widget/TextView;
 
