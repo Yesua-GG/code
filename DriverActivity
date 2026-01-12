@@ -1440,8 +1440,7 @@
     const/4 v8, 0x0
     const/4 v9, 0x0
     const/16 v10, 0x14
-    const/4 v11, 0x0
-    invoke-virtual {v2, v8, v9, v10, v11}, Landroid/view/View;->setPadding(IIII)V
+    invoke-virtual {v2, v8, v9, v10, v8}, Landroid/view/View;->setPadding(IIII)V
     invoke-virtual {v6, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     # Dest Dist TextView
@@ -1472,8 +1471,7 @@
     const/4 v8, 0x0
     const/4 v9, 0x0
     const/16 v10, 0x14
-    const/4 v11, 0x0
-    invoke-virtual {v2, v8, v9, v10, v11}, Landroid/view/View;->setPadding(IIII)V
+    invoke-virtual {v2, v8, v9, v10, v8}, Landroid/view/View;->setPadding(IIII)V
     invoke-virtual {v6, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     # Price/KM TextView
