@@ -161,51 +161,76 @@
     move-result-wide v1
 
     invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
     const-string v1, ",\"max_price\":"
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    iget-object v1, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Runner;->order:Lu41/p1;
-    invoke-virtual {v1}, Lu41/p1;->r()Lsinet/startup/inDriver/city/common/domain/entity/Price;
-    move-result-object v1
-    invoke-virtual {v1}, Lsinet/startup/inDriver/city/common/domain/entity/Price;->i()Ljava/math/BigDecimal;
-    move-result-object v1
-    invoke-virtual {v1}, Ljava/math/BigDecimal;->doubleValue()D
-    move-result-wide v1
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
-    
-    const-string v1, ",\"secondary_max_price\":"
+
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Runner;->order:Lu41/p1;
-    invoke-virtual {v1}, Lu41/p1;->t()Lxj0/b;
+
+    invoke-virtual {v1}, Lu41/p1;->r()Lsinet/startup/inDriver/city/common/domain/entity/Price;
+
     move-result-object v1
-    
-    const-wide/16 v2, 0x0
-    
-    if-eqz v1, :cond_sec_price_done
-    
-    invoke-virtual {v1}, Lxj0/b;->f()Ljava/util/List;
-    move-result-object v1
-    
-    if-eqz v1, :cond_sec_price_done
-    invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
-    move-result v4
-    if-nez v4, :cond_sec_price_done
-    
-    invoke-interface {v1}, Ljava/util/List;->size()I
-    move-result v4
-    add-int/lit8 v4, v4, -0x1
-    
-    invoke-interface {v1, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
-    move-result-object v1
-    check-cast v1, Lsinet/startup/inDriver/city/common/domain/entity/Price;
-    
-    if-eqz v1, :cond_sec_price_done
+
     invoke-virtual {v1}, Lsinet/startup/inDriver/city/common/domain/entity/Price;->i()Ljava/math/BigDecimal;
+
     move-result-object v1
+
     invoke-virtual {v1}, Ljava/math/BigDecimal;->doubleValue()D
+
+    move-result-wide v1
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    const-string v1, ",\"secondary_max_price\":"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Runner;->order:Lu41/p1;
+
+    invoke-virtual {v1}, Lu41/p1;->t()Lxj0/b;
+
+    move-result-object v1
+
+    const-wide/16 v2, 0x0
+
+    if-eqz v1, :cond_b7
+
+    invoke-virtual {v1}, Lxj0/b;->f()Ljava/util/List;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_b7
+
+    invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
+
+    move-result v4
+
+    if-nez v4, :cond_b7
+
+    invoke-interface {v1}, Ljava/util/List;->size()I
+
+    move-result v4
+
+    add-int/lit8 v4, v4, -0x1
+
+    invoke-interface {v1, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lsinet/startup/inDriver/city/common/domain/entity/Price;
+
+    if-eqz v1, :cond_b7
+
+    invoke-virtual {v1}, Lsinet/startup/inDriver/city/common/domain/entity/Price;->i()Ljava/math/BigDecimal;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/math/BigDecimal;->doubleValue()D
+
     move-result-wide v2
-    
-    :cond_sec_price_done
+
+    :cond_b7
     invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
 
     const-string v1, ",\"app_dist_a\":"
@@ -222,7 +247,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_9c
+    if-nez v1, :cond_e6
 
     iget-object v2, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Runner;->order:Lu41/p1;
 
@@ -236,15 +261,15 @@
 
     move-result-object v3
 
-    if-eqz v2, :cond_9c
+    if-eqz v2, :cond_e6
 
-    if-eqz v3, :cond_9c
+    if-eqz v3, :cond_e6
 
     invoke-virtual {v3}, Lhg0/a;->getLocation()Lsinet/startup/inDriver/core/data/data/Location;
 
     move-result-object v3
 
-    if-eqz v3, :cond_9c
+    if-eqz v3, :cond_e6
 
     invoke-virtual {v2, v3}, Lsinet/startup/inDriver/core/data/data/Location;->distanceTo(Lsinet/startup/inDriver/core/data/data/Location;)F
 
@@ -252,7 +277,7 @@
 
     float-to-int v1, v2
 
-    :cond_9c
+    :cond_e6
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     const-string v1, ",\"app_dist_b\":"
@@ -269,7 +294,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_d1
+    if-nez v1, :cond_11b
 
     iget-object v2, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Runner;->order:Lu41/p1;
 
@@ -277,7 +302,7 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_d1
+    if-eqz v2, :cond_11b
 
     invoke-virtual {v2}, Lhg0/a;->getLocation()Lsinet/startup/inDriver/core/data/data/Location;
 
@@ -289,15 +314,15 @@
 
     move-result-object v3
 
-    if-eqz v3, :cond_d1
+    if-eqz v3, :cond_11b
 
     invoke-virtual {v3}, Lhg0/a;->getLocation()Lsinet/startup/inDriver/core/data/data/Location;
 
     move-result-object v3
 
-    if-eqz v2, :cond_d1
+    if-eqz v2, :cond_11b
 
-    if-eqz v3, :cond_d1
+    if-eqz v3, :cond_11b
 
     invoke-virtual {v2, v3}, Lsinet/startup/inDriver/core/data/data/Location;->distanceTo(Lsinet/startup/inDriver/core/data/data/Location;)F
 
@@ -305,7 +330,7 @@
 
     float-to-int v1, v2
 
-    :cond_d1
+    :cond_11b
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     const-string v1, ",\"rating\":"
@@ -350,13 +375,13 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_123
+    if-eqz v1, :cond_16d
 
     invoke-virtual {v1}, Lhg0/a;->getLocation()Lsinet/startup/inDriver/core/data/data/Location;
 
     move-result-object v1
 
-    if-eqz v1, :cond_123
+    if-eqz v1, :cond_16d
 
     const-string v2, "\"lat\":"
 
@@ -378,7 +403,7 @@
 
     invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
 
-    :cond_123
+    :cond_16d
     const-string v1, "}"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -393,13 +418,13 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_153
+    if-eqz v1, :cond_19d
 
     invoke-virtual {v1}, Lhg0/a;->getLocation()Lsinet/startup/inDriver/core/data/data/Location;
 
     move-result-object v1
 
-    if-eqz v1, :cond_153
+    if-eqz v1, :cond_19d
 
     const-string v2, "\"lat\":"
 
@@ -421,7 +446,7 @@
 
     invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
 
-    :cond_153
+    :cond_19d
     const-string v1, "}"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -436,7 +461,7 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_17d
+    if-eqz v1, :cond_1c7
 
     const-string v2, "\"lat\":"
 
@@ -458,7 +483,7 @@
 
     invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
 
-    :cond_17d
+    :cond_1c7
     const-string v1, "}"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -473,7 +498,7 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_1a3
+    if-eqz v1, :cond_1ed
 
     invoke-virtual {v1}, Lsinet/startup/inDriver/core/data/data/WayPoint;->getDistance()I
 
@@ -491,14 +516,14 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    goto :goto_1a7
+    goto :goto_1f1
 
-    :cond_1a3
+    :cond_1ed
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    :goto_1a7
+    :goto_1f1
     const-string v1, ", \"app_dist_b\": "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -509,7 +534,7 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_1c8
+    if-eqz v1, :cond_212
 
     invoke-virtual {v1}, Lsinet/startup/inDriver/core/data/data/WayPoint;->getDistance()I
 
@@ -527,14 +552,14 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    goto :goto_1cc
+    goto :goto_216
 
-    :cond_1c8
+    :cond_212
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    :goto_1cc
+    :goto_216
     const-string v1, ",\"description\":"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -545,11 +570,11 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_1db
+    if-nez v1, :cond_225
 
     const-string v1, ""
 
-    :cond_1db
+    :cond_225
     invoke-static {v1}, Lorg/json/JSONObject;->quote(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
@@ -566,11 +591,11 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_1f1
+    if-nez v1, :cond_23b
 
     const-string v1, ""
 
-    :cond_1f1
+    :cond_23b
     invoke-static {v1}, Lorg/json/JSONObject;->quote(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
@@ -589,17 +614,17 @@
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_20d
+    if-eqz v1, :cond_257
 
     invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
 
     move-result v3
 
-    if-nez v3, :cond_20d
+    if-nez v3, :cond_257
 
     const/4 v2, 0x1
 
-    :cond_20d
+    :cond_257
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     const-string v1, ",\"labels\":"
@@ -614,23 +639,23 @@
 
     const-string v2, "[]"
 
-    if-eqz v1, :cond_22c
+    if-eqz v1, :cond_276
 
     invoke-virtual {v1}, Lxj0/b;->l()Ljava/util/List;
 
     move-result-object v1
 
-    if-eqz v1, :cond_22c
+    if-eqz v1, :cond_276
 
     invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v1
 
-    if-eqz v1, :cond_22c
+    if-eqz v1, :cond_276
 
     move-object v2, v1
 
-    :cond_22c
+    :cond_276
     invoke-static {v2}, Lorg/json/JSONObject;->quote(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
@@ -673,9 +698,7 @@
 
     invoke-static {v3, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-static {v1, v2}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
-    move-result-object v5
-    invoke-static {v5}, Lsinet/startup/inDriver/ui/FloatingMenu;->updatePing(Ljava/lang/String;)V
+
 
     const-string v3, "ConfigDebug"
 
@@ -727,9 +750,9 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    if-eqz v1, :cond_36e
+    if-eqz v1, :cond_3e8
 
-    :try_start_29a
+    :try_start_2eb
     new-instance v2, Lorg/json/JSONObject;
 
     invoke-direct {v2, v1}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
@@ -762,7 +785,7 @@
 
     move-result-object v5
 
-    if-eqz v5, :cond_2d4
+    if-eqz v5, :cond_325
 
     const-string v6, "max_pickup_dist"
 
@@ -784,14 +807,14 @@
 
     sput v6, Lf01/Config;->maxRepeats:I
 
-    :cond_2d4
+    :cond_325
     const-string v4, "ACCEPT"
 
     invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-eqz v4, :cond_2f1
+    if-eqz v4, :cond_342
 
     new-instance v3, Landroid/os/Handler;
 
@@ -808,30 +831,36 @@
     invoke-direct {v4, v5}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Accepter;-><init>(Ly41/w0;)V
 
     invoke-virtual {v3, v4}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-    
-    goto/16 :goto_36e
 
-    :cond_2f1
+    goto/16 :goto_3e8
+
+    :cond_342
     const-string v4, "EXPIRED"
-    invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-    move-result v4
-    if-eqz v4, :cond_reject
-    
-    const-string v3, "BotClient"
-    const-string v4, "MEMBERSHIP EXPIRED"
-    invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-    
-    invoke-static {}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->handleExpired()V
-    goto/16 :goto_36e
 
-    :cond_reject
+    invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_356
+
+    const-string v3, "BotClient"
+
+    const-string v4, "MEMBERSHIP EXPIRED"
+
+    invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-static {}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->handleExpired()V
+
+    goto/16 :goto_3e8
+
+    :cond_356
     const-string v4, "REJECT"
 
     invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-eqz v4, :cond_329
+    if-eqz v4, :cond_3a3
 
     const-string v4, "order_id"
 
@@ -863,49 +892,55 @@
 
     const-string v8, ""
 
-    if-eqz v7, :cond_321
+    if-eqz v7, :cond_386
 
     invoke-virtual {v7}, Lxj0/b;->getId()Ljava/lang/String;
 
     move-result-object v7
 
-    if-nez v7, :cond_322
+    if-nez v7, :cond_387
 
-    :cond_321
+    :cond_386
     move-object v7, v8
 
-    :cond_322
-    
-    # Extract Reason Logic
+    :cond_387
     const-string v9, "Rechazada por Servidor"
+
     const-string v10, "reasons"
+
     invoke-virtual {v2, v10}, Lorg/json/JSONObject;->optJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
+
     move-result-object v10
-    
-    if-eqz v10, :cond_reason_ok
+
+    if-eqz v10, :cond_39c
+
     invoke-virtual {v10}, Lorg/json/JSONArray;->length()I
+
     move-result v11
-    if-lez v11, :cond_reason_ok
+
+    if-lez v11, :cond_39c
+
     const/4 v11, 0x0
+
     invoke-virtual {v10, v11}, Lorg/json/JSONArray;->getString(I)Ljava/lang/String;
+
     move-result-object v9
 
-    :cond_reason_ok
-
+    :cond_39c
     invoke-direct {v4, v5, v6, v7, v9}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Rejecter;-><init>(Lsinet/startup/inDriver/city/driver/order/ui/info/OrderInfoFragment;Ly41/w0;Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {v3, v4}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    goto :goto_36e
+    goto :goto_3e8
 
-    :cond_329
+    :cond_3a3
     const-string v4, "IGNORE"
 
     invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-eqz v4, :cond_340
+    if-eqz v4, :cond_3ba
 
     new-instance v3, Landroid/os/Handler;
 
@@ -919,16 +954,16 @@
 
     invoke-virtual {v3, p0, v4, v5}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    goto :goto_36e
+    goto :goto_3e8
 
-    :cond_340
+    :cond_3ba
     const-string v4, "BID"
 
     invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_36e
+    if-eqz v3, :cond_3e8
 
     const-string v3, "pickup_time"
 
@@ -956,7 +991,7 @@
 
     iget-object v7, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Runner;->viewModel:Ly41/w0;
 
-    if-eqz v7, :cond_36e
+    if-eqz v7, :cond_3e8
 
     const/4 v8, 0x1
 
@@ -964,18 +999,18 @@
 
     invoke-static {v7, v3, v4, v6, v5}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->performDirectBidWithTime(Ly41/w0;DLsinet/startup/inDriver/city/common/domain/entity/Price;I)V
 
-    goto :goto_36e
-    :try_end_369
-    .catch Ljava/lang/Exception; {:try_start_29a .. :try_end_369} :catch_369
+    goto :goto_3e8
+    :try_end_3e3
+    .catch Ljava/lang/Exception; {:try_start_2eb .. :try_end_3e3} :catch_3e3
 
-    :catch_369
+    :catch_3e3
     move-exception v2
 
     const/4 v8, 0x0
 
     invoke-virtual {v2}, Ljava/lang/Exception;->printStackTrace()V
 
-    :cond_36e
-    :goto_36e
+    :cond_3e8
+    :goto_3e8
     return-void
 .end method
