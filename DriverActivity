@@ -1423,115 +1423,71 @@
 
     const v5, -0xde690d
 
+    # --- ROW 1: DISTANCES ---
     new-instance v6, Landroid/widget/LinearLayout;
-
     invoke-direct {v6, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
-
     const/4 v7, 0x0
-
     invoke-virtual {v6, v7}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
+    # Pickup Dist TextView
     new-instance v2, Landroid/widget/TextView;
-
     invoke-direct {v2, p0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
-
-    const-string v8, "\ud83d\udcb2 Precio Mínimo: --"
-
+    const-string v8, "\ud83d\udccd Dist. Recogida: --"
     invoke-virtual {v2, v8}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
     invoke-virtual {v2, v5}, Landroid/widget/TextView;->setTextColor(I)V
-
-    const-string v8, "bot_tv_min_price"
-
-    invoke-virtual {v2, v8}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
-
-    invoke-virtual {v6, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
-
-    invoke-virtual {v0, v6}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
-
-    new-instance v6, Landroid/widget/LinearLayout;
-
-    invoke-direct {v6, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
-
-    const/4 v7, 0x0
-
-    invoke-virtual {v6, v7}, Landroid/widget/LinearLayout;->setOrientation(I)V
-
-    new-instance v2, Landroid/widget/TextView;
-
-    invoke-direct {v2, p0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
-
-    const-string v8, "\ud83c\udfc1 Dist. Destino: --"
-
-    invoke-virtual {v2, v8}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    const v8, -0x777778
-
-    invoke-virtual {v2, v8}, Landroid/widget/TextView;->setTextColor(I)V
-
-    const-string v8, "bot_tv_dest_dist"
-
-    invoke-virtual {v2, v8}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
-
-    invoke-virtual {v6, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
-
-    invoke-virtual {v0, v6}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
-
-
-
-    new-instance v6, Landroid/widget/LinearLayout;
-
-    invoke-direct {v6, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
-
-    const/4 v7, 0x0
-
-    invoke-virtual {v6, v7}, Landroid/widget/LinearLayout;->setOrientation(I)V
-
-    const/16 v7, 0x8
-
-    const/4 v8, 0x0
-
-    invoke-virtual {v6, v8, v7, v8, v8}, Landroid/view/View;->setPadding(IIII)V
-
-    new-instance v2, Landroid/widget/TextView;
-
-    invoke-direct {v2, p0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
-
-    const-string v8, "\ud83d\udccd Dist. Máxima: --"
-
-    invoke-virtual {v2, v8}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    invoke-virtual {v2, v5}, Landroid/widget/TextView;->setTextColor(I)V
-
     const-string v8, "bot_tv_max_dist"
-
     invoke-virtual {v2, v8}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
-
-    const/16 v8, 0x1e
-
+    const/4 v8, 0x0
     const/4 v9, 0x0
-
-    invoke-virtual {v2, v9, v9, v8, v9}, Landroid/view/View;->setPadding(IIII)V
-
+    const/16 v10, 0x14
+    const/4 v11, 0x0
+    invoke-virtual {v2, v8, v9, v10, v11}, Landroid/view/View;->setPadding(IIII)V
     invoke-virtual {v6, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
+    # Dest Dist TextView
     new-instance v2, Landroid/widget/TextView;
-
     invoke-direct {v2, p0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
-
-    const-string v8, "\ud83d\ude97 Precio/KM: --"
-
+    const-string v8, "\ud83c\udfc1 Dist. Destino: --"
     invoke-virtual {v2, v8}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
     invoke-virtual {v2, v5}, Landroid/widget/TextView;->setTextColor(I)V
+    const-string v8, "bot_tv_dest_dist"
+    invoke-virtual {v2, v8}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
+    invoke-virtual {v6, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+    invoke-virtual {v0, v6}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    const-string v5, "bot_tv_price_km"
+    # --- ROW 2: PRICES ---
+    new-instance v6, Landroid/widget/LinearLayout;
+    invoke-direct {v6, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
+    const/4 v7, 0x0
+    invoke-virtual {v6, v7}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    invoke-virtual {v2, v5}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
-
+    # Min Price TextView
+    new-instance v2, Landroid/widget/TextView;
+    invoke-direct {v2, p0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+    const-string v8, "\ud83d\udcb2 Precio Mínimo: --"
+    invoke-virtual {v2, v8}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v2, v5}, Landroid/widget/TextView;->setTextColor(I)V
+    const-string v8, "bot_tv_min_price"
+    invoke-virtual {v2, v8}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
+    const/4 v8, 0x0
+    const/4 v9, 0x0
+    const/16 v10, 0x14
+    const/4 v11, 0x0
+    invoke-virtual {v2, v8, v9, v10, v11}, Landroid/view/View;->setPadding(IIII)V
     invoke-virtual {v6, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
+    # Price/KM TextView
+    new-instance v2, Landroid/widget/TextView;
+    invoke-direct {v2, p0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+    const-string v8, "\ud83d\ude97 Precio/KM: --"
+    invoke-virtual {v2, v8}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v2, v5}, Landroid/widget/TextView;->setTextColor(I)V
+    const-string v8, "bot_tv_price_km"
+    invoke-virtual {v2, v8}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
+    invoke-virtual {v6, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
     invoke-virtual {v0, v6}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+
+
 
     invoke-virtual {p0, v0, v1}, Landroid/app/Activity;->addContentView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
