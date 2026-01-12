@@ -1449,6 +1449,34 @@
 
     invoke-virtual {v0, v6}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
+    new-instance v6, Landroid/widget/LinearLayout;
+
+    invoke-direct {v6, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
+
+    const/4 v7, 0x0
+
+    invoke-virtual {v6, v7}, Landroid/widget/LinearLayout;->setOrientation(I)V
+
+    new-instance v2, Landroid/widget/TextView;
+
+    invoke-direct {v2, p0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+
+    const-string v8, "\ud83c\udfc1 Dist. Destino: --"
+
+    invoke-virtual {v2, v8}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    const v8, -0x777778
+
+    invoke-virtual {v2, v8}, Landroid/widget/TextView;->setTextColor(I)V
+
+    const-string v8, "bot_tv_dest_dist"
+
+    invoke-virtual {v2, v8}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
+
+    invoke-virtual {v6, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+
+    invoke-virtual {v0, v6}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+
 
 
     new-instance v6, Landroid/widget/LinearLayout;
