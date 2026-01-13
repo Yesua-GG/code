@@ -26,7 +26,7 @@
 
 # virtual methods
 .method public run()V
-    .registers 6
+    .registers 5
 
     .line 1
     const/4 v0, 0x1
@@ -48,35 +48,49 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_36
 
-    
     .line 4
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v1, Landroid/app/AlertDialog$Builder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-    
-    iget-object v3, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Blocker;->message:Ljava/lang/String;
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v1, v0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const-string v3, "\n"
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v2, "\u26a0\ufe0f AVISO IMPORTANTE"
 
-    iget-object v3, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Blocker;->url:Ljava/lang/String;
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 5
+    invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v1
 
-    const/4 v2, 0x1
+    .line 6
+    iget-object v2, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Blocker;->message:Ljava/lang/String;
+    invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    .line 7
+    invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setCancelable(Z)Landroid/app/AlertDialog$Builder;
+
+    move-result-object v1
+
+    const-string v2, "CONTACTAR SOPORTE"
+
+    .line 8
+    new-instance v3, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Blocker$1;
+
+    iget-object v2, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Blocker;->url:Ljava/lang/String;
+    invoke-direct {v3, v0, v2}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Blocker$1;-><init>(Landroid/app/Activity;Ljava/lang/String;)V
+    const-string v2, "CONTACTAR SOPORTE"
     
-    invoke-static {v0, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    invoke-virtual {v1, v2, v3}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
+    .line 9
+    invoke-virtual {v1}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
 
-    :cond_2d
+    :cond_36
     return-void
 .end method
