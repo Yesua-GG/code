@@ -112,15 +112,11 @@
 
     invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v2, "/config?format=json&user_id="
+    const-string v2, "/config?format=json&app_id=v1.0&user_id="
 
     invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v2, "&apk_id=v1_release"
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -168,30 +164,34 @@
 
     invoke-direct {v7, v0}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    const-string v0, "blocked"
-    invoke-virtual {v7, v0}, Lorg/json/JSONObject;->optBoolean(Ljava/lang/String;)Z
+    const-string v0, "action"
+
+    invoke-virtual {v7, v0}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v2, "SUSPENDED"
+
+    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
     move-result v0
-    
+
     if-eqz v0, :cond_blocked
-    
-    const-string v0, "block_msg"
+
+    const-string v0, "message"
     invoke-virtual {v7, v0}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
-    move-result-object v3
-    
-    const-string v0, "block_url"
-    invoke-virtual {v7, v0}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
-    move-result-object v4
-    
-    new-instance v2, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Blocker;
-    iget-object v8, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$ConfigFetcher;->activity:Landroid/app/Activity;
-    invoke-direct {v2, v8, v3, v4}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Blocker;-><init>(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;)V
-    
-    iget-object v0, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$ConfigFetcher;->activity:Landroid/app/Activity;
-    invoke-virtual {v0, v2}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
-    
-    return-void
-    
+    move-result-object v0
+
+    const-string v2, "contact_url"
+    invoke-virtual {v7, v2}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v2
+
+    invoke-static {v0, v2}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->handleBlocked(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto/16 :goto_c2
+
     :cond_blocked
+
     .line 9
     const-string v0, "min_price"
 
