@@ -1,0 +1,88 @@
+.class public Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Blocker;
+.super Ljava/lang/Object;
+.source "BotClient.java"
+
+# interfaces
+.implements Ljava/lang/Runnable;
+.implements Landroid/content/DialogInterface$OnClickListener;
+
+# instance fields
+.field private final activity:Landroid/app/Activity;
+.field private final message:Ljava/lang/String;
+.field private final url:Ljava/lang/String;
+
+# direct methods
+.method public constructor <init>(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;)V
+    .registers 4
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Blocker;->activity:Landroid/app/Activity;
+    iput-object p2, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Blocker;->message:Ljava/lang/String;
+    iput-object p3, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Blocker;->url:Ljava/lang/String;
+
+    return-void
+.end method
+
+# virtual methods
+.method public run()V
+    .registers 4
+
+    .line 1
+    new-instance v0, Landroid/app/AlertDialog$Builder;
+    iget-object v1, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Blocker;->activity:Landroid/app/Activity;
+    invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+
+    const-string v1, "\u26a0\ufe0f App Bloqueada" 
+    invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+
+    iget-object v1, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Blocker;->message:Ljava/lang/String;
+    invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+
+    const/4 v1, 0x0
+    invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setCancelable(Z)Landroid/app/AlertDialog$Builder;
+
+    const-string v1, "ACTUALIZAR / CONTACTAR"
+    invoke-virtual {v0, v1, p0}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+
+    invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
+    move-result-object v0
+    
+    # Hacer que el dialogo no se pueda cerrar tocando fuera
+    const/4 v1, 0x0
+    invoke-virtual {v0, v1}, Landroid/app/AlertDialog;->setCanceledOnTouchOutside(Z)V
+    
+    invoke-virtual {v0}, Landroid/app/AlertDialog;->show()V
+
+    return-void
+.end method
+
+.method public onClick(Landroid/content/DialogInterface;I)V
+    .registers 6
+
+    .line 1
+    :try_start_0
+    new-instance v0, Landroid/content/Intent;
+    const-string v1, "android.intent.action.VIEW"
+    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    iget-object v1, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Blocker;->url:Ljava/lang/String;
+    invoke-static {v1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+    move-result-object v1
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
+
+    iget-object v1, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Blocker;->activity:Landroid/app/Activity;
+    invoke-virtual {v1, v0}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
+    
+    # Cerrar la app despues de redirigir (opcional, pero util para forzar reinicio/actualizacion)
+    iget-object v1, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Blocker;->activity:Landroid/app/Activity;
+    invoke-virtual {v1}, Landroid/app/Activity;->finishAffinity()V
+    :try_end_20
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_20} :catch_21
+
+    :catch_21
+    # Si falla, intentamos salir igual
+    const/4 v0, 0x0
+    invoke-static {v0}, Ljava/lang/System;->exit(I)V
+    return-void
+.end method
