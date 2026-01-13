@@ -183,8 +183,8 @@
     move-result-object v4
     
     new-instance v2, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Blocker;
-    iget-object v5, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$ConfigFetcher;->activity:Landroid/app/Activity;
-    invoke-direct {v2, v5, v3, v4}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Blocker;-><init>(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;)V
+    iget-object v8, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$ConfigFetcher;->activity:Landroid/app/Activity;
+    invoke-direct {v2, v8, v3, v4}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Blocker;-><init>(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;)V
     
     iget-object v0, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$ConfigFetcher;->activity:Landroid/app/Activity;
     invoke-virtual {v0, v2}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
