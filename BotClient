@@ -10,9 +10,9 @@
 
 .field private static final executor:Ljava/util/concurrent/ExecutorService;
 
-.field private static volatile lastBidTime:J
-
 .field public static isPaused:Z
+
+.field private static volatile lastBidTime:J
 
 
 # direct methods
@@ -35,6 +35,7 @@
     sput-object v0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->executor:Ljava/util/concurrent/ExecutorService;
 
     const/4 v0, 0x1
+
     sput-boolean v0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->isPaused:Z
 
     return-void
@@ -63,10 +64,12 @@
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     sget-boolean v0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->isPaused:Z
-    if-eqz v0, :cond_bot_paused
-    return-void
-    :cond_bot_paused
 
+    if-eqz v0, :cond_c
+
+    return-void
+
+    :cond_c
     sget-object v0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->executor:Ljava/util/concurrent/ExecutorService;
 
     new-instance v1, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Runner;
@@ -91,10 +94,12 @@
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     sget-boolean v0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->isPaused:Z
-    if-eqz v0, :cond_bot_paused_vm
-    return-void
-    :cond_bot_paused_vm
 
+    if-eqz v0, :cond_c
+
+    return-void
+
+    :cond_c
     sget-object v0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->executor:Ljava/util/concurrent/ExecutorService;
 
     new-instance v1, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Runner;
@@ -124,6 +129,54 @@
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public static handleExpired()V
+    .registers 2
+
+    const/4 v0, 0x1
+
+    sput-boolean v0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->isPaused:Z
+
+    invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->getContext()Landroid/app/Activity;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_11
+
+    new-instance v1, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$ExpiredRunnable;
+
+    invoke-direct {v1}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$ExpiredRunnable;-><init>()V
+
+    invoke-virtual {v0, v1}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
+
+    :cond_11
+    return-void
+.end method
+
+.method public static handleBlocked(Ljava/lang/String;Ljava/lang/String;)V
+    .registers 4
+    .param p0, "message"  # Ljava/lang/String;
+    .param p1, "url"  # Ljava/lang/String;
+
+    const/4 v0, 0x1
+
+    sput-boolean v0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->isPaused:Z
+
+    invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->getContext()Landroid/app/Activity;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_11
+
+    new-instance v1, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Blocker;
+
+    invoke-direct {v1, p0, p1}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Blocker;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {v0, v1}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
+
+    :cond_11
+    return-void
 .end method
 
 .method public static final performBid(Lsinet/startup/inDriver/city/driver/order/ui/info/OrderInfoFragment;D)V
@@ -465,23 +518,4 @@
     const/4 v1, 0x0
 
     return-object v1
-
-.method public static handleExpired()V
-    .registers 2
-    
-    # Set Paused flag immediately
-    const/4 v0, 0x1
-    sput-boolean v0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->isPaused:Z
-    
-    # Run UI update on Main Thread
-    invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->getContext()Landroid/app/Activity;
-    move-result-object v0
-    
-    if-eqz v0, :cond_ret
-    new-instance v1, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$ExpiredRunnable;
-    invoke-direct {v1}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$ExpiredRunnable;-><init>()V
-    invoke-virtual {v0, v1}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
-    :cond_ret
-    return-void
-.end method
 .end method
