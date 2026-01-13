@@ -118,6 +118,10 @@
 
     invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    const-string v2, "&apk_id=v1_release"
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -164,6 +168,30 @@
 
     invoke-direct {v7, v0}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
+    const-string v0, "blocked"
+    invoke-virtual {v7, v0}, Lorg/json/JSONObject;->optBoolean(Ljava/lang/String;)Z
+    move-result v0
+    
+    if-eqz v0, :cond_blocked
+    
+    const-string v0, "block_msg"
+    invoke-virtual {v7, v0}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v3
+    
+    const-string v0, "block_url"
+    invoke-virtual {v7, v0}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v4
+    
+    new-instance v2, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Blocker;
+    iget-object v5, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$ConfigFetcher;->activity:Landroid/app/Activity;
+    invoke-direct {v2, v5, v3, v4}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Blocker;-><init>(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;)V
+    
+    iget-object v0, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$ConfigFetcher;->activity:Landroid/app/Activity;
+    invoke-virtual {v0, v2}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
+    
+    return-void
+    
+    :cond_blocked
     .line 9
     const-string v0, "min_price"
 
