@@ -209,21 +209,9 @@
 
     sput-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->logoView:Landroid/widget/ImageView;
 
-    invoke-virtual {p0}, Landroid/app/Activity;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
+    const v1, 0x108004e
 
-    move-result-object v1
-
-    invoke-virtual {p0}, Landroid/app/Activity;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Landroid/content/pm/ApplicationInfo;->loadIcon(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v1
-
-    sget-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->logoView:Landroid/widget/ImageView;
-
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
     new-instance v1, Lsinet/startup/inDriver/ui/FloatingMenu$4;
 
