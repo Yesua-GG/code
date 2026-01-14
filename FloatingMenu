@@ -442,13 +442,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    sget-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->hideHandler:Landroid/os/Handler;
 
-    sget-object v1, Lsinet/startup/inDriver/ui/FloatingMenu;->hideRunnable:Ljava/lang/Runnable;
-
-    const-wide/16 v2, 0x1388
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
     :cond_12
     return-void
@@ -933,7 +927,7 @@
 
     invoke-static {v0}, Lsinet/startup/inDriver/ui/FloatingMenu;->show(Landroid/app/Activity;)V
 
-    invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->hideMenuAndShowLogo()V
+
 
     return-void
 .end method
