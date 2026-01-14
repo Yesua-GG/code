@@ -806,7 +806,7 @@
 
     new-instance v2, Landroid/widget/LinearLayout$LayoutParams;
 
-    const/4 v3, -0x2
+    const/4 v3, -0x1
 
     const/4 v4, -0x2
 
@@ -856,7 +856,7 @@
 
     new-instance v4, Landroid/widget/LinearLayout$LayoutParams;
 
-    const/4 v5, -0x2
+    const/4 v5, -0x1
 
     const/4 v6, -0x2
 
