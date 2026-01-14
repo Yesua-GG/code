@@ -10,6 +10,7 @@
 .implements Lcu1/p;
 .implements Lvu1/a;
 .implements Lc52/b;
+.implements Ljava/lang/Runnable;
 
 
 # annotations
@@ -173,6 +174,8 @@
 
 
 # instance fields
+.field public searchAnimHandler:Landroid/os/Handler;
+
 .field public d1:Lx22/j;
 
 .field public e1:Lhw5/h;
@@ -1652,6 +1655,13 @@
         .end annotation
     .end param
 
+    .line 0
+    new-instance v0, Landroid/os/Handler;
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+    move-result-object v1
+    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+    iput-object v0, p0, Lsinet/startup/inDriver/ui/driver/main/DriverActivity;->searchAnimHandler:Landroid/os/Handler;
+
     .line 1
     invoke-static {}, Ldw2/a;->a()Lfw2/b;
 
@@ -1990,6 +2000,11 @@
     :cond_e
     invoke-super {p0}, Lsinet/startup/inDriver/ui/common/AbstractionAppCompatActivity;->onPause()V
 
+    iget-object v0, p0, Lsinet/startup/inDriver/ui/driver/main/DriverActivity;->searchAnimHandler:Landroid/os/Handler;
+    if-eqz v0, :cond_remove
+    invoke-virtual {v0, p0}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
+    :cond_remove
+
     .line 18
     return-void
 .end method
@@ -2012,6 +2027,11 @@
     invoke-direct {v0, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
 
     invoke-virtual {v0}, Ljava/lang/Thread;->start()V
+
+    iget-object v0, p0, Lsinet/startup/inDriver/ui/driver/main/DriverActivity;->searchAnimHandler:Landroid/os/Handler;
+    if-eqz v0, :cond_post
+    invoke-virtual {v0, p0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    :cond_post
 
     return-void
 .end method
@@ -2175,6 +2195,54 @@
     invoke-virtual {p0}, Lsinet/startup/inDriver/ui/common/NavigationDrawerActivity;->x0()V
 
     .line 4
+    return-void
+.end method
+
+.method public run()V
+    .registers 5
+
+    invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
+    move-result-object v0
+    invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+    move-result-object v0
+    const-string v1, "bot_info_card"
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewWithTag(Ljava/lang/Object;)Landroid/view/View;
+    move-result-object v0
+
+    if-eqz v0, :cond_schedule
+
+    sget-boolean v1, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->isPaused:Z
+    if-nez v1, :cond_animate
+
+    # Not paused (searching) -> Ensure animating
+    invoke-virtual {v0}, Landroid/view/View;->getAnimation()Landroid/view/animation/Animation;
+    move-result-object v1
+    if-nez v1, :cond_schedule
+
+    new-instance v1, Landroid/view/animation/AlphaAnimation;
+    const/high16 v2, 0x3f800000 # 1.0f
+    const/high16 v3, 0x3e4ccccd # 0.2f
+    invoke-direct {v1, v2, v3}, Landroid/view/animation/AlphaAnimation;-><init>(FF)V
+    const-wide/16 v2, 0x3e8 # 1000ms
+    invoke-virtual {v1, v2, v3}, Landroid/view/animation/Animation;->setDuration(J)V
+    const/4 v2, -0x1
+    invoke-virtual {v1, v2}, Landroid/view/animation/Animation;->setRepeatCount(I)V
+    const/4 v2, 0x2
+    invoke-virtual {v1, v2}, Landroid/view/animation/Animation;->setRepeatMode(I)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
+    goto :cond_schedule
+
+    :cond_animate
+    # Paused -> Stop animation
+    invoke-virtual {v0}, Landroid/view/View;->clearAnimation()V
+
+    :cond_schedule
+    iget-object v0, p0, Lsinet/startup/inDriver/ui/driver/main/DriverActivity;->searchAnimHandler:Landroid/os/Handler;
+    if-eqz v0, :cond_end
+    const-wide/16 v1, 0x3e8
+    invoke-virtual {v0, p0, v1, v2}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    :cond_end
     return-void
 .end method
 
