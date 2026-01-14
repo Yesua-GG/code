@@ -520,7 +520,7 @@
     return-object v1
 .end method
 .method public static startSession(Landroid/content/Context;)V
-    .registers 3
+    .registers 4
     .param p0, "context"  # Landroid/content/Context;
 
     const-string v0, "Validando..."
