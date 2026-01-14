@@ -519,3 +519,16 @@
 
     return-object v1
 .end method
+.method public static startSession(Landroid/content/Context;)V
+    .registers 3
+    .param p0, "context"  # Landroid/content/Context;
+
+    const-string v0, "Validando..."
+    invoke-static {v0}, Lsinet/startup/inDriver/ui/FloatingMenu;->metrics(Ljava/lang/String;)V
+
+    sget-object v0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->executor:Ljava/util/concurrent/ExecutorService;
+    new-instance v1, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Starter;
+    invoke-direct {v1, p0}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Starter;-><init>(Landroid/content/Context;)V
+    invoke-interface {v0, v1}, Ljava/util/concurrent/ExecutorService;->execute(Ljava/lang/Runnable;)V
+    return-void
+.end method
