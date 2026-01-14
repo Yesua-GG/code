@@ -862,61 +862,15 @@
 
     invoke-direct {v4, v5, v6}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
 
-    const/16 v5, 0x7
 
-    iput v5, v4, Landroid/widget/LinearLayout$LayoutParams;->rightMargin:I
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    new-instance v4, Landroid/widget/TextView;
 
-    invoke-direct {v4, p0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
-
-    sput-object v4, Lsinet/startup/inDriver/ui/FloatingMenu;->settingsButton:Landroid/widget/TextView;
-
-    const-string v5, "Ajustes ⚙"
-
-    invoke-virtual {v4, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    const/16 v5, 0x11
-
-    invoke-virtual {v4, v5}, Landroid/widget/TextView;->setGravity(I)V
-
-    const/16 v5, 0x11
-
-    const/16 v6, 0xb
-
-    invoke-virtual {v4, v5, v6, v5, v6}, Landroid/widget/TextView;->setPadding(IIII)V
-
-    const/4 v5, -0x1
-
-    invoke-virtual {v4, v5}, Landroid/widget/TextView;->setTextColor(I)V
-
-    const/high16 v5, 0x41900000  # 18.0f
-
-    invoke-virtual {v4, v5}, Landroid/widget/TextView;->setTextSize(F)V
-
-    const v5, -0xd9d9da
-
-    const v6, -0xbbbbbc
-
-    const/high16 v7, 0x41500000  # 13.0f
-
-    invoke-static {v5, v6, v7}, Lsinet/startup/inDriver/ui/FloatingMenu;->createBackground(IIF)Landroid/graphics/drawable/GradientDrawable;
-
-    move-result-object v5
-
-    invoke-virtual {v4, v5}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
-
-    new-instance v5, Lsinet/startup/inDriver/ui/FloatingMenu$2;
-
-    invoke-direct {v5, p0}, Lsinet/startup/inDriver/ui/FloatingMenu$2;-><init>(Landroid/app/Activity;)V
-
-    invoke-virtual {v4, v5}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     invoke-virtual {v1, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    invoke-virtual {v1, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+
 
     sget-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->containerView:Landroid/widget/LinearLayout;
 
@@ -1137,74 +1091,109 @@
 .end method
 
 .method public static updateUiState(Z)V
-    .registers 3
+    .registers 5
     .param p0, "isPaused"  # Z
 
-    sget-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->logoView:Landroid/widget/ImageView;
+    const/high16 v3, 0x41900000  # 18.0f
 
-    if-nez v0, :cond_return
+    new-instance v0, Landroid/os/Handler;
 
-    return-void
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
-    :cond_return
-    if-eqz p0, :cond_active
+    move-result-object v1
 
-    # Bot Paused -> Red Color
+    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+
+    new-instance v1, Lsinet/startup/inDriver/ui/FloatingMenu$VisibilityHandler;
+
+    invoke-direct {v1, p0}, Lsinet/startup/inDriver/ui/FloatingMenu$VisibilityHandler;-><init>(Z)V
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    if-eqz p0, :cond_44
+
+    const v0, -0xd9d9da
+
     const/high16 v1, -0x10000
 
-    sget-object v2, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
+    const/high16 v2, 0x41600000  # 14.0f
 
-    invoke-virtual {v0, v1, v2}, Landroid/widget/ImageView;->setColorFilter(ILandroid/graphics/PorterDuff$Mode;)V
+    invoke-static {v0, v1, v2}, Lsinet/startup/inDriver/ui/FloatingMenu;->createBackground(IIF)Landroid/graphics/drawable/GradientDrawable;
 
-    return-void
+    move-result-object v0
 
-    :cond_active
-    # Bot Active -> Green Color
+    sget-object v1, Lsinet/startup/inDriver/ui/FloatingMenu;->containerView:Landroid/widget/LinearLayout;
+
+    invoke-virtual {v1, v0}, Landroid/widget/LinearLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
+
+    sget-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->statusView:Landroid/widget/TextView;
+
+    const-string v1, "Bot Desactivado"
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    const/high16 v1, -0x10000
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
+
+    sget-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->toggleButton:Landroid/widget/TextView;
+
+    const-string v1, "> Iniciar"
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
     const v1, -0xff0100
 
-    sget-object v2, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
+    const/4 v2, 0x0
 
-    invoke-virtual {v0, v1, v2}, Landroid/widget/ImageView;->setColorFilter(ILandroid/graphics/PorterDuff$Mode;)V
+    invoke-static {v1, v2, v3}, Lsinet/startup/inDriver/ui/FloatingMenu;->createBackground(IIF)Landroid/graphics/drawable/GradientDrawable;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     return-void
-.end method
 
-.method public static toggleBot()V
-    .registers 3
+    :cond_44
+    const v0, -0xd9d9da
 
-    sget-boolean v0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->isPaused:Z
+    const v1, -0xff0100
 
-    if-eqz v0, :cond_stop
+    const/high16 v2, 0x41600000  # 14.0f
 
-    # If Paused -> Start
-    sget-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->context:Landroid/app/Activity;
+    invoke-static {v0, v1, v2}, Lsinet/startup/inDriver/ui/FloatingMenu;->createBackground(IIF)Landroid/graphics/drawable/GradientDrawable;
 
-    if-eqz v0, :cond_end
+    move-result-object v0
 
-    new-instance v1, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Starter;
+    sget-object v1, Lsinet/startup/inDriver/ui/FloatingMenu;->containerView:Landroid/widget/LinearLayout;
 
-    invoke-direct {v1, v0}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Starter;-><init>(Landroid/content/Context;)V
+    invoke-virtual {v1, v0}, Landroid/widget/LinearLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    new-instance v0, Ljava/lang/Thread;
+    sget-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->statusView:Landroid/widget/TextView;
 
-    invoke-direct {v0, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
+    const-string v1, "Bot Activo"
 
-    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    :cond_end
-    return-void
+    const v1, -0xff0100
 
-    :cond_stop
-    # If Active -> Stop
-    const/4 v0, 0x1
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    sput-boolean v0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->isPaused:Z
+    sget-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->toggleButton:Landroid/widget/TextView;
 
-    invoke-static {v0}, Lsinet/startup/inDriver/ui/FloatingMenu;->updateUiState(Z)V
+    const-string v1, "|| Stop"
 
-    const-string v0, "Bot Detenido"
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    invoke-static {v0}, Lsinet/startup/inDriver/ui/FloatingMenu;->metrics(Ljava/lang/String;)V
+    const/high16 v1, -0x10000
+
+    const/4 v2, 0x0
+
+    invoke-static {v1, v2, v3}, Lsinet/startup/inDriver/ui/FloatingMenu;->createBackground(IIF)Landroid/graphics/drawable/GradientDrawable;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     return-void
 .end method
