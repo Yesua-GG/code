@@ -1,106 +1,266 @@
+# classes13.dex
+
 .class final Lsinet/startup/inDriver/ui/FloatingMenu$3;
 .super Ljava/lang/Object;
 .source "FloatingMenu.java"
+
+# interfaces
 .implements Landroid/view/View$OnTouchListener;
 
-.field private initialX:I
-.field private initialY:I
+
+# instance fields
 .field private initialTouchX:F
+
 .field private initialTouchY:F
 
+.field private initialX:I
+
+.field private initialY:I
+
+
+# direct methods
 .method constructor <init>()V
     .registers 1
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
     return-void
 .end method
 
+
+# virtual methods
 .method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .registers 7
-    .param p1, "v"    # Landroid/view/View;
-    .param p2, "event"    # Landroid/view/MotionEvent;
+    .param p1, "v"  # Landroid/view/View;
+    .param p2, "event"  # Landroid/view/MotionEvent;
 
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
+
     move-result v0
+
     const/4 v1, 0x1
 
-    packed-switch v0, :pswitch_data_1e
+    packed-switch v0, :pswitch_data_5e
 
-    :cond_default
     const/4 v1, 0x0
+
     return v1
 
-    :pswitch_down
+    :pswitch_a  #0x0
     invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->access$getParams()Landroid/view/WindowManager$LayoutParams;
+
     move-result-object v2
+
     iget v2, v2, Landroid/view/WindowManager$LayoutParams;->x:I
+
     iput v2, p0, Lsinet/startup/inDriver/ui/FloatingMenu$3;->initialX:I
-    
+
     invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->access$getParams()Landroid/view/WindowManager$LayoutParams;
+
     move-result-object v2
+
     iget v2, v2, Landroid/view/WindowManager$LayoutParams;->y:I
+
     iput v2, p0, Lsinet/startup/inDriver/ui/FloatingMenu$3;->initialY:I
-    
+
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getRawX()F
+
     move-result v2
+
     iput v2, p0, Lsinet/startup/inDriver/ui/FloatingMenu$3;->initialTouchX:F
-    
+
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getRawY()F
+
     move-result v2
+
     iput v2, p0, Lsinet/startup/inDriver/ui/FloatingMenu$3;->initialTouchY:F
-    
-    # Cancel auto hide when touched
+
     invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->cancelAutoHide()V
-    
+
+    invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->showTrash()V
+
     return v1
 
-    :pswitch_up
-    # Schedule auto hide when released
-    invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->scheduleAutoHide()V
-    return v1 # Consumed? Original returned 1? No, original had no UP. But we should consume to consistency.
+    :pswitch_2a  #0x1
+    invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->hideTrash()V
 
-    :pswitch_move
-    invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->access$getParams()Landroid/view/WindowManager$LayoutParams;
+    invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
+
     move-result-object v2
-    
-    iget v3, p0, Lsinet/startup/inDriver/ui/FloatingMenu$3;->initialX:I
+
+    invoke-virtual {v2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v2
+
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getRawX()F
-    move-result v0
-    iget v1, p0, Lsinet/startup/inDriver/ui/FloatingMenu$3;->initialTouchX:F
-    sub-float/2addr v0, v1
-    float-to-int v0, v0
-    add-int/2addr v3, v0
-    iput v3, v2, Landroid/view/WindowManager$LayoutParams;->x:I
-    
-    iget v3, p0, Lsinet/startup/inDriver/ui/FloatingMenu$3;->initialY:I
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getRawY()F
-    move-result v0
-    iget v1, p0, Lsinet/startup/inDriver/ui/FloatingMenu$3;->initialTouchY:F
-    sub-float/2addr v0, v1
-    float-to-int v0, v0
-    add-int/2addr v3, v0
-    iput v3, v2, Landroid/view/WindowManager$LayoutParams;->y:I
-    
-    invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->access$getWm()Landroid/view/WindowManager;
-    move-result-object v0
-    invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->access$getRootView()Landroid/view/View;
-    move-result-object v1
-    invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->access$getParams()Landroid/view/WindowManager$LayoutParams;
-    move-result-object v2
-    
-    :try_start_update
-    invoke-interface {v0, v1, v2}, Landroid/view/WindowManager;->updateViewLayout(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-    :try_end_update
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_update .. :try_end_update} :catch_update_ignored
 
-    :catch_update_ignored
-    
-    const/4 v1, 0x1
+    move-result v3
+
+    iget v4, v2, Landroid/util/DisplayMetrics;->widthPixels:I
+
+    div-int/lit8 v4, v4, 0x2
+
+    int-to-float v4, v4
+
+    sub-float/2addr v3, v4
+
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getRawY()F
+
+    move-result v4
+
+    iget v2, v2, Landroid/util/DisplayMetrics;->heightPixels:I
+
+    const/16 v5, 0xaa
+
+    sub-int/2addr v2, v5
+
+    int-to-float v2, v2
+
+    sub-float/2addr v4, v2
+
+    mul-float/2addr v3, v3
+
+    mul-float/2addr v4, v4
+
+    add-float/2addr v3, v4
+
+    const v2, 0x47afc800  # 90000.0f
+
+    cmpg-float v3, v3, v2
+
+    if-gez v3, :cond_58
+
+    invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->closeApplication()V
+
     return v1
 
-    :pswitch_data_1e
+    :cond_58
+    return v1
+
+    :pswitch_2e  #0x2
+    invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->access$getParams()Landroid/view/WindowManager$LayoutParams;
+
+    move-result-object v2
+
+    iget v3, p0, Lsinet/startup/inDriver/ui/FloatingMenu$3;->initialX:I
+
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getRawX()F
+
+    move-result v0
+
+    iget v1, p0, Lsinet/startup/inDriver/ui/FloatingMenu$3;->initialTouchX:F
+
+    sub-float/2addr v0, v1
+
+    float-to-int v0, v0
+
+    add-int/2addr v3, v0
+
+    iput v3, v2, Landroid/view/WindowManager$LayoutParams;->x:I
+
+    iget v3, p0, Lsinet/startup/inDriver/ui/FloatingMenu$3;->initialY:I
+
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getRawY()F
+
+    move-result v0
+
+    iget v1, p0, Lsinet/startup/inDriver/ui/FloatingMenu$3;->initialTouchY:F
+
+    sub-float/2addr v0, v1
+
+    float-to-int v0, v0
+
+    add-int/2addr v3, v0
+
+    iput v3, v2, Landroid/view/WindowManager$LayoutParams;->y:I
+
+    invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->access$getWm()Landroid/view/WindowManager;
+
+    move-result-object v0
+
+    invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->access$getRootView()Landroid/view/View;
+
+    move-result-object v1
+
+    invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->access$getParams()Landroid/view/WindowManager$LayoutParams;
+
+    move-result-object v2
+
+    :try_start_58
+    invoke-interface {v0, v1, v2}, Landroid/view/WindowManager;->updateViewLayout(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    :try_end_5b
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_58 .. :try_end_5b} :catch_5b
+
+    :catch_5b
+
+    invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v0
+
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getRawX()F
+
+    move-result v1
+
+    iget v2, v0, Landroid/util/DisplayMetrics;->widthPixels:I
+
+    div-int/lit8 v2, v2, 0x2
+
+    int-to-float v2, v2
+
+    sub-float/2addr v1, v2
+
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getRawY()F
+
+    move-result v2
+
+    iget v0, v0, Landroid/util/DisplayMetrics;->heightPixels:I
+
+    const/16 v3, 0xaa
+
+    sub-int/2addr v0, v3
+
+    int-to-float v0, v0
+
+    sub-float/2addr v2, v0
+
+    mul-float/2addr v1, v1
+
+    mul-float/2addr v2, v2
+
+    add-float/2addr v1, v2
+
+    const v0, 0x47afc800  # 90000.0f
+
+    cmpg-float v1, v1, v0
+
+    if-gez v1, :cond_d5
+
+    const/4 v1, 0x1
+
+    invoke-static {v1}, Lsinet/startup/inDriver/ui/FloatingMenu;->updateTrashFeedback(Z)V
+
+    goto :goto_d9
+
+    :cond_d5
+    const/4 v1, 0x0
+
+    invoke-static {v1}, Lsinet/startup/inDriver/ui/FloatingMenu;->updateTrashFeedback(Z)V
+
+    :goto_d9
+    const/4 v1, 0x1
+
+    return v1
+
+    nop
+
+    :pswitch_data_5e
     .packed-switch 0x0
-        :pswitch_down
-        :pswitch_up
-        :pswitch_move
+        :pswitch_a  #00000000
+        :pswitch_2a  #00000001
+        :pswitch_2e  #00000002
     .end packed-switch
 .end method
