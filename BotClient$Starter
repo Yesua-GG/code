@@ -1,0 +1,144 @@
+.class public Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Starter;
+.super Ljava/lang/Object;
+.source "BotClient.java"
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+# instance fields
+.field private final context:Landroid/content/Context;
+
+# direct methods
+.method public constructor <init>(Landroid/content/Context;)V
+    .registers 2
+    .param p1, "context"  # Landroid/content/Context;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Starter;->context:Landroid/content/Context;
+    return-void
+.end method
+
+# virtual methods
+.method public run()V
+    .registers 8
+
+    .prologue
+    const-string v0, "BotClient"
+    const-string v1, "Starting session check..."
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :try_start_0
+    # 1. Get User ID
+    iget-object v0, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Starter;->context:Landroid/content/Context;
+    invoke-static {v0}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->getUserId(Landroid/content/Context;)Ljava/lang/String;
+    move-result-object v0
+
+    # 2. Build Request URL: SERVER_URL + /ping?user_id=...
+    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    sget-object v2, Ly41/w0;->SERVER_URL:Ljava/lang/String;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v2, "/ping?user_id="
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v1
+
+    # 3. Create Request
+    new-instance v2, Lokhttp3/Request$Builder;
+    invoke-direct {v2}, Lokhttp3/Request$Builder;-><init>()V
+    invoke-virtual {v2, v1}, Lokhttp3/Request$Builder;->l(Ljava/lang/String;)Lokhttp3/Request$Builder;
+    move-result-object v2
+    invoke-virtual {v2}, Lokhttp3/Request$Builder;->b()Lokhttp3/Request;
+    move-result-object v2
+
+    # 4. Execute Request
+    # Access private static client via accessor or reflection if needed, but since it is same package/class context usually in smali we can access if package-private or use new client
+    # Using new client for simplicity to avoid access issues if private
+    new-instance v3, Lokhttp3/OkHttpClient;
+    invoke-direct {v3}, Lokhttp3/OkHttpClient;-><init>()V
+    invoke-virtual {v3, v2}, Lokhttp3/OkHttpClient;->a(Lokhttp3/Request;)Lokhttp3/Call;
+    move-result-object v2
+    invoke-interface {v2}, Lokhttp3/Call;->execute()Lokhttp3/Response;
+    move-result-object v2
+
+    # 5. Parse Response
+    invoke-virtual {v2}, Lokhttp3/Response;->k()Lokhttp3/ResponseBody;
+    move-result-object v2
+    invoke-virtual {v2}, Lokhttp3/ResponseBody;->C()Ljava/lang/String;
+    move-result-object v2
+
+    const-string v3, "BotStarter"
+    new-instance v4, Ljava/lang/StringBuilder;
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v5, "Response: "
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v4
+    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    new-instance v3, Lorg/json/JSONObject;
+    invoke-direct {v3, v2}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
+
+    const-string v2, "membership"
+    invoke-virtual {v3, v2}, Lorg/json/JSONObject;->optJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
+    move-result-object v2
+    
+    const/4 v4, 0x1 # Default true if parsing fails (fallback)
+    const-string v5, "" # Message
+
+    if-eqz v2, :cond_check_can_operate
+    const-string v4, "can_operate"
+    const/4 v6, 0x1
+    invoke-virtual {v2, v4, v6}, Lorg/json/JSONObject;->optBoolean(Ljava/lang/String;Z)Z
+    move-result v4
+    const-string v6, "message"
+    invoke-virtual {v2, v6}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v5
+    
+    :cond_check_can_operate
+    
+    if-eqz v4, :cond_success
+    
+    # SUCCESS: Activate Bot
+    iget-object v0, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Starter;->context:Landroid/content/Context;
+    # Check if context is Activity to run on UI thread
+    if-eqz v0, :cond_end
+    check-cast v0, Landroid/app/Activity;
+    new-instance v1, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Starter$1;
+    invoke-direct {v1, p0}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Starter$1;-><init>(Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Starter;)V
+    invoke-virtual {v0, v1}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
+    goto :cond_end
+
+    :cond_success
+    # FAILURE: Show Error
+    iget-object v0, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Starter;->context:Landroid/content/Context;
+    if-eqz v0, :cond_end
+    check-cast v0, Landroid/app/Activity;
+    new-instance v1, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Starter$2;
+    invoke-direct {v1, p0, v5}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Starter$2;-><init>(Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Starter;Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
+
+    :cond_end
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_return
+
+    :catch_0
+    move-exception v0
+    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
+    
+    # On Error, maybe allow start or show error? Let's show error to be safe.
+    iget-object v0, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Starter;->context:Landroid/content/Context;
+    if-eqz v0, :cond_fail_ui
+    check-cast v0, Landroid/app/Activity;
+    new-instance v1, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Starter$3;
+    invoke-direct {v1, p0}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Starter$3;-><init>(Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Starter;)V
+    invoke-virtual {v0, v1}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
+    :cond_fail_ui
+
+    :goto_return
+    return-void
+.end method
