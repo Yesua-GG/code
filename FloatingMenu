@@ -1093,3 +1093,48 @@
 
     return-void
 .end method
+.method public static metrics(Ljava/lang/String;)V
+    .registers 3
+    .param p0, "msg"  # Ljava/lang/String;
+    sget-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->context:Landroid/app/Activity;
+    if-eqz v0, :cond_e
+    const/4 v1, 0x0
+    invoke-static {v0, p0, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    move-result-object v0
+    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
+    :cond_e
+    return-void
+.end method
+
+.method public static showError(Ljava/lang/String;)V
+    .registers 3
+    .param p0, "msg"  # Ljava/lang/String;
+    const/4 v0, 0x1
+    sput-boolean v0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->isPaused:Z
+    invoke-static {v0}, Lsinet/startup/inDriver/ui/FloatingMenu;->updateUiState(Z)V
+    invoke-static {p0}, Lsinet/startup/inDriver/ui/FloatingMenu;->metrics(Ljava/lang/String;)V
+    return-void
+.end method
+
+.method public static activateBot()V
+    .registers 2
+    const/4 v0, 0x0
+    sput-boolean v0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->isPaused:Z
+    sput-boolean v0, Lf01/Config;->isOffering:Z
+    invoke-static {v0}, Lsinet/startup/inDriver/ui/FloatingMenu;->updateUiState(Z)V
+    
+    sget-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->context:Landroid/app/Activity;
+    if-eqz v0, :cond_start_activity
+    const-string v1, "Bot Iniciado Correctamente"
+    invoke-static {v1}, Lsinet/startup/inDriver/ui/FloatingMenu;->metrics(Ljava/lang/String;)V
+    
+    new-instance v1, Landroid/content/Intent;
+    const-class p0, Lsinet/startup/inDriver/ui/driver/main/DriverActivity;
+    invoke-direct {v1, v0, p0}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+    const p0, 0x10008000
+    invoke-virtual {v1, p0}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+    invoke-virtual {v0, v1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
+    
+    :cond_start_activity
+    return-void
+.end method
