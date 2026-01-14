@@ -1,0 +1,25 @@
+.class Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Starter$3;
+.super Ljava/lang/Object;
+.source "BotClient.java"
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+# instance fields
+.field final synthetic this$0:Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Starter;
+
+# direct methods
+.method constructor <init>(Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Starter;)V
+    .registers 2
+    iput-object p1, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Starter$3;->this$0:Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Starter;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    return-void
+.end method
+
+# virtual methods
+.method public run()V
+    .registers 2
+    const-string v0, "Error conectando al servidor"
+    invoke-static {v0}, Lsinet/startup/inDriver/ui/FloatingMenu;->showError(Ljava/lang/String;)V
+    return-void
+.end method
