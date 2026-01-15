@@ -2214,7 +2214,7 @@
 .method public run()V
     .registers 10
 
-    # 1. Find View
+    # 1. Find View (Root Card)
     invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
     move-result-object v0
     invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
@@ -2294,7 +2294,7 @@
     
     const/16 v2, 0x8
     if-ne v1, v2, :cond_check_anim
-    # If GONE, clear animation
+    # If GONE, clear animation and loop
     invoke-virtual {v0}, Landroid/view/View;->clearAnimation()V
     goto :cond_reschedule
     
@@ -2320,19 +2320,24 @@
     invoke-virtual {v1, v2}, Landroid/view/animation/Animation;->setRepeatMode(I)V
     invoke-virtual {v0, v1}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
     
-    # 4. Rotate Text
+    :cond_steps_logic
+    # 4. Rotate Text (Wrapped in try-catch)
+    :try_text
     iget v1, p0, Lsinet/startup/inDriver/ui/driver/main/DriverActivity;->animeStep:I
     add-int/lit8 v1, v1, 0x1
     iput v1, p0, Lsinet/startup/inDriver/ui/driver/main/DriverActivity;->animeStep:I
     
-    # Update text EVERY second (no modulo check for now to ensure visibility)
-    
+    # Update every 2 seconds (faster)
+    rem-int/lit8 v2, v1, 0x2
+    if-eqz v2, :cond_reschedule
+
+    # Find Status View
     const-string v2, "bot_tv_status"
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewWithTag(Ljava/lang/Object;)Landroid/view/View;
     move-result-object v2
     
     if-nez v2, :cond_use_child_at
-    # Fallback: Card -> LinearLayout (index 0) -> TextView (index 0)
+    # Fallback to hierarchy if tag missing
     move-object v2, v0
     check-cast v2, Landroid/view/ViewGroup;
     const/4 v3, 0x0
@@ -2347,12 +2352,51 @@
     
     if-eqz v2, :cond_reschedule
     
-    # Calculate index: step
-    # Call helper method to get text
-    invoke-direct {p0, v1}, Lsinet/startup/inDriver/ui/driver/main/DriverActivity;->getSearchText(I)Ljava/lang/String;
-    move-result-object v1
+    # Calculate index: (step / 2) % 8
+    div-int/lit8 v1, v1, 0x2
+    rem-int/lit8 v1, v1, 0x8
     
+    if-eqz v1, :case_0
+    const/4 v3, 0x1
+    if-eq v1, v3, :case_1
+    const/4 v3, 0x2
+    if-eq v1, v3, :case_2
+    const/4 v3, 0x3
+    if-eq v1, v3, :case_3
+    const/4 v3, 0x4
+    if-eq v1, v3, :case_4
+    const/4 v3, 0x5
+    if-eq v1, v3, :case_5
+    const/4 v3, 0x6
+    if-eq v1, v3, :case_6
+    const-string v1, "Priorizando ganancias..."
+    goto :set_text
+    
+    :case_0
+    const-string v1, "Buscando viajes..."
+    goto :set_text
+    :case_1
+    const-string v1, "Vamos por el mejor..."
+    goto :set_text
+    :case_2
+    const-string v1, "Optimizando..."
+    goto :set_text
+    :case_3
+    const-string v1, "Filtrando ofertas..."
+    goto :set_text
+    :case_4
+    const-string v1, "Escaneando zona..."
+    goto :set_text
+    :case_5
+    const-string v1, "Analizando rutas..."
+    goto :set_text
+    :case_6
+    const-string v1, "Revisando tarifas..."
+    
+    :set_text
     invoke-virtual {v2, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    :try_end_text
+    .catch Ljava/lang/Exception; {:try_text .. :try_end_text} :catch_ignored
     
     goto :cond_reschedule
     
@@ -2383,55 +2427,4 @@
 
     .line 9
     return-void
-.end method
-
-.method private getSearchText(I)Ljava/lang/String;
-    .registers 4
-
-    rem-int/lit8 p1, p1, 0x8
-
-    if-nez p1, :cond_0
-    const-string v0, "Buscando viajes..."
-    return-object v0
-
-    :cond_0
-    const/4 v0, 0x1
-    if-ne p1, v0, :cond_1
-    const-string v0, "Vamos por el mejor..."
-    return-object v0
-
-    :cond_1
-    const/4 v0, 0x2
-    if-ne p1, v0, :cond_2
-    const-string v0, "Optimizando..."
-    return-object v0
-
-    :cond_2
-    const/4 v0, 0x3
-    if-ne p1, v0, :cond_3
-    const-string v0, "Filtrando ofertas..."
-    return-object v0
-
-    :cond_3
-    const/4 v0, 0x4
-    if-ne p1, v0, :cond_4
-    const-string v0, "Escaneando zona..."
-    return-object v0
-
-    :cond_4
-    const/4 v0, 0x5
-    if-ne p1, v0, :cond_5
-    const-string v0, "Analizando rutas..."
-    return-object v0
-
-    :cond_5
-    const/4 v0, 0x6
-    if-ne p1, v0, :cond_6
-    const-string v0, "Revisando tarifas..."
-    return-object v0
-
-    :cond_6
-    # Default / 7
-    const-string v0, "Priorizando ganancias..."
-    return-object v0
 .end method
