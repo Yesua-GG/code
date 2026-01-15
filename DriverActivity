@@ -2218,129 +2218,6 @@
 
     .line 1
     invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
-
-    move-result-object v0
-
-    const-string v1, "bot_info_card"
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewWithTag(Ljava/lang/Object;)Landroid/view/View;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_next
-
-    .line 2
-    sget-boolean v1, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->isPaused:Z
-
-    if-eqz v1, :cond_hide_force
-
-    .line 3
-    const/16 v1, 0x8
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
-
-    invoke-virtual {v0}, Landroid/view/View;->clearAnimation()V
-
-    goto :cond_next
-
-    :cond_hide_force
-    const/16 v1, 0x8
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
-    invoke-virtual {v0}, Landroid/view/View;->clearAnimation()V
-    goto :cond_next
-
-    # Check for OrdersFragment (The ONLY place where it should be visible)
-    :cond_check_frag
-    const/4 v1, 0x0 # Flag found = false
-
-    invoke-virtual {p0}, Landroidx/fragment/app/FragmentActivity;->getSupportFragmentManager()Landroidx/fragment/app/i0;
-    move-result-object v2
-    invoke-virtual {v2}, Landroidx/fragment/app/i0;->E0()Ljava/util/List;
-    move-result-object v2
-    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-    move-result-object v2
-
-    :loop_start
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-    move-result v3
-    if-eqz v3, :cond_eval_found
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-    move-result-object v3
-    check-cast v3, Landroidx/fragment/app/Fragment;
-    
-    # Check if fragment is OrdersFragment
-    instance-of v4, v3, Lsinet/startup/inDriver/city/driver/feed/impl/ui/OrdersFragment;
-    if-eqz v4, :cond_check_child
-
-    invoke-virtual {v3}, Landroidx/fragment/app/Fragment;->isVisible()Z
-    move-result v4
-    if-eqz v4, :cond_check_child
-    const/4 v1, 0x1 # Found visible OrdersFragment
-    goto :cond_eval_found
-
-    :cond_check_child
-    # Also check child fragments
-    invoke-virtual {v3}, Landroidx/fragment/app/Fragment;->getChildFragmentManager()Landroidx/fragment/app/i0;
-    move-result-object v4
-    invoke-virtual {v4}, Landroidx/fragment/app/i0;->E0()Ljava/util/List;
-    move-result-object v4
-    invoke-interface {v4}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-    move-result-object v4
-
-    :child_loop
-    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
-    move-result v5 # Reused register? careful. 
-    # v5 is safe (registers 6 declared? No, 5 declared. v0-v4. Need to be careful with registers)
-    # increase registers to 6
-    if-eqz v5, :loop_start # Check outer loop again
-
-    # Wait, smali logic with iterators in nested loops is tricky with limited registers.
-    # Let's simplify: Just checking S2() might have been safer IF it worked properly.
-    # But recursive check is robust. 
-    # Let's stick strictly to strict register usage.
-    # v0: View
-    # v1: Found flag / temp boolean
-    # v2: Iterator 1
-    # v3: Fragment 1 / Iterator 2
-    # v4: Fragment 2 / temp bool
-    
-    # ... This nested loop logic in raw smali replacement is error-prone without compiler.
-    # Let's try a safer approach: Use a helper method or improved S2 logging from before.
-    # BUT user said S2 failed.
-    # Let's rely on the previous recursive approach but inverted.
-    # "Show ONLY if OrdersFragment"
-    
-    # Let's assume the previous loop logic worked for hiding, surely it can assume for showing.
-    
-    # Implementation Attempt 2 with simplified logic:
-    # 1. Hide by default.
-    # 2. Loop. If found visible OrdersFragment -> Show and Break.
-    
-    # Register map:
-    # v0: view
-    # v1: iterator
-    # v2: fragment
-    # v3: boolean/temp
-    # v4: child iterator/temp
-    
-    goto :loop_start # skipping child loop for now in thought process
-    
-    # ... Actually, manual smali coding of nested loops is high risk. 
-    # Let's start by hiding the view. Then if we find the fragment, we show it.
-
-    :cond_eval_found
-    # If v1 is true (found), show. Else hide.
-    # ...
-    
-    # Let's write the code block cleanly.
-    
-    .line 1
-    invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
     move-result-object v0
     invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
     move-result-object v0
@@ -2348,15 +2225,15 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewWithTag(Ljava/lang/Object;)Landroid/view/View;
     move-result-object v0
     if-eqz v0, :cond_ret
-    
+
     # Default: HIDE
     const/16 v1, 0x8
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
     invoke-virtual {v0}, Landroid/view/View;->clearAnimation()V
-    
+
     sget-boolean v1, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->isPaused:Z
     if-eqz v1, :cond_check_frag
-    goto :cond_ret # Paused -> Stay hidden (already hidden above)
+    goto :cond_ret # Paused -> Stay hidden
 
     :cond_check_frag
     # Search for OrdersFragment
@@ -2371,11 +2248,11 @@
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
     move-result v2
     if-eqz v2, :cond_ret # End of loop -> Not found -> Stay hidden
-    
+
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
     move-result-object v2
     check-cast v2, Landroidx/fragment/app/Fragment;
-    
+
     instance-of v3, v2, Lsinet/startup/inDriver/city/driver/feed/impl/ui/OrdersFragment;
     if-eqz v3, :cond_check_child
     invoke-virtual {v2}, Landroidx/fragment/app/Fragment;->isVisible()Z
@@ -2393,12 +2270,12 @@
     move-result-object v2
     invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
     move-result-object v2
-    
+
     :loop_2
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
     move-result v3
     if-eqz v3, :loop_1 # Back to outer loop
-    
+
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
     move-result-object v3
     check-cast v3, Landroidx/fragment/app/Fragment;
