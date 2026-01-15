@@ -151,6 +151,16 @@
     return-void
 
     :cond_start
+    const-string v0, "AudioDebug"
+    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v2, "Processing rejection reason: "
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v1
+    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
     invoke-virtual {p2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
     move-result-object v0
 
@@ -230,9 +240,22 @@
     invoke-virtual {v1}, Ljava/lang/String;->isEmpty()Z
     move-result v2
     if-eqz v2, :play
+    const-string v0, "AudioDebug"
+    const-string v2, "No suitable keyword found inside reason text."
+    invoke-static {v0, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
     goto :done
 
     :play
+    const-string v0, "AudioDebug"
+    new-instance v2, Ljava/lang/StringBuilder;
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v3, "Selected audio file: "
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v2
+    invoke-static {v0, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
     move-result-object v2
     const-string v3, "raw"
@@ -241,11 +264,33 @@
     invoke-virtual {v2, v1, v3, v4}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
     move-result v2
 
-    if-eqz v2, :done
+    if-eqz v2, :log_fail_id
     invoke-static {p1, v2}, Landroid/media/MediaPlayer;->create(Landroid/content/Context;I)Landroid/media/MediaPlayer;
     move-result-object v3
-    if-eqz v3, :done
+    if-eqz v3, :log_fail_player
     invoke-virtual {v3}, Landroid/media/MediaPlayer;->start()V
+    const-string v0, "AudioDebug"
+    const-string v2, "MediaPlayer started successfully."
+    invoke-static {v0, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    goto :done
+
+    :log_fail_id
+    const-string v0, "AudioDebug"
+    new-instance v2, Ljava/lang/StringBuilder;
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v3, "Resource not found for name: "
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v1
+    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    goto :done
+
+    :log_fail_player
+    const-string v0, "AudioDebug"
+    const-string v1, "MediaPlayer.create returned null."
+    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    goto :done
 
     :done
     return-void
