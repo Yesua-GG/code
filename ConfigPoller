@@ -78,15 +78,41 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "https://asistente-web-r2qs.onrender.com/config?format=json&user_id="
+    const-string v2, "https://asistenteindrive.duckdns.org/config?format=json&user_id="
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    # ... (inside run method) ...
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
+
+    # --- DEBUG LOG URL ---
+    const-string v6, "ConfigDebug"
+    new-instance v7, Ljava/lang/StringBuilder;
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v5, "Requesting Config from: "
+    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v7
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    # --- DEBUG LOG URL ---
+    const-string v6, "ConfigDebug"
+    new-instance v7, Ljava/lang/StringBuilder;
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v5, "Requesting Config from: "
+    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v7
+    invoke-static {v6, v7}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    # ---------------------
 
     new-instance v0, Ljava/net/URL;
 
@@ -140,13 +166,13 @@
 
     move-result-object v0
 
-    const-string v6, "ConfigPoller"
+    const-string v6, "ConfigDebug"
 
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "Response: "
+    const-string v5, "RAW RESPONSE: "
 
     invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -156,7 +182,7 @@
 
     move-result-object v7
 
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v6, v7}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     new-instance v1, Lorg/json/JSONObject;
 
@@ -253,31 +279,19 @@
     :catch_bb
     move-exception v0
 
-    const-string v6, "ConfigPoller"
-
+    const-string v6, "ConfigDebug"
     new-instance v7, Ljava/lang/StringBuilder;
-
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "Error: "
-
+    const-string v5, "ConfigPoll Error: "
     invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
-
     move-result-object v0
-
     invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
     move-result-object v7
-
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v6, v7}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     const/4 v8, 0x0
-
     sput-boolean v8, Lf01/Config;->isPolling:Z
-
     return-void
 .end method
