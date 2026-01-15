@@ -2224,7 +2224,7 @@
 
     # 2. Check Fragment Visibility
     :cond_start_check
-    const/16 v1, 0x8 # Default GONE
+    const/4 v1, 0x0 # Default VISIBLE (Fallback to avoid breaking)
     
     :try_start
     invoke-virtual {p0}, Landroidx/fragment/app/FragmentActivity;->getSupportFragmentManager()Landroidx/fragment/app/i0;
@@ -2233,6 +2233,14 @@
     move-result-object v2
     
     if-eqz v2, :cond_apply_vis
+    invoke-interface {v2}, Ljava/util/List;->isEmpty()Z
+    move-result v3
+    if-eqz v3, :cond_list_not_empty
+    goto :cond_apply_vis
+    
+    :cond_list_not_empty
+    # List is not empty, so we must be strict: Default GONE until found
+    const/16 v1, 0x8 
     
     invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
     move-result-object v2
