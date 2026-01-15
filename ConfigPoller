@@ -196,8 +196,21 @@
 
     sput v2, Lf01/Config;->maxRepeats:I
 
+    invoke-virtual {v1, v2, v3}, Lorg/json/JSONObject;->optInt(Ljava/lang/String;I)I
+
+    move-result v2
+
+    sput v2, Lf01/Config;->maxRepeats:I
+
+    # --- DEBUG LOGGING START ---
+    const-string v6, "ConfigDebug"
+    const-string v7, "Parsing audio_enabled..."
+    invoke-static {v6, v7}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    # --- DEBUG LOGGING END ---
+
     const-string v2, "audio_enabled"
 
+    # Default to TRUE (1)
     const/4 v3, 0x1
 
     invoke-virtual {v1, v2, v3}, Lorg/json/JSONObject;->optBoolean(Ljava/lang/String;Z)Z
@@ -205,6 +218,19 @@
     move-result v2
 
     sput-boolean v2, Lf01/Config;->isAudioEnabled:Z
+
+    # --- DEBUG LOGGING START ---
+    const-string v6, "ConfigDebug"
+    new-instance v7, Ljava/lang/StringBuilder;
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v2, "Parsed audio_enabled from JSON: "
+    invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    sget-boolean v2, Lf01/Config;->isAudioEnabled:Z
+    invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v7
+    invoke-static {v6, v7}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    # --- DEBUG LOGGING END ---
 
     const-string v6, "ConfigPoller"
 
