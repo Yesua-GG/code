@@ -1,5 +1,3 @@
-# classes13.dex
-
 .class public final Lsinet/startup/inDriver/ui/driver/main/DriverActivity;
 .super Lsinet/startup/inDriver/ui/common/NavigationDrawerActivity;
 .source "SourceFile"
@@ -174,9 +172,6 @@
 
 
 # instance fields
-.field public searchAnimHandler:Landroid/os/Handler;
-.field public animeStep:I
-
 .field public d1:Lx22/j;
 
 .field public e1:Lhw5/h;
@@ -212,6 +207,8 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 .end field
+
+.field public searchAnimHandler:Landroid/os/Handler;
 
 
 # direct methods
@@ -293,15 +290,6 @@
 
     .line 1
     invoke-static {p0}, Lsinet/startup/inDriver/ui/driver/main/DriverActivity;->S3(Lsinet/startup/inDriver/ui/driver/main/DriverActivity;)V
-
-    return-void
-.end method
-
-.method public con(Landroid/view/View;)V
-    .registers 5
-    .param p1, "v"  # Landroid/view/View;
-
-    invoke-static {p0}, Lsinet/startup/inDriver/ui/FloatingMenu;->openSettings(Landroid/app/Activity;)V
 
     return-void
 .end method
@@ -1177,6 +1165,15 @@
     return-void
 .end method
 
+.method public con(Landroid/view/View;)V
+    .registers 5
+    .param p1, "v"  # Landroid/view/View;
+
+    invoke-static {p0}, Lsinet/startup/inDriver/ui/FloatingMenu;->openSettings(Landroid/app/Activity;)V
+
+    return-void
+.end method
+
 .method public f(Ljava/lang/String;)V
     .registers 2
     .param p1  # Ljava/lang/String;
@@ -1371,9 +1368,6 @@
     invoke-direct {v3, v4, v7, v5}, Landroid/widget/LinearLayout$LayoutParams;-><init>(IIF)V
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-    
-    const-string v3, "bot_tv_status"
-    invoke-virtual {v2, v3}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
     invoke-virtual {v6, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
@@ -1439,69 +1433,105 @@
 
     const v5, -0xde690d
 
-    # --- ROW 1: DISTANCES ---
     new-instance v6, Landroid/widget/LinearLayout;
+
     invoke-direct {v6, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
+
     const/4 v7, 0x0
+
     invoke-virtual {v6, v7}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    # Pickup Dist TextView
     new-instance v2, Landroid/widget/TextView;
+
     invoke-direct {v2, p0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+
     const-string v8, "\ud83d\udccd Dist. Recogida: --"
+
     invoke-virtual {v2, v8}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
     invoke-virtual {v2, v5}, Landroid/widget/TextView;->setTextColor(I)V
+
     const-string v8, "bot_tv_max_dist"
+
     invoke-virtual {v2, v8}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
+
     const/4 v8, 0x0
+
     const/4 v9, 0x0
+
     const/16 v10, 0x14
+
     invoke-virtual {v2, v8, v9, v10, v8}, Landroid/view/View;->setPadding(IIII)V
+
     invoke-virtual {v6, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    # Dest Dist TextView
     new-instance v2, Landroid/widget/TextView;
+
     invoke-direct {v2, p0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+
     const-string v8, "\ud83c\udfc1 Dist. Destino: --"
+
     invoke-virtual {v2, v8}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
     invoke-virtual {v2, v5}, Landroid/widget/TextView;->setTextColor(I)V
+
     const-string v8, "bot_tv_dest_dist"
+
     invoke-virtual {v2, v8}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
+
     invoke-virtual {v6, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+
     invoke-virtual {v0, v6}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    # --- ROW 2: PRICES ---
     new-instance v6, Landroid/widget/LinearLayout;
+
     invoke-direct {v6, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
+
     const/4 v7, 0x0
+
     invoke-virtual {v6, v7}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    # Min Price TextView
     new-instance v2, Landroid/widget/TextView;
+
     invoke-direct {v2, p0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+
     const-string v8, "\ud83d\udcb2 Precio Mínimo: --"
+
     invoke-virtual {v2, v8}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
     invoke-virtual {v2, v5}, Landroid/widget/TextView;->setTextColor(I)V
+
     const-string v8, "bot_tv_min_price"
+
     invoke-virtual {v2, v8}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
+
     const/4 v8, 0x0
+
     const/4 v9, 0x0
+
     const/16 v10, 0x14
+
     invoke-virtual {v2, v8, v9, v10, v8}, Landroid/view/View;->setPadding(IIII)V
+
     invoke-virtual {v6, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    # Price/KM TextView
     new-instance v2, Landroid/widget/TextView;
+
     invoke-direct {v2, p0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+
     const-string v8, "\ud83d\ude97 Precio/KM: --"
+
     invoke-virtual {v2, v8}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
     invoke-virtual {v2, v5}, Landroid/widget/TextView;->setTextColor(I)V
+
     const-string v8, "bot_tv_price_km"
+
     invoke-virtual {v2, v8}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
+
     invoke-virtual {v6, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+
     invoke-virtual {v0, v6}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
-
-
 
     invoke-virtual {p0, v0, v1}, Landroid/app/Activity;->addContentView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
@@ -1670,9 +1700,13 @@
 
     .line 0
     new-instance v0, Landroid/os/Handler;
+
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+
     move-result-object v1
+
     invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+
     iput-object v0, p0, Lsinet/startup/inDriver/ui/driver/main/DriverActivity;->searchAnimHandler:Landroid/os/Handler;
 
     .line 1
@@ -1697,13 +1731,13 @@
     iput-object v0, p0, Lsinet/startup/inDriver/ui/driver/main/DriverActivity;->i1:Lgw2/a;
 
     .line 16
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_1f
 
     .line 18
     invoke-interface {v0, p0}, Lgw2/a;->a(Lsinet/startup/inDriver/ui/driver/main/DriverActivity;)V
 
     .line 21
-    :cond_14
+    :cond_1f
     invoke-super {p0, p1}, Lsinet/startup/inDriver/ui/common/NavigationDrawerActivity;->onCreate(Landroid/os/Bundle;)V
 
     .line 24
@@ -1719,7 +1753,7 @@
     invoke-interface {v0, p0}, Lvb5/b;->q(Lvb5/c;)V
 
     .line 34
-    if-nez p1, :cond_53
+    if-nez p1, :cond_5e
 
     .line 36
     invoke-virtual {p0}, Landroidx/fragment/app/FragmentActivity;->getSupportFragmentManager()Landroidx/fragment/app/i0;
@@ -1788,10 +1822,10 @@
     invoke-interface {p1, v0}, Lhw5/h;->e(Landroid/content/Intent;)V
 
     .line 83
-    goto :goto_5a
+    goto :goto_65
 
     .line 84
-    :cond_53
+    :cond_5e
     invoke-virtual {p0}, Lsinet/startup/inDriver/ui/driver/main/DriverActivity;->J3()Lhw5/h;
 
     .line 87
@@ -1801,14 +1835,14 @@
     invoke-interface {v0, p1}, Lhw5/h;->c(Landroid/os/Bundle;)V
 
     .line 91
-    :goto_5a
+    :goto_65
     invoke-virtual {p0}, Lsinet/startup/inDriver/ui/common/NavigationDrawerActivity;->X2()Landroidx/drawerlayout/widget/DrawerLayout;
 
     .line 94
     move-result-object p1
 
     .line 95
-    if-eqz p1, :cond_68
+    if-eqz p1, :cond_73
 
     .line 97
     new-instance v0, Lsinet/startup/inDriver/ui/driver/main/DriverActivity$c;
@@ -1820,7 +1854,7 @@
     invoke-virtual {p1, v0}, Landroidx/drawerlayout/widget/DrawerLayout;->a(Landroidx/drawerlayout/widget/DrawerLayout$e;)V
 
     .line 105
-    :cond_68
+    :cond_73
     new-instance p1, Lku1/d;
 
     .line 107
@@ -1857,13 +1891,13 @@
 
     move-result v0
 
-    if-eqz v0, :cond_8c
+    if-eqz v0, :cond_97
 
     invoke-static {p0}, Lsinet/startup/inDriver/ui/FloatingMenu;->show(Landroid/app/Activity;)V
 
-    goto :goto_a4
+    goto :goto_af
 
-    :cond_8c
+    :cond_97
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.settings.action.MANAGE_OVERLAY_PERMISSION"
@@ -1886,7 +1920,7 @@
 
     invoke-virtual {p0, v0}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
 
-    :goto_a4
+    :goto_af
     const-string v0, "InDrive Automatico"
 
     const/4 v1, 0x1
@@ -2014,11 +2048,13 @@
     invoke-super {p0}, Lsinet/startup/inDriver/ui/common/AbstractionAppCompatActivity;->onPause()V
 
     iget-object v0, p0, Lsinet/startup/inDriver/ui/driver/main/DriverActivity;->searchAnimHandler:Landroid/os/Handler;
-    if-eqz v0, :cond_remove
+
+    if-eqz v0, :cond_18
+
     invoke-virtual {v0, p0}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
-    :cond_remove
 
     .line 18
+    :cond_18
     return-void
 .end method
 
@@ -2042,10 +2078,12 @@
     invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
     iget-object v0, p0, Lsinet/startup/inDriver/ui/driver/main/DriverActivity;->searchAnimHandler:Landroid/os/Handler;
-    if-eqz v0, :cond_post
-    invoke-virtual {v0, p0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-    :cond_post
 
+    if-eqz v0, :cond_1d
+
+    invoke-virtual {v0, p0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    :cond_1d
     return-void
 .end method
 
@@ -2175,6 +2213,76 @@
     return-void
 .end method
 
+.method public run()V
+    .registers 5
+
+    invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+
+    move-result-object v0
+
+    const-string v1, "bot_info_card"
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewWithTag(Ljava/lang/Object;)Landroid/view/View;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_38
+
+    sget-boolean v1, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->isPaused:Z
+
+    if-nez v1, :cond_35
+
+    invoke-virtual {v0}, Landroid/view/View;->getAnimation()Landroid/view/animation/Animation;
+
+    move-result-object v1
+
+    if-nez v1, :cond_38
+
+    new-instance v1, Landroid/view/animation/AlphaAnimation;
+
+    const/high16 v2, 0x3f800000  # 1.0f
+
+    const v3, 0x3e4ccccd  # 0.2f
+
+    invoke-direct {v1, v2, v3}, Landroid/view/animation/AlphaAnimation;-><init>(FF)V
+
+    const-wide/16 v2, 0x3e8
+
+    invoke-virtual {v1, v2, v3}, Landroid/view/animation/Animation;->setDuration(J)V
+
+    const/4 v2, -0x1
+
+    invoke-virtual {v1, v2}, Landroid/view/animation/Animation;->setRepeatCount(I)V
+
+    const/4 v2, 0x2
+
+    invoke-virtual {v1, v2}, Landroid/view/animation/Animation;->setRepeatMode(I)V
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
+
+    goto :goto_38
+
+    :cond_35
+    invoke-virtual {v0}, Landroid/view/View;->clearAnimation()V
+
+    :cond_38
+    :goto_38
+    iget-object v0, p0, Lsinet/startup/inDriver/ui/driver/main/DriverActivity;->searchAnimHandler:Landroid/os/Handler;
+
+    if-eqz v0, :cond_41
+
+    const-wide/16 v1, 0x3e8
+
+    invoke-virtual {v0, p0, v1, v2}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    :cond_41
+    return-void
+.end method
+
 .method public s0()V
     .registers 2
 
@@ -2208,193 +2316,6 @@
     invoke-virtual {p0}, Lsinet/startup/inDriver/ui/common/NavigationDrawerActivity;->x0()V
 
     .line 4
-    return-void
-.end method
-
-.method public run()V
-    .registers 10
-
-    # 1. Find View (Root Card)
-    invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
-    move-result-object v0
-    invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
-    move-result-object v0
-    const-string v1, "bot_info_card"
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewWithTag(Ljava/lang/Object;)Landroid/view/View;
-    move-result-object v0
-
-    if-nez v0, :cond_reschedule
-    goto :cond_reschedule
-
-    # 2. Check Fragment Visibility
-    :cond_start_check
-    const/4 v1, 0x0 # Default VISIBLE
-    
-    :try_start
-    invoke-virtual {p0}, Landroidx/fragment/app/FragmentActivity;->getSupportFragmentManager()Landroidx/fragment/app/i0;
-    move-result-object v2
-    invoke-virtual {v2}, Landroidx/fragment/app/i0;->E0()Ljava/util/List;
-    move-result-object v2
-    
-    if-eqz v2, :cond_apply_vis
-    invoke-interface {v2}, Ljava/util/List;->isEmpty()Z
-    move-result v3
-    if-eqz v3, :cond_list_not_empty
-    goto :cond_apply_vis
-    
-    :cond_list_not_empty
-    # List is not empty, so we must be strict: Default GONE until found
-    const/16 v1, 0x8 
-    
-    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-    move-result-object v2
-    
-    :loop_next
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-    move-result v3
-    if-eqz v3, :cond_apply_vis
-    
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-    move-result-object v3
-    check-cast v3, Landroidx/fragment/app/Fragment;
-    
-    if-eqz v3, :loop_next
-    invoke-virtual {v3}, Landroidx/fragment/app/Fragment;->isVisible()Z
-    move-result v4
-    if-eqz v4, :loop_next
-    
-    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-    move-result-object v3
-    invoke-virtual {v3}, Ljava/lang/Class;->getName()Ljava/lang/String;
-    move-result-object v3
-    if-eqz v3, :loop_next
-    
-    # Check 1: Ends with .OrdersFragment (Matches UiUpdater)
-    const-string v4, ".OrdersFragment"
-    invoke-virtual {v3, v4}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
-    move-result v4
-    if-eqz v4, :cond_check_ride
-    goto :found_feed
-    
-    :cond_check_ride
-    # Check 2: Ends with .RideFeedFragment (Matches UiUpdater)
-    const-string v4, ".RideFeedFragment"
-    invoke-virtual {v3, v4}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
-    move-result v3
-    if-eqz v3, :loop_next
-    
-    :found_feed
-    const/4 v1, 0x0 # VISIBLE
-    goto :cond_apply_vis
-    :try_end
-    .catch Ljava/lang/Exception; {:try_start .. :try_end} :catch_ignored
-    
-    :catch_ignored
-    
-    :cond_apply_vis
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
-    
-    const/16 v2, 0x8
-    if-ne v1, v2, :cond_check_anim
-    # If GONE, clear animation and loop
-    invoke-virtual {v0}, Landroid/view/View;->clearAnimation()V
-    goto :cond_reschedule
-    
-    :cond_check_anim
-    # 3. Animation Logic
-    sget-boolean v1, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->isPaused:Z
-    if-nez v1, :cond_paused
-    
-    # Active -> Blink
-    invoke-virtual {v0}, Landroid/view/View;->getAnimation()Landroid/view/animation/Animation;
-    move-result-object v1
-    if-nez v1, :cond_steps_logic
-    
-    new-instance v1, Landroid/view/animation/AlphaAnimation;
-    const/high16 v2, 0x3f800000 # 1.0f
-    const v3, 0x3e4ccccd # 0.2f
-    invoke-direct {v1, v2, v3}, Landroid/view/animation/AlphaAnimation;-><init>(FF)V
-    const-wide/16 v2, 0x3e8
-    invoke-virtual {v1, v2, v3}, Landroid/view/animation/Animation;->setDuration(J)V
-    const/4 v2, -0x1
-    invoke-virtual {v1, v2}, Landroid/view/animation/Animation;->setRepeatCount(I)V
-    const/4 v2, 0x2
-    invoke-virtual {v1, v2}, Landroid/view/animation/Animation;->setRepeatMode(I)V
-    invoke-virtual {v0, v1}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
-    
-    :cond_steps_logic
-    # 4. Rotate Text (Wrapped in try-catch)
-    :try_text
-    iget v1, p0, Lsinet/startup/inDriver/ui/driver/main/DriverActivity;->animeStep:I
-    add-int/lit8 v1, v1, 0x1
-    iput v1, p0, Lsinet/startup/inDriver/ui/driver/main/DriverActivity;->animeStep:I
-    
-    # Update every 2 seconds (faster)
-    rem-int/lit8 v2, v1, 0x2
-    if-eqz v2, :cond_reschedule
-    
-    # Calculate index: (step / 2) % 8
-    div-int/lit8 v1, v1, 0x2
-    rem-int/lit8 v1, v1, 0x8
-    
-    if-eqz v1, :case_0
-    const/4 v3, 0x1
-    if-eq v1, v3, :case_1
-    const/4 v3, 0x2
-    if-eq v1, v3, :case_2
-    const/4 v3, 0x3
-    if-eq v1, v3, :case_3
-    const/4 v3, 0x4
-    if-eq v1, v3, :case_4
-    const/4 v3, 0x5
-    if-eq v1, v3, :case_5
-    const/4 v3, 0x6
-    if-eq v1, v3, :case_6
-    const-string v1, "Priorizando ganancias..."
-    goto :set_text
-    
-    :case_0
-    const-string v1, "Buscando viajes..."
-    goto :set_text
-    :case_1
-    const-string v1, "Vamos por el mejor..."
-    goto :set_text
-    :case_2
-    const-string v1, "Optimizando..."
-    goto :set_text
-    :case_3
-    const-string v1, "Filtrando ofertas..."
-    goto :set_text
-    :case_4
-    const-string v1, "Escaneando zona..."
-    goto :set_text
-    :case_5
-    const-string v1, "Analizando rutas..."
-    goto :set_text
-    :case_6
-    const-string v1, "Revisando tarifas..."
-    
-    :set_text
-    # Use StatusUpdater class
-    new-instance v2, Lsinet/startup/inDriver/ui/driver/main/DriverActivity$StatusUpdater;
-    invoke-direct {v2, p0, v1}, Lsinet/startup/inDriver/ui/driver/main/DriverActivity$StatusUpdater;-><init>(Landroid/app/Activity;Ljava/lang/String;)V
-    invoke-virtual {v2}, Lsinet/startup/inDriver/ui/driver/main/DriverActivity$StatusUpdater;->run()V
-
-    :try_end_text
-    .catch Ljava/lang/Exception; {:try_text .. :try_end_text} :catch_ignored
-    
-    goto :cond_reschedule
-    
-    :cond_paused
-    invoke-virtual {v0}, Landroid/view/View;->clearAnimation()V
-
-    :cond_reschedule
-    iget-object v0, p0, Lsinet/startup/inDriver/ui/driver/main/DriverActivity;->searchAnimHandler:Landroid/os/Handler;
-    if-eqz v0, :cond_end
-    const-wide/16 v1, 0x3e8
-    invoke-virtual {v0, p0, v1, v2}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
-    
-    :cond_end
     return-void
 .end method
 
