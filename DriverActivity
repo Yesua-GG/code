@@ -2303,6 +2303,15 @@
     sget-boolean v1, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->isPaused:Z
     if-nez v1, :cond_paused
     
+    # Debug Active
+    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+    move-result-object v3
+    const-string v4, "Loop: Active"
+    const/4 v5, 0x0
+    invoke-static {v3, v4, v5}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    move-result-object v3
+    invoke-virtual {v3}, Landroid/widget/Toast;->show()V
+    
     # Active -> Blink
     invoke-virtual {v0}, Landroid/view/View;->getAnimation()Landroid/view/animation/Animation;
     move-result-object v1
@@ -2392,6 +2401,15 @@
     goto :cond_reschedule
     
     :cond_paused
+    # Debug Paused
+    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+    move-result-object v3
+    const-string v4, "Loop: Paused"
+    const/4 v5, 0x0
+    invoke-static {v3, v4, v5}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    move-result-object v3
+    invoke-virtual {v3}, Landroid/widget/Toast;->show()V
+
     invoke-virtual {v0}, Landroid/view/View;->clearAnimation()V
 
     :cond_reschedule
