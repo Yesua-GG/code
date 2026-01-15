@@ -190,16 +190,11 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    # Parse max_repeats
+    const-string v2, "max_repeats"
+    const/4 v3, 0x0
     invoke-virtual {v1, v2, v3}, Lorg/json/JSONObject;->optInt(Ljava/lang/String;I)I
-
     move-result v2
-
-    sput v2, Lf01/Config;->maxRepeats:I
-
-    invoke-virtual {v1, v2, v3}, Lorg/json/JSONObject;->optInt(Ljava/lang/String;I)I
-
-    move-result v2
-
     sput v2, Lf01/Config;->maxRepeats:I
 
     # --- DEBUG LOGGING START ---
@@ -209,14 +204,9 @@
     # --- DEBUG LOGGING END ---
 
     const-string v2, "audio_enabled"
-
-    # Default to TRUE (1)
     const/4 v3, 0x1
-
     invoke-virtual {v1, v2, v3}, Lorg/json/JSONObject;->optBoolean(Ljava/lang/String;Z)Z
-
     move-result v2
-
     sput-boolean v2, Lf01/Config;->isAudioEnabled:Z
 
     # --- DEBUG LOGGING START ---
