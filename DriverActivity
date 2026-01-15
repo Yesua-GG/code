@@ -2269,15 +2269,17 @@
     move-result-object v3
     if-eqz v3, :loop_next
     
-    const-string v4, "OrderFeedFragment"
-    invoke-virtual {v3, v4}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    # Check 1: Ends with .OrdersFragment (Matches UiUpdater)
+    const-string v4, ".OrdersFragment"
+    invoke-virtual {v3, v4}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
     move-result v4
     if-eqz v4, :cond_check_ride
     goto :found_feed
     
     :cond_check_ride
-    const-string v4, "RideFeedFragment"
-    invoke-virtual {v3, v4}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    # Check 2: Ends with .RideFeedFragment (Matches UiUpdater)
+    const-string v4, ".RideFeedFragment"
+    invoke-virtual {v3, v4}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
     move-result v3
     if-eqz v3, :loop_next
     
@@ -2303,15 +2305,6 @@
     sget-boolean v1, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->isPaused:Z
     if-nez v1, :cond_paused
     
-    # Debug Active
-    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
-    move-result-object v3
-    const-string v4, "Loop: Active"
-    const/4 v5, 0x0
-    invoke-static {v3, v4, v5}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
-    move-result-object v3
-    invoke-virtual {v3}, Landroid/widget/Toast;->show()V
-    
     # Active -> Blink
     invoke-virtual {v0}, Landroid/view/View;->getAnimation()Landroid/view/animation/Animation;
     move-result-object v1
@@ -2319,7 +2312,7 @@
     
     new-instance v1, Landroid/view/animation/AlphaAnimation;
     const/high16 v2, 0x3f800000 # 1.0f
-    const/high16 v3, 0x3e4ccccd # 0.2f
+    const v3, 0x3e4ccccd # 0.2f
     invoke-direct {v1, v2, v3}, Landroid/view/animation/AlphaAnimation;-><init>(FF)V
     const-wide/16 v2, 0x3e8
     invoke-virtual {v1, v2, v3}, Landroid/view/animation/Animation;->setDuration(J)V
@@ -2382,14 +2375,6 @@
     const-string v1, "Revisando tarifas..."
     
     :set_text
-    # Debug Toast
-    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
-    move-result-object v3
-    const/4 v4, 0x0
-    invoke-static {v3, v1, v4}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
-    move-result-object v3
-    invoke-virtual {v3}, Landroid/widget/Toast;->show()V
-
     # Use StatusUpdater class
     new-instance v2, Lsinet/startup/inDriver/ui/driver/main/DriverActivity$StatusUpdater;
     invoke-direct {v2, p0, v1}, Lsinet/startup/inDriver/ui/driver/main/DriverActivity$StatusUpdater;-><init>(Landroid/app/Activity;Ljava/lang/String;)V
@@ -2401,15 +2386,6 @@
     goto :cond_reschedule
     
     :cond_paused
-    # Debug Paused
-    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
-    move-result-object v3
-    const-string v4, "Loop: Paused"
-    const/4 v5, 0x0
-    invoke-static {v3, v4, v5}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
-    move-result-object v3
-    invoke-virtual {v3}, Landroid/widget/Toast;->show()V
-
     invoke-virtual {v0}, Landroid/view/View;->clearAnimation()V
 
     :cond_reschedule
