@@ -628,8 +628,10 @@
 
     :cond_c
     const/4 v0, 0x1
-
     sput-boolean v0, Lsinet/startup/inDriver/ui/FloatingMenu;->isShown:Z
+
+    # Start Config Polling
+    invoke-static {}, Lf01/Config;->startPolling()V
 
     const-string v0, "window"
 
