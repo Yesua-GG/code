@@ -150,6 +150,10 @@
     sget-boolean v0, Lf01/Config;->isAudioEnabled:Z
 
     if-nez v0, :cond_audio_off
+    # Log that audio is disabled
+    const-string v0, "AudioDebug"
+    const-string v1, "Audio playback skipped (Config.isAudioEnabled = false)"
+    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
     return-void
 
     :cond_audio_off
