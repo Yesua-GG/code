@@ -2210,7 +2210,7 @@
 .method public run()V
     .registers 10
 
-    # 1. FIND VIEW
+    # 1. Find View
     invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
     move-result-object v0
     invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
@@ -2219,133 +2219,105 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewWithTag(Ljava/lang/Object;)Landroid/view/View;
     move-result-object v0
 
-    if-nez v0, :cond_schedule
-    return-void
+    if-nez v0, :cond_reschedule
+    goto :cond_reschedule
 
-    :cond_schedule
-    # 2. CHECK VISIBILITY (Nested Loop)
-    const/4 v1, 0x0 # canShow
-
-    # Get Top Level Fragments
+    # 2. Check Fragment Visibility
+    :cond_start_check
+    const/16 v1, 0x8 # Default GONE
+    
+    :try_start
     invoke-virtual {p0}, Landroidx/fragment/app/FragmentActivity;->getSupportFragmentManager()Landroidx/fragment/app/i0;
     move-result-object v2
     invoke-virtual {v2}, Landroidx/fragment/app/i0;->E0()Ljava/util/List;
     move-result-object v2
+    
+    if-eqz v2, :cond_apply_vis
+    
     invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-    move-result-object v2 # Iterator 1
-
-    :goto_loop1
+    move-result-object v2
+    
+    :loop_next
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
     move-result v3
-    if-eqz v3, :cond_check_finished
-
+    if-eqz v3, :cond_apply_vis
+    
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
     move-result-object v3
     check-cast v3, Landroidx/fragment/app/Fragment;
-
-    # Check Frag 1
-    instance-of v4, v3, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;
-    if-eqz v4, :cond_check_order1
-    invoke-virtual {v3}, Landroidx/fragment/app/Fragment;->isVisible()Z
-    move-result v4
-    if-eqz v4, :cond_check_order1
-    const/4 v1, 0x1
-    goto :cond_check_finished
-
-    :cond_check_order1
-    instance-of v4, v3, Lsinet/startup/inDriver/interclass/driver/order_feed/ui/OrderFeedFragment;
-    if-eqz v4, :cond_scan_children
-    invoke-virtual {v3}, Landroidx/fragment/app/Fragment;->isVisible()Z
-    move-result v4
-    if-eqz v4, :cond_scan_children
-    const/4 v1, 0x1
-    goto :cond_check_finished
-
-    # Scan Children of Frag 1
-    :cond_scan_children
-    invoke-virtual {v3}, Landroidx/fragment/app/Fragment;->getChildFragmentManager()Landroidx/fragment/app/i0;
-    move-result-object v4
-    invoke-virtual {v4}, Landroidx/fragment/app/i0;->E0()Ljava/util/List;
-    move-result-object v4
-    invoke-interface {v4}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-    move-result-object v4 # Iterator 2
-
-    :goto_loop2
-    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
-    move-result v5
-    if-eqz v5, :goto_loop1 # Continue outer loop if children exhausted
-
-    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-    move-result-object v5
-    check-cast v5, Landroidx/fragment/app/Fragment;
-
-    # Check Frag 2 (Child)
-    instance-of v6, v5, Lsinet/startup/inDriver/interclass/ride_feed/driver/ui/RideFeedFragment;
-    if-eqz v6, :cond_check_order2
-    invoke-virtual {v5}, Landroidx/fragment/app/Fragment;->isVisible()Z
-    move-result v6
-    if-eqz v6, :cond_check_order2
-    const/4 v1, 0x1
-    goto :cond_check_finished
-
-    :cond_check_order2
-    instance-of v6, v5, Lsinet/startup/inDriver/interclass/driver/order_feed/ui/OrderFeedFragment;
-    if-eqz v6, :goto_loop2
-    invoke-virtual {v5}, Landroidx/fragment/app/Fragment;->isVisible()Z
-    move-result v6
-    if-eqz v6, :goto_loop2
-    const/4 v1, 0x1
-    goto :cond_check_finished
-
-    :cond_check_finished
-    # v1 is result (1=show, 0=hide)
-
-    if-eqz v1, :cond_hide
     
-    # 3. SHOW
-    const/4 v2, 0x0
-    invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
-
-    # 4. ANIMATE
+    if-eqz v3, :loop_next
+    invoke-virtual {v3}, Landroidx/fragment/app/Fragment;->isVisible()Z
+    move-result v4
+    if-eqz v4, :loop_next
+    
+    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-result-object v3
+    invoke-virtual {v3}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    move-result-object v3
+    if-eqz v3, :loop_next
+    
+    const-string v4, "OrderFeedFragment"
+    invoke-virtual {v3, v4}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    move-result v4
+    if-eqz v4, :cond_check_ride
+    goto :found_feed
+    
+    :cond_check_ride
+    const-string v4, "RideFeedFragment"
+    invoke-virtual {v3, v4}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    move-result v3
+    if-eqz v3, :loop_next
+    
+    :found_feed
+    const/4 v1, 0x0 # VISIBLE
+    goto :cond_apply_vis
+    :try_end
+    .catch Ljava/lang/Exception; {:try_start .. :try_end} :catch_ignored
+    
+    :catch_ignored
+    
+    :cond_apply_vis
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+    
+    const/16 v2, 0x8
+    if-ne v1, v2, :cond_check_anim
+    # If GONE, clear animation
+    invoke-virtual {v0}, Landroid/view/View;->clearAnimation()V
+    goto :cond_reschedule
+    
+    :cond_check_anim
+    # 3. Animation Logic
     sget-boolean v1, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->isPaused:Z
-    if-nez v1, :cond_stop_anim
-
+    if-nez v1, :cond_paused
+    
+    # Active -> Blink
     invoke-virtual {v0}, Landroid/view/View;->getAnimation()Landroid/view/animation/Animation;
     move-result-object v1
-    if-eqz v1, :cond_start_anim # Exists? Check if running? No simple check, assume valid.
-    goto :cond_sched_next
-
-    :cond_start_anim
+    if-nez v1, :cond_reschedule
+    
     new-instance v1, Landroid/view/animation/AlphaAnimation;
     const/high16 v2, 0x3f800000 # 1.0f
-    const v3, 0x3e4ccccd # 0.2f
+    const/high16 v3, 0x3e4ccccd # 0.2f
     invoke-direct {v1, v2, v3}, Landroid/view/animation/AlphaAnimation;-><init>(FF)V
-    const-wide/16 v2, 0x3e8 # 1000ms
+    const-wide/16 v2, 0x3e8
     invoke-virtual {v1, v2, v3}, Landroid/view/animation/Animation;->setDuration(J)V
     const/4 v2, -0x1
     invoke-virtual {v1, v2}, Landroid/view/animation/Animation;->setRepeatCount(I)V
     const/4 v2, 0x2
     invoke-virtual {v1, v2}, Landroid/view/animation/Animation;->setRepeatMode(I)V
     invoke-virtual {v0, v1}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
-    goto :cond_sched_next
+    goto :cond_reschedule
+    
+    :cond_paused
+    invoke-virtual {v0}, Landroid/view/View;->clearAnimation()V
 
-    :cond_stop_anim
-    const/4 v1, 0x0
-    invoke-virtual {v0, v1}, Landroid/view/View;->setAnimation(Landroid/view/animation/Animation;)V
-    goto :cond_sched_next
-
-    :cond_hide
-    const/16 v2, 0x8
-    invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
-    const/4 v1, 0x0
-    invoke-virtual {v0, v1}, Landroid/view/View;->setAnimation(Landroid/view/animation/Animation;)V
-    goto :cond_sched_next
-
-    :cond_sched_next
+    :cond_reschedule
     iget-object v0, p0, Lsinet/startup/inDriver/ui/driver/main/DriverActivity;->searchAnimHandler:Landroid/os/Handler;
     if-eqz v0, :cond_end
     const-wide/16 v1, 0x3e8
     invoke-virtual {v0, p0, v1, v2}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+    
     :cond_end
     return-void
 .end method
