@@ -21,6 +21,7 @@
 .method public run()V
     .registers 12
 
+    :loop_start
     :try_start_0
     const-string v1, "unknown_id"
     :try_end_2
@@ -249,32 +250,24 @@
     # --- DEBUG LOGGING END ---
 
     const-string v6, "ConfigPoller"
-
     new-instance v7, Ljava/lang/StringBuilder;
-
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "Audio Enabled: "
-
     invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     sget-boolean v2, Lf01/Config;->isAudioEnabled:Z
-
     invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
     invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
     move-result-object v7
-
     invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    # --- SLEEP AND LOOP ---
+    const-wide/16 v8, 0x2710  # 10000 ms
+    invoke-static {v8, v9}, Ljava/lang/Thread;->sleep(J)V
+    goto :loop_start
+    # ----------------------
+
     :try_end_b7
     .catch Ljava/lang/Exception; {:try_start_29 .. :try_end_b7} :catch_bb
-
-    const/4 v8, 0x0
-
-    sput-boolean v8, Lf01/Config;->isPolling:Z
-
-    return-void
 
     :catch_bb
     move-exception v0
