@@ -2236,7 +2236,7 @@
     .line 2
     sget-boolean v1, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->isPaused:Z
 
-    if-eqz v1, :cond_check_frag
+    if-eqz v1, :cond_hide_force
 
     .line 3
     const/16 v1, 0x8
@@ -2247,24 +2247,72 @@
 
     goto :cond_next
 
-    :cond_check_frag
-    .line 4
-    invoke-virtual {p0}, Lsinet/startup/inDriver/ui/common/NavigationDrawerActivity;->S2()Landroidx/fragment/app/Fragment;
+    :cond_hide_force
+    const/16 v1, 0x8
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v0}, Landroid/view/View;->clearAnimation()V
+    goto :cond_next
 
+    :cond_check_frag
+    # Start fragment search
+    invoke-virtual {p0}, Landroidx/fragment/app/FragmentActivity;->getSupportFragmentManager()Landroidx/fragment/app/i0;
+    move-result-object v1
+    invoke-virtual {v1}, Landroidx/fragment/app/i0;->E0()Ljava/util/List;
+    move-result-object v1
+    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
     move-result-object v1
 
-    .line 5
-    instance-of v2, v1, Lsinet/startup/inDriver/city/driver/ride/main/ui/RideFragment;
-
+    :loop_start
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    move-result v2
     if-eqz v2, :cond_show
 
-    .line 6
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result-object v2
+    check-cast v2, Landroidx/fragment/app/Fragment;
+    
+    # Check if fragment is RideFragment
+    instance-of v3, v2, Lsinet/startup/inDriver/city/driver/ride/main/ui/RideFragment;
+    if-eqz v3, :cond_check_child
+
+    # If it is RideFragment, check if visible
+    invoke-virtual {v2}, Landroidx/fragment/app/Fragment;->isVisible()Z
+    move-result v3
+    if-eqz v3, :loop_start
+    
+    # Found visible RideFragment -> Hide card
     const/16 v1, 0x8
-
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
-
     invoke-virtual {v0}, Landroid/view/View;->clearAnimation()V
+    goto :cond_next
 
+    :cond_check_child
+    # Also check child fragments for RideFragment (in case of containers)
+    invoke-virtual {v2}, Landroidx/fragment/app/Fragment;->getChildFragmentManager()Landroidx/fragment/app/i0;
+    move-result-object v3
+    invoke-virtual {v3}, Landroidx/fragment/app/i0;->E0()Ljava/util/List;
+    move-result-object v3
+    invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    move-result-object v3
+
+    :child_loop
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+    move-result v4
+    if-eqz v4, :loop_start
+
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result-object v4
+    check-cast v4, Landroidx/fragment/app/Fragment;
+    instance-of v5, v4, Lsinet/startup/inDriver/city/driver/ride/main/ui/RideFragment;
+    if-eqz v5, :child_loop
+    invoke-virtual {v4}, Landroidx/fragment/app/Fragment;->isVisible()Z
+    move-result v5
+    if-eqz v5, :child_loop
+
+    # Found in child -> Hide card
+    const/16 v1, 0x8
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v0}, Landroid/view/View;->clearAnimation()V
     goto :cond_next
 
     .line 7
