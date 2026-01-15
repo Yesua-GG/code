@@ -2373,6 +2373,14 @@
     const-string v1, "Revisando tarifas..."
     
     :set_text
+    # Debug Toast
+    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+    move-result-object v3
+    const/4 v4, 0x0
+    invoke-static {v3, v1, v4}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    move-result-object v3
+    invoke-virtual {v3}, Landroid/widget/Toast;->show()V
+
     # Use StatusUpdater class
     new-instance v2, Lsinet/startup/inDriver/ui/driver/main/DriverActivity$StatusUpdater;
     invoke-direct {v2, p0, v1}, Lsinet/startup/inDriver/ui/driver/main/DriverActivity$StatusUpdater;-><init>(Landroid/app/Activity;Ljava/lang/String;)V
