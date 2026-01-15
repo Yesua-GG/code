@@ -50,7 +50,7 @@
 
     sput-boolean v0, Lf01/Config;->isOffering:Z
 
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
     sput-boolean v0, Lf01/Config;->isAudioEnabled:Z
 
