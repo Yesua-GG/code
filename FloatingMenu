@@ -490,6 +490,9 @@
 
     invoke-virtual {v2, v3}, Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V
 
+    const/4 v5, 0x0
+    invoke-virtual {v2, v5}, Landroid/webkit/WebSettings;->setMixedContentMode(I)V
+
     invoke-virtual {v1, v3}, Landroid/view/View;->setFitsSystemWindows(Z)V
 
     new-instance v2, Lsinet/startup/inDriver/ui/CustomConfigWebViewClient;
