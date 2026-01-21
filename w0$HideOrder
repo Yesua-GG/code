@@ -178,10 +178,10 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 30
+    .registers 40
 
     .line 1
-    move-object/from16 v28, p1
+    move-object/from16 v38, p1
     move-object/from16 v0, p0
     check-cast v0, Ly41/w0$HideOrder;
 
@@ -196,19 +196,19 @@
     const/4 v3, 0x1
 
     .line 8
-    if-eqz v2, :cond_17
+    if-eqz v2, :cond_1f
 
     .line 10
-    if-ne v2, v3, :cond_f
+    if-ne v2, v3, :cond_17
 
     .line 12
-    invoke-static/range {v28 .. v28}, Lfw/u;->b(Ljava/lang/Object;)V
+    invoke-static/range {v38 .. v38}, Lfw/u;->b(Ljava/lang/Object;)V
 
     .line 15
-    goto :goto_80
+    goto :goto_res
 
     .line 16
-    :cond_f
+    :cond_17
     new-instance v0, Ljava/lang/IllegalStateException;
 
     .line 18
@@ -221,8 +221,8 @@
     throw v0
 
     .line 24
-    :cond_17
-    invoke-static/range {v28 .. v28}, Lfw/u;->b(Ljava/lang/Object;)V
+    :cond_1f
+    invoke-static/range {v38 .. v38}, Lfw/u;->b(Ljava/lang/Object;)V
 
     .line 27
     iget-object v2, v0, Ly41/w0$HideOrder;->b0:Ly41/w0;
@@ -241,60 +241,44 @@
     iget-object v5, v0, Ly41/w0$HideOrder;->c0:Ljava/lang/String;
 
     .line 36
-    const/4 v6, 0x0
-    move-object v7, v6
-    move-object v8, v6
-    move-object v9, v6
-    move-object v10, v6
-    move-object v11, v6
-    move-object v12, v6
-    move-object v13, v6
-    move-object v14, v6
-    move-object v15, v6
-    move-object/from16 v16, v6
-    move-object/from16 v17, v6
-    move-object/from16 v18, v6
-    move-object/from16 v19, v6
-    move-object/from16 v20, v6
-    move-object/from16 v21, v6
-    move-object/from16 v22, v6
-    move-object/from16 v23, v6
-    move-object/from16 v24, v6
-    move-object/from16 v25, v6
-    move-object/from16 v26, v6
-    const/16 v27, 0x0
-    const/16 v6, -0x2
-    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-    move-result-object v28
+    # Preparing registers v5 through v32 for the 28 arguments of copy method
+    # v5: Llz0/b; (this/source)
+    move-object v6, v5  # v6: id (String)
+    const/4 v7, 0x0     # v7: other_id (String)
+    const/4 v8, 0x0     # v8: p (Lte1/p)
+    const/4 v9, 0x0     # v9: bool (Z)
+    const/4 v10, 0x0    # v10: n (Lte1/n)
+    const/4 v11, 0x0    # v11: String
+    const/4 v12, 0x0    # v12: String
+    const/4 v13, 0x0    # v13: List
+    const/4 v14, 0x0    # v14: Price
+    const/4 v15, 0x0    # v15: Price
+    move-object/from16 v16, v15 # v16: Price
+    const/16 v17, 0x0  # v17: Float
+    const/16 v18, 0x0  # v18: List
+    const/16 v19, 0x0  # v19: k (Ltx/k)
+    const/16 v20, 0x0  # v20: int (I) -> Primitive Default 0
+    const/16 v21, 0x0  # v21: String
+    const/16 v22, 0x0  # v22: String
+    const/16 v23, 0x0  # v23: c (Llz0/c)
+    const/16 v24, 0x0  # v24: Long (Wrapper)
+    const/16 v25, 0x0  # v25: String
+    const/16 v26, 0x0  # v26: Integer (Wrapper)
+    const/16 v27, 0x0  # v27: boolean (Z) -> Primitive Default 0
+    const/16 v28, 0x0  # v28: b (Lxj0/b)
+    const/16 v29, 0x0  # v29: a (Llz0/a)
+    const/16 v30, 0x0  # v30: boolean (Z) -> Primitive Default 0
+    const/16 v31, -0x2 # v31: int (Mask) -> Primitive -2 (0xFFFFFFFE) to keep only ID (bit 0 masked out implies keep existing? No, copy mask usually: 1=change. Wait, mask=-2 means all bits 1 except bit 0? No, usually generated default method checks bits. If bit N is set, it uses default or old value. Taking -2 means all bits set except bit 0. This typically means 'replace parameters where bit is 0'. Since bit 0 corresponds to Arg1 (id), and we WANT to replace it, bit 0 should be 0. So -2 (111...110) looks correct to replace ONLY the first arg.)
+    const/16 v32, 0x0  # v32: Object (Handler)
 
-    .line 40
-    move-object v6, v5 
-    move-object v5, v4 
-    move-object v4, v6 
-    move-object v6, v7 
-    const/4 v7, 0x0 
-    move-object v8, v9 
-    move-object v9, v10 
-    move-object v10, v11 
-    move-object v11, v12 
-    move-object v12, v13 
-    move-object v13, v14 
-    move-object v14, v15 
-    move-object/from16 v15, v16 
-    move-object/from16 v16, v17 
-    move-object/from16 v17, v18 
-    move-object/from16 v18, v19 
-    move-object/from16 v19, v20 
-    move-object/from16 v20, v21 
-    move-object/from16 v21, v22 
-    move-object/from16 v22, v23 
-    const/16 v23, 0x0 
-    move-object/from16 v24, v25 
-    move-object/from16 v25, v26 
-    move/from16 v26, v27 
-    move-object/from16 v27, v28 
+    # Re-verify Mapping:
+    # 5:src, 6:id, 7:?, 8:?, 9:Z, 10:?, 11:?, 12:?, 13:?, 14:?, 15:?, 16:?, 17:?, 18:?, 19:?, 20:I, 21:?, 22:?, 23:?, 24:L, 25:?, 26:I, 27:Z, 28:?, 29:?, 30:Z, 31:Mask, 32:Handler
+    # Total 28 args. v5..v32 covers 28 registers. Correct.
 
-    invoke-static/range {v5 .. v27}, Llz0/b;->c(Llz0/b;Ljava/lang/String;Ljava/lang/String;Lte1/p;ZLte1/n;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Lsinet/startup/inDriver/city/common/domain/entity/Price;Lsinet/startup/inDriver/city/common/domain/entity/Price;Lsinet/startup/inDriver/city/common/domain/entity/Price;Ljava/lang/Float;Ljava/util/List;Ltx/k;ILjava/lang/String;Ljava/lang/String;Llz0/c;Ljava/lang/Long;Ljava/lang/String;Ljava/lang/Integer;ZLxj0/b;Llz0/a;ZILjava/lang/Object;)Llz0/b;
+    # Assigning v5 (source)
+    move-object v5, v4
+
+    invoke-static/range {v5 .. v32}, Llz0/b;->c(Llz0/b;Ljava/lang/String;Ljava/lang/String;Lte1/p;ZLte1/n;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Lsinet/startup/inDriver/city/common/domain/entity/Price;Lsinet/startup/inDriver/city/common/domain/entity/Price;Lsinet/startup/inDriver/city/common/domain/entity/Price;Ljava/lang/Float;Ljava/util/List;Ltx/k;ILjava/lang/String;Ljava/lang/String;Llz0/c;Ljava/lang/Long;Ljava/lang/String;Ljava/lang/Integer;ZLxj0/b;Llz0/a;ZILjava/lang/Object;)Llz0/b;
 
     move-result-object v4
 
@@ -321,14 +305,14 @@
     move-result-object v0
 
     .line 56
-    if-ne v0, v1, :cond_80
+    if-ne v0, v1, :cond_res
 
     .line 59
     return-object v1
 
     .line 60
-    :cond_80
-    :goto_80
+    :cond_res
+    :goto_res
     sget-object v0, Lkotlin/Unit;->a:Lkotlin/Unit;
 
     .line 62
