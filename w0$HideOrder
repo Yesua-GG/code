@@ -183,6 +183,7 @@
     .line 1
     move-object/from16 v28, p1
     move-object/from16 v0, p0
+    check-cast v0, Ly41/w0$HideOrder;
 
     invoke-static {}, Llw/b;->g()Ljava/lang/Object;
 
