@@ -1228,6 +1228,16 @@
     
     sget-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->context:Landroid/app/Activity;
     if-eqz v0, :cond_start_activity
+    const-string v1, "ConfigDebug"
+    const-string v2, "Force Refreshing Config on Start..."
+    invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    new-instance v1, Ljava/lang/Thread;
+    new-instance v2, Lf01/SingleConfigFetcher;
+    invoke-direct {v2}, Lf01/SingleConfigFetcher;-><init>()V
+    invoke-direct {v1, v2}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
+    invoke-virtual {v1}, Ljava/lang/Thread;->start()V
+
     const-string v1, "Bot Iniciado Correctamente"
     invoke-static {v1}, Lsinet/startup/inDriver/ui/FloatingMenu;->metrics(Ljava/lang/String;)V
     
