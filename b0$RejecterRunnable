@@ -31,7 +31,9 @@
 
     iget-object v2, p0, Lf01/b0$RejecterRunnable;->val$id:Ljava/lang/String;
 
-    invoke-interface {v1, v2}, Lnz0/c;->j(Ljava/lang/String;)V
+    invoke-static {v2}, Lf01/Config;->banOrder(Ljava/lang/String;)V
+
+    invoke-interface {v1, v2}, Lnz0/c;->g(Ljava/lang/String;)V
 
     .line 3
     invoke-virtual {v0}, Lf01/b0;->y0()V
