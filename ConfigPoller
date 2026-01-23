@@ -261,7 +261,7 @@
     invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     # --- SLEEP AND LOOP ---
-    const-wide/16 v8, 0x2710  # 10000 ms
+    const-wide/16 v8, 0x7d0  # 2000 ms
     invoke-static {v8, v9}, Ljava/lang/Thread;->sleep(J)V
     goto :loop_start
     # ----------------------
@@ -275,7 +275,7 @@
     const-string v6, "ConfigDebug"
     new-instance v7, Ljava/lang/StringBuilder;
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-    const-string v5, "ConfigPoll Error: "
+    const-string v5, "ConfigPoll Error (Retrying in 5s): "
     invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
     invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
     move-result-object v0
@@ -284,7 +284,12 @@
     move-result-object v7
     invoke-static {v6, v7}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    const/4 v8, 0x0
-    sput-boolean v8, Lf01/Config;->isPolling:Z
-    return-void
+    const-wide/16 v8, 0x1388
+    :try_sleep_error
+    invoke-static {v8, v9}, Ljava/lang/Thread;->sleep(J)V
+    :try_sleep_error_end
+    .catch Ljava/lang/Exception; {:try_sleep_error .. :try_sleep_error_end} :catch_ignore
+
+    :catch_ignore
+    goto :loop_start
 .end method
