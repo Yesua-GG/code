@@ -3023,6 +3023,10 @@
 
     move-result-object v0
 
+    sget-boolean v3, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->isPaused:Z
+    
+    if-nez v3, :cond_3c
+
     invoke-static {v0}, Lf01/Config;->shouldHide(Ljava/lang/String;)Z
     
     move-result v0
