@@ -467,7 +467,10 @@
     .end annotation
 .end field
 
-.field private m1:I
+.field public m1:I
+    .annotation build Lorg/jetbrains/annotations/Nullable;
+    .end annotation
+.end field
 
 .field private final n1:I
 
@@ -3040,16 +3043,17 @@
     iput v0, v4, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;->width:I
     
     invoke-virtual {v1, v4}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
+    
     new-instance v2, Lf01/b0$RejecterRunnable;
 
-    invoke-virtual {p1}, Lpz0/e;->j()Ljava/lang/String;
-    
+    invoke-virtual {p1}, Lpz0/e;->o()Ljava/lang/String;
+
     move-result-object v3
-    
+
     invoke-direct {v2, p0, v3}, Lf01/b0$RejecterRunnable;-><init>(Lf01/b0;Ljava/lang/String;)V
-    
+
     invoke-virtual {v1, v2}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
+
 
     return-void
 
