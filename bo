@@ -3040,6 +3040,8 @@
     invoke-direct {v2, p0, v3}, Lf01/b0$RejecterRunnable;-><init>(Lf01/b0;Ljava/lang/String;)V
     
     invoke-virtual {v1, v2}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
+    
+    goto :goto_isRepeated_skip
 
     :cond_3c
     const/4 v0, 0x0
@@ -3080,6 +3082,7 @@
 
     return-void
 
+    :goto_isRepeated_skip
     :cond_61
     sget-boolean v0, Lf01/Config;->isOffering:Z
 
