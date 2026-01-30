@@ -677,7 +677,7 @@
     sub-int/2addr v1, v2
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->x:I
 
-    const/16 v1, 0x64
+    const/16 v1, 0x1f4
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->y:I
 
@@ -701,11 +701,7 @@
 
     invoke-virtual {v0, v1, v1, v1, v1}, Landroid/widget/LinearLayout;->setPadding(IIII)V
 
-    new-instance v1, Lsinet/startup/inDriver/ui/FloatingMenu$3;
 
-    invoke-direct {v1}, Lsinet/startup/inDriver/ui/FloatingMenu$3;-><init>()V
-
-    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
     new-instance v3, Landroid/widget/ImageView;
 
@@ -731,6 +727,12 @@
     invoke-direct {v4}, Lsinet/startup/inDriver/ui/FloatingMenu$1;-><init>()V
 
     invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    new-instance v4, Lsinet/startup/inDriver/ui/FloatingMenu$3;
+
+    invoke-direct {v4}, Lsinet/startup/inDriver/ui/FloatingMenu$3;-><init>()V
+
+    invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
     new-instance v4, Landroid/widget/LinearLayout$LayoutParams;
 
