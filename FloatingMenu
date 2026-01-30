@@ -737,6 +737,12 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
+    const/16 v4, 0x96
+
+    invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setMinimumWidth(I)V
+
+    invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setMinimumHeight(I)V
+
     sget-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->containerView:Landroid/widget/LinearLayout;
 
     invoke-virtual {v0, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
@@ -958,6 +964,8 @@
     return-void
 .end method
 
+
+.method public static updateUiState(Z)V
     .registers 6
     .param p0, "isPaused"  # Z
 
@@ -1012,23 +1020,43 @@
 
     move-result v1
 
-    if-eqz v1, :cond_set_limit
+    move-result v1
+
+    if-eqz v1, :cond_fallback
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    :cond_set_limit
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
-
-    sget-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->containerView:Landroid/widget/LinearLayout;
-
-    if-eqz v0, :cond_container_chk
-
-    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
-
-    :cond_container_chk
+    
     return-void
+
+    :cond_fallback
+
+    const/4 v2, 0x0
+
+    const/high16 v3, 0x42f00000
+
+    if-eqz p0, :cond_fg_on
+    
+    # isPaused=true (OFF) -> Red Background
+    const v1, -0x10000 
+    goto :apply_bg
+
+    :cond_fg_on
+    # isPaused=false (ON) -> Green Background
+    const v1, -0xff0100
+
+    :apply_bg
+    invoke-static {v1, v2, v3}, Lsinet/startup/inDriver/ui/FloatingMenu;->createBackground(IIF)Landroid/graphics/drawable/GradientDrawable;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
+
+    return-void
+
 .end method
 .method public static metrics(Ljava/lang/String;)V
     .registers 3
