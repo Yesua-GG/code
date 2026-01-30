@@ -1020,8 +1020,6 @@
 
     move-result v1
 
-    move-result v1
-
     if-eqz v1, :cond_fallback
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
@@ -1056,7 +1054,6 @@
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     return-void
-
 .end method
 .method public static metrics(Ljava/lang/String;)V
     .registers 3
