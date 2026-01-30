@@ -43,7 +43,7 @@
 
 # virtual methods
 .method public run()V
-    .registers 18
+    .registers 16
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -263,29 +263,26 @@
 
     invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v15
+    move-result-object v5  
+
+    # Reorganize for call: v0=instance, v1=act, v2=min, v3=max, v4=km, v5=dest, v6=bool
+
+    move-object v4, v1
+    move-object v3, v2
+    move-object v2, v0
 
     const-string v8, "show_info_card"
-
     const/4 v9, 0x1
-
     invoke-virtual {v7, v8, v9}, Lorg/json/JSONObject;->optBoolean(Ljava/lang/String;Z)Z
+    move-result v6
 
-    move-result v16
+    iget-object v1, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$ConfigFetcher;->activity:Landroid/app/Activity;
 
-    move-object v12, v0
+    new-instance v0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$UiUpdater;
 
-    move-object v13, v2
+    invoke-direct/range {v0 .. v6}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$UiUpdater;-><init>(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    move-object v14, v1
-
-    iget-object v11, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$ConfigFetcher;->activity:Landroid/app/Activity;
-
-    new-instance v10, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$UiUpdater;
-
-    invoke-direct/range {v10 .. v16}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$UiUpdater;-><init>(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
-
-    invoke-virtual {v11, v10}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
+    invoke-virtual {v1, v0}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
 
     :goto_c2
     const-wide/16 v0, 0x3e8
