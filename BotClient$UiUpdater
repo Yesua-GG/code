@@ -19,15 +19,15 @@
 
 .field private final destDist:Ljava/lang/String;
 
-.field private final pricingStrategy:Ljava/lang/String;
+.field private final showInfoCard:Z
 
 
 # direct methods
-.method public constructor <init>(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+.method public constructor <init>(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
     .registers 7
 
     .param p5, "destDist"    # Ljava/lang/String;
-    .param p6, "pricingStrategy"    # Ljava/lang/String;
+    .param p6, "showInfoCard"    # Z
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,7 +46,7 @@
 
     iput-object p5, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$UiUpdater;->destDist:Ljava/lang/String;
 
-    iput-object p6, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$UiUpdater;->pricingStrategy:Ljava/lang/String;
+    iput-boolean p6, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$UiUpdater;->showInfoCard:Z
 
     .line 6
     return-void
@@ -191,36 +191,11 @@
     return-void
 
     :cond_68
-    if-eqz v1, :cond_skip_strategy
-
-    iget-object v2, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$UiUpdater;->pricingStrategy:Ljava/lang/String;
-
-    if-eqz v2, :cond_skip_strategy
-
-    const-string v3, "time"
-
-    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_hide_strategy
-
+    iget-boolean v2, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$UiUpdater;->showInfoCard:Z
+    if-nez v2, :cond_skip_vis_check
     const/4 v1, 0x0
+    :cond_skip_vis_check
 
-    goto :cond_skip_strategy
-
-    :cond_hide_strategy
-    const-string v3, "mixed"
-
-    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_skip_strategy
-
-    const/4 v1, 0x0
-
-    :cond_skip_strategy
     if-eqz v1, :cond_9c
 
     const/4 v2, 0x0
