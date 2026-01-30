@@ -966,8 +966,12 @@
 
 
 .method public static updateUiState(Z)V
-    .registers 6
+    .registers 8
     .param p0, "isPaused"  # Z
+
+    # p0 is at v7 (index 7) because we requested 8 registers (v0-v7).
+    # Wait, simple calculation: parameters are at the end.
+    # v0, v1, v2, v3, v4, v5, v6, v7(p0)
 
     new-instance v0, Landroid/os/Handler;
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -991,14 +995,16 @@
     const-string v2, "bot_on"
 
     :goto_get_res
-    # v2 holds String (Ref)
+    # v2 = String Resource Name
     
     sget-object v1, Lsinet/startup/inDriver/ui/FloatingMenu;->context:Landroid/app/Activity;
-    if-eqz v1, :cond_context_null
+    if-nez v1, :cond_context_not_null
     
-    # Context OK. Load Resources.
-    # v1 is Activity (Ref).
-    
+    # Context is null, use fallback
+    goto :cond_fallback_1
+
+    :cond_context_not_null
+    # Context OK
     invoke-virtual {v1}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
     move-result-object v1
     const-string v3, "drawable"
@@ -1006,64 +1012,54 @@
     invoke-virtual {v4}, Landroid/app/Activity;->getPackageName()Ljava/lang/String;
     move-result-object v4
     
-    # v1=Resources(Ref), v2="bot_x"(Ref), v3="drawable"(Ref), v4=Pkg(Ref)
-    
+    # DEBUG LOG
     const-string v5, "BS_DEBUG"
     invoke-static {v5, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    # Use v5 for Integer ID result to avoid type conflict with other String registers
     invoke-virtual {v1, v2, v3, v4}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
-    move-result v4
+    move-result v5
     
-    # v4 is now Int (Result). Overwrites Pkg(Ref).
+    if-nez v5, :cond_res_found
     
-    if-eqz v4, :cond_res_not_found
+    # Resource ID is 0, use fallback
+    goto :cond_fallback_2
     
-    # Success: ID found (v4 != 0)
-    invoke-virtual {v0, v4}, Landroid/widget/ImageView;->setImageResource(I)V
-    const/4 v1, 0x0
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    :cond_res_found
+    # Success
+    invoke-virtual {v0, v5}, Landroid/widget/ImageView;->setImageResource(I)V
+    const/4 v6, 0x0
+    invoke-virtual {v0, v6}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
     return-void
 
-    :cond_context_null
-    # Path 1: Context is null.
-    # v1 is Null (Ref).
-    # We need to jump to fallback. But allow v4 to be 'dirty' or unused?
-    # To be safe, ensure labels match types.
-    # We will just fall through to fallback here.
-    goto :cond_fallback_unified
+    :cond_fallback_1
+    # Fallback Path 1 (Context Null)
+    const/4 v6, 0x0
+    const/high16 v5, 0x42f00000
+    if-eqz p0, :cond_fg_on_1
+    const v4, -0x10000
+    goto :apply_bg_1
+    :cond_fg_on_1
+    const v4, -0xff0100
+    :apply_bg_1
+    invoke-static {v4, v6, v5}, Lsinet/startup/inDriver/ui/FloatingMenu;->createBackground(IIF)Landroid/graphics/drawable/GradientDrawable;
+    move-result-object v4
+    invoke-virtual {v0, v4}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    return-void
 
-    :cond_res_not_found
-    # Path 2: ID is 0.
-    # v4 is Int (0).
-    # v1 is Resources(Ref).
-    # v2 is String(Ref).
-    # v3 is String(Ref).
-    
-    :cond_fallback_unified
-    # Merge point.
-    # v1: Ref (Null or Resources). OK.
-    # v4: Conflict (Ref Pkg from Path 1 vs Int 0 from Path 2).
-    # FIX: Don't use v4 in fallback. Or overwrite it immediately.
-    # We use v0(ImageView), p0(Boolean).
-    # We use v1, v2, v3 for calculations.
-    
-    const/4 v2, 0x0
-    const/high16 v3, 0x42f00000
-    
-    # v2, v3 overwritten with Ints. No conflict there.
-    # v1 overwritten inside branches below.
-    
-    if-eqz p0, :cond_fg_on
-    const v1, -0x10000
-    goto :apply_bg
-
-    :cond_fg_on
-    const v1, -0xff0100
-
-    :apply_bg
-    invoke-static {v1, v2, v3}, Lsinet/startup/inDriver/ui/FloatingMenu;->createBackground(IIF)Landroid/graphics/drawable/GradientDrawable;
-    move-result-object v1
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    :cond_fallback_2
+    # Fallback Path 2 (Res Not Found) - Duplicated to ensure clean registers
+    const/4 v6, 0x0
+    const/high16 v5, 0x42f00000
+    if-eqz p0, :cond_fg_on_2
+    const v4, -0x10000
+    goto :apply_bg_2
+    :cond_fg_on_2
+    const v4, -0xff0100
+    :apply_bg_2
+    invoke-static {v4, v6, v5}, Lsinet/startup/inDriver/ui/FloatingMenu;->createBackground(IIF)Landroid/graphics/drawable/GradientDrawable;
+    move-result-object v4
+    invoke-virtual {v0, v4}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
     return-void
 .end method
 .method public static metrics(Ljava/lang/String;)V
