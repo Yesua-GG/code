@@ -43,7 +43,7 @@
 
 # virtual methods
 .method public run()V
-    .registers 14
+    .registers 30
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -278,12 +278,18 @@
 
     move-object v9, v0
 
+    move-object/from16 v21, v8
+    move-object/from16 v22, v9
+    move-object/from16 v23, v10
+    move-object/from16 v24, v11
+    move-object/from16 v25, v12
+    move-object/from16 v26, v13
+
+    new-instance v20, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$UiUpdater;
+    invoke-direct/range {v20 .. v26}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$UiUpdater;-><init>(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    move-object/from16 v7, v20
     iget-object v8, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$ConfigFetcher;->activity:Landroid/app/Activity;
-
-    new-instance v7, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$UiUpdater;
-
-    invoke-direct/range {v7 .. v13}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$UiUpdater;-><init>(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
     invoke-virtual {v8, v7}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
 
     :goto_c2
