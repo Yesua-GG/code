@@ -82,6 +82,32 @@
     return v1
 
     :pswitch_2a  #0x1
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getRawX()F
+    move-result v2
+
+    iget v3, p0, Lsinet/startup/inDriver/ui/FloatingMenu$3;->initialTouchX:F
+
+    sub-float/2addr v2, v3
+
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getRawY()F
+    move-result v3
+
+    iget v4, p0, Lsinet/startup/inDriver/ui/FloatingMenu$3;->initialTouchY:F
+
+    sub-float/2addr v3, v4
+
+    mul-float/2addr v2, v2
+    mul-float/2addr v3, v3
+    add-float/2addr v2, v3
+
+    const/high16 v3, 0x42c80000 
+
+    cmpg-float v2, v2, v3
+    if-gez v2, :cond_click
+
+    invoke-virtual {p1}, Landroid/view/View;->performClick()Z
+
+    :cond_click
     invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->hideTrash()V
 
     invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
