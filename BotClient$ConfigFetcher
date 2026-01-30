@@ -192,6 +192,14 @@
 
     move-result-object v1
 
+    const-string v3, "pricing_strategy"
+
+    const-string v4, "km"
+
+    invoke-virtual {v7, v3, v4}, Lorg/json/JSONObject;->optString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v13
+
     .line 12
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -274,7 +282,7 @@
 
     new-instance v7, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$UiUpdater;
 
-    invoke-direct/range {v7 .. v12}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$UiUpdater;-><init>(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct/range {v7 .. v13}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$UiUpdater;-><init>(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {v8, v7}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
 
