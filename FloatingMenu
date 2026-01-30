@@ -969,10 +969,6 @@
     .registers 8
     .param p0, "isPaused"  # Z
 
-    # p0 is at v7 (index 7) because we requested 8 registers (v0-v7).
-    # Wait, simple calculation: parameters are at the end.
-    # v0, v1, v2, v3, v4, v5, v6, v7(p0)
-
     new-instance v0, Landroid/os/Handler;
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
     move-result-object v1
@@ -988,52 +984,31 @@
 
     :cond_return
     if-eqz p0, :cond_bg_off
-    const-string v2, "bot_off"
+    const-string v2, "bot_off.png"
     goto :goto_get_res
 
     :cond_bg_off
-    const-string v2, "bot_on"
+    const-string v2, "bot_on.png"
 
     :goto_get_res
-    # v2 = String Resource Name
-    
-    sget-object v1, Lsinet/startup/inDriver/ui/FloatingMenu;->context:Landroid/app/Activity;
-    if-nez v1, :cond_context_not_null
-    
-    # Context is null, use fallback
-    goto :cond_fallback_1
-
-    :cond_context_not_null
-    # Context OK
-    invoke-virtual {v1}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
-    move-result-object v1
-    const-string v3, "drawable"
-    sget-object v4, Lsinet/startup/inDriver/ui/FloatingMenu;->context:Landroid/app/Activity;
-    invoke-virtual {v4}, Landroid/app/Activity;->getPackageName()Ljava/lang/String;
-    move-result-object v4
-    
-    # DEBUG LOG
-    const-string v5, "BS_DEBUG"
-    invoke-static {v5, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    # Use v5 for Integer ID result to avoid type conflict with other String registers
-    invoke-virtual {v1, v2, v3, v4}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
-    move-result v5
+    # Load from assets
+    invoke-static {v2}, Lsinet/startup/inDriver/ui/FloatingMenu;->loadFromAssets(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
+    move-result-object v5
     
     if-nez v5, :cond_res_found
     
-    # Resource ID is 0, use fallback
-    goto :cond_fallback_2
+    # Resource not found, go to fallback
+    goto :cond_fallback_1
     
     :cond_res_found
     # Success
-    invoke-virtual {v0, v5}, Landroid/widget/ImageView;->setImageResource(I)V
+    invoke-virtual {v0, v5}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
     const/4 v6, 0x0
     invoke-virtual {v0, v6}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
     return-void
 
     :cond_fallback_1
-    # Fallback Path 1 (Context Null)
+    # Fallback Path 1
     const/4 v6, 0x0
     const/high16 v5, 0x42f00000
     if-eqz p0, :cond_fg_on_1
@@ -1046,21 +1021,55 @@
     move-result-object v4
     invoke-virtual {v0, v4}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
     return-void
+.end method
 
-    :cond_fallback_2
-    # Fallback Path 2 (Res Not Found) - Duplicated to ensure clean registers
-    const/4 v6, 0x0
-    const/high16 v5, 0x42f00000
-    if-eqz p0, :cond_fg_on_2
-    const v4, -0x10000
-    goto :apply_bg_2
-    :cond_fg_on_2
-    const v4, -0xff0100
-    :apply_bg_2
-    invoke-static {v4, v6, v5}, Lsinet/startup/inDriver/ui/FloatingMenu;->createBackground(IIF)Landroid/graphics/drawable/GradientDrawable;
-    move-result-object v4
-    invoke-virtual {v0, v4}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
-    return-void
+.method private static loadFromAssets(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
+    .registers 5
+    .param p0, "fileName"  # Ljava/lang/String;
+
+    const/4 v0, 0x0
+
+    :try_start_0
+    sget-object v1, Lsinet/startup/inDriver/ui/FloatingMenu;->context:Landroid/app/Activity;
+
+    if-nez v1, :cond_8
+
+    move-object v1, v0
+    goto :goto_return
+
+    :cond_8
+    invoke-virtual {v1}, Landroid/app/Activity;->getAssets()Landroid/content/res/AssetManager;
+    move-result-object v1
+
+    invoke-virtual {v1, p0}, Landroid/content/res/AssetManager;->open(Ljava/lang/String;)Ljava/io/InputStream;
+    move-result-object v1
+
+    invoke-static {v1}, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream;)Landroid/graphics/Bitmap;
+    move-result-object v2
+
+    invoke-virtual {v1}, Ljava/io/InputStream;->close()V
+
+    if-nez v2, :cond_1e
+
+    move-object v1, v0
+    goto :goto_return
+
+    :cond_1e
+    new-instance v1, Landroid/graphics/drawable/BitmapDrawable;
+    sget-object v3, Lsinet/startup/inDriver/ui/FloatingMenu;->context:Landroid/app/Activity;
+    invoke-virtual {v3}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
+    move-result-object v3
+    invoke-direct {v1, v3, v2}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/content/res/Resources;Landroid/graphics/Bitmap;)V
+    :try_end_29
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_29} :catch_2a
+
+    :goto_return
+    return-object v1
+
+    :catch_2a
+    move-exception v1
+    move-object v1, v0
+    goto :goto_return
 .end method
 .method public static metrics(Ljava/lang/String;)V
     .registers 3
