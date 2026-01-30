@@ -999,7 +999,13 @@
     sget-object v4, Lsinet/startup/inDriver/ui/FloatingMenu;->context:Landroid/app/Activity;
     invoke-virtual {v4}, Landroid/app/Activity;->getPackageName()Ljava/lang/String;
     move-result-object v4
+    
+    # DEBUG LOG
+    const-string v5, "BS_DEBUG"
+    invoke-static {v5, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
     invoke-virtual {v1, v2, v3, v4}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
+
     move-result v1
     if-eqz v1, :cond_set_limit
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
