@@ -3589,12 +3589,35 @@
     .line 80
     invoke-virtual {v1, v2}, La03/f;->s(Ljava/lang/String;)V
 
-    # Injecting BotClient.savePhoneNumber
+    # Injecting BotClient.savePhoneNumber with correct concatenated fields
     invoke-direct {v0}, Ld13/k;->P1()Li13/a;
-    move-result-object v2
-    invoke-virtual {v2}, Li13/a;->m()Ljava/lang/String;
-    move-result-object v2
-    invoke-static {v2}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->savePhoneNumber(Ljava/lang/String;)V
+    move-result-object v3
+    
+    # Get Country Code (d())
+    invoke-virtual {v3}, Li13/a;->d()Ljava/lang/String;
+    move-result-object v4
+    
+    # Get Phone Body (q())
+    invoke-virtual {v3}, Li13/a;->q()Ljava/lang/String;
+    move-result-object v3
+    
+    # Concatenate
+    new-instance v5, Ljava/lang/StringBuilder;
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    
+    move-result-object v3
+    
+    # Clean whitespace just in case
+    const-string v4, " "
+    const-string v5, ""
+    invoke-static {v3, v4, v5, v1, v6}, Lvx/n;->u(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZI)Ljava/lang/String;
+    move-result-object v3
+    
+    # Save
+    invoke-static {v3}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->savePhoneNumber(Ljava/lang/String;)V
 
     .line 83
     return-void
