@@ -2924,7 +2924,36 @@
 .end method
 
 .method private static final s(Ld13/m;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/e;Lm2/l;II)V
-    .registers 49
+    .registers 53
+
+    # ... (code omitted) ...
+
+    move-result-object v7
+    
+    # --- INJECTED (Fixed: Registers 53, using v42-v44) ---
+    # v7 contains phone text.
+    # v42=Tag, v43=SB, v44=Temp
+    
+    const-string v42, "BotClient"
+    new-instance v43, Ljava/lang/StringBuilder;
+    invoke-direct/range {v43 .. v43}, Ljava/lang/StringBuilder;-><init>()V
+    
+    const-string v44, "Subtitle Text: "
+    invoke-virtual/range {v43 .. v44}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    
+    move-object v44, v7
+    invoke-virtual/range {v43 .. v44}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    
+    invoke-virtual/range {v43 .. v43}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v44
+    
+    # Log.d(v42, v44). Need contiguous, so move v44 to v43
+    move-object v43, v44
+    invoke-static/range {v42 .. v43}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    
+    # Save (v7 is low, so {} works)
+    invoke-static {v7}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->savePhoneNumber(Ljava/lang/String;)V
+    # --- END INJECTION ---
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
