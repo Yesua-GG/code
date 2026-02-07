@@ -622,7 +622,74 @@
 .method public static synthetic W5(Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;Ljava/lang/String;Z)Lkotlin/Unit;
     .registers 3
 
-    .line 1
+    # --- INJECTED: Save Phone Number on Text Change ---
+    # Get State
+    invoke-direct {p0}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->r6()Le13/w;
+    move-result-object v0
+    
+    # Needs I1 accessor to be public or access via method if available.
+    # r6() returns ViewModel. I need state. M1 is private in ViewModel.
+    # But I can access public getters if available.
+    # ViewModel has no public getter for state directly?
+    # Wait, I1 is synthetic accessor for M1 in ViewModel.
+    # invoke-static {v0}, Le13/w;->I1(Le13/w;)Li13/a;
+    # Check if I1 is accessible from here (package private?).
+    # Fragment is in `sinet...enter_phone`, ViewModel is in `e13`.
+    # Different packages? No, both seem effectively same module/dex?
+    # Package of Fragment: sinet.startup.inDriver.feature.auth.ui.enter_phone
+    # Package of ViewModel: e13 (obfuscated).
+    # If different package, cannot call package-private accessors.
+    
+    # Alternate: Get Country Code from UI Component directly.
+    invoke-direct {p0}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->n6()Le03/a;
+    move-result-object v0
+    iget-object v0, v0, Le03/a;->f:Lsinet/startup/inDriver/core/ui/text_field_phone_compact/TextFieldPhoneCompact;
+    # Method to get country code?
+    # I don't know the method name.
+    
+    # Alternate 2: Assume Country Code is +57 or saved previously? 
+    # No, risky.
+    
+    # Alternate 3: Use the ViewModel `I1` accessor if it's public enough?
+    # `I1` is `public static synthetic`. So yes, I can call it!
+    invoke-direct {p0}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->r6()Le13/w;
+    move-result-object v0
+    invoke-static {v0}, Le13/w;->I1(Le13/w;)Li13/a;
+    move-result-object v0
+    invoke-virtual {v0}, Li13/a;->i()Ljava/lang/String;
+    move-result-object v0
+    
+    # Log Code
+    const-string v1, "BotClient"
+    new-instance v2, Ljava/lang/StringBuilder;
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v3, "W5 Code: "
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v2
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    # Concatenate v0 (code) and p1 (number)
+    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
+    
+    # Clean whitespace
+    const-string v1, " "
+    const-string v2, ""
+    const/4 v3, 0x0
+    const/4 v4, 0x4
+    invoke-static {v0, v1, v2, v3, v4}, Lvx/n;->u(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZI)Ljava/lang/String;
+    move-result-object v0
+    
+    # Save
+    invoke-static {v0}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->savePhoneNumber(Ljava/lang/String;)V
+    # --- END INJECTION ---
+
     invoke-static {p0, p1, p2}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->K6(Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;Ljava/lang/String;Z)Lkotlin/Unit;
 
     move-result-object p0
