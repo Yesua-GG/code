@@ -284,11 +284,11 @@
     check-cast v0, Landroid/view/WindowManager;
     sput-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->wm:Landroid/view/WindowManager;
 
-    # Create LayoutParams with FIXED SIZE (150 width, 150 height)
-    # 150 decimal = 96 hex
+    # Create LayoutParams with FIXED SIZE (200 width, 200 height)
+    # 200 decimal = 0xC8 hex
     new-instance v0, Landroid/view/WindowManager$LayoutParams;
-    const/16 v1, 0x96 # Width: 150
-    const/16 v2, 0x96 # Height: 150
+    const/16 v1, 0xc8 # Width: 200
+    const/16 v2, 0xc8 # Height: 200
     const/16 v3, 0x7f6
     const/16 v4, 0x8
     const/4 v5, -0x3
