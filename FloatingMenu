@@ -284,8 +284,8 @@
     check-cast v0, Landroid/view/WindowManager;
     sput-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->wm:Landroid/view/WindowManager;
 
-    # Create LayoutParams with FIXED SIZE (200 width, 200 height)
-    # 200 decimal = 0xC8 hex
+    # Create LayoutParams with FIXED SIZE (350 width, 350 height)
+    # 350 decimal = 0x15E hex
     new-instance v0, Landroid/view/WindowManager$LayoutParams;
     const/16 v1, 0x15e # Width: 350
     const/16 v2, 0x15e # Height: 350
@@ -310,7 +310,7 @@
     sget-object v1, Landroid/widget/ImageView$ScaleType;->FIT_CENTER:Landroid/widget/ImageView$ScaleType;
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    # Touch Listener for drag
+    # Touch Listener for drag and long click
     new-instance v1, Lsinet/startup/inDriver/ui/FloatingMenu$3;
     invoke-direct {v1}, Lsinet/startup/inDriver/ui/FloatingMenu$3;-><init>()V
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
@@ -461,5 +461,109 @@
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     :end_update
+    return-void
+.end method
+
+.method public static openSettings(Landroid/app/Activity;)V
+    .registers 14
+    .param p0, "activity" # Landroid/app/Activity;
+
+    new-instance v0, Landroid/content/Intent;
+    move-object v1, p0
+    const-class v2, Lsinet/startup/inDriver/ui/driver/main/DriverActivity;
+    invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+    const v2, 0x10020000
+    invoke-virtual {v0, v2}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+    move-object v1, p0
+    invoke-virtual {v1, v0}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
+
+    new-instance v0, Landroid/app/Dialog;
+    move-object v1, p0
+    const v2, 0x1030004
+    invoke-direct {v0, v1, v2}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
+
+    new-instance v1, Landroid/webkit/WebView;
+    move-object v2, p0
+    invoke-direct {v1, v2}, Landroid/webkit/WebView;-><init>(Landroid/content/Context;)V
+
+    invoke-virtual {v1}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
+    move-result-object v2
+    const/4 v3, 0x1
+    invoke-virtual {v2, v3}, Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V
+    const/4 v5, 0x0
+    invoke-virtual {v2, v5}, Landroid/webkit/WebSettings;->setMixedContentMode(I)V
+
+    invoke-virtual {v1, v3}, Landroid/view/View;->setFitsSystemWindows(Z)V
+
+    new-instance v2, Lsinet/startup/inDriver/ui/CustomConfigWebViewClient;
+    invoke-direct {v2}, Lsinet/startup/inDriver/ui/CustomConfigWebViewClient;-><init>()V
+    invoke-virtual {v1, v2}, Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V
+
+    # Construct URL
+    new-instance v2, Ljava/lang/StringBuilder;
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    sget-object v3, Ly41/w0;->SERVER_URL:Ljava/lang/String;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v3, "/config?version=v1&user_id="
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-object v3, p0
+    invoke-virtual {v3}, Landroid/app/Activity;->getContentResolver()Landroid/content/ContentResolver;
+    move-result-object v3
+    const-string v4, "android_id"
+    invoke-static {v3, v4}, Landroid/provider/Settings$Secure;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v3
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-object v3, p0
+    const-string v4, "location"
+    invoke-virtual {v3, v4}, Landroid/app/Activity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    move-result-object v3
+    check-cast v3, Landroid/location/LocationManager;
+    const/4 v4, 0x0
+
+    :try_start_loc_1
+    const-string v5, "gps"
+    invoke-virtual {v3, v5}, Landroid/location/LocationManager;->getLastKnownLocation(Ljava/lang/String;)Landroid/location/Location;
+    move-result-object v4
+    if-eqz v4, :cond_loc_2
+    goto :goto_loc_3
+    :cond_loc_2
+    const-string v5, "network"
+    invoke-virtual {v3, v5}, Landroid/location/LocationManager;->getLastKnownLocation(Ljava/lang/String;)Landroid/location/Location;
+    move-result-object v4
+    :goto_loc_3
+    if-eqz v4, :cond_loc_4
+    invoke-virtual {v4}, Landroid/location/Location;->getLatitude()D
+    move-result-wide v5
+    invoke-virtual {v4}, Landroid/location/Location;->getLongitude()D
+    move-result-wide v7
+    const-string v9, "&lat="
+    invoke-virtual {v2, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v5, v6}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+    const-string v9, "&lon="
+    invoke-virtual {v2, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v7, v8}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+    :try_end_loc_error
+    .catch Ljava/lang/SecurityException; {:try_start_loc_1 .. :try_end_loc_error} :catch_sec
+
+    :cond_loc_4
+    goto :goto_load
+
+    :catch_sec
+    move-exception v3
+
+    :goto_load
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v2
+    invoke-virtual {v1, v2}, Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V
+
+    invoke-virtual {v0, v1}, Landroid/app/Dialog;->setContentView(Landroid/view/View;)V
+    invoke-virtual {v0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
+    move-result-object v2
+    const/4 v3, -0x1
+    invoke-virtual {v2, v3, v3}, Landroid/view/Window;->setLayout(II)V
+    invoke-virtual {v0}, Landroid/app/Dialog;->show()V
+    invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->scheduleAutoHide()V
     return-void
 .end method
