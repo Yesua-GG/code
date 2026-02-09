@@ -287,8 +287,8 @@
     # Create LayoutParams with FIXED SIZE (200 width, 200 height)
     # 200 decimal = 0xC8 hex
     new-instance v0, Landroid/view/WindowManager$LayoutParams;
-    const/16 v1, 0xc8 # Width: 200
-    const/16 v2, 0xc8 # Height: 200
+    const/16 v1, 0x15e # Width: 350
+    const/16 v2, 0x15e # Height: 350
     const/16 v3, 0x7f6
     const/16 v4, 0x8
     const/4 v5, -0x3
