@@ -11,23 +11,22 @@
 # instance fields
 .field private final activity:Landroid/app/Activity;
 
+.field private final destDist:Ljava/lang/String;
+
 .field private final maxDist:Ljava/lang/String;
 
 .field private final minPrice:Ljava/lang/String;
 
 .field private final priceKm:Ljava/lang/String;
 
-.field private final destDist:Ljava/lang/String;
-
 .field private final showInfoCard:Z
 
 
 # direct methods
 .method public constructor <init>(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
-    .registers 7
-
-    .param p5, "destDist"    # Ljava/lang/String;
-    .param p6, "showInfoCard"    # Z
+    .registers 10
+    .param p5, "destDist"  # Ljava/lang/String;
+    .param p6, "showInfoCard"  # Z
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -73,7 +72,7 @@
 
     if-eqz v2, :cond_d
 
-    goto :goto_55
+    goto :goto_5f
 
     :cond_d
     new-instance v2, Ljava/util/LinkedList;
@@ -98,7 +97,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_55
+    if-nez v3, :cond_5f
 
     invoke-virtual {v2}, Ljava/util/LinkedList;->removeFirst()Ljava/lang/Object;
 
@@ -134,26 +133,26 @@
 
     move-result v5
 
-    if-eqz v5, :cond_check_feed
+    if-eqz v5, :cond_47
 
     const/4 v1, 0x1
 
-    goto :goto_55
+    goto :goto_5f
 
-    :cond_check_feed
+    :cond_47
     const-string v5, ".RideFeedFragment"
 
     invoke-virtual {v4, v5}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_47
+    if-eqz v5, :cond_51
 
     const/4 v1, 0x1
 
-    goto :goto_55
+    goto :goto_5f
 
-    :cond_47
+    :cond_51
     invoke-virtual {v3}, Landroidx/fragment/app/Fragment;->getChildFragmentManager()Landroidx/fragment/app/i0;
 
     move-result-object v3
@@ -168,8 +167,8 @@
 
     goto :goto_1f
 
-    :cond_55
-    :goto_55
+    :cond_5f
+    :goto_5f
     iget-object v0, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$UiUpdater;->activity:Landroid/app/Activity;
 
     invoke-virtual {v0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
@@ -186,18 +185,21 @@
 
     move-result-object v6
 
-    if-nez v6, :cond_68
+    if-nez v6, :cond_72
 
     return-void
 
-    :cond_68
-    iget-boolean v2, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$UiUpdater;->showInfoCard:Z
-    if-nez v2, :cond_skip_vis_check
-    const/4 v1, 0x0
-    :cond_skip_vis_check
+    :cond_72
+    # Check if we should show based on fragment logic
+    if-eqz v1, :cond_b9
 
-    if-eqz v1, :cond_9c
-
+    # New Check: Check config preference
+    iget-boolean v1, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$UiUpdater;->showInfoCard:Z
+    if-nez v1, :cond_7b
+    # If showInfoCard is false, jump to hide
+    goto :goto_b9
+    
+    :cond_7b
     const/4 v2, 0x0
 
     invoke-virtual {v6, v2}, Landroid/view/View;->setVisibility(I)V
@@ -226,40 +228,50 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    if-eqz v1, :cond_8d
+    if-eqz v1, :cond_97
 
     iget-object v3, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$UiUpdater;->minPrice:Ljava/lang/String;
 
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    :cond_8d
-    if-eqz v2, :cond_94
+    :cond_97
+    if-eqz v2, :cond_9e
 
     iget-object v1, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$UiUpdater;->maxDist:Ljava/lang/String;
 
     invoke-virtual {v2, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    :cond_94
-    if-eqz v0, :cond_9b
+    :cond_9e
+    if-eqz v0, :cond_a5
 
     iget-object v1, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$UiUpdater;->priceKm:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    :cond_9b
+    :cond_a5
     const-string v1, "bot_tv_dest_dist"
+
     invoke-virtual {v0}, Landroid/view/View;->getRootView()Landroid/view/View;
+
     move-result-object v0
+
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewWithTag(Ljava/lang/Object;)Landroid/view/View;
+
     move-result-object v0
+
     check-cast v0, Landroid/widget/TextView;
-    if-eqz v0, :cond_dest_dist
+
+    if-eqz v0, :cond_b8
+
     iget-object v1, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$UiUpdater;->destDist:Ljava/lang/String;
+
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-    :cond_dest_dist
+
+    :cond_b8
     return-void
 
-    :cond_9c
+    :goto_b9
+    :cond_b9
     const/16 v2, 0x8
 
     invoke-virtual {v6, v2}, Landroid/view/View;->setVisibility(I)V
