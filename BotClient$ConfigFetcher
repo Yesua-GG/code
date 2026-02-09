@@ -43,7 +43,9 @@
 
 # virtual methods
 .method public run()V
-    .registers 14
+    .registers 20
+
+    move-object v15, p0
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -72,7 +74,7 @@
     return-void
 
     :cond_14
-    iget-object v0, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$ConfigFetcher;->activity:Landroid/app/Activity;
+    iget-object v0, v15, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$ConfigFetcher;->activity:Landroid/app/Activity;
 
     invoke-virtual {v0}, Landroid/app/Activity;->isFinishing()Z
 
@@ -90,7 +92,7 @@
     return-void
 
     :cond_23
-    iget-object v0, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$ConfigFetcher;->activity:Landroid/app/Activity;
+    iget-object v0, v15, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$ConfigFetcher;->activity:Landroid/app/Activity;
 
     invoke-virtual {v0}, Landroid/app/Activity;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -281,7 +283,7 @@
 
     move-object v9, v0
 
-    iget-object v8, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$ConfigFetcher;->activity:Landroid/app/Activity;
+    iget-object v8, v15, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$ConfigFetcher;->activity:Landroid/app/Activity;
 
     new-instance v7, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$UiUpdater;
 
