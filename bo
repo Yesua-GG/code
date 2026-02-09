@@ -3024,30 +3024,46 @@
     move-result-object v0
 
     sget-boolean v3, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->isPaused:Z
-    
-    if-nez v3, :cond_3c
+
+    if-nez v3, :cond_50
 
     invoke-static {v0}, Lf01/Config;->shouldHide(Ljava/lang/String;)Z
-    
+
     move-result v0
-    
-    if-eqz v0, :cond_3c
-    
+
+    if-eqz v0, :cond_50
+
     invoke-virtual {p1}, Lpz0/e;->o()Ljava/lang/String;
-    
+
     move-result-object v3
-    
+
     invoke-static {v3}, Lf01/Config;->banOrder(Ljava/lang/String;)V
 
     new-instance v2, Lf01/b0$RejecterRunnable;
-    
+
     invoke-direct {v2, p0, v3}, Lf01/b0$RejecterRunnable;-><init>(Lf01/b0;Ljava/lang/String;)V
-    
+
     invoke-virtual {v1, v2}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
-    
 
+    const/4 v0, 0x0
 
-    :cond_3c
+    invoke-virtual {v1, v0}, Landroid/view/View;->setVisibility(I)V
+
+    const/4 v0, -0x1
+
+    iput v0, v4, Landroid/view/ViewGroup$LayoutParams;->width:I
+
+    const/4 v0, -0x2
+
+    iput v0, v4, Landroid/view/ViewGroup$LayoutParams;->height:I
+
+    invoke-virtual {v1, v4}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    return-void
+
+    goto :goto_75
+
+    :cond_50
     const/4 v0, 0x0
 
     invoke-virtual {v1, v0}, Landroid/view/View;->setVisibility(I)V
@@ -3070,7 +3086,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_61
+    if-eqz v0, :cond_75
 
     invoke-virtual {p1}, Lpz0/e;->o()Ljava/lang/String;
 
@@ -3084,15 +3100,31 @@
 
     invoke-virtual {v1, v2}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
 
-    :goto_isRepeated_skip
-    :cond_61
+    const/4 v0, 0x0
+
+    invoke-virtual {v1, v0}, Landroid/view/View;->setVisibility(I)V
+
+    const/4 v0, -0x1
+
+    iput v0, v4, Landroid/view/ViewGroup$LayoutParams;->width:I
+
+    const/4 v0, -0x2
+
+    iput v0, v4, Landroid/view/ViewGroup$LayoutParams;->height:I
+
+    invoke-virtual {v1, v4}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    return-void
+
+    :cond_75
+    :goto_75
     sget-boolean v0, Lf01/Config;->isOffering:Z
 
     sget-boolean v8, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->isPaused:Z
 
     or-int/2addr v0, v8
 
-    if-eqz v0, :cond_70
+    if-eqz v0, :cond_84
 
     const-string v0, "ConfigDebug"
 
@@ -3100,9 +3132,9 @@
 
     invoke-static {v0, v5}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_bb
+    goto :goto_cf
 
-    :cond_70
+    :cond_84
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v5
@@ -3115,7 +3147,7 @@
 
     cmp-long v5, v5, v7
 
-    if-gez v5, :cond_85
+    if-gez v5, :cond_99
 
     const-string v5, "ConfigDebug"
 
@@ -3123,9 +3155,9 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_bb
+    goto :goto_cf
 
-    :cond_85
+    :cond_99
     const-string v0, "ConfigDebug"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -3152,13 +3184,17 @@
 
     or-int/2addr v0, v8
 
-    if-nez v0, :cond_bb
+    if-nez v0, :cond_cf
 
     const-string v0, "ConfigDebug"
-    
-    const-string v3, "Selecting Order (Wait Logic Active)"
 
-    invoke-static {v0, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    const-string v3, "Selecting Order (FORCE ALWAYS ACTIVE -> isOffering=False)"
+
+    invoke-static {v0, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    const/4 v0, 0x0
+
+    sput-boolean v0, Lf01/Config;->isOffering:Z
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -3173,8 +3209,8 @@
     invoke-static {p0, v1}, Lf01/b0;->z(Lf01/b0;Landroid/view/View;)Lkotlin/Unit;
 
     .line 4
-    :cond_bb
-    :goto_bb
+    :cond_cf
+    :goto_cf
     invoke-virtual {p1}, Lpz0/e;->h()Lpz0/b;
 
     .line 7
@@ -3193,7 +3229,7 @@
     const/4 v2, 0x0
 
     .line 15
-    if-eqz v0, :cond_de
+    if-eqz v0, :cond_f2
 
     .line 17
     iget-object v0, p0, Lf01/b0;->Y0:Landroidx/compose/ui/platform/ComposeView;
@@ -3223,17 +3259,17 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
     .line 38
-    goto :goto_e3
+    goto :goto_f7
 
     .line 39
-    :cond_de
+    :cond_f2
     iget-object v0, p0, Lf01/b0;->Y0:Landroidx/compose/ui/platform/ComposeView;
 
     .line 41
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
     .line 44
-    :goto_e3
+    :goto_f7
     iget-object v0, p0, Lf01/b0;->X0:Landroid/widget/TextView;
 
     .line 46
@@ -3279,34 +3315,34 @@
     const/4 v4, 0x1
 
     .line 76
-    if-lez v3, :cond_107
+    if-lez v3, :cond_11b
 
     .line 78
     move v3, v4
 
     .line 79
-    goto :goto_108
+    goto :goto_11c
 
     .line 80
-    :cond_107
+    :cond_11b
     move v3, v2
 
     .line 81
-    :goto_108
-    if-eqz v3, :cond_10c
+    :goto_11c
+    if-eqz v3, :cond_120
 
     .line 83
     move v3, v2
 
     .line 84
-    goto :goto_10d
+    goto :goto_121
 
     .line 85
-    :cond_10c
+    :cond_120
     move v3, v1
 
     .line 86
-    :goto_10d
+    :goto_121
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
     .line 89
@@ -3319,7 +3355,7 @@
     move-result v3
 
     .line 95
-    if-nez v3, :cond_120
+    if-nez v3, :cond_134
 
     .line 97
     invoke-virtual {p1}, Lpz0/e;->B()Z
@@ -3328,32 +3364,32 @@
     move-result v3
 
     .line 101
-    if-eqz v3, :cond_11f
+    if-eqz v3, :cond_133
 
     .line 103
-    goto :goto_120
+    goto :goto_134
 
     .line 104
-    :cond_11f
+    :cond_133
     move v4, v2
 
     .line 105
-    :cond_120
-    :goto_120
-    if-eqz v4, :cond_124
+    :cond_134
+    :goto_134
+    if-eqz v4, :cond_138
 
     .line 107
     move v3, v2
 
     .line 108
-    goto :goto_125
+    goto :goto_139
 
     .line 109
-    :cond_124
+    :cond_138
     move v3, v1
 
     .line 110
-    :goto_125
+    :goto_139
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
     .line 113
@@ -3366,20 +3402,20 @@
     move-result v3
 
     .line 119
-    if-eqz v3, :cond_132
+    if-eqz v3, :cond_146
 
     .line 121
     move v3, v2
 
     .line 122
-    goto :goto_133
+    goto :goto_147
 
     .line 123
-    :cond_132
+    :cond_146
     move v3, v1
 
     .line 124
-    :goto_133
+    :goto_147
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
     .line 127
@@ -3392,20 +3428,20 @@
     move-result v3
 
     .line 133
-    if-eqz v3, :cond_140
+    if-eqz v3, :cond_154
 
     .line 135
     move v3, v2
 
     .line 136
-    goto :goto_141
+    goto :goto_155
 
     .line 137
-    :cond_140
+    :cond_154
     move v3, v1
 
     .line 138
-    :goto_141
+    :goto_155
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
     .line 141
@@ -3421,7 +3457,7 @@
     const-string v4, "null cannot be cast to non-null type android.view.ViewGroup.MarginLayoutParams"
 
     .line 149
-    if-eqz v3, :cond_197
+    if-eqz v3, :cond_1ab
 
     .line 151
     check-cast v3, Landroid/view/ViewGroup$MarginLayoutParams;
@@ -3445,7 +3481,7 @@
     move-result-object v3
 
     .line 166
-    if-eqz v3, :cond_191
+    if-eqz v3, :cond_1a5
 
     .line 168
     check-cast v3, Landroid/view/ViewGroup$MarginLayoutParams;
@@ -3475,7 +3511,7 @@
     move-result v0
 
     .line 187
-    if-nez v0, :cond_18b
+    if-nez v0, :cond_19f
 
     .line 189
     iget-object v0, p0, Lf01/b0;->d1:Lcom/google/android/flexbox/FlexboxLayout;
@@ -3511,7 +3547,7 @@
     return-void
 
     .line 212
-    :cond_18b
+    :cond_19f
     iget-object p1, p0, Lf01/b0;->d1:Lcom/google/android/flexbox/FlexboxLayout;
 
     .line 214
@@ -3521,7 +3557,7 @@
     return-void
 
     .line 218
-    :cond_191
+    :cond_1a5
     new-instance p1, Ljava/lang/NullPointerException;
 
     .line 220
@@ -3531,7 +3567,7 @@
     throw p1
 
     .line 224
-    :cond_197
+    :cond_1ab
     new-instance p1, Ljava/lang/NullPointerException;
 
     .line 226
@@ -4547,55 +4583,6 @@
     return p0
 .end method
 
-.method public final y0()V
-    .registers 5
-
-    iget-object v0, p0, Lf01/b0;->k1:Landroid/os/Handler;
-
-    if-eqz v0, :cond_8
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
-
-    :cond_8
-    sget-boolean v0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->isPaused:Z
-
-    if-eqz v0, :cond_d
-
-    return-void
-
-    :cond_d
-    new-instance v0, Landroid/os/Handler;
-
-    .line 3
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
-
-    .line 6
-    move-result-object v1
-
-    .line 7
-    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
-
-    .line 10
-    iput-object v0, p0, Lf01/b0;->k1:Landroid/os/Handler;
-
-    .line 12
-    new-instance v1, Lf01/i;
-
-    .line 14
-    invoke-direct {v1, p0}, Lf01/i;-><init>(Lf01/b0;)V
-
-    .line 17
-    const-wide/16 v2, 0x64
-
-    .line 19
-    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
-
-    .line 22
-    return-void
-.end method
-
 .method public static synthetic z(Lf01/b0;Landroid/view/View;)Lkotlin/Unit;
     .registers 2
 
@@ -5152,5 +5139,54 @@
 
     .line 89
     :cond_5d
+    return-void
+.end method
+
+.method public final y0()V
+    .registers 5
+
+    iget-object v0, p0, Lf01/b0;->k1:Landroid/os/Handler;
+
+    if-eqz v0, :cond_8
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
+
+    :cond_8
+    sget-boolean v0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->isPaused:Z
+
+    if-eqz v0, :cond_d
+
+    return-void
+
+    :cond_d
+    new-instance v0, Landroid/os/Handler;
+
+    .line 3
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+
+    .line 6
+    move-result-object v1
+
+    .line 7
+    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+
+    .line 10
+    iput-object v0, p0, Lf01/b0;->k1:Landroid/os/Handler;
+
+    .line 12
+    new-instance v1, Lf01/i;
+
+    .line 14
+    invoke-direct {v1, p0}, Lf01/i;-><init>(Lf01/b0;)V
+
+    .line 17
+    const-wide/16 v2, 0x64
+
+    .line 19
+    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    .line 22
     return-void
 .end method
