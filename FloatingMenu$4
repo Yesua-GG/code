@@ -169,7 +169,8 @@
 
     if-gez v5, :cond_7b
 
-    invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->toggleBot()V
+    invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->toggleBotState()V
+
 
     :cond_7b
     return v1
