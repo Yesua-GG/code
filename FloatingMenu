@@ -158,13 +158,13 @@
     new-instance v0, Landroid/widget/ImageView;
     invoke-direct {v0, p0}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
     sput-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->trashView:Landroid/widget/ImageView;
-    const v1, 0x108003c ; ic_menu_delete
+    const v1, 0x108003c # ic_menu_delete
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
     # Background
     const v1, -0x55aaaaab
     const/4 v2, 0x0
-    const/high16 v3, 0x42f00000 ; 120.0f
+    const/high16 v3, 0x42f00000 # 120.0f
     invoke-static {v1, v2, v3}, Lsinet/startup/inDriver/ui/FloatingMenu;->createBackground(IIF)Landroid/graphics/drawable/GradientDrawable;
     move-result-object v1
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
@@ -182,7 +182,7 @@
     sput-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->trashParams:Landroid/view/WindowManager$LayoutParams;
 
     sget-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->trashParams:Landroid/view/WindowManager$LayoutParams;
-    const/16 v1, 0x51 ; Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL
+    const/16 v1, 0x51 # Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->gravity:I
     const/16 v1, 0x32
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->y:I
@@ -284,10 +284,11 @@
     check-cast v0, Landroid/view/WindowManager;
     sput-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->wm:Landroid/view/WindowManager;
 
-    # Create LayoutParams
+    # Create LayoutParams with FIXED SIZE (150 width, 150 height)
+    # 150 decimal = 96 hex
     new-instance v0, Landroid/view/WindowManager$LayoutParams;
-    const/4 v1, -0x2
-    const/4 v2, -0x2
+    const/16 v1, 0x96 # Width: 150
+    const/16 v2, 0x96 # Height: 150
     const/16 v3, 0x7f6
     const/16 v4, 0x8
     const/4 v5, -0x3
@@ -305,6 +306,10 @@
     invoke-direct {v0, p0}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
     sput-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->rootView:Landroid/view/View;
     
+    # Set ScaleType.FIT_CENTER
+    sget-object v1, Landroid/widget/ImageView$ScaleType;->FIT_CENTER:Landroid/widget/ImageView$ScaleType;
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
+
     # Touch Listener for drag
     new-instance v1, Lsinet/startup/inDriver/ui/FloatingMenu$3;
     invoke-direct {v1}, Lsinet/startup/inDriver/ui/FloatingMenu$3;-><init>()V
@@ -381,14 +386,14 @@
 
     :cond_ret
     const/4 v2, 0x0
-    const/high16 v3, 0x42f00000 ; 120.0f
+    const/high16 v3, 0x42f00000 # 120.0f
     
     if-eqz p0, :cond_hover
     const v1, -0x55010000
     invoke-static {v1, v2, v3}, Lsinet/startup/inDriver/ui/FloatingMenu;->createBackground(IIF)Landroid/graphics/drawable/GradientDrawable;
     move-result-object v1
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
-    const v1, 0x3f99999a ; 1.2f
+    const v1, 0x3f99999a # 1.2f
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleX(F)V
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleY(F)V
     return-void
@@ -398,7 +403,7 @@
     invoke-static {v1, v2, v3}, Lsinet/startup/inDriver/ui/FloatingMenu;->createBackground(IIF)Landroid/graphics/drawable/GradientDrawable;
     move-result-object v1
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
-    const/high16 v1, 0x3f800000 ; 1.0f
+    const/high16 v1, 0x3f800000 # 1.0f
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleX(F)V
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleY(F)V
     return-void
@@ -428,17 +433,33 @@
     if-eqz p0, :cond_off
     # IsPaused = true -> OFF
     const-string v1, "off_button.png"
+    # Red Color for fallback
+    const v2, -0x10000
     goto :load_img
     
     :cond_off
     # IsPaused = false -> ON
     const-string v1, "on_button.png"
+    # Green Color for fallback
+    const v2, -0xff0100
     
     :load_img
     invoke-static {v1}, Lsinet/startup/inDriver/ui/FloatingMenu;->getBitmapFromAssets(Ljava/lang/String;)Landroid/graphics/Bitmap;
-    move-result-object v2
-    if-eqz v2, :cond_end
-    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
-    :cond_end
+    move-result-object v1
+
+    # Apply Image or Fallback
+    if-eqz v1, :cond_apply_img
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
+    const/4 v1, 0x0
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    goto :end_update
+
+    :cond_apply_img
+    # Fallback to color
+    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setBackgroundColor(I)V
+    const/4 v1, 0x0
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    :end_update
     return-void
 .end method
