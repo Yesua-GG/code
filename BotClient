@@ -12,7 +12,6 @@
 
 .field public static isPaused:Z
 
-.field public static phoneNumber:Ljava/lang/String;
 .field private static volatile lastBidTime:J
 
 
@@ -38,32 +37,7 @@
     const/4 v0, 0x1
 
     sput-boolean v0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->isPaused:Z
-    
-    const-string v0, ""
-    sput-object v0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->phoneNumber:Ljava/lang/String;
 
-    return-void
-.end method
-
-.method public static savePhoneNumber(Ljava/lang/String;)V
-    .registers 3
-    .param p0, "phone"  # Ljava/lang/String;
-    
-    sput-object p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->phoneNumber:Ljava/lang/String;
-    
-    # Optional: Save to SharedPreferences if context is available, but for now just memory is fine as per plan
-    # or implement simplified persistence later if needed
-    
-    const-string v0, "BotClient"
-    new-instance v1, Ljava/lang/StringBuilder;
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-    const-string v2, "Phone Number Saved: "
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-    move-result-object v1
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-    
     return-void
 .end method
 
@@ -139,6 +113,36 @@
     return-void
 .end method
 
+.method public static checkAndAct(Lh31/l0;Llz0/b;)V
+    .registers 4
+    .param p0, "vm"  # Lh31/l0;
+    .param p1, "order"  # Llz0/b;
+
+    .line 1
+    const-string v0, "BotClient"
+
+    const-string v1, "checkAndAct (Feed) called"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    sget-boolean v0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->isPaused:Z
+
+    if-eqz v0, :cond_c
+
+    return-void
+
+    :cond_c
+    sget-object v0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->executor:Ljava/util/concurrent/ExecutorService;
+
+    new-instance v1, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$FeedRunner;
+
+    invoke-direct {v1, p0, p1}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$FeedRunner;-><init>(Lh31/l0;Llz0/b;)V
+
+    invoke-interface {v0, v1}, Ljava/util/concurrent/ExecutorService;->execute(Ljava/lang/Runnable;)V
+
+    return-void
+.end method
+
 .method public static getUserId(Landroid/content/Context;)Ljava/lang/String;
     .registers 3
     .param p0, "context"  # Landroid/content/Context;
@@ -155,29 +159,6 @@
     move-result-object v0
 
     return-object v0
-.end method
-
-.method public static handleExpired()V
-    .registers 2
-
-    const/4 v0, 0x1
-
-    sput-boolean v0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->isPaused:Z
-
-    invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->getContext()Landroid/app/Activity;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_11
-
-    new-instance v1, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$ExpiredRunnable;
-
-    invoke-direct {v1}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$ExpiredRunnable;-><init>()V
-
-    invoke-virtual {v0, v1}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
-
-    :cond_11
-    return-void
 .end method
 
 .method public static handleBlocked(Ljava/lang/String;Ljava/lang/String;)V
@@ -198,6 +179,29 @@
     new-instance v1, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Blocker;
 
     invoke-direct {v1, p0, p1}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Blocker;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {v0, v1}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
+
+    :cond_11
+    return-void
+.end method
+
+.method public static handleExpired()V
+    .registers 2
+
+    const/4 v0, 0x1
+
+    sput-boolean v0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->isPaused:Z
+
+    invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->getContext()Landroid/app/Activity;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_11
+
+    new-instance v1, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$ExpiredRunnable;
+
+    invoke-direct {v1}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$ExpiredRunnable;-><init>()V
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
 
@@ -414,10 +418,9 @@
 .end method
 
 .method public static sendOrder(Ljava/lang/String;)Ljava/lang/String;
-    .registers 9
+    .registers 12
     .param p0, "json"  # Ljava/lang/String;
 
-    .line 10
     :try_start_0
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -431,14 +434,10 @@
 
     move-result-object v3
 
-    .line 13
-    .local v3, "JSON":Lokhttp3/MediaType;
     invoke-static {v3, p0}, Lokhttp3/RequestBody;->create(Lokhttp3/MediaType;Ljava/lang/String;)Lokhttp3/RequestBody;
 
     move-result-object v4
 
-    .line 15
-    .local v4, "body":Lokhttp3/RequestBody;
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -463,18 +462,14 @@
 
     move-result-object v5
 
-    .line 18
     invoke-virtual {v5, v4}, Lokhttp3/Request$Builder;->h(Lokhttp3/RequestBody;)Lokhttp3/Request$Builder;
 
     move-result-object v5
 
-    .line 19
     invoke-virtual {v5}, Lokhttp3/Request$Builder;->b()Lokhttp3/Request;
 
     move-result-object v5
 
-    .line 21
-    .local v5, "request":Lokhttp3/Request;
     invoke-virtual {v2, v5}, Lokhttp3/OkHttpClient;->a(Lokhttp3/Request;)Lokhttp3/Call;
 
     move-result-object v2
@@ -483,21 +478,21 @@
 
     move-result-object v2
 
-    .line 22
-    .local v2, "response":Lokhttp3/Response;
     invoke-virtual {v2}, Lokhttp3/Response;->k()Lokhttp3/ResponseBody;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v2}, Lokhttp3/ResponseBody;->C()Ljava/lang/String;
+    invoke-virtual {v3}, Lokhttp3/ResponseBody;->C()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
+
+    move-object v2, v3
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v3
+    move-result-wide v8
 
-    sub-long/2addr v3, v0
+    sub-long/2addr v8, v0
 
     const-string v0, "ConfigDebug"
 
@@ -505,15 +500,15 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "Network Request Time: "
+    const-string v4, "Network Request Time: "
 
-    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v8, v9}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    const-string v3, "ms. Response: "
+    const-string v4, "ms. Response: "
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -522,39 +517,36 @@
     move-result-object v1
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_67
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_67} :catch_68
+    :try_end_68
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_68} :catch_69
 
     return-object v2
 
-    .line 23
-    .end local v0
-    .end local v1
-    .end local v2  # "response":Lokhttp3/Response;
-    .end local v3  # "JSON":Lokhttp3/MediaType;
-    .end local v4  # "body":Lokhttp3/RequestBody;
-    :catch_68
+    :catch_69
     move-exception v0
 
-    .line 24
-    .local v0, "e":Ljava/lang/Exception;
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 25
     const/4 v1, 0x0
 
     return-object v1
 .end method
+
 .method public static startSession(Landroid/content/Context;)V
     .registers 4
     .param p0, "context"  # Landroid/content/Context;
 
     const-string v0, "Validando..."
+
     invoke-static {v0}, Lsinet/startup/inDriver/ui/FloatingMenu;->metrics(Ljava/lang/String;)V
 
     sget-object v0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->executor:Ljava/util/concurrent/ExecutorService;
+
     new-instance v1, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Starter;
+
     invoke-direct {v1, p0}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Starter;-><init>(Landroid/content/Context;)V
+
     invoke-interface {v0, v1}, Ljava/util/concurrent/ExecutorService;->execute(Ljava/lang/Runnable;)V
+
     return-void
 .end method
