@@ -1,0 +1,54 @@
+
+.class public Lsinet/startup/inDriver/ui/FloatingMenu$WhatsAppListener;
+.super Ljava/lang/Object;
+.source "FloatingMenu.java"
+.implements Landroid/content/DialogInterface$OnClickListener;
+
+.field private final activity:Landroid/app/Activity;
+.field private final url:Ljava/lang/String;
+
+.method public constructor <init>(Landroid/app/Activity;Ljava/lang/String;)V
+    .registers 3
+    .param p1, "activity"  # Landroid/app/Activity;
+    .param p2, "url"  # Ljava/lang/String;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lsinet/startup/inDriver/ui/FloatingMenu$WhatsAppListener;->activity:Landroid/app/Activity;
+    iput-object p2, p0, Lsinet/startup/inDriver/ui/FloatingMenu$WhatsAppListener;->url:Ljava/lang/String;
+    return-void
+.end method
+
+.method public onClick(Landroid/content/DialogInterface;I)V
+    .registers 6
+    .param p1, "dialog"  # Landroid/content/DialogInterface;
+    .param p2, "which"  # I
+
+    # Crear Intent ACTION_VIEW
+    new-instance v0, Landroid/content/Intent;
+    const-string v1, "android.intent.action.VIEW"
+    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+    
+    # Parsear URL
+    iget-object v1, p0, Lsinet/startup/inDriver/ui/FloatingMenu$WhatsAppListener;->url:Ljava/lang/String;
+    invoke-static {v1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+    move-result-object v1
+    
+    # Set Data
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
+    
+    # Start Activity
+    iget-object v1, p0, Lsinet/startup/inDriver/ui/FloatingMenu$WhatsAppListener;->activity:Landroid/app/Activity;
+    invoke-virtual {v1, v0}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
+    
+    # Close App (Opcional, pero recomendado si estaba bloqueado)
+    # Lsinet/startup/inDriver/ui/FloatingMenu;->closeApplication()V
+    # Por ahora solo dejamos la alerta abierta o cerramos el dialogo? 
+    # Al ser setCancelable(false), el usuario debe dar click.
+    # El dialogo se cierra al hacer click por defecto.
+    # Pero si vuelve a la app, seguira bloqueada?
+    # El ConfigFetcher corre en loop cada 1s. Si sigue expirado, volvera a mostrar la alerta?
+    # Eso seria molesto (muchas alertas).
+    # Deberíamos chequear si ya se mostró?
+    
+    return-void
+.end method
