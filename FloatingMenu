@@ -1026,6 +1026,38 @@
     return-void
 .end method
 
+.method public static showBlockingAlert(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;)V
+    .registers 6
+    .param p0, "activity"  # Landroid/app/Activity;
+    .param p1, "message"  # Ljava/lang/String;
+    .param p2, "whatsappUrl"  # Ljava/lang/String;
+
+    new-instance v0, Landroid/app/AlertDialog$Builder;
+    invoke-direct {v0, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+    
+    # Titulo
+    const-string v1, "\u26a0\ufe0f MEMBRESIA VENCIDA"
+    invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+    
+    # Mensaje
+    invoke-virtual {v0, p1}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+    
+    # No cancelable (bloqueante)
+    const/4 v1, 0x0
+    invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setCancelable(Z)Landroid/app/AlertDialog$Builder;
+    
+    # Boton WhatsApp
+    const-string v1, "CONTACTAR SOPORTE"
+    new-instance v2, Lsinet/startup/inDriver/ui/FloatingMenu$WhatsAppListener;
+    invoke-direct {v2, p0, p2}, Lsinet/startup/inDriver/ui/FloatingMenu$WhatsAppListener;-><init>(Landroid/app/Activity;Ljava/lang/String;)V
+    invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+    
+    # Mostrar
+    invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
+    
+    return-void
+.end method
+
 .method public static updateUiState(Z)V
     .registers 5
     .param p0, "isPaused"  # Z
