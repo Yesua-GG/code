@@ -267,6 +267,40 @@
 
     move-result-object v12
 
+    # Parsear Action/Status
+    const-string v9, "action"
+    const-string v10, "PASS" 
+    invoke-virtual {v7, v9, v10}, Lorg/json/JSONObject;->optString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v9
+
+    const-string v10, "EXPIRED"
+    invoke-virtual {v10, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result v10
+    
+    if-eqz v10, :cond_check_expire
+
+    # Es EXPIRED -> Mostrar alerta
+    const-string v0, "message"
+    invoke-virtual {v7, v0}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v0
+    
+    const-string v1, "whatsapp_url"
+    invoke-virtual {v7, v1}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v1
+
+    iget-object v2, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$ConfigFetcher;->activity:Landroid/app/Activity;
+    
+    # RunOnUiThread para mostrar alerta
+    new-instance v3, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Blocker;
+    invoke-direct {v3, v0, v1}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Blocker;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    
+    invoke-virtual {v2, v3}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
+    
+    goto :goto_e6 # Sleep and loop
+
+    :cond_check_expire
+    # ... Resto de la lógica normal (ui updater) ...
+
     const-string v3, "show_info_card"
 
     const/4 v4, 0x1
