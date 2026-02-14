@@ -1,98 +1,37 @@
+
 .class public Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Blocker;
 .super Ljava/lang/Object;
 .source "BotClient.java"
-
-# interfaces
 .implements Ljava/lang/Runnable;
 
-# instance fields
 .field private final message:Ljava/lang/String;
-.field private final url:Ljava/lang/String;
+.field private final whatsappUrl:Ljava/lang/String;
 
-# direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
     .registers 3
+    .param p1, "message"  # Ljava/lang/String;
+    .param p2, "whatsappUrl"  # Ljava/lang/String;
 
-    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
     iput-object p1, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Blocker;->message:Ljava/lang/String;
-    iput-object p2, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Blocker;->url:Ljava/lang/String;
-
+    iput-object p2, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Blocker;->whatsappUrl:Ljava/lang/String;
     return-void
 .end method
 
-
-# virtual methods
 .method public run()V
-    .registers 5
+    .registers 4
 
-    .line 1
-    const/4 v0, 0x1
-
-    invoke-static {v0}, Lsinet/startup/inDriver/ui/FloatingMenu;->updateUiState(Z)V
-
-    .line 2
-    sget-object v0, Lsinet/startup/inDriver/ui/FloatingMenu;->statusView:Landroid/widget/TextView;
-
-    if-eqz v0, :cond_d
-
-    const-string v1, "\u26d4 SUSPENDIDO \u26d4"
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 3
-    :cond_d
+    # Obtener Actividad desde FloatingMenu (Contexto Global)
     invoke-static {}, Lsinet/startup/inDriver/ui/FloatingMenu;->getContext()Landroid/app/Activity;
-
     move-result-object v0
-
-    if-eqz v0, :cond_36
-
-    .line 4
-    new-instance v1, Landroid/app/AlertDialog$Builder;
-
-    const/4 v2, 0x5
-
-    invoke-direct {v1, v0, v2}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;I)V
-
-    const-string v2, "\u26a0\ufe0f AVISO IMPORTANTE"
-
-    .line 5
-    invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
-
-    move-result-object v1
-
-    .line 6
-    iget-object v2, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Blocker;->message:Ljava/lang/String;
-    invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    .line 7
-    invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setCancelable(Z)Landroid/app/AlertDialog$Builder;
-
-    move-result-object v1
-
-    const-string v2, "CONTACTAR SOPORTE"
-
-    .line 8
-    new-instance v3, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Blocker$1;
-
-    iget-object v2, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Blocker;->url:Ljava/lang/String;
-    invoke-direct {v3, v0, v2}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Blocker$1;-><init>(Landroid/app/Activity;Ljava/lang/String;)V
-    const-string v2, "CONTACTAR SOPORTE"
     
-    invoke-virtual {v1, v2, v3}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
-
-    move-result-object v1
-
-    .line 9
-    invoke-virtual {v1}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
-
-    :cond_36
+    if-eqz v0, :cond_show
+    
+    iget-object v1, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Blocker;->message:Ljava/lang/String;
+    iget-object v2, p0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Blocker;->whatsappUrl:Ljava/lang/String;
+    
+    invoke-static {v0, v1, v2}, Lsinet/startup/inDriver/ui/FloatingMenu;->showBlockingAlert(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;)V
+    
+    :cond_show
     return-void
 .end method
