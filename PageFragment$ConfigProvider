@@ -1,0 +1,53 @@
+.class public final Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$ConfigProvider;
+.super Ljava/lang/Object;
+.source "PageFragment.java"
+
+# interfaces
+.implements Ly22/d;
+
+# annotations
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "ConfigProvider"
+.end annotation
+
+.field final synthetic this$0:Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;
+
+# direct methods
+.method public constructor <init>(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;)V
+    .registers 2
+    .param p1, "this$0"
+
+    .line 1
+    iput-object p1, p0, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$ConfigProvider;->this$0:Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    return-void
+.end method
+
+# virtual methods
+.method public b(Landroidx/fragment/app/w;)Landroidx/fragment/app/Fragment;
+    .registers 3
+    .param p1, "factory"
+
+    .line 1
+    new-instance v0, Lsinet/startup/inDriver/city/driver/page/ui/ConfigFragment;
+    invoke-direct {v0}, Lsinet/startup/inDriver/city/driver/page/ui/ConfigFragment;-><init>()V
+    return-object v0
+.end method
+
+
+.method public g()Ljava/lang/String;
+    .registers 2
+
+    .line 1
+    const-string v0, "SCREEN_KEY_CONFIG"
+    return-object v0
+.end method
+
+.method public h()Z
+    .registers 2
+
+    .line 1
+    const/4 v0, 0x1
+    return v0
+.end method
