@@ -1,0 +1,6265 @@
+# classes15.dex
+
+.class public final Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;
+.super Lcu1/h;
+.source "SourceFile"
+
+# interfaces
+.implements Lcu1/j;
+.implements Lcu1/i;
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$a;
+    }
+.end annotation
+
+.annotation runtime Lkotlin/Metadata;
+    d1 = {
+        "\u0000\u0088\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u000e\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0019\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u000e\b\u0000\u0018\u0000 ç\u00012\u00020\u00012\u00020\u00022\u00020\u0003:\u0002è\u0001B\u0007¢\u0006\u0004\b\u0004\u0010\u0005J\u000f\u0010\u0007\u001a\u00020\u0006H\u0002¢\u0006\u0004\b\u0007\u0010\u0005J\u000f\u0010\b\u001a\u00020\u0006H\u0002¢\u0006\u0004\b\b\u0010\u0005J\u0017\u0010\u000b\u001a\u00020\u00062\u0006\u0010\n\u001a\u00020\tH\u0002¢\u0006\u0004\b\u000b\u0010\fJ\u000f\u0010\r\u001a\u00020\u0006H\u0002¢\u0006\u0004\b\r\u0010\u0005J#\u0010\u0012\u001a\u00020\u00062\b\u0010\u000f\u001a\u0004\u0018\u00010\u000e2\b\b\u0001\u0010\u0011\u001a\u00020\u0010H\u0002¢\u0006\u0004\b\u0012\u0010\u0013J\u000f\u0010\u0014\u001a\u00020\u0006H\u0002¢\u0006\u0004\b\u0014\u0010\u0005J\u000f\u0010\u0015\u001a\u00020\u0006H\u0002¢\u0006\u0004\b\u0015\u0010\u0005J\'\u0010\u001a\u001a\u00020\u00062\u0006\u0010\u000f\u001a\u00020\u00162\u0006\u0010\u0018\u001a\u00020\u00172\u0006\u0010\u0019\u001a\u00020\u0017H\u0002¢\u0006\u0004\b\u001a\u0010\u001bJ\u001f\u0010\u001f\u001a\u00020\u00062\u0006\u0010\u001c\u001a\u00020\u00102\u0006\u0010\u001e\u001a\u00020\u001dH\u0002¢\u0006\u0004\b\u001f\u0010 J\u001f\u0010!\u001a\u00020\u00062\u0006\u0010\u001c\u001a\u00020\u00102\u0006\u0010\u001e\u001a\u00020\u001dH\u0002¢\u0006\u0004\b!\u0010 J\u0019\u0010\"\u001a\u00020\u00062\b\u0010\u000f\u001a\u0004\u0018\u00010\u000eH\u0002¢\u0006\u0004\b\"\u0010#J\u0019\u0010$\u001a\u00020\u000e2\b\u0010\u000f\u001a\u0004\u0018\u00010\u000eH\u0002¢\u0006\u0004\b$\u0010%J\u0019\u0010&\u001a\u00020\u00062\b\u0010\u000f\u001a\u0004\u0018\u00010\u000eH\u0002¢\u0006\u0004\b&\u0010#J\u0017\u0010\'\u001a\u00020\u00062\u0006\u0010\u000f\u001a\u00020\u000eH\u0002¢\u0006\u0004\b\'\u0010#J\u000f\u0010(\u001a\u00020\u0006H\u0002¢\u0006\u0004\b(\u0010\u0005J\u0017\u0010*\u001a\u00020)2\u0006\u0010\u000f\u001a\u00020\u000eH\u0002¢\u0006\u0004\b*\u0010+J\u000f\u0010,\u001a\u00020\u000eH\u0002¢\u0006\u0004\b,\u0010-J\u000f\u0010.\u001a\u00020\u000eH\u0002¢\u0006\u0004\b.\u0010-J\u000f\u0010/\u001a\u00020\u000eH\u0002¢\u0006\u0004\b/\u0010-J\u000f\u00100\u001a\u00020\u000eH\u0002¢\u0006\u0004\b0\u0010-J\u001d\u00104\u001a\u0004\u0018\u000103*\u0002012\u0006\u00102\u001a\u00020\u0010H\u0002¢\u0006\u0004\b4\u00105J\u0017\u00108\u001a\u00020\u00062\u0006\u00107\u001a\u000206H\u0002¢\u0006\u0004\b8\u00109J\u001f\u0010=\u001a\u00020\u00062\u0006\u0010;\u001a\u00020:2\u0006\u0010<\u001a\u00020\u0017H\u0002¢\u0006\u0004\b=\u0010>J\u000f\u0010?\u001a\u00020\u0006H\u0002¢\u0006\u0004\b?\u0010\u0005J\u0017\u0010B\u001a\u00020\u00062\u0006\u0010A\u001a\u00020@H\u0002¢\u0006\u0004\bB\u0010CJ\u000f\u0010D\u001a\u00020\u0006H\u0002¢\u0006\u0004\bD\u0010\u0005J\u001f\u0010E\u001a\u00020\u00062\u0006\u0010\u001c\u001a\u00020\u00102\u0006\u0010\u001e\u001a\u00020\u001dH\u0002¢\u0006\u0004\bE\u0010 J\u000f\u0010F\u001a\u00020\u0006H\u0002¢\u0006\u0004\bF\u0010\u0005J\u0017\u0010I\u001a\u00020\u00062\u0006\u0010H\u001a\u00020GH\u0016¢\u0006\u0004\bI\u0010JJ!\u0010N\u001a\u00020\u00062\u0006\u0010K\u001a\u0002032\b\u0010M\u001a\u0004\u0018\u00010LH\u0016¢\u0006\u0004\bN\u0010OJ\u000f\u0010P\u001a\u00020\u001dH\u0016¢\u0006\u0004\bP\u0010QJ\u000f\u0010R\u001a\u00020\u0006H\u0016¢\u0006\u0004\bR\u0010\u0005J\u000f\u0010S\u001a\u00020\u0006H\u0016¢\u0006\u0004\bS\u0010\u0005J\u000f\u0010T\u001a\u00020\u0006H\u0016¢\u0006\u0004\bT\u0010\u0005J\u000f\u0010U\u001a\u00020\u0006H\u0016¢\u0006\u0004\bU\u0010\u0005R\u001a\u0010Z\u001a\u00020\u00108\u0016X\u0096\u0004¢\u0006\f\n\u0004\bV\u0010W\u001a\u0004\bX\u0010YR\u001b\u0010`\u001a\u00020[8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\\\u0010]\u001a\u0004\b^\u0010_R(\u0010i\u001a\b\u0012\u0004\u0012\u00020b0a8\u0000@\u0000X\u0081.¢\u0006\u0012\n\u0004\bc\u0010d\u001a\u0004\be\u0010f\"\u0004\bg\u0010hR(\u0010n\u001a\b\u0012\u0004\u0012\u00020j0a8\u0000@\u0000X\u0081.¢\u0006\u0012\n\u0004\bk\u0010d\u001a\u0004\bl\u0010f\"\u0004\bm\u0010hR(\u0010s\u001a\b\u0012\u0004\u0012\u00020o0a8\u0000@\u0000X\u0081.¢\u0006\u0012\n\u0004\bp\u0010d\u001a\u0004\bq\u0010f\"\u0004\br\u0010hR\"\u0010{\u001a\u00020t8\u0000@\u0000X\u0081.¢\u0006\u0012\n\u0004\bu\u0010v\u001a\u0004\bw\u0010x\"\u0004\by\u0010zR&\u0010\u0083\u0001\u001a\u00020|8\u0000@\u0000X\u0081.¢\u0006\u0015\n\u0004\b}\u0010~\u001a\u0005\b\u007f\u0010\u0080\u0001\"\u0006\b\u0081\u0001\u0010\u0082\u0001R*\u0010\u008b\u0001\u001a\u00030\u0084\u00018\u0000@\u0000X\u0081.¢\u0006\u0018\n\u0006\b\u0085\u0001\u0010\u0086\u0001\u001a\u0006\b\u0087\u0001\u0010\u0088\u0001\"\u0006\b\u0089\u0001\u0010\u008a\u0001R*\u0010\u0093\u0001\u001a\u00030\u008c\u00018\u0000@\u0000X\u0081.¢\u0006\u0018\n\u0006\b\u008d\u0001\u0010\u008e\u0001\u001a\u0006\b\u008f\u0001\u0010\u0090\u0001\"\u0006\b\u0091\u0001\u0010\u0092\u0001R*\u0010\u009b\u0001\u001a\u00030\u0094\u00018\u0000@\u0000X\u0081.¢\u0006\u0018\n\u0006\b\u0095\u0001\u0010\u0096\u0001\u001a\u0006\b\u0097\u0001\u0010\u0098\u0001\"\u0006\b\u0099\u0001\u0010\u009a\u0001R*\u0010£\u0001\u001a\u00030\u009c\u00018\u0000@\u0000X\u0081.¢\u0006\u0018\n\u0006\b\u009d\u0001\u0010\u009e\u0001\u001a\u0006\b\u009f\u0001\u0010\u00a0\u0001\"\u0006\b¡\u0001\u0010¢\u0001R*\u0010«\u0001\u001a\u00030¤\u00018\u0000@\u0000X\u0081.¢\u0006\u0018\n\u0006\b¥\u0001\u0010¦\u0001\u001a\u0006\b§\u0001\u0010¨\u0001\"\u0006\b©\u0001\u0010ª\u0001R*\u0010³\u0001\u001a\u00030¬\u00018\u0000@\u0000X\u0081.¢\u0006\u0018\n\u0006\b\u00ad\u0001\u0010®\u0001\u001a\u0006\b¯\u0001\u0010°\u0001\"\u0006\b±\u0001\u0010²\u0001R*\u0010»\u0001\u001a\u00030´\u00018\u0000@\u0000X\u0081.¢\u0006\u0018\n\u0006\bµ\u0001\u0010¶\u0001\u001a\u0006\b·\u0001\u0010¸\u0001\"\u0006\b¹\u0001\u0010º\u0001R*\u0010Ã\u0001\u001a\u00030¼\u00018\u0000@\u0000X\u0081.¢\u0006\u0018\n\u0006\b½\u0001\u0010¾\u0001\u001a\u0006\b¿\u0001\u0010À\u0001\"\u0006\bÁ\u0001\u0010Â\u0001R \u0010È\u0001\u001a\u00020\u00178BX\u0082\u0084\u0002¢\u0006\u0010\n\u0006\bÄ\u0001\u0010Å\u0001\u001a\u0006\bÆ\u0001\u0010Ç\u0001R \u0010Ì\u0001\u001a\u00020b8BX\u0082\u0084\u0002¢\u0006\u0010\n\u0006\bÉ\u0001\u0010Å\u0001\u001a\u0006\bÊ\u0001\u0010Ë\u0001R\u001f\u0010Ï\u0001\u001a\u00020\u000e8BX\u0082\u0084\u0002¢\u0006\u000f\n\u0006\bÍ\u0001\u0010Å\u0001\u001a\u0005\bÎ\u0001\u0010-R\u001f\u0010Ò\u0001\u001a\u00020\u001d8BX\u0082\u0084\u0002¢\u0006\u000f\n\u0006\bÐ\u0001\u0010Å\u0001\u001a\u0005\bÑ\u0001\u0010QR\u001f\u0010Õ\u0001\u001a\u00020\u000e8BX\u0082\u0084\u0002¢\u0006\u000f\n\u0006\bÓ\u0001\u0010Å\u0001\u001a\u0005\bÔ\u0001\u0010-R!\u0010Ú\u0001\u001a\u00030Ö\u00018BX\u0082\u0084\u0002¢\u0006\u0010\n\u0006\b×\u0001\u0010Å\u0001\u001a\u0006\bØ\u0001\u0010Ù\u0001R\u0018\u0010Þ\u0001\u001a\u00030Û\u00018\u0002X\u0082\u0004¢\u0006\b\n\u0006\bÜ\u0001\u0010Ý\u0001R\u0019\u0010á\u0001\u001a\u00020\u001d8\u0002@\u0002X\u0082\u000e¢\u0006\b\n\u0006\bß\u0001\u0010à\u0001R\u0019\u0010ä\u0001\u001a\u0004\u0018\u00010)8BX\u0082\u0004¢\u0006\b\u001a\u0006\bâ\u0001\u0010ã\u0001R\u0019\u0010æ\u0001\u001a\u0004\u0018\u00010)8BX\u0082\u0004¢\u0006\b\u001a\u0006\bå\u0001\u0010ã\u0001¨\u0006é\u0001"
+    }
+    d2 = {
+        "Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;",
+        "Lcu1/h;",
+        "Lcu1/j;",
+        "Lcu1/i;",
+        "<init>",
+        "()V",
+        "",
+        "I7",
+        "J7",
+        "Luu1/l;",
+        "viewCommand",
+        "d7",
+        "(Luu1/l;)V",
+        "L7",
+        "Ly22/d;",
+        "tab",
+        "",
+        "selectedItemId",
+        "G7",
+        "(Ly22/d;I)V",
+        "T7",
+        "B7",
+        "La61/a;",
+        "",
+        "title",
+        "key",
+        "U7",
+        "(La61/a;Ljava/lang/String;Ljava/lang/String;)V",
+        "itemId",
+        "",
+        "isVisible",
+        "W7",
+        "(IZ)V",
+        "V7",
+        "H7",
+        "(Ly22/d;)V",
+        "V6",
+        "(Ly22/d;)Ly22/d;",
+        "y6",
+        "F7",
+        "k7",
+        "Landroidx/fragment/app/Fragment;",
+        "D6",
+        "(Ly22/d;)Landroidx/fragment/app/Fragment;",
+        "R6",
+        "()Ly22/d;",
+        "C6",
+        "B6",
+        "A6",
+        "Landroid/view/ViewGroup;",
+        "id",
+        "Landroid/view/View;",
+        "F6",
+        "(Landroid/view/ViewGroup;I)Landroid/view/View;",
+        "Lsinet/startup/inDriver/city/feature/settings/driver/api/domain/entity/RegistrationInfo;",
+        "registrationInfo",
+        "E7",
+        "(Lsinet/startup/inDriver/city/feature/settings/driver/api/domain/entity/RegistrationInfo;)V",
+        "Lsinet/startup/inDriver/city/feature/settings/driver/api/domain/entity/ChileRegionWarning;",
+        "chileRegionWarning",
+        "cityName",
+        "D7",
+        "(Lsinet/startup/inDriver/city/feature/settings/driver/api/domain/entity/ChileRegionWarning;Ljava/lang/String;)V",
+        "z7",
+        "Lt51/m0;",
+        "command",
+        "x7",
+        "(Lt51/m0;)V",
+        "C7",
+        "X7",
+        "A7",
+        "Landroid/content/Context;",
+        "context",
+        "onAttach",
+        "(Landroid/content/Context;)V",
+        "view",
+        "Landroid/os/Bundle;",
+        "savedInstanceState",
+        "onViewCreated",
+        "(Landroid/view/View;Landroid/os/Bundle;)V",
+        "onBackPressed",
+        "()Z",
+        "onResume",
+        "onStart",
+        "onPause",
+        "onStop",
+        "S0",
+        "I",
+        "M5",
+        "()I",
+        "layoutRes",
+        "Lo51/a;",
+        "T0",
+        "Lkotlin/properties/d;",
+        "G6",
+        "()Lo51/a;",
+        "binding",
+        "Lew/a;",
+        "Lw51/q0;",
+        "U0",
+        "Lew/a;",
+        "a7",
+        "()Lew/a;",
+        "setViewModelProvider$page_release",
+        "(Lew/a;)V",
+        "viewModelProvider",
+        "Lz12/b;",
+        "V0",
+        "P6",
+        "setFeatureTogglesRepository$page_release",
+        "featureTogglesRepository",
+        "Lef1/d;",
+        "W0",
+        "O6",
+        "setFeatureTogglesInteractor$page_release",
+        "featureTogglesInteractor",
+        "Lfp0/a;",
+        "X0",
+        "Lfp0/a;",
+        "U6",
+        "()Lfp0/a;",
+        "setPriorityApi$page_release",
+        "(Lfp0/a;)V",
+        "priorityApi",
+        "Lcy0/a;",
+        "Y0",
+        "Lcy0/a;",
+        "Q6",
+        "()Lcy0/a;",
+        "setFeedApi$page_release",
+        "(Lcy0/a;)V",
+        "feedApi",
+        "Lkp3/i;",
+        "Z0",
+        "Lkp3/i;",
+        "T6",
+        "()Lkp3/i;",
+        "setPermissionLocationApi$page_release",
+        "(Lkp3/i;)V",
+        "permissionLocationApi",
+        "Lw51/b;",
+        "a1",
+        "Lw51/b;",
+        "S6",
+        "()Lw51/b;",
+        "setHistoryScreenFactory$page_release",
+        "(Lw51/b;)V",
+        "historyScreenFactory",
+        "Lyx0/a;",
+        "b1",
+        "Lyx0/a;",
+        "W6",
+        "()Lyx0/a;",
+        "setTrainingApi$page_release",
+        "(Lyx0/a;)V",
+        "trainingApi",
+        "Lqx0/a;",
+        "c1",
+        "Lqx0/a;",
+        "I6",
+        "()Lqx0/a;",
+        "setCountdownApi$page_release",
+        "(Lqx0/a;)V",
+        "countdownApi",
+        "Luv0/a;",
+        "d1",
+        "Luv0/a;",
+        "X6",
+        "()Luv0/a;",
+        "setTroubleshootingFeatureApi$page_release",
+        "(Luv0/a;)V",
+        "troubleshootingFeatureApi",
+        "Lwk0/d;",
+        "e1",
+        "Lwk0/d;",
+        "Y6",
+        "()Lwk0/d;",
+        "setTroubleshootingReceiver$page_release",
+        "(Lwk0/d;)V",
+        "troubleshootingReceiver",
+        "La04/c;",
+        "f1",
+        "La04/c;",
+        "c7",
+        "()La04/c;",
+        "setWalletScreenProvider$page_release",
+        "(La04/c;)V",
+        "walletScreenProvider",
+        "Lzq2/d;",
+        "g1",
+        "Lzq2/d;",
+        "K6",
+        "()Lzq2/d;",
+        "setCourierSettingsApi$page_release",
+        "(Lzq2/d;)V",
+        "courierSettingsApi",
+        "h1",
+        "Lfw/m;",
+        "J6",
+        "()Ljava/lang/String;",
+        "courierHeatMapUrl",
+        "i1",
+        "Z6",
+        "()Lw51/q0;",
+        "viewModel",
+        "j1",
+        "b7",
+        "walletScreen",
+        "k1",
+        "h7",
+        "isDemandMapEnabled",
+        "l1",
+        "N6",
+        "dashboardScreen",
+        "Lp51/d;",
+        "m1",
+        "H6",
+        "()Lp51/d;",
+        "componentHolder",
+        "Lsinet/startup/inDriver/geo/feature/location/state/LocationStateBroadcastReceiver;",
+        "n1",
+        "Lsinet/startup/inDriver/geo/feature/location/state/LocationStateBroadcastReceiver;",
+        "locationStateBroadcastReceiver",
+        "o1",
+        "Z",
+        "isForbidRegionWarning",
+        "M6",
+        "()Landroidx/fragment/app/Fragment;",
+        "currentToolbarFragment",
+        "L6",
+        "currentTabFragment",
+        "Companion",
+        "a",
+        "page_release"
+    }
+    k = 0x1
+    mv = {
+        0x2,
+        0x2,
+        0x0
+    }
+    xi = 0x30
+.end annotation
+
+.annotation build Lkotlin/jvm/internal/SourceDebugExtension;
+    value = {
+        "SMAP\nPageFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PageFragment.kt\nsinet/startup/inDriver/city/driver/page/ui/PageFragment\n+ 2 ViewBindingExtensions.kt\nsinet/startup/inDriver/core/common/extensions/ViewBindingExtensionsKt\n+ 3 LiveDataExtensions.kt\nsinet/startup/inDriver/core/common/mvvm/LiveDataExtensionsKt\n+ 4 FragmentExtensions.kt\nsinet/startup/inDriver/core/common/mvvm/FragmentExtensionsKt\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 6 _Sequences.kt\nkotlin/sequences/SequencesKt___SequencesKt\n+ 7 View.kt\nandroidx/core/view/ViewKt\n+ 8 FragmentExtensions.kt\nsinet/startup/inDriver/core/common/extensions/FragmentExtensionsKt\n+ 9 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 10 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 11 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n+ 12 BundleExtensions.kt\nsinet/startup/inDriver/core/common/extensions/BundleExtensionsKt\n*L\n1#1,866:1\n32#2,2:867\n55#3:869\n74#3:870\n55#3:871\n74#3:872\n24#4,4:873\n1#5:877\n1321#6:878\n1322#6:881\n1321#6,2:954\n257#7,2:879\n257#7,2:956\n329#8,3:882\n332#8,4:890\n329#8,3:894\n332#8,4:902\n329#8,3:906\n332#8,4:914\n329#8,3:918\n332#8,4:926\n329#8,3:930\n332#8,4:938\n329#8,3:942\n332#8,4:950\n49#9:885\n51#9:889\n49#9:897\n51#9:901\n49#9:909\n51#9:913\n49#9:921\n51#9:925\n49#9:933\n51#9:937\n49#9:945\n51#9:949\n46#10:886\n51#10:888\n46#10:898\n51#10:900\n46#10:910\n51#10:912\n46#10:922\n51#10:924\n46#10:934\n51#10:936\n46#10:946\n51#10:948\n105#11:887\n105#11:899\n105#11:911\n105#11:923\n105#11:935\n105#11:947\n14#12:958\n*S KotlinDebug\n*F\n+ 1 PageFragment.kt\nsinet/startup/inDriver/city/driver/page/ui/PageFragment\n*L\n146#1:867,2\n205#1:869\n205#1:870\n219#1:871\n219#1:872\n272#1:873,4\n591#1:878\n591#1:881\n799#1:954,2\n608#1:879,2\n859#1:956,2\n725#1:882,3\n725#1:890,4\n730#1:894,3\n730#1:902,4\n733#1:906,3\n733#1:914,4\n738#1:918,3\n738#1:926,4\n748#1:930,3\n748#1:938,4\n752#1:942,3\n752#1:950,4\n725#1:885\n725#1:889\n730#1:897\n730#1:901\n733#1:909\n733#1:913\n738#1:921\n738#1:925\n748#1:933\n748#1:937\n752#1:945\n752#1:949\n725#1:886\n725#1:888\n730#1:898\n730#1:900\n733#1:910\n733#1:912\n738#1:922\n738#1:924\n748#1:934\n748#1:936\n752#1:946\n752#1:948\n725#1:887\n730#1:899\n733#1:911\n738#1:923\n748#1:935\n752#1:947\n537#1:958\n*E\n"
+    }
+.end annotation
+
+
+# static fields
+.field public static final Companion:Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$a;
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+.end field
+
+.field static final synthetic p1:[Lkotlin/reflect/KProperty;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "[",
+            "Lkotlin/reflect/KProperty<",
+            "Ljava/lang/Object;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+
+# instance fields
+.field private final S0:I
+
+.field private final T0:Lkotlin/properties/d;
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+.end field
+
+.field public U0:Lew/a;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lew/a<",
+            "Lw51/q0;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public V0:Lew/a;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lew/a<",
+            "Lz12/b;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public W0:Lew/a;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lew/a<",
+            "Lef1/d;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public X0:Lfp0/a;
+
+.field public Y0:Lcy0/a;
+
+.field public Z0:Lkp3/i;
+
+.field public a1:Lw51/b;
+
+.field public b1:Lyx0/a;
+
+.field public c1:Lqx0/a;
+
+.field public d1:Luv0/a;
+
+.field public e1:Lwk0/d;
+
+.field public f1:La04/c;
+
+.field public g1:Lzq2/d;
+
+.field private final h1:Lfw/m;
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+.end field
+
+.field private final i1:Lfw/m;
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+.end field
+
+.field private final j1:Lfw/m;
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+.end field
+
+.field private final k1:Lfw/m;
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+.end field
+
+.field private final l1:Lfw/m;
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+.end field
+
+.field private final m1:Lfw/m;
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+.end field
+
+.field private final n1:Lsinet/startup/inDriver/geo/feature/location/state/LocationStateBroadcastReceiver;
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+.end field
+
+.field private o1:Z
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .registers 5
+
+    new-instance v0, Lkotlin/jvm/internal/PropertyReference1Impl;
+
+    const-class v1, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;
+
+    const-string v2, "binding"
+
+    const-string v3, "getBinding()Lsinet/startup/inDriver/city/driver/page/databinding/DriverPageContainerBinding;"
+
+    const/4 v4, 0x0
+
+    invoke-direct {v0, v1, v2, v3, v4}, Lkotlin/jvm/internal/PropertyReference1Impl;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->property1(Lkotlin/jvm/internal/PropertyReference1;)Lkotlin/reflect/KProperty1;
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    new-array v1, v1, [Lkotlin/reflect/KProperty;
+
+    aput-object v0, v1, v4
+
+    sput-object v1, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->p1:[Lkotlin/reflect/KProperty;
+
+    new-instance v0, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$a;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$a;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    sput-object v0, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->Companion:Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$a;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .registers 4
+
+    .line 1
+    invoke-direct {p0}, Lcu1/h;-><init>()V
+
+    .line 4
+    sget v0, Ll51/b;->a:I
+
+    .line 6
+    iput v0, p0, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->S0:I
+
+    .line 8
+    new-instance v0, Lnu1/r2;
+
+    .line 10
+    const-class v1, Lo51/a;
+
+    .line 12
+    invoke-static {v1}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    .line 15
+    move-result-object v1
+
+    .line 16
+    const/4 v2, 0x0
+
+    .line 17
+    invoke-direct {v0, p0, v1, v2}, Lnu1/r2;-><init>(Landroidx/fragment/app/Fragment;Lkotlin/reflect/KClass;Ljava/lang/Integer;)V
+
+    .line 20
+    iput-object v0, p0, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->T0:Lkotlin/properties/d;
+
+    .line 22
+    new-instance v0, Lw51/q;
+
+    .line 24
+    invoke-direct {v0, p0}, Lw51/q;-><init>(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;)V
+
+    .line 27
+    invoke-static {v0}, Lnu1/a0;->e(Lkotlin/jvm/functions/Function0;)Lfw/m;
+
+    .line 30
+    move-result-object v0
+
+    .line 31
+    iput-object v0, p0, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->h1:Lfw/m;
+
+    .line 33
+    sget-object v0, Lfw/q;->NONE:Lfw/q;
+
+    .line 35
+    new-instance v1, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$t;
+
+    .line 37
+    invoke-direct {v1, p0, p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$t;-><init>(Landroidx/lifecycle/ViewModelStoreOwner;Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;)V
+
+    .line 40
+    invoke-static {v0, v1}, Lfw/n;->a(Lfw/q;Lkotlin/jvm/functions/Function0;)Lfw/m;
+
+    .line 43
+    move-result-object v1
+
+    .line 44
+    iput-object v1, p0, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->i1:Lfw/m;
+
+    .line 46
+    new-instance v1, Lw51/r;
+
+    .line 48
+    invoke-direct {v1, p0}, Lw51/r;-><init>(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;)V
+
+    .line 51
+    invoke-static {v1}, Lnu1/a0;->e(Lkotlin/jvm/functions/Function0;)Lfw/m;
+
+    .line 54
+    move-result-object v1
+
+    .line 55
+    iput-object v1, p0, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->j1:Lfw/m;
+
+    .line 57
+    new-instance v1, Lw51/s;
+
+    .line 59
+    invoke-direct {v1, p0}, Lw51/s;-><init>(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;)V
+
+    .line 62
+    invoke-static {v1}, Lnu1/a0;->e(Lkotlin/jvm/functions/Function0;)Lfw/m;
+
+    .line 65
+    move-result-object v1
+
+    .line 66
+    iput-object v1, p0, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->k1:Lfw/m;
+
+    .line 68
+    new-instance v1, Lw51/t;
+
+    .line 70
+    invoke-direct {v1, p0}, Lw51/t;-><init>(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;)V
+
+    .line 73
+    invoke-static {v1}, Lnu1/a0;->e(Lkotlin/jvm/functions/Function0;)Lfw/m;
+
+    .line 76
+    move-result-object v1
+
+    .line 77
+    iput-object v1, p0, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->l1:Lfw/m;
+
+    .line 79
+    new-instance v1, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$u;
+
+    .line 81
+    invoke-direct {v1, p0, p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$u;-><init>(Landroidx/lifecycle/ViewModelStoreOwner;Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;)V
+
+    .line 84
+    invoke-static {v0, v1}, Lfw/n;->a(Lfw/q;Lkotlin/jvm/functions/Function0;)Lfw/m;
+
+    .line 87
+    move-result-object v0
+
+    .line 88
+    iput-object v0, p0, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->m1:Lfw/m;
+
+    .line 90
+    new-instance v0, Lsinet/startup/inDriver/geo/feature/location/state/LocationStateBroadcastReceiver;
+
+    .line 92
+    new-instance v1, Lw51/u;
+
+    .line 94
+    invoke-direct {v1, p0}, Lw51/u;-><init>(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;)V
+
+    .line 97
+    invoke-direct {v0, v1}, Lsinet/startup/inDriver/geo/feature/location/state/LocationStateBroadcastReceiver;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 100
+    iput-object v0, p0, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->n1:Lsinet/startup/inDriver/geo/feature/location/state/LocationStateBroadcastReceiver;
+
+    .line 102
+    return-void
+.end method
+
+.method private final A6()Ly22/d;
+    .registers 2
+
+    .line 1
+    new-instance v0, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$b;
+
+    .line 3
+    invoke-direct {v0, p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$b;-><init>(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;)V
+
+    .line 6
+    return-object v0
+.end method
+
+.method private final A7()V
+    .registers 3
+
+    .line 1
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->G6()Lo51/a;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lo51/a;->b:Lcom/google/android/material/bottomnavigation/BottomNavigationView;
+
+    invoke-virtual {v0}, Lcom/google/android/material/navigation/NavigationBarView;->getMenu()Landroid/view/Menu;
+
+    move-result-object v0
+
+    sget v1, Ll51/a;->b:I
+
+    invoke-interface {v0, v1}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
+
+    move-result-object v0
+
+    const-string v1, "Config"
+
+    invoke-interface {v0, v1}, Landroid/view/MenuItem;->setTitle(Ljava/lang/CharSequence;)Landroid/view/MenuItem;
+
+    sget v1, Lx62/h;->r2:I
+
+    invoke-interface {v0, v1}, Landroid/view/MenuItem;->setIcon(I)Landroid/view/MenuItem;
+
+    return-void
+.end method
+
+.method private final B6()Ly22/d;
+    .registers 2
+
+    .line 1
+    new-instance v0, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$c;
+
+    .line 3
+    invoke-direct {v0, p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$c;-><init>(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;)V
+
+    .line 6
+    return-object v0
+.end method
+
+.method private final B7()V
+    .registers 14
+
+    .line 1
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->G6()Lo51/a;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    iget-object v0, v0, Lo51/a;->b:Lcom/google/android/material/bottomnavigation/BottomNavigationView;
+
+    .line 7
+    invoke-static {v0}, Landroidx/core/view/v0;->a(Landroid/view/ViewGroup;)Lkotlin/sequences/Sequence;
+
+    .line 10
+    move-result-object v0
+
+    .line 11
+    invoke-static {v0}, Lkotlin/sequences/n;->R(Lkotlin/sequences/Sequence;)Ljava/lang/Object;
+
+    .line 14
+    move-result-object v0
+
+    .line 15
+    instance-of v1, v0, Landroid/view/ViewGroup;
+
+    .line 17
+    if-eqz v1, :cond_15
+
+    .line 19
+    check-cast v0, Landroid/view/ViewGroup;
+
+    .line 21
+    goto :goto_16
+
+    .line 22
+    :cond_15
+    const/4 v0, 0x0
+
+    .line 23
+    :goto_16
+    if-nez v0, :cond_19
+
+    .line 25
+    goto :goto_6f
+
+    .line 26
+    :cond_19
+    invoke-static {v0}, Landroidx/core/view/v0;->a(Landroid/view/ViewGroup;)Lkotlin/sequences/Sequence;
+
+    .line 29
+    move-result-object v0
+
+    .line 30
+    invoke-interface {v0}, Lkotlin/sequences/Sequence;->iterator()Ljava/util/Iterator;
+
+    .line 33
+    move-result-object v0
+
+    .line 34
+    :goto_21
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    .line 37
+    move-result v1
+
+    .line 38
+    if-eqz v1, :cond_6f
+
+    .line 40
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    .line 43
+    move-result-object v1
+
+    .line 44
+    check-cast v1, Landroid/view/View;
+
+    .line 46
+    sget v2, Lcg/g;->Z:I
+
+    .line 48
+    invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    .line 51
+    move-result-object v1
+
+    .line 52
+    check-cast v1, Landroid/widget/ImageView;
+
+    .line 54
+    invoke-virtual {v1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+
+    .line 57
+    move-result-object v1
+
+    .line 58
+    check-cast v1, Landroid/view/ViewGroup;
+
+    .line 60
+    sget v2, Lcg/g;->W:I
+
+    .line 62
+    invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    .line 65
+    move-result-object v2
+
+    .line 66
+    new-instance v3, Landroid/widget/FrameLayout$LayoutParams;
+
+    .line 68
+    const v4, 0x800035
+
+    .line 71
+    const/4 v5, -0x2
+
+    .line 72
+    invoke-direct {v3, v5, v5, v4}, Landroid/widget/FrameLayout$LayoutParams;-><init>(III)V
+
+    .line 75
+    invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
+
+    .line 78
+    new-instance v6, Lsinet/startup/inDriver/core/ui/alarm/AlarmView;
+
+    .line 80
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->requireContext()Landroid/content/Context;
+
+    .line 83
+    move-result-object v7
+
+    .line 84
+    const/16 v11, 0xe
+
+    .line 86
+    const/4 v12, 0x0
+
+    .line 87
+    const/4 v8, 0x0
+
+    .line 88
+    const/4 v9, 0x0
+
+    .line 89
+    const/4 v10, 0x0
+
+    .line 90
+    invoke-direct/range {v6 .. v12}, Lsinet/startup/inDriver/core/ui/alarm/AlarmView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;IIILkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    .line 93
+    sget v2, Lx62/n;->F:I
+
+    .line 95
+    invoke-virtual {v6, v2}, Lsinet/startup/inDriver/core/ui/alarm/AlarmView;->setStyle(I)V
+
+    .line 98
+    sget v2, Lcg/g;->W:I
+
+    .line 100
+    invoke-virtual {v6, v2}, Landroid/view/View;->setId(I)V
+
+    .line 103
+    const/16 v2, 0x8
+
+    .line 105
+    invoke-virtual {v6, v2}, Landroid/view/View;->setVisibility(I)V
+
+    .line 108
+    invoke-virtual {v1, v6, v3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 111
+    goto :goto_21
+
+    .line 112
+    :cond_6f
+    :goto_6f
+    return-void
+.end method
+
+.method private final C6()Ly22/d;
+    .registers 2
+
+    .line 1
+    new-instance v0, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$d;
+
+    .line 3
+    invoke-direct {v0, p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$d;-><init>(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;)V
+
+    .line 6
+    return-object v0
+.end method
+
+.method private final C7()V
+    .registers 3
+
+    .line 1
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->G6()Lo51/a;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    iget-object v0, v0, Lo51/a;->b:Lcom/google/android/material/bottomnavigation/BottomNavigationView;
+
+    .line 7
+    invoke-virtual {v0}, Lcom/google/android/material/navigation/NavigationBarView;->getMenu()Landroid/view/Menu;
+
+    .line 10
+    move-result-object v0
+
+    .line 11
+    sget v1, Ll51/a;->e:I
+
+    .line 13
+    invoke-interface {v0, v1}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
+
+    .line 16
+    move-result-object v0
+
+    .line 17
+    sget v1, Leh0/f;->V1:I
+
+    .line 19
+    invoke-interface {v0, v1}, Landroid/view/MenuItem;->setTitle(I)Landroid/view/MenuItem;
+
+    .line 22
+    sget v1, Lx62/h;->r2:I
+
+    .line 24
+    invoke-interface {v0, v1}, Landroid/view/MenuItem;->setIcon(I)Landroid/view/MenuItem;
+
+    .line 27
+    return-void
+.end method
+
+.method private final D6(Ly22/d;)Landroidx/fragment/app/Fragment;
+    .registers 3
+
+    .line 1
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getChildFragmentManager()Landroidx/fragment/app/i0;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    invoke-virtual {v0}, Landroidx/fragment/app/i0;->D0()Landroidx/fragment/app/w;
+
+    .line 8
+    move-result-object v0
+
+    .line 9
+    invoke-interface {p1, v0}, Ly22/d;->b(Landroidx/fragment/app/w;)Landroidx/fragment/app/Fragment;
+
+    .line 12
+    move-result-object p1
+
+    .line 13
+    return-object p1
+.end method
+
+.method private final D7(Lsinet/startup/inDriver/city/feature/settings/driver/api/domain/entity/ChileRegionWarning;Ljava/lang/String;)V
+    .registers 4
+
+    .line 1
+    new-instance v0, Ll51/d;
+
+    .line 3
+    invoke-direct {v0, p1, p2}, Ll51/d;-><init>(Lsinet/startup/inDriver/city/feature/settings/driver/api/domain/entity/ChileRegionWarning;Ljava/lang/String;)V
+
+    .line 6
+    invoke-direct {p0, v0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->F7(Ly22/d;)V
+
+    .line 9
+    const/4 p1, 0x1
+
+    .line 10
+    iput-boolean p1, p0, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->o1:Z
+
+    .line 12
+    const/4 p1, 0x0
+
+    .line 13
+    invoke-direct {p0, p1}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->H7(Ly22/d;)V
+
+    .line 16
+    return-void
+.end method
+
+.method private static final E6(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;)Ly22/d;
+    .registers 1
+
+    .line 1
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->B6()Ly22/d;
+
+    .line 4
+    move-result-object p0
+
+    .line 5
+    return-object p0
+.end method
+
+.method private final E7(Lsinet/startup/inDriver/city/feature/settings/driver/api/domain/entity/RegistrationInfo;)V
+    .registers 3
+
+    .line 1
+    new-instance v0, Ll51/h;
+
+    .line 3
+    invoke-direct {v0, p1}, Ll51/h;-><init>(Lsinet/startup/inDriver/city/feature/settings/driver/api/domain/entity/RegistrationInfo;)V
+
+    .line 6
+    invoke-direct {p0, v0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->F7(Ly22/d;)V
+
+    .line 9
+    const/4 p1, 0x1
+
+    .line 10
+    iput-boolean p1, p0, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->o1:Z
+
+    .line 12
+    const/4 p1, 0x0
+
+    .line 13
+    invoke-direct {p0, p1}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->H7(Ly22/d;)V
+
+    .line 16
+    return-void
+.end method
+
+.method private final F6(Landroid/view/ViewGroup;I)Landroid/view/View;
+    .registers 5
+
+    .line 1
+    invoke-static {p1}, Landroidx/core/view/v0;->a(Landroid/view/ViewGroup;)Lkotlin/sequences/Sequence;
+
+    .line 4
+    move-result-object p1
+
+    .line 5
+    invoke-interface {p1}, Lkotlin/sequences/Sequence;->iterator()Ljava/util/Iterator;
+
+    .line 8
+    move-result-object p1
+
+    .line 9
+    :cond_8
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    .line 12
+    move-result v0
+
+    .line 13
+    if-eqz v0, :cond_28
+
+    .line 15
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    .line 18
+    move-result-object v0
+
+    .line 19
+    check-cast v0, Landroid/view/View;
+
+    .line 21
+    invoke-virtual {v0}, Landroid/view/View;->getId()I
+
+    .line 24
+    move-result v1
+
+    .line 25
+    if-ne v1, p2, :cond_1b
+
+    .line 27
+    return-object v0
+
+    .line 28
+    :cond_1b
+    instance-of v1, v0, Landroid/view/ViewGroup;
+
+    .line 30
+    if-eqz v1, :cond_8
+
+    .line 32
+    check-cast v0, Landroid/view/ViewGroup;
+
+    .line 34
+    invoke-direct {p0, v0, p2}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->F6(Landroid/view/ViewGroup;I)Landroid/view/View;
+
+    .line 37
+    move-result-object v0
+
+    .line 38
+    if-eqz v0, :cond_8
+
+    .line 40
+    return-object v0
+
+    .line 41
+    :cond_28
+    const/4 p1, 0x0
+
+    .line 42
+    return-object p1
+.end method
+
+.method private final F7(Ly22/d;)V
+    .registers 7
+
+    .line 1
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getChildFragmentManager()Landroidx/fragment/app/i0;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    invoke-virtual {v0}, Landroidx/fragment/app/i0;->l0()Z
+
+    .line 8
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->L6()Landroidx/fragment/app/Fragment;
+
+    .line 11
+    move-result-object v0
+
+    .line 12
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getChildFragmentManager()Landroidx/fragment/app/i0;
+
+    .line 15
+    move-result-object v1
+
+    .line 16
+    invoke-interface {p1}, Lw22/a;->g()Ljava/lang/String;
+
+    .line 19
+    move-result-object v2
+
+    .line 20
+    invoke-virtual {v1, v2}, Landroidx/fragment/app/i0;->q0(Ljava/lang/String;)Landroidx/fragment/app/Fragment;
+
+    .line 23
+    move-result-object v1
+
+    .line 24
+    if-eqz v0, :cond_22
+
+    .line 26
+    if-eqz v1, :cond_22
+
+    .line 28
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 31
+    move-result v2
+
+    .line 32
+    if-eqz v2, :cond_22
+
+    .line 34
+    return-void
+
+    .line 35
+    :cond_22
+    if-eqz v0, :cond_29
+
+    .line 37
+    invoke-virtual {v0}, Landroidx/fragment/app/Fragment;->getTag()Ljava/lang/String;
+
+    .line 40
+    move-result-object v2
+
+    .line 41
+    goto :goto_2a
+
+    .line 42
+    :cond_29
+    const/4 v2, 0x0
+
+    .line 43
+    :goto_2a
+    sget-object v3, Ll51/k;->a:Ll51/k;
+
+    .line 45
+    invoke-interface {v3}, Lw22/a;->g()Ljava/lang/String;
+
+    .line 48
+    move-result-object v3
+
+    .line 49
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 52
+    move-result v2
+
+    .line 53
+    if-eqz v2, :cond_3d
+
+    .line 55
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->Z6()Lw51/q0;
+
+    .line 58
+    move-result-object v2
+
+    .line 59
+    invoke-virtual {v2}, Lw51/q0;->i2()V
+
+    .line 62
+    :cond_3d
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getChildFragmentManager()Landroidx/fragment/app/i0;
+
+    .line 65
+    move-result-object v2
+
+    .line 66
+    invoke-virtual {v2}, Landroidx/fragment/app/i0;->s()Landroidx/fragment/app/t0;
+
+    .line 69
+    move-result-object v2
+
+    .line 70
+    if-nez v1, :cond_54
+
+    .line 72
+    sget v3, Ll51/a;->l:I
+
+    .line 74
+    invoke-direct {p0, p1}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->D6(Ly22/d;)Landroidx/fragment/app/Fragment;
+
+    .line 77
+    move-result-object v4
+
+    .line 78
+    invoke-interface {p1}, Lw22/a;->g()Ljava/lang/String;
+
+    .line 81
+    move-result-object p1
+
+    .line 82
+    invoke-virtual {v2, v3, v4, p1}, Landroidx/fragment/app/t0;->c(ILandroidx/fragment/app/Fragment;Ljava/lang/String;)Landroidx/fragment/app/t0;
+
+    .line 85
+    :cond_54
+    if-eqz v0, :cond_5e
+
+    .line 87
+    invoke-virtual {v2, v0}, Landroidx/fragment/app/t0;->q(Landroidx/fragment/app/Fragment;)Landroidx/fragment/app/t0;
+
+    .line 90
+    sget-object p1, Landroidx/lifecycle/Lifecycle$State;->STARTED:Landroidx/lifecycle/Lifecycle$State;
+
+    .line 92
+    invoke-virtual {v2, v0, p1}, Landroidx/fragment/app/t0;->z(Landroidx/fragment/app/Fragment;Landroidx/lifecycle/Lifecycle$State;)Landroidx/fragment/app/t0;
+
+    .line 95
+    :cond_5e
+    if-eqz v1, :cond_68
+
+    .line 97
+    invoke-virtual {v2, v1}, Landroidx/fragment/app/t0;->C(Landroidx/fragment/app/Fragment;)Landroidx/fragment/app/t0;
+
+    .line 100
+    sget-object p1, Landroidx/lifecycle/Lifecycle$State;->RESUMED:Landroidx/lifecycle/Lifecycle$State;
+
+    .line 102
+    invoke-virtual {v2, v1, p1}, Landroidx/fragment/app/t0;->z(Landroidx/fragment/app/Fragment;Landroidx/lifecycle/Lifecycle$State;)Landroidx/fragment/app/t0;
+
+    .line 105
+    :cond_68
+    invoke-virtual {v2}, Landroidx/fragment/app/t0;->j()I
+
+    .line 108
+    return-void
+.end method
+
+.method private final G6()Lo51/a;
+    .registers 4
+
+    .line 1
+    iget-object v0, p0, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->T0:Lkotlin/properties/d;
+
+    .line 3
+    sget-object v1, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->p1:[Lkotlin/reflect/KProperty;
+
+    .line 5
+    const/4 v2, 0x0
+
+    .line 6
+    aget-object v1, v1, v2
+
+    .line 8
+    invoke-interface {v0, p0, v1}, Lkotlin/properties/d;->getValue(Ljava/lang/Object;Lkotlin/reflect/KProperty;)Ljava/lang/Object;
+
+    .line 11
+    move-result-object v0
+
+    .line 12
+    check-cast v0, Lo51/a;
+
+    .line 14
+    return-object v0
+.end method
+
+.method private final G7(Ly22/d;I)V
+    .registers 3
+
+    .line 1
+    if-eqz p1, :cond_5
+
+    .line 3
+    invoke-direct {p0, p1}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->F7(Ly22/d;)V
+
+    .line 6
+    :cond_5
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->G6()Lo51/a;
+
+    .line 9
+    move-result-object p1
+
+    .line 10
+    iget-object p1, p1, Lo51/a;->b:Lcom/google/android/material/bottomnavigation/BottomNavigationView;
+
+    .line 12
+    invoke-virtual {p1, p2}, Lcom/google/android/material/navigation/NavigationBarView;->setSelectedItemId(I)V
+
+    .line 15
+    return-void
+.end method
+
+.method private final H6()Lp51/d;
+    .registers 2
+
+    .line 1
+    iget-object v0, p0, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->m1:Lfw/m;
+
+    .line 3
+    invoke-interface {v0}, Lfw/m;->getValue()Ljava/lang/Object;
+
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, Lp51/d;
+
+    .line 9
+    return-object v0
+.end method
+
+.method private final H7(Ly22/d;)V
+    .registers 7
+
+    .line 1
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->b7()Ly22/d;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 8
+    move-result v0
+
+    .line 9
+    if-nez v0, :cond_73
+
+    .line 11
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->N6()Ly22/d;
+
+    .line 14
+    move-result-object v0
+
+    .line 15
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 18
+    move-result v0
+
+    .line 19
+    if-eqz v0, :cond_25
+
+    .line 21
+    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->P6()Lew/a;
+
+    .line 24
+    move-result-object v0
+
+    .line 25
+    invoke-interface {v0}, Lew/a;->get()Ljava/lang/Object;
+
+    .line 28
+    move-result-object v0
+
+    .line 29
+    check-cast v0, Lz12/b;
+
+    .line 31
+    invoke-static {v0}, Lnh0/b;->l(Lz12/b;)Z
+
+    .line 34
+    move-result v0
+
+    .line 35
+    if-eqz v0, :cond_25
+
+    .line 37
+    goto :goto_73
+
+    .line 38
+    :cond_25
+    invoke-direct {p0, p1}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->V6(Ly22/d;)Ly22/d;
+
+    .line 41
+    move-result-object p1
+
+    .line 42
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->M6()Landroidx/fragment/app/Fragment;
+
+    .line 45
+    move-result-object v0
+
+    .line 46
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getChildFragmentManager()Landroidx/fragment/app/i0;
+
+    .line 49
+    move-result-object v1
+
+    .line 50
+    invoke-interface {p1}, Lw22/a;->g()Ljava/lang/String;
+
+    .line 53
+    move-result-object v2
+
+    .line 54
+    invoke-virtual {v1, v2}, Landroidx/fragment/app/i0;->q0(Ljava/lang/String;)Landroidx/fragment/app/Fragment;
+
+    .line 57
+    move-result-object v1
+
+    .line 58
+    if-eqz v0, :cond_44
+
+    .line 60
+    if-eqz v1, :cond_44
+
+    .line 62
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 65
+    move-result v2
+
+    .line 66
+    if-eqz v2, :cond_44
+
+    .line 68
+    goto :goto_88
+
+    .line 69
+    :cond_44
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getChildFragmentManager()Landroidx/fragment/app/i0;
+
+    .line 72
+    move-result-object v2
+
+    .line 73
+    invoke-virtual {v2}, Landroidx/fragment/app/i0;->s()Landroidx/fragment/app/t0;
+
+    .line 76
+    move-result-object v2
+
+    .line 77
+    if-nez v1, :cond_5b
+
+    .line 79
+    sget v3, Ll51/a;->m:I
+
+    .line 81
+    invoke-direct {p0, p1}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->D6(Ly22/d;)Landroidx/fragment/app/Fragment;
+
+    .line 84
+    move-result-object v4
+
+    .line 85
+    invoke-interface {p1}, Lw22/a;->g()Ljava/lang/String;
+
+    .line 88
+    move-result-object p1
+
+    .line 89
+    invoke-virtual {v2, v3, v4, p1}, Landroidx/fragment/app/t0;->c(ILandroidx/fragment/app/Fragment;Ljava/lang/String;)Landroidx/fragment/app/t0;
+
+    .line 92
+    :cond_5b
+    if-eqz v0, :cond_65
+
+    .line 94
+    invoke-virtual {v2, v0}, Landroidx/fragment/app/t0;->q(Landroidx/fragment/app/Fragment;)Landroidx/fragment/app/t0;
+
+    .line 97
+    sget-object p1, Landroidx/lifecycle/Lifecycle$State;->STARTED:Landroidx/lifecycle/Lifecycle$State;
+
+    .line 99
+    invoke-virtual {v2, v0, p1}, Landroidx/fragment/app/t0;->z(Landroidx/fragment/app/Fragment;Landroidx/lifecycle/Lifecycle$State;)Landroidx/fragment/app/t0;
+
+    .line 102
+    :cond_65
+    if-eqz v1, :cond_6f
+
+    .line 104
+    invoke-virtual {v2, v1}, Landroidx/fragment/app/t0;->C(Landroidx/fragment/app/Fragment;)Landroidx/fragment/app/t0;
+
+    .line 107
+    sget-object p1, Landroidx/lifecycle/Lifecycle$State;->RESUMED:Landroidx/lifecycle/Lifecycle$State;
+
+    .line 109
+    invoke-virtual {v2, v1, p1}, Landroidx/fragment/app/t0;->z(Landroidx/fragment/app/Fragment;Landroidx/lifecycle/Lifecycle$State;)Landroidx/fragment/app/t0;
+
+    .line 112
+    :cond_6f
+    invoke-virtual {v2}, Landroidx/fragment/app/t0;->j()I
+
+    .line 115
+    return-void
+
+    .line 116
+    :cond_73
+    :goto_73
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->M6()Landroidx/fragment/app/Fragment;
+
+    .line 119
+    move-result-object p1
+
+    .line 120
+    if-eqz p1, :cond_88
+
+    .line 122
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getChildFragmentManager()Landroidx/fragment/app/i0;
+
+    .line 125
+    move-result-object v0
+
+    .line 126
+    invoke-virtual {v0}, Landroidx/fragment/app/i0;->s()Landroidx/fragment/app/t0;
+
+    .line 129
+    move-result-object v0
+
+    .line 130
+    invoke-virtual {v0, p1}, Landroidx/fragment/app/t0;->q(Landroidx/fragment/app/Fragment;)Landroidx/fragment/app/t0;
+
+    .line 133
+    move-result-object p1
+
+    .line 134
+    invoke-virtual {p1}, Landroidx/fragment/app/t0;->j()I
+
+    .line 137
+    :cond_88
+    :goto_88
+    return-void
+.end method
+
+.method private final I7()V
+    .registers 5
+
+    .line 1
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->L6()Landroidx/fragment/app/Fragment;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    const/4 v1, 0x0
+
+    .line 6
+    if-eqz v0, :cond_c
+
+    .line 8
+    invoke-virtual {v0}, Landroidx/fragment/app/Fragment;->getTag()Ljava/lang/String;
+
+    .line 11
+    move-result-object v0
+
+    .line 12
+    goto :goto_d
+
+    .line 13
+    :cond_c
+    move-object v0, v1
+
+    .line 14
+    :goto_d
+    const-string v2, "SCREEN_KEY_FEED"
+
+    .line 16
+    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 19
+    move-result v2
+
+    .line 20
+    if-eqz v2, :cond_1e
+
+    .line 22
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->Z6()Lw51/q0;
+
+    .line 25
+    move-result-object v0
+
+    .line 26
+    invoke-virtual {v0}, Lw51/q0;->e2()V
+
+    .line 29
+    goto/16 :goto_93
+
+    .line 31
+    :cond_1e
+    const-string v2, "SCREEN_KEY_HEATMAP"
+
+    .line 33
+    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 36
+    move-result v2
+
+    .line 37
+    if-eqz v2, :cond_2b
+
+    .line 39
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->R6()Ly22/d;
+
+    .line 42
+    move-result-object v1
+
+    .line 43
+    goto :goto_93
+
+    .line 44
+    :cond_2b
+    const-string v2, "SCREEN_KEY_DEMAND_MAP"
+
+    .line 46
+    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 49
+    move-result v2
+
+    .line 50
+    if-eqz v2, :cond_36
+
+    .line 52
+    sget-object v1, Ll51/e;->a:Ll51/e;
+
+    .line 54
+    goto :goto_93
+
+    .line 55
+    :cond_36
+    const-string v2, "PRIORITY_SCREEN_KEY"
+
+    .line 57
+    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 60
+    move-result v2
+
+    .line 61
+    if-eqz v2, :cond_58
+
+    .line 63
+    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->P6()Lew/a;
+
+    .line 66
+    move-result-object v0
+
+    .line 67
+    invoke-interface {v0}, Lew/a;->get()Ljava/lang/Object;
+
+    .line 70
+    move-result-object v0
+
+    .line 71
+    check-cast v0, Lz12/b;
+
+    .line 73
+    invoke-static {v0}, Lnh0/b;->n(Lz12/b;)Z
+
+    .line 76
+    move-result v0
+
+    .line 77
+    if-eqz v0, :cond_53
+
+    .line 79
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->N6()Ly22/d;
+
+    .line 82
+    move-result-object v1
+
+    .line 83
+    goto :goto_93
+
+    .line 84
+    :cond_53
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->C6()Ly22/d;
+
+    .line 87
+    move-result-object v1
+
+    .line 88
+    goto :goto_93
+
+    .line 89
+    :cond_58
+    sget-object v2, Ll51/k;->a:Ll51/k;
+
+    .line 91
+    invoke-interface {v2}, Lw22/a;->g()Ljava/lang/String;
+
+    .line 94
+    move-result-object v3
+
+    .line 95
+    invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 98
+    move-result v3
+
+    .line 99
+    if-eqz v3, :cond_66
+
+    .line 101
+    move-object v1, v2
+
+    .line 102
+    goto :goto_93
+
+    .line 103
+    :cond_66
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->b7()Ly22/d;
+
+    .line 106
+    move-result-object v2
+
+    .line 107
+    invoke-interface {v2}, Lw22/a;->g()Ljava/lang/String;
+
+    .line 110
+    move-result-object v2
+
+    .line 111
+    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 114
+    move-result v2
+
+    .line 115
+    if-eqz v2, :cond_79
+
+    .line 117
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->b7()Ly22/d;
+
+    .line 120
+    move-result-object v1
+
+    .line 121
+    goto :goto_93
+
+    .line 122
+    :cond_79
+    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->S6()Lw51/b;
+
+    .line 125
+    move-result-object v2
+
+    .line 126
+    invoke-virtual {v2, v0}, Lw51/b;->f(Ljava/lang/String;)Z
+
+    .line 129
+    move-result v0
+
+    .line 130
+    if-eqz v0, :cond_8c
+
+    .line 132
+    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->S6()Lw51/b;
+
+    .line 135
+    move-result-object v0
+
+    .line 136
+    invoke-virtual {v0}, Lw51/b;->b()Ly22/d;
+
+    .line 139
+    move-result-object v1
+
+    .line 140
+    goto :goto_93
+
+    .line 141
+    :cond_8c
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->Z6()Lw51/q0;
+
+    .line 144
+    move-result-object v0
+
+    .line 145
+    invoke-virtual {v0}, Lw51/q0;->e2()V
+
+    .line 148
+    :goto_93
+    invoke-direct {p0, v1}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->H7(Ly22/d;)V
+
+    .line 151
+    if-eqz v1, :cond_9b
+
+    .line 153
+    invoke-direct {p0, v1}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->F7(Ly22/d;)V
+
+    .line 156
+    :cond_9b
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->J7()V
+
+    .line 159
+    return-void
+.end method
+
+.method private final J6()Ljava/lang/String;
+    .registers 2
+
+    .line 1
+    iget-object v0, p0, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->h1:Lfw/m;
+
+    .line 3
+    invoke-interface {v0}, Lfw/m;->getValue()Ljava/lang/Object;
+
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, Ljava/lang/String;
+
+    .line 9
+    return-object v0
+.end method
+
+.method private final J7()V
+    .registers 3
+
+    .line 1
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->G6()Lo51/a;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    iget-object v0, v0, Lo51/a;->b:Lcom/google/android/material/bottomnavigation/BottomNavigationView;
+
+    .line 7
+    new-instance v1, Lw51/c;
+
+    .line 9
+    invoke-direct {v1, p0}, Lw51/c;-><init>(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;)V
+
+    .line 12
+    invoke-virtual {v0, v1}, Lcom/google/android/material/navigation/NavigationBarView;->setOnItemSelectedListener(Lcom/google/android/material/navigation/NavigationBarView$c;)V
+
+    .line 15
+    return-void
+.end method
+
+.method private static final K7(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;Landroid/view/MenuItem;)Z
+    .registers 6
+
+    .line 1
+    invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
+
+    .line 4
+    move-result p1
+
+    .line 5
+    sget v0, Ll51/a;->c:I
+
+    .line 7
+    const/4 v1, 0x1
+
+    .line 8
+    const/4 v2, 0x0
+
+    .line 9
+    if-ne p1, v0, :cond_13
+
+    .line 11
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->Z6()Lw51/q0;
+
+    .line 14
+    move-result-object p1
+
+    .line 15
+    invoke-virtual {p1}, Lw51/q0;->e2()V
+
+    .line 18
+    goto/16 :goto_97
+
+    .line 20
+    :cond_13
+    sget v0, Ll51/a;->a:I
+
+    .line 22
+    const/4 v3, 0x0
+
+    .line 23
+    if-ne p1, v0, :cond_40
+
+    .line 25
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->h7()Z
+
+    .line 28
+    move-result p1
+
+    .line 29
+    if-eqz p1, :cond_29
+
+    .line 31
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->Z6()Lw51/q0;
+
+    .line 34
+    move-result-object p1
+
+    .line 35
+    invoke-virtual {p1}, Lw51/q0;->d2()V
+
+    .line 38
+    sget-object v2, Ll51/e;->a:Ll51/e;
+
+    .line 40
+    goto/16 :goto_97
+
+    .line 42
+    :cond_29
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->Z6()Lw51/q0;
+
+    .line 45
+    move-result-object p1
+
+    .line 46
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->J6()Ljava/lang/String;
+
+    .line 49
+    move-result-object v0
+
+    .line 50
+    invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
+
+    .line 53
+    move-result v0
+
+    .line 54
+    if-lez v0, :cond_38
+
+    .line 56
+    move v3, v1
+
+    .line 57
+    :cond_38
+    invoke-virtual {p1, v3}, Lw51/q0;->f2(Z)V
+
+    .line 60
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->R6()Ly22/d;
+
+    .line 63
+    move-result-object v2
+
+    .line 64
+    goto :goto_97
+
+    .line 65
+    :cond_40
+    sget v0, Ll51/a;->b:I
+
+    .line 67
+    if-ne p1, v0, :cond_69
+
+    .line 69
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->requireActivity()Landroidx/fragment/app/FragmentActivity;
+
+    move-result-object v3
+
+    invoke-static {v3}, Lsinet/startup/inDriver/ui/FloatingMenu;->openSettings(Landroid/app/Activity;)V
+
+    const/4 v1, 0x0
+
+    return v1
+
+    :goto_97
+
+
+    .line 106
+    :cond_69
+    sget v0, Ll51/a;->e:I
+
+    .line 108
+    if-ne p1, v0, :cond_87
+
+    .line 110
+    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->P6()Lew/a;
+
+    .line 113
+    move-result-object p1
+
+    .line 114
+    invoke-interface {p1}, Lew/a;->get()Ljava/lang/Object;
+
+    .line 117
+    move-result-object p1
+
+    .line 118
+    check-cast p1, Lz12/b;
+
+    .line 120
+    invoke-static {p1}, Lnh0/b;->n(Lz12/b;)Z
+
+    .line 123
+    move-result p1
+
+    .line 124
+    if-eqz p1, :cond_82
+
+    .line 126
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->N6()Ly22/d;
+
+    .line 129
+    move-result-object v2
+
+    .line 130
+    goto :goto_97
+
+    .line 131
+    :cond_82
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->C6()Ly22/d;
+
+    .line 134
+    move-result-object v2
+
+    .line 135
+    goto :goto_97
+
+    .line 136
+    :cond_87
+    sget v0, Ll51/a;->d:I
+
+    .line 138
+    if-ne p1, v0, :cond_90
+
+    .line 140
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->b7()Ly22/d;
+
+    .line 143
+    move-result-object v2
+
+    .line 144
+    goto :goto_97
+
+    .line 145
+    :cond_90
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->Z6()Lw51/q0;
+
+    .line 148
+    move-result-object p1
+
+    .line 149
+    invoke-virtual {p1}, Lw51/q0;->e2()V
+
+    .line 152
+    :cond_97
+    :goto_97
+    invoke-direct {p0, v2}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->H7(Ly22/d;)V
+
+    .line 155
+    if-eqz v2, :cond_9f
+
+    .line 157
+    invoke-direct {p0, v2}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->F7(Ly22/d;)V
+
+    .line 160
+    :cond_9f
+    return v1
+.end method
+
+.method private final L6()Landroidx/fragment/app/Fragment;
+    .registers 6
+
+    .line 1
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getChildFragmentManager()Landroidx/fragment/app/i0;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    invoke-virtual {v0}, Landroidx/fragment/app/i0;->E0()Ljava/util/List;
+
+    .line 8
+    move-result-object v0
+
+    .line 9
+    check-cast v0, Ljava/lang/Iterable;
+
+    .line 11
+    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    .line 14
+    move-result-object v0
+
+    .line 15
+    :cond_e
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    .line 18
+    move-result v1
+
+    .line 19
+    if-eqz v1, :cond_42
+
+    .line 21
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    .line 24
+    move-result-object v1
+
+    .line 25
+    move-object v2, v1
+
+    .line 26
+    check-cast v2, Landroidx/fragment/app/Fragment;
+
+    .line 28
+    invoke-virtual {v2}, Landroidx/fragment/app/Fragment;->isHidden()Z
+
+    .line 31
+    move-result v3
+
+    .line 32
+    if-nez v3, :cond_e
+
+    .line 34
+    invoke-virtual {v2}, Landroidx/fragment/app/Fragment;->getTag()Ljava/lang/String;
+
+    .line 37
+    move-result-object v3
+
+    .line 38
+    sget-object v4, Ll51/q;->a:Ll51/q;
+
+    .line 40
+    invoke-interface {v4}, Lw22/a;->g()Ljava/lang/String;
+
+    .line 43
+    move-result-object v4
+
+    .line 44
+    invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 47
+    move-result v3
+
+    .line 48
+    if-nez v3, :cond_e
+
+    .line 50
+    invoke-virtual {v2}, Landroidx/fragment/app/Fragment;->getTag()Ljava/lang/String;
+
+    .line 53
+    move-result-object v2
+
+    .line 54
+    sget-object v3, Ll51/p;->a:Ll51/p;
+
+    .line 56
+    invoke-interface {v3}, Lw22/a;->g()Ljava/lang/String;
+
+    .line 59
+    move-result-object v3
+
+    .line 60
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 63
+    move-result v2
+
+    .line 64
+    if-nez v2, :cond_e
+
+    .line 66
+    goto :goto_43
+
+    .line 67
+    :cond_42
+    const/4 v1, 0x0
+
+    .line 68
+    :goto_43
+    check-cast v1, Landroidx/fragment/app/Fragment;
+
+    .line 70
+    return-object v1
+.end method
+
+.method private final L7()V
+    .registers 3
+
+    .line 1
+    new-instance v0, Lw51/i;
+
+    .line 3
+    invoke-direct {v0, p0}, Lw51/i;-><init>(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;)V
+
+    .line 6
+    const-string v1, "NAVIGATION_ACTION_TAG"
+
+    .line 8
+    invoke-static {p0, v1, v0}, Lnu1/a;->p(Landroidx/fragment/app/Fragment;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V
+
+    .line 11
+    new-instance v0, Lw51/j;
+
+    .line 13
+    invoke-direct {v0, p0}, Lw51/j;-><init>(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;)V
+
+    .line 16
+    const-string v1, "RESULT_KEY_SN_CHANNEL_NOTIFICATION"
+
+    .line 18
+    invoke-static {p0, v1, v0}, Lnu1/a;->p(Landroidx/fragment/app/Fragment;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V
+
+    .line 21
+    new-instance v0, Lw51/k;
+
+    .line 23
+    invoke-direct {v0, p0}, Lw51/k;-><init>(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;)V
+
+    .line 26
+    const-string v1, "NO_TROUBLES_RESULT_KEY"
+
+    .line 28
+    invoke-static {p0, v1, v0}, Lnu1/a;->p(Landroidx/fragment/app/Fragment;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V
+
+    .line 31
+    new-instance v0, Lw51/l;
+
+    .line 33
+    invoke-direct {v0, p0}, Lw51/l;-><init>(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;)V
+
+    .line 36
+    const-string v1, "RESULT_KEY_COUNTDOWN_FINISHED"
+
+    .line 38
+    invoke-static {p0, v1, v0}, Lnu1/a;->p(Landroidx/fragment/app/Fragment;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V
+
+    .line 41
+    new-instance v0, Lw51/m;
+
+    .line 43
+    invoke-direct {v0, p0}, Lw51/m;-><init>(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;)V
+
+    .line 46
+    const-string v1, "RESULT_KEY_COUNTDOWN_NAVIGATE_TO_ACTIVITY_TIMER"
+
+    .line 48
+    invoke-static {p0, v1, v0}, Lnu1/a;->p(Landroidx/fragment/app/Fragment;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V
+
+    .line 51
+    new-instance v0, Lw51/o;
+
+    .line 53
+    invoke-direct {v0, p0}, Lw51/o;-><init>(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;)V
+
+    .line 56
+    const-string v1, "RESULT_VALUE_FROM_RIDE_REQUEST_ONBOARDING "
+
+    .line 58
+    invoke-static {p0, v1, v0}, Lnu1/a;->p(Landroidx/fragment/app/Fragment;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V
+
+    .line 61
+    new-instance v0, Lw51/p;
+
+    .line 63
+    invoke-direct {v0, p0}, Lw51/p;-><init>(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;)V
+
+    .line 66
+    const-string v1, "DemandMapOnboardingDialog_DEMAND_MAP_ONBOARDING_RESULT"
+
+    .line 68
+    invoke-static {p0, v1, v0}, Lnu1/a;->p(Landroidx/fragment/app/Fragment;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V
+
+    .line 71
+    return-void
+.end method
+
+.method private final M6()Landroidx/fragment/app/Fragment;
+    .registers 6
+
+    .line 1
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getChildFragmentManager()Landroidx/fragment/app/i0;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    invoke-virtual {v0}, Landroidx/fragment/app/i0;->E0()Ljava/util/List;
+
+    .line 8
+    move-result-object v0
+
+    .line 9
+    check-cast v0, Ljava/lang/Iterable;
+
+    .line 11
+    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    .line 14
+    move-result-object v0
+
+    .line 15
+    :cond_e
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    .line 18
+    move-result v1
+
+    .line 19
+    if-eqz v1, :cond_42
+
+    .line 21
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    .line 24
+    move-result-object v1
+
+    .line 25
+    move-object v2, v1
+
+    .line 26
+    check-cast v2, Landroidx/fragment/app/Fragment;
+
+    .line 28
+    invoke-virtual {v2}, Landroidx/fragment/app/Fragment;->isHidden()Z
+
+    .line 31
+    move-result v3
+
+    .line 32
+    if-nez v3, :cond_e
+
+    .line 34
+    invoke-virtual {v2}, Landroidx/fragment/app/Fragment;->getTag()Ljava/lang/String;
+
+    .line 37
+    move-result-object v3
+
+    .line 38
+    sget-object v4, Ll51/q;->a:Ll51/q;
+
+    .line 40
+    invoke-interface {v4}, Lw22/a;->g()Ljava/lang/String;
+
+    .line 43
+    move-result-object v4
+
+    .line 44
+    invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 47
+    move-result v3
+
+    .line 48
+    if-nez v3, :cond_43
+
+    .line 50
+    invoke-virtual {v2}, Landroidx/fragment/app/Fragment;->getTag()Ljava/lang/String;
+
+    .line 53
+    move-result-object v2
+
+    .line 54
+    sget-object v3, Ll51/p;->a:Ll51/p;
+
+    .line 56
+    invoke-interface {v3}, Lw22/a;->g()Ljava/lang/String;
+
+    .line 59
+    move-result-object v3
+
+    .line 60
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 63
+    move-result v2
+
+    .line 64
+    if-eqz v2, :cond_e
+
+    .line 66
+    goto :goto_43
+
+    .line 67
+    :cond_42
+    const/4 v1, 0x0
+
+    .line 68
+    :cond_43
+    :goto_43
+    check-cast v1, Landroidx/fragment/app/Fragment;
+
+    .line 70
+    return-object v1
+.end method
+
+.method private static final M7(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;Landroid/os/Bundle;)Lkotlin/Unit;
+    .registers 4
+
+    .line 1
+    const-string v0, "NAVIGATION_ACTION_ITEM_KEY"
+
+    .line 3
+    invoke-virtual {p1, v0}, Landroid/os/BaseBundle;->get(Ljava/lang/String;)Ljava/lang/Object;
+
+    .line 6
+    move-result-object p1
+
+    .line 7
+    instance-of v0, p1, Ljava/lang/String;
+
+    .line 9
+    const/4 v1, 0x0
+
+    .line 10
+    if-nez v0, :cond_c
+
+    .line 12
+    move-object p1, v1
+
+    .line 13
+    :cond_c
+    check-cast p1, Ljava/lang/String;
+
+    .line 15
+    if-eqz p1, :cond_32
+
+    .line 17
+    const-string v0, "ORDERS"
+
+    .line 19
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 22
+    move-result v0
+
+    .line 23
+    if-eqz v0, :cond_25
+
+    .line 25
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->Z6()Lw51/q0;
+
+    .line 28
+    move-result-object p1
+
+    .line 29
+    invoke-virtual {p1}, Lw51/q0;->e2()V
+
+    .line 32
+    sget p1, Ll51/a;->c:I
+
+    .line 34
+    invoke-direct {p0, v1, p1}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->G7(Ly22/d;I)V
+
+    .line 37
+    goto :goto_32
+
+    .line 38
+    :cond_25
+    const-string v0, "WALLET"
+
+    .line 40
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 43
+    move-result p1
+
+    .line 44
+    if-eqz p1, :cond_32
+
+    .line 46
+    sget p1, Ll51/a;->d:I
+
+    .line 48
+    invoke-direct {p0, v1, p1}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->G7(Ly22/d;I)V
+
+    .line 51
+    :cond_32
+    :goto_32
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 53
+    return-object p0
+.end method
+
+.method private final N6()Ly22/d;
+    .registers 2
+
+    .line 1
+    iget-object v0, p0, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->l1:Lfw/m;
+
+    .line 3
+    invoke-interface {v0}, Lfw/m;->getValue()Ljava/lang/Object;
+
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, Ly22/d;
+
+    .line 9
+    return-object v0
+.end method
+
+.method private static final N7(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;Landroid/os/Bundle;)Lkotlin/Unit;
+    .registers 3
+
+    .line 1
+    const-string v0, "RESULT_KEY_SN_CHANNEL_NOTIFICATION"
+
+    .line 3
+    invoke-virtual {p1, v0}, Landroid/os/BaseBundle;->getBoolean(Ljava/lang/String;)Z
+
+    .line 6
+    move-result p1
+
+    .line 7
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->Z6()Lw51/q0;
+
+    .line 10
+    move-result-object p0
+
+    .line 11
+    invoke-virtual {p0, p1}, Lw51/q0;->k2(Z)V
+
+    .line 14
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 16
+    return-object p0
+.end method
+
+.method private static final O7(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;Landroid/os/Bundle;)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->Z6()Lw51/q0;
+
+    .line 4
+    move-result-object p0
+
+    .line 5
+    invoke-virtual {p0}, Lw51/q0;->h2()V
+
+    .line 8
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 10
+    return-object p0
+.end method
+
+.method private static final P7(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;Landroid/os/Bundle;)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->Z6()Lw51/q0;
+
+    .line 4
+    move-result-object p0
+
+    .line 5
+    invoke-virtual {p0}, Lw51/q0;->q2()V
+
+    .line 8
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 10
+    return-object p0
+.end method
+
+.method private static final Q7(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;Landroid/os/Bundle;)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->Z6()Lw51/q0;
+
+    .line 4
+    move-result-object p0
+
+    .line 5
+    invoke-virtual {p0}, Lw51/q0;->Z1()V
+
+    .line 8
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 10
+    return-object p0
+.end method
+
+.method private final R6()Ly22/d;
+    .registers 2
+
+    .line 1
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->J6()Ljava/lang/String;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
+
+    .line 8
+    move-result v0
+
+    .line 9
+    if-lez v0, :cond_f
+
+    .line 11
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->A6()Ly22/d;
+
+    .line 14
+    move-result-object v0
+
+    .line 15
+    return-object v0
+
+    .line 16
+    :cond_f
+    sget-object v0, Ll51/i;->a:Ll51/i;
+
+    .line 18
+    return-object v0
+.end method
+
+.method private static final R7(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;Landroid/os/Bundle;)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->Z6()Lw51/q0;
+
+    .line 4
+    move-result-object p0
+
+    .line 5
+    invoke-virtual {p0}, Lw51/q0;->s2()V
+
+    .line 8
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 10
+    return-object p0
+.end method
+
+.method public static synthetic S5(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;Landroid/os/Bundle;)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-static {p0, p1}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->M7(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;Landroid/os/Bundle;)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private static final S7(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;Landroid/os/Bundle;)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->Z6()Lw51/q0;
+
+    .line 4
+    move-result-object p0
+
+    .line 5
+    invoke-virtual {p0}, Lw51/q0;->c2()V
+
+    .line 8
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 10
+    return-object p0
+.end method
+
+.method public static synthetic T5(Lw51/s0;)Z
+    .registers 1
+
+    .line 1
+    invoke-static {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->r7(Lw51/s0;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method private final T7()V
+    .registers 4
+
+    .line 1
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->G6()Lo51/a;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    iget-object v0, v0, Lo51/a;->b:Lcom/google/android/material/bottomnavigation/BottomNavigationView;
+
+    .line 7
+    sget v1, Ll51/a;->a:I
+
+    .line 9
+    invoke-direct {p0, v0, v1}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->F6(Landroid/view/ViewGroup;I)Landroid/view/View;
+
+    .line 12
+    move-result-object v0
+
+    .line 13
+    if-nez v0, :cond_f
+
+    .line 15
+    return-void
+
+    .line 16
+    :cond_f
+    sget-object v1, Ldz3/e;->Companion:Ldz3/e$b;
+
+    .line 18
+    invoke-virtual {v1, v0}, Ldz3/e$b;->a(Landroid/view/View;)Ldz3/e$a;
+
+    .line 21
+    move-result-object v0
+
+    .line 22
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->requireContext()Landroid/content/Context;
+
+    .line 25
+    move-result-object v1
+
+    .line 26
+    sget v2, Leh0/f;->u0:I
+
+    .line 28
+    invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    .line 31
+    move-result-object v1
+
+    .line 32
+    invoke-virtual {v0, v1}, Ldz3/e$a;->p(Ljava/lang/CharSequence;)Ldz3/e$a;
+
+    .line 35
+    move-result-object v0
+
+    .line 36
+    invoke-virtual {v0}, Ldz3/e$a;->j()Ldz3/e;
+
+    .line 39
+    return-void
+.end method
+
+.method public static synthetic U5(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;Landroid/os/Bundle;)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-static {p0, p1}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->O7(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;Landroid/os/Bundle;)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private final U7(La61/a;Ljava/lang/String;Ljava/lang/String;)V
+    .registers 13
+
+    .line 1
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->G6()Lo51/a;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    iget-object v0, v0, Lo51/a;->b:Lcom/google/android/material/bottomnavigation/BottomNavigationView;
+
+    .line 7
+    invoke-virtual {p1}, La61/a;->h()I
+
+    .line 10
+    move-result p1
+
+    .line 11
+    invoke-direct {p0, v0, p1}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->F6(Landroid/view/ViewGroup;I)Landroid/view/View;
+
+    .line 14
+    move-result-object v2
+
+    .line 15
+    if-eqz v2, :cond_26
+
+    .line 17
+    invoke-static {p0}, Landroidx/lifecycle/LifecycleOwnerKt;->getLifecycleScope(Landroidx/lifecycle/LifecycleOwner;)Landroidx/lifecycle/LifecycleCoroutineScope;
+
+    .line 20
+    move-result-object p1
+
+    .line 21
+    new-instance v1, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$s;
+
+    .line 23
+    const/4 v6, 0x0
+
+    .line 24
+    move-object v4, p0
+
+    .line 25
+    move-object v3, p2
+
+    .line 26
+    move-object v5, p3
+
+    .line 27
+    invoke-direct/range {v1 .. v6}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$s;-><init>(Landroid/view/View;Ljava/lang/String;Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;Ljava/lang/String;Lkw/c;)V
+
+    .line 30
+    const/4 v7, 0x3
+
+    .line 31
+    const/4 v8, 0x0
+
+    .line 32
+    const/4 v4, 0x0
+
+    .line 33
+    const/4 v5, 0x0
+
+    .line 34
+    move-object v3, p1
+
+    .line 35
+    move-object v6, v1
+
+    .line 36
+    invoke-static/range {v3 .. v8}, Lfx/i;->d(Lfx/p0;Lkotlin/coroutines/CoroutineContext;Lfx/r0;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lfx/c2;
+
+    .line 39
+    :cond_26
+    return-void
+.end method
+
+.method public static synthetic V5(Lw51/s0;)Z
+    .registers 1
+
+    .line 1
+    invoke-static {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->p7(Lw51/s0;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method private final V6(Ly22/d;)Ly22/d;
+    .registers 3
+
+    .line 1
+    if-eqz p1, :cond_7
+
+    .line 3
+    invoke-interface {p1}, Lw22/a;->g()Ljava/lang/String;
+
+    .line 6
+    move-result-object p1
+
+    .line 7
+    goto :goto_8
+
+    .line 8
+    :cond_7
+    const/4 p1, 0x0
+
+    .line 9
+    :goto_8
+    sget-object v0, Ll51/k;->a:Ll51/k;
+
+    .line 11
+    invoke-interface {v0}, Lw22/a;->g()Ljava/lang/String;
+
+    .line 14
+    move-result-object v0
+
+    .line 15
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 18
+    move-result p1
+
+    .line 19
+    if-nez p1, :cond_1c
+
+    .line 21
+    iget-boolean p1, p0, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->o1:Z
+
+    .line 23
+    if-eqz p1, :cond_19
+
+    .line 25
+    goto :goto_1c
+
+    .line 26
+    :cond_19
+    sget-object p1, Ll51/q;->a:Ll51/q;
+
+    .line 28
+    return-object p1
+
+    .line 29
+    :cond_1c
+    :goto_1c
+    sget-object p1, Ll51/p;->a:Ll51/p;
+
+    .line 31
+    return-object p1
+.end method
+
+.method private final V7(IZ)V
+    .registers 4
+
+    .line 1
+    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->P6()Lew/a;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    invoke-interface {v0}, Lew/a;->get()Ljava/lang/Object;
+
+    .line 8
+    move-result-object v0
+
+    .line 9
+    check-cast v0, Lz12/b;
+
+    .line 11
+    invoke-static {v0}, Lnh0/b;->n(Lz12/b;)Z
+
+    .line 14
+    move-result v0
+
+    .line 15
+    if-nez v0, :cond_11
+
+    .line 17
+    return-void
+
+    .line 18
+    :cond_11
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->G6()Lo51/a;
+
+    .line 21
+    move-result-object v0
+
+    .line 22
+    iget-object v0, v0, Lo51/a;->b:Lcom/google/android/material/bottomnavigation/BottomNavigationView;
+
+    .line 24
+    if-eqz p2, :cond_1d
+
+    .line 26
+    invoke-virtual {v0, p1}, Lcom/google/android/material/navigation/NavigationBarView;->d(I)Leg/a;
+
+    .line 29
+    return-void
+
+    .line 30
+    :cond_1d
+    invoke-virtual {v0, p1}, Lcom/google/android/material/navigation/NavigationBarView;->g(I)V
+
+    .line 33
+    return-void
+.end method
+
+.method public static synthetic W5(Lw51/s0;)Z
+    .registers 1
+
+    .line 1
+    invoke-static {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->n7(Lw51/s0;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method private final W7(IZ)V
+    .registers 4
+
+    .line 1
+    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->P6()Lew/a;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    invoke-interface {v0}, Lew/a;->get()Ljava/lang/Object;
+
+    .line 8
+    move-result-object v0
+
+    .line 9
+    check-cast v0, Lz12/b;
+
+    .line 11
+    invoke-static {v0}, Llc1/c;->a(Lz12/b;)Z
+
+    .line 14
+    move-result v0
+
+    .line 15
+    if-nez v0, :cond_21
+
+    .line 17
+    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->P6()Lew/a;
+
+    .line 20
+    move-result-object v0
+
+    .line 21
+    invoke-interface {v0}, Lew/a;->get()Ljava/lang/Object;
+
+    .line 24
+    move-result-object v0
+
+    .line 25
+    check-cast v0, Lz12/b;
+
+    .line 27
+    invoke-static {v0}, Lzl0/b;->a(Lz12/b;)Z
+
+    .line 30
+    move-result v0
+
+    .line 31
+    if-nez v0, :cond_21
+
+    .line 33
+    return-void
+
+    .line 34
+    :cond_21
+    invoke-direct {p0, p1, p2}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->X7(IZ)V
+
+    .line 37
+    return-void
+.end method
+
+.method public static synthetic X5(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;Landroid/view/MenuItem;)Z
+    .registers 2
+
+    .line 1
+    invoke-static {p0, p1}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->K7(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;Landroid/view/MenuItem;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method private final X7(IZ)V
+    .registers 4
+
+    .line 1
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->G6()Lo51/a;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    iget-object v0, v0, Lo51/a;->b:Lcom/google/android/material/bottomnavigation/BottomNavigationView;
+
+    .line 7
+    invoke-direct {p0, v0, p1}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->F6(Landroid/view/ViewGroup;I)Landroid/view/View;
+
+    .line 10
+    move-result-object p1
+
+    .line 11
+    if-eqz p1, :cond_1d
+
+    .line 13
+    sget v0, Lcg/g;->W:I
+
+    .line 15
+    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    .line 18
+    move-result-object p1
+
+    .line 19
+    if-eqz p1, :cond_1d
+
+    .line 21
+    if-eqz p2, :cond_18
+
+    .line 23
+    const/4 p2, 0x0
+
+    .line 24
+    goto :goto_1a
+
+    .line 25
+    :cond_18
+    const/16 p2, 0x8
+
+    .line 27
+    :goto_1a
+    invoke-virtual {p1, p2}, Landroid/view/View;->setVisibility(I)V
+
+    .line 30
+    :cond_1d
+    return-void
+.end method
+
+.method public static synthetic Y5(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;Z)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-static {p0, p1}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->w7(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;Z)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private static final Y7(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;)Ly22/d;
+    .registers 7
+
+    .line 1
+    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->c7()La04/c;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    const/4 v4, 0x3
+
+    .line 6
+    const/4 v5, 0x0
+
+    .line 7
+    const/4 v1, 0x0
+
+    .line 8
+    const/4 v2, 0x0
+
+    .line 9
+    const-string v3, "city_tab"
+
+    .line 11
+    invoke-static/range {v0 .. v5}, La04/c;->b(La04/c;ZLandroid/net/Uri;Ljava/lang/String;ILjava/lang/Object;)Ly22/d;
+
+    .line 14
+    move-result-object p0
+
+    .line 15
+    return-object p0
+.end method
+
+.method public static synthetic Z5(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;)Z
+    .registers 1
+
+    .line 1
+    invoke-static {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->i7(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method private final Z6()Lw51/q0;
+    .registers 2
+
+    .line 1
+    iget-object v0, p0, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->i1:Lfw/m;
+
+    .line 3
+    invoke-interface {v0}, Lfw/m;->getValue()Ljava/lang/Object;
+
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, Lw51/q0;
+
+    .line 9
+    return-object v0
+.end method
+
+.method public static synthetic a6(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;)Ljava/lang/String;
+    .registers 1
+
+    .line 1
+    invoke-static {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->z6(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static synthetic b6(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;Z)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-static {p0, p1}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->m7(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;Z)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private final b7()Ly22/d;
+    .registers 2
+
+    .line 1
+    iget-object v0, p0, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->j1:Lfw/m;
+
+    .line 3
+    invoke-interface {v0}, Lfw/m;->getValue()Ljava/lang/Object;
+
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, Ly22/d;
+
+    .line 9
+    return-object v0
+.end method
+
+.method public static synthetic c6(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;Landroid/os/Bundle;)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-static {p0, p1}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->Q7(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;Landroid/os/Bundle;)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static synthetic d6(La82/b;)Lkotlin/Unit;
+    .registers 1
+
+    .line 1
+    invoke-static {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->e7(La82/b;)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private final d7(Luu1/l;)V
+    .registers 8
+
+    .line 1
+    instance-of v0, p1, Lt51/k0;
+
+    .line 3
+    if-eqz v0, :cond_10
+
+    .line 5
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->G6()Lo51/a;
+
+    .line 8
+    move-result-object p1
+
+    .line 9
+    iget-object p1, p1, Lo51/a;->b:Lcom/google/android/material/bottomnavigation/BottomNavigationView;
+
+    .line 11
+    sget v0, Ll51/a;->b:I
+
+    .line 13
+    invoke-virtual {p1, v0}, Lcom/google/android/material/navigation/NavigationBarView;->setSelectedItemId(I)V
+
+    .line 16
+    return-void
+
+    .line 17
+    :cond_10
+    instance-of v0, p1, Lt51/f;
+
+    .line 19
+    if-eqz v0, :cond_18
+
+    .line 21
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->T7()V
+
+    .line 24
+    return-void
+
+    .line 25
+    :cond_18
+    instance-of v0, p1, Lt51/h1;
+
+    .line 27
+    if-eqz v0, :cond_32
+
+    .line 29
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->G6()Lo51/a;
+
+    .line 32
+    move-result-object p1
+
+    .line 33
+    invoke-virtual {p1}, Lo51/a;->a()Landroidx/constraintlayout/widget/ConstraintLayout;
+
+    .line 36
+    move-result-object v0
+
+    .line 37
+    sget v1, Lyt1/k;->z3:I
+
+    .line 39
+    new-instance v3, Lw51/g;
+
+    .line 41
+    invoke-direct {v3}, Lw51/g;-><init>()V
+
+    .line 44
+    const/4 v4, 0x2
+
+    .line 45
+    const/4 v5, 0x0
+
+    .line 46
+    const/4 v2, 0x0
+
+    .line 47
+    invoke-static/range {v0 .. v5}, Lnu1/i2;->w(Landroid/view/View;IILkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+
+    .line 50
+    return-void
+
+    .line 51
+    :cond_32
+    instance-of v0, p1, Lt51/e1;
+
+    .line 53
+    const-string v1, "SCREEN_KEY_FEED"
+
+    .line 55
+    const/4 v2, 0x0
+
+    .line 56
+    if-eqz v0, :cond_56
+
+    .line 58
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->L6()Landroidx/fragment/app/Fragment;
+
+    .line 61
+    move-result-object p1
+
+    .line 62
+    if-eqz p1, :cond_43
+
+    .line 64
+    invoke-virtual {p1}, Landroidx/fragment/app/Fragment;->getTag()Ljava/lang/String;
+
+    .line 67
+    move-result-object v2
+
+    .line 68
+    :cond_43
+    invoke-static {v2, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 71
+    move-result p1
+
+    .line 72
+    if-nez p1, :cond_21b
+
+    .line 74
+    new-instance p1, Ll51/g;
+
+    .line 76
+    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->Q6()Lcy0/a;
+
+    .line 79
+    move-result-object v0
+
+    .line 80
+    invoke-direct {p1, v0}, Ll51/g;-><init>(Lcy0/a;)V
+
+    .line 83
+    invoke-direct {p0, p1}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->F7(Ly22/d;)V
+
+    .line 86
+    return-void
+
+    .line 87
+    :cond_56
+    instance-of v0, p1, Lt51/v1;
+
+    .line 89
+    const-string v3, "SCREEN_KEY_TROUBLESHOOTING"
+
+    .line 91
+    if-eqz v0, :cond_79
+
+    .line 93
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->L6()Landroidx/fragment/app/Fragment;
+
+    .line 96
+    move-result-object p1
+
+    .line 97
+    if-eqz p1, :cond_66
+
+    .line 99
+    invoke-virtual {p1}, Landroidx/fragment/app/Fragment;->getTag()Ljava/lang/String;
+
+    .line 102
+    move-result-object v2
+
+    .line 103
+    :cond_66
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 106
+    move-result p1
+
+    .line 107
+    if-nez p1, :cond_21b
+
+    .line 109
+    new-instance p1, Ll51/m;
+
+    .line 111
+    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->X6()Luv0/a;
+
+    .line 114
+    move-result-object v0
+
+    .line 115
+    invoke-direct {p1, v0}, Ll51/m;-><init>(Luv0/a;)V
+
+    .line 118
+    invoke-direct {p0, p1}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->F7(Ly22/d;)V
+
+    .line 121
+    return-void
+
+    .line 122
+    :cond_79
+    instance-of v0, p1, Lt51/c;
+
+    .line 124
+    if-eqz v0, :cond_9a
+
+    .line 126
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->L6()Landroidx/fragment/app/Fragment;
+
+    .line 129
+    move-result-object p1
+
+    .line 130
+    if-eqz p1, :cond_87
+
+    .line 132
+    invoke-virtual {p1}, Landroidx/fragment/app/Fragment;->getTag()Ljava/lang/String;
+
+    .line 135
+    move-result-object v2
+
+    .line 136
+    :cond_87
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 139
+    move-result p1
+
+    .line 140
+    if-eqz p1, :cond_21b
+
+    .line 142
+    new-instance p1, Ll51/m;
+
+    .line 144
+    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->X6()Luv0/a;
+
+    .line 147
+    move-result-object v0
+
+    .line 148
+    invoke-direct {p1, v0}, Ll51/m;-><init>(Luv0/a;)V
+
+    .line 151
+    invoke-direct {p0, p1}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->y6(Ly22/d;)V
+
+    .line 154
+    return-void
+
+    .line 155
+    :cond_9a
+    instance-of v0, p1, Lt51/l1;
+
+    .line 157
+    if-eqz v0, :cond_c2
+
+    .line 159
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->L6()Landroidx/fragment/app/Fragment;
+
+    .line 162
+    move-result-object p1
+
+    .line 163
+    if-eqz p1, :cond_a8
+
+    .line 165
+    invoke-virtual {p1}, Landroidx/fragment/app/Fragment;->getTag()Ljava/lang/String;
+
+    .line 168
+    move-result-object v2
+
+    .line 169
+    :cond_a8
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->b7()Ly22/d;
+
+    .line 172
+    move-result-object p1
+
+    .line 173
+    invoke-interface {p1}, Lw22/a;->g()Ljava/lang/String;
+
+    .line 176
+    move-result-object p1
+
+    .line 177
+    invoke-static {v2, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 180
+    move-result p1
+
+    .line 181
+    if-nez p1, :cond_21b
+
+    .line 183
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->G6()Lo51/a;
+
+    .line 186
+    move-result-object p1
+
+    .line 187
+    iget-object p1, p1, Lo51/a;->b:Lcom/google/android/material/bottomnavigation/BottomNavigationView;
+
+    .line 189
+    sget v0, Ll51/a;->d:I
+
+    .line 191
+    invoke-virtual {p1, v0}, Lcom/google/android/material/navigation/NavigationBarView;->setSelectedItemId(I)V
+
+    .line 194
+    return-void
+
+    .line 195
+    :cond_c2
+    instance-of v0, p1, Lt51/j1;
+
+    .line 197
+    if-eqz v0, :cond_e5
+
+    .line 199
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->L6()Landroidx/fragment/app/Fragment;
+
+    .line 202
+    move-result-object p1
+
+    .line 203
+    if-eqz p1, :cond_d0
+
+    .line 205
+    invoke-virtual {p1}, Landroidx/fragment/app/Fragment;->getTag()Ljava/lang/String;
+
+    .line 208
+    move-result-object v2
+
+    .line 209
+    :cond_d0
+    const-string p1, "SCREEN_KEY_PERMISSION_LOCATION"
+
+    .line 211
+    invoke-static {v2, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 214
+    move-result p1
+
+    .line 215
+    if-nez p1, :cond_21b
+
+    .line 217
+    new-instance p1, Ll51/j;
+
+    .line 219
+    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->T6()Lkp3/i;
+
+    .line 222
+    move-result-object v0
+
+    .line 223
+    invoke-direct {p1, v0}, Ll51/j;-><init>(Lkp3/i;)V
+
+    .line 226
+    invoke-direct {p0, p1}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->F7(Ly22/d;)V
+
+    .line 229
+    return-void
+
+    .line 230
+    :cond_e5
+    instance-of v0, p1, Lt51/t1;
+
+    .line 232
+    if-eqz v0, :cond_108
+
+    .line 234
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->L6()Landroidx/fragment/app/Fragment;
+
+    .line 237
+    move-result-object p1
+
+    .line 238
+    if-eqz p1, :cond_f3
+
+    .line 240
+    invoke-virtual {p1}, Landroidx/fragment/app/Fragment;->getTag()Ljava/lang/String;
+
+    .line 243
+    move-result-object v2
+
+    .line 244
+    :cond_f3
+    const-string p1, "SCREEN_KEY_WORK_SHIFT_TRAINING"
+
+    .line 246
+    invoke-static {v2, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 249
+    move-result p1
+
+    .line 250
+    if-nez p1, :cond_21b
+
+    .line 252
+    new-instance p1, Ll51/o;
+
+    .line 254
+    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->W6()Lyx0/a;
+
+    .line 257
+    move-result-object v0
+
+    .line 258
+    invoke-direct {p1, v0}, Ll51/o;-><init>(Lyx0/a;)V
+
+    .line 261
+    invoke-direct {p0, p1}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->F7(Ly22/d;)V
+
+    .line 264
+    return-void
+
+    .line 265
+    :cond_108
+    instance-of v0, p1, Lt51/p1;
+
+    .line 267
+    if-eqz v0, :cond_147
+
+    .line 269
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->L6()Landroidx/fragment/app/Fragment;
+
+    .line 272
+    move-result-object v0
+
+    .line 273
+    if-eqz v0, :cond_116
+
+    .line 275
+    invoke-virtual {v0}, Landroidx/fragment/app/Fragment;->getTag()Ljava/lang/String;
+
+    .line 278
+    move-result-object v2
+
+    .line 279
+    :cond_116
+    const-string v0, "SCREEN_KEY_WORK_SHIFT_TIMER"
+
+    .line 281
+    invoke-static {v2, v0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 284
+    move-result v0
+
+    .line 285
+    if-nez v0, :cond_131
+
+    .line 287
+    new-instance v0, Ll51/n;
+
+    .line 289
+    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->I6()Lqx0/a;
+
+    .line 292
+    move-result-object v1
+
+    .line 293
+    check-cast p1, Lt51/p1;
+
+    .line 295
+    invoke-virtual {p1}, Lt51/p1;->a()Lrx0/a;
+
+    .line 298
+    move-result-object p1
+
+    .line 299
+    invoke-direct {v0, v1, p1}, Ll51/n;-><init>(Lqx0/a;Lrx0/a;)V
+
+    .line 302
+    invoke-direct {p0, v0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->F7(Ly22/d;)V
+
+    .line 305
+    return-void
+
+    .line 306
+    :cond_131
+    check-cast p1, Lt51/p1;
+
+    .line 308
+    invoke-virtual {p1}, Lt51/p1;->a()Lrx0/a;
+
+    .line 311
+    move-result-object p1
+
+    .line 312
+    const-string v0, "ARG_COUNTDOWN_UPDATED_TIME"
+
+    .line 314
+    invoke-static {v0, p1}, Lfw/y;->a(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
+
+    .line 317
+    move-result-object p1
+
+    .line 318
+    filled-new-array {p1}, [Lkotlin/Pair;
+
+    .line 321
+    move-result-object p1
+
+    .line 322
+    const-string v0, "RESULT_KEY_COUNTDOWN_UPDATE_TIMER"
+
+    .line 324
+    invoke-static {p0, v0, p1}, Lnu1/a;->w(Landroidx/fragment/app/Fragment;Ljava/lang/String;[Lkotlin/Pair;)V
+
+    .line 327
+    return-void
+
+    .line 328
+    :cond_147
+    instance-of v0, p1, Lt51/g1;
+
+    .line 330
+    if-eqz v0, :cond_165
+
+    .line 332
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->L6()Landroidx/fragment/app/Fragment;
+
+    .line 335
+    move-result-object v0
+
+    .line 336
+    if-eqz v0, :cond_155
+
+    .line 338
+    invoke-virtual {v0}, Landroidx/fragment/app/Fragment;->getTag()Ljava/lang/String;
+
+    .line 341
+    move-result-object v2
+
+    .line 342
+    :cond_155
+    invoke-static {v2, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 345
+    move-result v0
+
+    .line 346
+    if-nez v0, :cond_21b
+
+    .line 348
+    check-cast p1, Lt51/g1;
+
+    .line 350
+    invoke-virtual {p1}, Lt51/g1;->a()Lsinet/startup/inDriver/city/feature/settings/driver/api/domain/entity/RegistrationInfo;
+
+    .line 353
+    move-result-object p1
+
+    .line 354
+    invoke-direct {p0, p1}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->E7(Lsinet/startup/inDriver/city/feature/settings/driver/api/domain/entity/RegistrationInfo;)V
+
+    .line 357
+    return-void
+
+    .line 358
+    :cond_165
+    instance-of v0, p1, Lt51/b1;
+
+    .line 360
+    if-eqz v0, :cond_187
+
+    .line 362
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->L6()Landroidx/fragment/app/Fragment;
+
+    .line 365
+    move-result-object v0
+
+    .line 366
+    if-eqz v0, :cond_173
+
+    .line 368
+    invoke-virtual {v0}, Landroidx/fragment/app/Fragment;->getTag()Ljava/lang/String;
+
+    .line 371
+    move-result-object v2
+
+    .line 372
+    :cond_173
+    invoke-static {v2, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 375
+    move-result v0
+
+    .line 376
+    if-nez v0, :cond_21b
+
+    .line 378
+    check-cast p1, Lt51/b1;
+
+    .line 380
+    invoke-virtual {p1}, Lt51/b1;->a()Lsinet/startup/inDriver/city/feature/settings/driver/api/domain/entity/ChileRegionWarning;
+
+    .line 383
+    move-result-object v0
+
+    .line 384
+    invoke-virtual {p1}, Lt51/b1;->b()Ljava/lang/String;
+
+    .line 387
+    move-result-object p1
+
+    .line 388
+    invoke-direct {p0, v0, p1}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->D7(Lsinet/startup/inDriver/city/feature/settings/driver/api/domain/entity/ChileRegionWarning;Ljava/lang/String;)V
+
+    .line 391
+    return-void
+
+    .line 392
+    :cond_187
+    instance-of v0, p1, Lt51/m0;
+
+    .line 394
+    if-eqz v0, :cond_191
+
+    .line 396
+    check-cast p1, Lt51/m0;
+
+    .line 398
+    invoke-direct {p0, p1}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->x7(Lt51/m0;)V
+
+    .line 401
+    return-void
+
+    .line 402
+    :cond_191
+    instance-of v0, p1, Lt51/r1;
+
+    .line 404
+    if-eqz v0, :cond_1a7
+
+    .line 406
+    check-cast p1, Lt51/r1;
+
+    .line 408
+    invoke-virtual {p1}, Lt51/r1;->b()La61/a;
+
+    .line 411
+    move-result-object v0
+
+    .line 412
+    invoke-virtual {p1}, Lt51/r1;->c()Ljava/lang/String;
+
+    .line 415
+    move-result-object v1
+
+    .line 416
+    invoke-virtual {p1}, Lt51/r1;->a()Ljava/lang/String;
+
+    .line 419
+    move-result-object p1
+
+    .line 420
+    invoke-direct {p0, v0, v1, p1}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->U7(La61/a;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 423
+    return-void
+
+    .line 424
+    :cond_1a7
+    instance-of v0, p1, Lt51/w1;
+
+    .line 426
+    if-eqz v0, :cond_1c1
+
+    .line 428
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->G6()Lo51/a;
+
+    .line 431
+    move-result-object p1
+
+    .line 432
+    invoke-virtual {p1}, Lo51/a;->a()Landroidx/constraintlayout/widget/ConstraintLayout;
+
+    .line 435
+    move-result-object v0
+
+    .line 436
+    sget v1, Leh0/f;->f1:I
+
+    .line 438
+    new-instance v3, Lw51/h;
+
+    .line 440
+    invoke-direct {v3, p0}, Lw51/h;-><init>(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;)V
+
+    .line 443
+    const/4 v4, 0x2
+
+    .line 444
+    const/4 v5, 0x0
+
+    .line 445
+    const/4 v2, 0x0
+
+    .line 446
+    invoke-static/range {v0 .. v5}, Lnu1/i2;->w(Landroid/view/View;IILkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+
+    .line 449
+    return-void
+
+    .line 450
+    :cond_1c1
+    instance-of v0, p1, Lt51/i0;
+
+    .line 452
+    const/4 v3, 0x0
+
+    .line 453
+    if-eqz v0, :cond_1ce
+
+    .line 455
+    const-string p1, "DASHBOARD_RATING_RESULT_KEY"
+
+    .line 457
+    new-array v0, v3, [Lkotlin/Pair;
+
+    .line 459
+    invoke-static {p0, p1, v0}, Lnu1/a;->w(Landroidx/fragment/app/Fragment;Ljava/lang/String;[Lkotlin/Pair;)V
+
+    .line 462
+    return-void
+
+    .line 463
+    :cond_1ce
+    instance-of v0, p1, Lt51/o0;
+
+    .line 465
+    if-eqz v0, :cond_1da
+
+    .line 467
+    const-string p1, "TIER_SCREEN_RESULT_KEY"
+
+    .line 469
+    new-array v0, v3, [Lkotlin/Pair;
+
+    .line 471
+    invoke-static {p0, p1, v0}, Lnu1/a;->w(Landroidx/fragment/app/Fragment;Ljava/lang/String;[Lkotlin/Pair;)V
+
+    .line 474
+    return-void
+
+    .line 475
+    :cond_1da
+    instance-of v0, p1, Lt51/x0;
+
+    .line 477
+    if-eqz v0, :cond_1fa
+
+    .line 479
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->L6()Landroidx/fragment/app/Fragment;
+
+    .line 482
+    move-result-object p1
+
+    .line 483
+    if-eqz p1, :cond_1e8
+
+    .line 485
+    invoke-virtual {p1}, Landroidx/fragment/app/Fragment;->getTag()Ljava/lang/String;
+
+    .line 488
+    move-result-object v2
+
+    .line 489
+    :cond_1e8
+    invoke-static {v2, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 492
+    move-result p1
+
+    .line 493
+    if-nez p1, :cond_21b
+
+    .line 495
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->G6()Lo51/a;
+
+    .line 498
+    move-result-object p1
+
+    .line 499
+    iget-object p1, p1, Lo51/a;->b:Lcom/google/android/material/bottomnavigation/BottomNavigationView;
+
+    .line 501
+    sget v0, Ll51/a;->c:I
+
+    .line 503
+    invoke-virtual {p1, v0}, Lcom/google/android/material/navigation/NavigationBarView;->setSelectedItemId(I)V
+
+    .line 506
+    return-void
+
+    .line 507
+    :cond_1fa
+    instance-of p1, p1, Lt51/v0;
+
+    .line 509
+    if-eqz p1, :cond_21b
+
+    .line 511
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->L6()Landroidx/fragment/app/Fragment;
+
+    .line 514
+    move-result-object p1
+
+    .line 515
+    if-eqz p1, :cond_208
+
+    .line 517
+    invoke-virtual {p1}, Landroidx/fragment/app/Fragment;->getTag()Ljava/lang/String;
+
+    .line 520
+    move-result-object v2
+
+    .line 521
+    :cond_208
+    const-string p1, "SCREEN_KEY_DEMAND_MAP"
+
+    .line 523
+    invoke-static {v2, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 526
+    move-result p1
+
+    .line 527
+    if-nez p1, :cond_21b
+
+    .line 529
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->G6()Lo51/a;
+
+    .line 532
+    move-result-object p1
+
+    .line 533
+    iget-object p1, p1, Lo51/a;->b:Lcom/google/android/material/bottomnavigation/BottomNavigationView;
+
+    .line 535
+    sget v0, Ll51/a;->a:I
+
+    .line 537
+    invoke-virtual {p1, v0}, Lcom/google/android/material/navigation/NavigationBarView;->setSelectedItemId(I)V
+
+    .line 540
+    :cond_21b
+    return-void
+.end method
+
+.method public static synthetic e6(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;Landroid/os/Bundle;)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-static {p0, p1}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->S7(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;Landroid/os/Bundle;)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private static final e7(La82/b;)Lkotlin/Unit;
+    .registers 3
+
+    .line 1
+    sget v0, Lx62/h;->G2:I
+
+    .line 3
+    sget v1, Lx62/f;->m:I
+
+    .line 5
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    .line 8
+    move-result-object v1
+
+    .line 9
+    invoke-static {p0, v0, v1}, Lnu1/i2;->o(La82/b;ILjava/lang/Integer;)V
+
+    .line 12
+    sget-object v0, Lnu1/j2;->ERROR:Lnu1/j2;
+
+    .line 14
+    invoke-static {p0, v0}, Lnu1/i2;->p(La82/b;Lnu1/j2;)V
+
+    .line 17
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 19
+    return-object p0
+.end method
+
+.method public static synthetic f6(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;)Ly22/d;
+    .registers 1
+
+    .line 1
+    invoke-static {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->Y7(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;)Ly22/d;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private static final f7(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;La82/b;)Lkotlin/Unit;
+    .registers 10
+
+    .line 1
+    sget-object v0, Lnu1/j2;->ERROR:Lnu1/j2;
+
+    .line 3
+    invoke-static {p1, v0}, Lnu1/i2;->p(La82/b;Lnu1/j2;)V
+
+    .line 6
+    sget v0, Leh0/f;->g1:I
+
+    .line 8
+    invoke-virtual {p0, v0}, Landroidx/fragment/app/Fragment;->getString(I)Ljava/lang/String;
+
+    .line 11
+    move-result-object v2
+
+    .line 12
+    new-instance v5, Lw51/w;
+
+    .line 14
+    invoke-direct {v5, p0}, Lw51/w;-><init>(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;)V
+
+    .line 17
+    const/4 v6, 0x6
+
+    .line 18
+    const/4 v7, 0x0
+
+    .line 19
+    const/4 v3, 0x0
+
+    .line 20
+    const/4 v4, 0x0
+
+    .line 21
+    move-object v1, p1
+
+    .line 22
+    invoke-static/range {v1 .. v7}, Lnu1/i2;->i(La82/b;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+
+    .line 25
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 27
+    return-object p0
+.end method
+
+.method public static synthetic g6(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;Z)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-static {p0, p1}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->j7(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;Z)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private static final g7(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;Landroid/view/View;)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->Z6()Lw51/q0;
+
+    .line 4
+    move-result-object p0
+
+    .line 5
+    invoke-virtual {p0}, Lw51/q0;->j2()V
+
+    .line 8
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 10
+    return-object p0
+.end method
+
+.method public static synthetic h6(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;Z)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-static {p0, p1}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->u7(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;Z)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private final h7()Z
+    .registers 2
+
+    .line 1
+    iget-object v0, p0, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->k1:Lfw/m;
+
+    .line 3
+    invoke-interface {v0}, Lfw/m;->getValue()Ljava/lang/Object;
+
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, Ljava/lang/Boolean;
+
+    .line 9
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    .line 12
+    move-result v0
+
+    .line 13
+    return v0
+.end method
+
+.method public static synthetic i6(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;La82/b;)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-static {p0, p1}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->f7(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;La82/b;)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private static final i7(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;)Z
+    .registers 1
+
+    .line 1
+    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->O6()Lew/a;
+
+    .line 4
+    move-result-object p0
+
+    .line 5
+    invoke-interface {p0}, Lew/a;->get()Ljava/lang/Object;
+
+    .line 8
+    move-result-object p0
+
+    .line 9
+    check-cast p0, Lef1/d;
+
+    .line 11
+    invoke-interface {p0}, Lef1/d;->t()Z
+
+    .line 14
+    move-result p0
+
+    .line 15
+    return p0
+.end method
+
+.method public static synthetic j6(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;Landroid/os/Bundle;)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-static {p0, p1}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->N7(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;Landroid/os/Bundle;)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private static final j7(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;Z)Lkotlin/Unit;
+    .registers 4
+
+    .line 1
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->G6()Lo51/a;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    iget-object v0, v0, Lo51/a;->b:Lcom/google/android/material/bottomnavigation/BottomNavigationView;
+
+    .line 7
+    invoke-virtual {v0}, Lcom/google/android/material/navigation/NavigationBarView;->getSelectedItemId()I
+
+    .line 10
+    move-result v0
+
+    .line 11
+    sget v1, Ll51/a;->c:I
+
+    .line 13
+    if-ne v0, v1, :cond_15
+
+    .line 15
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->Z6()Lw51/q0;
+
+    .line 18
+    move-result-object p0
+
+    .line 19
+    invoke-virtual {p0, p1}, Lw51/q0;->Y1(Z)V
+
+    .line 22
+    :cond_15
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 24
+    return-object p0
+.end method
+
+.method public static synthetic k6(Lo51/a;Z)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-static {p0, p1}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->q7(Lo51/a;Z)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private final k7()V
+    .registers 9
+
+    .line 1
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->G6()Lo51/a;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->Z6()Lw51/q0;
+
+    .line 8
+    move-result-object v1
+
+    .line 9
+    invoke-virtual {v1}, Luu1/i;->getViewState()Lix/s0;
+
+    .line 12
+    move-result-object v1
+
+    .line 13
+    new-instance v2, Lw51/n;
+
+    .line 15
+    invoke-direct {v2}, Lw51/n;-><init>()V
+
+    .line 18
+    new-instance v3, Lw51/z;
+
+    .line 20
+    invoke-direct {v3, p0}, Lw51/z;-><init>(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;)V
+
+    .line 23
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getViewLifecycleOwner()Landroidx/lifecycle/LifecycleOwner;
+
+    .line 26
+    move-result-object v4
+
+    .line 27
+    invoke-interface {v4}, Landroidx/lifecycle/LifecycleOwner;->getLifecycle()Landroidx/lifecycle/Lifecycle;
+
+    .line 30
+    move-result-object v5
+
+    .line 31
+    const/4 v6, 0x0
+
+    .line 32
+    const/4 v7, 0x2
+
+    .line 33
+    invoke-static {v1, v5, v6, v7, v6}, Landroidx/lifecycle/FlowExtKt;->flowWithLifecycle$default(Lix/i;Landroidx/lifecycle/Lifecycle;Landroidx/lifecycle/Lifecycle$State;ILjava/lang/Object;)Lix/i;
+
+    .line 36
+    move-result-object v1
+
+    .line 37
+    new-instance v5, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$e;
+
+    .line 39
+    invoke-direct {v5, v1, v2}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$e;-><init>(Lix/i;Lkotlin/jvm/functions/Function1;)V
+
+    .line 42
+    invoke-static {v5}, Lix/k;->z(Lix/i;)Lix/i;
+
+    .line 45
+    move-result-object v1
+
+    .line 46
+    new-instance v2, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$i;
+
+    .line 48
+    invoke-direct {v2, v3}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$i;-><init>(Ljava/lang/Object;)V
+
+    .line 51
+    invoke-static {v1, v2}, Lix/k;->b0(Lix/i;Lkotlin/jvm/functions/Function2;)Lix/i;
+
+    .line 54
+    move-result-object v1
+
+    .line 55
+    invoke-static {v4}, Landroidx/lifecycle/LifecycleOwnerKt;->getLifecycleScope(Landroidx/lifecycle/LifecycleOwner;)Landroidx/lifecycle/LifecycleCoroutineScope;
+
+    .line 58
+    move-result-object v2
+
+    .line 59
+    invoke-static {v1, v2}, Lix/k;->W(Lix/i;Lfx/p0;)Lfx/c2;
+
+    .line 62
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->Z6()Lw51/q0;
+
+    .line 65
+    move-result-object v1
+
+    .line 66
+    invoke-virtual {v1}, Luu1/i;->getViewState()Lix/s0;
+
+    .line 69
+    move-result-object v1
+
+    .line 70
+    new-instance v2, Lw51/a0;
+
+    .line 72
+    invoke-direct {v2}, Lw51/a0;-><init>()V
+
+    .line 75
+    new-instance v3, Lw51/b0;
+
+    .line 77
+    invoke-direct {v3, v0}, Lw51/b0;-><init>(Lo51/a;)V
+
+    .line 80
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getViewLifecycleOwner()Landroidx/lifecycle/LifecycleOwner;
+
+    .line 83
+    move-result-object v0
+
+    .line 84
+    invoke-interface {v0}, Landroidx/lifecycle/LifecycleOwner;->getLifecycle()Landroidx/lifecycle/Lifecycle;
+
+    .line 87
+    move-result-object v4
+
+    .line 88
+    invoke-static {v1, v4, v6, v7, v6}, Landroidx/lifecycle/FlowExtKt;->flowWithLifecycle$default(Lix/i;Landroidx/lifecycle/Lifecycle;Landroidx/lifecycle/Lifecycle$State;ILjava/lang/Object;)Lix/i;
+
+    .line 91
+    move-result-object v1
+
+    .line 92
+    new-instance v4, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$j;
+
+    .line 94
+    invoke-direct {v4, v1, v2}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$j;-><init>(Lix/i;Lkotlin/jvm/functions/Function1;)V
+
+    .line 97
+    invoke-static {v4}, Lix/k;->z(Lix/i;)Lix/i;
+
+    .line 100
+    move-result-object v1
+
+    .line 101
+    new-instance v2, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$k;
+
+    .line 103
+    invoke-direct {v2, v3}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$k;-><init>(Ljava/lang/Object;)V
+
+    .line 106
+    invoke-static {v1, v2}, Lix/k;->b0(Lix/i;Lkotlin/jvm/functions/Function2;)Lix/i;
+
+    .line 109
+    move-result-object v1
+
+    .line 110
+    invoke-static {v0}, Landroidx/lifecycle/LifecycleOwnerKt;->getLifecycleScope(Landroidx/lifecycle/LifecycleOwner;)Landroidx/lifecycle/LifecycleCoroutineScope;
+
+    .line 113
+    move-result-object v0
+
+    .line 114
+    invoke-static {v1, v0}, Lix/k;->W(Lix/i;Lfx/p0;)Lfx/c2;
+
+    .line 117
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->Z6()Lw51/q0;
+
+    .line 120
+    move-result-object v0
+
+    .line 121
+    invoke-virtual {v0}, Luu1/i;->getViewState()Lix/s0;
+
+    .line 124
+    move-result-object v0
+
+    .line 125
+    new-instance v1, Lw51/c0;
+
+    .line 127
+    invoke-direct {v1}, Lw51/c0;-><init>()V
+
+    .line 130
+    new-instance v2, Lw51/d0;
+
+    .line 132
+    invoke-direct {v2, p0}, Lw51/d0;-><init>(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;)V
+
+    .line 135
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getViewLifecycleOwner()Landroidx/lifecycle/LifecycleOwner;
+
+    .line 138
+    move-result-object v3
+
+    .line 139
+    invoke-interface {v3}, Landroidx/lifecycle/LifecycleOwner;->getLifecycle()Landroidx/lifecycle/Lifecycle;
+
+    .line 142
+    move-result-object v4
+
+    .line 143
+    invoke-static {v0, v4, v6, v7, v6}, Landroidx/lifecycle/FlowExtKt;->flowWithLifecycle$default(Lix/i;Landroidx/lifecycle/Lifecycle;Landroidx/lifecycle/Lifecycle$State;ILjava/lang/Object;)Lix/i;
+
+    .line 146
+    move-result-object v0
+
+    .line 147
+    new-instance v4, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$l;
+
+    .line 149
+    invoke-direct {v4, v0, v1}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$l;-><init>(Lix/i;Lkotlin/jvm/functions/Function1;)V
+
+    .line 152
+    invoke-static {v4}, Lix/k;->z(Lix/i;)Lix/i;
+
+    .line 155
+    move-result-object v0
+
+    .line 156
+    new-instance v1, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$m;
+
+    .line 158
+    invoke-direct {v1, v2}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$m;-><init>(Ljava/lang/Object;)V
+
+    .line 161
+    invoke-static {v0, v1}, Lix/k;->b0(Lix/i;Lkotlin/jvm/functions/Function2;)Lix/i;
+
+    .line 164
+    move-result-object v0
+
+    .line 165
+    invoke-static {v3}, Landroidx/lifecycle/LifecycleOwnerKt;->getLifecycleScope(Landroidx/lifecycle/LifecycleOwner;)Landroidx/lifecycle/LifecycleCoroutineScope;
+
+    .line 168
+    move-result-object v1
+
+    .line 169
+    invoke-static {v0, v1}, Lix/k;->W(Lix/i;Lfx/p0;)Lfx/c2;
+
+    .line 172
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->Z6()Lw51/q0;
+
+    .line 175
+    move-result-object v0
+
+    .line 176
+    invoke-virtual {v0}, Luu1/i;->getViewState()Lix/s0;
+
+    .line 179
+    move-result-object v0
+
+    .line 180
+    new-instance v1, Lw51/e0;
+
+    .line 182
+    invoke-direct {v1}, Lw51/e0;-><init>()V
+
+    .line 185
+    new-instance v2, Lw51/d;
+
+    .line 187
+    invoke-direct {v2, p0}, Lw51/d;-><init>(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;)V
+
+    .line 190
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getViewLifecycleOwner()Landroidx/lifecycle/LifecycleOwner;
+
+    .line 193
+    move-result-object v3
+
+    .line 194
+    invoke-interface {v3}, Landroidx/lifecycle/LifecycleOwner;->getLifecycle()Landroidx/lifecycle/Lifecycle;
+
+    .line 197
+    move-result-object v4
+
+    .line 198
+    invoke-static {v0, v4, v6, v7, v6}, Landroidx/lifecycle/FlowExtKt;->flowWithLifecycle$default(Lix/i;Landroidx/lifecycle/Lifecycle;Landroidx/lifecycle/Lifecycle$State;ILjava/lang/Object;)Lix/i;
+
+    .line 201
+    move-result-object v0
+
+    .line 202
+    new-instance v4, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$n;
+
+    .line 204
+    invoke-direct {v4, v0, v1}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$n;-><init>(Lix/i;Lkotlin/jvm/functions/Function1;)V
+
+    .line 207
+    invoke-static {v4}, Lix/k;->z(Lix/i;)Lix/i;
+
+    .line 210
+    move-result-object v0
+
+    .line 211
+    new-instance v1, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$o;
+
+    .line 213
+    invoke-direct {v1, v2}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$o;-><init>(Ljava/lang/Object;)V
+
+    .line 216
+    invoke-static {v0, v1}, Lix/k;->b0(Lix/i;Lkotlin/jvm/functions/Function2;)Lix/i;
+
+    .line 219
+    move-result-object v0
+
+    .line 220
+    invoke-static {v3}, Landroidx/lifecycle/LifecycleOwnerKt;->getLifecycleScope(Landroidx/lifecycle/LifecycleOwner;)Landroidx/lifecycle/LifecycleCoroutineScope;
+
+    .line 223
+    move-result-object v1
+
+    .line 224
+    invoke-static {v0, v1}, Lix/k;->W(Lix/i;Lfx/p0;)Lfx/c2;
+
+    .line 227
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->Z6()Lw51/q0;
+
+    .line 230
+    move-result-object v0
+
+    .line 231
+    invoke-virtual {v0}, Luu1/i;->getViewState()Lix/s0;
+
+    .line 234
+    move-result-object v0
+
+    .line 235
+    new-instance v1, Lw51/e;
+
+    .line 237
+    invoke-direct {v1}, Lw51/e;-><init>()V
+
+    .line 240
+    new-instance v2, Lw51/f;
+
+    .line 242
+    invoke-direct {v2, p0}, Lw51/f;-><init>(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;)V
+
+    .line 245
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getViewLifecycleOwner()Landroidx/lifecycle/LifecycleOwner;
+
+    .line 248
+    move-result-object v3
+
+    .line 249
+    invoke-interface {v3}, Landroidx/lifecycle/LifecycleOwner;->getLifecycle()Landroidx/lifecycle/Lifecycle;
+
+    .line 252
+    move-result-object v4
+
+    .line 253
+    invoke-static {v0, v4, v6, v7, v6}, Landroidx/lifecycle/FlowExtKt;->flowWithLifecycle$default(Lix/i;Landroidx/lifecycle/Lifecycle;Landroidx/lifecycle/Lifecycle$State;ILjava/lang/Object;)Lix/i;
+
+    .line 256
+    move-result-object v0
+
+    .line 257
+    new-instance v4, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$p;
+
+    .line 259
+    invoke-direct {v4, v0, v1}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$p;-><init>(Lix/i;Lkotlin/jvm/functions/Function1;)V
+
+    .line 262
+    invoke-static {v4}, Lix/k;->z(Lix/i;)Lix/i;
+
+    .line 265
+    move-result-object v0
+
+    .line 266
+    new-instance v1, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$f;
+
+    .line 268
+    invoke-direct {v1, v2}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$f;-><init>(Ljava/lang/Object;)V
+
+    .line 271
+    invoke-static {v0, v1}, Lix/k;->b0(Lix/i;Lkotlin/jvm/functions/Function2;)Lix/i;
+
+    .line 274
+    move-result-object v0
+
+    .line 275
+    invoke-static {v3}, Landroidx/lifecycle/LifecycleOwnerKt;->getLifecycleScope(Landroidx/lifecycle/LifecycleOwner;)Landroidx/lifecycle/LifecycleCoroutineScope;
+
+    .line 278
+    move-result-object v1
+
+    .line 279
+    invoke-static {v0, v1}, Lix/k;->W(Lix/i;Lfx/p0;)Lfx/c2;
+
+    .line 282
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->Z6()Lw51/q0;
+
+    .line 285
+    move-result-object v0
+
+    .line 286
+    invoke-virtual {v0}, Luu1/i;->getViewState()Lix/s0;
+
+    .line 289
+    move-result-object v0
+
+    .line 290
+    new-instance v1, Lw51/x;
+
+    .line 292
+    invoke-direct {v1}, Lw51/x;-><init>()V
+
+    .line 295
+    new-instance v2, Lw51/y;
+
+    .line 297
+    invoke-direct {v2, p0}, Lw51/y;-><init>(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;)V
+
+    .line 300
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getViewLifecycleOwner()Landroidx/lifecycle/LifecycleOwner;
+
+    .line 303
+    move-result-object v3
+
+    .line 304
+    invoke-interface {v3}, Landroidx/lifecycle/LifecycleOwner;->getLifecycle()Landroidx/lifecycle/Lifecycle;
+
+    .line 307
+    move-result-object v4
+
+    .line 308
+    invoke-static {v0, v4, v6, v7, v6}, Landroidx/lifecycle/FlowExtKt;->flowWithLifecycle$default(Lix/i;Landroidx/lifecycle/Lifecycle;Landroidx/lifecycle/Lifecycle$State;ILjava/lang/Object;)Lix/i;
+
+    .line 311
+    move-result-object v0
+
+    .line 312
+    new-instance v4, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$g;
+
+    .line 314
+    invoke-direct {v4, v0, v1}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$g;-><init>(Lix/i;Lkotlin/jvm/functions/Function1;)V
+
+    .line 317
+    invoke-static {v4}, Lix/k;->z(Lix/i;)Lix/i;
+
+    .line 320
+    move-result-object v0
+
+    .line 321
+    new-instance v1, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$h;
+
+    .line 323
+    invoke-direct {v1, v2}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$h;-><init>(Ljava/lang/Object;)V
+
+    .line 326
+    invoke-static {v0, v1}, Lix/k;->b0(Lix/i;Lkotlin/jvm/functions/Function2;)Lix/i;
+
+    .line 329
+    move-result-object v0
+
+    .line 330
+    invoke-static {v3}, Landroidx/lifecycle/LifecycleOwnerKt;->getLifecycleScope(Landroidx/lifecycle/LifecycleOwner;)Landroidx/lifecycle/LifecycleCoroutineScope;
+
+    .line 333
+    move-result-object v1
+
+    .line 334
+    invoke-static {v0, v1}, Lix/k;->W(Lix/i;Lfx/p0;)Lfx/c2;
+
+    .line 337
+    return-void
+.end method
+
+.method public static synthetic l6(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;Landroid/os/Bundle;)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-static {p0, p1}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->P7(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;Landroid/os/Bundle;)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private static final l7(Lw51/s0;)Z
+    .registers 1
+
+    .line 1
+    invoke-virtual {p0}, Lw51/s0;->e()Z
+
+    .line 4
+    move-result p0
+
+    .line 5
+    return p0
+.end method
+
+.method public static synthetic m6(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;Landroid/view/View;)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-static {p0, p1}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->g7(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;Landroid/view/View;)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private static final m7(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;Z)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    if-nez p1, :cond_11
+
+    .line 3
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->G6()Lo51/a;
+
+    .line 6
+    move-result-object p0
+
+    .line 7
+    iget-object p0, p0, Lo51/a;->b:Lcom/google/android/material/bottomnavigation/BottomNavigationView;
+
+    .line 9
+    invoke-virtual {p0}, Lcom/google/android/material/navigation/NavigationBarView;->getMenu()Landroid/view/Menu;
+
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget p1, Ll51/a;->a:I
+
+    .line 15
+    invoke-interface {p0, p1}, Landroid/view/Menu;->removeItem(I)V
+
+    .line 18
+    :cond_11
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 20
+    return-object p0
+.end method
+
+.method public static synthetic n6(Lw51/s0;)Z
+    .registers 1
+
+    .line 1
+    invoke-static {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->v7(Lw51/s0;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method private static final n7(Lw51/s0;)Z
+    .registers 1
+
+    .line 1
+    invoke-virtual {p0}, Lw51/s0;->d()Z
+
+    .line 4
+    move-result p0
+
+    .line 5
+    return p0
+.end method
+
+.method public static synthetic o6(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;Z)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-static {p0, p1}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->o7(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;Z)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private static final o7(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;Z)Lkotlin/Unit;
+    .registers 3
+
+    .line 1
+    sget v0, Ll51/a;->e:I
+
+    .line 3
+    invoke-direct {p0, v0, p1}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->V7(IZ)V
+
+    .line 6
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 8
+    return-object p0
+.end method
+
+.method public static synthetic p6(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;)Ly22/d;
+    .registers 1
+
+    .line 1
+    invoke-static {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->E6(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;)Ly22/d;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private static final p7(Lw51/s0;)Z
+    .registers 1
+
+    .line 1
+    invoke-virtual {p0}, Lw51/s0;->h()Z
+
+    .line 4
+    move-result p0
+
+    .line 5
+    return p0
+.end method
+
+.method public static synthetic q6(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;Landroid/os/Bundle;)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-static {p0, p1}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->R7(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;Landroid/os/Bundle;)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private static final q7(Lo51/a;Z)Lkotlin/Unit;
+    .registers 4
+
+    .line 1
+    iget-object p0, p0, Lo51/a;->e:Landroid/widget/FrameLayout;
+
+    .line 3
+    const/4 v0, 0x0
+
+    .line 4
+    const/4 v1, 0x2
+
+    .line 5
+    invoke-static {p0, p1, v0, v1, v0}, Lj72/o;->N(Landroid/view/View;ZLm82/j;ILjava/lang/Object;)V
+
+    .line 8
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 10
+    return-object p0
+.end method
+
+.method public static synthetic r6(Lw51/s0;)Z
+    .registers 1
+
+    .line 1
+    invoke-static {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->t7(Lw51/s0;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method private static final r7(Lw51/s0;)Z
+    .registers 1
+
+    .line 1
+    invoke-virtual {p0}, Lw51/s0;->i()Z
+
+    .line 4
+    move-result p0
+
+    .line 5
+    return p0
+.end method
+
+.method public static synthetic s6(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;)Lkotlin/Unit;
+    .registers 1
+
+    .line 1
+    invoke-static {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->y7(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private static final s7(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;Z)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    if-nez p1, :cond_11
+
+    .line 3
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->G6()Lo51/a;
+
+    .line 6
+    move-result-object p0
+
+    .line 7
+    iget-object p0, p0, Lo51/a;->b:Lcom/google/android/material/bottomnavigation/BottomNavigationView;
+
+    .line 9
+    invoke-virtual {p0}, Lcom/google/android/material/navigation/NavigationBarView;->getMenu()Landroid/view/Menu;
+
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget p1, Ll51/a;->d:I
+
+    .line 15
+    invoke-interface {p0, p1}, Landroid/view/Menu;->removeItem(I)V
+
+    .line 18
+    :cond_11
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 20
+    return-object p0
+.end method
+
+.method public static synthetic t6(Lw51/s0;)Z
+    .registers 1
+
+    .line 1
+    invoke-static {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->l7(Lw51/s0;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method private static final t7(Lw51/s0;)Z
+    .registers 1
+
+    .line 1
+    invoke-virtual {p0}, Lw51/s0;->f()Z
+
+    .line 4
+    move-result p0
+
+    .line 5
+    return p0
+.end method
+
+.method public static synthetic u6(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;Z)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-static {p0, p1}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->s7(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;Z)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private static final u7(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;Z)Lkotlin/Unit;
+    .registers 3
+
+    .line 1
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->J6()Ljava/lang/String;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
+
+    .line 8
+    move-result v0
+
+    .line 9
+    if-lez v0, :cond_d
+
+    .line 11
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 13
+    return-object p0
+
+    .line 14
+    :cond_d
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->G6()Lo51/a;
+
+    .line 17
+    move-result-object p0
+
+    .line 18
+    iget-object p0, p0, Lo51/a;->b:Lcom/google/android/material/bottomnavigation/BottomNavigationView;
+
+    .line 20
+    if-eqz p1, :cond_1b
+
+    .line 22
+    sget p1, Ll51/a;->a:I
+
+    .line 24
+    invoke-virtual {p0, p1}, Lcom/google/android/material/navigation/NavigationBarView;->d(I)Leg/a;
+
+    .line 27
+    goto :goto_20
+
+    .line 28
+    :cond_1b
+    sget p1, Ll51/a;->a:I
+
+    .line 30
+    invoke-virtual {p0, p1}, Lcom/google/android/material/navigation/NavigationBarView;->g(I)V
+
+    .line 33
+    :goto_20
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 35
+    return-object p0
+.end method
+
+.method public static final synthetic v6(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;)Ljava/lang/String;
+    .registers 1
+
+    .line 1
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->J6()Ljava/lang/String;
+
+    .line 4
+    move-result-object p0
+
+    .line 5
+    return-object p0
+.end method
+
+.method private static final v7(Lw51/s0;)Z
+    .registers 1
+
+    .line 1
+    invoke-virtual {p0}, Lw51/s0;->g()Z
+
+    .line 4
+    move-result p0
+
+    .line 5
+    return p0
+.end method
+
+.method public static final synthetic w6(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;)Lw51/q0;
+    .registers 1
+
+    .line 1
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->Z6()Lw51/q0;
+
+    .line 4
+    move-result-object p0
+
+    .line 5
+    return-object p0
+.end method
+
+.method private static final w7(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;Z)Lkotlin/Unit;
+    .registers 3
+
+    .line 1
+    sget v0, Ll51/a;->b:I
+
+    const/4 p1, 0x1
+
+    .line 3
+    invoke-direct {p0, v0, p1}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->W7(IZ)V
+
+    .line 6
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 8
+    return-object p0
+.end method
+
+.method public static final synthetic x6(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;Luu1/l;)V
+    .registers 2
+
+    .line 1
+    invoke-direct {p0, p1}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->d7(Luu1/l;)V
+
+    .line 4
+    return-void
+.end method
+
+.method private final x7(Lt51/m0;)V
+    .registers 4
+
+    .line 1
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->G6()Lo51/a;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    iget-object v0, v0, Lo51/a;->b:Lcom/google/android/material/bottomnavigation/BottomNavigationView;
+
+    .line 7
+    sget v1, Ll51/a;->b:I
+
+    .line 9
+    invoke-virtual {v0, v1}, Lcom/google/android/material/navigation/NavigationBarView;->setSelectedItemId(I)V
+
+    .line 12
+    const-string v0, "data"
+
+    .line 14
+    invoke-virtual {p1}, Lt51/m0;->a()Ljava/lang/String;
+
+    .line 17
+    move-result-object p1
+
+    .line 18
+    invoke-static {v0, p1}, Lfw/y;->a(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
+
+    .line 21
+    move-result-object p1
+
+    .line 22
+    filled-new-array {p1}, [Lkotlin/Pair;
+
+    .line 25
+    move-result-object p1
+
+    .line 26
+    const-string v0, "CONTRACTOR_INCOME_GOAL_RESULT_KEY"
+
+    .line 28
+    invoke-static {p0, v0, p1}, Lnu1/a;->w(Landroidx/fragment/app/Fragment;Ljava/lang/String;[Lkotlin/Pair;)V
+
+    .line 31
+    return-void
+.end method
+
+.method private final y6(Ly22/d;)V
+    .registers 3
+
+    .line 1
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getChildFragmentManager()Landroidx/fragment/app/i0;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    invoke-virtual {v0}, Landroidx/fragment/app/i0;->l0()Z
+
+    .line 8
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getChildFragmentManager()Landroidx/fragment/app/i0;
+
+    .line 11
+    move-result-object v0
+
+    .line 12
+    if-eqz p1, :cond_12
+
+    .line 14
+    invoke-interface {p1}, Lw22/a;->g()Ljava/lang/String;
+
+    .line 17
+    move-result-object p1
+
+    .line 18
+    goto :goto_13
+
+    .line 19
+    :cond_12
+    const/4 p1, 0x0
+
+    .line 20
+    :goto_13
+    invoke-virtual {v0, p1}, Landroidx/fragment/app/i0;->q0(Ljava/lang/String;)Landroidx/fragment/app/Fragment;
+
+    .line 23
+    move-result-object p1
+
+    .line 24
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getChildFragmentManager()Landroidx/fragment/app/i0;
+
+    .line 27
+    move-result-object v0
+
+    .line 28
+    invoke-virtual {v0}, Landroidx/fragment/app/i0;->s()Landroidx/fragment/app/t0;
+
+    .line 31
+    move-result-object v0
+
+    .line 32
+    if-eqz p1, :cond_24
+
+    .line 34
+    invoke-virtual {v0, p1}, Landroidx/fragment/app/t0;->s(Landroidx/fragment/app/Fragment;)Landroidx/fragment/app/t0;
+
+    .line 37
+    :cond_24
+    invoke-virtual {v0}, Landroidx/fragment/app/t0;->j()I
+
+    .line 40
+    return-void
+.end method
+
+.method private static final y7(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;)Lkotlin/Unit;
+    .registers 1
+
+    .line 1
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->z7()V
+
+    .line 4
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 6
+    return-object p0
+.end method
+
+.method private static final z6(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;)Ljava/lang/String;
+    .registers 1
+
+    .line 1
+    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->K6()Lzq2/d;
+
+    .line 4
+    move-result-object p0
+
+    .line 5
+    invoke-interface {p0}, Lzq2/d;->a()Ldr2/a;
+
+    .line 8
+    move-result-object p0
+
+    .line 9
+    invoke-interface {p0}, Ldr2/a;->p()Ljava/lang/String;
+
+    .line 12
+    move-result-object p0
+
+    .line 13
+    return-object p0
+.end method
+
+.method private final z7()V
+    .registers 4
+
+    .line 1
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->L6()Landroidx/fragment/app/Fragment;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    const/4 v1, 0x0
+
+    .line 6
+    if-eqz v0, :cond_c
+
+    .line 8
+    invoke-virtual {v0}, Landroidx/fragment/app/Fragment;->getTag()Ljava/lang/String;
+
+    .line 11
+    move-result-object v0
+
+    .line 12
+    goto :goto_d
+
+    .line 13
+    :cond_c
+    move-object v0, v1
+
+    .line 14
+    :goto_d
+    const-string v2, "SCREEN_KEY_PERMISSION_LOCATION"
+
+    .line 16
+    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 19
+    move-result v0
+
+    .line 20
+    if-nez v0, :cond_3d
+
+    .line 22
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->L6()Landroidx/fragment/app/Fragment;
+
+    .line 25
+    move-result-object v0
+
+    .line 26
+    if-eqz v0, :cond_20
+
+    .line 28
+    invoke-virtual {v0}, Landroidx/fragment/app/Fragment;->getTag()Ljava/lang/String;
+
+    .line 31
+    move-result-object v0
+
+    .line 32
+    goto :goto_21
+
+    .line 33
+    :cond_20
+    move-object v0, v1
+
+    .line 34
+    :goto_21
+    const-string v2, "SCREEN_KEY_TROUBLESHOOTING"
+
+    .line 36
+    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 39
+    move-result v0
+
+    .line 40
+    if-nez v0, :cond_3d
+
+    .line 42
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->L6()Landroidx/fragment/app/Fragment;
+
+    .line 45
+    move-result-object v0
+
+    .line 46
+    if-eqz v0, :cond_33
+
+    .line 48
+    invoke-virtual {v0}, Landroidx/fragment/app/Fragment;->getTag()Ljava/lang/String;
+
+    .line 51
+    move-result-object v1
+
+    .line 52
+    :cond_33
+    const-string v0, "SCREEN_KEY_FEED"
+
+    .line 54
+    invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 57
+    move-result v0
+
+    .line 58
+    if-eqz v0, :cond_3c
+
+    .line 60
+    goto :goto_3d
+
+    .line 61
+    :cond_3c
+    return-void
+
+    .line 62
+    :cond_3d
+    :goto_3d
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->Z6()Lw51/q0;
+
+    .line 65
+    move-result-object v0
+
+    .line 66
+    invoke-virtual {v0}, Lw51/q0;->n2()V
+
+    .line 69
+    return-void
+.end method
+
+
+# virtual methods
+.method public final I6()Lqx0/a;
+    .registers 2
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->c1:Lqx0/a;
+
+    .line 3
+    if-eqz v0, :cond_5
+
+    .line 5
+    return-object v0
+
+    .line 6
+    :cond_5
+    const/4 v0, 0x0
+
+    .line 7
+    return-object v0
+.end method
+
+.method public final K6()Lzq2/d;
+    .registers 2
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->g1:Lzq2/d;
+
+    .line 3
+    if-eqz v0, :cond_5
+
+    .line 5
+    return-object v0
+
+    .line 6
+    :cond_5
+    const/4 v0, 0x0
+
+    .line 7
+    return-object v0
+.end method
+
+.method public M5()I
+    .registers 2
+
+    .line 1
+    iget v0, p0, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->S0:I
+
+    .line 3
+    return v0
+.end method
+
+.method public final O6()Lew/a;
+    .registers 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lew/a<",
+            "Lef1/d;",
+            ">;"
+        }
+    .end annotation
+
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->W0:Lew/a;
+
+    .line 3
+    if-eqz v0, :cond_5
+
+    .line 5
+    return-object v0
+
+    .line 6
+    :cond_5
+    const/4 v0, 0x0
+
+    .line 7
+    return-object v0
+.end method
+
+.method public final P6()Lew/a;
+    .registers 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lew/a<",
+            "Lz12/b;",
+            ">;"
+        }
+    .end annotation
+
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->V0:Lew/a;
+
+    .line 3
+    if-eqz v0, :cond_5
+
+    .line 5
+    return-object v0
+
+    .line 6
+    :cond_5
+    const/4 v0, 0x0
+
+    .line 7
+    return-object v0
+.end method
+
+.method public final Q6()Lcy0/a;
+    .registers 2
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->Y0:Lcy0/a;
+
+    .line 3
+    if-eqz v0, :cond_5
+
+    .line 5
+    return-object v0
+
+    .line 6
+    :cond_5
+    const/4 v0, 0x0
+
+    .line 7
+    return-object v0
+.end method
+
+.method public final S6()Lw51/b;
+    .registers 2
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->a1:Lw51/b;
+
+    .line 3
+    if-eqz v0, :cond_5
+
+    .line 5
+    return-object v0
+
+    .line 6
+    :cond_5
+    const/4 v0, 0x0
+
+    .line 7
+    return-object v0
+.end method
+
+.method public final T6()Lkp3/i;
+    .registers 2
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->Z0:Lkp3/i;
+
+    .line 3
+    if-eqz v0, :cond_5
+
+    .line 5
+    return-object v0
+
+    .line 6
+    :cond_5
+    const/4 v0, 0x0
+
+    .line 7
+    return-object v0
+.end method
+
+.method public final U6()Lfp0/a;
+    .registers 2
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->X0:Lfp0/a;
+
+    .line 3
+    if-eqz v0, :cond_5
+
+    .line 5
+    return-object v0
+
+    .line 6
+    :cond_5
+    const/4 v0, 0x0
+
+    .line 7
+    return-object v0
+.end method
+
+.method public final W6()Lyx0/a;
+    .registers 2
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->b1:Lyx0/a;
+
+    .line 3
+    if-eqz v0, :cond_5
+
+    .line 5
+    return-object v0
+
+    .line 6
+    :cond_5
+    const/4 v0, 0x0
+
+    .line 7
+    return-object v0
+.end method
+
+.method public final X6()Luv0/a;
+    .registers 2
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->d1:Luv0/a;
+
+    .line 3
+    if-eqz v0, :cond_5
+
+    .line 5
+    return-object v0
+
+    .line 6
+    :cond_5
+    const/4 v0, 0x0
+
+    .line 7
+    return-object v0
+.end method
+
+.method public final Y6()Lwk0/d;
+    .registers 2
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->e1:Lwk0/d;
+
+    .line 3
+    if-eqz v0, :cond_5
+
+    .line 5
+    return-object v0
+
+    .line 6
+    :cond_5
+    const/4 v0, 0x0
+
+    .line 7
+    return-object v0
+.end method
+
+.method public final a7()Lew/a;
+    .registers 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lew/a<",
+            "Lw51/q0;",
+            ">;"
+        }
+    .end annotation
+
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->U0:Lew/a;
+
+    .line 3
+    if-eqz v0, :cond_5
+
+    .line 5
+    return-object v0
+
+    .line 6
+    :cond_5
+    const/4 v0, 0x0
+
+    .line 7
+    return-object v0
+.end method
+
+.method public final c7()La04/c;
+    .registers 2
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->f1:La04/c;
+
+    .line 3
+    if-eqz v0, :cond_5
+
+    .line 5
+    return-object v0
+
+    .line 6
+    :cond_5
+    const/4 v0, 0x0
+
+    .line 7
+    return-object v0
+.end method
+
+.method public onAttach(Landroid/content/Context;)V
+    .registers 3
+    .param p1  # Landroid/content/Context;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->H6()Lp51/d;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    invoke-virtual {v0}, Lp51/d;->q1()Lp51/c;
+
+    .line 8
+    move-result-object v0
+
+    .line 9
+    invoke-interface {v0, p0}, Lp51/c;->d(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;)V
+
+    .line 12
+    invoke-super {p0, p1}, Lcu1/h;->onAttach(Landroid/content/Context;)V
+
+    .line 15
+    return-void
+.end method
+
+.method public onBackPressed()Z
+    .registers 4
+
+    .line 1
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->L6()Landroidx/fragment/app/Fragment;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    const/4 v1, 0x0
+
+    .line 6
+    if-eqz v0, :cond_c
+
+    .line 8
+    invoke-virtual {v0}, Landroidx/fragment/app/Fragment;->getTag()Ljava/lang/String;
+
+    .line 11
+    move-result-object v0
+
+    .line 12
+    goto :goto_d
+
+    .line 13
+    :cond_c
+    move-object v0, v1
+
+    .line 14
+    :goto_d
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->b7()Ly22/d;
+
+    .line 17
+    move-result-object v2
+
+    .line 18
+    invoke-interface {v2}, Lw22/a;->g()Ljava/lang/String;
+
+    .line 21
+    move-result-object v2
+
+    .line 22
+    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 25
+    move-result v0
+
+    .line 26
+    if-eqz v0, :cond_2c
+
+    .line 28
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->L6()Landroidx/fragment/app/Fragment;
+
+    .line 31
+    move-result-object v0
+
+    .line 32
+    instance-of v2, v0, Lcu1/h;
+
+    .line 34
+    if-eqz v2, :cond_26
+
+    .line 36
+    move-object v1, v0
+
+    .line 37
+    check-cast v1, Lcu1/h;
+
+    .line 39
+    :cond_26
+    if-eqz v1, :cond_33
+
+    .line 41
+    invoke-virtual {v1}, Lcu1/h;->onBackPressed()Z
+
+    .line 44
+    goto :goto_33
+
+    .line 45
+    :cond_2c
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->Z6()Lw51/q0;
+
+    .line 48
+    move-result-object v0
+
+    .line 49
+    invoke-virtual {v0}, Lw51/q0;->onBackPressed()V
+
+    .line 52
+    :cond_33
+    :goto_33
+    const/4 v0, 0x1
+
+    .line 53
+    return v0
+.end method
+
+.method public onPause()V
+    .registers 3
+
+    .line 1
+    invoke-super {p0}, Landroidx/fragment/app/Fragment;->onPause()V
+
+    .line 4
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->requireContext()Landroid/content/Context;
+
+    .line 7
+    move-result-object v0
+
+    .line 8
+    iget-object v1, p0, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->n1:Lsinet/startup/inDriver/geo/feature/location/state/LocationStateBroadcastReceiver;
+
+    .line 10
+    invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
+
+    .line 13
+    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->Y6()Lwk0/d;
+
+    .line 16
+    move-result-object v0
+
+    .line 17
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->requireContext()Landroid/content/Context;
+
+    .line 20
+    move-result-object v1
+
+    .line 21
+    invoke-interface {v0, v1}, Lwk0/d;->b(Landroid/content/Context;)V
+
+    .line 24
+    return-void
+.end method
+
+.method public onResume()V
+    .registers 5
+
+    .line 1
+    invoke-super {p0}, Lcu1/h;->onResume()V
+
+    .line 4
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->z7()V
+
+    .line 7
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->requireContext()Landroid/content/Context;
+
+    .line 10
+    move-result-object v0
+
+    .line 11
+    iget-object v1, p0, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->n1:Lsinet/startup/inDriver/geo/feature/location/state/LocationStateBroadcastReceiver;
+
+    .line 13
+    sget-object v2, Lsinet/startup/inDriver/geo/feature/location/state/LocationStateBroadcastReceiver;->Companion:Lsinet/startup/inDriver/geo/feature/location/state/LocationStateBroadcastReceiver$a;
+
+    .line 15
+    invoke-virtual {v2}, Lsinet/startup/inDriver/geo/feature/location/state/LocationStateBroadcastReceiver$a;->a()Landroid/content/IntentFilter;
+
+    .line 18
+    move-result-object v2
+
+    .line 19
+    const/4 v3, 0x4
+
+    .line 20
+    invoke-static {v0, v1, v2, v3}, Landroidx/core/content/a;->registerReceiver(Landroid/content/Context;Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;I)Landroid/content/Intent;
+
+    .line 23
+    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->Y6()Lwk0/d;
+
+    .line 26
+    move-result-object v0
+
+    .line 27
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->requireContext()Landroid/content/Context;
+
+    .line 30
+    move-result-object v1
+
+    .line 31
+    new-instance v2, Lw51/v;
+
+    .line 33
+    invoke-direct {v2, p0}, Lw51/v;-><init>(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;)V
+
+    .line 36
+    invoke-interface {v0, v1, v2}, Lwk0/d;->a(Landroid/content/Context;Lkotlin/jvm/functions/Function0;)V
+
+    .line 39
+    return-void
+.end method
+
+.method public onStart()V
+    .registers 2
+
+    .line 1
+    invoke-super {p0}, Lcu1/h;->onStart()V
+
+    .line 4
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->Z6()Lw51/q0;
+
+    .line 7
+    move-result-object v0
+
+    .line 8
+    invoke-virtual {v0}, Lw51/q0;->l2()V
+
+    .line 11
+    return-void
+.end method
+
+.method public onStop()V
+    .registers 2
+
+    .line 1
+    invoke-super {p0}, Landroidx/fragment/app/Fragment;->onStop()V
+
+    .line 4
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->Z6()Lw51/q0;
+
+    .line 7
+    move-result-object v0
+
+    .line 8
+    invoke-virtual {v0}, Lw51/q0;->m2()V
+
+    .line 11
+    return-void
+.end method
+
+.method public onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
+    .registers 6
+    .param p1  # Landroid/view/View;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+    .param p2  # Landroid/os/Bundle;
+        .annotation build Lorg/jetbrains/annotations/Nullable;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-super {p0, p1, p2}, Lcu1/h;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
+
+    .line 4
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->I7()V
+
+    .line 7
+    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->P6()Lew/a;
+
+    .line 10
+    move-result-object p1
+
+    .line 11
+    invoke-interface {p1}, Lew/a;->get()Ljava/lang/Object;
+
+    .line 14
+    move-result-object p1
+
+    .line 15
+    check-cast p1, Lz12/b;
+
+    .line 17
+    invoke-static {p1}, Llc1/c;->a(Lz12/b;)Z
+
+    .line 20
+    move-result p1
+
+    .line 21
+    if-nez p1, :cond_36
+
+    .line 23
+    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->P6()Lew/a;
+
+    .line 26
+    move-result-object p1
+
+    .line 27
+    invoke-interface {p1}, Lew/a;->get()Ljava/lang/Object;
+
+    .line 30
+    move-result-object p1
+
+    .line 31
+    check-cast p1, Lz12/b;
+
+    .line 33
+    invoke-static {p1}, Lzl0/b;->a(Lz12/b;)Z
+
+    .line 36
+    move-result p1
+
+    .line 37
+    if-nez p1, :cond_36
+
+    .line 39
+    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->P6()Lew/a;
+
+    .line 42
+    move-result-object p1
+
+    .line 43
+    invoke-interface {p1}, Lew/a;->get()Ljava/lang/Object;
+
+    .line 46
+    move-result-object p1
+
+    .line 47
+    check-cast p1, Lz12/b;
+
+    .line 49
+    invoke-static {p1}, Lnh0/b;->n(Lz12/b;)Z
+
+    .line 52
+    move-result p1
+
+    .line 53
+    if-eqz p1, :cond_39
+
+    .line 55
+    :cond_36
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->B7()V
+
+    .line 58
+    :cond_39
+    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->P6()Lew/a;
+
+    .line 61
+    move-result-object p1
+
+    .line 62
+    invoke-interface {p1}, Lew/a;->get()Ljava/lang/Object;
+
+    .line 65
+    move-result-object p1
+
+    .line 66
+    check-cast p1, Lz12/b;
+
+    .line 68
+    invoke-static {p1}, Lnh0/b;->n(Lz12/b;)Z
+
+    .line 71
+    move-result p1
+
+    .line 72
+    if-eqz p1, :cond_4f
+
+    .line 74
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->A7()V
+
+    .line 77
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->C7()V
+
+    .line 80
+    :cond_4f
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->k7()V
+
+    .line 83
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->Z6()Lw51/q0;
+
+    .line 86
+    move-result-object p1
+
+    .line 87
+    invoke-virtual {p1}, Luu1/i;->v1()Lix/i;
+
+    .line 90
+    move-result-object p1
+
+    .line 91
+    new-instance p2, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$r;
+
+    .line 93
+    invoke-direct {p2, p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$r;-><init>(Ljava/lang/Object;)V
+
+    .line 96
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getViewLifecycleOwner()Landroidx/lifecycle/LifecycleOwner;
+
+    .line 99
+    move-result-object v0
+
+    .line 100
+    invoke-interface {v0}, Landroidx/lifecycle/LifecycleOwner;->getLifecycle()Landroidx/lifecycle/Lifecycle;
+
+    .line 103
+    move-result-object v0
+
+    .line 104
+    const/4 v1, 0x2
+
+    .line 105
+    const/4 v2, 0x0
+
+    .line 106
+    invoke-static {p1, v0, v2, v1, v2}, Landroidx/lifecycle/FlowExtKt;->flowWithLifecycle$default(Lix/i;Landroidx/lifecycle/Lifecycle;Landroidx/lifecycle/Lifecycle$State;ILjava/lang/Object;)Lix/i;
+
+    .line 109
+    move-result-object p1
+
+    .line 110
+    new-instance v0, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$q;
+
+    .line 112
+    invoke-direct {v0, p2, v2}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$q;-><init>(Lkotlin/jvm/functions/Function1;Lkw/c;)V
+
+    .line 115
+    invoke-static {p1, v0}, Lix/k;->b0(Lix/i;Lkotlin/jvm/functions/Function2;)Lix/i;
+
+    .line 118
+    move-result-object p1
+
+    .line 119
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getViewLifecycleOwner()Landroidx/lifecycle/LifecycleOwner;
+
+    .line 122
+    move-result-object p2
+
+    .line 123
+    invoke-static {p2}, Landroidx/lifecycle/LifecycleOwnerKt;->getLifecycleScope(Landroidx/lifecycle/LifecycleOwner;)Landroidx/lifecycle/LifecycleCoroutineScope;
+
+    .line 126
+    move-result-object p2
+
+    .line 127
+    invoke-static {p1, p2}, Lix/k;->W(Lix/i;Lfx/p0;)Lfx/c2;
+
+    .line 130
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->L7()V
+
+    .line 133
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;->Z6()Lw51/q0;
+
+    .line 136
+    move-result-object p1
+
+    .line 137
+    invoke-virtual {p1}, Lw51/q0;->p2()V
+
+    .line 140
+    return-void
+.end method
