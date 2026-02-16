@@ -607,7 +607,7 @@
 
     invoke-interface {v0, v1}, Landroid/view/MenuItem;->setTitle(Ljava/lang/CharSequence;)Landroid/view/MenuItem;
 
-    sget v1, Lx62/h;->r2:I
+    const v1, 0x7f080a0c
 
     invoke-interface {v0, v1}, Landroid/view/MenuItem;->setIcon(I)Landroid/view/MenuItem;
 
@@ -1910,17 +1910,13 @@
     if-ne p1, v0, :cond_69
 
     .line 69
-    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->requireActivity()Landroidx/fragment/app/FragmentActivity;
+    new-instance v2, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$ConfigProvider;
 
-    move-result-object v3
+    invoke-direct {v2, p0}, Lsinet/startup/inDriver/city/driver/page/ui/PageFragment$ConfigProvider;-><init>(Lsinet/startup/inDriver/city/driver/page/ui/PageFragment;)V
 
-    invoke-static {v3}, Lsinet/startup/inDriver/ui/FloatingMenu;->openSettings(Landroid/app/Activity;)V
+    goto :goto_97
 
-    const/4 v1, 0x0
 
-    return v1
-
-    :goto_97
 
 
     .line 106
