@@ -519,7 +519,7 @@
 .end method
 
 .method public constructor <init>(Landroid/view/View;ILnz0/c;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Luw/n;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lnz0/a;)V
-    .registers 21
+    .registers 30
     .param p1  # Landroid/view/View;
         .annotation build Lorg/jetbrains/annotations/NotNull;
         .end annotation
@@ -807,65 +807,64 @@
 
     .line 141
     invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
-    move-result-object v2
+    move-result-object v11
     
-    new-instance v3, Landroid/widget/LinearLayout;
-    invoke-direct {v3, v2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
-    const/4 v4, 0x0
-    invoke-virtual {v3, v4}, Landroid/widget/LinearLayout;->setOrientation(I)V
-    new-instance v5, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;
-    const/4 v6, -0x1
-    const/4 v7, -0x2
-    invoke-direct {v5, v6, v7}, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;-><init>(II)V
-    invoke-virtual {v3, v5}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    new-instance v12, Landroid/widget/LinearLayout;
+    invoke-direct {v12, v11}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
+    const/4 v13, 0x0
+    invoke-virtual {v12, v13}, Landroid/widget/LinearLayout;->setOrientation(I)V
+    new-instance v14, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;
+    const/4 v15, -0x1
+    const/4 v13, -0x2
+    invoke-direct {v14, v15, v13}, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;-><init>(II)V
+    invoke-virtual {v12, v14}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    new-instance v6, Landroid/widget/LinearLayout$LayoutParams;
-    const/high16 v8, 0x3f800000  # 1.0f
-    invoke-direct {v6, v4, v7, v8}, Landroid/widget/LinearLayout$LayoutParams;-><init>(IIF)V
-    const/4 v7, 0x5
-    invoke-virtual {v6, v7, v7, v7, v7}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
+    new-instance v14, Landroid/widget/LinearLayout$LayoutParams;
+    const/high16 v15, 0x3f800000  # 1.0f
+    const/4 v13, 0x0
+    const/4 v4, -0x2
+    invoke-direct {v14, v13, v4, v15}, Landroid/widget/LinearLayout$LayoutParams;-><init>(IIF)V
+    const/4 v13, 0x5
+    invoke-virtual {v14, v13, v13, v13, v13}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
-    new-instance v9, Lf01/b0$QuickBidListener;
-    invoke-direct {v9, p0}, Lf01/b0$QuickBidListener;-><init>(Lf01/b0;)V
+    new-instance v15, Lf01/b0$QuickBidListener;
+    invoke-direct {v15, p0}, Lf01/b0$QuickBidListener;-><init>(Lf01/b0;)V
 
-    new-instance v7, Landroid/widget/Button;
-    invoke-direct {v7, v2}, Landroid/widget/Button;-><init>(Landroid/content/Context;)V
-    iput-object v7, p0, Lf01/b0;->quickBidBtn1:Landroid/widget/Button;
-    invoke-virtual {v7, v6}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-    const/4 v8, -0x1
-    invoke-virtual {v7, v8}, Landroid/widget/TextView;->setTextColor(I)V
-    const v8, -0xff0100
-    invoke-virtual {v7, v8}, Landroid/view/View;->setBackgroundColor(I)V
-    invoke-virtual {v7, v9}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-    invoke-virtual {v3, v7}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+    new-instance v4, Landroid/widget/Button;
+    invoke-direct {v4, v11}, Landroid/widget/Button;-><init>(Landroid/content/Context;)V
+    iput-object v4, p0, Lf01/b0;->quickBidBtn1:Landroid/widget/Button;
+    invoke-virtual {v4, v14}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    const/4 v13, -0x1
+    invoke-virtual {v4, v13}, Landroid/widget/TextView;->setTextColor(I)V
+    const v13, -0xff0100
+    invoke-virtual {v4, v13}, Landroid/view/View;->setBackgroundColor(I)V
+    invoke-virtual {v4, v15}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v12, v4}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    new-instance v7, Landroid/widget/Button;
-    invoke-direct {v7, v2}, Landroid/widget/Button;-><init>(Landroid/content/Context;)V
-    iput-object v7, p0, Lf01/b0;->quickBidBtn2:Landroid/widget/Button;
-    invoke-virtual {v7, v6}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-    const/4 v8, -0x1
-    invoke-virtual {v7, v8}, Landroid/widget/TextView;->setTextColor(I)V
-    const v8, -0xff0100
-    invoke-virtual {v7, v8}, Landroid/view/View;->setBackgroundColor(I)V
-    invoke-virtual {v7, v9}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-    invoke-virtual {v3, v7}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+    new-instance v4, Landroid/widget/Button;
+    invoke-direct {v4, v11}, Landroid/widget/Button;-><init>(Landroid/content/Context;)V
+    iput-object v4, p0, Lf01/b0;->quickBidBtn2:Landroid/widget/Button;
+    invoke-virtual {v4, v14}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    const/4 v13, -0x1
+    invoke-virtual {v4, v13}, Landroid/widget/TextView;->setTextColor(I)V
+    const v13, -0xff0100
+    invoke-virtual {v4, v13}, Landroid/view/View;->setBackgroundColor(I)V
+    invoke-virtual {v4, v15}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v12, v4}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    new-instance v7, Landroid/widget/Button;
-    invoke-direct {v7, v2}, Landroid/widget/Button;-><init>(Landroid/content/Context;)V
-    iput-object v7, p0, Lf01/b0;->quickBidBtn3:Landroid/widget/Button;
-    invoke-virtual {v7, v6}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-    const/4 v8, -0x1
-    invoke-virtual {v7, v8}, Landroid/widget/TextView;->setTextColor(I)V
-    const v8, -0xff0100
-    invoke-virtual {v7, v8}, Landroid/view/View;->setBackgroundColor(I)V
-    invoke-virtual {v7, v9}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-    invoke-virtual {v3, v7}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+    new-instance v4, Landroid/widget/Button;
+    invoke-direct {v4, v11}, Landroid/widget/Button;-><init>(Landroid/content/Context;)V
+    iput-object v4, p0, Lf01/b0;->quickBidBtn3:Landroid/widget/Button;
+    invoke-virtual {v4, v14}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    const/4 v13, -0x1
+    invoke-virtual {v4, v13}, Landroid/widget/TextView;->setTextColor(I)V
+    const v13, -0xff0100
+    invoke-virtual {v4, v13}, Landroid/view/View;->setBackgroundColor(I)V
+    invoke-virtual {v4, v15}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v12, v4}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     iget-object v0, p0, Lf01/b0;->V0:Landroidx/appcompat/widget/LinearLayoutCompat;
-    invoke-virtual {v0, v3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
-
-    return-void
-.end method
+    invoke-virtual {v0, v12}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     .line 145
     sget v9, Lx62/f;->m:I
@@ -2337,7 +2336,7 @@
 .end method
 
 .method private final g0(Lpz0/c;Lpz0/e;)V
-    .registers 8
+    .registers 9
 
     .line 1
     instance-of v0, p1, Lpz0/c$b;
