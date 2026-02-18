@@ -4828,6 +4828,13 @@
     return-void
 
     :cond_5
+    sget-boolean v0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->isLightningMode:Z
+    
+    if-eqz v0, :cond_bot_skip_i
+    
+    return-void
+    
+    :cond_bot_skip_i
     iget-object v0, p0, Lf01/b0;->l1:Lpz0/e;
 
     .line 3
@@ -4986,6 +4993,13 @@
 
     .line 3
     :cond_7
+    sget-boolean v1, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->isLightningMode:Z
+    
+    if-eqz v1, :cond_bot_skip_x0
+    
+    return-void
+    
+    :cond_bot_skip_x0
     iget-object v1, v0, Lf01/b0;->l1:Lpz0/e;
 
     .line 5
