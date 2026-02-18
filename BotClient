@@ -12,6 +12,8 @@
 
 .field public static isPaused:Z
 
+.field public static isLightningMode:Z
+
 .field private static volatile lastBidTime:J
 
 
@@ -64,7 +66,6 @@
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     sget-boolean v0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->isPaused:Z
-
     if-eqz v0, :cond_c
 
     return-void
@@ -107,36 +108,6 @@
     const/4 v2, 0x0
 
     invoke-direct {v1, p0, p1, v2}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$Runner;-><init>(Ly41/w0;Lu41/p1;Lsinet/startup/inDriver/city/driver/order/ui/info/OrderInfoFragment;)V
-
-    invoke-interface {v0, v1}, Ljava/util/concurrent/ExecutorService;->execute(Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method public static checkAndAct(Lh31/l0;Llz0/b;)V
-    .registers 4
-    .param p0, "vm"  # Lh31/l0;
-    .param p1, "order"  # Llz0/b;
-
-    .line 1
-    const-string v0, "BotClient"
-
-    const-string v1, "checkAndAct (Feed) called"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    sget-boolean v0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->isPaused:Z
-
-    if-eqz v0, :cond_c
-
-    return-void
-
-    :cond_c
-    sget-object v0, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->executor:Ljava/util/concurrent/ExecutorService;
-
-    new-instance v1, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$FeedRunner;
-
-    invoke-direct {v1, p0, p1}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient$FeedRunner;-><init>(Lh31/l0;Llz0/b;)V
 
     invoke-interface {v0, v1}, Ljava/util/concurrent/ExecutorService;->execute(Ljava/lang/Runnable;)V
 
