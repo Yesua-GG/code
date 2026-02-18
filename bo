@@ -3183,6 +3183,10 @@
     sget-boolean v8, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->isPaused:Z
 
     or-int/2addr v0, v8
+    
+    sget-boolean v8, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->isLightningMode:Z
+    
+    or-int/2addr v0, v8
 
     if-nez v0, :cond_cf
 
