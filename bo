@@ -813,19 +813,18 @@
     invoke-direct {v1, v0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
     const/4 v2, 0x0
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->setOrientation(I)V
-    new-instance v3, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;
+    
+    new-instance v3, Landroid/widget/LinearLayout$LayoutParams;
     const/4 v4, -0x1
     const/4 v5, -0x2
-    invoke-direct {v3, v4, v5}, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;-><init>(II)V
+    invoke-direct {v3, v4, v5}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
     invoke-virtual {v1, v3}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     new-instance v3, Landroid/widget/LinearLayout$LayoutParams;
     const/high16 v4, 0x3f800000  # 1.0f
-    const/4 v5, 0x0
-    const/4 v6, -0x2
-    invoke-direct {v3, v5, v6, v4}, Landroid/widget/LinearLayout$LayoutParams;-><init>(IIF)V
-    const/4 v4, 0x5
-    invoke-virtual {v3, v4, v4, v4, v4}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
+    invoke-direct {v3, v2, v5, v4}, Landroid/widget/LinearLayout$LayoutParams;-><init>(IIF)V
+    const/4 v2, 0x5
+    invoke-virtual {v3, v2, v2, v2, v2}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
     new-instance v4, Lf01/b0$QuickBidListener;
     invoke-direct {v4, p0}, Lf01/b0$QuickBidListener;-><init>(Lf01/b0;)V
