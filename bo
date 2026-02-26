@@ -1045,42 +1045,25 @@
     .line 291
     invoke-static/range {p1 .. p6}, Lj72/o;->I(Landroid/view/View;JLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
 
-    iget-object v1, p0, Landroidx/recyclerview/widget/RecyclerView$f0;->itemView:Landroid/view/View;
-    invoke-virtual {v1}, Landroid/view/View;->getContext()Landroid/content/Context;
-    move-result-object v2
-    invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-    move-result-object v3
-    invoke-virtual {v2}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
-    move-result-object v4
-
-    const-string v5, "extra_buttons_container"
-    const-string v6, "id"
-    invoke-virtual {v3, v5, v6, v4}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
-    move-result v5
+    const v5, 0x7f0a1977
     invoke-virtual {v1, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
     move-result-object v5
     check-cast v5, Landroid/widget/LinearLayout;
     iput-object v5, p0, Lf01/b0;->extra_buttons_container:Landroid/widget/LinearLayout;
 
-    const-string v5, "btn_offer_1"
-    invoke-virtual {v3, v5, v6, v4}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
-    move-result v5
+    const v5, 0x7f0a1974
     invoke-virtual {v1, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
     move-result-object v5
     check-cast v5, Landroid/widget/Button;
     iput-object v5, p0, Lf01/b0;->btn_offer_1:Landroid/widget/Button;
 
-    const-string v5, "btn_offer_2"
-    invoke-virtual {v3, v5, v6, v4}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
-    move-result v5
+    const v5, 0x7f0a1975
     invoke-virtual {v1, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
     move-result-object v5
     check-cast v5, Landroid/widget/Button;
     iput-object v5, p0, Lf01/b0;->btn_offer_2:Landroid/widget/Button;
 
-    const-string v5, "btn_offer_3"
-    invoke-virtual {v3, v5, v6, v4}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
-    move-result v5
+    const v5, 0x7f0a1976
     invoke-virtual {v1, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
     move-result-object v5
     check-cast v5, Landroid/widget/Button;
