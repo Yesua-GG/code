@@ -4356,6 +4356,7 @@
     move v6, p2
     move-object v7, v8
     invoke-direct/range {v2 .. v7}, Lf01/QuickOfferListener;-><init>(DLjava/lang/String;ILuw/n;)V
+    iget-object v4, p0, Lf01/b0;->btn_offer_1:Landroid/widget/Button;
     invoke-virtual {v4, v2}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
     
     double-to-int v4, v0
