@@ -236,6 +236,14 @@
 
 
 # instance fields
+.field private final btn_offer_1:Landroid/widget/Button;
+
+.field private final btn_offer_2:Landroid/widget/Button;
+
+.field private final btn_offer_3:Landroid/widget/Button;
+
+.field private final extra_buttons_container:Landroid/widget/LinearLayout;
+
 .field private final N0:Lwz0/c;
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
