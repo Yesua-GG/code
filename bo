@@ -4351,7 +4351,11 @@
     
     new-instance v2, Lf01/QuickOfferListener;
     iget-object v8, p0, Lf01/b0;->e0:Luw/n;
-    invoke-direct {v2, v0, v1, p1, p2, v8}, Lf01/QuickOfferListener;-><init>(DLjava/lang/String;ILuw/n;)V
+    move-wide v3, v0
+    move-object v5, p1
+    move v6, p2
+    move-object v7, v8
+    invoke-direct/range {v2 .. v7}, Lf01/QuickOfferListener;-><init>(DLjava/lang/String;ILuw/n;)V
     invoke-virtual {v4, v2}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
     
     double-to-int v4, v0
@@ -4366,7 +4370,11 @@
     move-result-wide v4
     new-instance v2, Lf01/QuickOfferListener;
     iget-object v8, p0, Lf01/b0;->e0:Luw/n;
-    invoke-direct {v2, v4, v5, p1, p2, v8}, Lf01/QuickOfferListener;-><init>(DLjava/lang/String;ILuw/n;)V
+    move-wide v3, v4
+    move-object v5, p1
+    move v6, p2
+    move-object v7, v8
+    invoke-direct/range {v2 .. v7}, Lf01/QuickOfferListener;-><init>(DLjava/lang/String;ILuw/n;)V
     iget-object v6, p0, Lf01/b0;->btn_offer_2:Landroid/widget/Button;
     invoke-virtual {v6, v2}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
     
@@ -4382,7 +4390,11 @@
     move-result-wide v4
     new-instance v2, Lf01/QuickOfferListener;
     iget-object v8, p0, Lf01/b0;->e0:Luw/n;
-    invoke-direct {v2, v4, v5, p1, p2, v8}, Lf01/QuickOfferListener;-><init>(DLjava/lang/String;ILuw/n;)V
+    move-wide v3, v4
+    move-object v5, p1
+    move v6, p2
+    move-object v7, v8
+    invoke-direct/range {v2 .. v7}, Lf01/QuickOfferListener;-><init>(DLjava/lang/String;ILuw/n;)V
     iget-object v6, p0, Lf01/b0;->btn_offer_3:Landroid/widget/Button;
     invoke-virtual {v6, v2}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
     
