@@ -4290,7 +4290,7 @@
 .end method
 
 .method private final u0(Ljava/lang/String;ILsinet/startup/inDriver/city/common/domain/entity/Price;Z)V
-    .registers 13
+    .registers 11
 
     .line 1
     iget-object v2, p0, Lf01/b0;->O0:Lsinet/startup/inDriver/core/ui/button/ProgressButton;
