@@ -1045,29 +1045,31 @@
     .line 291
     invoke-static/range {p1 .. p6}, Lj72/o;->I(Landroid/view/View;JLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
 
-    const v5, 0x7f0a1977
-    invoke-virtual {v1, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-    move-result-object v5
-    check-cast v5, Landroid/widget/LinearLayout;
-    iput-object v5, p0, Lf01/b0;->extra_buttons_container:Landroid/widget/LinearLayout;
+    iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$f0;->itemView:Landroid/view/View;
 
-    const v5, 0x7f0a1974
-    invoke-virtual {v1, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-    move-result-object v5
-    check-cast v5, Landroid/widget/Button;
-    iput-object v5, p0, Lf01/b0;->btn_offer_1:Landroid/widget/Button;
+    const v2, 0x7f0a1977
+    invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    move-result-object v2
+    check-cast v2, Landroid/widget/LinearLayout;
+    iput-object v2, p0, Lf01/b0;->extra_buttons_container:Landroid/widget/LinearLayout;
 
-    const v5, 0x7f0a1975
-    invoke-virtual {v1, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-    move-result-object v5
-    check-cast v5, Landroid/widget/Button;
-    iput-object v5, p0, Lf01/b0;->btn_offer_2:Landroid/widget/Button;
+    const v2, 0x7f0a1974
+    invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    move-result-object v2
+    check-cast v2, Landroid/widget/Button;
+    iput-object v2, p0, Lf01/b0;->btn_offer_1:Landroid/widget/Button;
 
-    const v5, 0x7f0a1976
-    invoke-virtual {v1, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-    move-result-object v5
-    check-cast v5, Landroid/widget/Button;
-    iput-object v5, p0, Lf01/b0;->btn_offer_3:Landroid/widget/Button;
+    const v2, 0x7f0a1975
+    invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    move-result-object v2
+    check-cast v2, Landroid/widget/Button;
+    iput-object v2, p0, Lf01/b0;->btn_offer_2:Landroid/widget/Button;
+
+    const v2, 0x7f0a1976
+    invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    move-result-object v2
+    check-cast v2, Landroid/widget/Button;
+    iput-object v2, p0, Lf01/b0;->btn_offer_3:Landroid/widget/Button;
 
     .line 294
     return-void
