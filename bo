@@ -2330,12 +2330,6 @@
 .method private final g0(Lpz0/c;Lpz0/e;)V
     .registers 8
 
-    iget-object v0, p0, Lf01/b0;->extra_buttons_container:Landroid/widget/LinearLayout;
-    if-eqz v0, :cond_skip_hide
-    const/16 v1, 0x8
-    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setVisibility(I)V
-    :cond_skip_hide
-
     .line 1
     instance-of v0, p1, Lpz0/c$b;
 
