@@ -2398,6 +2398,40 @@
     .line 45
     :cond_2c
     instance-of v0, p1, Lpz0/c$a;
+    if-eqz v0, :is_c_a
+
+    # Diagnostic Log: Not c$a
+    const-string v0, "Ask Gemini Bid"
+    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v5, "g0: footerViewState is NOT c$a. Type: "
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-result-object v5
+    invoke-virtual {v5}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    move-result-object v5
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v1
+    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+    goto :not_c_a
+
+    :is_c_a
+    # It IS c$a. Extract and save Price ASAP.
+    move-object v0, p1
+    check-cast v0, Lpz0/c$a;
+    invoke-virtual {v0}, Lpz0/c$a;->c()Lsinet/startup/inDriver/city/common/domain/entity/Price;
+    move-result-object v0
+    iput-object v0, p0, Lf01/b0;->lastKnownPrice:Lsinet/startup/inDriver/city/common/domain/entity/Price;
+    sput-object v0, Lf01/b0;->lastGlobalPrice:Lsinet/startup/inDriver/city/common/domain/entity/Price;
+
+    # Diagnostic Log: Saved Price
+    const-string v1, "Ask Gemini Bid"
+    const-string v5, "g0: Caught c$a. lastGlobalPrice UPDATED."
+    invoke-static {v1, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :not_c_a
+    instance-of v0, p1, Lpz0/c$a;
 
     .line 47
     if-eqz v0, :cond_6e
@@ -2465,12 +2499,7 @@
     .line 93
     invoke-virtual {p1}, Lpz0/c$a;->c()Lsinet/startup/inDriver/city/common/domain/entity/Price;
 
-    .line 96
     move-result-object v1
-
-    # Save lastKnownPrice (instance) and lastGlobalPrice (static)
-    iput-object v1, p0, Lf01/b0;->lastKnownPrice:Lsinet/startup/inDriver/city/common/domain/entity/Price;
-    sput-object v1, Lf01/b0;->lastGlobalPrice:Lsinet/startup/inDriver/city/common/domain/entity/Price;
 
     .line 97
     invoke-virtual {p1}, Lpz0/c$a;->d()Z
