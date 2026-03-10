@@ -2398,11 +2398,9 @@
     .line 45
     :cond_2c
     instance-of v0, p1, Lpz0/c$a;
-    if-eqz v0, :is_c_a
-    goto :not_c_a
+    if-nez v0, :not_c_a # If NOT c$a, skip to native logic
 
-    :is_c_a
-    # It IS c$a. Extract and save Price. Use v0 for the intermediate Price object.
+    # It IS c$a. Extract and save Price.
     move-object v0, p1
     check-cast v0, Lpz0/c$a;
     invoke-virtual {v0}, Lpz0/c$a;->c()Lsinet/startup/inDriver/city/common/domain/entity/Price;
@@ -2410,13 +2408,13 @@
     iput-object v0, p0, Lf01/b0;->lastKnownPrice:Lsinet/startup/inDriver/city/common/domain/entity/Price;
     sput-object v0, Lf01/b0;->lastGlobalPrice:Lsinet/startup/inDriver/city/common/domain/entity/Price;
 
-    # Diagnostic Log using high register v5 to avoid v1 conflict
+    # Diagnostic Log
     const-string v5, "Ask Gemini Bid"
     const-string v6, "g0: Caught c$a. Price saved."
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :not_c_a
-    # RESTORE v1 to its original boolean value (1) to satisfy verification
+    # RESTORE v1 to its original boolean value (1) for native logic
     const/4 v1, 0x1
 
     instance-of v0, p1, Lpz0/c$a;
