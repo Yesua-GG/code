@@ -2398,7 +2398,7 @@
     .line 45
     :cond_2c
     instance-of v0, p1, Lpz0/c$a;
-    if-nez v0, :not_c_a # If NOT c$a, skip to native logic
+    if-eqz v0, :not_c_a # If v0 == 0 (NOT c$a), skip to native logic
 
     # It IS c$a. Extract and save Price.
     move-object v0, p1
