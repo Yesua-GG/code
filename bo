@@ -2829,7 +2829,7 @@
     invoke-virtual {p1}, Lpz0/e;->k()Lpz0/c;
     move-result-object v7
     instance-of v5, v7, Lpz0/c$a;
-    if-eqz v5, :not_c_a
+    if-eqz v5, :not_c_a # If not c$a, skip saving price
 
     # It IS c$a. Extract and save Price!
     check-cast v7, Lpz0/c$a;
@@ -2837,28 +2837,11 @@
     move-result-object v7
     iput-object v7, p0, Lf01/b0;->lastKnownPrice:Lsinet/startup/inDriver/city/common/domain/entity/Price;
     sput-object v7, Lf01/b0;->lastGlobalPrice:Lsinet/startup/inDriver/city/common/domain/entity/Price;
-    const/4 v5, 0x0 # Visible
-    goto :apply_vis
 
     :not_c_a
-    # It is NOT c$a. Hide buttons and skip text update
-    const/16 v5, 0x8 # Gone
-
-    :apply_vis
-    # Set visibility
-    iget-object v7, p0, Lf01/b0;->btnOffer1:Landroid/widget/Button;
-    if-eqz v7, :skip_parse
-    invoke-virtual {v7, v5}, Landroid/view/View;->setVisibility(I)V
-    iget-object v7, p0, Lf01/b0;->btnOffer2:Landroid/widget/Button;
-    invoke-virtual {v7, v5}, Landroid/view/View;->setVisibility(I)V
-    iget-object v7, p0, Lf01/b0;->btnOffer3:Landroid/widget/Button;
-    invoke-virtual {v7, v5}, Landroid/view/View;->setVisibility(I)V
-
-    # If hidden, don't execute calculation logic
-    if-eqz v5, :continue_parse
-    goto :skip_parse
-
-    :continue_parse
+    # We NO LONGER hide buttons manually here to avoid messing up the UI states.
+    # The native code already controls visibility via Composable/ConstraintLayout.
+    
     # 2. Text Parsing (p1 is pz0/e, let's get the price string)
     invoke-virtual {p1}, Lpz0/e;->q()Ljava/lang/String;
     move-result-object v6
