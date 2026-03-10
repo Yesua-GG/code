@@ -501,6 +501,8 @@
 
 .field public lastKnownPrice:Lsinet/startup/inDriver/city/common/domain/entity/Price;
 
+.field public static lastGlobalPrice:Lsinet/startup/inDriver/city/common/domain/entity/Price;
+
 
 # direct methods
 .method static constructor <clinit>()V
@@ -2466,8 +2468,9 @@
     .line 96
     move-result-object v1
 
-    # Save lastKnownPrice for QuickBidListener to use later
+    # Save lastKnownPrice (instance) and lastGlobalPrice (static)
     iput-object v1, p0, Lf01/b0;->lastKnownPrice:Lsinet/startup/inDriver/city/common/domain/entity/Price;
+    sput-object v1, Lf01/b0;->lastGlobalPrice:Lsinet/startup/inDriver/city/common/domain/entity/Price;
 
     .line 97
     invoke-virtual {p1}, Lpz0/c$a;->d()Z
