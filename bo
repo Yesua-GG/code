@@ -503,10 +503,26 @@
 
 .field public static lastGlobalPrice:Lsinet/startup/inDriver/city/common/domain/entity/Price;
 
+.field public static globalPricesMap:Ljava/util/concurrent/ConcurrentHashMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/concurrent/ConcurrentHashMap<",
+            "Ljava/lang/String;",
+            "Lsinet/startup/inDriver/city/common/domain/entity/Price;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 
 # direct methods
 .method static constructor <clinit>()V
     .registers 2
+
+    # Ask Gemini: Init map
+    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
+    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
+    sput-object v0, Lf01/b0;->globalPricesMap:Ljava/util/concurrent/ConcurrentHashMap;
 
     .line 1
     new-instance v0, Lf01/b0$a;
