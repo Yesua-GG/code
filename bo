@@ -3240,7 +3240,23 @@
 
     move-result-object v0
 
-    # DISTANCIA LEJANA DESACTIVADA: siempre mostrar la tarjeta sin importar la distancia
+    sget-boolean v3, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->isPaused:Z
+
+    if-nez v3, :cond_50
+
+    invoke-static {v0}, Lf01/Config;->shouldHide(Ljava/lang/String;)Z
+
+    move-result v0
+
+    # Si shouldHide=true (viaje lejano/no conviene) -> no hacer nada, esperar otro pedido
+    if-nez v0, :cond_dist_skip
+
+    # Si shouldHide=false (viaje cercano/conviene) -> ir a seleccionar
+    goto :cond_50
+
+    :cond_dist_skip
+    # No conviene: simplemente ignorar y retornar sin eliminar
+    return-void
 
     :cond_50
     const/4 v0, 0x0
