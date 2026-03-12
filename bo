@@ -503,26 +503,10 @@
 
 .field public static lastGlobalPrice:Lsinet/startup/inDriver/city/common/domain/entity/Price;
 
-.field public static globalPricesMap:Ljava/util/concurrent/ConcurrentHashMap;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/concurrent/ConcurrentHashMap<",
-            "Ljava/lang/String;",
-            "Lsinet/startup/inDriver/city/common/domain/entity/Price;",
-            ">;"
-        }
-    .end annotation
-.end field
-
 
 # direct methods
 .method static constructor <clinit>()V
     .registers 2
-
-    # Ask Gemini: Init map
-    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
-    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
-    sput-object v0, Lf01/b0;->globalPricesMap:Ljava/util/concurrent/ConcurrentHashMap;
 
     .line 1
     new-instance v0, Lf01/b0$a;
@@ -2884,16 +2868,8 @@
     move-result v7
     
     # --- Button 1 (100%) ---
-    # Convert float to String
-    invoke-static {v7}, Ljava/lang/String;->valueOf(F)Ljava/lang/String;
-    move-result-object v6
-    # Clean ".0" if it's a whole number
-    const-string v3, ".0"
-    invoke-virtual {v6, v3}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
-    move-result v4
-    if-eqz v4, :skip_clean_1
-    const-string v4, ""
-    invoke-virtual {v6, v3, v4}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+    # Using BotClient.roundQuickBidPrice
+    invoke-static {v7}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->roundQuickBidPrice(F)Ljava/lang/String;
     move-result-object v6
     :skip_clean_1
     
@@ -2912,23 +2888,8 @@
     # --- Button 2 (110%) ---
     const v4, 0x3f8ccccd # 1.1f
     mul-float v6, v7, v4
-    # Round float slightly to fix floating point math anomalies (e.g. 7.9 * 1.1 = 8.6900005)
-    const/high16 v4, 0x42c80000 # 100.0f
-    mul-float/2addr v6, v4
-    invoke-static {v6}, Ljava/lang/Math;->round(F)I
-    move-result v6
-    int-to-float v6, v6
-    div-float/2addr v6, v4
-    # Convert to String
-    invoke-static {v6}, Ljava/lang/String;->valueOf(F)Ljava/lang/String;
-    move-result-object v6
-    # Clean ".0"
-    const-string v3, ".0"
-    invoke-virtual {v6, v3}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
-    move-result v4
-    if-eqz v4, :skip_clean_2
-    const-string v4, ""
-    invoke-virtual {v6, v3, v4}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+    # Using BotClient.roundQuickBidPrice
+    invoke-static {v6}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->roundQuickBidPrice(F)Ljava/lang/String;
     move-result-object v6
     :skip_clean_2
     
@@ -2947,23 +2908,8 @@
     # --- Button 3 (120%) ---
     const v4, 0x3f99999a # 1.2f
     mul-float v6, v7, v4
-    # Round
-    const/high16 v4, 0x42c80000 # 100.0f
-    mul-float/2addr v6, v4
-    invoke-static {v6}, Ljava/lang/Math;->round(F)I
-    move-result v6
-    int-to-float v6, v6
-    div-float/2addr v6, v4
-    # Convert to String
-    invoke-static {v6}, Ljava/lang/String;->valueOf(F)Ljava/lang/String;
-    move-result-object v6
-    # Clean ".0"
-    const-string v3, ".0"
-    invoke-virtual {v6, v3}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
-    move-result v4
-    if-eqz v4, :skip_clean_3
-    const-string v4, ""
-    invoke-virtual {v6, v3, v4}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+    # Using BotClient.roundQuickBidPrice
+    invoke-static {v6}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->roundQuickBidPrice(F)Ljava/lang/String;
     move-result-object v6
     :skip_clean_3
     
