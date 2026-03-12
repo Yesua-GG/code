@@ -2868,8 +2868,16 @@
     move-result v7
     
     # --- Button 1 (100%) ---
-    # Using BotClient.roundQuickBidPrice
-    invoke-static {v7}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->roundQuickBidPrice(F)Ljava/lang/String;
+    # Convert float to String
+    invoke-static {v7}, Ljava/lang/String;->valueOf(F)Ljava/lang/String;
+    move-result-object v6
+    # Clean ".0" if it's a whole number
+    const-string v3, ".0"
+    invoke-virtual {v6, v3}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+    move-result v4
+    if-eqz v4, :skip_clean_1
+    const-string v4, ""
+    invoke-virtual {v6, v3, v4}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
     move-result-object v6
     :skip_clean_1
     
@@ -2888,8 +2896,19 @@
     # --- Button 2 (110%) ---
     const v4, 0x3f8ccccd # 1.1f
     mul-float v6, v7, v4
-    # Using BotClient.roundQuickBidPrice
-    invoke-static {v6}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->roundQuickBidPrice(F)Ljava/lang/String;
+    # Use smart rounding
+    invoke-static {v6}, Lf01/b0;->smartRound(F)F
+    move-result v6
+    # Convert to String
+    invoke-static {v6}, Ljava/lang/String;->valueOf(F)Ljava/lang/String;
+    move-result-object v6
+    # Clean ".0"
+    const-string v3, ".0"
+    invoke-virtual {v6, v3}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+    move-result v4
+    if-eqz v4, :skip_clean_2
+    const-string v4, ""
+    invoke-virtual {v6, v3, v4}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
     move-result-object v6
     :skip_clean_2
     
@@ -2908,8 +2927,19 @@
     # --- Button 3 (120%) ---
     const v4, 0x3f99999a # 1.2f
     mul-float v6, v7, v4
-    # Using BotClient.roundQuickBidPrice
-    invoke-static {v6}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->roundQuickBidPrice(F)Ljava/lang/String;
+    # Use smart rounding
+    invoke-static {v6}, Lf01/b0;->smartRound(F)F
+    move-result v6
+    # Convert to String
+    invoke-static {v6}, Ljava/lang/String;->valueOf(F)Ljava/lang/String;
+    move-result-object v6
+    # Clean ".0"
+    const-string v3, ".0"
+    invoke-virtual {v6, v3}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+    move-result v4
+    if-eqz v4, :skip_clean_3
+    const-string v4, ""
+    invoke-virtual {v6, v3, v4}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
     move-result-object v6
     :skip_clean_3
     
@@ -5394,4 +5424,47 @@
 
     .line 22
     return-void
+.end method
+
+.method public static smartRound(F)F
+    .locals 4
+
+    # Check < 30.0f
+    const/high16 v0, 0x41f00000    # 30.0f
+    cmpg-float v1, p0, v0
+    if-gez v1, :less_than_30
+
+    # Check < 1000.0f
+    const/high16 v0, 0x447a0000    # 1000.0f
+    cmpg-float v1, p0, v0
+    if-gez v1, :less_than_1000
+
+    # >= 1000: ceil(p0 / 100.0f) * 100.0f
+    const/high16 v0, 0x42c80000    # 100.0f
+    div-float v1, p0, v0
+    float-to-double v2, v1
+    invoke-static {v2, v3}, Ljava/lang/Math;->ceil(D)D
+    move-result-wide v2
+    double-to-float v1, v2
+    mul-float v1, v1, v0
+    return v1
+
+:less_than_1000
+    # < 1000: ceil(p0)
+    float-to-double v2, p0
+    invoke-static {v2, v3}, Ljava/lang/Math;->ceil(D)D
+    move-result-wide v2
+    double-to-float v1, v2
+    return v1
+
+:less_than_30
+    # < 30: ceil(p0 * 2.0f) / 2.0f
+    const/high16 v0, 0x40000000    # 2.0f
+    mul-float v1, p0, v0
+    float-to-double v2, v1
+    invoke-static {v2, v3}, Ljava/lang/Math;->ceil(D)D
+    move-result-wide v2
+    double-to-float v1, v2
+    div-float v1, v1, v0
+    return v1
 .end method
