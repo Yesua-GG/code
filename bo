@@ -5429,17 +5429,19 @@
 .method public static smartRound(F)F
     .locals 4
 
-    # Check < 30.0f
+    # cmpg-float: v1 = -1 if p0 < v0, 0 if equal, 1 if p0 > v0
+
+    # Check if p0 < 30.0f
     const/high16 v0, 0x41f00000    # 30.0f
     cmpg-float v1, p0, v0
-    if-gez v1, :less_than_30
+    if-ltz v1, :range_under_30       # if p0 < 30 -> jump
 
-    # Check < 1000.0f
+    # Check if p0 < 1000.0f
     const/high16 v0, 0x447a0000    # 1000.0f
     cmpg-float v1, p0, v0
-    if-gez v1, :less_than_1000
+    if-ltz v1, :range_under_1000     # if p0 < 1000 -> jump
 
-    # >= 1000: ceil(p0 / 100.0f) * 100.0f
+    # >= 1000: ceil(p0 / 100.0f) * 100.0f  (redondea en centenas)
     const/high16 v0, 0x42c80000    # 100.0f
     div-float v1, p0, v0
     float-to-double v2, v1
@@ -5449,16 +5451,16 @@
     mul-float v1, v1, v0
     return v1
 
-:less_than_1000
-    # < 1000: ceil(p0)
+:range_under_1000
+    # 30 <= p0 < 1000: ceil(p0)  (redondea al entero superior)
     float-to-double v2, p0
     invoke-static {v2, v3}, Ljava/lang/Math;->ceil(D)D
     move-result-wide v2
     double-to-float v1, v2
     return v1
 
-:less_than_30
-    # < 30: ceil(p0 * 2.0f) / 2.0f
+:range_under_30
+    # p0 < 30: ceil(p0 * 2.0f) / 2.0f  (redondea al 0.5 superior)
     const/high16 v0, 0x40000000    # 2.0f
     mul-float v1, p0, v0
     float-to-double v2, v1
