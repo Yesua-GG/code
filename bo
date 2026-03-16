@@ -3030,7 +3030,11 @@
 
     if-nez v3, :cond_50
 
-    invoke-static {v0}, Lf01/Config;->shouldHide(Ljava/lang/String;)Z
+    invoke-virtual {p1}, Lpz0/e;->o()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v0, v3}, Lf01/Config;->shouldHide(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
