@@ -1,88 +1,162 @@
 # classes15.dex
 
-.class public Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;
-.super Lcu1/h;
+.class public final La51/g1;
+.super La51/a0;
 .source "SourceFile"
+
+# interfaces
+.implements Lcu1/i;
 
 
 # annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        La51/g1$a;
+    }
+.end annotation
+
 .annotation runtime Lkotlin/Metadata;
     d1 = {
-        "\u0000f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\b\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0011\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0019\u0010\u0007\u001a\u00020\u00062\b\u0010\u0005\u001a\u0004\u0018\u00010\u0004H\u0002¢\u0006\u0004\b\u0007\u0010\bJ\u000f\u0010\t\u001a\u00020\u0006H\u0002¢\u0006\u0004\b\t\u0010\u0003J\u0019\u0010\f\u001a\u00020\u00062\b\u0010\u000b\u001a\u0004\u0018\u00010\nH\u0002¢\u0006\u0004\b\f\u0010\rJ\u0017\u0010\u000f\u001a\u00020\u00062\u0006\u0010\u000e\u001a\u00020\nH\u0002¢\u0006\u0004\b\u000f\u0010\rJ\u0017\u0010\u0012\u001a\u00020\u00062\u0006\u0010\u0011\u001a\u00020\u0010H\u0002¢\u0006\u0004\b\u0012\u0010\u0013J\u0017\u0010\u0015\u001a\u00020\u00062\u0006\u0010\u0014\u001a\u00020\u0010H\u0002¢\u0006\u0004\b\u0015\u0010\u0013J\u0017\u0010\u0018\u001a\u00020\u00062\u0006\u0010\u0017\u001a\u00020\u0016H\u0016¢\u0006\u0004\b\u0018\u0010\u0019J!\u0010\u001c\u001a\u00020\u00062\u0006\u0010\u001b\u001a\u00020\u001a2\b\u0010\u0005\u001a\u0004\u0018\u00010\u0004H\u0016¢\u0006\u0004\b\u001c\u0010\u001dJ\u000f\u0010\u001e\u001a\u00020\u0006H\u0014¢\u0006\u0004\b\u001e\u0010\u0003J\u0015\u0010!\u001a\u00020\u00062\u0006\u0010 \u001a\u00020\u001f¢\u0006\u0004\b!\u0010\"J\u0019\u0010#\u001a\u00020\u00062\b\b\u0002\u0010 \u001a\u00020\u001fH\u0014¢\u0006\u0004\b#\u0010\"R\u001a\u0010(\u001a\u00020\u001f8\u0016X\u0096\u0004¢\u0006\f\n\u0004\b$\u0010%\u001a\u0004\b&\u0010\'R(\u00101\u001a\b\u0012\u0004\u0012\u00020*0)8\u0000@\u0000X\u0081.¢\u0006\u0012\n\u0004\b+\u0010,\u001a\u0004\b-\u0010.\"\u0004\b/\u00100R\u001b\u00106\u001a\u00020*8DX\u0084\u0084\u0002¢\u0006\f\n\u0004\b2\u00103\u001a\u0004\b4\u00105R\u001b\u0010<\u001a\u0002078DX\u0084\u0084\u0002¢\u0006\f\n\u0004\b8\u00109\u001a\u0004\b:\u0010;R\u001b\u0010A\u001a\u00020=8DX\u0084\u0084\u0002¢\u0006\f\n\u0004\b>\u00103\u001a\u0004\b?\u0010@R\u0016\u0010C\u001a\u00020\u001f8\u0002@\u0002X\u0082\u000e¢\u0006\u0006\n\u0004\bB\u0010%R\u0016\u0010G\u001a\u00020D8\u0002@\u0002X\u0082.¢\u0006\u0006\n\u0004\bE\u0010F¨\u0006H"
+        "\u0000È\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u000f\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0006\b\u0007\u0018\u0000 \u0087\u00012\u00020\u00012\u00020\u0002:\u0002\u0088\u0001B\u0007¢\u0006\u0004\b\u0003\u0010\u0004J\u000f\u0010\u0006\u001a\u00020\u0005H\u0002¢\u0006\u0004\b\u0006\u0010\u0004J\u000f\u0010\u0007\u001a\u00020\u0005H\u0002¢\u0006\u0004\b\u0007\u0010\u0004J\u000f\u0010\b\u001a\u00020\u0005H\u0002¢\u0006\u0004\b\b\u0010\u0004J\u0017\u0010\u000b\u001a\u00020\u00052\u0006\u0010\n\u001a\u00020\tH\u0002¢\u0006\u0004\b\u000b\u0010\fJ\u0017\u0010\u000f\u001a\u00020\u00052\u0006\u0010\u000e\u001a\u00020\rH\u0002¢\u0006\u0004\b\u000f\u0010\u0010J\'\u0010\u0016\u001a\u00020\u00052\u0006\u0010\u0012\u001a\u00020\u00112\u0006\u0010\u0013\u001a\u00020\r2\u0006\u0010\u0015\u001a\u00020\u0014H\u0002¢\u0006\u0004\b\u0016\u0010\u0017J\u0017\u0010\u001a\u001a\u00020\u00192\u0006\u0010\u0018\u001a\u00020\u0014H\u0002¢\u0006\u0004\b\u001a\u0010\u001bJ\u0017\u0010\u001e\u001a\u00020\u00052\u0006\u0010\u001d\u001a\u00020\u001cH\u0002¢\u0006\u0004\b\u001e\u0010\u001fJ\u0017\u0010\"\u001a\u00020\u00052\u0006\u0010!\u001a\u00020 H\u0016¢\u0006\u0004\b\"\u0010#J\u000f\u0010$\u001a\u00020\u0005H\u0016¢\u0006\u0004\b$\u0010\u0004J!\u0010\'\u001a\u00020\u00052\u0006\u0010\u0018\u001a\u00020\u00142\b\u0010&\u001a\u0004\u0018\u00010%H\u0016¢\u0006\u0004\b\'\u0010(J\u000f\u0010)\u001a\u00020\u0005H\u0016¢\u0006\u0004\b)\u0010\u0004J\u000f\u0010*\u001a\u00020\u0005H\u0016¢\u0006\u0004\b*\u0010\u0004J\u000f\u0010+\u001a\u00020\u0005H\u0016¢\u0006\u0004\b+\u0010\u0004J\u0017\u0010,\u001a\u00020\u00052\u0006\u0010\n\u001a\u00020\tH\u0016¢\u0006\u0004\b,\u0010\fJ\u0017\u0010.\u001a\u00020\u00052\u0006\u0010-\u001a\u00020\rH\u0016¢\u0006\u0004\b.\u0010\u0010J\u0017\u00101\u001a\u00020\u00052\u0006\u00100\u001a\u00020/H\u0016¢\u0006\u0004\b1\u00102J\u0017\u00105\u001a\u00020\u00052\u0006\u00104\u001a\u000203H\u0016¢\u0006\u0004\b5\u00106J\u001d\u0010:\u001a\u00020\u00052\f\u00109\u001a\b\u0012\u0004\u0012\u00020807H\u0016¢\u0006\u0004\b:\u0010;J\r\u0010<\u001a\u00020\u0005¢\u0006\u0004\b<\u0010\u0004J\u0017\u0010>\u001a\u00020\u00052\u0006\u0010=\u001a\u00020\rH\u0016¢\u0006\u0004\b>\u0010\u0010J\u0017\u0010A\u001a\u00020\u00052\u0006\u0010@\u001a\u00020?H\u0016¢\u0006\u0004\bA\u0010BJ\u001d\u0010F\u001a\u00020\u00052\u0006\u0010C\u001a\u00020\u001c2\u0006\u0010E\u001a\u00020D¢\u0006\u0004\bF\u0010GJ\u0017\u0010I\u001a\u00020\u00052\u0006\u0010H\u001a\u00020\u001cH\u0016¢\u0006\u0004\bI\u0010\u001fJ\u0017\u0010J\u001a\u00020\u00052\u0006\u0010-\u001a\u00020\rH\u0016¢\u0006\u0004\bJ\u0010\u0010J\u0017\u0010M\u001a\u00020\u00052\u0006\u0010L\u001a\u00020KH\u0016¢\u0006\u0004\bM\u0010NJ#\u0010R\u001a\u00020\u00052\u0012\u0010Q\u001a\u000e\u0012\u0004\u0012\u00020P\u0012\u0004\u0012\u00020P0OH\u0016¢\u0006\u0004\bR\u0010SJ\u0017\u0010V\u001a\u00020\u00052\u0006\u0010U\u001a\u00020TH\u0016¢\u0006\u0004\bV\u0010WJ\u0017\u0010Y\u001a\u00020\u00052\u0006\u0010X\u001a\u00020\rH\u0016¢\u0006\u0004\bY\u0010\u0010J\u0017\u0010Z\u001a\u00020\u00052\u0006\u0010X\u001a\u00020\rH\u0016¢\u0006\u0004\bZ\u0010\u0010J\u0017\u0010\\\u001a\u00020\u00052\u0006\u0010[\u001a\u00020TH\u0016¢\u0006\u0004\b\\\u0010WJ\u0017\u0010^\u001a\u00020\u00052\u0006\u0010]\u001a\u00020\rH\u0016¢\u0006\u0004\b^\u0010\u0010R\u001a\u0010c\u001a\u00020\u001c8\u0016X\u0096\u0004¢\u0006\f\n\u0004\b_\u0010`\u001a\u0004\ba\u0010bR\u001b\u0010i\u001a\u00020d8TX\u0094\u0084\u0002¢\u0006\f\n\u0004\be\u0010f\u001a\u0004\bg\u0010hR\u001b\u0010o\u001a\u00020j8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\bk\u0010l\u001a\u0004\bm\u0010nR/\u0010x\u001a\u0004\u0018\u00010p2\b\u0010q\u001a\u0004\u0018\u00010p8B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\br\u0010s\u001a\u0004\bt\u0010u\"\u0004\bv\u0010wR/\u0010\u007f\u001a\u0004\u0018\u00010y2\b\u0010q\u001a\u0004\u0018\u00010y8B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\bz\u0010s\u001a\u0004\b{\u0010|\"\u0004\b}\u0010~R\u001e\u0010\u0082\u0001\u001a\u00020\u001c8BX\u0082\u0084\u0002¢\u0006\u000e\n\u0005\b\u0080\u0001\u0010f\u001a\u0005\b\u0081\u0001\u0010bR\u001c\u0010\u0086\u0001\u001a\u0005\u0018\u00010\u0083\u00018\u0002@\u0002X\u0082\u000e¢\u0006\b\n\u0006\b\u0084\u0001\u0010\u0085\u0001¨\u0006\u0089\u0001"
     }
     d2 = {
-        "Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;",
-        "Lcu1/h;",
+        "La51/g1;",
+        "La51/a0;",
+        "Lcu1/i;",
         "<init>",
         "()V",
-        "Landroid/os/Bundle;",
-        "savedInstanceState",
         "",
-        "m6",
-        "(Landroid/os/Bundle;)V",
-        "r6",
-        "Luh0/a;",
-        "locationsToRender",
-        "i6",
-        "(Luh0/a;)V",
-        "locationsToZoom",
-        "j6",
-        "Lvg0/a;",
-        "wayPointUiToA",
-        "k6",
-        "(Lvg0/a;)V",
-        "wayPointUiToB",
-        "l6",
+        "n8",
+        "p8",
+        "r8",
+        "Lg51/f;",
+        "initState",
+        "D8",
+        "(Lg51/f;)V",
+        "",
+        "isEnabled",
+        "P8",
+        "(Z)V",
+        "Ljm3/y;",
+        "onboardingState",
+        "isNeedToShowTutorial",
+        "Landroid/view/View;",
+        "targetView",
+        "M8",
+        "(Ljm3/y;ZLandroid/view/View;)V",
+        "view",
+        "",
+        "i8",
+        "(Landroid/view/View;)F",
+        "",
+        "extraPaddingPx",
+        "I8",
+        "(I)V",
         "Landroid/content/Context;",
         "context",
         "onAttach",
         "(Landroid/content/Context;)V",
-        "Landroid/view/View;",
-        "view",
+        "onStart",
+        "Landroid/os/Bundle;",
+        "savedInstanceState",
         "onViewCreated",
         "(Landroid/view/View;Landroid/os/Bundle;)V",
-        "n6",
+        "onPause",
+        "onDestroyView",
+        "onDestroy",
+        "F7",
+        "isVisible",
+        "E7",
+        "La51/c0;",
+        "multiBidOrderUi",
+        "G7",
+        "(La51/c0;)V",
+        "Lg51/b;",
+        "acceptButtonText",
+        "z7",
+        "(Lg51/b;)V",
         "",
-        "extraPaddingPx",
-        "x6",
-        "(I)V",
-        "c6",
-        "S0",
+        "Lsinet/startup/inDriver/core/common/view/scrollable_buttons/b;",
+        "extraPrices",
+        "x7",
+        "(Ljava/util/List;)V",
+        "u8",
+        "shouldScroll",
+        "J7",
+        "Lg51/d;",
+        "buttonPriceLoadingUi",
+        "B7",
+        "(Lg51/d;)V",
+        "index",
+        "Lsinet/startup/inDriver/core/common/view/scrollable_buttons/a;",
+        "actionType",
+        "v8",
+        "(ILsinet/startup/inDriver/core/common/view/scrollable_buttons/a;)V",
+        "progress",
+        "H7",
+        "I7",
+        "Lg51/h;",
+        "bannerUi",
+        "y7",
+        "(Lg51/h;)V",
+        "Lkotlin/Pair;",
+        "Ljava/math/BigDecimal;",
+        "originalAndMaxPrice",
+        "D7",
+        "(Lkotlin/Pair;)V",
+        "",
+        "text",
+        "L7",
+        "(Ljava/lang/String;)V",
+        "isShow",
+        "C7",
+        "A7",
+        "taximeterPanelText",
+        "K7",
+        "isNeedToShowVerificationTutorial",
+        "M7",
+        "d1",
         "I",
-        "M5",
+        "b6",
         "()I",
         "layoutRes",
-        "Lew/a;",
-        "Lc51/s;",
-        "T0",
-        "Lew/a;",
-        "h6",
-        "()Lew/a;",
-        "setViewModelProvider$order_release",
-        "(Lew/a;)V",
-        "viewModelProvider",
-        "U0",
+        "La51/h1;",
+        "e1",
         "Lfw/m;",
-        "g6",
-        "()Lc51/s;",
-        "viewModel",
-        "Lq41/j;",
-        "V0",
+        "P6",
+        "()La51/h1;",
+        "args",
+        "Lq41/f;",
+        "f1",
         "Lkotlin/properties/d;",
-        "e6",
-        "()Lq41/j;",
+        "j8",
+        "()Lq41/f;",
         "binding",
-        "Lof4/a;",
-        "W0",
-        "f6",
-        "()Lof4/a;",
-        "mapApi",
-        "X0",
-        "zoomButtonsBottomMargin",
-        "Lsf4/c;",
-        "Y0",
-        "Lsf4/c;",
-        "mapComponent",
+        "Lq41/a;",
+        "<set-?>",
+        "g1",
+        "Lnu1/l;",
+        "l8",
+        "()Lq41/a;",
+        "H8",
+        "(Lq41/a;)V",
+        "bindingBidShown",
+        "Lq41/b;",
+        "h1",
+        "k8",
+        "()Lq41/b;",
+        "G8",
+        "(Lq41/b;)V",
+        "bindingBidHidden",
+        "i1",
+        "m8",
+        "warningBannerBottomMargin",
+        "Landroid/view/View$OnLayoutChangeListener;",
+        "j1",
+        "Landroid/view/View$OnLayoutChangeListener;",
+        "infoOnLayoutChangeListener",
+        "Companion",
+        "a",
         "order_release"
     }
     k = 0x1
@@ -96,13 +170,18 @@
 
 .annotation build Lkotlin/jvm/internal/SourceDebugExtension;
     value = {
-        "SMAP\nOrderGeoMapFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 OrderGeoMapFragment.kt\nsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment\n+ 2 LiveDataExtensions.kt\nsinet/startup/inDriver/core/common/mvvm/LiveDataExtensionsKt\n+ 3 ViewBindingExtensions.kt\nsinet/startup/inDriver/core/common/extensions/ViewBindingExtensionsKt\n+ 4 FragmentExtensions.kt\nsinet/startup/inDriver/core/common/extensions/FragmentExtensionsKt\n+ 5 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 6 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 7 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n+ 8 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 9 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 10 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,351:1\n55#2:352\n74#2:353\n32#3,2:354\n329#4,3:356\n332#4,4:364\n329#4,3:368\n332#4,4:376\n329#4,3:380\n332#4,4:388\n49#5:359\n51#5:363\n49#5:371\n51#5:375\n49#5:383\n51#5:387\n46#6:360\n51#6:362\n46#6:372\n51#6:374\n46#6:384\n51#6:386\n105#7:361\n105#7:373\n105#7:385\n1573#8:392\n1604#8,4:393\n774#8:398\n865#8,2:399\n1563#8:401\n1634#8,3:402\n1563#8:405\n1634#8,3:406\n1563#8:409\n1634#8,3:410\n1#9:397\n327#10,4:413\n*S KotlinDebug\n*F\n+ 1 OrderGeoMapFragment.kt\nsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment\n*L\n59#1:352\n59#1:353\n61#1:354,2\n143#1:356,3\n143#1:364,4\n144#1:368,3\n144#1:376,4\n153#1:380,3\n153#1:388,4\n143#1:359\n143#1:363\n144#1:371\n144#1:375\n153#1:383\n153#1:387\n143#1:360\n143#1:362\n144#1:372\n144#1:374\n153#1:384\n153#1:386\n143#1:361\n144#1:373\n153#1:385\n167#1:392\n167#1:393,4\n239#1:398\n239#1:399,2\n240#1:401\n240#1:402,3\n256#1:405\n256#1:406,3\n309#1:409\n309#1:410,3\n106#1:413,4\n*E\n"
+        "SMAP\nOrderDialogFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 OrderDialogFragment.kt\nsinet/startup/inDriver/city/driver/order/ui/main/OrderDialogFragment\n+ 2 FragmentExtensions.kt\nsinet/startup/inDriver/core/common/extensions/FragmentExtensionsKt\n+ 3 ViewBindingExtensions.kt\nsinet/startup/inDriver/core/common/extensions/ViewBindingExtensionsKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 5 View.kt\nandroidx/core/view/ViewKt\n+ 6 IntSize.kt\nandroidx/compose/ui/unit/IntSizeKt\n+ 7 InlineClassHelper.kt\nandroidx/compose/ui/util/InlineClassHelperKt\n+ 8 Offset.kt\nandroidx/compose/ui/geometry/OffsetKt\n+ 9 Composer.kt\nandroidx/compose/runtime/ComposerKt\n*L\n1#1,581:1\n92#2,9:582\n118#2:615\n32#3,2:591\n1#4:593\n257#5,2:594\n257#5,2:596\n257#5,2:598\n257#5,2:600\n67#5,2:602\n70#5:610\n37#5,2:611\n55#5:613\n72#5:614\n30#6:604\n80#7:605\n53#7,3:607\n30#8:606\n1282#9,6:616\n1282#9,6:622\n1282#9,6:628\n*S KotlinDebug\n*F\n+ 1 OrderDialogFragment.kt\nsinet/startup/inDriver/city/driver/order/ui/main/OrderDialogFragment\n*L\n95#1:582,9\n577#1:615\n97#1:591,2\n285#1:594,2\n300#1:596,2\n301#1:598,2\n434#1:600,2\n542#1:602,2\n542#1:610\n542#1:611,2\n542#1:613\n542#1:614\n545#1:604\n545#1:605\n557#1:607,3\n557#1:606\n293#1:616,6\n294#1:622,6\n495#1:628,6\n*E\n"
     }
 .end annotation
 
 
 # static fields
-.field static final synthetic Z0:[Lkotlin/reflect/KProperty;
+.field public static final Companion:La51/g1$a;
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+.end field
+
+.field static final synthetic k1:[Lkotlin/reflect/KProperty;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "[",
@@ -113,74 +192,258 @@
     .end annotation
 .end field
 
-.field public static final a1:I
+.field public static final l1:I
+
+.field private static final m1:Lm82/j;
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+.end field
+
+.field private static final n1:Lm82/j;
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+.end field
+
+.field private static final o1:Lew1/a;
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+.end field
 
 
 # instance fields
-.field private final S0:I
+.field private final d1:I
 
-.field public T0:Lew/a;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lew/a<",
-            "Lc51/s;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private final U0:Lfw/m;
+.field private final e1:Lfw/m;
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 .end field
 
-.field private final V0:Lkotlin/properties/d;
+.field private final f1:Lkotlin/properties/d;
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 .end field
 
-.field private final W0:Lfw/m;
+.field private final g1:Lnu1/l;
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 .end field
 
-.field private X0:I
+.field private final h1:Lnu1/l;
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+.end field
 
-.field private Y0:Lsf4/c;
+.field private final i1:Lfw/m;
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+.end field
+
+.field private j1:Landroid/view/View$OnLayoutChangeListener;
+    .annotation build Lorg/jetbrains/annotations/Nullable;
+    .end annotation
+.end field
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 5
+    .registers 14
 
+    .line 1
     new-instance v0, Lkotlin/jvm/internal/PropertyReference1Impl;
 
-    const-class v1, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;
+    .line 3
+    const-class v1, La51/g1;
 
+    .line 5
     const-string v2, "binding"
 
-    const-string v3, "getBinding()Lsinet/startup/inDriver/city/driver/order/databinding/DriverOrderFragmentMapGeoBinding;"
+    .line 7
+    const-string v3, "getBinding()Lsinet/startup/inDriver/city/driver/order/databinding/DriverOrderContainerBinding;"
 
+    .line 9
     const/4 v4, 0x0
 
+    .line 10
     invoke-direct {v0, v1, v2, v3, v4}, Lkotlin/jvm/internal/PropertyReference1Impl;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
 
+    .line 13
     invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->property1(Lkotlin/jvm/internal/PropertyReference1;)Lkotlin/reflect/KProperty1;
 
+    .line 16
     move-result-object v0
 
-    const/4 v1, 0x1
+    .line 17
+    new-instance v2, Lkotlin/jvm/internal/MutablePropertyReference1Impl;
 
-    new-array v1, v1, [Lkotlin/reflect/KProperty;
+    .line 19
+    const-string v3, "bindingBidShown"
 
-    aput-object v0, v1, v4
+    .line 21
+    const-string v5, "getBindingBidShown()Lsinet/startup/inDriver/city/driver/order/databinding/DriverOrderActionsStubContentStage0Binding;"
 
-    sput-object v1, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->Z0:[Lkotlin/reflect/KProperty;
+    .line 23
+    invoke-direct {v2, v1, v3, v5, v4}, Lkotlin/jvm/internal/MutablePropertyReference1Impl;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
 
+    .line 26
+    invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->mutableProperty1(Lkotlin/jvm/internal/MutablePropertyReference1;)Lkotlin/reflect/KMutableProperty1;
+
+    .line 29
+    move-result-object v2
+
+    .line 30
+    new-instance v3, Lkotlin/jvm/internal/MutablePropertyReference1Impl;
+
+    .line 32
+    const-string v5, "bindingBidHidden"
+
+    .line 34
+    const-string v6, "getBindingBidHidden()Lsinet/startup/inDriver/city/driver/order/databinding/DriverOrderActionsStubContentStage1Binding;"
+
+    .line 36
+    invoke-direct {v3, v1, v5, v6, v4}, Lkotlin/jvm/internal/MutablePropertyReference1Impl;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    .line 39
+    invoke-static {v3}, Lkotlin/jvm/internal/Reflection;->mutableProperty1(Lkotlin/jvm/internal/MutablePropertyReference1;)Lkotlin/reflect/KMutableProperty1;
+
+    .line 42
+    move-result-object v1
+
+    .line 43
+    const/4 v3, 0x3
+
+    .line 44
+    new-array v3, v3, [Lkotlin/reflect/KProperty;
+
+    .line 46
+    aput-object v0, v3, v4
+
+    .line 48
+    const/4 v0, 0x1
+
+    .line 49
+    aput-object v2, v3, v0
+
+    .line 51
+    const/4 v0, 0x2
+
+    .line 52
+    aput-object v1, v3, v0
+
+    .line 54
+    sput-object v3, La51/g1;->k1:[Lkotlin/reflect/KProperty;
+
+    .line 56
+    new-instance v0, La51/g1$a;
+
+    .line 58
+    const/4 v1, 0x0
+
+    .line 59
+    invoke-direct {v0, v1}, La51/g1$a;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    .line 62
+    sput-object v0, La51/g1;->Companion:La51/g1$a;
+
+    .line 64
     const/16 v0, 0x8
 
-    sput v0, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->a1:I
+    .line 66
+    sput v0, La51/g1;->l1:I
 
+    .line 68
+    new-instance v1, Lm82/j;
+
+    .line 70
+    const/16 v11, 0x70
+
+    .line 72
+    const/4 v12, 0x0
+
+    .line 73
+    const/4 v2, 0x1
+
+    .line 74
+    const/4 v3, 0x0
+
+    .line 75
+    const-wide/16 v4, 0x0
+
+    .line 77
+    const-wide/16 v6, 0x64
+
+    .line 79
+    const/4 v8, 0x0
+
+    .line 80
+    const/4 v9, 0x0
+
+    .line 81
+    const/4 v10, 0x0
+
+    .line 82
+    invoke-direct/range {v1 .. v12}, Lm82/j;-><init>(ZZJJLandroid/view/animation/Interpolator;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    .line 85
+    sput-object v1, La51/g1;->m1:Lm82/j;
+
+    .line 87
+    new-instance v2, Lm82/j;
+
+    .line 89
+    const/16 v12, 0x70
+
+    .line 91
+    const/4 v13, 0x0
+
+    .line 92
+    const/4 v3, 0x1
+
+    .line 93
+    const/4 v4, 0x0
+
+    .line 94
+    const-wide/16 v5, 0x64
+
+    .line 96
+    const-wide/16 v7, 0x64
+
+    .line 98
+    const/4 v11, 0x0
+
+    .line 99
+    invoke-direct/range {v2 .. v13}, Lm82/j;-><init>(ZZJJLandroid/view/animation/Interpolator;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    .line 102
+    sput-object v2, La51/g1;->n1:Lm82/j;
+
+    .line 104
+    new-instance v3, Lew1/a;
+
+    .line 106
+    new-instance v12, Landroid/view/animation/AccelerateDecelerateInterpolator;
+
+    .line 108
+    invoke-direct {v12}, Landroid/view/animation/AccelerateDecelerateInterpolator;-><init>()V
+
+    .line 111
+    const-wide/16 v4, 0x3
+
+    .line 113
+    const-wide/16 v6, 0x3e8
+
+    .line 115
+    const-wide/16 v8, 0xdac
+
+    .line 117
+    const-wide/16 v10, 0x1f4
+
+    .line 119
+    invoke-direct/range {v3 .. v12}, Lew1/a;-><init>(JJJJLandroid/animation/TimeInterpolator;)V
+
+    .line 122
+    sput-object v3, La51/g1;->o1:Lew1/a;
+
+    .line 124
     return-void
 .end method
 
@@ -188,37 +451,37 @@
     .registers 4
 
     .line 1
-    invoke-direct {p0}, Lcu1/h;-><init>()V
+    invoke-direct {p0}, La51/a0;-><init>()V
 
     .line 4
-    sget v0, Ln41/c;->j:I
+    sget v0, Ln41/c;->f:I
 
     .line 6
-    iput v0, p0, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->S0:I
+    iput v0, p0, La51/g1;->d1:I
 
     .line 8
-    sget-object v0, Lfw/q;->NONE:Lfw/q;
+    new-instance v0, La51/g1$j;
 
     .line 10
-    new-instance v1, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment$h;
+    const-string v1, "ARG_ARGS"
 
     .line 12
-    invoke-direct {v1, p0, p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment$h;-><init>(Landroidx/lifecycle/ViewModelStoreOwner;Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;)V
+    invoke-direct {v0, p0, v1}, La51/g1$j;-><init>(Landroidx/fragment/app/Fragment;Ljava/lang/String;)V
 
     .line 15
-    invoke-static {v0, v1}, Lfw/n;->a(Lfw/q;Lkotlin/jvm/functions/Function0;)Lfw/m;
+    invoke-static {v0}, Lfw/n;->b(Lkotlin/jvm/functions/Function0;)Lfw/m;
 
     .line 18
     move-result-object v0
 
     .line 19
-    iput-object v0, p0, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->U0:Lfw/m;
+    iput-object v0, p0, La51/g1;->e1:Lfw/m;
 
     .line 21
     new-instance v0, Lnu1/r2;
 
     .line 23
-    const-class v1, Lq41/j;
+    const-class v1, Lq41/f;
 
     .line 25
     invoke-static {v1}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -233,2406 +496,1759 @@
     invoke-direct {v0, p0, v1, v2}, Lnu1/r2;-><init>(Landroidx/fragment/app/Fragment;Lkotlin/reflect/KClass;Ljava/lang/Integer;)V
 
     .line 33
-    iput-object v0, p0, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->V0:Lkotlin/properties/d;
+    iput-object v0, p0, La51/g1;->f1:Lkotlin/properties/d;
 
     .line 35
-    new-instance v0, Lc51/h;
+    invoke-static {p0}, Lnu1/m;->a(Landroidx/fragment/app/Fragment;)Lnu1/l;
 
-    .line 37
-    invoke-direct {v0, p0}, Lc51/h;-><init>(Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;)V
-
-    .line 40
-    invoke-static {v0}, Lfw/n;->b(Lkotlin/jvm/functions/Function0;)Lfw/m;
-
-    .line 43
+    .line 38
     move-result-object v0
 
-    .line 44
-    iput-object v0, p0, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->W0:Lfw/m;
+    .line 39
+    iput-object v0, p0, La51/g1;->g1:Lnu1/l;
 
-    .line 46
+    .line 41
+    invoke-static {p0}, Lnu1/m;->a(Landroidx/fragment/app/Fragment;)Lnu1/l;
+
+    .line 44
+    move-result-object v0
+
+    .line 45
+    iput-object v0, p0, La51/g1;->h1:Lnu1/l;
+
+    .line 47
+    new-instance v0, La51/d1;
+
+    .line 49
+    invoke-direct {v0, p0}, La51/d1;-><init>(La51/g1;)V
+
+    .line 52
+    invoke-static {v0}, Lnu1/a0;->e(Lkotlin/jvm/functions/Function0;)Lfw/m;
+
+    .line 55
+    move-result-object v0
+
+    .line 56
+    iput-object v0, p0, La51/g1;->i1:Lfw/m;
+
+    .line 58
     return-void
 .end method
 
-.method public static synthetic S5(Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;Lkotlin/Pair;)Lkotlin/Unit;
+.method private static final A8(La51/g1;Landroid/view/View;)Lkotlin/Unit;
     .registers 2
 
     .line 1
-    invoke-static {p0, p1}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->u6(Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;Lkotlin/Pair;)Lkotlin/Unit;
+    invoke-virtual {p0}, La51/a0;->S6()La51/t1;
 
+    .line 4
     move-result-object p0
 
+    .line 5
+    invoke-virtual {p0}, La51/t1;->i2()V
+
+    .line 8
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 10
     return-object p0
 .end method
 
-.method public static synthetic T5(Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;Landroid/view/View;)Lkotlin/Unit;
+.method private static final B8(La51/g1;Landroid/view/View;)Lkotlin/Unit;
     .registers 2
 
     .line 1
-    invoke-static {p0, p1}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->p6(Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;Landroid/view/View;)Lkotlin/Unit;
+    invoke-virtual {p0}, La51/a0;->S6()La51/t1;
 
+    .line 4
     move-result-object p0
 
+    .line 5
+    invoke-virtual {p0}, La51/t1;->i2()V
+
+    .line 8
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 10
     return-object p0
 .end method
 
-.method public static synthetic U5(Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;Landroid/view/View;)Lkotlin/Unit;
-    .registers 2
-
-    .line 1
-    invoke-static {p0, p1}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->o6(Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;Landroid/view/View;)Lkotlin/Unit;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static synthetic V5(Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;)Lof4/a;
-    .registers 1
-
-    .line 1
-    invoke-static {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->q6(Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;)Lof4/a;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static synthetic W5(Lsinet/startup/inDriver/core/ui/button/FloatingButton;ILsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;)V
+.method private static final C8(La51/g1;Landroid/view/View;Landroid/view/MotionEvent;)Z
     .registers 3
 
     .line 1
-    invoke-static {p0, p1, p2}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->y6(Lsinet/startup/inDriver/core/ui/button/FloatingButton;ILsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;)V
-
-    return-void
-.end method
-
-.method public static synthetic X5(Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;Lkotlin/Pair;)Lkotlin/Unit;
-    .registers 2
-
-    .line 1
-    invoke-static {p0, p1}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->w6(Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;Lkotlin/Pair;)Lkotlin/Unit;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static synthetic Y5(Lc51/u;)Lkotlin/Pair;
-    .registers 1
-
-    .line 1
-    invoke-static {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->t6(Lc51/u;)Lkotlin/Pair;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static synthetic Z5(Lc51/u;)Luh0/a;
-    .registers 1
-
-    .line 1
-    invoke-static {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->s6(Lc51/u;)Luh0/a;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static synthetic a6(Lc51/u;)Lkotlin/Pair;
-    .registers 1
-
-    .line 1
-    invoke-static {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->v6(Lc51/u;)Lkotlin/Pair;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static final synthetic b6(Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;Luh0/a;)V
-    .registers 2
-
-    .line 1
-    invoke-direct {p0, p1}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->i6(Luh0/a;)V
+    invoke-direct {p0}, La51/g1;->j8()Lq41/f;
 
     .line 4
-    return-void
+    move-result-object p0
+
+    .line 5
+    iget-object p0, p0, Lq41/f;->c:Landroidx/core/widget/NestedScrollView;
+
+    .line 7
+    const/4 p1, 0x1
+
+    .line 8
+    invoke-virtual {p0, p1}, Landroidx/core/widget/NestedScrollView;->requestDisallowInterceptTouchEvent(Z)V
+
+    .line 11
+    const/4 p0, 0x0
+
+    .line 12
+    return p0
 .end method
 
-.method public static synthetic d6(Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;IILjava/lang/Object;)V
-    .registers 4
+.method private final D8(Lg51/f;)V
+    .registers 3
 
     .line 1
-    if-nez p3, :cond_b
+    instance-of v0, p1, Lg51/f$a;
 
     .line 3
-    and-int/lit8 p2, p2, 0x1
+    if-eqz v0, :cond_c
 
     .line 5
-    if-eqz p2, :cond_7
-
-    .line 7
-    const/4 p1, 0x0
+    invoke-virtual {p0}, La51/a0;->S6()La51/t1;
 
     .line 8
-    :cond_7
-    invoke-virtual {p0, p1}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->c6(I)V
-
-    .line 11
-    return-void
-
-    .line 12
-    :cond_b
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
-
-    .line 14
-    const-string p1, "Super calls with default arguments not supported in this target, function: applyMapPaddings"
-
-    .line 16
-    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    .line 19
-    throw p0
-.end method
-
-.method private final i6(Luh0/a;)V
-    .registers 20
-
-    .line 1
-    if-nez p1, :cond_3
-
-    .line 3
-    return-void
-
-    .line 4
-    :cond_3
-    invoke-static {}, Lkotlin/collections/CollectionsKt;->c()Ljava/util/List;
-
-    .line 7
-    move-result-object v0
-
-    .line 8
-    invoke-virtual/range {p1 .. p1}, Luh0/a;->c()Ljava/util/List;
-
-    .line 11
-    move-result-object v1
-
-    .line 12
-    check-cast v1, Ljava/lang/Iterable;
-
-    .line 14
-    new-instance v2, Ljava/util/ArrayList;
-
-    .line 16
-    const/16 v3, 0xa
-
-    .line 18
-    invoke-static {v1, v3}, Lkotlin/collections/CollectionsKt;->A(Ljava/lang/Iterable;I)I
-
-    .line 21
-    move-result v3
-
-    .line 22
-    invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(I)V
-
-    .line 25
-    invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    .line 28
-    move-result-object v1
-
-    .line 29
-    const/4 v3, 0x0
-
-    .line 30
-    :goto_1d
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    .line 33
-    move-result v4
-
-    .line 34
-    if-eqz v4, :cond_78
-
-    .line 36
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    .line 39
-    move-result-object v4
-
-    .line 40
-    add-int/lit8 v5, v3, 0x1
-
-    .line 42
-    if-gez v3, :cond_2e
-
-    .line 44
-    invoke-static {}, Lkotlin/collections/CollectionsKt;->z()V
-
-    .line 47
-    :cond_2e
-    check-cast v4, Lsinet/startup/inDriver/core/data/data/Location;
-
-    .line 49
-    invoke-virtual/range {p1 .. p1}, Luh0/a;->g()Z
-
-    .line 52
-    move-result v6
-
-    .line 53
-    if-eqz v6, :cond_43
-
-    .line 55
-    sget-object v6, Lgb4/k$w;->Companion:Lgb4/k$w$a;
-
-    .line 57
-    invoke-virtual {v6, v5}, Lgb4/k$w$a;->a(I)Lgb4/k$w;
-
-    .line 60
-    move-result-object v6
-
-    .line 61
-    if-eqz v6, :cond_40
-
-    .line 63
-    :goto_3e
-    move-object v10, v6
-
-    .line 64
-    goto :goto_46
-
-    .line 65
-    :cond_40
-    sget-object v6, Lgb4/k$t;->b:Lgb4/k$t;
-
-    .line 67
-    goto :goto_3e
-
-    .line 68
-    :cond_43
-    sget-object v6, Lgb4/k$s;->b:Lgb4/k$s;
-
-    .line 70
-    goto :goto_3e
-
-    .line 71
-    :goto_46
-    new-instance v7, Lpf4/k;
-
-    .line 73
-    new-instance v8, Leb4/k;
-
-    .line 75
-    sget-object v6, Lc51/a;->a:Lc51/a;
-
-    .line 77
-    invoke-virtual {v6}, Lc51/a;->e()Ljava/lang/String;
-
-    .line 80
-    move-result-object v6
-
-    .line 81
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    .line 83
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
-
-    .line 86
-    invoke-virtual {v9, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 89
-    invoke-virtual {v9, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    .line 92
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 95
-    move-result-object v3
-
-    .line 96
-    invoke-direct {v8, v3}, Leb4/k;-><init>(Ljava/lang/String;)V
-
-    .line 99
-    invoke-static {v4}, Lmb4/f;->j(Lsinet/startup/inDriver/core/data/data/Location;)Leb4/m;
-
-    .line 102
-    move-result-object v9
-
-    .line 103
-    sget-object v13, Lpf4/q$c;->b:Lpf4/q$c;
-
-    .line 105
-    const/16 v16, 0xd8
-
-    .line 107
-    const/16 v17, 0x0
-
-    .line 109
-    const/4 v11, 0x0
-
-    .line 110
-    const/4 v12, 0x0
-
-    .line 111
-    const/4 v14, 0x0
-
-    .line 112
-    const/4 v15, 0x0
-
-    .line 113
-    invoke-direct/range {v7 .. v17}, Lpf4/k;-><init>(Leb4/k;Leb4/m;Lgb4/g;Leb4/h;Leb4/o;Lpf4/q;ZZILkotlin/jvm/internal/DefaultConstructorMarker;)V
-
-    .line 116
-    invoke-interface {v2, v7}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
-
-    .line 119
-    move v3, v5
-
-    .line 120
-    goto :goto_1d
-
-    .line 121
-    :cond_78
-    invoke-interface {v0, v2}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
-
-    .line 124
-    invoke-virtual/range {p1 .. p1}, Luh0/a;->g()Z
-
-    .line 127
-    move-result v1
-
-    .line 128
-    if-eqz v1, :cond_85
-
-    .line 130
-    sget-object v1, Lgb4/k$c;->b:Lgb4/k$c;
-
-    .line 132
-    :goto_83
-    move-object v5, v1
-
-    .line 133
-    goto :goto_88
-
-    .line 134
-    :cond_85
-    sget-object v1, Lgb4/k$h;->b:Lgb4/k$h;
-
-    .line 136
-    goto :goto_83
-
-    .line 137
-    :goto_88
-    invoke-virtual/range {p1 .. p1}, Luh0/a;->g()Z
-
-    .line 140
-    move-result v1
-
-    .line 141
-    if-eqz v1, :cond_92
-
-    .line 143
-    sget-object v1, Lgb4/k$d;->b:Lgb4/k$d;
-
-    .line 145
-    :goto_90
-    move-object v9, v1
-
-    .line 146
-    goto :goto_95
-
-    .line 147
-    :cond_92
-    sget-object v1, Lgb4/k$l;->b:Lgb4/k$l;
-
-    .line 149
-    goto :goto_90
-
-    .line 150
-    :goto_95
-    new-instance v6, Lpf4/k;
-
-    .line 152
-    new-instance v7, Leb4/k;
-
-    .line 154
-    sget-object v1, Lc51/a;->a:Lc51/a;
-
-    .line 156
-    invoke-virtual {v1}, Lc51/a;->g()Ljava/lang/String;
-
-    .line 159
-    move-result-object v2
-
-    .line 160
-    invoke-direct {v7, v2}, Leb4/k;-><init>(Ljava/lang/String;)V
-
-    .line 163
-    invoke-virtual/range {p1 .. p1}, Luh0/a;->a()Lsinet/startup/inDriver/core/data/data/Location;
-
-    .line 166
-    move-result-object v2
-
-    .line 167
-    invoke-static {v2}, Lmb4/f;->j(Lsinet/startup/inDriver/core/data/data/Location;)Leb4/m;
-
-    .line 170
-    move-result-object v8
-
-    .line 171
-    sget-object v12, Lpf4/q$c;->b:Lpf4/q$c;
-
-    .line 173
-    const/16 v15, 0xd8
-
-    .line 175
-    const/16 v16, 0x0
-
-    .line 177
-    const/4 v10, 0x0
-
-    .line 178
-    const/4 v11, 0x0
-
-    .line 179
-    const/4 v13, 0x0
-
-    .line 180
-    const/4 v14, 0x0
-
-    .line 181
-    invoke-direct/range {v6 .. v16}, Lpf4/k;-><init>(Leb4/k;Leb4/m;Lgb4/g;Leb4/h;Leb4/o;Lpf4/q;ZZILkotlin/jvm/internal/DefaultConstructorMarker;)V
-
-    .line 184
-    move-object v8, v12
-
-    .line 185
-    invoke-interface {v0, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 188
-    new-instance v2, Lpf4/k;
-
-    .line 190
-    new-instance v3, Leb4/k;
-
-    .line 192
-    invoke-virtual {v1}, Lc51/a;->f()Ljava/lang/String;
-
-    .line 195
-    move-result-object v4
-
-    .line 196
-    invoke-direct {v3, v4}, Leb4/k;-><init>(Ljava/lang/String;)V
-
-    .line 199
-    invoke-virtual/range {p1 .. p1}, Luh0/a;->e()Lsinet/startup/inDriver/core/data/data/Location;
-
-    .line 202
-    move-result-object v4
-
-    .line 203
-    invoke-static {v4}, Lmb4/f;->j(Lsinet/startup/inDriver/core/data/data/Location;)Leb4/m;
-
-    .line 206
-    move-result-object v4
-
-    .line 207
-    const/16 v11, 0xd8
-
-    .line 209
-    const/4 v12, 0x0
-
-    .line 210
-    const/4 v6, 0x0
-
-    .line 211
-    const/4 v7, 0x0
-
-    .line 212
-    const/4 v9, 0x0
-
-    .line 213
-    const/4 v10, 0x0
-
-    .line 214
-    invoke-direct/range {v2 .. v12}, Lpf4/k;-><init>(Leb4/k;Leb4/m;Lgb4/g;Leb4/h;Leb4/o;Lpf4/q;ZZILkotlin/jvm/internal/DefaultConstructorMarker;)V
-
-    .line 217
-    invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 220
-    new-instance v4, Leb4/k;
-
-    .line 222
-    invoke-virtual {v1}, Lc51/a;->h()Ljava/lang/String;
-
-    .line 225
-    move-result-object v1
-
-    .line 226
-    invoke-direct {v4, v1}, Leb4/k;-><init>(Ljava/lang/String;)V
-
-    .line 229
-    invoke-virtual/range {p1 .. p1}, Luh0/a;->b()Lsinet/startup/inDriver/core/data/data/Location;
-
-    .line 232
-    move-result-object v1
-
-    .line 233
-    invoke-static {v1}, Lmb4/f;->j(Lsinet/startup/inDriver/core/data/data/Location;)Leb4/m;
-
-    .line 236
-    move-result-object v5
-
-    .line 237
-    invoke-virtual/range {p1 .. p1}, Luh0/a;->g()Z
-
-    .line 240
-    move-result v1
-
-    .line 241
-    if-eqz v1, :cond_f6
-
-    .line 243
-    sget-object v1, Lgb4/k$p;->b:Lgb4/k$p;
-
-    .line 245
-    :goto_f4
-    move-object v6, v1
-
-    .line 246
-    goto :goto_f9
-
-    .line 247
-    :cond_f6
-    sget-object v1, Lgb4/k$a;->b:Lgb4/k$a;
-
-    .line 249
-    goto :goto_f4
-
-    .line 250
-    :goto_f9
-    sget-object v9, Lpf4/q$e;->b:Lpf4/q$e;
-
-    .line 252
-    new-instance v10, Leb4/o;
-
-    .line 254
-    invoke-virtual/range {p1 .. p1}, Luh0/a;->b()Lsinet/startup/inDriver/core/data/data/Location;
-
-    .line 257
-    move-result-object v1
-
-    .line 258
-    invoke-virtual {v1}, Lsinet/startup/inDriver/core/data/data/Location;->getBearing()F
-
-    .line 261
-    move-result v1
-
-    .line 262
-    invoke-static {v1}, Leb4/b0;->b(F)D
-
-    .line 265
-    move-result-wide v13
-
-    .line 266
-    const/4 v15, 0x1
-
-    .line 267
-    const/16 v16, 0x0
-
-    .line 269
-    const-wide/16 v11, 0x0
-
-    .line 271
-    invoke-direct/range {v10 .. v16}, Leb4/o;-><init>(DDILkotlin/jvm/internal/DefaultConstructorMarker;)V
-
-    .line 274
-    invoke-virtual/range {p1 .. p1}, Luh0/a;->g()Z
-
-    .line 277
-    move-result v1
-
-    .line 278
-    if-eqz v1, :cond_118
-
-    .line 280
-    goto :goto_119
-
-    .line 281
-    :cond_118
-    const/4 v10, 0x0
-
-    .line 282
-    :goto_119
-    if-nez v10, :cond_12a
-
-    .line 284
-    new-instance v11, Leb4/o;
-
-    .line 286
-    const/16 v16, 0x3
-
-    .line 288
-    const/16 v17, 0x0
-
-    .line 290
-    const-wide/16 v12, 0x0
-
-    .line 292
-    const-wide/16 v14, 0x0
-
-    .line 294
-    invoke-direct/range {v11 .. v17}, Leb4/o;-><init>(DDILkotlin/jvm/internal/DefaultConstructorMarker;)V
-
-    .line 297
-    move-object v8, v11
-
-    .line 298
-    goto :goto_12b
-
-    .line 299
-    :cond_12a
-    move-object v8, v10
-
-    .line 300
-    :goto_12b
-    new-instance v3, Lpf4/k;
-
-    .line 302
-    const/16 v12, 0xc8
-
-    .line 304
-    const/4 v13, 0x0
-
-    .line 305
-    const/4 v7, 0x0
-
-    .line 306
-    const/4 v10, 0x0
-
-    .line 307
-    const/4 v11, 0x0
-
-    .line 308
-    invoke-direct/range {v3 .. v13}, Lpf4/k;-><init>(Leb4/k;Leb4/m;Lgb4/g;Leb4/h;Leb4/o;Lpf4/q;ZZILkotlin/jvm/internal/DefaultConstructorMarker;)V
-
-    .line 311
-    invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 314
-    invoke-static {v0}, Lkotlin/collections/CollectionsKt;->a(Ljava/util/List;)Ljava/util/List;
-
-    .line 317
-    move-result-object v0
-
-    .line 318
-    invoke-virtual/range {p0 .. p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->f6()Lof4/a;
-
-    .line 321
-    move-result-object v1
-
-    .line 322
-    invoke-interface {v1, v0}, Lof4/a;->e1(Ljava/util/List;)V
-
-    .line 325
-    invoke-direct/range {p0 .. p1}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->j6(Luh0/a;)V
-
-    .line 328
-    return-void
-.end method
-
-.method private final j6(Luh0/a;)V
-    .registers 11
-
-    .line 1
-    invoke-virtual {p1}, Luh0/a;->f()Ljava/util/List;
-
-    .line 4
-    move-result-object v0
-
-    .line 5
-    check-cast v0, Ljava/util/Collection;
-
-    .line 7
-    invoke-virtual {p1}, Luh0/a;->c()Ljava/util/List;
-
-    .line 10
-    move-result-object v1
-
-    .line 11
-    check-cast v1, Ljava/lang/Iterable;
-
-    .line 13
-    invoke-static {v0, v1}, Lkotlin/collections/CollectionsKt;->X0(Ljava/util/Collection;Ljava/lang/Iterable;)Ljava/util/List;
-
-    .line 16
-    move-result-object v0
-
-    .line 17
-    check-cast v0, Ljava/util/Collection;
-
-    .line 19
-    invoke-virtual {p1}, Luh0/a;->a()Lsinet/startup/inDriver/core/data/data/Location;
-
-    .line 22
-    move-result-object v1
-
-    .line 23
-    invoke-static {v0, v1}, Lkotlin/collections/CollectionsKt;->Y0(Ljava/util/Collection;Ljava/lang/Object;)Ljava/util/List;
-
-    .line 26
-    move-result-object v0
-
-    .line 27
-    check-cast v0, Ljava/util/Collection;
-
-    .line 29
-    invoke-virtual {p1}, Luh0/a;->b()Lsinet/startup/inDriver/core/data/data/Location;
-
-    .line 32
-    move-result-object v1
-
-    .line 33
-    invoke-static {v0, v1}, Lkotlin/collections/CollectionsKt;->Y0(Ljava/util/Collection;Ljava/lang/Object;)Ljava/util/List;
-
-    .line 36
-    move-result-object v0
-
-    .line 37
-    check-cast v0, Ljava/util/Collection;
-
-    .line 39
-    invoke-virtual {p1}, Luh0/a;->e()Lsinet/startup/inDriver/core/data/data/Location;
-
-    .line 42
     move-result-object p1
-
-    .line 43
-    invoke-static {v0, p1}, Lkotlin/collections/CollectionsKt;->Y0(Ljava/util/Collection;Ljava/lang/Object;)Ljava/util/List;
-
-    .line 46
-    move-result-object p1
-
-    .line 47
-    check-cast p1, Ljava/lang/Iterable;
-
-    .line 49
-    new-instance v0, Ljava/util/ArrayList;
-
-    .line 51
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    .line 54
-    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    .line 57
-    move-result-object p1
-
-    .line 58
-    :cond_39
-    :goto_39
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
-
-    .line 61
-    move-result v1
-
-    .line 62
-    if-eqz v1, :cond_50
-
-    .line 64
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    .line 67
-    move-result-object v1
-
-    .line 68
-    move-object v2, v1
-
-    .line 69
-    check-cast v2, Lsinet/startup/inDriver/core/data/data/Location;
-
-    .line 71
-    invoke-static {v2}, Lnu1/o0;->a(Lsinet/startup/inDriver/core/data/data/Location;)Z
-
-    .line 74
-    move-result v2
-
-    .line 75
-    if-eqz v2, :cond_39
-
-    .line 77
-    invoke-interface {v0, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
-
-    .line 80
-    goto :goto_39
-
-    .line 81
-    :cond_50
-    new-instance v4, Ljava/util/ArrayList;
-
-    .line 83
-    const/16 p1, 0xa
-
-    .line 85
-    invoke-static {v0, p1}, Lkotlin/collections/CollectionsKt;->A(Ljava/lang/Iterable;I)I
-
-    .line 88
-    move-result p1
-
-    .line 89
-    invoke-direct {v4, p1}, Ljava/util/ArrayList;-><init>(I)V
-
-    .line 92
-    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    .line 95
-    move-result-object p1
-
-    .line 96
-    :goto_5f
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
-
-    .line 99
-    move-result v0
-
-    .line 100
-    if-eqz v0, :cond_73
-
-    .line 102
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    .line 105
-    move-result-object v0
-
-    .line 106
-    check-cast v0, Lsinet/startup/inDriver/core/data/data/Location;
-
-    .line 108
-    invoke-static {v0}, Lmb4/f;->j(Lsinet/startup/inDriver/core/data/data/Location;)Leb4/m;
-
-    .line 111
-    move-result-object v0
-
-    .line 112
-    invoke-interface {v4, v0}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
-
-    .line 115
-    goto :goto_5f
-
-    .line 116
-    :cond_73
-    invoke-interface {v4}, Ljava/util/List;->size()I
-
-    .line 119
-    move-result p1
-
-    .line 120
-    const/4 v0, 0x1
-
-    .line 121
-    if-le p1, v0, :cond_86
-
-    .line 123
-    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->f6()Lof4/a;
-
-    .line 126
-    move-result-object v3
-
-    .line 127
-    sget-object v5, Leb4/e$d;->d:Leb4/e$d;
-
-    .line 129
-    const/4 v7, 0x4
-
-    .line 130
-    const/4 v8, 0x0
-
-    .line 131
-    const/4 v6, 0x0
-
-    .line 132
-    invoke-static/range {v3 .. v8}, Lof4/a;->d0(Lof4/a;Ljava/util/List;Leb4/e;Leb4/b;ILjava/lang/Object;)V
-
-    .line 135
-    :cond_86
-    return-void
-.end method
-
-.method private final k6(Lvg0/a;)V
-    .registers 15
-
-    .line 1
-    invoke-virtual {p1}, Lvg0/a;->f()Ljava/util/List;
-
-    .line 4
-    move-result-object v0
-
-    .line 5
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    .line 8
-    move-result v0
 
     .line 9
-    const/4 v1, 0x1
-
-    .line 10
-    if-le v0, v1, :cond_5c
+    invoke-virtual {p1}, La51/t1;->k2()V
 
     .line 12
-    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->f6()Lof4/a;
-
-    .line 15
-    move-result-object v0
-
-    .line 16
-    new-instance v2, Leb4/k;
-
-    .line 18
-    sget-object v1, Lc51/a;->a:Lc51/a;
-
-    .line 20
-    invoke-virtual {v1}, Lc51/a;->c()Ljava/lang/String;
-
-    .line 23
-    move-result-object v3
-
-    .line 24
-    invoke-direct {v2, v3}, Leb4/k;-><init>(Ljava/lang/String;)V
-
-    .line 27
-    new-instance v3, Leb4/t$c;
-
-    .line 29
-    invoke-virtual {v1}, Lc51/a;->k()I
-
-    .line 32
-    move-result v1
-
-    .line 33
-    invoke-direct {v3, v1}, Leb4/t$c;-><init>(I)V
-
-    .line 36
-    invoke-virtual {p1}, Lvg0/a;->f()Ljava/util/List;
-
-    .line 39
-    move-result-object v1
-
-    .line 40
-    check-cast v1, Ljava/lang/Iterable;
-
-    .line 42
-    new-instance v4, Ljava/util/ArrayList;
-
-    .line 44
-    const/16 v5, 0xa
-
-    .line 46
-    invoke-static {v1, v5}, Lkotlin/collections/CollectionsKt;->A(Ljava/lang/Iterable;I)I
-
-    .line 49
-    move-result v5
-
-    .line 50
-    invoke-direct {v4, v5}, Ljava/util/ArrayList;-><init>(I)V
-
-    .line 53
-    invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    .line 56
-    move-result-object v1
-
-    .line 57
-    :goto_38
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    .line 60
-    move-result v5
-
-    .line 61
-    if-eqz v5, :cond_4c
-
-    .line 63
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    .line 66
-    move-result-object v5
-
-    .line 67
-    check-cast v5, Lsinet/startup/inDriver/core/data/data/Location;
-
-    .line 69
-    invoke-static {v5}, Lmb4/f;->j(Lsinet/startup/inDriver/core/data/data/Location;)Leb4/m;
-
-    .line 72
-    move-result-object v5
-
-    .line 73
-    invoke-interface {v4, v5}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
-
-    .line 76
-    goto :goto_38
-
-    .line 77
-    :cond_4c
-    sget-object v6, Leb4/w$b;->b:Leb4/w$b;
-
-    .line 79
-    sget-object v5, Lpf4/q$a;->b:Lpf4/q$a;
-
-    .line 81
-    new-instance v1, Lpf4/f;
-
-    .line 83
-    const/16 v8, 0x20
-
-    .line 85
-    const/4 v9, 0x0
-
-    .line 86
-    const/4 v7, 0x0
-
-    .line 87
-    invoke-direct/range {v1 .. v9}, Lpf4/f;-><init>(Leb4/k;Leb4/t;Ljava/util/List;Lpf4/q;Leb4/w;Lpf4/g;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-
-    .line 90
-    invoke-interface {v0, v1}, Lof4/a;->p0(Lpf4/f;)V
-
-    .line 93
-    :cond_5c
-    invoke-virtual {p1}, Lvg0/a;->d()Lsinet/startup/inDriver/core/data/data/Location;
-
-    .line 96
-    move-result-object v0
-
-    .line 97
-    if-eqz v0, :cond_89
-
-    .line 99
-    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->f6()Lof4/a;
-
-    .line 102
-    move-result-object v1
-
-    .line 103
-    new-instance v2, Lpf4/k;
-
-    .line 105
-    new-instance v3, Leb4/k;
-
-    .line 107
-    sget-object v4, Lc51/a;->a:Lc51/a;
-
-    .line 109
-    invoke-virtual {v4}, Lc51/a;->i()Ljava/lang/String;
-
-    .line 112
-    move-result-object v4
-
-    .line 113
-    invoke-direct {v3, v4}, Leb4/k;-><init>(Ljava/lang/String;)V
-
-    .line 116
-    invoke-static {v0}, Lmb4/f;->j(Lsinet/startup/inDriver/core/data/data/Location;)Leb4/m;
-
-    .line 119
-    move-result-object v4
-
-    .line 120
-    sget-object v5, Lgb4/k$x;->b:Lgb4/k$x;
-
-    .line 122
-    sget-object v8, Lpf4/q$c;->b:Lpf4/q$c;
-
-    .line 124
-    const/16 v11, 0xd8
-
-    .line 126
-    const/4 v12, 0x0
-
-    .line 127
-    const/4 v6, 0x0
-
-    .line 128
-    const/4 v7, 0x0
-
-    .line 129
-    const/4 v9, 0x0
-
-    .line 130
-    const/4 v10, 0x0
-
-    .line 131
-    invoke-direct/range {v2 .. v12}, Lpf4/k;-><init>(Leb4/k;Leb4/m;Lgb4/g;Leb4/h;Leb4/o;Lpf4/q;ZZILkotlin/jvm/internal/DefaultConstructorMarker;)V
-
-    .line 134
-    invoke-interface {v1, v2}, Lof4/a;->X0(Lpf4/k;)V
-
-    .line 137
-    goto :goto_9b
-
-    .line 138
-    :cond_89
-    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->f6()Lof4/a;
-
-    .line 141
-    move-result-object v0
-
-    .line 142
-    new-instance v1, Leb4/k;
-
-    .line 144
-    sget-object v2, Lc51/a;->a:Lc51/a;
-
-    .line 146
-    invoke-virtual {v2}, Lc51/a;->i()Ljava/lang/String;
-
-    .line 149
-    move-result-object v2
-
-    .line 150
-    invoke-direct {v1, v2}, Leb4/k;-><init>(Ljava/lang/String;)V
-
-    .line 153
-    invoke-interface {v0, v1}, Lof4/a;->p1(Leb4/k;)V
-
-    .line 156
-    :goto_9b
-    new-instance v6, Lhb4/a;
-
-    .line 158
-    invoke-virtual {p1}, Lvg0/a;->c()Ljava/lang/String;
-
-    .line 161
-    move-result-object v0
-
-    .line 162
-    invoke-virtual {p1}, Lvg0/a;->b()Ljava/lang/String;
-
-    .line 165
-    move-result-object v1
-
-    .line 166
-    invoke-virtual {p1}, Lvg0/a;->g()Z
-
-    .line 169
-    move-result v2
-
-    .line 170
-    if-eqz v2, :cond_ae
-
-    .line 172
-    sget-object v2, Lhb4/a$a;->REDESIGN:Lhb4/a$a;
-
-    .line 174
-    goto :goto_b0
-
-    .line 175
-    :cond_ae
-    sget-object v2, Lhb4/a$a;->BLUE:Lhb4/a$a;
-
-    .line 177
-    :goto_b0
-    invoke-direct {v6, v0, v1, v2}, Lhb4/a;-><init>(Ljava/lang/String;Ljava/lang/String;Lhb4/a$a;)V
-
-    .line 180
-    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->f6()Lof4/a;
-
-    .line 183
-    move-result-object v0
-
-    .line 184
-    new-instance v4, Leb4/k;
-
-    .line 186
-    sget-object v1, Lc51/a;->a:Lc51/a;
-
-    .line 188
-    invoke-virtual {v1}, Lc51/a;->a()Ljava/lang/String;
-
-    .line 191
-    move-result-object v1
-
-    .line 192
-    invoke-direct {v4, v1}, Leb4/k;-><init>(Ljava/lang/String;)V
-
-    .line 195
-    new-instance v5, Leb4/r$b;
-
-    .line 197
-    invoke-virtual {p1}, Lvg0/a;->e()Lsinet/startup/inDriver/core/data/data/Location;
-
-    .line 200
-    move-result-object p1
-
-    .line 201
-    invoke-static {p1}, Lmb4/f;->j(Lsinet/startup/inDriver/core/data/data/Location;)Leb4/m;
-
-    .line 204
-    move-result-object p1
-
-    .line 205
-    invoke-direct {v5, p1}, Leb4/r$b;-><init>(Leb4/m;)V
-
-    .line 208
-    sget-object v9, Leb4/q$b;->b:Leb4/q$b;
-
-    .line 210
-    sget-object v10, Leb4/p$b;->a:Leb4/p$b;
-
-    .line 212
-    sget-object v7, Lpf4/q$f;->b:Lpf4/q$f;
-
-    .line 214
-    new-instance v3, Lpf4/e;
-
-    .line 216
-    const/16 v11, 0x10
-
-    .line 218
-    const/4 v12, 0x0
-
-    .line 219
-    const/4 v8, 0x0
-
-    .line 220
-    invoke-direct/range {v3 .. v12}, Lpf4/e;-><init>(Leb4/k;Leb4/r;Leb4/s;Lpf4/q;Leb4/h;Leb4/q;Leb4/p;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-
-    .line 223
-    invoke-interface {v0, v3}, Lof4/a;->x0(Lpf4/e;)V
-
-    .line 226
     return-void
-.end method
-
-.method private final l6(Lvg0/a;)V
-    .registers 15
-
-    .line 1
-    invoke-virtual {p1}, Lvg0/a;->f()Ljava/util/List;
-
-    .line 4
-    move-result-object v0
-
-    .line 5
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    .line 8
-    move-result v0
-
-    .line 9
-    const/4 v1, 0x1
-
-    .line 10
-    if-le v0, v1, :cond_6b
-
-    .line 12
-    invoke-virtual {p1}, Lvg0/a;->g()Z
-
-    .line 15
-    move-result v0
-
-    .line 16
-    if-eqz v0, :cond_18
-
-    .line 18
-    sget-object v0, Lc51/a;->a:Lc51/a;
-
-    .line 20
-    invoke-virtual {v0}, Lc51/a;->m()I
-
-    .line 23
-    move-result v0
-
-    .line 24
-    goto :goto_1e
-
-    .line 25
-    :cond_18
-    sget-object v0, Lc51/a;->a:Lc51/a;
-
-    .line 27
-    invoke-virtual {v0}, Lc51/a;->l()I
-
-    .line 30
-    move-result v0
-
-    .line 31
-    :goto_1e
-    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->f6()Lof4/a;
-
-    .line 34
-    move-result-object v1
-
-    .line 35
-    new-instance v3, Leb4/k;
-
-    .line 37
-    sget-object v2, Lc51/a;->a:Lc51/a;
-
-    .line 39
-    invoke-virtual {v2}, Lc51/a;->d()Ljava/lang/String;
-
-    .line 42
-    move-result-object v2
-
-    .line 43
-    invoke-direct {v3, v2}, Leb4/k;-><init>(Ljava/lang/String;)V
-
-    .line 46
-    new-instance v4, Leb4/t$c;
-
-    .line 48
-    invoke-direct {v4, v0}, Leb4/t$c;-><init>(I)V
-
-    .line 51
-    invoke-virtual {p1}, Lvg0/a;->f()Ljava/util/List;
-
-    .line 54
-    move-result-object v0
-
-    .line 55
-    check-cast v0, Ljava/lang/Iterable;
-
-    .line 57
-    new-instance v5, Ljava/util/ArrayList;
-
-    .line 59
-    const/16 v2, 0xa
-
-    .line 61
-    invoke-static {v0, v2}, Lkotlin/collections/CollectionsKt;->A(Ljava/lang/Iterable;I)I
-
-    .line 64
-    move-result v2
-
-    .line 65
-    invoke-direct {v5, v2}, Ljava/util/ArrayList;-><init>(I)V
-
-    .line 68
-    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    .line 71
-    move-result-object v0
-
-    .line 72
-    :goto_47
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    .line 75
-    move-result v2
-
-    .line 76
-    if-eqz v2, :cond_5b
-
-    .line 78
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    .line 81
-    move-result-object v2
-
-    .line 82
-    check-cast v2, Lsinet/startup/inDriver/core/data/data/Location;
-
-    .line 84
-    invoke-static {v2}, Lmb4/f;->j(Lsinet/startup/inDriver/core/data/data/Location;)Leb4/m;
-
-    .line 87
-    move-result-object v2
-
-    .line 88
-    invoke-interface {v5, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
-
-    .line 91
-    goto :goto_47
-
-    .line 92
-    :cond_5b
-    sget-object v7, Leb4/w$b;->b:Leb4/w$b;
-
-    .line 94
-    sget-object v6, Lpf4/q$a;->b:Lpf4/q$a;
-
-    .line 96
-    new-instance v2, Lpf4/f;
-
-    .line 98
-    const/16 v9, 0x20
-
-    .line 100
-    const/4 v10, 0x0
-
-    .line 101
-    const/4 v8, 0x0
-
-    .line 102
-    invoke-direct/range {v2 .. v10}, Lpf4/f;-><init>(Leb4/k;Leb4/t;Ljava/util/List;Lpf4/q;Leb4/w;Lpf4/g;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-
-    .line 105
-    invoke-interface {v1, v2}, Lof4/a;->p0(Lpf4/f;)V
-
-    .line 108
-    :cond_6b
-    invoke-virtual {p1}, Lvg0/a;->d()Lsinet/startup/inDriver/core/data/data/Location;
-
-    .line 111
-    move-result-object v0
-
-    .line 112
-    if-eqz v0, :cond_98
-
-    .line 114
-    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->f6()Lof4/a;
-
-    .line 117
-    move-result-object v1
-
-    .line 118
-    new-instance v2, Lpf4/k;
-
-    .line 120
-    new-instance v3, Leb4/k;
-
-    .line 122
-    sget-object v4, Lc51/a;->a:Lc51/a;
-
-    .line 124
-    invoke-virtual {v4}, Lc51/a;->j()Ljava/lang/String;
-
-    .line 127
-    move-result-object v4
-
-    .line 128
-    invoke-direct {v3, v4}, Leb4/k;-><init>(Ljava/lang/String;)V
-
-    .line 131
-    invoke-static {v0}, Lmb4/f;->j(Lsinet/startup/inDriver/core/data/data/Location;)Leb4/m;
-
-    .line 134
-    move-result-object v4
-
-    .line 135
-    sget-object v5, Lgb4/k$x;->b:Lgb4/k$x;
-
-    .line 137
-    sget-object v8, Lpf4/q$c;->b:Lpf4/q$c;
-
-    .line 139
-    const/16 v11, 0xd8
-
-    .line 141
-    const/4 v12, 0x0
-
-    .line 142
-    const/4 v6, 0x0
-
-    .line 143
-    const/4 v7, 0x0
-
-    .line 144
-    const/4 v9, 0x0
-
-    .line 145
-    const/4 v10, 0x0
-
-    .line 146
-    invoke-direct/range {v2 .. v12}, Lpf4/k;-><init>(Leb4/k;Leb4/m;Lgb4/g;Leb4/h;Leb4/o;Lpf4/q;ZZILkotlin/jvm/internal/DefaultConstructorMarker;)V
-
-    .line 149
-    invoke-interface {v1, v2}, Lof4/a;->X0(Lpf4/k;)V
-
-    .line 152
-    goto :goto_aa
-
-    .line 153
-    :cond_98
-    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->f6()Lof4/a;
-
-    .line 156
-    move-result-object v0
-
-    .line 157
-    new-instance v1, Leb4/k;
-
-    .line 159
-    sget-object v2, Lc51/a;->a:Lc51/a;
-
-    .line 161
-    invoke-virtual {v2}, Lc51/a;->j()Ljava/lang/String;
-
-    .line 164
-    move-result-object v2
-
-    .line 165
-    invoke-direct {v1, v2}, Leb4/k;-><init>(Ljava/lang/String;)V
-
-    .line 168
-    invoke-interface {v0, v1}, Lof4/a;->p1(Leb4/k;)V
-
-    .line 171
-    :goto_aa
-    new-instance v6, Lhb4/a;
-
-    .line 173
-    invoke-virtual {p1}, Lvg0/a;->c()Ljava/lang/String;
-
-    .line 176
-    move-result-object v0
-
-    .line 177
-    invoke-virtual {p1}, Lvg0/a;->b()Ljava/lang/String;
-
-    .line 180
-    move-result-object v1
-
-    .line 181
-    invoke-virtual {p1}, Lvg0/a;->g()Z
-
-    .line 184
-    move-result v2
-
-    .line 185
-    if-eqz v2, :cond_bd
-
-    .line 187
-    sget-object v2, Lhb4/a$a;->REDESIGN:Lhb4/a$a;
-
-    .line 189
-    goto :goto_bf
-
-    .line 190
-    :cond_bd
-    sget-object v2, Lhb4/a$a;->GREEN:Lhb4/a$a;
-
-    .line 192
-    :goto_bf
-    invoke-direct {v6, v0, v1, v2}, Lhb4/a;-><init>(Ljava/lang/String;Ljava/lang/String;Lhb4/a$a;)V
-
-    .line 195
-    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->f6()Lof4/a;
-
-    .line 198
-    move-result-object v0
-
-    .line 199
-    new-instance v4, Leb4/k;
-
-    .line 201
-    sget-object v1, Lc51/a;->a:Lc51/a;
-
-    .line 203
-    invoke-virtual {v1}, Lc51/a;->b()Ljava/lang/String;
-
-    .line 206
-    move-result-object v1
-
-    .line 207
-    invoke-direct {v4, v1}, Leb4/k;-><init>(Ljava/lang/String;)V
-
-    .line 210
-    new-instance v5, Leb4/r$b;
-
-    .line 212
-    invoke-virtual {p1}, Lvg0/a;->e()Lsinet/startup/inDriver/core/data/data/Location;
-
-    .line 215
-    move-result-object p1
-
-    .line 216
-    invoke-static {p1}, Lmb4/f;->j(Lsinet/startup/inDriver/core/data/data/Location;)Leb4/m;
-
-    .line 219
-    move-result-object p1
-
-    .line 220
-    invoke-direct {v5, p1}, Leb4/r$b;-><init>(Leb4/m;)V
-
-    .line 223
-    sget-object v9, Leb4/q$b;->b:Leb4/q$b;
-
-    .line 225
-    sget-object v10, Leb4/p$b;->a:Leb4/p$b;
-
-    .line 227
-    sget-object v7, Lpf4/q$f;->b:Lpf4/q$f;
-
-    .line 229
-    new-instance v3, Lpf4/e;
-
-    .line 231
-    const/16 v11, 0x10
-
-    .line 233
-    const/4 v12, 0x0
-
-    .line 234
-    const/4 v8, 0x0
-
-    .line 235
-    invoke-direct/range {v3 .. v12}, Lpf4/e;-><init>(Leb4/k;Leb4/r;Leb4/s;Lpf4/q;Leb4/h;Leb4/q;Leb4/p;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-
-    .line 238
-    invoke-interface {v0, v3}, Lof4/a;->x0(Lpf4/e;)V
-
-    .line 241
-    return-void
-.end method
-
-.method private final m6(Landroid/os/Bundle;)V
-    .registers 15
-
-    .line 1
-    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->e6()Lq41/j;
-
-    .line 4
-    move-result-object v0
-
-    .line 5
-    iget-object v0, v0, Lq41/j;->b:Lsinet/startup/inDriver/geo/map/view/GeoMapView;
-
-    .line 7
-    iget-object v1, p0, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->Y0:Lsf4/c;
-
-    .line 9
-    const/4 v2, 0x0
-
-    .line 10
-    if-nez v1, :cond_c
-
-    .line 12
-    move-object v1, v2
 
     .line 13
     :cond_c
-    invoke-interface {v1, v0}, Lsf4/c;->a(Lsinet/startup/inDriver/geo/map/view/GeoMapView;)V
+    instance-of p1, p1, Lg51/f$b;
 
-    .line 16
-    new-instance v3, Lpf4/i;
+    .line 15
+    if-eqz p1, :cond_17
 
-    .line 18
-    const/16 v11, 0x7e
+    .line 17
+    invoke-virtual {p0}, La51/a0;->S6()La51/t1;
 
     .line 20
-    const/4 v12, 0x0
+    move-result-object p1
 
     .line 21
-    const/4 v4, 0x0
-
-    .line 22
-    const/4 v5, 0x0
-
-    .line 23
-    const/4 v6, 0x0
+    invoke-virtual {p1}, La51/t1;->m2()V
 
     .line 24
-    const/4 v7, 0x0
-
-    .line 25
-    const/4 v8, 0x0
-
-    .line 26
-    const/4 v9, 0x0
-
-    .line 27
-    const/4 v10, 0x0
-
-    .line 28
-    invoke-direct/range {v3 .. v12}, Lpf4/i;-><init>(ZZZZZLpf4/r;Lpf4/b;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-
-    .line 31
-    invoke-virtual {v0, p0, p1, v3}, Lsinet/startup/inDriver/geo/map/view/GeoMapView;->m(Landroidx/fragment/app/Fragment;Landroid/os/Bundle;Lpf4/i;)V
-
-    .line 34
-    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->g6()Lc51/s;
-
-    .line 37
-    move-result-object p1
-
-    .line 38
-    const/4 v0, 0x1
-
-    .line 39
-    invoke-virtual {p1, v0}, Lc51/s;->P1(Z)V
-
-    .line 42
-    const/4 p1, 0x0
-
-    .line 43
-    invoke-static {p0, p1, v0, v2}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->d6(Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;IILjava/lang/Object;)V
-
-    .line 46
+    :cond_17
     return-void
 .end method
 
-.method private static final o6(Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;Landroid/view/View;)Lkotlin/Unit;
-    .registers 3
-
-    .line 1
-    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->g6()Lc51/s;
-
-    .line 4
-    move-result-object p1
-
-    .line 5
-    invoke-virtual {p1}, Lc51/s;->Q1()V
-
-    .line 8
-    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->f6()Lof4/a;
-
-    .line 11
-    move-result-object p0
-
-    .line 12
-    const/4 p1, 0x0
-
-    .line 13
-    const/4 v0, 0x1
-
-    .line 14
-    invoke-static {p0, p1, v0, p1}, Lof4/a;->M0(Lof4/a;Landroid/graphics/Point;ILjava/lang/Object;)V
-
-    .line 17
-    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
-
-    .line 19
-    return-object p0
-.end method
-
-.method private static final p6(Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;Landroid/view/View;)Lkotlin/Unit;
-    .registers 3
-
-    .line 1
-    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->g6()Lc51/s;
-
-    .line 4
-    move-result-object p1
-
-    .line 5
-    invoke-virtual {p1}, Lc51/s;->R1()V
-
-    .line 8
-    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->f6()Lof4/a;
-
-    .line 11
-    move-result-object p0
-
-    .line 12
-    const/4 p1, 0x0
-
-    .line 13
-    const/4 v0, 0x1
-
-    .line 14
-    invoke-static {p0, p1, v0, p1}, Lof4/a;->g0(Lof4/a;Landroid/graphics/Point;ILjava/lang/Object;)V
-
-    .line 17
-    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
-
-    .line 19
-    return-object p0
-.end method
-
-.method private static final q6(Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;)Lof4/a;
-    .registers 1
-
-    .line 1
-    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->e6()Lq41/j;
-
-    .line 4
-    move-result-object p0
-
-    .line 5
-    iget-object p0, p0, Lq41/j;->b:Lsinet/startup/inDriver/geo/map/view/GeoMapView;
-
-    .line 7
-    invoke-virtual {p0}, Lsinet/startup/inDriver/geo/map/view/GeoMapView;->getApi()Lof4/a;
-
-    .line 10
-    move-result-object p0
-
-    .line 11
-    return-object p0
-.end method
-
-.method private final r6()V
-    .registers 8
-
-    .line 1
-    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->g6()Lc51/s;
-
-    .line 4
-    move-result-object v0
-
-    .line 5
-    invoke-virtual {v0}, Luu1/i;->getViewState()Lix/s0;
-
-    .line 8
-    move-result-object v0
-
-    .line 9
-    new-instance v1, Lc51/c;
-
-    .line 11
-    invoke-direct {v1}, Lc51/c;-><init>()V
-
-    .line 14
-    new-instance v2, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment$g;
-
-    .line 16
-    invoke-direct {v2, p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment$g;-><init>(Ljava/lang/Object;)V
-
-    .line 19
-    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getViewLifecycleOwner()Landroidx/lifecycle/LifecycleOwner;
-
-    .line 22
-    move-result-object v3
-
-    .line 23
-    invoke-interface {v3}, Landroidx/lifecycle/LifecycleOwner;->getLifecycle()Landroidx/lifecycle/Lifecycle;
-
-    .line 26
-    move-result-object v4
-
-    .line 27
-    const/4 v5, 0x0
-
-    .line 28
-    const/4 v6, 0x2
-
-    .line 29
-    invoke-static {v0, v4, v5, v6, v5}, Landroidx/lifecycle/FlowExtKt;->flowWithLifecycle$default(Lix/i;Landroidx/lifecycle/Lifecycle;Landroidx/lifecycle/Lifecycle$State;ILjava/lang/Object;)Lix/i;
-
-    .line 32
-    move-result-object v0
-
-    .line 33
-    new-instance v4, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment$a;
-
-    .line 35
-    invoke-direct {v4, v0, v1}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment$a;-><init>(Lix/i;Lkotlin/jvm/functions/Function1;)V
-
-    .line 38
-    invoke-static {v4}, Lix/k;->z(Lix/i;)Lix/i;
-
-    .line 41
-    move-result-object v0
-
-    .line 42
-    new-instance v1, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment$b;
-
-    .line 44
-    invoke-direct {v1, v2}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment$b;-><init>(Ljava/lang/Object;)V
-
-    .line 47
-    invoke-static {v0, v1}, Lix/k;->b0(Lix/i;Lkotlin/jvm/functions/Function2;)Lix/i;
-
-    .line 50
-    move-result-object v0
-
-    .line 51
-    invoke-static {v3}, Landroidx/lifecycle/LifecycleOwnerKt;->getLifecycleScope(Landroidx/lifecycle/LifecycleOwner;)Landroidx/lifecycle/LifecycleCoroutineScope;
-
-    .line 54
-    move-result-object v1
-
-    .line 55
-    invoke-static {v0, v1}, Lix/k;->W(Lix/i;Lfx/p0;)Lfx/c2;
-
-    .line 58
-    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->g6()Lc51/s;
-
-    .line 61
-    move-result-object v0
-
-    .line 62
-    invoke-virtual {v0}, Luu1/i;->getViewState()Lix/s0;
-
-    .line 65
-    move-result-object v0
-
-    .line 66
-    new-instance v1, Lc51/d;
-
-    .line 68
-    invoke-direct {v1}, Lc51/d;-><init>()V
-
-    .line 71
-    new-instance v2, Lc51/e;
-
-    .line 73
-    invoke-direct {v2, p0}, Lc51/e;-><init>(Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;)V
-
-    .line 76
-    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getViewLifecycleOwner()Landroidx/lifecycle/LifecycleOwner;
-
-    .line 79
-    move-result-object v3
-
-    .line 80
-    invoke-interface {v3}, Landroidx/lifecycle/LifecycleOwner;->getLifecycle()Landroidx/lifecycle/Lifecycle;
-
-    .line 83
-    move-result-object v4
-
-    .line 84
-    invoke-static {v0, v4, v5, v6, v5}, Landroidx/lifecycle/FlowExtKt;->flowWithLifecycle$default(Lix/i;Landroidx/lifecycle/Lifecycle;Landroidx/lifecycle/Lifecycle$State;ILjava/lang/Object;)Lix/i;
-
-    .line 87
-    move-result-object v0
-
-    .line 88
-    new-instance v4, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment$c;
-
-    .line 90
-    invoke-direct {v4, v0, v1}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment$c;-><init>(Lix/i;Lkotlin/jvm/functions/Function1;)V
-
-    .line 93
-    invoke-static {v4}, Lix/k;->z(Lix/i;)Lix/i;
-
-    .line 96
-    move-result-object v0
-
-    .line 97
-    new-instance v1, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment$d;
-
-    .line 99
-    invoke-direct {v1, v2}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment$d;-><init>(Ljava/lang/Object;)V
-
-    .line 102
-    invoke-static {v0, v1}, Lix/k;->b0(Lix/i;Lkotlin/jvm/functions/Function2;)Lix/i;
-
-    .line 105
-    move-result-object v0
-
-    .line 106
-    invoke-static {v3}, Landroidx/lifecycle/LifecycleOwnerKt;->getLifecycleScope(Landroidx/lifecycle/LifecycleOwner;)Landroidx/lifecycle/LifecycleCoroutineScope;
-
-    .line 109
-    move-result-object v1
-
-    .line 110
-    invoke-static {v0, v1}, Lix/k;->W(Lix/i;Lfx/p0;)Lfx/c2;
-
-    .line 113
-    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->g6()Lc51/s;
-
-    .line 116
-    move-result-object v0
-
-    .line 117
-    invoke-virtual {v0}, Luu1/i;->getViewState()Lix/s0;
-
-    .line 120
-    move-result-object v0
-
-    .line 121
-    new-instance v1, Lc51/f;
-
-    .line 123
-    invoke-direct {v1}, Lc51/f;-><init>()V
-
-    .line 126
-    new-instance v2, Lc51/g;
-
-    .line 128
-    invoke-direct {v2, p0}, Lc51/g;-><init>(Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;)V
-
-    .line 131
-    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getViewLifecycleOwner()Landroidx/lifecycle/LifecycleOwner;
-
-    .line 134
-    move-result-object v3
-
-    .line 135
-    invoke-interface {v3}, Landroidx/lifecycle/LifecycleOwner;->getLifecycle()Landroidx/lifecycle/Lifecycle;
-
-    .line 138
-    move-result-object v4
-
-    .line 139
-    invoke-static {v0, v4, v5, v6, v5}, Landroidx/lifecycle/FlowExtKt;->flowWithLifecycle$default(Lix/i;Landroidx/lifecycle/Lifecycle;Landroidx/lifecycle/Lifecycle$State;ILjava/lang/Object;)Lix/i;
-
-    .line 142
-    move-result-object v0
-
-    .line 143
-    new-instance v4, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment$e;
-
-    .line 145
-    invoke-direct {v4, v0, v1}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment$e;-><init>(Lix/i;Lkotlin/jvm/functions/Function1;)V
-
-    .line 148
-    invoke-static {v4}, Lix/k;->z(Lix/i;)Lix/i;
-
-    .line 151
-    move-result-object v0
-
-    .line 152
-    new-instance v1, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment$f;
-
-    .line 154
-    invoke-direct {v1, v2}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment$f;-><init>(Ljava/lang/Object;)V
-
-    .line 157
-    invoke-static {v0, v1}, Lix/k;->b0(Lix/i;Lkotlin/jvm/functions/Function2;)Lix/i;
-
-    .line 160
-    move-result-object v0
-
-    .line 161
-    invoke-static {v3}, Landroidx/lifecycle/LifecycleOwnerKt;->getLifecycleScope(Landroidx/lifecycle/LifecycleOwner;)Landroidx/lifecycle/LifecycleCoroutineScope;
-
-    .line 164
-    move-result-object v1
-
-    .line 165
-    invoke-static {v0, v1}, Lix/k;->W(Lix/i;Lfx/p0;)Lfx/c2;
-
-    .line 168
-    return-void
-.end method
-
-.method private static final s6(Lc51/u;)Luh0/a;
-    .registers 1
-
-    .line 1
-    invoke-virtual {p0}, Lc51/u;->d()Luh0/a;
-
-    .line 4
-    move-result-object p0
-
-    .line 5
-    return-object p0
-.end method
-
-.method private static final t6(Lc51/u;)Lkotlin/Pair;
+.method private static final E8(La51/g1;Landroid/view/View;)Lkotlin/Unit;
     .registers 2
 
     .line 1
-    invoke-virtual {p0}, Lc51/u;->h()Z
+    invoke-virtual {p0}, La51/a0;->S6()La51/t1;
 
     .line 4
-    move-result v0
+    move-result-object p0
 
     .line 5
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-virtual {p0}, La51/t1;->n2()V
 
     .line 8
-    move-result-object v0
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
 
-    .line 9
-    invoke-virtual {p0}, Lc51/u;->f()Lvg0/a;
-
-    .line 12
-    move-result-object p0
-
-    .line 13
-    invoke-static {v0, p0}, Lfw/y;->a(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
-
-    .line 16
-    move-result-object p0
-
-    .line 17
+    .line 10
     return-object p0
 .end method
 
-.method private static final u6(Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;Lkotlin/Pair;)Lkotlin/Unit;
-    .registers 3
+.method private static final F8(La51/g1;Landroid/view/View;)Lkotlin/Unit;
+    .registers 2
 
     .line 1
-    invoke-virtual {p1}, Lkotlin/Pair;->f()Ljava/lang/Object;
+    invoke-virtual {p0}, La51/a0;->S6()La51/t1;
 
     .line 4
-    move-result-object v0
+    move-result-object p1
 
     .line 5
-    check-cast v0, Ljava/lang/Boolean;
+    invoke-virtual {p1}, La51/t1;->w2()V
 
-    .line 7
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    .line 10
-    move-result v0
+    .line 8
+    invoke-virtual {p0}, La51/a0;->S6()La51/t1;
 
     .line 11
-    invoke-virtual {p1}, Lkotlin/Pair;->g()Ljava/lang/Object;
+    move-result-object p0
 
-    .line 14
-    move-result-object p1
+    .line 12
+    invoke-virtual {p0}, La51/t1;->e2()V
 
     .line 15
-    check-cast p1, Lvg0/a;
-
-    .line 17
-    if-eqz v0, :cond_15
-
-    .line 19
-    invoke-direct {p0, p1}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->k6(Lvg0/a;)V
-
-    .line 22
-    :cond_15
     sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
 
-    .line 24
-    return-object p0
-.end method
-
-.method private static final v6(Lc51/u;)Lkotlin/Pair;
-    .registers 2
-
-    .line 1
-    invoke-virtual {p0}, Lc51/u;->g()Z
-
-    .line 4
-    move-result v0
-
-    .line 5
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    .line 8
-    move-result-object v0
-
-    .line 9
-    invoke-virtual {p0}, Lc51/u;->e()Lvg0/a;
-
-    .line 12
-    move-result-object p0
-
-    .line 13
-    invoke-static {v0, p0}, Lfw/y;->a(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
-
-    .line 16
-    move-result-object p0
-
     .line 17
     return-object p0
 .end method
 
-.method private static final w6(Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;Lkotlin/Pair;)Lkotlin/Unit;
-    .registers 3
+.method private final G8(Lq41/b;)V
+    .registers 5
 
     .line 1
-    invoke-virtual {p1}, Lkotlin/Pair;->f()Ljava/lang/Object;
-
-    .line 4
-    move-result-object v0
-
-    .line 5
-    check-cast v0, Ljava/lang/Boolean;
-
-    .line 7
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    .line 10
-    move-result v0
-
-    .line 11
-    invoke-virtual {p1}, Lkotlin/Pair;->g()Ljava/lang/Object;
-
-    .line 14
-    move-result-object p1
-
-    .line 15
-    check-cast p1, Lvg0/a;
-
-    .line 17
-    if-eqz v0, :cond_15
-
-    .line 19
-    invoke-direct {p0, p1}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->l6(Lvg0/a;)V
-
-    .line 22
-    :cond_15
-    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
-
-    .line 24
-    return-object p0
-.end method
-
-.method private static final y6(Lsinet/startup/inDriver/core/ui/button/FloatingButton;ILsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;)V
-    .registers 4
-
-    .line 1
-    invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    .line 4
-    move-result-object v0
-
-    .line 5
-    if-eqz v0, :cond_11
-
-    .line 7
-    check-cast v0, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;
-
-    .line 9
-    iget p2, p2, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->X0:I
-
-    .line 11
-    add-int/2addr p1, p2
-
-    .line 12
-    iput p1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
-
-    .line 14
-    invoke-virtual {p0, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 17
-    return-void
-
-    .line 18
-    :cond_11
-    new-instance p0, Ljava/lang/NullPointerException;
-
-    .line 20
-    const-string p1, "null cannot be cast to non-null type androidx.constraintlayout.widget.ConstraintLayout.LayoutParams"
-
-    .line 22
-    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    .line 25
-    throw p0
-.end method
-
-
-# virtual methods
-.method public M5()I
-    .registers 2
-
-    .line 1
-    iget v0, p0, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->S0:I
+    iget-object v0, p0, La51/g1;->h1:Lnu1/l;
 
     .line 3
-    return v0
+    sget-object v1, La51/g1;->k1:[Lkotlin/reflect/KProperty;
+
+    .line 5
+    const/4 v2, 0x2
+
+    .line 6
+    aget-object v1, v1, v2
+
+    .line 8
+    invoke-virtual {v0, p0, v1, p1}, Lnu1/l;->d(Landroidx/fragment/app/Fragment;Lkotlin/reflect/KProperty;Ljava/lang/Object;)V
+
+    .line 11
+    return-void
 .end method
 
-.method protected c6(I)V
+.method private final H8(Lq41/a;)V
+    .registers 5
+
+    .line 1
+    iget-object v0, p0, La51/g1;->g1:Lnu1/l;
+
+    .line 3
+    sget-object v1, La51/g1;->k1:[Lkotlin/reflect/KProperty;
+
+    .line 5
+    const/4 v2, 0x1
+
+    .line 6
+    aget-object v1, v1, v2
+
+    .line 8
+    invoke-virtual {v0, p0, v1, p1}, Lnu1/l;->d(Landroidx/fragment/app/Fragment;Lkotlin/reflect/KProperty;Ljava/lang/Object;)V
+
+    .line 11
+    return-void
+.end method
+
+.method private final I8(I)V
+    .registers 5
+
+    .line 1
+    sget v0, Ln41/b;->w:I
+
+    .line 3
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getHost()Ljava/lang/Object;
+
+    .line 6
+    move-result-object v1
+
+    .line 7
+    const/4 v2, 0x0
+
+    .line 8
+    if-nez v1, :cond_a
+
+    .line 10
+    goto :goto_1a
+
+    .line 11
+    :cond_a
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getChildFragmentManager()Landroidx/fragment/app/i0;
+
+    .line 14
+    move-result-object v1
+
+    .line 15
+    invoke-virtual {v1, v0}, Landroidx/fragment/app/i0;->p0(I)Landroidx/fragment/app/Fragment;
+
+    .line 18
+    move-result-object v0
+
+    .line 19
+    instance-of v1, v0, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;
+
+    .line 21
+    if-nez v1, :cond_17
+
+    .line 23
+    goto :goto_18
+
+    .line 24
+    :cond_17
+    move-object v2, v0
+
+    .line 25
+    :goto_18
+    check-cast v2, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;
+
+    .line 27
+    :goto_1a
+    if-eqz v2, :cond_1f
+
+    .line 29
+    invoke-virtual {v2, p1}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->x6(I)V
+
+    .line 32
+    :cond_1f
+    return-void
+.end method
+
+.method private static final J8(La51/g1;Landroid/view/View;)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-virtual {p0}, La51/a0;->S6()La51/t1;
+
+    .line 4
+    move-result-object p0
+
+    .line 5
+    const/4 p1, 0x1
+
+    .line 6
+    invoke-virtual {p0, p1}, La51/t1;->y2(Z)V
+
+    .line 9
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 11
+    return-object p0
+.end method
+
+.method private static final K8(La51/c0;La51/g1;Lm2/l;I)Lkotlin/Unit;
+    .registers 9
+
+    .line 1
+    and-int/lit8 v0, p3, 0x3
+
+    .line 3
+    const/4 v1, 0x2
+
+    .line 4
+    const/4 v2, 0x0
+
+    .line 5
+    const/4 v3, 0x1
+
+    .line 6
+    if-eq v0, v1, :cond_9
+
+    .line 8
+    move v0, v3
+
+    .line 9
+    goto :goto_a
+
+    .line 10
+    :cond_9
+    move v0, v2
+
+    .line 11
+    :goto_a
+    and-int/lit8 v1, p3, 0x1
+
+    .line 13
+    invoke-interface {p2, v0, v1}, Lm2/l;->f(ZI)Z
+
+    .line 16
+    move-result v0
+
+    .line 17
+    if-eqz v0, :cond_3e
+
+    .line 19
+    invoke-static {}, Lm2/v;->P()Z
+
+    .line 22
+    move-result v0
+
+    .line 23
+    if-eqz v0, :cond_21
+
+    .line 25
+    const/4 v0, -0x1
+
+    .line 26
+    const-string v1, "sinet.startup.inDriver.city.driver.order.ui.main.OrderDialogFragment.setMultibidButtonUi.<anonymous>.<anonymous> (OrderDialogFragment.kt:289)"
+
+    .line 28
+    const v4, 0x45643c02
+
+    .line 31
+    invoke-static {v4, p3, v0, v1}, Lm2/v;->Y(IIILjava/lang/String;)V
+
+    .line 34
+    :cond_21
+    new-instance p3, La51/v0;
+
+    .line 36
+    invoke-direct {p3, p0, p1}, La51/v0;-><init>(La51/c0;La51/g1;)V
+
+    .line 39
+    const/16 p0, 0x36
+
+    .line 41
+    const p1, -0x5ff9f7ae
+
+    .line 44
+    invoke-static {p1, v3, p3, p2, p0}, Lu2/l;->e(IZLjava/lang/Object;Lm2/l;I)Lu2/b;
+
+    .line 47
+    move-result-object p0
+
+    .line 48
+    const/16 p1, 0x30
+
+    .line 50
+    invoke-static {v2, p0, p2, p1, v3}, Lqw1/s;->f(ZLkotlin/jvm/functions/Function2;Lm2/l;II)V
+
+    .line 53
+    invoke-static {}, Lm2/v;->P()Z
+
+    .line 56
+    move-result p0
+
+    .line 57
+    if-eqz p0, :cond_41
+
+    .line 59
+    invoke-static {}, Lm2/v;->X()V
+
+    .line 62
+    goto :goto_41
+
+    .line 63
+    :cond_3e
+    invoke-interface {p2}, Lm2/l;->p()V
+
+    .line 66
+    :cond_41
+    :goto_41
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 68
+    return-object p0
+.end method
+
+.method private static final L8(La51/c0;La51/g1;Lm2/l;I)Lkotlin/Unit;
+    .registers 11
+
+    .line 1
+    and-int/lit8 v0, p3, 0x3
+
+    .line 3
+    const/4 v1, 0x2
+
+    .line 4
+    if-eq v0, v1, :cond_7
+
+    .line 6
+    const/4 v0, 0x1
+
+    .line 7
+    goto :goto_8
+
+    .line 8
+    :cond_7
+    const/4 v0, 0x0
+
+    .line 9
+    :goto_8
+    and-int/lit8 v1, p3, 0x1
+
+    .line 11
+    invoke-interface {p2, v0, v1}, Lm2/l;->f(ZI)Z
+
+    .line 14
+    move-result v0
+
+    .line 15
+    if-eqz v0, :cond_7f
+
+    .line 17
+    invoke-static {}, Lm2/v;->P()Z
+
+    .line 20
+    move-result v0
+
+    .line 21
+    if-eqz v0, :cond_1f
+
+    .line 23
+    const/4 v0, -0x1
+
+    .line 24
+    const-string v1, "sinet.startup.inDriver.city.driver.order.ui.main.OrderDialogFragment.setMultibidButtonUi.<anonymous>.<anonymous>.<anonymous> (OrderDialogFragment.kt:290)"
+
+    .line 26
+    const v2, -0x5ff9f7ae
+
+    .line 29
+    invoke-static {v2, p3, v0, v1}, Lm2/v;->Y(IIILjava/lang/String;)V
+
+    .line 32
+    :cond_1f
+    sget-object p3, Lk51/h;->Companion:Lk51/h$b;
+
+    .line 34
+    invoke-virtual {p0}, La51/c0;->c()Ljava/lang/String;
+
+    .line 37
+    move-result-object v0
+
+    .line 38
+    invoke-virtual {p3, p0, v0}, Lk51/h$b;->a(La51/c0;Ljava/lang/String;)Lk51/h;
+
+    .line 41
+    move-result-object v1
+
+    .line 42
+    invoke-virtual {p1}, La51/a0;->S6()La51/t1;
+
+    .line 45
+    move-result-object p0
+
+    .line 46
+    invoke-interface {p2, p0}, Lm2/l;->P(Ljava/lang/Object;)Z
+
+    .line 49
+    move-result p3
+
+    .line 50
+    invoke-interface {p2}, Lm2/l;->N()Ljava/lang/Object;
+
+    .line 53
+    move-result-object v0
+
+    .line 54
+    if-nez p3, :cond_3f
+
+    .line 56
+    sget-object p3, Lm2/l;->a:Lm2/l$a;
+
+    .line 58
+    invoke-virtual {p3}, Lm2/l$a;->a()Ljava/lang/Object;
+
+    .line 61
+    move-result-object p3
+
+    .line 62
+    if-ne v0, p3, :cond_47
+
+    .line 64
+    :cond_3f
+    new-instance v0, La51/g1$e;
+
+    .line 66
+    invoke-direct {v0, p0}, La51/g1$e;-><init>(Ljava/lang/Object;)V
+
+    .line 69
+    invoke-interface {p2, v0}, Lm2/l;->H(Ljava/lang/Object;)V
+
+    .line 72
+    :cond_47
+    check-cast v0, Lkotlin/reflect/KFunction;
+
+    .line 74
+    move-object v2, v0
+
+    .line 75
+    check-cast v2, Lkotlin/jvm/functions/Function0;
+
+    .line 77
+    invoke-virtual {p1}, La51/a0;->S6()La51/t1;
+
+    .line 80
+    move-result-object p0
+
+    .line 81
+    invoke-interface {p2, p0}, Lm2/l;->P(Ljava/lang/Object;)Z
+
+    .line 84
+    move-result p1
+
+    .line 85
+    invoke-interface {p2}, Lm2/l;->N()Ljava/lang/Object;
+
+    .line 88
+    move-result-object p3
+
+    .line 89
+    if-nez p1, :cond_62
+
+    .line 91
+    sget-object p1, Lm2/l;->a:Lm2/l$a;
+
+    .line 93
+    invoke-virtual {p1}, Lm2/l$a;->a()Ljava/lang/Object;
+
+    .line 96
+    move-result-object p1
+
+    .line 97
+    if-ne p3, p1, :cond_6a
+
+    .line 99
+    :cond_62
+    new-instance p3, La51/g1$f;
+
+    .line 101
+    invoke-direct {p3, p0}, La51/g1$f;-><init>(Ljava/lang/Object;)V
+
+    .line 104
+    invoke-interface {p2, p3}, Lm2/l;->H(Ljava/lang/Object;)V
+
+    .line 107
+    :cond_6a
+    check-cast p3, Lkotlin/reflect/KFunction;
+
+    .line 109
+    move-object v3, p3
+
+    .line 110
+    check-cast v3, Lkotlin/jvm/functions/Function0;
+
+    .line 112
+    const/4 v5, 0x0
+
+    .line 113
+    const/4 v6, 0x0
+
+    .line 114
+    move-object v4, p2
+
+    .line 115
+    invoke-static/range {v1 .. v6}, Lk51/g;->h(Lk51/h;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lm2/l;II)V
+
+    .line 118
+    invoke-static {}, Lm2/v;->P()Z
+
+    .line 121
+    move-result p0
+
+    .line 122
+    if-eqz p0, :cond_83
+
+    .line 124
+    invoke-static {}, Lm2/v;->X()V
+
+    .line 127
+    goto :goto_83
+
+    .line 128
+    :cond_7f
+    move-object v4, p2
+
+    .line 129
+    invoke-interface {v4}, Lm2/l;->p()V
+
+    .line 132
+    :cond_83
+    :goto_83
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 134
+    return-object p0
+.end method
+
+.method private final M8(Ljm3/y;ZLandroid/view/View;)V
     .registers 16
 
     .line 1
-    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->requireContext()Landroid/content/Context;
+    invoke-virtual {p3}, Landroid/view/View;->isLaidOut()Z
+
+    .line 4
+    move-result v0
+
+    .line 5
+    if-eqz v0, :cond_64
+
+    .line 7
+    invoke-virtual {p3}, Landroid/view/View;->isLayoutRequested()Z
+
+    .line 10
+    move-result v0
+
+    .line 11
+    if-nez v0, :cond_64
+
+    .line 13
+    if-eqz p2, :cond_5d
+
+    .line 15
+    invoke-static {p0}, La51/g1;->h8(La51/g1;)Lq41/f;
+
+    .line 18
+    move-result-object p2
+
+    .line 19
+    iget-object p2, p2, Lq41/f;->b:Lq41/g;
+
+    .line 21
+    iget-object v1, p2, Lq41/g;->l:Landroidx/core/widget/NestedScrollView;
+
+    .line 23
+    invoke-virtual {p3}, Landroid/view/View;->getWidth()I
+
+    .line 26
+    move-result p2
+
+    .line 27
+    invoke-virtual {p3}, Landroid/view/View;->getHeight()I
+
+    .line 30
+    move-result v0
+
+    .line 31
+    int-to-long v2, p2
+
+    .line 32
+    const/16 p2, 0x20
+
+    .line 34
+    shl-long/2addr v2, p2
+
+    .line 35
+    int-to-long v4, v0
+
+    .line 36
+    const-wide v6, 0xffffffffL
+
+    .line 41
+    and-long/2addr v4, v6
+
+    .line 42
+    or-long/2addr v2, v4
+
+    .line 43
+    invoke-static {v2, v3}, Lv4/s;->c(J)J
+
+    .line 46
+    move-result-wide v2
+
+    .line 47
+    if-eqz v1, :cond_3d
+
+    .line 49
+    new-instance v0, La51/g1$h;
+
+    .line 51
+    move-object v4, p0
+
+    .line 52
+    move-wide v5, v2
+
+    .line 53
+    move-object v3, p1
+
+    .line 54
+    move-object v2, p3
+
+    .line 55
+    invoke-direct/range {v0 .. v6}, La51/g1$h;-><init>(Landroidx/core/widget/NestedScrollView;Landroid/view/View;Ljm3/y;La51/g1;J)V
+
+    .line 58
+    invoke-virtual {v1, v0}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
+
+    .line 61
+    return-void
+
+    .line 62
+    :cond_3d
+    move-object v4, p0
+
+    .line 63
+    move-wide v0, v2
+
+    .line 64
+    move-object v3, p1
+
+    .line 65
+    move-object v2, p3
+
+    .line 66
+    invoke-static {p0, v2}, La51/g1;->g8(La51/g1;Landroid/view/View;)F
+
+    .line 69
+    move-result p1
+
+    .line 70
+    const/4 p3, 0x0
+
+    .line 71
+    invoke-static {p3}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    .line 74
+    move-result p3
+
+    .line 75
+    int-to-long v8, p3
+
+    .line 76
+    invoke-static {p1}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    .line 79
+    move-result p1
+
+    .line 80
+    int-to-long v10, p1
+
+    .line 81
+    shl-long p1, v8, p2
+
+    .line 83
+    and-long v5, v10, v6
+
+    .line 85
+    or-long/2addr p1, v5
+
+    .line 86
+    invoke-static {p1, p2}, Lg3/f;->e(J)J
+
+    .line 89
+    move-result-wide p1
+
+    .line 90
+    invoke-virtual {v3, p1, p2, v0, v1}, Ljm3/y;->w(JJ)V
+
+    .line 93
+    return-void
+
+    .line 94
+    :cond_5d
+    move-object v4, p0
+
+    .line 95
+    move-object v3, p1
+
+    .line 96
+    const/4 p1, 0x0
+
+    .line 97
+    invoke-virtual {v3, p1}, Ljm3/y;->j(Z)V
+
+    .line 100
+    return-void
+
+    .line 101
+    :cond_64
+    move-object v4, p0
+
+    .line 102
+    move-object v3, p1
+
+    .line 103
+    move-object v2, p3
+
+    .line 104
+    new-instance p1, La51/g1$g;
+
+    .line 106
+    invoke-direct {p1, p2, p0, v3}, La51/g1$g;-><init>(ZLa51/g1;Ljm3/y;)V
+
+    .line 109
+    invoke-virtual {v2, p1}, Landroid/view/View;->addOnLayoutChangeListener(Landroid/view/View$OnLayoutChangeListener;)V
+
+    .line 112
+    return-void
+.end method
+
+.method public static synthetic N7(La51/g1;Landroid/view/ViewStub;Landroid/view/View;)V
+    .registers 3
+
+    .line 1
+    invoke-static {p0, p1, p2}, La51/g1;->w8(La51/g1;Landroid/view/ViewStub;Landroid/view/View;)V
+
+    return-void
+.end method
+
+.method private static final N8(La51/g1;Landroidx/compose/ui/platform/ComposeView;ZLm2/l;I)Lkotlin/Unit;
+    .registers 10
+
+    .line 1
+    and-int/lit8 v0, p4, 0x3
+
+    .line 3
+    const/4 v1, 0x2
+
+    .line 4
+    const/4 v2, 0x0
+
+    .line 5
+    const/4 v3, 0x1
+
+    .line 6
+    if-eq v0, v1, :cond_9
+
+    .line 8
+    move v0, v3
+
+    .line 9
+    goto :goto_a
+
+    .line 10
+    :cond_9
+    move v0, v2
+
+    .line 11
+    :goto_a
+    and-int/lit8 v1, p4, 0x1
+
+    .line 13
+    invoke-interface {p3, v0, v1}, Lm2/l;->f(ZI)Z
+
+    .line 16
+    move-result v0
+
+    .line 17
+    if-eqz v0, :cond_3e
+
+    .line 19
+    invoke-static {}, Lm2/v;->P()Z
+
+    .line 22
+    move-result v0
+
+    .line 23
+    if-eqz v0, :cond_21
+
+    .line 25
+    const/4 v0, -0x1
+
+    .line 26
+    const-string v1, "sinet.startup.inDriver.city.driver.order.ui.main.OrderDialogFragment.showVerificationTutorial.<anonymous>.<anonymous> (OrderDialogFragment.kt:493)"
+
+    .line 28
+    const v4, 0x7f60acbe  # 2.98644E38f
+
+    .line 31
+    invoke-static {v4, p4, v0, v1}, Lm2/v;->Y(IIILjava/lang/String;)V
+
+    .line 34
+    :cond_21
+    new-instance p4, La51/w0;
+
+    .line 36
+    invoke-direct {p4, p0, p1, p2}, La51/w0;-><init>(La51/g1;Landroidx/compose/ui/platform/ComposeView;Z)V
+
+    .line 39
+    const/16 p0, 0x36
+
+    .line 41
+    const p1, 0x3809ca6e
+
+    .line 44
+    invoke-static {p1, v3, p4, p3, p0}, Lu2/l;->e(IZLjava/lang/Object;Lm2/l;I)Lu2/b;
+
+    .line 47
+    move-result-object p0
+
+    .line 48
+    const/16 p1, 0x30
+
+    .line 50
+    invoke-static {v2, p0, p3, p1, v3}, Lqw1/s;->f(ZLkotlin/jvm/functions/Function2;Lm2/l;II)V
+
+    .line 53
+    invoke-static {}, Lm2/v;->P()Z
+
+    .line 56
+    move-result p0
+
+    .line 57
+    if-eqz p0, :cond_41
+
+    .line 59
+    invoke-static {}, Lm2/v;->X()V
+
+    .line 62
+    goto :goto_41
+
+    .line 63
+    :cond_3e
+    invoke-interface {p3}, Lm2/l;->p()V
+
+    .line 66
+    :cond_41
+    :goto_41
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 68
+    return-object p0
+.end method
+
+.method public static synthetic O7(La51/g1;Landroid/view/View;)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-static {p0, p1}, La51/g1;->F8(La51/g1;Landroid/view/View;)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private static final O8(La51/g1;Landroidx/compose/ui/platform/ComposeView;ZLm2/l;I)Lkotlin/Unit;
+    .registers 29
+
+    .line 1
+    move-object/from16 v4, p3
+
+    .line 3
+    move/from16 v0, p4
+
+    .line 5
+    and-int/lit8 v1, v0, 0x3
+
+    .line 7
+    const/4 v2, 0x2
+
+    .line 8
+    if-eq v1, v2, :cond_b
+
+    .line 10
+    const/4 v1, 0x1
+
+    .line 11
+    goto :goto_c
+
+    .line 12
+    :cond_b
+    const/4 v1, 0x0
+
+    .line 13
+    :goto_c
+    and-int/lit8 v2, v0, 0x1
+
+    .line 15
+    invoke-interface {v4, v1, v2}, Lm2/l;->f(ZI)Z
+
+    .line 18
+    move-result v1
+
+    .line 19
+    if-eqz v1, :cond_d3
+
+    .line 21
+    invoke-static {}, Lm2/v;->P()Z
+
+    .line 24
+    move-result v1
+
+    .line 25
+    if-eqz v1, :cond_23
+
+    .line 27
+    const/4 v1, -0x1
+
+    .line 28
+    const-string v2, "sinet.startup.inDriver.city.driver.order.ui.main.OrderDialogFragment.showVerificationTutorial.<anonymous>.<anonymous>.<anonymous> (OrderDialogFragment.kt:494)"
+
+    .line 30
+    const v3, 0x3809ca6e
+
+    .line 33
+    invoke-static {v3, v0, v1, v2}, Lm2/v;->Y(IIILjava/lang/String;)V
+
+    .line 36
+    :cond_23
+    invoke-interface {v4}, Lm2/l;->N()Ljava/lang/Object;
+
+    .line 39
+    move-result-object v0
+
+    .line 40
+    sget-object v1, Lm2/l;->a:Lm2/l$a;
+
+    .line 42
+    invoke-virtual {v1}, Lm2/l$a;->a()Ljava/lang/Object;
+
+    .line 45
+    move-result-object v1
+
+    .line 46
+    if-ne v0, v1, :cond_89
+
+    .line 48
+    new-instance v0, Ljm3/y;
+
+    .line 50
+    new-instance v5, Ljm3/e;
+
+    .line 52
+    new-instance v6, Ljm3/f$a;
+
+    .line 54
+    invoke-virtual/range {p1 .. p1}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+
+    .line 57
+    move-result-object v1
+
+    .line 58
+    sget v2, Leh0/f;->L1:I
+
+    .line 60
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    .line 63
+    move-result-object v1
+
+    .line 64
+    invoke-virtual/range {p1 .. p1}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+
+    .line 67
+    move-result-object v2
+
+    .line 68
+    sget v3, Lyt1/k;->I2:I
+
+    .line 70
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    .line 73
+    move-result-object v2
+
+    .line 74
+    new-instance v3, La51/g1$i;
+
+    .line 76
+    invoke-virtual/range {p0 .. p0}, La51/a0;->S6()La51/t1;
+
+    .line 79
+    move-result-object v7
+
+    .line 80
+    invoke-direct {v3, v7}, La51/g1$i;-><init>(Ljava/lang/Object;)V
+
+    .line 83
+    invoke-direct {v6, v1, v2, v3}, Ljm3/f$a;-><init>(Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function0;)V
+
+    .line 86
+    const/high16 v1, -0x3f000000  # -8.0f
+
+    .line 88
+    invoke-static {v1}, Lj72/h;->g(F)F
+
+    .line 91
+    move-result v9
+
+    .line 92
+    invoke-static {v1}, Lj72/h;->g(F)F
+
+    .line 95
+    move-result v10
+
+    .line 96
+    const/high16 v1, 0x41c00000  # 24.0f
+
+    .line 98
+    invoke-static {v1}, Lj72/h;->g(F)F
+
+    .line 101
+    move-result v11
+
+    .line 102
+    const/high16 v1, 0x40800000  # 4.0f
+
+    .line 104
+    invoke-static {v1}, Lj72/h;->g(F)F
+
+    .line 107
+    move-result v13
+
+    .line 108
+    sget-object v16, Lhm3/d;->CENTER:Lhm3/d;
+
+    .line 110
+    const/16 v22, 0x79a2
+
+    .line 112
+    const/16 v23, 0x0
+
+    .line 114
+    const-wide/16 v7, 0x0
+
+    .line 116
+    const/4 v12, 0x0
+
+    .line 117
+    const/4 v14, 0x0
+
+    .line 118
+    const/4 v15, 0x0
+
+    .line 119
+    const/16 v17, 0x0
+
+    .line 121
+    const/16 v18, 0x0
+
+    .line 123
+    const/16 v19, 0x0
+
+    .line 125
+    const/16 v20, 0x0
+
+    .line 127
+    const/16 v21, 0x0
+
+    .line 129
+    invoke-direct/range {v5 .. v23}, Ljm3/e;-><init>(Ljm3/f;JFFFLjm3/a;FZLhm3/e;Lhm3/d;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    .line 132
+    invoke-direct {v0, v5}, Ljm3/y;-><init>(Ljm3/e;)V
+
+    .line 135
+    invoke-interface {v4, v0}, Lm2/l;->H(Ljava/lang/Object;)V
+
+    .line 138
+    :cond_89
+    check-cast v0, Ljm3/y;
+
+    .line 140
+    invoke-virtual/range {p0 .. p0}, La51/a0;->S6()La51/t1;
+
+    .line 143
+    move-result-object v1
+
+    .line 144
+    invoke-virtual {v1}, La51/t1;->c2()Z
+
+    .line 147
+    move-result v1
+
+    .line 148
+    const/4 v2, 0x0
+
+    .line 149
+    if-eqz v1, :cond_a1
+
+    .line 151
+    invoke-direct/range {p0 .. p0}, La51/g1;->k8()Lq41/b;
+
+    .line 154
+    move-result-object v1
+
+    .line 155
+    if-eqz v1, :cond_ab
+
+    .line 157
+    invoke-virtual {v1}, Lq41/b;->a()Landroid/widget/LinearLayout;
+
+    .line 160
+    move-result-object v2
+
+    .line 161
+    goto :goto_ab
+
+    .line 162
+    :cond_a1
+    invoke-direct/range {p0 .. p0}, La51/g1;->l8()Lq41/a;
+
+    .line 165
+    move-result-object v1
+
+    .line 166
+    if-eqz v1, :cond_ab
+
+    .line 168
+    invoke-virtual {v1}, Lq41/a;->a()Landroid/widget/LinearLayout;
+
+    .line 171
+    move-result-object v2
+
+    .line 172
+    :cond_ab
+    :goto_ab
+    if-eqz v2, :cond_b4
+
+    .line 174
+    move-object/from16 v1, p0
+
+    .line 176
+    move/from16 v3, p2
+
+    .line 178
+    invoke-direct {v1, v0, v3, v2}, La51/g1;->M8(Ljm3/y;ZLandroid/view/View;)V
+
+    .line 181
+    :cond_b4
+    sget-object v1, Lqw1/j;->a:Lqw1/j;
+
+    .line 183
+    sget v2, Lqw1/j;->b:I
+
+    .line 185
+    invoke-virtual {v1, v4, v2}, Lqw1/j;->a(Lm2/l;I)Lqw1/d;
+
+    .line 188
+    move-result-object v1
+
+    .line 189
+    invoke-virtual {v1}, Lqw1/d;->L()J
+
+    .line 192
+    move-result-wide v1
+
+    .line 193
+    sget v3, Ljm3/y;->h:I
+
+    .line 195
+    shl-int/lit8 v5, v3, 0x6
+
+    .line 197
+    const/4 v6, 0x2
+
+    .line 198
+    const/4 v3, 0x0
+
+    .line 199
+    invoke-virtual/range {v0 .. v6}, Ljm3/y;->c(JLandroidx/compose/ui/e;Lm2/l;II)V
+
+    .line 202
+    invoke-static {}, Lm2/v;->P()Z
+
+    .line 205
+    move-result v0
+
+    .line 206
+    if-eqz v0, :cond_d6
+
+    .line 208
+    invoke-static {}, Lm2/v;->X()V
+
+    .line 211
+    goto :goto_d6
+
+    .line 212
+    :cond_d3
+    invoke-interface/range {p3 .. p3}, Lm2/l;->p()V
+
+    .line 215
+    :cond_d6
+    :goto_d6
+    sget-object v0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 217
+    return-object v0
+.end method
+
+.method public static synthetic P7(La51/g1;Landroidx/compose/ui/platform/ComposeView;ZLm2/l;I)Lkotlin/Unit;
+    .registers 5
+
+    .line 1
+    invoke-static {p0, p1, p2, p3, p4}, La51/g1;->O8(La51/g1;Landroidx/compose/ui/platform/ComposeView;ZLm2/l;I)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private final P8(Z)V
+    .registers 5
+
+    .line 1
+    invoke-virtual {p0}, La51/a0;->S6()La51/t1;
 
     .line 4
     move-result-object v0
 
     .line 5
-    sget v1, Ln41/a;->b:I
+    invoke-virtual {v0}, La51/t1;->c2()Z
 
-    .line 7
-    invoke-static {v0, v1}, Lnu1/w;->f(Landroid/content/Context;I)I
-
-    .line 10
-    move-result v5
-
-    .line 11
-    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->requireContext()Landroid/content/Context;
-
-    .line 14
-    move-result-object v0
-
-    .line 15
-    sget v1, Ln41/a;->c:I
-
-    .line 17
-    invoke-static {v0, v1}, Lnu1/w;->f(Landroid/content/Context;I)I
-
-    .line 20
+    .line 8
     move-result v0
 
+    .line 9
+    const/4 v1, 0x0
+
+    .line 10
+    if-eqz v0, :cond_16
+
+    .line 12
+    invoke-direct {p0}, La51/g1;->k8()Lq41/b;
+
+    .line 15
+    move-result-object v0
+
+    .line 16
+    if-eqz v0, :cond_14
+
+    .line 18
+    iget-object v0, v0, Lq41/b;->d:Lsinet/startup/inDriver/core/ui/button/LoadingButton;
+
+    .line 20
+    goto :goto_1e
+
     .line 21
-    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->f6()Lof4/a;
+    :cond_14
+    move-object v0, v1
 
-    .line 24
-    move-result-object v1
+    .line 22
+    goto :goto_1e
 
-    .line 25
-    new-instance v2, Leb4/l;
+    .line 23
+    :cond_16
+    invoke-direct {p0}, La51/g1;->l8()Lq41/a;
+
+    .line 26
+    move-result-object v0
 
     .line 27
-    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->e6()Lq41/j;
+    if-eqz v0, :cond_14
 
-    .line 30
-    move-result-object v3
+    .line 29
+    iget-object v0, v0, Lq41/a;->c:Lsinet/startup/inDriver/core/ui/button/LoadingButton;
 
     .line 31
-    iget-object v3, v3, Lq41/j;->c:Landroid/widget/TextView;
+    :goto_1e
+    if-nez v0, :cond_21
 
     .line 33
-    invoke-virtual {v3}, Landroid/view/View;->getMeasuredHeight()I
+    goto :goto_3e
 
-    .line 36
-    move-result v3
+    .line 34
+    :cond_21
+    invoke-virtual {p0}, La51/a0;->S6()La51/t1;
 
     .line 37
-    add-int/2addr v3, v5
+    move-result-object v2
 
     .line 38
-    add-int v4, v5, p1
+    invoke-virtual {v2}, La51/t1;->c2()Z
 
-    .line 40
-    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->e6()Lq41/j;
+    .line 41
+    move-result v2
 
-    .line 43
-    move-result-object v6
+    .line 42
+    if-eqz v2, :cond_34
 
     .line 44
-    iget-object v6, v6, Lq41/j;->f:Lsinet/startup/inDriver/core/ui/button/FloatingButton;
+    invoke-direct {p0}, La51/g1;->k8()Lq41/b;
 
-    .line 46
-    invoke-virtual {v6}, Landroid/view/View;->getMeasuredWidth()I
+    .line 47
+    move-result-object v2
 
-    .line 49
-    move-result v6
+    .line 48
+    if-eqz v2, :cond_3c
 
     .line 50
-    add-int/2addr v6, v5
+    iget-object v1, v2, Lq41/b;->g:Lsinet/startup/inDriver/core/common/view/scrollable_buttons/ScrollableButtonsView;
 
-    .line 51
-    new-instance v7, Leb4/c0;
+    .line 52
+    goto :goto_3c
 
     .line 53
-    add-int v11, v0, p1
-
-    .line 55
-    const/4 v12, 0x7
+    :cond_34
+    invoke-direct {p0}, La51/g1;->l8()Lq41/a;
 
     .line 56
-    const/4 v13, 0x0
+    move-result-object v2
 
     .line 57
-    const/4 v8, 0x0
-
-    .line 58
-    const/4 v9, 0x0
+    if-eqz v2, :cond_3c
 
     .line 59
-    const/4 v10, 0x0
+    iget-object v1, v2, Lq41/a;->e:Lsinet/startup/inDriver/core/common/view/scrollable_buttons/ScrollableButtonsView;
 
-    .line 60
-    invoke-direct/range {v7 .. v13}, Leb4/c0;-><init>(IIIIILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    .line 61
+    :cond_3c
+    :goto_3c
+    if-nez v1, :cond_3f
 
     .line 63
-    invoke-direct/range {v2 .. v7}, Leb4/l;-><init>(IIIILeb4/c0;)V
+    :goto_3e
+    return-void
 
-    .line 66
-    invoke-interface {v1, v2}, Lof4/a;->D0(Leb4/l;)V
+    .line 64
+    :cond_3f
+    invoke-virtual {v0, p1}, Landroid/view/View;->setEnabled(Z)V
 
-    .line 69
+    .line 67
+    invoke-virtual {v1, p1}, Lsinet/startup/inDriver/core/common/view/scrollable_buttons/ScrollableButtonsView;->setAllButtonEnabled(Z)V
+
+    .line 70
     return-void
 .end method
 
-.method protected final e6()Lq41/j;
-    .registers 4
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
+.method public static synthetic Q7(La51/g1;Landroid/view/View;Landroid/view/MotionEvent;)Z
+    .registers 3
 
     .line 1
-    iget-object v0, p0, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->V0:Lkotlin/properties/d;
+    invoke-static {p0, p1, p2}, La51/g1;->C8(La51/g1;Landroid/view/View;Landroid/view/MotionEvent;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method private static final Q8(La51/g1;)I
+    .registers 2
+
+    .line 1
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getResources()Landroid/content/res/Resources;
+
+    .line 4
+    move-result-object p0
+
+    .line 5
+    sget v0, Ln41/a;->a:I
+
+    .line 7
+    invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
+
+    .line 10
+    move-result p0
+
+    .line 11
+    return p0
+.end method
+
+.method public static synthetic R7(La51/g1;Landroid/view/View;IIIIIIII)V
+    .registers 10
+
+    .line 1
+    invoke-static/range {p0 .. p9}, La51/g1;->t8(La51/g1;Landroid/view/View;IIIIIIII)V
+
+    return-void
+.end method
+
+.method public static synthetic S7(La51/g1;Landroidx/compose/ui/platform/ComposeView;ZLm2/l;I)Lkotlin/Unit;
+    .registers 5
+
+    .line 1
+    invoke-static {p0, p1, p2, p3, p4}, La51/g1;->N8(La51/g1;Landroidx/compose/ui/platform/ComposeView;ZLm2/l;I)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static synthetic T7(La51/g1;Landroid/view/View;)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-static {p0, p1}, La51/g1;->o8(La51/g1;Landroid/view/View;)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static synthetic U7(La51/g1;Landroid/view/ViewStub;Landroid/view/View;)V
+    .registers 3
+
+    .line 1
+    invoke-static {p0, p1, p2}, La51/g1;->x8(La51/g1;Landroid/view/ViewStub;Landroid/view/View;)V
+
+    return-void
+.end method
+
+.method public static synthetic V7(La51/g1;Landroid/view/View;)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-static {p0, p1}, La51/g1;->E8(La51/g1;Landroid/view/View;)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static synthetic W7(ZLa51/g1;Landroid/view/View;IIIIIIII)V
+    .registers 11
+
+    .line 1
+    invoke-static/range {p0 .. p10}, La51/g1;->q8(ZLa51/g1;Landroid/view/View;IIIIIIII)V
+
+    return-void
+.end method
+
+.method public static synthetic X7(La51/c0;La51/g1;Lm2/l;I)Lkotlin/Unit;
+    .registers 4
+
+    .line 1
+    invoke-static {p0, p1, p2, p3}, La51/g1;->K8(La51/c0;La51/g1;Lm2/l;I)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static synthetic Y7(La51/g1;Landroid/view/View;)V
+    .registers 2
+
+    .line 1
+    invoke-static {p0, p1}, La51/g1;->z8(La51/g1;Landroid/view/View;)V
+
+    return-void
+.end method
+
+.method public static synthetic Z7(La51/c0;La51/g1;Lm2/l;I)Lkotlin/Unit;
+    .registers 4
+
+    .line 1
+    invoke-static {p0, p1, p2, p3}, La51/g1;->L8(La51/c0;La51/g1;Lm2/l;I)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static synthetic a8(La51/g1;Landroid/view/View;)V
+    .registers 2
+
+    .line 1
+    invoke-static {p0, p1}, La51/g1;->y8(La51/g1;Landroid/view/View;)V
+
+    return-void
+.end method
+
+.method public static synthetic b8(La51/g1;)Lkotlin/Unit;
+    .registers 1
+
+    .line 1
+    invoke-static {p0}, La51/g1;->s8(La51/g1;)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static synthetic c8(La51/g1;Landroid/view/View;)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-static {p0, p1}, La51/g1;->B8(La51/g1;Landroid/view/View;)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static synthetic d8(La51/g1;Landroid/view/View;)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-static {p0, p1}, La51/g1;->A8(La51/g1;Landroid/view/View;)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static synthetic e8(La51/g1;)I
+    .registers 1
+
+    .line 1
+    invoke-static {p0}, La51/g1;->Q8(La51/g1;)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static synthetic f8(La51/g1;Landroid/view/View;)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-static {p0, p1}, La51/g1;->J8(La51/g1;Landroid/view/View;)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static final synthetic g8(La51/g1;Landroid/view/View;)F
+    .registers 2
+
+    .line 1
+    invoke-direct {p0, p1}, La51/g1;->i8(Landroid/view/View;)F
+
+    .line 4
+    move-result p0
+
+    .line 5
+    return p0
+.end method
+
+.method public static final synthetic h8(La51/g1;)Lq41/f;
+    .registers 1
+
+    .line 1
+    invoke-direct {p0}, La51/g1;->j8()Lq41/f;
+
+    .line 4
+    move-result-object p0
+
+    .line 5
+    return-object p0
+.end method
+
+.method private final i8(Landroid/view/View;)F
+    .registers 4
+
+    .line 1
+    const/4 v0, 0x2
+
+    .line 2
+    new-array v0, v0, [I
+
+    .line 4
+    invoke-virtual {p1, v0}, Landroid/view/View;->getLocationInWindow([I)V
+
+    .line 7
+    invoke-virtual {p1}, Landroid/view/View;->getRootWindowInsets()Landroid/view/WindowInsets;
+
+    .line 10
+    move-result-object p1
+
+    .line 11
+    invoke-static {p1}, Landroidx/core/view/j1;->z(Landroid/view/WindowInsets;)Landroidx/core/view/j1;
+
+    .line 14
+    move-result-object p1
+
+    .line 15
+    invoke-static {}, Landroidx/core/view/j1$l;->h()I
+
+    .line 18
+    move-result v1
+
+    .line 19
+    invoke-virtual {p1, v1}, Landroidx/core/view/j1;->f(I)Lk5/f;
+
+    .line 22
+    move-result-object p1
+
+    .line 23
+    const/4 v1, 0x1
+
+    .line 24
+    aget v0, v0, v1
+
+    .line 26
+    iget p1, p1, Lk5/f;->b:I
+
+    .line 28
+    sub-int/2addr v0, p1
+
+    .line 29
+    int-to-float p1, v0
+
+    .line 30
+    return p1
+.end method
+
+.method private final j8()Lq41/f;
+    .registers 4
+
+    .line 1
+    iget-object v0, p0, La51/g1;->f1:Lkotlin/properties/d;
 
     .line 3
-    sget-object v1, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->Z0:[Lkotlin/reflect/KProperty;
+    sget-object v1, La51/g1;->k1:[Lkotlin/reflect/KProperty;
 
     .line 5
     const/4 v2, 0x0
@@ -2647,180 +2263,1768 @@
     move-result-object v0
 
     .line 12
-    check-cast v0, Lq41/j;
+    check-cast v0, Lq41/f;
 
     .line 14
     return-object v0
 .end method
 
-.method protected final f6()Lof4/a;
-    .registers 2
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
+.method private final k8()Lq41/b;
+    .registers 4
 
     .line 1
-    iget-object v0, p0, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->W0:Lfw/m;
+    iget-object v0, p0, La51/g1;->h1:Lnu1/l;
 
     .line 3
-    invoke-interface {v0}, Lfw/m;->getValue()Ljava/lang/Object;
-
-    .line 6
-    move-result-object v0
-
-    .line 7
-    check-cast v0, Lof4/a;
-
-    .line 9
-    return-object v0
-.end method
-
-.method protected final g6()Lc51/s;
-    .registers 2
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
-
-    .line 1
-    iget-object v0, p0, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->U0:Lfw/m;
-
-    .line 3
-    invoke-interface {v0}, Lfw/m;->getValue()Ljava/lang/Object;
-
-    .line 6
-    move-result-object v0
-
-    .line 7
-    check-cast v0, Lc51/s;
-
-    .line 9
-    return-object v0
-.end method
-
-.method public final h6()Lew/a;
-    .registers 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lew/a<",
-            "Lc51/s;",
-            ">;"
-        }
-    .end annotation
-
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
-
-    .line 1
-    iget-object v0, p0, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->T0:Lew/a;
-
-    .line 3
-    if-eqz v0, :cond_5
+    sget-object v1, La51/g1;->k1:[Lkotlin/reflect/KProperty;
 
     .line 5
-    return-object v0
+    const/4 v2, 0x2
 
     .line 6
-    :cond_5
-    const/4 v0, 0x0
+    aget-object v1, v1, v2
 
-    .line 7
+    .line 8
+    invoke-virtual {v0, p0, v1}, Lnu1/l;->c(Landroidx/fragment/app/Fragment;Lkotlin/reflect/KProperty;)Ljava/lang/Object;
+
+    .line 11
+    move-result-object v0
+
+    .line 12
+    check-cast v0, Lq41/b;
+
+    .line 14
     return-object v0
 .end method
 
-.method protected n6()V
-    .registers 14
+.method private final l8()Lq41/a;
+    .registers 4
 
     .line 1
-    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->e6()Lq41/j;
+    iget-object v0, p0, La51/g1;->g1:Lnu1/l;
+
+    .line 3
+    sget-object v1, La51/g1;->k1:[Lkotlin/reflect/KProperty;
+
+    .line 5
+    const/4 v2, 0x1
+
+    .line 6
+    aget-object v1, v1, v2
+
+    .line 8
+    invoke-virtual {v0, p0, v1}, Lnu1/l;->c(Landroidx/fragment/app/Fragment;Lkotlin/reflect/KProperty;)Ljava/lang/Object;
+
+    .line 11
+    move-result-object v0
+
+    .line 12
+    check-cast v0, Lq41/a;
+
+    .line 14
+    return-object v0
+.end method
+
+.method private final m8()I
+    .registers 2
+
+    .line 1
+    iget-object v0, p0, La51/g1;->i1:Lfw/m;
+
+    .line 3
+    invoke-interface {v0}, Lfw/m;->getValue()Ljava/lang/Object;
+
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, Ljava/lang/Number;
+
+    .line 9
+    invoke-virtual {v0}, Ljava/lang/Number;->intValue()I
+
+    .line 12
+    move-result v0
+
+    .line 13
+    return v0
+.end method
+
+.method private final n8()V
+    .registers 9
+
+    .line 1
+    invoke-virtual {p0}, La51/a0;->S6()La51/t1;
 
     .line 4
     move-result-object v0
 
     .line 5
-    iget-object v1, v0, Lq41/j;->f:Lsinet/startup/inDriver/core/ui/button/FloatingButton;
+    invoke-virtual {v0}, La51/t1;->c2()Z
 
-    .line 7
-    new-instance v4, Lc51/i;
+    .line 8
+    move-result v0
 
     .line 9
-    invoke-direct {v4, p0}, Lc51/i;-><init>(Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;)V
+    const/4 v1, 0x0
+
+    .line 10
+    if-eqz v0, :cond_15
 
     .line 12
-    const/4 v5, 0x1
+    invoke-direct {p0}, La51/g1;->k8()Lq41/b;
 
-    .line 13
-    const/4 v6, 0x0
-
-    .line 14
-    const-wide/16 v2, 0x0
+    .line 15
+    move-result-object v0
 
     .line 16
-    invoke-static/range {v1 .. v6}, Lj72/o;->I(Landroid/view/View;JLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+    if-eqz v0, :cond_13
 
-    .line 19
-    iget-object v7, v0, Lq41/j;->g:Lsinet/startup/inDriver/core/ui/button/FloatingButton;
+    .line 18
+    iget-object v1, v0, Lq41/b;->e:Landroid/widget/Button;
+
+    .line 20
+    :cond_13
+    :goto_13
+    move-object v2, v1
 
     .line 21
-    new-instance v10, Lc51/j;
+    goto :goto_1e
 
-    .line 23
-    invoke-direct {v10, p0}, Lc51/j;-><init>(Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;)V
+    .line 22
+    :cond_15
+    invoke-direct {p0}, La51/g1;->l8()Lq41/a;
+
+    .line 25
+    move-result-object v0
 
     .line 26
-    const/4 v11, 0x1
-
-    .line 27
-    const/4 v12, 0x0
+    if-eqz v0, :cond_13
 
     .line 28
-    const-wide/16 v8, 0x0
+    iget-object v1, v0, Lq41/a;->d:Landroid/widget/Button;
 
     .line 30
-    invoke-static/range {v7 .. v12}, Lj72/o;->I(Landroid/view/View;JLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+    goto :goto_13
+
+    .line 31
+    :goto_1e
+    if-eqz v2, :cond_2c
 
     .line 33
+    new-instance v5, La51/p0;
+
+    .line 35
+    invoke-direct {v5, p0}, La51/p0;-><init>(La51/g1;)V
+
+    .line 38
+    const/4 v6, 0x1
+
+    .line 39
+    const/4 v7, 0x0
+
+    .line 40
+    const-wide/16 v3, 0x0
+
+    .line 42
+    invoke-static/range {v2 .. v7}, Lj72/o;->I(Landroid/view/View;JLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+
+    .line 45
+    :cond_2c
     return-void
 .end method
 
-.method public onAttach(Landroid/content/Context;)V
+.method private static final o8(La51/g1;Landroid/view/View;)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-virtual {p0}, La51/a0;->S6()La51/t1;
+
+    .line 4
+    move-result-object p0
+
+    .line 5
+    invoke-virtual {p0}, La51/t1;->i2()V
+
+    .line 8
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 10
+    return-object p0
+.end method
+
+.method private final p8()V
     .registers 4
+
+    .line 1
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getContext()Landroid/content/Context;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    const/4 v1, 0x0
+
+    .line 6
+    if-eqz v0, :cond_19
+
+    .line 8
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    .line 11
+    move-result-object v0
+
+    .line 12
+    if-eqz v0, :cond_19
+
+    .line 14
+    invoke-virtual {v0}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+
+    .line 17
+    move-result-object v0
+
+    .line 18
+    if-eqz v0, :cond_19
+
+    .line 20
+    iget v0, v0, Landroid/content/res/Configuration;->orientation:I
+
+    .line 22
+    const/4 v2, 0x2
+
+    .line 23
+    if-ne v0, v2, :cond_19
+
+    .line 25
+    const/4 v1, 0x1
+
+    .line 26
+    :cond_19
+    invoke-direct {p0}, La51/g1;->j8()Lq41/f;
+
+    .line 29
+    move-result-object v0
+
+    .line 30
+    iget-object v0, v0, Lq41/f;->b:Lq41/g;
+
+    .line 32
+    iget-object v0, v0, Lq41/g;->k:Landroidx/fragment/app/FragmentContainerView;
+
+    .line 34
+    new-instance v2, La51/o0;
+
+    .line 36
+    invoke-direct {v2, v1, p0}, La51/o0;-><init>(ZLa51/g1;)V
+
+    .line 39
+    iput-object v2, p0, La51/g1;->j1:Landroid/view/View$OnLayoutChangeListener;
+
+    .line 41
+    invoke-virtual {v0, v2}, Landroid/view/View;->addOnLayoutChangeListener(Landroid/view/View$OnLayoutChangeListener;)V
+
+    .line 44
+    return-void
+.end method
+
+.method private static final q8(ZLa51/g1;Landroid/view/View;IIIIIIII)V
+    .registers 11
+
+    .line 1
+    if-eqz p0, :cond_4
+
+    .line 3
+    const/4 p0, 0x0
+
+    .line 4
+    goto :goto_6
+
+    .line 5
+    :cond_4
+    sub-int p0, p6, p4
+
+    .line 7
+    :goto_6
+    invoke-direct {p1, p0}, La51/g1;->I8(I)V
+
+    .line 10
+    return-void
+.end method
+
+.method private final r8()V
+    .registers 3
+
+    .line 1
+    invoke-direct {p0}, La51/g1;->j8()Lq41/f;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    iget-object v0, v0, Lq41/f;->b:Lq41/g;
+
+    .line 7
+    iget-object v0, v0, Lq41/g;->g:Lsinet/startup/inDriver/feature/warning_info/ui/WarningInfoBanner;
+
+    .line 9
+    new-instance v1, La51/e1;
+
+    .line 11
+    invoke-direct {v1, p0}, La51/e1;-><init>(La51/g1;)V
+
+    .line 14
+    invoke-virtual {v0, v1}, Lsinet/startup/inDriver/feature/warning_info/ui/WarningInfoBanner;->setCloseBannerClickListener(Lkotlin/jvm/functions/Function0;)V
+
+    .line 17
+    new-instance v1, La51/f1;
+
+    .line 19
+    invoke-direct {v1, p0}, La51/f1;-><init>(La51/g1;)V
+
+    .line 22
+    invoke-virtual {v0, v1}, Landroid/view/View;->addOnLayoutChangeListener(Landroid/view/View$OnLayoutChangeListener;)V
+
+    .line 25
+    return-void
+.end method
+
+.method private static final s8(La51/g1;)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    const/4 v0, 0x0
+
+    .line 2
+    invoke-direct {p0, v0}, La51/g1;->I8(I)V
+
+    .line 5
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 7
+    return-object p0
+.end method
+
+.method private static final t8(La51/g1;Landroid/view/View;IIIIIIII)V
+    .registers 10
+
+    .line 1
+    if-eq p9, p5, :cond_f
+
+    .line 3
+    sub-int/2addr p5, p3
+
+    .line 4
+    if-lez p5, :cond_b
+
+    .line 6
+    invoke-direct {p0}, La51/g1;->m8()I
+
+    .line 9
+    move-result p1
+
+    .line 10
+    add-int/2addr p5, p1
+
+    .line 11
+    goto :goto_c
+
+    .line 12
+    :cond_b
+    const/4 p5, 0x0
+
+    .line 13
+    :goto_c
+    invoke-direct {p0, p5}, La51/g1;->I8(I)V
+
+    .line 16
+    :cond_f
+    return-void
+.end method
+
+.method private static final w8(La51/g1;Landroid/view/ViewStub;Landroid/view/View;)V
+    .registers 3
+
+    .line 1
+    invoke-static {p2}, Lq41/b;->bind(Landroid/view/View;)Lq41/b;
+
+    .line 4
+    move-result-object p1
+
+    .line 5
+    invoke-direct {p0, p1}, La51/g1;->G8(Lq41/b;)V
+
+    .line 8
+    return-void
+.end method
+
+.method private static final x8(La51/g1;Landroid/view/ViewStub;Landroid/view/View;)V
+    .registers 3
+
+    .line 1
+    invoke-static {p2}, Lq41/a;->bind(Landroid/view/View;)Lq41/a;
+
+    .line 4
+    move-result-object p1
+
+    .line 5
+    invoke-direct {p0, p1}, La51/g1;->H8(Lq41/a;)V
+
+    .line 8
+    return-void
+.end method
+
+.method private static final y8(La51/g1;Landroid/view/View;)V
+    .registers 2
+
+    .line 1
+    invoke-virtual {p0}, La51/a0;->S6()La51/t1;
+
+    .line 4
+    move-result-object p0
+
+    .line 5
+    invoke-virtual {p0}, La51/t1;->p2()V
+
+    .line 8
+    return-void
+.end method
+
+.method private static final z8(La51/g1;Landroid/view/View;)V
+    .registers 2
+
+    .line 1
+    invoke-virtual {p0}, La51/a0;->S6()La51/t1;
+
+    .line 4
+    move-result-object p0
+
+    .line 5
+    invoke-virtual {p0}, La51/t1;->r2()V
+
+    .line 8
+    return-void
+.end method
+
+
+# virtual methods
+.method public A7(Z)V
+    .registers 4
+
+    .line 1
+    invoke-virtual {p0}, La51/a0;->S6()La51/t1;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    invoke-virtual {v0}, La51/t1;->c2()Z
+
+    .line 8
+    move-result v0
+
+    .line 9
+    if-eqz v0, :cond_1d
+
+    .line 11
+    invoke-direct {p0}, La51/g1;->k8()Lq41/b;
+
+    .line 14
+    move-result-object v0
+
+    .line 15
+    if-eqz v0, :cond_1d
+
+    .line 17
+    iget-object v0, v0, Lq41/b;->c:Landroid/widget/ViewFlipper;
+
+    .line 19
+    if-eqz v0, :cond_1d
+
+    .line 21
+    invoke-virtual {v0}, Landroid/widget/ViewAnimator;->getDisplayedChild()I
+
+    .line 24
+    move-result v1
+
+    .line 25
+    if-eq v1, p1, :cond_1d
+
+    .line 27
+    invoke-virtual {v0, p1}, Landroid/widget/ViewAnimator;->setDisplayedChild(I)V
+
+    .line 30
+    :cond_1d
+    return-void
+.end method
+
+.method public B7(Lg51/d;)V
+    .registers 7
+    .param p1  # Lg51/d;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-virtual {p0}, La51/a0;->S6()La51/t1;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    invoke-virtual {v0}, La51/t1;->c2()Z
+
+    .line 8
+    move-result v0
+
+    .line 9
+    const/4 v1, 0x0
+
+    .line 10
+    if-eqz v0, :cond_16
+
+    .line 12
+    invoke-direct {p0}, La51/g1;->k8()Lq41/b;
+
+    .line 15
+    move-result-object v0
+
+    .line 16
+    if-eqz v0, :cond_14
+
+    .line 18
+    iget-object v0, v0, Lq41/b;->d:Lsinet/startup/inDriver/core/ui/button/LoadingButton;
+
+    .line 20
+    goto :goto_1e
+
+    .line 21
+    :cond_14
+    move-object v0, v1
+
+    .line 22
+    goto :goto_1e
+
+    .line 23
+    :cond_16
+    invoke-direct {p0}, La51/g1;->l8()Lq41/a;
+
+    .line 26
+    move-result-object v0
+
+    .line 27
+    if-eqz v0, :cond_14
+
+    .line 29
+    iget-object v0, v0, Lq41/a;->c:Lsinet/startup/inDriver/core/ui/button/LoadingButton;
+
+    .line 31
+    :goto_1e
+    const/4 v2, 0x0
+
+    .line 32
+    if-eqz v0, :cond_36
+
+    .line 34
+    instance-of v3, p1, Lg51/d$a;
+
+    .line 36
+    invoke-virtual {v0, v3}, Lsinet/startup/inDriver/core/ui/button/LoadingButton;->setLoading(Z)V
+
+    .line 39
+    instance-of v4, p1, Lg51/d$c;
+
+    .line 41
+    if-nez v4, :cond_2f
+
+    .line 43
+    if-eqz v3, :cond_2d
+
+    .line 45
+    goto :goto_2f
+
+    .line 46
+    :cond_2d
+    move v3, v2
+
+    .line 47
+    goto :goto_30
+
+    .line 48
+    :cond_2f
+    :goto_2f
+    const/4 v3, 0x1
+
+    .line 49
+    :goto_30
+    invoke-virtual {v0, v3}, Landroid/view/View;->setEnabled(Z)V
+
+    .line 52
+    invoke-virtual {v0, v4}, Landroid/view/View;->setClickable(Z)V
+
+    .line 55
+    :cond_36
+    invoke-virtual {p0}, La51/a0;->S6()La51/t1;
+
+    .line 58
+    move-result-object v0
+
+    .line 59
+    invoke-virtual {v0}, La51/t1;->c2()Z
+
+    .line 62
+    move-result v0
+
+    .line 63
+    if-eqz v0, :cond_49
+
+    .line 65
+    invoke-direct {p0}, La51/g1;->k8()Lq41/b;
+
+    .line 68
+    move-result-object v0
+
+    .line 69
+    if-eqz v0, :cond_51
+
+    .line 71
+    iget-object v1, v0, Lq41/b;->g:Lsinet/startup/inDriver/core/common/view/scrollable_buttons/ScrollableButtonsView;
+
+    .line 73
+    goto :goto_51
+
+    .line 74
+    :cond_49
+    invoke-direct {p0}, La51/g1;->l8()Lq41/a;
+
+    .line 77
+    move-result-object v0
+
+    .line 78
+    if-eqz v0, :cond_51
+
+    .line 80
+    iget-object v1, v0, Lq41/a;->e:Lsinet/startup/inDriver/core/common/view/scrollable_buttons/ScrollableButtonsView;
+
+    .line 82
+    :cond_51
+    :goto_51
+    if-eqz v1, :cond_7f
+
+    .line 84
+    instance-of v0, p1, Lg51/d$c;
+
+    .line 86
+    if-eqz v0, :cond_5b
+
+    .line 88
+    invoke-virtual {v1}, Lsinet/startup/inDriver/core/common/view/scrollable_buttons/ScrollableButtonsView;->o()V
+
+    .line 91
+    return-void
+
+    .line 92
+    :cond_5b
+    instance-of v0, p1, Lg51/d$a;
+
+    .line 94
+    if-eqz v0, :cond_63
+
+    .line 96
+    invoke-virtual {v1, v2}, Lsinet/startup/inDriver/core/common/view/scrollable_buttons/ScrollableButtonsView;->setAllButtonEnabled(Z)V
+
+    .line 99
+    return-void
+
+    .line 100
+    :cond_63
+    instance-of v0, p1, Lg51/d$d;
+
+    .line 102
+    if-eqz v0, :cond_71
+
+    .line 104
+    check-cast p1, Lg51/d$d;
+
+    .line 106
+    invoke-virtual {p1}, Lg51/d$d;->a()I
+
+    .line 109
+    move-result p1
+
+    .line 110
+    invoke-virtual {v1, p1}, Lsinet/startup/inDriver/core/common/view/scrollable_buttons/ScrollableButtonsView;->setButtonLoading(I)V
+
+    .line 113
+    return-void
+
+    .line 114
+    :cond_71
+    instance-of p1, p1, Lg51/d$b;
+
+    .line 116
+    if-eqz p1, :cond_79
+
+    .line 118
+    invoke-virtual {v1}, Lsinet/startup/inDriver/core/common/view/scrollable_buttons/ScrollableButtonsView;->setCustomButtonLoading()V
+
+    .line 121
+    return-void
+
+    .line 122
+    :cond_79
+    new-instance p1, Lkotlin/NoWhenBranchMatchedException;
+
+    .line 124
+    invoke-direct {p1}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+
+    .line 127
+    throw p1
+
+    .line 128
+    :cond_7f
+    return-void
+.end method
+
+.method public C7(Z)V
+    .registers 15
+
+    .line 1
+    invoke-direct {p0}, La51/g1;->j8()Lq41/f;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    iget-object v0, v0, Lq41/f;->e:Lq41/i;
+
+    .line 7
+    iget-object v0, v0, Lq41/i;->f:Landroid/widget/Button;
+
+    .line 9
+    new-instance v1, Lm82/j;
+
+    .line 11
+    const/16 v11, 0x7f
+
+    .line 13
+    const/4 v12, 0x0
+
+    .line 14
+    const/4 v2, 0x0
+
+    .line 15
+    const/4 v3, 0x0
+
+    .line 16
+    const-wide/16 v4, 0x0
+
+    .line 18
+    const-wide/16 v6, 0x0
+
+    .line 20
+    const/4 v8, 0x0
+
+    .line 21
+    const/4 v9, 0x0
+
+    .line 22
+    const/4 v10, 0x0
+
+    .line 23
+    invoke-direct/range {v1 .. v12}, Lm82/j;-><init>(ZZJJLandroid/view/animation/Interpolator;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    .line 26
+    invoke-static {v0, p1, v1}, Lj72/o;->M(Landroid/view/View;ZLm82/j;)V
+
+    .line 29
+    return-void
+.end method
+
+.method public D7(Lkotlin/Pair;)V
+    .registers 4
+    .param p1  # Lkotlin/Pair;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/Pair<",
+            "+",
+            "Ljava/math/BigDecimal;",
+            "+",
+            "Ljava/math/BigDecimal;",
+            ">;)V"
+        }
+    .end annotation
+
+    .line 1
+    invoke-virtual {p1}, Lkotlin/Pair;->k()Ljava/lang/Object;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    sget-object v1, Ljava/math/BigDecimal;->ZERO:Ljava/math/BigDecimal;
+
+    .line 7
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 10
+    move-result v0
+
+    .line 11
+    if-nez v0, :cond_1b
+
+    .line 13
+    const-string v0, "ARG_PRICES"
+
+    .line 15
+    invoke-static {v0, p1}, Lfw/y;->a(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
+
+    .line 18
+    move-result-object p1
+
+    .line 19
+    filled-new-array {p1}, [Lkotlin/Pair;
+
+    .line 22
+    move-result-object p1
+
+    .line 23
+    const-string v0, "CustomPriceDialogFragmentRESULT_PRICES"
+
+    .line 25
+    invoke-static {p0, v0, p1}, Lnu1/a;->w(Landroidx/fragment/app/Fragment;Ljava/lang/String;[Lkotlin/Pair;)V
+
+    .line 28
+    :cond_1b
+    return-void
+.end method
+
+.method public E7(Z)V
+    .registers 12
+
+    .line 1
+    invoke-virtual {p0}, La51/a0;->S6()La51/t1;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    invoke-virtual {v0}, La51/t1;->c2()Z
+
+    .line 8
+    move-result v0
+
+    .line 9
+    const/4 v1, 0x2
+
+    .line 10
+    const/4 v2, 0x0
+
+    .line 11
+    if-eqz v0, :cond_26
+
+    .line 13
+    invoke-direct {p0}, La51/g1;->k8()Lq41/b;
+
+    .line 16
+    move-result-object v0
+
+    .line 17
+    if-eqz v0, :cond_25
+
+    .line 19
+    iget-object v3, v0, Lq41/b;->f:Landroid/widget/ImageButton;
+
+    .line 21
+    invoke-static {v3, p1, v2, v1, v2}, Lj72/o;->N(Landroid/view/View;ZLm82/j;ILjava/lang/Object;)V
+
+    .line 24
+    iget-object v4, v0, Lq41/b;->f:Landroid/widget/ImageButton;
+
+    .line 26
+    new-instance v7, La51/q0;
+
+    .line 28
+    invoke-direct {v7, p0}, La51/q0;-><init>(La51/g1;)V
+
+    .line 31
+    const/4 v8, 0x1
+
+    .line 32
+    const/4 v9, 0x0
+
+    .line 33
+    const-wide/16 v5, 0x0
+
+    .line 35
+    invoke-static/range {v4 .. v9}, Lj72/o;->I(Landroid/view/View;JLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+
+    .line 38
+    :cond_25
+    return-void
+
+    .line 39
+    :cond_26
+    invoke-direct {p0}, La51/g1;->l8()Lq41/a;
+
+    .line 42
+    move-result-object v0
+
+    .line 43
+    if-eqz v0, :cond_46
+
+    .line 45
+    iget-object v3, v0, Lq41/a;->e:Lsinet/startup/inDriver/core/common/view/scrollable_buttons/ScrollableButtonsView;
+
+    .line 47
+    invoke-static {v3, p1, v2, v1, v2}, Lj72/o;->N(Landroid/view/View;ZLm82/j;ILjava/lang/Object;)V
+
+    .line 50
+    iget-object v3, v0, Lq41/a;->f:Landroid/widget/TextView;
+
+    .line 52
+    invoke-static {v3, p1, v2, v1, v2}, Lj72/o;->N(Landroid/view/View;ZLm82/j;ILjava/lang/Object;)V
+
+    .line 55
+    invoke-static {p0}, Landroidx/lifecycle/LifecycleOwnerKt;->getLifecycleScope(Landroidx/lifecycle/LifecycleOwner;)Landroidx/lifecycle/LifecycleCoroutineScope;
+
+    .line 58
+    move-result-object v4
+
+    .line 59
+    new-instance v7, La51/g1$d;
+
+    .line 61
+    invoke-direct {v7, p0, v0, v2}, La51/g1$d;-><init>(La51/g1;Lq41/a;Lkw/c;)V
+
+    .line 64
+    const/4 v8, 0x3
+
+    .line 65
+    const/4 v9, 0x0
+
+    .line 66
+    const/4 v5, 0x0
+
+    .line 67
+    const/4 v6, 0x0
+
+    .line 68
+    invoke-static/range {v4 .. v9}, Lfx/i;->d(Lfx/p0;Lkotlin/coroutines/CoroutineContext;Lfx/r0;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lfx/c2;
+
+    .line 71
+    :cond_46
+    return-void
+.end method
+
+.method public F7(Lg51/f;)V
+    .registers 9
+    .param p1  # Lg51/f;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-direct {p0}, La51/g1;->j8()Lq41/f;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    invoke-virtual {v0}, Lq41/f;->a()Lsinet/startup/inDriver/core/ui/bottom_sheet/BottomSheetView;
+
+    .line 8
+    move-result-object v0
+
+    .line 9
+    invoke-virtual {v0}, Landroid/view/View;->isLaidOut()Z
+
+    .line 12
+    move-result v0
+
+    .line 13
+    instance-of v1, p1, Lg51/f$c;
+
+    .line 15
+    instance-of v2, p1, Lg51/f$b;
+
+    .line 17
+    instance-of v3, p1, Lg51/f$a;
+
+    .line 19
+    const/4 v4, 0x0
+
+    .line 20
+    if-eqz v0, :cond_18
+
+    .line 22
+    sget-object v5, La51/g1;->m1:Lm82/j;
+
+    .line 24
+    goto :goto_19
+
+    .line 25
+    :cond_18
+    move-object v5, v4
+
+    .line 26
+    :goto_19
+    if-eqz v0, :cond_1d
+
+    .line 28
+    sget-object v4, La51/g1;->n1:Lm82/j;
+
+    .line 30
+    :cond_1d
+    invoke-direct {p0}, La51/g1;->j8()Lq41/f;
+
+    .line 33
+    move-result-object v0
+
+    .line 34
+    iget-object v0, v0, Lq41/f;->e:Lq41/i;
+
+    .line 36
+    invoke-virtual {v0}, Lq41/i;->getRoot()Landroid/view/View;
+
+    .line 39
+    move-result-object v0
+
+    .line 40
+    if-eqz v1, :cond_2b
+
+    .line 42
+    move-object v6, v4
+
+    .line 43
+    goto :goto_2c
+
+    .line 44
+    :cond_2b
+    move-object v6, v5
+
+    .line 45
+    :goto_2c
+    invoke-static {v0, v1, v6}, Lj72/o;->M(Landroid/view/View;ZLm82/j;)V
+
+    .line 48
+    invoke-direct {p0}, La51/g1;->j8()Lq41/f;
+
+    .line 51
+    move-result-object v0
+
+    .line 52
+    iget-object v0, v0, Lq41/f;->d:Lq41/h;
+
+    .line 54
+    invoke-virtual {v0}, Lq41/h;->a()Landroid/widget/FrameLayout;
+
+    .line 57
+    move-result-object v0
+
+    .line 58
+    if-eqz v2, :cond_3d
+
+    .line 60
+    move-object v1, v4
+
+    .line 61
+    goto :goto_3e
+
+    .line 62
+    :cond_3d
+    move-object v1, v5
+
+    .line 63
+    :goto_3e
+    invoke-static {v0, v2, v1}, Lj72/o;->M(Landroid/view/View;ZLm82/j;)V
+
+    .line 66
+    invoke-direct {p0}, La51/g1;->j8()Lq41/f;
+
+    .line 69
+    move-result-object v0
+
+    .line 70
+    iget-object v0, v0, Lq41/f;->b:Lq41/g;
+
+    .line 72
+    invoke-virtual {v0}, Lq41/g;->a()Landroidx/constraintlayout/widget/ConstraintLayout;
+
+    .line 75
+    move-result-object v0
+
+    .line 76
+    if-eqz v3, :cond_4e
+
+    .line 78
+    move-object v5, v4
+
+    .line 79
+    :cond_4e
+    invoke-static {v0, v3, v5}, Lj72/o;->M(Landroid/view/View;ZLm82/j;)V
+
+    .line 82
+    invoke-direct {p0, p1}, La51/g1;->D8(Lg51/f;)V
+
+    .line 85
+    return-void
+.end method
+
+.method public G7(La51/c0;)V
+    .registers 6
+    .param p1  # La51/c0;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-virtual {p1}, La51/c0;->d()Z
+
+    .line 4
+    move-result v0
+
+    .line 5
+    if-nez v0, :cond_7
+
+    .line 7
+    return-void
+
+    .line 8
+    :cond_7
+    invoke-virtual {p0}, La51/a0;->S6()La51/t1;
+
+    .line 11
+    move-result-object v0
+
+    .line 12
+    invoke-virtual {v0}, La51/t1;->c2()Z
+
+    .line 15
+    move-result v0
+
+    .line 16
+    const/4 v1, 0x0
+
+    .line 17
+    if-eqz v0, :cond_1f
+
+    .line 19
+    invoke-direct {p0}, La51/g1;->k8()Lq41/b;
+
+    .line 22
+    move-result-object v0
+
+    .line 23
+    if-eqz v0, :cond_1d
+
+    .line 25
+    invoke-virtual {v0}, Lq41/b;->a()Landroid/widget/LinearLayout;
+
+    .line 28
+    move-result-object v0
+
+    .line 29
+    goto :goto_29
+
+    .line 30
+    :cond_1d
+    move-object v0, v1
+
+    .line 31
+    goto :goto_29
+
+    .line 32
+    :cond_1f
+    invoke-direct {p0}, La51/g1;->l8()Lq41/a;
+
+    .line 35
+    move-result-object v0
+
+    .line 36
+    if-eqz v0, :cond_1d
+
+    .line 38
+    invoke-virtual {v0}, Lq41/a;->a()Landroid/widget/LinearLayout;
+
+    .line 41
+    move-result-object v0
+
+    .line 42
+    :goto_29
+    invoke-virtual {p1}, La51/c0;->f()Z
+
+    .line 45
+    move-result v2
+
+    .line 46
+    const/16 v3, 0x8
+
+    .line 48
+    if-eqz v2, :cond_58
+
+    .line 50
+    if-eqz v0, :cond_36
+
+    .line 52
+    invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
+
+    .line 55
+    :cond_36
+    invoke-direct {p0}, La51/g1;->j8()Lq41/f;
+
+    .line 58
+    move-result-object v0
+
+    .line 59
+    iget-object v0, v0, Lq41/f;->b:Lq41/g;
+
+    .line 61
+    iget-object v0, v0, Lq41/g;->j:Landroidx/compose/ui/platform/ComposeView;
+
+    .line 63
+    const/4 v2, 0x2
+
+    .line 64
+    const/4 v3, 0x1
+
+    .line 65
+    invoke-static {v0, v3, v1, v2, v1}, Lj72/o;->N(Landroid/view/View;ZLm82/j;ILjava/lang/Object;)V
+
+    .line 68
+    sget-object v1, Landroidx/compose/ui/platform/n3$c;->b:Landroidx/compose/ui/platform/n3$c;
+
+    .line 70
+    invoke-virtual {v0, v1}, Landroidx/compose/ui/platform/AbstractComposeView;->setViewCompositionStrategy(Landroidx/compose/ui/platform/n3;)V
+
+    .line 73
+    new-instance v1, La51/r0;
+
+    .line 75
+    invoke-direct {v1, p1, p0}, La51/r0;-><init>(La51/c0;La51/g1;)V
+
+    .line 78
+    const p1, 0x45643c02
+
+    .line 81
+    invoke-static {p1, v3, v1}, Lu2/l;->c(IZLjava/lang/Object;)Lu2/b;
+
+    .line 84
+    move-result-object p1
+
+    .line 85
+    invoke-virtual {v0, p1}, Landroidx/compose/ui/platform/ComposeView;->setContent(Lkotlin/jvm/functions/Function2;)V
+
+    .line 88
+    return-void
+
+    .line 89
+    :cond_58
+    if-eqz v0, :cond_5e
+
+    .line 91
+    const/4 v1, 0x0
+
+    .line 92
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+
+    .line 95
+    :cond_5e
+    invoke-direct {p0}, La51/g1;->j8()Lq41/f;
+
+    .line 98
+    move-result-object v0
+
+    .line 99
+    iget-object v0, v0, Lq41/f;->b:Lq41/g;
+
+    .line 101
+    iget-object v0, v0, Lq41/g;->j:Landroidx/compose/ui/platform/ComposeView;
+
+    .line 103
+    invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
+
+    .line 106
+    invoke-virtual {p1}, La51/c0;->b()Z
+
+    .line 109
+    move-result p1
+
+    .line 110
+    invoke-direct {p0, p1}, La51/g1;->P8(Z)V
+
+    .line 113
+    return-void
+.end method
+
+.method public H7(I)V
+    .registers 3
+
+    .line 1
+    invoke-direct {p0}, La51/g1;->j8()Lq41/f;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    iget-object v0, v0, Lq41/f;->b:Lq41/g;
+
+    .line 7
+    iget-object v0, v0, Lq41/g;->m:Landroid/widget/ProgressBar;
+
+    .line 9
+    invoke-virtual {v0, p1}, Landroid/widget/ProgressBar;->setProgress(I)V
+
+    .line 12
+    return-void
+.end method
+
+.method public I7(Z)V
+    .registers 5
+
+    .line 1
+    invoke-direct {p0}, La51/g1;->j8()Lq41/f;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    iget-object v0, v0, Lq41/f;->b:Lq41/g;
+
+    .line 7
+    iget-object v0, v0, Lq41/g;->m:Landroid/widget/ProgressBar;
+
+    .line 9
+    const/4 v1, 0x0
+
+    .line 10
+    const/4 v2, 0x2
+
+    .line 11
+    invoke-static {v0, p1, v1, v2, v1}, Lj72/o;->N(Landroid/view/View;ZLm82/j;ILjava/lang/Object;)V
+
+    .line 14
+    return-void
+.end method
+
+.method public J7(Z)V
+    .registers 4
+
+    .line 1
+    invoke-virtual {p0}, La51/a0;->S6()La51/t1;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    invoke-virtual {v0}, La51/t1;->c2()Z
+
+    .line 8
+    move-result v0
+
+    .line 9
+    const/4 v1, 0x0
+
+    .line 10
+    if-eqz v0, :cond_14
+
+    .line 12
+    invoke-direct {p0}, La51/g1;->k8()Lq41/b;
+
+    .line 15
+    move-result-object v0
+
+    .line 16
+    if-eqz v0, :cond_1c
+
+    .line 18
+    iget-object v1, v0, Lq41/b;->g:Lsinet/startup/inDriver/core/common/view/scrollable_buttons/ScrollableButtonsView;
+
+    .line 20
+    goto :goto_1c
+
+    .line 21
+    :cond_14
+    invoke-direct {p0}, La51/g1;->l8()Lq41/a;
+
+    .line 24
+    move-result-object v0
+
+    .line 25
+    if-eqz v0, :cond_1c
+
+    .line 27
+    iget-object v1, v0, Lq41/a;->e:Lsinet/startup/inDriver/core/common/view/scrollable_buttons/ScrollableButtonsView;
+
+    .line 29
+    :cond_1c
+    :goto_1c
+    if-eqz v1, :cond_24
+
+    .line 31
+    invoke-virtual {v1, p1}, Lsinet/startup/inDriver/core/common/view/scrollable_buttons/ScrollableButtonsView;->setStartScrollAnimation(Z)V
+
+    .line 34
+    invoke-virtual {v1}, Lsinet/startup/inDriver/core/common/view/scrollable_buttons/ScrollableButtonsView;->w()V
+
+    .line 37
+    :cond_24
+    return-void
+.end method
+
+.method public K7(Ljava/lang/String;)V
+    .registers 5
+    .param p1  # Ljava/lang/String;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-direct {p0}, La51/g1;->j8()Lq41/f;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    iget-object v0, v0, Lq41/f;->b:Lq41/g;
+
+    .line 7
+    iget-object v0, v0, Lq41/g;->i:Lsinet/startup/inDriver/core/ui/inline_alert/InlineAlertView;
+
+    .line 9
+    if-eqz v0, :cond_d
+
+    .line 11
+    invoke-virtual {v0, p1}, Lsinet/startup/inDriver/core/ui/inline_alert/InlineAlertView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 14
+    :cond_d
+    invoke-direct {p0}, La51/g1;->j8()Lq41/f;
+
+    .line 17
+    move-result-object v0
+
+    .line 18
+    iget-object v0, v0, Lq41/f;->b:Lq41/g;
+
+    .line 20
+    iget-object v0, v0, Lq41/g;->i:Lsinet/startup/inDriver/core/ui/inline_alert/InlineAlertView;
+
+    .line 22
+    if-eqz v0, :cond_25
+
+    .line 24
+    invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
+
+    .line 27
+    move-result p1
+
+    .line 28
+    if-lez p1, :cond_1f
+
+    .line 30
+    const/4 p1, 0x1
+
+    .line 31
+    goto :goto_20
+
+    .line 32
+    :cond_1f
+    const/4 p1, 0x0
+
+    .line 33
+    :goto_20
+    const/4 v1, 0x2
+
+    .line 34
+    const/4 v2, 0x0
+
+    .line 35
+    invoke-static {v0, p1, v2, v1, v2}, Lj72/o;->N(Landroid/view/View;ZLm82/j;ILjava/lang/Object;)V
+
+    .line 38
+    :cond_25
+    return-void
+.end method
+
+.method public L7(Ljava/lang/String;)V
+    .registers 4
+    .param p1  # Ljava/lang/String;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-virtual {p0}, La51/a0;->S6()La51/t1;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    invoke-virtual {v0}, La51/t1;->c2()Z
+
+    .line 8
+    move-result v0
+
+    .line 9
+    const/4 v1, 0x0
+
+    .line 10
+    if-eqz v0, :cond_14
+
+    .line 12
+    invoke-direct {p0}, La51/g1;->k8()Lq41/b;
+
+    .line 15
+    move-result-object v0
+
+    .line 16
+    if-eqz v0, :cond_1c
+
+    .line 18
+    iget-object v1, v0, Lq41/b;->e:Landroid/widget/Button;
+
+    .line 20
+    goto :goto_1c
+
+    .line 21
+    :cond_14
+    invoke-direct {p0}, La51/g1;->l8()Lq41/a;
+
+    .line 24
+    move-result-object v0
+
+    .line 25
+    if-eqz v0, :cond_1c
+
+    .line 27
+    iget-object v1, v0, Lq41/a;->d:Landroid/widget/Button;
+
+    .line 29
+    :cond_1c
+    :goto_1c
+    if-eqz v1, :cond_21
+
+    .line 31
+    invoke-virtual {v1, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 34
+    :cond_21
+    return-void
+.end method
+
+.method public M7(Z)V
+    .registers 6
+
+    .line 1
+    invoke-direct {p0}, La51/g1;->j8()Lq41/f;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    iget-object v0, v0, Lq41/f;->b:Lq41/g;
+
+    .line 7
+    iget-object v0, v0, Lq41/g;->n:Landroidx/compose/ui/platform/ComposeView;
+
+    .line 9
+    const/4 v1, 0x0
+
+    .line 10
+    const/4 v2, 0x2
+
+    .line 11
+    const/4 v3, 0x1
+
+    .line 12
+    invoke-static {v0, v3, v1, v2, v1}, Lj72/o;->N(Landroid/view/View;ZLm82/j;ILjava/lang/Object;)V
+
+    .line 15
+    sget-object v1, Landroidx/compose/ui/platform/n3$c;->b:Landroidx/compose/ui/platform/n3$c;
+
+    .line 17
+    invoke-virtual {v0, v1}, Landroidx/compose/ui/platform/AbstractComposeView;->setViewCompositionStrategy(Landroidx/compose/ui/platform/n3;)V
+
+    .line 20
+    new-instance v1, La51/u0;
+
+    .line 22
+    invoke-direct {v1, p0, v0, p1}, La51/u0;-><init>(La51/g1;Landroidx/compose/ui/platform/ComposeView;Z)V
+
+    .line 25
+    const p1, 0x7f60acbe  # 2.98644E38f
+
+    .line 28
+    invoke-static {p1, v3, v1}, Lu2/l;->c(IZLjava/lang/Object;)Lu2/b;
+
+    .line 31
+    move-result-object p1
+
+    .line 32
+    invoke-virtual {v0, p1}, Landroidx/compose/ui/platform/ComposeView;->setContent(Lkotlin/jvm/functions/Function2;)V
+
+    .line 35
+    return-void
+.end method
+
+.method protected P6()La51/h1;
+    .registers 2
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, La51/g1;->e1:Lfw/m;
+
+    .line 3
+    invoke-interface {v0}, Lfw/m;->getValue()Ljava/lang/Object;
+
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, La51/h1;
+
+    .line 9
+    return-object v0
+.end method
+
+.method public b6()I
+    .registers 2
+
+    .line 1
+    iget v0, p0, La51/g1;->d1:I
+
+    .line 3
+    return v0
+.end method
+
+.method public onAttach(Landroid/content/Context;)V
+    .registers 3
     .param p1  # Landroid/content/Context;
         .annotation build Lorg/jetbrains/annotations/NotNull;
         .end annotation
     .end param
 
     .line 1
-    invoke-static {p0}, Lr41/e;->a(Landroidx/fragment/app/Fragment;)Lr41/c;
+    invoke-super {p0, p1}, La51/a0;->onAttach(Landroid/content/Context;)V
+
+    .line 4
+    invoke-virtual {p0}, La51/a0;->S6()La51/t1;
+
+    .line 7
+    move-result-object p1
+
+    .line 8
+    const-string v0, "SmartNotification"
+
+    .line 10
+    invoke-virtual {p1, v0}, La51/t1;->s2(Ljava/lang/String;)V
+
+    .line 13
+    return-void
+.end method
+
+.method public onDestroy()V
+    .registers 2
+
+    .line 1
+    invoke-virtual {p0}, La51/a0;->S6()La51/t1;
 
     .line 4
     move-result-object v0
 
     .line 5
-    invoke-interface {v0, p0}, Lr41/c;->e(Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;)V
+    invoke-virtual {v0}, La51/t1;->h2()V
 
     .line 8
-    const/4 v0, 0x0
+    invoke-super {p0}, Landroidx/fragment/app/Fragment;->onDestroy()V
 
-    .line 9
-    const/4 v1, 0x2
+    .line 11
+    return-void
+.end method
 
-    .line 10
-    invoke-static {p0, p1, v0, v1, v0}, Lsf4/d;->b(Landroidx/fragment/app/Fragment;Landroid/content/Context;Leh4/n;ILjava/lang/Object;)Lsf4/c;
+.method public onDestroyView()V
+    .registers 3
 
-    .line 13
-    move-result-object v0
+    .line 1
+    invoke-super {p0}, La51/a0;->onDestroyView()V
+
+    .line 4
+    iget-object v0, p0, La51/g1;->j1:Landroid/view/View$OnLayoutChangeListener;
+
+    .line 6
+    if-eqz v0, :cond_12
+
+    .line 8
+    invoke-direct {p0}, La51/g1;->j8()Lq41/f;
+
+    .line 11
+    move-result-object v1
+
+    .line 12
+    iget-object v1, v1, Lq41/f;->b:Lq41/g;
 
     .line 14
-    iput-object v0, p0, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->Y0:Lsf4/c;
+    iget-object v1, v1, Lq41/g;->k:Landroidx/fragment/app/FragmentContainerView;
 
     .line 16
-    invoke-super {p0, p1}, Lcu1/h;->onAttach(Landroid/content/Context;)V
+    invoke-virtual {v1, v0}, Landroid/view/View;->removeOnLayoutChangeListener(Landroid/view/View$OnLayoutChangeListener;)V
 
     .line 19
+    :cond_12
+    const/4 v0, 0x0
+
+    .line 20
+    iput-object v0, p0, La51/g1;->j1:Landroid/view/View$OnLayoutChangeListener;
+
+    .line 22
+    return-void
+.end method
+
+.method public onPause()V
+    .registers 2
+
+    .line 1
+    invoke-virtual {p0}, La51/a0;->S6()La51/t1;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    invoke-virtual {v0}, La51/t1;->q2()V
+
+    .line 8
+    invoke-super {p0}, Landroidx/fragment/app/Fragment;->onPause()V
+
+    .line 11
+    return-void
+.end method
+
+.method public onStart()V
+    .registers 2
+
+    .line 1
+    invoke-super {p0}, Landroidx/fragment/app/n;->onStart()V
+
+    .line 4
+    invoke-virtual {p0}, La51/a0;->S6()La51/t1;
+
+    .line 7
+    move-result-object v0
+
+    .line 8
+    invoke-virtual {v0}, La51/t1;->t2()V
+
+    .line 11
     return-void
 .end method
 
 .method public onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
-    .registers 4
+    .registers 9
     .param p1  # Landroid/view/View;
         .annotation build Lorg/jetbrains/annotations/NotNull;
         .end annotation
@@ -2831,67 +4035,754 @@
     .end param
 
     .line 1
-    invoke-super {p0, p1, p2}, Lcu1/h;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
+    invoke-super {p0, p1, p2}, La51/a0;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
 
     const/16 v0, 0x8
-    
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
+    invoke-virtual {p0}, Landroidx/fragment/app/DialogFragment;->getDialog()Landroid/app/Dialog;
+    move-result-object v0
+    if-eqz v0, :skip_dim
+    invoke-virtual {v0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
+    move-result-object v0
+    if-eqz v0, :skip_dim
+    const/4 v1, 0x0
+    invoke-virtual {v0, v1}, Landroid/view/Window;->setDimAmount(F)V
+    :skip_dim
+
     .line 4
-    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->requireContext()Landroid/content/Context;
 
     .line 7
     move-result-object p1
 
     .line 8
-    sget v0, Ln41/a;->d:I
+    sget p2, Ln41/a;->e:I
 
     .line 10
-    invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
+    invoke-static {p1, p2}, Lnu1/w;->f(Landroid/content/Context;I)I
 
     .line 13
-    move-result p1
+    move-result p2
 
     .line 14
-    iput p1, p0, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->X0:I
+    invoke-virtual {p0}, La51/a0;->S6()La51/t1;
 
-    .line 16
-    invoke-direct {p0, p2}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->m6(Landroid/os/Bundle;)V
+    .line 17
+    move-result-object v0
 
-    .line 19
-    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->n6()V
+    .line 18
+    invoke-virtual {v0}, La51/t1;->c2()Z
+
+    .line 21
+    move-result v0
 
     .line 22
-    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->r6()V
+    if-eqz v0, :cond_33
 
-    .line 25
+    .line 24
+    invoke-direct {p0}, La51/g1;->j8()Lq41/f;
+
+    .line 27
+    move-result-object v0
+
+    .line 28
+    iget-object v0, v0, Lq41/f;->b:Lq41/g;
+
+    .line 30
+    iget-object v0, v0, Lq41/g;->c:Landroid/view/ViewStub;
+
+    .line 32
+    new-instance v1, La51/n0;
+
+    .line 34
+    invoke-direct {v1, p0}, La51/n0;-><init>(La51/g1;)V
+
+    .line 37
+    invoke-virtual {v0, v1}, Landroid/view/ViewStub;->setOnInflateListener(Landroid/view/ViewStub$OnInflateListener;)V
+
+    .line 40
+    invoke-direct {p0}, La51/g1;->j8()Lq41/f;
+
+    .line 43
+    move-result-object v0
+
+    .line 44
+    iget-object v0, v0, Lq41/f;->b:Lq41/g;
+
+    .line 46
+    iget-object v0, v0, Lq41/g;->c:Landroid/view/ViewStub;
+
+    .line 48
+    invoke-virtual {v0}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
+
+    .line 51
+    goto :goto_4e
+
+    .line 52
+    :cond_33
+    invoke-direct {p0}, La51/g1;->j8()Lq41/f;
+
+    .line 55
+    move-result-object v0
+
+    .line 56
+    iget-object v0, v0, Lq41/f;->b:Lq41/g;
+
+    .line 58
+    iget-object v0, v0, Lq41/g;->b:Landroid/view/ViewStub;
+
+    .line 60
+    new-instance v1, La51/x0;
+
+    .line 62
+    invoke-direct {v1, p0}, La51/x0;-><init>(La51/g1;)V
+
+    .line 65
+    invoke-virtual {v0, v1}, Landroid/view/ViewStub;->setOnInflateListener(Landroid/view/ViewStub$OnInflateListener;)V
+
+    .line 68
+    invoke-direct {p0}, La51/g1;->j8()Lq41/f;
+
+    .line 71
+    move-result-object v0
+
+    .line 72
+    iget-object v0, v0, Lq41/f;->b:Lq41/g;
+
+    .line 74
+    iget-object v0, v0, Lq41/g;->b:Landroid/view/ViewStub;
+
+    .line 76
+    invoke-virtual {v0}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
+
+    .line 79
+    :goto_4e
+    invoke-direct {p0}, La51/g1;->j8()Lq41/f;
+
+    .line 82
+    move-result-object v0
+
+    .line 83
+    iget-object v0, v0, Lq41/f;->c:Landroidx/core/widget/NestedScrollView;
+
+    .line 85
+    new-instance v1, Lcw1/b$a;
+
+    .line 87
+    invoke-direct {v1, p2}, Lcw1/b$a;-><init>(I)V
+
+    .line 90
+    sget-object p2, Lcw1/a;->TOP:Lcw1/a;
+
+    .line 92
+    invoke-static {v0, v1, p2}, Lnu1/k3;->x(Landroid/view/View;Lcw1/b;Lcw1/a;)V
+
+    .line 95
+    invoke-direct {p0}, La51/g1;->j8()Lq41/f;
+
+    .line 98
+    move-result-object p2
+
+    .line 99
+    iget-object p2, p2, Lq41/f;->d:Lq41/h;
+
+    .line 101
+    iget-object p2, p2, Lq41/h;->b:Lsinet/startup/inDriver/core/ui/status/StatusView;
+
+    .line 103
+    sget-object v0, Lou1/a;->a:Lou1/a;
+
+    .line 105
+    invoke-virtual {v0, p1}, Lou1/a;->b(Landroid/content/Context;)Ljava/lang/CharSequence;
+
+    .line 108
+    move-result-object v1
+
+    .line 109
+    invoke-virtual {p2, v1}, Lsinet/startup/inDriver/core/ui/status/StatusView;->setTitle(Ljava/lang/CharSequence;)V
+
+    .line 112
+    invoke-virtual {v0, p1}, Lou1/a;->a(Landroid/content/Context;)Ljava/lang/CharSequence;
+
+    .line 115
+    move-result-object p1
+
+    .line 116
+    invoke-virtual {p2, p1}, Lsinet/startup/inDriver/core/ui/status/StatusView;->setSubtitle(Ljava/lang/CharSequence;)V
+
+    .line 119
+    new-instance p1, La51/y0;
+
+    .line 121
+    invoke-direct {p1, p0}, La51/y0;-><init>(La51/g1;)V
+
+    .line 124
+    invoke-virtual {p2, p1}, Lsinet/startup/inDriver/core/ui/status/StatusView;->setOnSubtitleClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 127
+    new-instance p1, La51/z0;
+
+    .line 129
+    invoke-direct {p1, p0}, La51/z0;-><init>(La51/g1;)V
+
+    .line 132
+    invoke-virtual {p2, p1}, Lsinet/startup/inDriver/core/ui/status/StatusView;->setOnButtonClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 135
+    invoke-direct {p0}, La51/g1;->j8()Lq41/f;
+
+    .line 138
+    move-result-object p1
+
+    .line 139
+    iget-object p1, p1, Lq41/f;->e:Lq41/i;
+
+    .line 141
+    iget-object v0, p1, Lq41/i;->f:Landroid/widget/Button;
+
+    .line 143
+    new-instance v3, La51/a1;
+
+    .line 145
+    invoke-direct {v3, p0}, La51/a1;-><init>(La51/g1;)V
+
+    .line 148
+    const/4 v4, 0x1
+
+    .line 149
+    const/4 v5, 0x0
+
+    .line 150
+    const-wide/16 v1, 0x0
+
+    .line 152
+    invoke-static/range {v0 .. v5}, Lj72/o;->I(Landroid/view/View;JLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+
+    .line 155
+    invoke-direct {p0}, La51/g1;->j8()Lq41/f;
+
+    .line 158
+    move-result-object p1
+
+    .line 159
+    iget-object p1, p1, Lq41/f;->d:Lq41/h;
+
+    .line 161
+    iget-object v0, p1, Lq41/h;->c:Landroid/widget/Button;
+
+    .line 163
+    new-instance v3, La51/b1;
+
+    .line 165
+    invoke-direct {v3, p0}, La51/b1;-><init>(La51/g1;)V
+
+    .line 168
+    invoke-static/range {v0 .. v5}, Lj72/o;->I(Landroid/view/View;JLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+
+    .line 171
+    invoke-direct {p0}, La51/g1;->j8()Lq41/f;
+
+    .line 174
+    move-result-object p1
+
+    .line 175
+    iget-object p1, p1, Lq41/f;->b:Lq41/g;
+
+    .line 177
+    iget-object p1, p1, Lq41/g;->f:Landroid/view/View;
+
+    .line 179
+    new-instance p2, La51/c1;
+
+    .line 181
+    invoke-direct {p2, p0}, La51/c1;-><init>(La51/g1;)V
+
+    .line 184
+    invoke-virtual {p1, p2}, Landroid/view/View;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
+
+    .line 187
+    invoke-direct {p0}, La51/g1;->n8()V
+
+    .line 190
+    invoke-direct {p0}, La51/g1;->p8()V
+
+    .line 193
+    invoke-direct {p0}, La51/g1;->r8()V
+
+    .line 196
     return-void
 .end method
 
-.method public final x6(I)V
-    .registers 4
+.method public final u8()V
+    .registers 2
 
     .line 1
-    invoke-virtual {p0, p1}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->c6(I)V
+    invoke-virtual {p0}, La51/a0;->S6()La51/t1;
 
     .line 4
-    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->e6()Lq41/j;
-
-    .line 7
     move-result-object v0
 
-    .line 8
-    iget-object v0, v0, Lq41/j;->g:Lsinet/startup/inDriver/core/ui/button/FloatingButton;
+    .line 5
+    invoke-virtual {v0}, La51/t1;->f2()V
 
-    .line 10
-    new-instance v1, Lc51/k;
+    .line 8
+    return-void
+.end method
+
+.method public final v8(ILsinet/startup/inDriver/core/common/view/scrollable_buttons/a;)V
+    .registers 4
+    .param p2  # Lsinet/startup/inDriver/core/common/view/scrollable_buttons/a;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+
+    .line 1
+    sget-object v0, Lsinet/startup/inDriver/core/common/view/scrollable_buttons/a$a;->a:Lsinet/startup/inDriver/core/common/view/scrollable_buttons/a$a;
+
+    .line 3
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 6
+    move-result v0
+
+    .line 7
+    if-eqz v0, :cond_1b
+
+    .line 9
+    invoke-virtual {p0}, La51/a0;->S6()La51/t1;
 
     .line 12
-    invoke-direct {v1, v0, p1, p0}, Lc51/k;-><init>(Lsinet/startup/inDriver/core/ui/button/FloatingButton;ILsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;)V
+    move-result-object p1
+
+    .line 13
+    invoke-virtual {p1}, La51/t1;->c2()Z
+
+    .line 16
+    move-result p1
+
+    .line 17
+    if-eqz p1, :cond_4c
+
+    .line 19
+    invoke-virtual {p0}, La51/a0;->S6()La51/t1;
+
+    .line 22
+    move-result-object p1
+
+    .line 23
+    const/4 p2, 0x0
+
+    .line 24
+    invoke-virtual {p1, p2}, La51/t1;->y2(Z)V
+
+    .line 27
+    return-void
+
+    .line 28
+    :cond_1b
+    sget-object v0, Lsinet/startup/inDriver/core/common/view/scrollable_buttons/a$b;->a:Lsinet/startup/inDriver/core/common/view/scrollable_buttons/a$b;
+
+    .line 30
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 33
+    move-result v0
+
+    .line 34
+    if-eqz v0, :cond_2b
+
+    .line 36
+    invoke-virtual {p0}, La51/a0;->S6()La51/t1;
+
+    .line 39
+    move-result-object p1
+
+    .line 40
+    invoke-virtual {p1}, La51/t1;->l2()V
+
+    .line 43
+    return-void
+
+    .line 44
+    :cond_2b
+    sget-object v0, Lsinet/startup/inDriver/core/common/view/scrollable_buttons/a$c;->a:Lsinet/startup/inDriver/core/common/view/scrollable_buttons/a$c;
+
+    .line 46
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 49
+    move-result v0
+
+    .line 50
+    if-nez v0, :cond_4c
+
+    .line 52
+    instance-of p2, p2, Lsinet/startup/inDriver/core/common/view/scrollable_buttons/a$d;
+
+    .line 54
+    if-eqz p2, :cond_46
+
+    .line 56
+    invoke-virtual {p0}, La51/a0;->S6()La51/t1;
+
+    .line 59
+    move-result-object p2
+
+    .line 60
+    invoke-virtual {p2, p1}, La51/t1;->x2(I)V
+
+    .line 63
+    invoke-virtual {p0}, La51/a0;->S6()La51/t1;
+
+    .line 66
+    move-result-object p2
+
+    .line 67
+    invoke-virtual {p2, p1}, La51/t1;->g2(I)V
+
+    .line 70
+    return-void
+
+    .line 71
+    :cond_46
+    new-instance p1, Lkotlin/NoWhenBranchMatchedException;
+
+    .line 73
+    invoke-direct {p1}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+
+    .line 76
+    throw p1
+
+    .line 77
+    :cond_4c
+    return-void
+.end method
+
+.method public x7(Ljava/util/List;)V
+    .registers 4
+    .param p1  # Ljava/util/List;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "+",
+            "Lsinet/startup/inDriver/core/common/view/scrollable_buttons/b;",
+            ">;)V"
+        }
+    .end annotation
+
+    .line 1
+    invoke-virtual {p0}, La51/a0;->S6()La51/t1;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    invoke-virtual {v0}, La51/t1;->c2()Z
+
+    .line 8
+    move-result v0
+
+    .line 9
+    const/4 v1, 0x0
+
+    .line 10
+    if-eqz v0, :cond_14
+
+    .line 12
+    invoke-direct {p0}, La51/g1;->k8()Lq41/b;
 
     .line 15
-    invoke-virtual {v0, v1}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
+    move-result-object v0
+
+    .line 16
+    if-eqz v0, :cond_1c
 
     .line 18
+    iget-object v1, v0, Lq41/b;->g:Lsinet/startup/inDriver/core/common/view/scrollable_buttons/ScrollableButtonsView;
+
+    .line 20
+    goto :goto_1c
+
+    .line 21
+    :cond_14
+    invoke-direct {p0}, La51/g1;->l8()Lq41/a;
+
+    .line 24
+    move-result-object v0
+
+    .line 25
+    if-eqz v0, :cond_1c
+
+    .line 27
+    iget-object v1, v0, Lq41/a;->e:Lsinet/startup/inDriver/core/common/view/scrollable_buttons/ScrollableButtonsView;
+
+    .line 29
+    :cond_1c
+    :goto_1c
+    if-eqz v1, :cond_36
+
+    .line 31
+    invoke-virtual {v1, p1}, Lsinet/startup/inDriver/core/common/view/scrollable_buttons/ScrollableButtonsView;->setupData(Ljava/util/List;)V
+
+    .line 34
+    new-instance p1, La51/g1$b;
+
+    .line 36
+    invoke-direct {p1, p0}, La51/g1$b;-><init>(Ljava/lang/Object;)V
+
+    .line 39
+    invoke-virtual {v1, p1}, Lsinet/startup/inDriver/core/common/view/scrollable_buttons/ScrollableButtonsView;->setOnItemSelectListener(Lkotlin/jvm/functions/Function2;)V
+
+    .line 42
+    sget-object p1, La51/g1;->o1:Lew1/a;
+
+    .line 44
+    invoke-virtual {v1, p1}, Lsinet/startup/inDriver/core/common/view/scrollable_buttons/ScrollableButtonsView;->setAnimationConfig(Lew1/a;)V
+
+    .line 47
+    new-instance p1, La51/g1$c;
+
+    .line 49
+    invoke-direct {p1, p0}, La51/g1$c;-><init>(Ljava/lang/Object;)V
+
+    .line 52
+    invoke-virtual {v1, p1}, Lsinet/startup/inDriver/core/common/view/scrollable_buttons/ScrollableButtonsView;->n(Lkotlin/reflect/KFunction;)V
+
+    .line 55
+    :cond_36
+    return-void
+.end method
+
+.method public y7(Lg51/h;)V
+    .registers 4
+    .param p1  # Lg51/h;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-direct {p0}, La51/g1;->j8()Lq41/f;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    iget-object v0, v0, Lq41/f;->b:Lq41/g;
+
+    .line 7
+    iget-object v0, v0, Lq41/g;->g:Lsinet/startup/inDriver/feature/warning_info/ui/WarningInfoBanner;
+
+    .line 9
+    invoke-virtual {p1}, Lg51/h;->b()Z
+
+    .line 12
+    move-result v1
+
+    .line 13
+    if-eqz v1, :cond_10
+
+    .line 15
+    const/4 v1, 0x0
+
+    .line 16
+    goto :goto_12
+
+    .line 17
+    :cond_10
+    const/16 v1, 0x8
+
+    .line 19
+    :goto_12
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+
+    .line 22
+    invoke-direct {p0}, La51/g1;->j8()Lq41/f;
+
+    .line 25
+    move-result-object v0
+
+    .line 26
+    iget-object v0, v0, Lq41/f;->b:Lq41/g;
+
+    .line 28
+    iget-object v0, v0, Lq41/g;->g:Lsinet/startup/inDriver/feature/warning_info/ui/WarningInfoBanner;
+
+    .line 30
+    invoke-virtual {p1}, Lg51/h;->a()Ljava/lang/String;
+
+    .line 33
+    move-result-object p1
+
+    .line 34
+    invoke-virtual {v0, p1}, Lsinet/startup/inDriver/feature/warning_info/ui/WarningInfoBanner;->setBannerMessage(Ljava/lang/String;)V
+
+    .line 37
+    return-void
+.end method
+
+.method public z7(Lg51/b;)V
+    .registers 10
+    .param p1  # Lg51/b;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-virtual {p1}, Lg51/b;->b()Ljava/lang/CharSequence;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
+
+    .line 8
+    move-result v0
+
+    .line 9
+    if-nez v0, :cond_b
+
+    .line 11
+    return-void
+
+    .line 12
+    :cond_b
+    invoke-virtual {p0}, La51/a0;->S6()La51/t1;
+
+    .line 15
+    move-result-object v0
+
+    .line 16
+    invoke-virtual {v0}, La51/t1;->c2()Z
+
+    .line 19
+    move-result v0
+
+    .line 20
+    const/4 v1, 0x0
+
+    .line 21
+    if-eqz v0, :cond_20
+
+    .line 23
+    invoke-direct {p0}, La51/g1;->k8()Lq41/b;
+
+    .line 26
+    move-result-object v0
+
+    .line 27
+    if-eqz v0, :cond_1e
+
+    .line 29
+    iget-object v1, v0, Lq41/b;->d:Lsinet/startup/inDriver/core/ui/button/LoadingButton;
+
+    .line 31
+    :cond_1e
+    :goto_1e
+    move-object v2, v1
+
+    .line 32
+    goto :goto_29
+
+    .line 33
+    :cond_20
+    invoke-direct {p0}, La51/g1;->l8()Lq41/a;
+
+    .line 36
+    move-result-object v0
+
+    .line 37
+    if-eqz v0, :cond_1e
+
+    .line 39
+    iget-object v1, v0, Lq41/a;->c:Lsinet/startup/inDriver/core/ui/button/LoadingButton;
+
+    .line 41
+    goto :goto_1e
+
+    .line 42
+    :goto_29
+    if-nez v2, :cond_2c
+
+    .line 44
+    return-void
+
+    .line 45
+    :cond_2c
+    invoke-virtual {p1}, Lg51/b;->b()Ljava/lang/CharSequence;
+
+    .line 48
+    move-result-object v0
+
+    .line 49
+    invoke-virtual {v2, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 52
+    invoke-virtual {p1}, Lg51/b;->c()Z
+
+    .line 55
+    move-result v0
+
+    .line 56
+    invoke-virtual {v2, v0}, Landroid/widget/TextView;->setSingleLine(Z)V
+
+    .line 59
+    invoke-virtual {p1}, Lg51/b;->a()Lg51/a;
+
+    .line 62
+    move-result-object p1
+
+    .line 63
+    sget-object v0, Lg51/a;->RecPrice:Lg51/a;
+
+    .line 65
+    if-ne p1, v0, :cond_4f
+
+    .line 67
+    new-instance v5, La51/s0;
+
+    .line 69
+    invoke-direct {v5, p0}, La51/s0;-><init>(La51/g1;)V
+
+    .line 72
+    const/4 v6, 0x1
+
+    .line 73
+    const/4 v7, 0x0
+
+    .line 74
+    const-wide/16 v3, 0x0
+
+    .line 76
+    invoke-static/range {v2 .. v7}, Lj72/o;->I(Landroid/view/View;JLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+
+    .line 79
+    return-void
+
+    .line 80
+    :cond_4f
+    new-instance v5, La51/t0;
+
+    .line 82
+    invoke-direct {v5, p0}, La51/t0;-><init>(La51/g1;)V
+
+    .line 85
+    const/4 v6, 0x1
+
+    .line 86
+    const/4 v7, 0x0
+
+    .line 87
+    const-wide/16 v3, 0x0
+
+    .line 89
+    invoke-static/range {v2 .. v7}, Lj72/o;->I(Landroid/view/View;JLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+
+    .line 92
     return-void
 .end method
