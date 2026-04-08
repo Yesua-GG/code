@@ -1,91 +1,89 @@
-# classes3.dex
+# classes15.dex
 
-.class public final Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;
+.class public Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;
 .super Lcu1/h;
 .source "SourceFile"
-
-# interfaces
-.implements Lcu1/i;
 
 
 # annotations
 .annotation runtime Lkotlin/Metadata;
     d1 = {
-        "\u0000x\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0001\u0018\u00002\u00020\u00012\u00020\u0002B\u0007¢\u0006\u0004\b\u0003\u0010\u0004J\u000f\u0010\u0006\u001a\u00020\u0005H\u0002¢\u0006\u0004\b\u0006\u0010\u0004J\u0017\u0010\t\u001a\u00020\u00052\u0006\u0010\b\u001a\u00020\u0007H\u0002¢\u0006\u0004\b\t\u0010\nJ\u0017\u0010\r\u001a\u00020\u00052\u0006\u0010\f\u001a\u00020\u000bH\u0002¢\u0006\u0004\b\r\u0010\u000eJ\u0017\u0010\u0011\u001a\u00020\u00052\u0006\u0010\u0010\u001a\u00020\u000fH\u0016¢\u0006\u0004\b\u0011\u0010\u0012J!\u0010\u0017\u001a\u00020\u00052\u0006\u0010\u0014\u001a\u00020\u00132\b\u0010\u0016\u001a\u0004\u0018\u00010\u0015H\u0016¢\u0006\u0004\b\u0017\u0010\u0018R\u001a\u0010\u001e\u001a\u00020\u00198\u0016X\u0096\u0004¢\u0006\f\n\u0004\b\u001a\u0010\u001b\u001a\u0004\b\u001c\u0010\u001dR\u001a\u0010$\u001a\u00020\u001f8\u0014X\u0094D¢\u0006\f\n\u0004\b \u0010!\u001a\u0004\b\"\u0010#R\u001b\u0010*\u001a\u00020%8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b&\u0010\'\u001a\u0004\b(\u0010)R\u001b\u00100\u001a\u00020+8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b,\u0010-\u001a\u0004\b.\u0010/R(\u00109\u001a\b\u0012\u0004\u0012\u000202018\u0000@\u0000X\u0081.¢\u0006\u0012\n\u0004\b3\u00104\u001a\u0004\b5\u00106\"\u0004\b7\u00108R\u001b\u0010=\u001a\u0002028BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b:\u0010-\u001a\u0004\b;\u0010<R\u001b\u0010B\u001a\u00020>8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b?\u0010-\u001a\u0004\b@\u0010AR\u0014\u0010F\u001a\u00020C8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\bD\u0010E¨\u0006G"
+        "\u0000f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\b\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0011\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0019\u0010\u0007\u001a\u00020\u00062\b\u0010\u0005\u001a\u0004\u0018\u00010\u0004H\u0002¢\u0006\u0004\b\u0007\u0010\bJ\u000f\u0010\t\u001a\u00020\u0006H\u0002¢\u0006\u0004\b\t\u0010\u0003J\u0019\u0010\f\u001a\u00020\u00062\b\u0010\u000b\u001a\u0004\u0018\u00010\nH\u0002¢\u0006\u0004\b\f\u0010\rJ\u0017\u0010\u000f\u001a\u00020\u00062\u0006\u0010\u000e\u001a\u00020\nH\u0002¢\u0006\u0004\b\u000f\u0010\rJ\u0017\u0010\u0012\u001a\u00020\u00062\u0006\u0010\u0011\u001a\u00020\u0010H\u0002¢\u0006\u0004\b\u0012\u0010\u0013J\u0017\u0010\u0015\u001a\u00020\u00062\u0006\u0010\u0014\u001a\u00020\u0010H\u0002¢\u0006\u0004\b\u0015\u0010\u0013J\u0017\u0010\u0018\u001a\u00020\u00062\u0006\u0010\u0017\u001a\u00020\u0016H\u0016¢\u0006\u0004\b\u0018\u0010\u0019J!\u0010\u001c\u001a\u00020\u00062\u0006\u0010\u001b\u001a\u00020\u001a2\b\u0010\u0005\u001a\u0004\u0018\u00010\u0004H\u0016¢\u0006\u0004\b\u001c\u0010\u001dJ\u000f\u0010\u001e\u001a\u00020\u0006H\u0014¢\u0006\u0004\b\u001e\u0010\u0003J\u0015\u0010!\u001a\u00020\u00062\u0006\u0010 \u001a\u00020\u001f¢\u0006\u0004\b!\u0010\"J\u0019\u0010#\u001a\u00020\u00062\b\b\u0002\u0010 \u001a\u00020\u001fH\u0014¢\u0006\u0004\b#\u0010\"R\u001a\u0010(\u001a\u00020\u001f8\u0016X\u0096\u0004¢\u0006\f\n\u0004\b$\u0010%\u001a\u0004\b&\u0010\'R(\u00101\u001a\b\u0012\u0004\u0012\u00020*0)8\u0000@\u0000X\u0081.¢\u0006\u0012\n\u0004\b+\u0010,\u001a\u0004\b-\u0010.\"\u0004\b/\u00100R\u001b\u00106\u001a\u00020*8DX\u0084\u0084\u0002¢\u0006\f\n\u0004\b2\u00103\u001a\u0004\b4\u00105R\u001b\u0010<\u001a\u0002078DX\u0084\u0084\u0002¢\u0006\f\n\u0004\b8\u00109\u001a\u0004\b:\u0010;R\u001b\u0010A\u001a\u00020=8DX\u0084\u0084\u0002¢\u0006\f\n\u0004\b>\u00103\u001a\u0004\b?\u0010@R\u0016\u0010C\u001a\u00020\u001f8\u0002@\u0002X\u0082\u000e¢\u0006\u0006\n\u0004\bB\u0010%R\u0016\u0010G\u001a\u00020D8\u0002@\u0002X\u0082.¢\u0006\u0006\n\u0004\bE\u0010F¨\u0006H"
     }
     d2 = {
-        "Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;",
+        "Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;",
         "Lcu1/h;",
-        "Lcu1/i;",
         "<init>",
         "()V",
+        "Landroid/os/Bundle;",
+        "savedInstanceState",
         "",
-        "u6",
-        "Luu1/l;",
-        "viewCommand",
-        "t6",
-        "(Luu1/l;)V",
-        "",
-        "text",
-        "L6",
-        "(Ljava/lang/String;)V",
+        "m6",
+        "(Landroid/os/Bundle;)V",
+        "r6",
+        "Luh0/a;",
+        "locationsToRender",
+        "i6",
+        "(Luh0/a;)V",
+        "locationsToZoom",
+        "j6",
+        "Lvg0/a;",
+        "wayPointUiToA",
+        "k6",
+        "(Lvg0/a;)V",
+        "wayPointUiToB",
+        "l6",
         "Landroid/content/Context;",
         "context",
         "onAttach",
         "(Landroid/content/Context;)V",
         "Landroid/view/View;",
         "view",
-        "Landroid/os/Bundle;",
-        "savedInstanceState",
         "onViewCreated",
         "(Landroid/view/View;Landroid/os/Bundle;)V",
+        "n6",
         "",
+        "extraPaddingPx",
+        "x6",
+        "(I)V",
+        "c6",
         "S0",
         "I",
         "M5",
         "()I",
         "layoutRes",
-        "",
+        "Lew/a;",
+        "Lc51/s;",
         "T0",
-        "Z",
-        "P5",
-        "()Z",
-        "isSimpleTtiMeasuringEnabled",
-        "Le03/a;",
-        "U0",
-        "Lkotlin/properties/d;",
-        "n6",
-        "()Le03/a;",
-        "binding",
-        "Lb13/i;",
-        "V0",
-        "Lfw/m;",
-        "p6",
-        "()Lb13/i;",
-        "flowViewModel",
         "Lew/a;",
-        "Le13/w;",
-        "W0",
-        "Lew/a;",
-        "s6",
+        "h6",
         "()Lew/a;",
-        "setViewModelProvider$auth_release",
+        "setViewModelProvider$order_release",
         "(Lew/a;)V",
         "viewModelProvider",
-        "X0",
-        "r6",
-        "()Le13/w;",
+        "U0",
+        "Lfw/m;",
+        "g6",
+        "()Lc51/s;",
         "viewModel",
-        "Lf03/a;",
+        "Lq41/j;",
+        "V0",
+        "Lkotlin/properties/d;",
+        "e6",
+        "()Lq41/j;",
+        "binding",
+        "Lof4/a;",
+        "W0",
+        "f6",
+        "()Lof4/a;",
+        "mapApi",
+        "X0",
+        "zoomButtonsBottomMargin",
+        "Lsf4/c;",
         "Y0",
-        "o6",
-        "()Lf03/a;",
-        "component",
-        "Lsinet/startup/inDriver/feature/auth/ui/AuthorizationFlowFragment;",
-        "q6",
-        "()Lsinet/startup/inDriver/feature/auth/ui/AuthorizationFlowFragment;",
-        "parentFlowFragment",
-        "auth_release"
+        "Lsf4/c;",
+        "mapComponent",
+        "order_release"
     }
     k = 0x1
     mv = {
@@ -98,7 +96,7 @@
 
 .annotation build Lkotlin/jvm/internal/SourceDebugExtension;
     value = {
-        "SMAP\nAuthorizationEnterPhoneFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AuthorizationEnterPhoneFragment.kt\nsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment\n+ 2 ViewBindingExtensions.kt\nsinet/startup/inDriver/core/common/extensions/ViewBindingExtensionsKt\n+ 3 LiveDataExtensions.kt\nsinet/startup/inDriver/core/common/mvvm/LiveDataExtensionsKt\n+ 4 FragmentExtensions.kt\nsinet/startup/inDriver/core/common/mvvm/FragmentExtensionsKt\n+ 5 FragmentExtensions.kt\nsinet/startup/inDriver/core/common/extensions/FragmentExtensionsKt\n+ 6 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 7 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 8 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n+ 9 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,143:1\n32#2,2:144\n55#3:146\n74#3:147\n24#4,4:148\n329#5,3:152\n332#5,4:160\n329#5,3:164\n332#5,4:172\n329#5,3:176\n332#5,4:184\n329#5,3:188\n332#5,4:196\n329#5,3:200\n332#5,4:208\n422#5,6:212\n49#6:155\n51#6:159\n49#6:167\n51#6:171\n49#6:179\n51#6:183\n49#6:191\n51#6:195\n49#6:203\n51#6:207\n46#7:156\n51#7:158\n46#7:168\n51#7:170\n46#7:180\n51#7:182\n46#7:192\n51#7:194\n46#7:204\n51#7:206\n105#8:157\n105#8:169\n105#8:181\n105#8:193\n105#8:205\n167#9,2:218\n*S KotlinDebug\n*F\n+ 1 AuthorizationEnterPhoneFragment.kt\nsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment\n*L\n42#1:144,2\n53#1:146\n53#1:147\n90#1:148,4\n99#1:152,3\n99#1:160,4\n104#1:164,3\n104#1:172,4\n112#1:176,3\n112#1:184,4\n115#1:188,3\n115#1:196,4\n119#1:200,3\n119#1:208,4\n55#1:212,6\n99#1:155\n99#1:159\n104#1:167\n104#1:171\n112#1:179\n112#1:183\n115#1:191\n115#1:195\n119#1:203\n119#1:207\n99#1:156\n99#1:158\n104#1:168\n104#1:170\n112#1:180\n112#1:182\n115#1:192\n115#1:194\n119#1:204\n119#1:206\n99#1:157\n104#1:169\n112#1:181\n115#1:193\n119#1:205\n71#1:218,2\n*E\n"
+        "SMAP\nOrderGeoMapFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 OrderGeoMapFragment.kt\nsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment\n+ 2 LiveDataExtensions.kt\nsinet/startup/inDriver/core/common/mvvm/LiveDataExtensionsKt\n+ 3 ViewBindingExtensions.kt\nsinet/startup/inDriver/core/common/extensions/ViewBindingExtensionsKt\n+ 4 FragmentExtensions.kt\nsinet/startup/inDriver/core/common/extensions/FragmentExtensionsKt\n+ 5 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 6 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 7 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n+ 8 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 9 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 10 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,351:1\n55#2:352\n74#2:353\n32#3,2:354\n329#4,3:356\n332#4,4:364\n329#4,3:368\n332#4,4:376\n329#4,3:380\n332#4,4:388\n49#5:359\n51#5:363\n49#5:371\n51#5:375\n49#5:383\n51#5:387\n46#6:360\n51#6:362\n46#6:372\n51#6:374\n46#6:384\n51#6:386\n105#7:361\n105#7:373\n105#7:385\n1573#8:392\n1604#8,4:393\n774#8:398\n865#8,2:399\n1563#8:401\n1634#8,3:402\n1563#8:405\n1634#8,3:406\n1563#8:409\n1634#8,3:410\n1#9:397\n327#10,4:413\n*S KotlinDebug\n*F\n+ 1 OrderGeoMapFragment.kt\nsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment\n*L\n59#1:352\n59#1:353\n61#1:354,2\n143#1:356,3\n143#1:364,4\n144#1:368,3\n144#1:376,4\n153#1:380,3\n153#1:388,4\n143#1:359\n143#1:363\n144#1:371\n144#1:375\n153#1:383\n153#1:387\n143#1:360\n143#1:362\n144#1:372\n144#1:374\n153#1:384\n153#1:386\n143#1:361\n144#1:373\n153#1:385\n167#1:392\n167#1:393,4\n239#1:398\n239#1:399,2\n240#1:401\n240#1:402,3\n256#1:405\n256#1:406,3\n309#1:409\n309#1:410,3\n106#1:413,4\n*E\n"
     }
 .end annotation
 
@@ -121,37 +119,34 @@
 # instance fields
 .field private final S0:I
 
-.field private final T0:Z
-
-.field private final U0:Lkotlin/properties/d;
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
-.end field
-
-.field private final V0:Lfw/m;
-    .annotation build Lorg/jetbrains/annotations/NotNull;
-    .end annotation
-.end field
-
-.field public W0:Lew/a;
+.field public T0:Lew/a;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lew/a<",
-            "Le13/w;",
+            "Lc51/s;",
             ">;"
         }
     .end annotation
 .end field
 
-.field private final X0:Lfw/m;
+.field private final U0:Lfw/m;
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 .end field
 
-.field private final Y0:Lfw/m;
+.field private final V0:Lkotlin/properties/d;
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 .end field
+
+.field private final W0:Lfw/m;
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+.end field
+
+.field private X0:I
+
+.field private Y0:Lsf4/c;
 
 
 # direct methods
@@ -160,11 +155,11 @@
 
     new-instance v0, Lkotlin/jvm/internal/PropertyReference1Impl;
 
-    const-class v1, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;
+    const-class v1, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;
 
     const-string v2, "binding"
 
-    const-string v3, "getBinding()Lsinet/startup/inDriver/feature/auth/databinding/AuthorizationEnterPhoneFragmentBinding;"
+    const-string v3, "getBinding()Lsinet/startup/inDriver/city/driver/order/databinding/DriverOrderFragmentMapGeoBinding;"
 
     const/4 v4, 0x0
 
@@ -180,11 +175,11 @@
 
     aput-object v0, v1, v4
 
-    sput-object v1, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->Z0:[Lkotlin/reflect/KProperty;
+    sput-object v1, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->Z0:[Lkotlin/reflect/KProperty;
 
     const/16 v0, 0x8
 
-    sput v0, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->a1:I
+    sput v0, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->a1:I
 
     return-void
 .end method
@@ -196,1016 +191,1877 @@
     invoke-direct {p0}, Lcu1/h;-><init>()V
 
     .line 4
-    sget v0, Lzz2/e;->a:I
+    sget v0, Ln41/c;->j:I
 
     .line 6
-    iput v0, p0, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->S0:I
+    iput v0, p0, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->S0:I
 
     .line 8
-    const/4 v0, 0x1
-
-    .line 9
-    iput-boolean v0, p0, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->T0:Z
-
-    .line 11
-    new-instance v0, Lnu1/r2;
-
-    .line 13
-    const-class v1, Le03/a;
-
-    .line 15
-    invoke-static {v1}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    .line 18
-    move-result-object v1
-
-    .line 19
-    const/4 v2, 0x0
-
-    .line 20
-    invoke-direct {v0, p0, v1, v2}, Lnu1/r2;-><init>(Landroidx/fragment/app/Fragment;Lkotlin/reflect/KClass;Ljava/lang/Integer;)V
-
-    .line 23
-    iput-object v0, p0, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->U0:Lkotlin/properties/d;
-
-    .line 25
-    new-instance v0, Le13/o;
-
-    .line 27
-    invoke-direct {v0, p0}, Le13/o;-><init>(Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;)V
-
-    .line 30
-    invoke-static {v0}, Lfw/n;->b(Lkotlin/jvm/functions/Function0;)Lfw/m;
-
-    .line 33
-    move-result-object v0
-
-    .line 34
-    iput-object v0, p0, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->V0:Lfw/m;
-
-    .line 36
     sget-object v0, Lfw/q;->NONE:Lfw/q;
 
-    .line 38
-    new-instance v1, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment$m;
+    .line 10
+    new-instance v1, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment$h;
 
-    .line 40
-    invoke-direct {v1, p0, p0}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment$m;-><init>(Landroidx/lifecycle/ViewModelStoreOwner;Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;)V
+    .line 12
+    invoke-direct {v1, p0, p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment$h;-><init>(Landroidx/lifecycle/ViewModelStoreOwner;Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;)V
 
-    .line 43
+    .line 15
     invoke-static {v0, v1}, Lfw/n;->a(Lfw/q;Lkotlin/jvm/functions/Function0;)Lfw/m;
 
-    .line 46
-    move-result-object v0
-
-    .line 47
-    iput-object v0, p0, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->X0:Lfw/m;
-
-    .line 49
-    new-instance v0, Le13/p;
-
-    .line 51
-    invoke-direct {v0, p0}, Le13/p;-><init>(Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;)V
-
-    .line 54
-    invoke-static {v0}, Lfw/n;->b(Lkotlin/jvm/functions/Function0;)Lfw/m;
-
-    .line 57
-    move-result-object v0
-
-    .line 58
-    iput-object v0, p0, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->Y0:Lfw/m;
-
-    .line 60
-    return-void
-.end method
-
-.method private static final A6(Le03/a;Z)Lkotlin/Unit;
-    .registers 4
-
-    .line 1
-    iget-object p0, p0, Le03/a;->b:Landroid/view/View;
-
-    .line 3
-    const/4 v0, 0x0
-
-    .line 4
-    const/4 v1, 0x2
-
-    .line 5
-    invoke-static {p0, p1, v0, v1, v0}, Lj72/o;->N(Landroid/view/View;ZLm82/j;ILjava/lang/Object;)V
-
-    .line 8
-    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
-
-    .line 10
-    return-object p0
-.end method
-
-.method private static final B6(Le13/y;)Ljava/lang/String;
-    .registers 1
-
-    .line 1
-    invoke-virtual {p0}, Le13/y;->e()Ljava/lang/String;
-
-    .line 4
-    move-result-object p0
-
-    .line 5
-    return-object p0
-.end method
-
-.method private static final C6(Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;Le03/a;Ljava/lang/String;)Lkotlin/Unit;
-    .registers 3
-
-    .line 1
-    if-eqz p2, :cond_3
-
-    .line 3
-    goto :goto_9
-
-    .line 4
-    :cond_3
-    sget p2, Lyt1/k;->n:I
-
-    .line 6
-    invoke-virtual {p0, p2}, Landroidx/fragment/app/Fragment;->getText(I)Ljava/lang/CharSequence;
-
-    .line 9
-    move-result-object p2
-
-    .line 10
-    :goto_9
-    iget-object p0, p1, Le03/a;->e:Landroid/widget/TextView;
-
-    .line 12
-    invoke-virtual {p0, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 15
-    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
-
-    .line 17
-    return-object p0
-.end method
-
-.method private static final D6(Le13/y;)Ljava/lang/String;
-    .registers 1
-
-    .line 1
-    invoke-virtual {p0}, Le13/y;->d()Ljava/lang/String;
-
-    .line 4
-    move-result-object p0
-
-    .line 5
-    return-object p0
-.end method
-
-.method private static final E6(Le03/a;Ljava/lang/String;)Lkotlin/Unit;
-    .registers 3
-
-    .line 1
-    iget-object v0, p0, Le03/a;->f:Lsinet/startup/inDriver/core/ui/text_field_phone_compact/TextFieldPhoneCompact;
-
-    .line 3
-    invoke-virtual {v0}, Lsinet/startup/inDriver/core/ui/text_field_phone_compact/TextFieldPhoneCompact;->getRawTextWithoutPrefix()Ljava/lang/String;
-
-    .line 6
-    move-result-object v0
-
-    .line 7
-    invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    .line 10
-    move-result v0
-
-    .line 11
-    if-nez v0, :cond_11
-
-    .line 13
-    iget-object p0, p0, Le03/a;->f:Lsinet/startup/inDriver/core/ui/text_field_phone_compact/TextFieldPhoneCompact;
-
-    .line 15
-    invoke-virtual {p0, p1}, Lsinet/startup/inDriver/core/ui/text_field_phone_compact/TextFieldPhoneCompact;->setText(Ljava/lang/CharSequence;)V
-
     .line 18
-    :cond_11
-    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+    move-result-object v0
 
-    .line 20
-    return-object p0
-.end method
-
-.method private static final F6(Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;Landroid/os/Bundle;)Lkotlin/Unit;
-    .registers 4
-
-    .line 1
-    const-string v0, "mode"
-
-    .line 3
-    const/4 v1, 0x0
-
-    .line 4
-    invoke-virtual {p1, v0, v1}, Landroid/os/BaseBundle;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    .line 7
-    move-result-object p1
-
-    .line 8
-    invoke-direct {p0}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->r6()Le13/w;
-
-    .line 11
-    move-result-object p0
-
-    .line 12
-    invoke-virtual {p0, p1}, Le13/w;->O1(Ljava/lang/String;)V
-
-    .line 15
-    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
-
-    .line 17
-    return-object p0
-.end method
-
-.method private static final G6(Landroid/widget/LinearLayout;IIII)Lkotlin/Unit;
-    .registers 5
-
-    .line 1
-    invoke-virtual {p0, p1, p2, p3, p4}, Landroid/view/View;->setPadding(IIII)V
-
-    .line 4
-    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
-
-    .line 6
-    return-object p0
-.end method
-
-.method private static final H6(Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;Landroid/view/View;)V
-    .registers 2
-
-    .line 1
-    invoke-direct {p0}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->p6()Lb13/i;
-
-    .line 4
-    move-result-object p0
-
-    .line 5
-    invoke-virtual {p0}, Lb13/i;->onBackPressed()V
-
-    .line 8
-    return-void
-.end method
-
-.method private static final I6(Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;Le03/a;Landroid/view/View;)Lkotlin/Unit;
-    .registers 3
-
-    .line 1
-    invoke-direct {p0}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->r6()Le13/w;
-
-    .line 4
-    move-result-object p2
-
-    # --- INJECTED LOG ---
-    const-string v0, "BotClient"
-    const-string v1, "I6 (Next) Clicked"
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-    # --- END INJECTED LOG ---
-
-    .line 5
-    iget-object p1, p1, Le03/a;->f:Lsinet/startup/inDriver/core/ui/text_field_phone_compact/TextFieldPhoneCompact;
-
-    .line 7
-    invoke-virtual {p1}, Lsinet/startup/inDriver/core/ui/text_field_phone_compact/TextFieldPhoneCompact;->getRawTextWithoutPrefix()Ljava/lang/String;
-
-    .line 10
-    move-result-object p1
-
-    .line 11
-    invoke-virtual {p2, p1}, Le13/w;->Q1(Ljava/lang/String;)V
-
-    .line 14
-    invoke-direct {p0}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->r6()Le13/w;
-
-    .line 17
-    move-result-object p0
-
-    .line 18
-    invoke-virtual {p0}, Le13/w;->P1()V
+    .line 19
+    iput-object v0, p0, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->U0:Lfw/m;
 
     .line 21
-    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+    new-instance v0, Lnu1/r2;
 
     .line 23
-    return-object p0
-.end method
-
-.method private static final J6(Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;)Lkotlin/Unit;
-    .registers 1
-
-    .line 1
-    invoke-direct {p0}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->p6()Lb13/i;
-
-    .line 4
-    move-result-object p0
-
-    .line 5
-    invoke-virtual {p0}, Lb13/i;->X1()V
-
-    .line 8
-    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
-
-    .line 10
-    return-object p0
-.end method
-
-.method private static final K6(Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;Ljava/lang/String;Z)Lkotlin/Unit;
-    .registers 3
-
-    .line 1
-    if-eqz p2, :cond_9
-
-    .line 3
-    invoke-direct {p0}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->r6()Le13/w;
-
-    .line 6
-    move-result-object p0
-
-    .line 7
-    invoke-virtual {p0}, Le13/w;->V1()V
-
-    .line 10
-    :cond_9
-    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
-
-    .line 12
-    return-object p0
-.end method
-
-.method private final L6(Ljava/lang/String;)V
-    .registers 4
-
-    .line 1
-    invoke-direct {p0}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->n6()Le03/a;
-
-    .line 4
-    move-result-object v0
-
-    .line 5
-    iget-object v0, v0, Le03/a;->f:Lsinet/startup/inDriver/core/ui/text_field_phone_compact/TextFieldPhoneCompact;
-
-    .line 7
-    const/4 v1, 0x1
-
-    .line 8
-    invoke-virtual {v0, v1}, Lsinet/startup/inDriver/core/ui/text_field_phone_compact/TextFieldPhoneCompact;->setError(Z)V
-
-    .line 11
-    invoke-direct {p0}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->n6()Le03/a;
-
-    .line 14
-    move-result-object v0
-
-    .line 15
-    iget-object v0, v0, Le03/a;->f:Lsinet/startup/inDriver/core/ui/text_field_phone_compact/TextFieldPhoneCompact;
-
-    .line 17
-    invoke-virtual {v0, p1}, Lsinet/startup/inDriver/core/ui/text_field_phone_compact/TextFieldPhoneCompact;->setHelpText(Ljava/lang/CharSequence;)V
-
-    .line 20
-    return-void
-.end method
-
-.method public static synthetic S5(Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;Lg82/a;)Lkotlin/Unit;
-    .registers 2
-
-    .line 1
-    invoke-static {p0, p1}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->w6(Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;Lg82/a;)Lkotlin/Unit;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static synthetic T5(Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;Landroid/os/Bundle;)Lkotlin/Unit;
-    .registers 2
-
-    .line 1
-    invoke-static {p0, p1}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->F6(Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;Landroid/os/Bundle;)Lkotlin/Unit;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static synthetic U5(Le03/a;Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;Z)Lkotlin/Unit;
-    .registers 3
-
-    .line 1
-    invoke-static {p0, p1, p2}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->y6(Le03/a;Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;Z)Lkotlin/Unit;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static synthetic V5(Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;Le03/a;Ljava/lang/String;)Lkotlin/Unit;
-    .registers 3
-
-    .line 1
-    invoke-static {p0, p1, p2}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->C6(Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;Le03/a;Ljava/lang/String;)Lkotlin/Unit;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static synthetic W5(Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;Ljava/lang/String;Z)Lkotlin/Unit;
-    .registers 3
-
-    # --- INJECTED: Save Phone Number on Text Change ---
-    # Get State
-    invoke-direct {p0}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->r6()Le13/w;
-    move-result-object v0
-    
-    # Needs I1 accessor to be public or access via method if available.
-    # r6() returns ViewModel. I need state. M1 is private in ViewModel.
-    # But I can access public getters if available.
-    # ViewModel has no public getter for state directly?
-    # Wait, I1 is synthetic accessor for M1 in ViewModel.
-    # invoke-static {v0}, Le13/w;->I1(Le13/w;)Li13/a;
-    # Check if I1 is accessible from here (package private?).
-    # Fragment is in `sinet...enter_phone`, ViewModel is in `e13`.
-    # Different packages? No, both seem effectively same module/dex?
-    # Package of Fragment: sinet.startup.inDriver.feature.auth.ui.enter_phone
-    # Package of ViewModel: e13 (obfuscated).
-    # If different package, cannot call package-private accessors.
-    
-    # Alternate: Get Country Code from UI Component directly.
-    invoke-direct {p0}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->n6()Le03/a;
-    move-result-object v0
-    iget-object v0, v0, Le03/a;->f:Lsinet/startup/inDriver/core/ui/text_field_phone_compact/TextFieldPhoneCompact;
-    # Method to get country code?
-    # I don't know the method name.
-    
-    # Alternate 2: Assume Country Code is +57 or saved previously? 
-    # No, risky.
-    
-    # Alternate 3: Use the ViewModel `I1` accessor if it's public enough?
-    # `I1` is `public static synthetic`. So yes, I can call it!
-    invoke-direct {p0}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->r6()Le13/w;
-    move-result-object v0
-    invoke-static {v0}, Le13/w;->I1(Le13/w;)Li13/a;
-    move-result-object v0
-    invoke-virtual {v0}, Li13/a;->i()Ljava/lang/String;
-    move-result-object v0
-    
-    # Log Code
-    const-string v1, "BotClient"
-    new-instance v2, Ljava/lang/StringBuilder;
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-    const-string v3, "W5 Code: "
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-    move-result-object v2
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    # Concatenate v0 (code) and p1 (number)
-    new-instance v1, Ljava/lang/StringBuilder;
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-    move-result-object v0
-    
-    # Clean whitespace
-    const-string v1, " "
-    const-string v2, ""
-    const/4 v3, 0x0
-    const/4 v4, 0x4
-    invoke-static {v0, v1, v2, v3, v4}, Lvx/n;->u(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZI)Ljava/lang/String;
-    move-result-object v0
-    
-    # Save
-    invoke-static {v0}, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->savePhoneNumber(Ljava/lang/String;)V
-    # --- END INJECTION ---
-
-    invoke-static {p0, p1, p2}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->K6(Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;Ljava/lang/String;Z)Lkotlin/Unit;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static synthetic X5(Le13/y;)Z
-    .registers 1
-
-    .line 1
-    invoke-static {p0}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->x6(Le13/y;)Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public static synthetic Y5(Le03/a;Ljava/lang/String;)Lkotlin/Unit;
-    .registers 2
-
-    .line 1
-    invoke-static {p0, p1}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->E6(Le03/a;Ljava/lang/String;)Lkotlin/Unit;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static synthetic Z5(Landroid/widget/LinearLayout;IIII)Lkotlin/Unit;
-    .registers 5
-
-    .line 1
-    invoke-static {p0, p1, p2, p3, p4}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->G6(Landroid/widget/LinearLayout;IIII)Lkotlin/Unit;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static synthetic a6(Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;)Lf03/a;
-    .registers 1
-
-    .line 1
-    invoke-static {p0}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->l6(Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;)Lf03/a;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static synthetic b6(Le13/y;)Ljava/lang/String;
-    .registers 1
-
-    .line 1
-    invoke-static {p0}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->D6(Le13/y;)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static synthetic c6(Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;Landroid/view/View;)V
-    .registers 2
-
-    .line 1
-    invoke-static {p0, p1}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->H6(Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;Landroid/view/View;)V
-
-    return-void
-.end method
-
-.method public static synthetic d6(Le13/y;)Ljava/lang/String;
-    .registers 1
-
-    .line 1
-    invoke-static {p0}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->B6(Le13/y;)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static synthetic e6(Le03/a;Z)Lkotlin/Unit;
-    .registers 2
-
-    .line 1
-    invoke-static {p0, p1}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->A6(Le03/a;Z)Lkotlin/Unit;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static synthetic f6(Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;)Lb13/i;
-    .registers 1
-
-    .line 1
-    invoke-static {p0}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->m6(Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;)Lb13/i;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static synthetic g6(Le13/y;)Z
-    .registers 1
-
-    .line 1
-    invoke-static {p0}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->z6(Le13/y;)Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public static synthetic h6(Le13/y;)Lg82/a;
-    .registers 1
-
-    .line 1
-    invoke-static {p0}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->v6(Le13/y;)Lg82/a;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static synthetic i6(Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;)Lkotlin/Unit;
-    .registers 1
-
-    .line 1
-    invoke-static {p0}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->J6(Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;)Lkotlin/Unit;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static synthetic j6(Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;Le03/a;Landroid/view/View;)Lkotlin/Unit;
-    .registers 3
-
-    .line 1
-    invoke-static {p0, p1, p2}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->I6(Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;Le03/a;Landroid/view/View;)Lkotlin/Unit;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static final synthetic k6(Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;Luu1/l;)V
-    .registers 2
-
-    .line 1
-    invoke-direct {p0, p1}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->t6(Luu1/l;)V
-
-    .line 4
-    return-void
-.end method
-
-.method private static final l6(Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;)Lf03/a;
-    .registers 4
-
-    .line 1
-    move-object v0, p0
-
-    .line 2
-    :goto_1
-    if-eqz v0, :cond_c
-
-    .line 4
-    instance-of v1, v0, Llu1/e;
-
-    .line 6
-    if-nez v1, :cond_c
-
-    .line 8
-    invoke-virtual {v0}, Landroidx/fragment/app/Fragment;->getParentFragment()Landroidx/fragment/app/Fragment;
-
-    .line 11
-    move-result-object v0
-
-    .line 12
-    goto :goto_1
-
-    .line 13
-    :cond_c
-    instance-of v1, v0, Llu1/e;
-
-    .line 15
-    if-nez v1, :cond_11
-
-    .line 17
-    const/4 v0, 0x0
-
-    .line 18
-    :cond_11
-    check-cast v0, Llu1/e;
-
-    .line 20
-    if-eqz v0, :cond_24
-
-    .line 22
-    invoke-interface {v0}, Llu1/e;->P1()Llu1/d;
+    const-class v1, Lq41/j;
 
     .line 25
-    move-result-object v0
-
-    .line 26
-    if-eqz v0, :cond_24
+    invoke-static {v1}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
     .line 28
-    invoke-virtual {v0}, Llu1/d;->q1()Ljava/lang/Object;
+    move-result-object v1
 
-    .line 31
-    move-result-object v0
+    .line 29
+    const/4 v2, 0x0
 
-    .line 32
-    if-eqz v0, :cond_24
+    .line 30
+    invoke-direct {v0, p0, v1, v2}, Lnu1/r2;-><init>(Landroidx/fragment/app/Fragment;Lkotlin/reflect/KClass;Ljava/lang/Integer;)V
 
-    .line 34
-    check-cast v0, Lf03/a;
+    .line 33
+    iput-object v0, p0, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->V0:Lkotlin/properties/d;
 
-    .line 36
-    return-object v0
+    .line 35
+    new-instance v0, Lc51/h;
 
     .line 37
-    :cond_24
-    new-instance v0, Ljava/lang/IllegalStateException;
+    invoke-direct {v0, p0}, Lc51/h;-><init>(Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;)V
 
-    .line 39
-    new-instance v1, Ljava/lang/StringBuilder;
+    .line 40
+    invoke-static {v0}, Lfw/n;->b(Lkotlin/jvm/functions/Function0;)Lfw/m;
 
-    .line 41
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    .line 43
+    move-result-object v0
 
     .line 44
-    const-string v2, "Can not find component for "
+    iput-object v0, p0, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->W0:Lfw/m;
 
     .line 46
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 49
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    .line 52
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 55
-    move-result-object p0
-
-    .line 56
-    invoke-direct {v0, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    .line 59
-    throw v0
+    return-void
 .end method
 
-.method private static final m6(Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;)Lb13/i;
-    .registers 1
+.method public static synthetic S5(Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;Lkotlin/Pair;)Lkotlin/Unit;
+    .registers 2
 
     .line 1
-    invoke-direct {p0}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->q6()Lsinet/startup/inDriver/feature/auth/ui/AuthorizationFlowFragment;
+    invoke-static {p0, p1}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->u6(Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;Lkotlin/Pair;)Lkotlin/Unit;
 
-    .line 4
     move-result-object p0
 
-    .line 5
-    invoke-virtual {p0}, Lsinet/startup/inDriver/feature/auth/ui/AuthorizationFlowFragment;->a6()Lb13/i;
-
-    .line 8
-    move-result-object p0
-
-    .line 9
     return-object p0
 .end method
 
-.method private final n6()Le03/a;
-    .registers 4
-
-    .line 1
-    iget-object v0, p0, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->U0:Lkotlin/properties/d;
-
-    .line 3
-    sget-object v1, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->Z0:[Lkotlin/reflect/KProperty;
-
-    .line 5
-    const/4 v2, 0x0
-
-    .line 6
-    aget-object v1, v1, v2
-
-    .line 8
-    invoke-interface {v0, p0, v1}, Lkotlin/properties/d;->getValue(Ljava/lang/Object;Lkotlin/reflect/KProperty;)Ljava/lang/Object;
-
-    .line 11
-    move-result-object v0
-
-    .line 12
-    check-cast v0, Le03/a;
-
-    .line 14
-    return-object v0
-.end method
-
-.method private final o6()Lf03/a;
+.method public static synthetic T5(Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;Landroid/view/View;)Lkotlin/Unit;
     .registers 2
 
     .line 1
-    iget-object v0, p0, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->Y0:Lfw/m;
+    invoke-static {p0, p1}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->p6(Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;Landroid/view/View;)Lkotlin/Unit;
 
-    .line 3
-    invoke-interface {v0}, Lfw/m;->getValue()Ljava/lang/Object;
+    move-result-object p0
 
-    .line 6
-    move-result-object v0
-
-    .line 7
-    check-cast v0, Lf03/a;
-
-    .line 9
-    return-object v0
+    return-object p0
 .end method
 
-.method private final p6()Lb13/i;
+.method public static synthetic U5(Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;Landroid/view/View;)Lkotlin/Unit;
     .registers 2
 
     .line 1
-    iget-object v0, p0, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->V0:Lfw/m;
+    invoke-static {p0, p1}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->o6(Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;Landroid/view/View;)Lkotlin/Unit;
 
-    .line 3
-    invoke-interface {v0}, Lfw/m;->getValue()Ljava/lang/Object;
+    move-result-object p0
 
-    .line 6
-    move-result-object v0
-
-    .line 7
-    check-cast v0, Lb13/i;
-
-    .line 9
-    return-object v0
+    return-object p0
 .end method
 
-.method private final q6()Lsinet/startup/inDriver/feature/auth/ui/AuthorizationFlowFragment;
+.method public static synthetic V5(Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;)Lof4/a;
+    .registers 1
+
+    .line 1
+    invoke-static {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->q6(Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;)Lof4/a;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static synthetic W5(Lsinet/startup/inDriver/core/ui/button/FloatingButton;ILsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;)V
     .registers 3
 
     .line 1
-    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getParentFragment()Landroidx/fragment/app/Fragment;
+    invoke-static {p0, p1, p2}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->y6(Lsinet/startup/inDriver/core/ui/button/FloatingButton;ILsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;)V
+
+    return-void
+.end method
+
+.method public static synthetic X5(Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;Lkotlin/Pair;)Lkotlin/Unit;
+    .registers 2
+
+    .line 1
+    invoke-static {p0, p1}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->w6(Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;Lkotlin/Pair;)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static synthetic Y5(Lc51/u;)Lkotlin/Pair;
+    .registers 1
+
+    .line 1
+    invoke-static {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->t6(Lc51/u;)Lkotlin/Pair;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static synthetic Z5(Lc51/u;)Luh0/a;
+    .registers 1
+
+    .line 1
+    invoke-static {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->s6(Lc51/u;)Luh0/a;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static synthetic a6(Lc51/u;)Lkotlin/Pair;
+    .registers 1
+
+    .line 1
+    invoke-static {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->v6(Lc51/u;)Lkotlin/Pair;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static final synthetic b6(Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;Luh0/a;)V
+    .registers 2
+
+    .line 1
+    invoke-direct {p0, p1}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->i6(Luh0/a;)V
 
     .line 4
-    move-result-object v0
+    return-void
+.end method
+
+.method public static synthetic d6(Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;IILjava/lang/Object;)V
+    .registers 4
+
+    .line 1
+    if-nez p3, :cond_b
+
+    .line 3
+    and-int/lit8 p2, p2, 0x1
 
     .line 5
-    instance-of v1, v0, Lsinet/startup/inDriver/feature/auth/ui/AuthorizationFlowFragment;
+    if-eqz p2, :cond_7
 
     .line 7
-    if-eqz v1, :cond_b
+    const/4 p1, 0x0
 
-    .line 9
-    check-cast v0, Lsinet/startup/inDriver/feature/auth/ui/AuthorizationFlowFragment;
+    .line 8
+    :cond_7
+    invoke-virtual {p0, p1}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->c6(I)V
 
     .line 11
-    goto :goto_c
+    return-void
 
     .line 12
     :cond_b
-    const/4 v0, 0x0
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
-    .line 13
-    :goto_c
-    if-eqz v0, :cond_f
-
-    .line 15
-    return-object v0
+    .line 14
+    const-string p1, "Super calls with default arguments not supported in this target, function: applyMapPaddings"
 
     .line 16
-    :cond_f
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    .line 18
-    const-string v1, "Parent fragment must be AuthorizationFlowFragment"
-
-    .line 20
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    .line 23
-    throw v0
-.end method
-
-.method private final r6()Le13/w;
-    .registers 2
-
-    .line 1
-    iget-object v0, p0, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->X0:Lfw/m;
-
-    .line 3
-    invoke-interface {v0}, Lfw/m;->getValue()Ljava/lang/Object;
-
-    .line 6
-    move-result-object v0
-
-    .line 7
-    check-cast v0, Le13/w;
-
-    .line 9
-    return-object v0
-.end method
-
-.method private final t6(Luu1/l;)V
-    .registers 4
-
-    .line 1
-    instance-of v0, p1, Lb13/z;
-
-    .line 3
-    if-eqz v0, :cond_8
-
-    .line 5
-    invoke-static {p0}, Lnu1/a;->A(Landroidx/fragment/app/Fragment;)V
-
-    .line 8
-    return-void
-
-    .line 9
-    :cond_8
-    instance-of v0, p1, Lb13/n;
-
-    .line 11
-    if-eqz v0, :cond_10
-
-    .line 13
-    invoke-static {p0}, Lnu1/a;->j(Landroidx/fragment/app/Fragment;)V
-
-    .line 16
-    return-void
-
-    .line 17
-    :cond_10
-    instance-of v0, p1, Lb13/o;
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
     .line 19
-    if-eqz v0, :cond_1c
+    throw p0
+.end method
 
-    .line 21
-    invoke-direct {p0}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->q6()Lsinet/startup/inDriver/feature/auth/ui/AuthorizationFlowFragment;
+.method private final i6(Luh0/a;)V
+    .registers 20
 
-    .line 24
-    move-result-object p1
+    .line 1
+    if-nez p1, :cond_3
 
-    .line 25
-    invoke-virtual {p1}, Lsinet/startup/inDriver/feature/auth/ui/AuthorizationFlowFragment;->e6()V
-
-    .line 28
+    .line 3
     return-void
 
-    .line 29
-    :cond_1c
-    instance-of v0, p1, Lb13/x;
+    .line 4
+    :cond_3
+    invoke-static {}, Lkotlin/collections/CollectionsKt;->c()Ljava/util/List;
 
-    .line 31
-    if-eqz v0, :cond_32
+    .line 7
+    move-result-object v0
+
+    .line 8
+    invoke-virtual/range {p1 .. p1}, Luh0/a;->c()Ljava/util/List;
+
+    .line 11
+    move-result-object v1
+
+    .line 12
+    check-cast v1, Ljava/lang/Iterable;
+
+    .line 14
+    new-instance v2, Ljava/util/ArrayList;
+
+    .line 16
+    const/16 v3, 0xa
+
+    .line 18
+    invoke-static {v1, v3}, Lkotlin/collections/CollectionsKt;->A(Ljava/lang/Iterable;I)I
+
+    .line 21
+    move-result v3
+
+    .line 22
+    invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(I)V
+
+    .line 25
+    invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    .line 28
+    move-result-object v1
+
+    .line 29
+    const/4 v3, 0x0
+
+    .line 30
+    :goto_1d
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 33
-    invoke-direct {p0}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->q6()Lsinet/startup/inDriver/feature/auth/ui/AuthorizationFlowFragment;
+    move-result v4
+
+    .line 34
+    if-eqz v4, :cond_78
+
+    .line 36
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    .line 39
+    move-result-object v4
+
+    .line 40
+    add-int/lit8 v5, v3, 0x1
+
+    .line 42
+    if-gez v3, :cond_2e
+
+    .line 44
+    invoke-static {}, Lkotlin/collections/CollectionsKt;->z()V
+
+    .line 47
+    :cond_2e
+    check-cast v4, Lsinet/startup/inDriver/core/data/data/Location;
+
+    .line 49
+    invoke-virtual/range {p1 .. p1}, Luh0/a;->g()Z
+
+    .line 52
+    move-result v6
+
+    .line 53
+    if-eqz v6, :cond_43
+
+    .line 55
+    sget-object v6, Lgb4/k$w;->Companion:Lgb4/k$w$a;
+
+    .line 57
+    invoke-virtual {v6, v5}, Lgb4/k$w$a;->a(I)Lgb4/k$w;
+
+    .line 60
+    move-result-object v6
+
+    .line 61
+    if-eqz v6, :cond_40
+
+    .line 63
+    :goto_3e
+    move-object v10, v6
+
+    .line 64
+    goto :goto_46
+
+    .line 65
+    :cond_40
+    sget-object v6, Lgb4/k$t;->b:Lgb4/k$t;
+
+    .line 67
+    goto :goto_3e
+
+    .line 68
+    :cond_43
+    sget-object v6, Lgb4/k$s;->b:Lgb4/k$s;
+
+    .line 70
+    goto :goto_3e
+
+    .line 71
+    :goto_46
+    new-instance v7, Lpf4/k;
+
+    .line 73
+    new-instance v8, Leb4/k;
+
+    .line 75
+    sget-object v6, Lc51/a;->a:Lc51/a;
+
+    .line 77
+    invoke-virtual {v6}, Lc51/a;->e()Ljava/lang/String;
+
+    .line 80
+    move-result-object v6
+
+    .line 81
+    new-instance v9, Ljava/lang/StringBuilder;
+
+    .line 83
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+
+    .line 86
+    invoke-virtual {v9, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 89
+    invoke-virtual {v9, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    .line 92
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 95
+    move-result-object v3
+
+    .line 96
+    invoke-direct {v8, v3}, Leb4/k;-><init>(Ljava/lang/String;)V
+
+    .line 99
+    invoke-static {v4}, Lmb4/f;->j(Lsinet/startup/inDriver/core/data/data/Location;)Leb4/m;
+
+    .line 102
+    move-result-object v9
+
+    .line 103
+    sget-object v13, Lpf4/q$c;->b:Lpf4/q$c;
+
+    .line 105
+    const/16 v16, 0xd8
+
+    .line 107
+    const/16 v17, 0x0
+
+    .line 109
+    const/4 v11, 0x0
+
+    .line 110
+    const/4 v12, 0x0
+
+    .line 111
+    const/4 v14, 0x0
+
+    .line 112
+    const/4 v15, 0x0
+
+    .line 113
+    invoke-direct/range {v7 .. v17}, Lpf4/k;-><init>(Leb4/k;Leb4/m;Lgb4/g;Leb4/h;Leb4/o;Lpf4/q;ZZILkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    .line 116
+    invoke-interface {v2, v7}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+
+    .line 119
+    move v3, v5
+
+    .line 120
+    goto :goto_1d
+
+    .line 121
+    :cond_78
+    invoke-interface {v0, v2}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
+
+    .line 124
+    invoke-virtual/range {p1 .. p1}, Luh0/a;->g()Z
+
+    .line 127
+    move-result v1
+
+    .line 128
+    if-eqz v1, :cond_85
+
+    .line 130
+    sget-object v1, Lgb4/k$c;->b:Lgb4/k$c;
+
+    .line 132
+    :goto_83
+    move-object v5, v1
+
+    .line 133
+    goto :goto_88
+
+    .line 134
+    :cond_85
+    sget-object v1, Lgb4/k$h;->b:Lgb4/k$h;
+
+    .line 136
+    goto :goto_83
+
+    .line 137
+    :goto_88
+    invoke-virtual/range {p1 .. p1}, Luh0/a;->g()Z
+
+    .line 140
+    move-result v1
+
+    .line 141
+    if-eqz v1, :cond_92
+
+    .line 143
+    sget-object v1, Lgb4/k$d;->b:Lgb4/k$d;
+
+    .line 145
+    :goto_90
+    move-object v9, v1
+
+    .line 146
+    goto :goto_95
+
+    .line 147
+    :cond_92
+    sget-object v1, Lgb4/k$l;->b:Lgb4/k$l;
+
+    .line 149
+    goto :goto_90
+
+    .line 150
+    :goto_95
+    new-instance v6, Lpf4/k;
+
+    .line 152
+    new-instance v7, Leb4/k;
+
+    .line 154
+    sget-object v1, Lc51/a;->a:Lc51/a;
+
+    .line 156
+    invoke-virtual {v1}, Lc51/a;->g()Ljava/lang/String;
+
+    .line 159
+    move-result-object v2
+
+    .line 160
+    invoke-direct {v7, v2}, Leb4/k;-><init>(Ljava/lang/String;)V
+
+    .line 163
+    invoke-virtual/range {p1 .. p1}, Luh0/a;->a()Lsinet/startup/inDriver/core/data/data/Location;
+
+    .line 166
+    move-result-object v2
+
+    .line 167
+    invoke-static {v2}, Lmb4/f;->j(Lsinet/startup/inDriver/core/data/data/Location;)Leb4/m;
+
+    .line 170
+    move-result-object v8
+
+    .line 171
+    sget-object v12, Lpf4/q$c;->b:Lpf4/q$c;
+
+    .line 173
+    const/16 v15, 0xd8
+
+    .line 175
+    const/16 v16, 0x0
+
+    .line 177
+    const/4 v10, 0x0
+
+    .line 178
+    const/4 v11, 0x0
+
+    .line 179
+    const/4 v13, 0x0
+
+    .line 180
+    const/4 v14, 0x0
+
+    .line 181
+    invoke-direct/range {v6 .. v16}, Lpf4/k;-><init>(Leb4/k;Leb4/m;Lgb4/g;Leb4/h;Leb4/o;Lpf4/q;ZZILkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    .line 184
+    move-object v8, v12
+
+    .line 185
+    invoke-interface {v0, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 188
+    new-instance v2, Lpf4/k;
+
+    .line 190
+    new-instance v3, Leb4/k;
+
+    .line 192
+    invoke-virtual {v1}, Lc51/a;->f()Ljava/lang/String;
+
+    .line 195
+    move-result-object v4
+
+    .line 196
+    invoke-direct {v3, v4}, Leb4/k;-><init>(Ljava/lang/String;)V
+
+    .line 199
+    invoke-virtual/range {p1 .. p1}, Luh0/a;->e()Lsinet/startup/inDriver/core/data/data/Location;
+
+    .line 202
+    move-result-object v4
+
+    .line 203
+    invoke-static {v4}, Lmb4/f;->j(Lsinet/startup/inDriver/core/data/data/Location;)Leb4/m;
+
+    .line 206
+    move-result-object v4
+
+    .line 207
+    const/16 v11, 0xd8
+
+    .line 209
+    const/4 v12, 0x0
+
+    .line 210
+    const/4 v6, 0x0
+
+    .line 211
+    const/4 v7, 0x0
+
+    .line 212
+    const/4 v9, 0x0
+
+    .line 213
+    const/4 v10, 0x0
+
+    .line 214
+    invoke-direct/range {v2 .. v12}, Lpf4/k;-><init>(Leb4/k;Leb4/m;Lgb4/g;Leb4/h;Leb4/o;Lpf4/q;ZZILkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    .line 217
+    invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 220
+    new-instance v4, Leb4/k;
+
+    .line 222
+    invoke-virtual {v1}, Lc51/a;->h()Ljava/lang/String;
+
+    .line 225
+    move-result-object v1
+
+    .line 226
+    invoke-direct {v4, v1}, Leb4/k;-><init>(Ljava/lang/String;)V
+
+    .line 229
+    invoke-virtual/range {p1 .. p1}, Luh0/a;->b()Lsinet/startup/inDriver/core/data/data/Location;
+
+    .line 232
+    move-result-object v1
+
+    .line 233
+    invoke-static {v1}, Lmb4/f;->j(Lsinet/startup/inDriver/core/data/data/Location;)Leb4/m;
+
+    .line 236
+    move-result-object v5
+
+    .line 237
+    invoke-virtual/range {p1 .. p1}, Luh0/a;->g()Z
+
+    .line 240
+    move-result v1
+
+    .line 241
+    if-eqz v1, :cond_f6
+
+    .line 243
+    sget-object v1, Lgb4/k$p;->b:Lgb4/k$p;
+
+    .line 245
+    :goto_f4
+    move-object v6, v1
+
+    .line 246
+    goto :goto_f9
+
+    .line 247
+    :cond_f6
+    sget-object v1, Lgb4/k$a;->b:Lgb4/k$a;
+
+    .line 249
+    goto :goto_f4
+
+    .line 250
+    :goto_f9
+    sget-object v9, Lpf4/q$e;->b:Lpf4/q$e;
+
+    .line 252
+    new-instance v10, Leb4/o;
+
+    .line 254
+    invoke-virtual/range {p1 .. p1}, Luh0/a;->b()Lsinet/startup/inDriver/core/data/data/Location;
+
+    .line 257
+    move-result-object v1
+
+    .line 258
+    invoke-virtual {v1}, Lsinet/startup/inDriver/core/data/data/Location;->getBearing()F
+
+    .line 261
+    move-result v1
+
+    .line 262
+    invoke-static {v1}, Leb4/b0;->b(F)D
+
+    .line 265
+    move-result-wide v13
+
+    .line 266
+    const/4 v15, 0x1
+
+    .line 267
+    const/16 v16, 0x0
+
+    .line 269
+    const-wide/16 v11, 0x0
+
+    .line 271
+    invoke-direct/range {v10 .. v16}, Leb4/o;-><init>(DDILkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    .line 274
+    invoke-virtual/range {p1 .. p1}, Luh0/a;->g()Z
+
+    .line 277
+    move-result v1
+
+    .line 278
+    if-eqz v1, :cond_118
+
+    .line 280
+    goto :goto_119
+
+    .line 281
+    :cond_118
+    const/4 v10, 0x0
+
+    .line 282
+    :goto_119
+    if-nez v10, :cond_12a
+
+    .line 284
+    new-instance v11, Leb4/o;
+
+    .line 286
+    const/16 v16, 0x3
+
+    .line 288
+    const/16 v17, 0x0
+
+    .line 290
+    const-wide/16 v12, 0x0
+
+    .line 292
+    const-wide/16 v14, 0x0
+
+    .line 294
+    invoke-direct/range {v11 .. v17}, Leb4/o;-><init>(DDILkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    .line 297
+    move-object v8, v11
+
+    .line 298
+    goto :goto_12b
+
+    .line 299
+    :cond_12a
+    move-object v8, v10
+
+    .line 300
+    :goto_12b
+    new-instance v3, Lpf4/k;
+
+    .line 302
+    const/16 v12, 0xc8
+
+    .line 304
+    const/4 v13, 0x0
+
+    .line 305
+    const/4 v7, 0x0
+
+    .line 306
+    const/4 v10, 0x0
+
+    .line 307
+    const/4 v11, 0x0
+
+    .line 308
+    invoke-direct/range {v3 .. v13}, Lpf4/k;-><init>(Leb4/k;Leb4/m;Lgb4/g;Leb4/h;Leb4/o;Lpf4/q;ZZILkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    .line 311
+    invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 314
+    invoke-static {v0}, Lkotlin/collections/CollectionsKt;->a(Ljava/util/List;)Ljava/util/List;
+
+    .line 317
+    move-result-object v0
+
+    .line 318
+    invoke-virtual/range {p0 .. p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->f6()Lof4/a;
+
+    .line 321
+    move-result-object v1
+
+    .line 322
+    invoke-interface {v1, v0}, Lof4/a;->e1(Ljava/util/List;)V
+
+    .line 325
+    invoke-direct/range {p0 .. p1}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->j6(Luh0/a;)V
+
+    .line 328
+    return-void
+.end method
+
+.method private final j6(Luh0/a;)V
+    .registers 11
+
+    .line 1
+    invoke-virtual {p1}, Luh0/a;->f()Ljava/util/List;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    check-cast v0, Ljava/util/Collection;
+
+    .line 7
+    invoke-virtual {p1}, Luh0/a;->c()Ljava/util/List;
+
+    .line 10
+    move-result-object v1
+
+    .line 11
+    check-cast v1, Ljava/lang/Iterable;
+
+    .line 13
+    invoke-static {v0, v1}, Lkotlin/collections/CollectionsKt;->X0(Ljava/util/Collection;Ljava/lang/Iterable;)Ljava/util/List;
+
+    .line 16
+    move-result-object v0
+
+    .line 17
+    check-cast v0, Ljava/util/Collection;
+
+    .line 19
+    invoke-virtual {p1}, Luh0/a;->a()Lsinet/startup/inDriver/core/data/data/Location;
+
+    .line 22
+    move-result-object v1
+
+    .line 23
+    invoke-static {v0, v1}, Lkotlin/collections/CollectionsKt;->Y0(Ljava/util/Collection;Ljava/lang/Object;)Ljava/util/List;
+
+    .line 26
+    move-result-object v0
+
+    .line 27
+    check-cast v0, Ljava/util/Collection;
+
+    .line 29
+    invoke-virtual {p1}, Luh0/a;->b()Lsinet/startup/inDriver/core/data/data/Location;
+
+    .line 32
+    move-result-object v1
+
+    .line 33
+    invoke-static {v0, v1}, Lkotlin/collections/CollectionsKt;->Y0(Ljava/util/Collection;Ljava/lang/Object;)Ljava/util/List;
 
     .line 36
     move-result-object v0
 
     .line 37
-    check-cast p1, Lb13/x;
+    check-cast v0, Ljava/util/Collection;
 
     .line 39
-    invoke-virtual {p1}, Lb13/x;->b()Ljava/lang/String;
+    invoke-virtual {p1}, Luh0/a;->e()Lsinet/startup/inDriver/core/data/data/Location;
 
     .line 42
-    move-result-object v1
+    move-result-object p1
 
     .line 43
-    invoke-virtual {p1}, Lb13/x;->c()Ljava/lang/String;
+    invoke-static {v0, p1}, Lkotlin/collections/CollectionsKt;->Y0(Ljava/util/Collection;Ljava/lang/Object;)Ljava/util/List;
 
     .line 46
     move-result-object p1
 
     .line 47
-    invoke-virtual {v0, v1, p1}, Lsinet/startup/inDriver/feature/auth/ui/AuthorizationFlowFragment;->k6(Ljava/lang/String;Ljava/lang/String;)V
+    check-cast p1, Ljava/lang/Iterable;
 
-    .line 50
-    return-void
+    .line 49
+    new-instance v0, Ljava/util/ArrayList;
 
     .line 51
-    :cond_32
-    instance-of v0, p1, Lb13/y;
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 53
-    if-eqz v0, :cond_3f
-
-    .line 55
-    check-cast p1, Lb13/y;
+    .line 54
+    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     .line 57
-    invoke-virtual {p1}, Lb13/y;->a()Ljava/lang/String;
-
-    .line 60
     move-result-object p1
 
+    .line 58
+    :cond_39
+    :goto_39
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
     .line 61
-    invoke-direct {p0, p1}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->L6(Ljava/lang/String;)V
+    move-result v1
+
+    .line 62
+    if-eqz v1, :cond_50
 
     .line 64
-    :cond_3f
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    .line 67
+    move-result-object v1
+
+    .line 68
+    move-object v2, v1
+
+    .line 69
+    check-cast v2, Lsinet/startup/inDriver/core/data/data/Location;
+
+    .line 71
+    invoke-static {v2}, Lnu1/o0;->a(Lsinet/startup/inDriver/core/data/data/Location;)Z
+
+    .line 74
+    move-result v2
+
+    .line 75
+    if-eqz v2, :cond_39
+
+    .line 77
+    invoke-interface {v0, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+
+    .line 80
+    goto :goto_39
+
+    .line 81
+    :cond_50
+    new-instance v4, Ljava/util/ArrayList;
+
+    .line 83
+    const/16 p1, 0xa
+
+    .line 85
+    invoke-static {v0, p1}, Lkotlin/collections/CollectionsKt;->A(Ljava/lang/Iterable;I)I
+
+    .line 88
+    move-result p1
+
+    .line 89
+    invoke-direct {v4, p1}, Ljava/util/ArrayList;-><init>(I)V
+
+    .line 92
+    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    .line 95
+    move-result-object p1
+
+    .line 96
+    :goto_5f
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    .line 99
+    move-result v0
+
+    .line 100
+    if-eqz v0, :cond_73
+
+    .line 102
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    .line 105
+    move-result-object v0
+
+    .line 106
+    check-cast v0, Lsinet/startup/inDriver/core/data/data/Location;
+
+    .line 108
+    invoke-static {v0}, Lmb4/f;->j(Lsinet/startup/inDriver/core/data/data/Location;)Leb4/m;
+
+    .line 111
+    move-result-object v0
+
+    .line 112
+    invoke-interface {v4, v0}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+
+    .line 115
+    goto :goto_5f
+
+    .line 116
+    :cond_73
+    invoke-interface {v4}, Ljava/util/List;->size()I
+
+    .line 119
+    move-result p1
+
+    .line 120
+    const/4 v0, 0x1
+
+    .line 121
+    if-le p1, v0, :cond_86
+
+    .line 123
+    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->f6()Lof4/a;
+
+    .line 126
+    move-result-object v3
+
+    .line 127
+    sget-object v5, Leb4/e$d;->d:Leb4/e$d;
+
+    .line 129
+    const/4 v7, 0x4
+
+    .line 130
+    const/4 v8, 0x0
+
+    .line 131
+    const/4 v6, 0x0
+
+    .line 132
+    invoke-static/range {v3 .. v8}, Lof4/a;->d0(Lof4/a;Ljava/util/List;Leb4/e;Leb4/b;ILjava/lang/Object;)V
+
+    .line 135
+    :cond_86
     return-void
 .end method
 
-.method private final u6()V
-    .registers 10
+.method private final k6(Lvg0/a;)V
+    .registers 15
 
     .line 1
-    invoke-direct {p0}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->r6()Le13/w;
+    invoke-virtual {p1}, Lvg0/a;->f()Ljava/util/List;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    .line 8
+    move-result v0
+
+    .line 9
+    const/4 v1, 0x1
+
+    .line 10
+    if-le v0, v1, :cond_5c
+
+    .line 12
+    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->f6()Lof4/a;
+
+    .line 15
+    move-result-object v0
+
+    .line 16
+    new-instance v2, Leb4/k;
+
+    .line 18
+    sget-object v1, Lc51/a;->a:Lc51/a;
+
+    .line 20
+    invoke-virtual {v1}, Lc51/a;->c()Ljava/lang/String;
+
+    .line 23
+    move-result-object v3
+
+    .line 24
+    invoke-direct {v2, v3}, Leb4/k;-><init>(Ljava/lang/String;)V
+
+    .line 27
+    new-instance v3, Leb4/t$c;
+
+    .line 29
+    invoke-virtual {v1}, Lc51/a;->k()I
+
+    .line 32
+    move-result v1
+
+    .line 33
+    invoke-direct {v3, v1}, Leb4/t$c;-><init>(I)V
+
+    .line 36
+    invoke-virtual {p1}, Lvg0/a;->f()Ljava/util/List;
+
+    .line 39
+    move-result-object v1
+
+    .line 40
+    check-cast v1, Ljava/lang/Iterable;
+
+    .line 42
+    new-instance v4, Ljava/util/ArrayList;
+
+    .line 44
+    const/16 v5, 0xa
+
+    .line 46
+    invoke-static {v1, v5}, Lkotlin/collections/CollectionsKt;->A(Ljava/lang/Iterable;I)I
+
+    .line 49
+    move-result v5
+
+    .line 50
+    invoke-direct {v4, v5}, Ljava/util/ArrayList;-><init>(I)V
+
+    .line 53
+    invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    .line 56
+    move-result-object v1
+
+    .line 57
+    :goto_38
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    .line 60
+    move-result v5
+
+    .line 61
+    if-eqz v5, :cond_4c
+
+    .line 63
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    .line 66
+    move-result-object v5
+
+    .line 67
+    check-cast v5, Lsinet/startup/inDriver/core/data/data/Location;
+
+    .line 69
+    invoke-static {v5}, Lmb4/f;->j(Lsinet/startup/inDriver/core/data/data/Location;)Leb4/m;
+
+    .line 72
+    move-result-object v5
+
+    .line 73
+    invoke-interface {v4, v5}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+
+    .line 76
+    goto :goto_38
+
+    .line 77
+    :cond_4c
+    sget-object v6, Leb4/w$b;->b:Leb4/w$b;
+
+    .line 79
+    sget-object v5, Lpf4/q$a;->b:Lpf4/q$a;
+
+    .line 81
+    new-instance v1, Lpf4/f;
+
+    .line 83
+    const/16 v8, 0x20
+
+    .line 85
+    const/4 v9, 0x0
+
+    .line 86
+    const/4 v7, 0x0
+
+    .line 87
+    invoke-direct/range {v1 .. v9}, Lpf4/f;-><init>(Leb4/k;Leb4/t;Ljava/util/List;Lpf4/q;Leb4/w;Lpf4/g;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    .line 90
+    invoke-interface {v0, v1}, Lof4/a;->p0(Lpf4/f;)V
+
+    .line 93
+    :cond_5c
+    invoke-virtual {p1}, Lvg0/a;->d()Lsinet/startup/inDriver/core/data/data/Location;
+
+    .line 96
+    move-result-object v0
+
+    .line 97
+    if-eqz v0, :cond_89
+
+    .line 99
+    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->f6()Lof4/a;
+
+    .line 102
+    move-result-object v1
+
+    .line 103
+    new-instance v2, Lpf4/k;
+
+    .line 105
+    new-instance v3, Leb4/k;
+
+    .line 107
+    sget-object v4, Lc51/a;->a:Lc51/a;
+
+    .line 109
+    invoke-virtual {v4}, Lc51/a;->i()Ljava/lang/String;
+
+    .line 112
+    move-result-object v4
+
+    .line 113
+    invoke-direct {v3, v4}, Leb4/k;-><init>(Ljava/lang/String;)V
+
+    .line 116
+    invoke-static {v0}, Lmb4/f;->j(Lsinet/startup/inDriver/core/data/data/Location;)Leb4/m;
+
+    .line 119
+    move-result-object v4
+
+    .line 120
+    sget-object v5, Lgb4/k$x;->b:Lgb4/k$x;
+
+    .line 122
+    sget-object v8, Lpf4/q$c;->b:Lpf4/q$c;
+
+    .line 124
+    const/16 v11, 0xd8
+
+    .line 126
+    const/4 v12, 0x0
+
+    .line 127
+    const/4 v6, 0x0
+
+    .line 128
+    const/4 v7, 0x0
+
+    .line 129
+    const/4 v9, 0x0
+
+    .line 130
+    const/4 v10, 0x0
+
+    .line 131
+    invoke-direct/range {v2 .. v12}, Lpf4/k;-><init>(Leb4/k;Leb4/m;Lgb4/g;Leb4/h;Leb4/o;Lpf4/q;ZZILkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    .line 134
+    invoke-interface {v1, v2}, Lof4/a;->X0(Lpf4/k;)V
+
+    .line 137
+    goto :goto_9b
+
+    .line 138
+    :cond_89
+    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->f6()Lof4/a;
+
+    .line 141
+    move-result-object v0
+
+    .line 142
+    new-instance v1, Leb4/k;
+
+    .line 144
+    sget-object v2, Lc51/a;->a:Lc51/a;
+
+    .line 146
+    invoke-virtual {v2}, Lc51/a;->i()Ljava/lang/String;
+
+    .line 149
+    move-result-object v2
+
+    .line 150
+    invoke-direct {v1, v2}, Leb4/k;-><init>(Ljava/lang/String;)V
+
+    .line 153
+    invoke-interface {v0, v1}, Lof4/a;->p1(Leb4/k;)V
+
+    .line 156
+    :goto_9b
+    new-instance v6, Lhb4/a;
+
+    .line 158
+    invoke-virtual {p1}, Lvg0/a;->c()Ljava/lang/String;
+
+    .line 161
+    move-result-object v0
+
+    .line 162
+    invoke-virtual {p1}, Lvg0/a;->b()Ljava/lang/String;
+
+    .line 165
+    move-result-object v1
+
+    .line 166
+    invoke-virtual {p1}, Lvg0/a;->g()Z
+
+    .line 169
+    move-result v2
+
+    .line 170
+    if-eqz v2, :cond_ae
+
+    .line 172
+    sget-object v2, Lhb4/a$a;->REDESIGN:Lhb4/a$a;
+
+    .line 174
+    goto :goto_b0
+
+    .line 175
+    :cond_ae
+    sget-object v2, Lhb4/a$a;->BLUE:Lhb4/a$a;
+
+    .line 177
+    :goto_b0
+    invoke-direct {v6, v0, v1, v2}, Lhb4/a;-><init>(Ljava/lang/String;Ljava/lang/String;Lhb4/a$a;)V
+
+    .line 180
+    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->f6()Lof4/a;
+
+    .line 183
+    move-result-object v0
+
+    .line 184
+    new-instance v4, Leb4/k;
+
+    .line 186
+    sget-object v1, Lc51/a;->a:Lc51/a;
+
+    .line 188
+    invoke-virtual {v1}, Lc51/a;->a()Ljava/lang/String;
+
+    .line 191
+    move-result-object v1
+
+    .line 192
+    invoke-direct {v4, v1}, Leb4/k;-><init>(Ljava/lang/String;)V
+
+    .line 195
+    new-instance v5, Leb4/r$b;
+
+    .line 197
+    invoke-virtual {p1}, Lvg0/a;->e()Lsinet/startup/inDriver/core/data/data/Location;
+
+    .line 200
+    move-result-object p1
+
+    .line 201
+    invoke-static {p1}, Lmb4/f;->j(Lsinet/startup/inDriver/core/data/data/Location;)Leb4/m;
+
+    .line 204
+    move-result-object p1
+
+    .line 205
+    invoke-direct {v5, p1}, Leb4/r$b;-><init>(Leb4/m;)V
+
+    .line 208
+    sget-object v9, Leb4/q$b;->b:Leb4/q$b;
+
+    .line 210
+    sget-object v10, Leb4/p$b;->a:Leb4/p$b;
+
+    .line 212
+    sget-object v7, Lpf4/q$f;->b:Lpf4/q$f;
+
+    .line 214
+    new-instance v3, Lpf4/e;
+
+    .line 216
+    const/16 v11, 0x10
+
+    .line 218
+    const/4 v12, 0x0
+
+    .line 219
+    const/4 v8, 0x0
+
+    .line 220
+    invoke-direct/range {v3 .. v12}, Lpf4/e;-><init>(Leb4/k;Leb4/r;Leb4/s;Lpf4/q;Leb4/h;Leb4/q;Leb4/p;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    .line 223
+    invoke-interface {v0, v3}, Lof4/a;->x0(Lpf4/e;)V
+
+    .line 226
+    return-void
+.end method
+
+.method private final l6(Lvg0/a;)V
+    .registers 15
+
+    .line 1
+    invoke-virtual {p1}, Lvg0/a;->f()Ljava/util/List;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    .line 8
+    move-result v0
+
+    .line 9
+    const/4 v1, 0x1
+
+    .line 10
+    if-le v0, v1, :cond_6b
+
+    .line 12
+    invoke-virtual {p1}, Lvg0/a;->g()Z
+
+    .line 15
+    move-result v0
+
+    .line 16
+    if-eqz v0, :cond_18
+
+    .line 18
+    sget-object v0, Lc51/a;->a:Lc51/a;
+
+    .line 20
+    invoke-virtual {v0}, Lc51/a;->m()I
+
+    .line 23
+    move-result v0
+
+    .line 24
+    goto :goto_1e
+
+    .line 25
+    :cond_18
+    sget-object v0, Lc51/a;->a:Lc51/a;
+
+    .line 27
+    invoke-virtual {v0}, Lc51/a;->l()I
+
+    .line 30
+    move-result v0
+
+    .line 31
+    :goto_1e
+    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->f6()Lof4/a;
+
+    .line 34
+    move-result-object v1
+
+    .line 35
+    new-instance v3, Leb4/k;
+
+    .line 37
+    sget-object v2, Lc51/a;->a:Lc51/a;
+
+    .line 39
+    invoke-virtual {v2}, Lc51/a;->d()Ljava/lang/String;
+
+    .line 42
+    move-result-object v2
+
+    .line 43
+    invoke-direct {v3, v2}, Leb4/k;-><init>(Ljava/lang/String;)V
+
+    .line 46
+    new-instance v4, Leb4/t$c;
+
+    .line 48
+    invoke-direct {v4, v0}, Leb4/t$c;-><init>(I)V
+
+    .line 51
+    invoke-virtual {p1}, Lvg0/a;->f()Ljava/util/List;
+
+    .line 54
+    move-result-object v0
+
+    .line 55
+    check-cast v0, Ljava/lang/Iterable;
+
+    .line 57
+    new-instance v5, Ljava/util/ArrayList;
+
+    .line 59
+    const/16 v2, 0xa
+
+    .line 61
+    invoke-static {v0, v2}, Lkotlin/collections/CollectionsKt;->A(Ljava/lang/Iterable;I)I
+
+    .line 64
+    move-result v2
+
+    .line 65
+    invoke-direct {v5, v2}, Ljava/util/ArrayList;-><init>(I)V
+
+    .line 68
+    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    .line 71
+    move-result-object v0
+
+    .line 72
+    :goto_47
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    .line 75
+    move-result v2
+
+    .line 76
+    if-eqz v2, :cond_5b
+
+    .line 78
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    .line 81
+    move-result-object v2
+
+    .line 82
+    check-cast v2, Lsinet/startup/inDriver/core/data/data/Location;
+
+    .line 84
+    invoke-static {v2}, Lmb4/f;->j(Lsinet/startup/inDriver/core/data/data/Location;)Leb4/m;
+
+    .line 87
+    move-result-object v2
+
+    .line 88
+    invoke-interface {v5, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+
+    .line 91
+    goto :goto_47
+
+    .line 92
+    :cond_5b
+    sget-object v7, Leb4/w$b;->b:Leb4/w$b;
+
+    .line 94
+    sget-object v6, Lpf4/q$a;->b:Lpf4/q$a;
+
+    .line 96
+    new-instance v2, Lpf4/f;
+
+    .line 98
+    const/16 v9, 0x20
+
+    .line 100
+    const/4 v10, 0x0
+
+    .line 101
+    const/4 v8, 0x0
+
+    .line 102
+    invoke-direct/range {v2 .. v10}, Lpf4/f;-><init>(Leb4/k;Leb4/t;Ljava/util/List;Lpf4/q;Leb4/w;Lpf4/g;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    .line 105
+    invoke-interface {v1, v2}, Lof4/a;->p0(Lpf4/f;)V
+
+    .line 108
+    :cond_6b
+    invoke-virtual {p1}, Lvg0/a;->d()Lsinet/startup/inDriver/core/data/data/Location;
+
+    .line 111
+    move-result-object v0
+
+    .line 112
+    if-eqz v0, :cond_98
+
+    .line 114
+    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->f6()Lof4/a;
+
+    .line 117
+    move-result-object v1
+
+    .line 118
+    new-instance v2, Lpf4/k;
+
+    .line 120
+    new-instance v3, Leb4/k;
+
+    .line 122
+    sget-object v4, Lc51/a;->a:Lc51/a;
+
+    .line 124
+    invoke-virtual {v4}, Lc51/a;->j()Ljava/lang/String;
+
+    .line 127
+    move-result-object v4
+
+    .line 128
+    invoke-direct {v3, v4}, Leb4/k;-><init>(Ljava/lang/String;)V
+
+    .line 131
+    invoke-static {v0}, Lmb4/f;->j(Lsinet/startup/inDriver/core/data/data/Location;)Leb4/m;
+
+    .line 134
+    move-result-object v4
+
+    .line 135
+    sget-object v5, Lgb4/k$x;->b:Lgb4/k$x;
+
+    .line 137
+    sget-object v8, Lpf4/q$c;->b:Lpf4/q$c;
+
+    .line 139
+    const/16 v11, 0xd8
+
+    .line 141
+    const/4 v12, 0x0
+
+    .line 142
+    const/4 v6, 0x0
+
+    .line 143
+    const/4 v7, 0x0
+
+    .line 144
+    const/4 v9, 0x0
+
+    .line 145
+    const/4 v10, 0x0
+
+    .line 146
+    invoke-direct/range {v2 .. v12}, Lpf4/k;-><init>(Leb4/k;Leb4/m;Lgb4/g;Leb4/h;Leb4/o;Lpf4/q;ZZILkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    .line 149
+    invoke-interface {v1, v2}, Lof4/a;->X0(Lpf4/k;)V
+
+    .line 152
+    goto :goto_aa
+
+    .line 153
+    :cond_98
+    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->f6()Lof4/a;
+
+    .line 156
+    move-result-object v0
+
+    .line 157
+    new-instance v1, Leb4/k;
+
+    .line 159
+    sget-object v2, Lc51/a;->a:Lc51/a;
+
+    .line 161
+    invoke-virtual {v2}, Lc51/a;->j()Ljava/lang/String;
+
+    .line 164
+    move-result-object v2
+
+    .line 165
+    invoke-direct {v1, v2}, Leb4/k;-><init>(Ljava/lang/String;)V
+
+    .line 168
+    invoke-interface {v0, v1}, Lof4/a;->p1(Leb4/k;)V
+
+    .line 171
+    :goto_aa
+    new-instance v6, Lhb4/a;
+
+    .line 173
+    invoke-virtual {p1}, Lvg0/a;->c()Ljava/lang/String;
+
+    .line 176
+    move-result-object v0
+
+    .line 177
+    invoke-virtual {p1}, Lvg0/a;->b()Ljava/lang/String;
+
+    .line 180
+    move-result-object v1
+
+    .line 181
+    invoke-virtual {p1}, Lvg0/a;->g()Z
+
+    .line 184
+    move-result v2
+
+    .line 185
+    if-eqz v2, :cond_bd
+
+    .line 187
+    sget-object v2, Lhb4/a$a;->REDESIGN:Lhb4/a$a;
+
+    .line 189
+    goto :goto_bf
+
+    .line 190
+    :cond_bd
+    sget-object v2, Lhb4/a$a;->GREEN:Lhb4/a$a;
+
+    .line 192
+    :goto_bf
+    invoke-direct {v6, v0, v1, v2}, Lhb4/a;-><init>(Ljava/lang/String;Ljava/lang/String;Lhb4/a$a;)V
+
+    .line 195
+    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->f6()Lof4/a;
+
+    .line 198
+    move-result-object v0
+
+    .line 199
+    new-instance v4, Leb4/k;
+
+    .line 201
+    sget-object v1, Lc51/a;->a:Lc51/a;
+
+    .line 203
+    invoke-virtual {v1}, Lc51/a;->b()Ljava/lang/String;
+
+    .line 206
+    move-result-object v1
+
+    .line 207
+    invoke-direct {v4, v1}, Leb4/k;-><init>(Ljava/lang/String;)V
+
+    .line 210
+    new-instance v5, Leb4/r$b;
+
+    .line 212
+    invoke-virtual {p1}, Lvg0/a;->e()Lsinet/startup/inDriver/core/data/data/Location;
+
+    .line 215
+    move-result-object p1
+
+    .line 216
+    invoke-static {p1}, Lmb4/f;->j(Lsinet/startup/inDriver/core/data/data/Location;)Leb4/m;
+
+    .line 219
+    move-result-object p1
+
+    .line 220
+    invoke-direct {v5, p1}, Leb4/r$b;-><init>(Leb4/m;)V
+
+    .line 223
+    sget-object v9, Leb4/q$b;->b:Leb4/q$b;
+
+    .line 225
+    sget-object v10, Leb4/p$b;->a:Leb4/p$b;
+
+    .line 227
+    sget-object v7, Lpf4/q$f;->b:Lpf4/q$f;
+
+    .line 229
+    new-instance v3, Lpf4/e;
+
+    .line 231
+    const/16 v11, 0x10
+
+    .line 233
+    const/4 v12, 0x0
+
+    .line 234
+    const/4 v8, 0x0
+
+    .line 235
+    invoke-direct/range {v3 .. v12}, Lpf4/e;-><init>(Leb4/k;Leb4/r;Leb4/s;Lpf4/q;Leb4/h;Leb4/q;Leb4/p;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    .line 238
+    invoke-interface {v0, v3}, Lof4/a;->x0(Lpf4/e;)V
+
+    .line 241
+    return-void
+.end method
+
+.method private final m6(Landroid/os/Bundle;)V
+    .registers 15
+
+    .line 1
+    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->e6()Lq41/j;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    iget-object v0, v0, Lq41/j;->b:Lsinet/startup/inDriver/geo/map/view/GeoMapView;
+
+    .line 7
+    iget-object v1, p0, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->Y0:Lsf4/c;
+
+    .line 9
+    const/4 v2, 0x0
+
+    .line 10
+    if-nez v1, :cond_c
+
+    .line 12
+    move-object v1, v2
+
+    .line 13
+    :cond_c
+    invoke-interface {v1, v0}, Lsf4/c;->a(Lsinet/startup/inDriver/geo/map/view/GeoMapView;)V
+
+    .line 16
+    new-instance v3, Lpf4/i;
+
+    .line 18
+    const/16 v11, 0x7e
+
+    .line 20
+    const/4 v12, 0x0
+
+    .line 21
+    const/4 v4, 0x0
+
+    .line 22
+    const/4 v5, 0x0
+
+    .line 23
+    const/4 v6, 0x0
+
+    .line 24
+    const/4 v7, 0x0
+
+    .line 25
+    const/4 v8, 0x0
+
+    .line 26
+    const/4 v9, 0x0
+
+    .line 27
+    const/4 v10, 0x0
+
+    .line 28
+    invoke-direct/range {v3 .. v12}, Lpf4/i;-><init>(ZZZZZLpf4/r;Lpf4/b;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    .line 31
+    invoke-virtual {v0, p0, p1, v3}, Lsinet/startup/inDriver/geo/map/view/GeoMapView;->m(Landroidx/fragment/app/Fragment;Landroid/os/Bundle;Lpf4/i;)V
+
+    .line 34
+    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->g6()Lc51/s;
+
+    .line 37
+    move-result-object p1
+
+    .line 38
+    const/4 v0, 0x1
+
+    .line 39
+    invoke-virtual {p1, v0}, Lc51/s;->P1(Z)V
+
+    .line 42
+    const/4 p1, 0x0
+
+    .line 43
+    invoke-static {p0, p1, v0, v2}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->d6(Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;IILjava/lang/Object;)V
+
+    .line 46
+    return-void
+.end method
+
+.method private static final o6(Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;Landroid/view/View;)Lkotlin/Unit;
+    .registers 3
+
+    .line 1
+    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->g6()Lc51/s;
+
+    .line 4
+    move-result-object p1
+
+    .line 5
+    invoke-virtual {p1}, Lc51/s;->Q1()V
+
+    .line 8
+    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->f6()Lof4/a;
+
+    .line 11
+    move-result-object p0
+
+    .line 12
+    const/4 p1, 0x0
+
+    .line 13
+    const/4 v0, 0x1
+
+    .line 14
+    invoke-static {p0, p1, v0, p1}, Lof4/a;->M0(Lof4/a;Landroid/graphics/Point;ILjava/lang/Object;)V
+
+    .line 17
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 19
+    return-object p0
+.end method
+
+.method private static final p6(Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;Landroid/view/View;)Lkotlin/Unit;
+    .registers 3
+
+    .line 1
+    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->g6()Lc51/s;
+
+    .line 4
+    move-result-object p1
+
+    .line 5
+    invoke-virtual {p1}, Lc51/s;->R1()V
+
+    .line 8
+    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->f6()Lof4/a;
+
+    .line 11
+    move-result-object p0
+
+    .line 12
+    const/4 p1, 0x0
+
+    .line 13
+    const/4 v0, 0x1
+
+    .line 14
+    invoke-static {p0, p1, v0, p1}, Lof4/a;->g0(Lof4/a;Landroid/graphics/Point;ILjava/lang/Object;)V
+
+    .line 17
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 19
+    return-object p0
+.end method
+
+.method private static final q6(Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;)Lof4/a;
+    .registers 1
+
+    .line 1
+    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->e6()Lq41/j;
+
+    .line 4
+    move-result-object p0
+
+    .line 5
+    iget-object p0, p0, Lq41/j;->b:Lsinet/startup/inDriver/geo/map/view/GeoMapView;
+
+    .line 7
+    invoke-virtual {p0}, Lsinet/startup/inDriver/geo/map/view/GeoMapView;->getApi()Lof4/a;
+
+    .line 10
+    move-result-object p0
+
+    .line 11
+    return-object p0
+.end method
+
+.method private final r6()V
+    .registers 8
+
+    .line 1
+    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->g6()Lc51/s;
 
     .line 4
     move-result-object v0
@@ -1217,16 +2073,16 @@
     move-result-object v0
 
     .line 9
-    new-instance v1, Le13/q;
+    new-instance v1, Lc51/c;
 
     .line 11
-    invoke-direct {v1}, Le13/q;-><init>()V
+    invoke-direct {v1}, Lc51/c;-><init>()V
 
     .line 14
-    new-instance v2, Le13/r;
+    new-instance v2, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment$g;
 
     .line 16
-    invoke-direct {v2, p0}, Le13/r;-><init>(Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;)V
+    invoke-direct {v2, p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment$g;-><init>(Ljava/lang/Object;)V
 
     .line 19
     invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getViewLifecycleOwner()Landroidx/lifecycle/LifecycleOwner;
@@ -1250,308 +2106,200 @@
     invoke-static {v0, v4, v5, v6, v5}, Landroidx/lifecycle/FlowExtKt;->flowWithLifecycle$default(Lix/i;Landroidx/lifecycle/Lifecycle;Landroidx/lifecycle/Lifecycle$State;ILjava/lang/Object;)Lix/i;
 
     .line 32
-    move-result-object v4
+    move-result-object v0
 
     .line 33
-    new-instance v7, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment$a;
+    new-instance v4, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment$a;
 
     .line 35
-    invoke-direct {v7, v4, v1}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment$a;-><init>(Lix/i;Lkotlin/jvm/functions/Function1;)V
+    invoke-direct {v4, v0, v1}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment$a;-><init>(Lix/i;Lkotlin/jvm/functions/Function1;)V
 
     .line 38
-    invoke-static {v7}, Lix/k;->z(Lix/i;)Lix/i;
+    invoke-static {v4}, Lix/k;->z(Lix/i;)Lix/i;
 
     .line 41
-    move-result-object v1
+    move-result-object v0
 
     .line 42
-    new-instance v4, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment$b;
+    new-instance v1, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment$b;
 
     .line 44
-    invoke-direct {v4, v2}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment$b;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, v2}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment$b;-><init>(Ljava/lang/Object;)V
 
     .line 47
-    invoke-static {v1, v4}, Lix/k;->b0(Lix/i;Lkotlin/jvm/functions/Function2;)Lix/i;
+    invoke-static {v0, v1}, Lix/k;->b0(Lix/i;Lkotlin/jvm/functions/Function2;)Lix/i;
 
     .line 50
-    move-result-object v1
+    move-result-object v0
 
     .line 51
     invoke-static {v3}, Landroidx/lifecycle/LifecycleOwnerKt;->getLifecycleScope(Landroidx/lifecycle/LifecycleOwner;)Landroidx/lifecycle/LifecycleCoroutineScope;
 
     .line 54
-    move-result-object v2
+    move-result-object v1
 
     .line 55
-    invoke-static {v1, v2}, Lix/k;->W(Lix/i;Lfx/p0;)Lfx/c2;
-
-    .line 58
-    invoke-direct {p0}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->n6()Le03/a;
-
-    .line 61
-    move-result-object v1
-
-    .line 62
-    new-instance v2, Le13/b;
-
-    .line 64
-    invoke-direct {v2}, Le13/b;-><init>()V
-
-    .line 67
-    new-instance v3, Le13/c;
-
-    .line 69
-    invoke-direct {v3, v1, p0}, Le13/c;-><init>(Le03/a;Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;)V
-
-    .line 72
-    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getViewLifecycleOwner()Landroidx/lifecycle/LifecycleOwner;
-
-    .line 75
-    move-result-object v4
-
-    .line 76
-    invoke-interface {v4}, Landroidx/lifecycle/LifecycleOwner;->getLifecycle()Landroidx/lifecycle/Lifecycle;
-
-    .line 79
-    move-result-object v7
-
-    .line 80
-    invoke-static {v0, v7, v5, v6, v5}, Landroidx/lifecycle/FlowExtKt;->flowWithLifecycle$default(Lix/i;Landroidx/lifecycle/Lifecycle;Landroidx/lifecycle/Lifecycle$State;ILjava/lang/Object;)Lix/i;
-
-    .line 83
-    move-result-object v7
-
-    .line 84
-    new-instance v8, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment$c;
-
-    .line 86
-    invoke-direct {v8, v7, v2}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment$c;-><init>(Lix/i;Lkotlin/jvm/functions/Function1;)V
-
-    .line 89
-    invoke-static {v8}, Lix/k;->z(Lix/i;)Lix/i;
-
-    .line 92
-    move-result-object v2
-
-    .line 93
-    new-instance v7, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment$d;
-
-    .line 95
-    invoke-direct {v7, v3}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment$d;-><init>(Ljava/lang/Object;)V
-
-    .line 98
-    invoke-static {v2, v7}, Lix/k;->b0(Lix/i;Lkotlin/jvm/functions/Function2;)Lix/i;
-
-    .line 101
-    move-result-object v2
-
-    .line 102
-    invoke-static {v4}, Landroidx/lifecycle/LifecycleOwnerKt;->getLifecycleScope(Landroidx/lifecycle/LifecycleOwner;)Landroidx/lifecycle/LifecycleCoroutineScope;
-
-    .line 105
-    move-result-object v3
-
-    .line 106
-    invoke-static {v2, v3}, Lix/k;->W(Lix/i;Lfx/p0;)Lfx/c2;
-
-    .line 109
-    new-instance v2, Le13/d;
-
-    .line 111
-    invoke-direct {v2}, Le13/d;-><init>()V
-
-    .line 114
-    new-instance v3, Le13/e;
-
-    .line 116
-    invoke-direct {v3, v1}, Le13/e;-><init>(Le03/a;)V
-
-    .line 119
-    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getViewLifecycleOwner()Landroidx/lifecycle/LifecycleOwner;
-
-    .line 122
-    move-result-object v4
-
-    .line 123
-    invoke-interface {v4}, Landroidx/lifecycle/LifecycleOwner;->getLifecycle()Landroidx/lifecycle/Lifecycle;
-
-    .line 126
-    move-result-object v7
-
-    .line 127
-    invoke-static {v0, v7, v5, v6, v5}, Landroidx/lifecycle/FlowExtKt;->flowWithLifecycle$default(Lix/i;Landroidx/lifecycle/Lifecycle;Landroidx/lifecycle/Lifecycle$State;ILjava/lang/Object;)Lix/i;
-
-    .line 130
-    move-result-object v7
-
-    .line 131
-    new-instance v8, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment$e;
-
-    .line 133
-    invoke-direct {v8, v7, v2}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment$e;-><init>(Lix/i;Lkotlin/jvm/functions/Function1;)V
-
-    .line 136
-    invoke-static {v8}, Lix/k;->z(Lix/i;)Lix/i;
-
-    .line 139
-    move-result-object v2
-
-    .line 140
-    new-instance v7, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment$f;
-
-    .line 142
-    invoke-direct {v7, v3}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment$f;-><init>(Ljava/lang/Object;)V
-
-    .line 145
-    invoke-static {v2, v7}, Lix/k;->b0(Lix/i;Lkotlin/jvm/functions/Function2;)Lix/i;
-
-    .line 148
-    move-result-object v2
-
-    .line 149
-    invoke-static {v4}, Landroidx/lifecycle/LifecycleOwnerKt;->getLifecycleScope(Landroidx/lifecycle/LifecycleOwner;)Landroidx/lifecycle/LifecycleCoroutineScope;
-
-    .line 152
-    move-result-object v3
-
-    .line 153
-    invoke-static {v2, v3}, Lix/k;->W(Lix/i;Lfx/p0;)Lfx/c2;
-
-    .line 156
-    new-instance v2, Le13/f;
-
-    .line 158
-    invoke-direct {v2}, Le13/f;-><init>()V
-
-    .line 161
-    new-instance v3, Le13/g;
-
-    .line 163
-    invoke-direct {v3, p0, v1}, Le13/g;-><init>(Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;Le03/a;)V
-
-    .line 166
-    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getViewLifecycleOwner()Landroidx/lifecycle/LifecycleOwner;
-
-    .line 169
-    move-result-object v4
-
-    .line 170
-    invoke-interface {v4}, Landroidx/lifecycle/LifecycleOwner;->getLifecycle()Landroidx/lifecycle/Lifecycle;
-
-    .line 173
-    move-result-object v7
-
-    .line 174
-    invoke-static {v0, v7, v5, v6, v5}, Landroidx/lifecycle/FlowExtKt;->flowWithLifecycle$default(Lix/i;Landroidx/lifecycle/Lifecycle;Landroidx/lifecycle/Lifecycle$State;ILjava/lang/Object;)Lix/i;
-
-    .line 177
-    move-result-object v7
-
-    .line 178
-    new-instance v8, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment$g;
-
-    .line 180
-    invoke-direct {v8, v7, v2}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment$g;-><init>(Lix/i;Lkotlin/jvm/functions/Function1;)V
-
-    .line 183
-    invoke-static {v8}, Lix/k;->z(Lix/i;)Lix/i;
-
-    .line 186
-    move-result-object v2
-
-    .line 187
-    new-instance v7, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment$h;
-
-    .line 189
-    invoke-direct {v7, v3}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment$h;-><init>(Ljava/lang/Object;)V
-
-    .line 192
-    invoke-static {v2, v7}, Lix/k;->b0(Lix/i;Lkotlin/jvm/functions/Function2;)Lix/i;
-
-    .line 195
-    move-result-object v2
-
-    .line 196
-    invoke-static {v4}, Landroidx/lifecycle/LifecycleOwnerKt;->getLifecycleScope(Landroidx/lifecycle/LifecycleOwner;)Landroidx/lifecycle/LifecycleCoroutineScope;
-
-    .line 199
-    move-result-object v3
-
-    .line 200
-    invoke-static {v2, v3}, Lix/k;->W(Lix/i;Lfx/p0;)Lfx/c2;
-
-    .line 203
-    new-instance v2, Le13/h;
-
-    .line 205
-    invoke-direct {v2}, Le13/h;-><init>()V
-
-    .line 208
-    new-instance v3, Le13/i;
-
-    .line 210
-    invoke-direct {v3, v1}, Le13/i;-><init>(Le03/a;)V
-
-    .line 213
-    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getViewLifecycleOwner()Landroidx/lifecycle/LifecycleOwner;
-
-    .line 216
-    move-result-object v1
-
-    .line 217
-    invoke-interface {v1}, Landroidx/lifecycle/LifecycleOwner;->getLifecycle()Landroidx/lifecycle/Lifecycle;
-
-    .line 220
-    move-result-object v4
-
-    .line 221
-    invoke-static {v0, v4, v5, v6, v5}, Landroidx/lifecycle/FlowExtKt;->flowWithLifecycle$default(Lix/i;Landroidx/lifecycle/Lifecycle;Landroidx/lifecycle/Lifecycle$State;ILjava/lang/Object;)Lix/i;
-
-    .line 224
-    move-result-object v0
-
-    .line 225
-    new-instance v4, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment$i;
-
-    .line 227
-    invoke-direct {v4, v0, v2}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment$i;-><init>(Lix/i;Lkotlin/jvm/functions/Function1;)V
-
-    .line 230
-    invoke-static {v4}, Lix/k;->z(Lix/i;)Lix/i;
-
-    .line 233
-    move-result-object v0
-
-    .line 234
-    new-instance v2, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment$j;
-
-    .line 236
-    invoke-direct {v2, v3}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment$j;-><init>(Ljava/lang/Object;)V
-
-    .line 239
-    invoke-static {v0, v2}, Lix/k;->b0(Lix/i;Lkotlin/jvm/functions/Function2;)Lix/i;
-
-    .line 242
-    move-result-object v0
-
-    .line 243
-    invoke-static {v1}, Landroidx/lifecycle/LifecycleOwnerKt;->getLifecycleScope(Landroidx/lifecycle/LifecycleOwner;)Landroidx/lifecycle/LifecycleCoroutineScope;
-
-    .line 246
-    move-result-object v1
-
-    .line 247
     invoke-static {v0, v1}, Lix/k;->W(Lix/i;Lfx/p0;)Lfx/c2;
 
-    .line 250
+    .line 58
+    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->g6()Lc51/s;
+
+    .line 61
+    move-result-object v0
+
+    .line 62
+    invoke-virtual {v0}, Luu1/i;->getViewState()Lix/s0;
+
+    .line 65
+    move-result-object v0
+
+    .line 66
+    new-instance v1, Lc51/d;
+
+    .line 68
+    invoke-direct {v1}, Lc51/d;-><init>()V
+
+    .line 71
+    new-instance v2, Lc51/e;
+
+    .line 73
+    invoke-direct {v2, p0}, Lc51/e;-><init>(Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;)V
+
+    .line 76
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getViewLifecycleOwner()Landroidx/lifecycle/LifecycleOwner;
+
+    .line 79
+    move-result-object v3
+
+    .line 80
+    invoke-interface {v3}, Landroidx/lifecycle/LifecycleOwner;->getLifecycle()Landroidx/lifecycle/Lifecycle;
+
+    .line 83
+    move-result-object v4
+
+    .line 84
+    invoke-static {v0, v4, v5, v6, v5}, Landroidx/lifecycle/FlowExtKt;->flowWithLifecycle$default(Lix/i;Landroidx/lifecycle/Lifecycle;Landroidx/lifecycle/Lifecycle$State;ILjava/lang/Object;)Lix/i;
+
+    .line 87
+    move-result-object v0
+
+    .line 88
+    new-instance v4, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment$c;
+
+    .line 90
+    invoke-direct {v4, v0, v1}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment$c;-><init>(Lix/i;Lkotlin/jvm/functions/Function1;)V
+
+    .line 93
+    invoke-static {v4}, Lix/k;->z(Lix/i;)Lix/i;
+
+    .line 96
+    move-result-object v0
+
+    .line 97
+    new-instance v1, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment$d;
+
+    .line 99
+    invoke-direct {v1, v2}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment$d;-><init>(Ljava/lang/Object;)V
+
+    .line 102
+    invoke-static {v0, v1}, Lix/k;->b0(Lix/i;Lkotlin/jvm/functions/Function2;)Lix/i;
+
+    .line 105
+    move-result-object v0
+
+    .line 106
+    invoke-static {v3}, Landroidx/lifecycle/LifecycleOwnerKt;->getLifecycleScope(Landroidx/lifecycle/LifecycleOwner;)Landroidx/lifecycle/LifecycleCoroutineScope;
+
+    .line 109
+    move-result-object v1
+
+    .line 110
+    invoke-static {v0, v1}, Lix/k;->W(Lix/i;Lfx/p0;)Lfx/c2;
+
+    .line 113
+    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->g6()Lc51/s;
+
+    .line 116
+    move-result-object v0
+
+    .line 117
+    invoke-virtual {v0}, Luu1/i;->getViewState()Lix/s0;
+
+    .line 120
+    move-result-object v0
+
+    .line 121
+    new-instance v1, Lc51/f;
+
+    .line 123
+    invoke-direct {v1}, Lc51/f;-><init>()V
+
+    .line 126
+    new-instance v2, Lc51/g;
+
+    .line 128
+    invoke-direct {v2, p0}, Lc51/g;-><init>(Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;)V
+
+    .line 131
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getViewLifecycleOwner()Landroidx/lifecycle/LifecycleOwner;
+
+    .line 134
+    move-result-object v3
+
+    .line 135
+    invoke-interface {v3}, Landroidx/lifecycle/LifecycleOwner;->getLifecycle()Landroidx/lifecycle/Lifecycle;
+
+    .line 138
+    move-result-object v4
+
+    .line 139
+    invoke-static {v0, v4, v5, v6, v5}, Landroidx/lifecycle/FlowExtKt;->flowWithLifecycle$default(Lix/i;Landroidx/lifecycle/Lifecycle;Landroidx/lifecycle/Lifecycle$State;ILjava/lang/Object;)Lix/i;
+
+    .line 142
+    move-result-object v0
+
+    .line 143
+    new-instance v4, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment$e;
+
+    .line 145
+    invoke-direct {v4, v0, v1}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment$e;-><init>(Lix/i;Lkotlin/jvm/functions/Function1;)V
+
+    .line 148
+    invoke-static {v4}, Lix/k;->z(Lix/i;)Lix/i;
+
+    .line 151
+    move-result-object v0
+
+    .line 152
+    new-instance v1, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment$f;
+
+    .line 154
+    invoke-direct {v1, v2}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment$f;-><init>(Ljava/lang/Object;)V
+
+    .line 157
+    invoke-static {v0, v1}, Lix/k;->b0(Lix/i;Lkotlin/jvm/functions/Function2;)Lix/i;
+
+    .line 160
+    move-result-object v0
+
+    .line 161
+    invoke-static {v3}, Landroidx/lifecycle/LifecycleOwnerKt;->getLifecycleScope(Landroidx/lifecycle/LifecycleOwner;)Landroidx/lifecycle/LifecycleCoroutineScope;
+
+    .line 164
+    move-result-object v1
+
+    .line 165
+    invoke-static {v0, v1}, Lix/k;->W(Lix/i;Lfx/p0;)Lfx/c2;
+
+    .line 168
     return-void
 .end method
 
-.method private static final v6(Le13/y;)Lg82/a;
+.method private static final s6(Lc51/u;)Luh0/a;
     .registers 1
 
     .line 1
-    invoke-virtual {p0}, Le13/y;->c()Lg82/a;
+    invoke-virtual {p0}, Lc51/u;->d()Luh0/a;
 
     .line 4
     move-result-object p0
@@ -1560,93 +2308,192 @@
     return-object p0
 .end method
 
-.method private static final w6(Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;Lg82/a;)Lkotlin/Unit;
+.method private static final t6(Lc51/u;)Lkotlin/Pair;
     .registers 2
 
     .line 1
-    invoke-direct {p0}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->n6()Le03/a;
+    invoke-virtual {p0}, Lc51/u;->h()Z
 
     .line 4
-    move-result-object p0
+    move-result v0
 
     .line 5
-    iget-object p0, p0, Le03/a;->f:Lsinet/startup/inDriver/core/ui/text_field_phone_compact/TextFieldPhoneCompact;
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    .line 7
-    invoke-virtual {p0, p1}, Lsinet/startup/inDriver/core/ui/text_field_phone_compact/TextFieldPhoneCompact;->setPhoneCountry(Lg82/a;)V
+    .line 8
+    move-result-object v0
 
-    .line 10
-    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+    .line 9
+    invoke-virtual {p0}, Lc51/u;->f()Lvg0/a;
 
     .line 12
+    move-result-object p0
+
+    .line 13
+    invoke-static {v0, p0}, Lfw/y;->a(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
+
+    .line 16
+    move-result-object p0
+
+    .line 17
     return-object p0
 .end method
 
-.method private static final x6(Le13/y;)Z
-    .registers 1
+.method private static final u6(Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;Lkotlin/Pair;)Lkotlin/Unit;
+    .registers 3
 
     .line 1
-    invoke-virtual {p0}, Le13/y;->g()Z
+    invoke-virtual {p1}, Lkotlin/Pair;->f()Ljava/lang/Object;
 
     .line 4
-    move-result p0
+    move-result-object v0
 
     .line 5
-    return p0
-.end method
+    check-cast v0, Ljava/lang/Boolean;
 
-.method private static final y6(Le03/a;Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;Z)Lkotlin/Unit;
-    .registers 5
+    .line 7
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
-    .line 1
-    if-eqz p2, :cond_11
-
-    .line 3
-    iget-object v0, p0, Le03/a;->c:Lsinet/startup/inDriver/core/ui/button/LoadingButton;
-
-    .line 5
-    invoke-virtual {p1}, Landroidx/fragment/app/Fragment;->getResources()Landroid/content/res/Resources;
-
-    .line 8
-    move-result-object p1
-
-    .line 9
-    sget v1, Lyt1/k;->w2:I
+    .line 10
+    move-result v0
 
     .line 11
-    invoke-virtual {p1, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+    invoke-virtual {p1}, Lkotlin/Pair;->g()Ljava/lang/Object;
 
     .line 14
     move-result-object p1
 
     .line 15
-    invoke-virtual {v0, p1}, Landroid/view/View;->announceForAccessibility(Ljava/lang/CharSequence;)V
+    check-cast p1, Lvg0/a;
 
-    .line 18
-    :cond_11
-    iget-object p0, p0, Le03/a;->c:Lsinet/startup/inDriver/core/ui/button/LoadingButton;
+    .line 17
+    if-eqz v0, :cond_15
 
-    .line 20
-    invoke-virtual {p0, p2}, Lsinet/startup/inDriver/core/ui/button/LoadingButton;->setLoading(Z)V
+    .line 19
+    invoke-direct {p0, p1}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->k6(Lvg0/a;)V
 
-    .line 23
+    .line 22
+    :cond_15
     sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
 
-    .line 25
+    .line 24
     return-object p0
 .end method
 
-.method private static final z6(Le13/y;)Z
-    .registers 1
+.method private static final v6(Lc51/u;)Lkotlin/Pair;
+    .registers 2
 
     .line 1
-    invoke-virtual {p0}, Le13/y;->f()Z
+    invoke-virtual {p0}, Lc51/u;->g()Z
 
     .line 4
-    move-result p0
+    move-result v0
 
     .line 5
-    return p0
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    .line 8
+    move-result-object v0
+
+    .line 9
+    invoke-virtual {p0}, Lc51/u;->e()Lvg0/a;
+
+    .line 12
+    move-result-object p0
+
+    .line 13
+    invoke-static {v0, p0}, Lfw/y;->a(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
+
+    .line 16
+    move-result-object p0
+
+    .line 17
+    return-object p0
+.end method
+
+.method private static final w6(Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;Lkotlin/Pair;)Lkotlin/Unit;
+    .registers 3
+
+    .line 1
+    invoke-virtual {p1}, Lkotlin/Pair;->f()Ljava/lang/Object;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    check-cast v0, Ljava/lang/Boolean;
+
+    .line 7
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    .line 10
+    move-result v0
+
+    .line 11
+    invoke-virtual {p1}, Lkotlin/Pair;->g()Ljava/lang/Object;
+
+    .line 14
+    move-result-object p1
+
+    .line 15
+    check-cast p1, Lvg0/a;
+
+    .line 17
+    if-eqz v0, :cond_15
+
+    .line 19
+    invoke-direct {p0, p1}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->l6(Lvg0/a;)V
+
+    .line 22
+    :cond_15
+    sget-object p0, Lkotlin/Unit;->a:Lkotlin/Unit;
+
+    .line 24
+    return-object p0
+.end method
+
+.method private static final y6(Lsinet/startup/inDriver/core/ui/button/FloatingButton;ILsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;)V
+    .registers 4
+
+    .line 1
+    invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    if-eqz v0, :cond_11
+
+    .line 7
+    check-cast v0, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;
+
+    .line 9
+    iget p2, p2, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->X0:I
+
+    .line 11
+    add-int/2addr p1, p2
+
+    .line 12
+    iput p1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
+
+    .line 14
+    invoke-virtual {p0, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 17
+    return-void
+
+    .line 18
+    :cond_11
+    new-instance p0, Ljava/lang/NullPointerException;
+
+    .line 20
+    const-string p1, "null cannot be cast to non-null type androidx.constraintlayout.widget.ConstraintLayout.LayoutParams"
+
+    .line 22
+    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    .line 25
+    throw p0
 .end method
 
 
@@ -1655,260 +2502,206 @@
     .registers 2
 
     .line 1
-    iget v0, p0, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->S0:I
+    iget v0, p0, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->S0:I
 
     .line 3
     return v0
 .end method
 
-.method protected P5()Z
-    .registers 2
+.method protected c6(I)V
+    .registers 16
 
     .line 1
-    iget-boolean v0, p0, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->T0:Z
-
-    .line 3
-    return v0
-.end method
-
-.method public onAttach(Landroid/content/Context;)V
-    .registers 3
-    .param p1  # Landroid/content/Context;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-
-    .line 1
-    invoke-super {p0, p1}, Lcu1/h;->onAttach(Landroid/content/Context;)V
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->requireContext()Landroid/content/Context;
 
     .line 4
-    invoke-direct {p0}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->o6()Lf03/a;
+    move-result-object v0
+
+    .line 5
+    sget v1, Ln41/a;->b:I
 
     .line 7
-    move-result-object p1
+    invoke-static {v0, v1}, Lnu1/w;->f(Landroid/content/Context;I)I
 
-    .line 8
-    invoke-interface {p1, p0}, Lf03/a;->f(Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;)V
-
-    .line 11
-    new-instance p1, Le13/n;
-
-    .line 13
-    invoke-direct {p1, p0}, Le13/n;-><init>(Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;)V
-
-    .line 16
-    const-string v0, "MultichoiceDialogFragment"
-
-    .line 18
-    invoke-static {p0, v0, p1}, Lnu1/a;->p(Landroidx/fragment/app/Fragment;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V
-
-    .line 21
-    return-void
-.end method
-
-.method public onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
-    .registers 11
-    .param p1  # Landroid/view/View;
-        .annotation build Lorg/jetbrains/annotations/NotNull;
-        .end annotation
-    .end param
-    .param p2  # Landroid/os/Bundle;
-        .annotation build Lorg/jetbrains/annotations/Nullable;
-        .end annotation
-    .end param
-
-    .line 1
-    invoke-super {p0, p1, p2}, Lcu1/h;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
-
-    .line 4
-    invoke-direct {p0}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->n6()Le03/a;
-
-    .line 7
-    move-result-object p1
-
-    .line 8
-    invoke-virtual {p1}, Le03/a;->a()Landroid/widget/LinearLayout;
+    .line 10
+    move-result v5
 
     .line 11
-    move-result-object p1
-
-    .line 12
-    new-instance v0, Le13/a;
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->requireContext()Landroid/content/Context;
 
     .line 14
-    invoke-direct {v0, p1}, Le13/a;-><init>(Landroid/widget/LinearLayout;)V
+    move-result-object v0
+
+    .line 15
+    sget v1, Ln41/a;->c:I
 
     .line 17
-    const/4 v1, 0x1
+    invoke-static {v0, v1}, Lnu1/w;->f(Landroid/content/Context;I)I
 
-    .line 18
-    invoke-static {p1, v1, v0}, Lnu1/p3;->d(Landroid/view/View;ZLuw/o;)V
+    .line 20
+    move-result v0
 
     .line 21
-    invoke-direct {p0}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->n6()Le03/a;
+    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->f6()Lof4/a;
 
     .line 24
-    move-result-object p1
+    move-result-object v1
 
     .line 25
-    iget-object v0, p1, Le03/a;->g:Landroidx/appcompat/widget/Toolbar;
+    new-instance v2, Leb4/l;
 
     .line 27
-    new-instance v1, Le13/j;
+    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->e6()Lq41/j;
 
-    .line 29
-    invoke-direct {v1, p0}, Le13/j;-><init>(Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;)V
+    .line 30
+    move-result-object v3
 
-    .line 32
-    invoke-virtual {v0, v1}, Landroidx/appcompat/widget/Toolbar;->setNavigationOnClickListener(Landroid/view/View$OnClickListener;)V
+    .line 31
+    iget-object v3, v3, Lq41/j;->c:Landroid/widget/TextView;
 
-    .line 35
-    iget-object v2, p1, Le03/a;->c:Lsinet/startup/inDriver/core/ui/button/LoadingButton;
+    .line 33
+    invoke-virtual {v3}, Landroid/view/View;->getMeasuredHeight()I
+
+    .line 36
+    move-result v3
 
     .line 37
-    new-instance v5, Le13/k;
+    add-int/2addr v3, v5
 
-    .line 39
-    invoke-direct {v5, p0, p1}, Le13/k;-><init>(Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;Le03/a;)V
+    .line 38
+    add-int v4, v5, p1
 
-    .line 42
-    const/4 v6, 0x1
+    .line 40
+    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->e6()Lq41/j;
 
     .line 43
-    const/4 v7, 0x0
+    move-result-object v6
 
     .line 44
-    const-wide/16 v3, 0x0
+    iget-object v6, v6, Lq41/j;->f:Lsinet/startup/inDriver/core/ui/button/FloatingButton;
 
     .line 46
-    invoke-static/range {v2 .. v7}, Lj72/o;->I(Landroid/view/View;JLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+    invoke-virtual {v6}, Landroid/view/View;->getMeasuredWidth()I
 
     .line 49
-    iget-object v0, p1, Le03/a;->f:Lsinet/startup/inDriver/core/ui/text_field_phone_compact/TextFieldPhoneCompact;
+    move-result v6
+
+    .line 50
+    add-int/2addr v6, v5
 
     .line 51
-    new-instance v1, Le13/l;
+    new-instance v7, Leb4/c0;
 
     .line 53
-    invoke-direct {v1, p0}, Le13/l;-><init>(Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;)V
+    add-int v11, v0, p1
+
+    .line 55
+    const/4 v12, 0x7
 
     .line 56
-    invoke-virtual {v0, v1}, Lsinet/startup/inDriver/core/ui/text_field_phone_compact/TextFieldPhoneCompact;->setCountryClickListener(Lkotlin/jvm/functions/Function0;)V
+    const/4 v13, 0x0
+
+    .line 57
+    const/4 v8, 0x0
+
+    .line 58
+    const/4 v9, 0x0
 
     .line 59
-    iget-object v0, p1, Le03/a;->f:Lsinet/startup/inDriver/core/ui/text_field_phone_compact/TextFieldPhoneCompact;
+    const/4 v10, 0x0
 
-    .line 61
-    invoke-virtual {v0}, Lsinet/startup/inDriver/core/ui/text_field_phone_compact/TextFieldPhoneCompact;->s()V
+    .line 60
+    invoke-direct/range {v7 .. v13}, Leb4/c0;-><init>(IIIIILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 64
-    iget-object p1, p1, Le03/a;->f:Lsinet/startup/inDriver/core/ui/text_field_phone_compact/TextFieldPhoneCompact;
+    .line 63
+    invoke-direct/range {v2 .. v7}, Leb4/l;-><init>(IIIILeb4/c0;)V
 
     .line 66
-    new-instance v0, Le13/m;
+    invoke-interface {v1, v2}, Lof4/a;->D0(Leb4/l;)V
 
-    .line 68
-    invoke-direct {v0, p0}, Le13/m;-><init>(Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;)V
-
-    .line 71
-    invoke-virtual {p1, v0}, Lsinet/startup/inDriver/core/ui/text_field_phone_compact/TextFieldPhoneCompact;->setTextChangedListener(Lkotlin/jvm/functions/Function2;)V
-
-    .line 74
-    invoke-direct {p0}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->u6()V
-
-    .line 77
-    invoke-direct {p0}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->r6()Le13/w;
-
-    .line 80
-    move-result-object p1
-
-    .line 81
-    invoke-virtual {p1}, Luu1/i;->v1()Lix/i;
-
-    .line 84
-    move-result-object p1
-
-    .line 85
-    new-instance v0, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment$l;
-
-    .line 87
-    invoke-direct {v0, p0}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment$l;-><init>(Ljava/lang/Object;)V
-
-    .line 90
-    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getViewLifecycleOwner()Landroidx/lifecycle/LifecycleOwner;
-
-    .line 93
-    move-result-object v1
-
-    .line 94
-    invoke-interface {v1}, Landroidx/lifecycle/LifecycleOwner;->getLifecycle()Landroidx/lifecycle/Lifecycle;
-
-    .line 97
-    move-result-object v1
-
-    .line 98
-    const/4 v2, 0x2
-
-    .line 99
-    const/4 v3, 0x0
-
-    .line 100
-    invoke-static {p1, v1, v3, v2, v3}, Landroidx/lifecycle/FlowExtKt;->flowWithLifecycle$default(Lix/i;Landroidx/lifecycle/Lifecycle;Landroidx/lifecycle/Lifecycle$State;ILjava/lang/Object;)Lix/i;
-
-    .line 103
-    move-result-object p1
-
-    .line 104
-    new-instance v1, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment$k;
-
-    .line 106
-    invoke-direct {v1, v0, v3}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment$k;-><init>(Lkotlin/jvm/functions/Function1;Lkw/c;)V
-
-    .line 109
-    invoke-static {p1, v1}, Lix/k;->b0(Lix/i;Lkotlin/jvm/functions/Function2;)Lix/i;
-
-    .line 112
-    move-result-object p1
-
-    .line 113
-    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getViewLifecycleOwner()Landroidx/lifecycle/LifecycleOwner;
-
-    .line 116
-    move-result-object v0
-
-    .line 117
-    invoke-static {v0}, Landroidx/lifecycle/LifecycleOwnerKt;->getLifecycleScope(Landroidx/lifecycle/LifecycleOwner;)Landroidx/lifecycle/LifecycleCoroutineScope;
-
-    .line 120
-    move-result-object v0
-
-    .line 121
-    invoke-static {p1, v0}, Lix/k;->W(Lix/i;Lfx/p0;)Lfx/c2;
-
-    .line 124
-    if-nez p2, :cond_84
-
-    .line 126
-    invoke-direct {p0}, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->r6()Le13/w;
-
-    .line 129
-    move-result-object p1
-
-    .line 130
-    invoke-virtual {p1}, Le13/w;->N1()V
-
-    .line 133
-    :cond_84
+    .line 69
     return-void
 .end method
 
-.method public final s6()Lew/a;
+.method protected final e6()Lq41/j;
+    .registers 4
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->V0:Lkotlin/properties/d;
+
+    .line 3
+    sget-object v1, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->Z0:[Lkotlin/reflect/KProperty;
+
+    .line 5
+    const/4 v2, 0x0
+
+    .line 6
+    aget-object v1, v1, v2
+
+    .line 8
+    invoke-interface {v0, p0, v1}, Lkotlin/properties/d;->getValue(Ljava/lang/Object;Lkotlin/reflect/KProperty;)Ljava/lang/Object;
+
+    .line 11
+    move-result-object v0
+
+    .line 12
+    check-cast v0, Lq41/j;
+
+    .line 14
+    return-object v0
+.end method
+
+.method protected final f6()Lof4/a;
+    .registers 2
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->W0:Lfw/m;
+
+    .line 3
+    invoke-interface {v0}, Lfw/m;->getValue()Ljava/lang/Object;
+
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, Lof4/a;
+
+    .line 9
+    return-object v0
+.end method
+
+.method protected final g6()Lc51/s;
+    .registers 2
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->U0:Lfw/m;
+
+    .line 3
+    invoke-interface {v0}, Lfw/m;->getValue()Ljava/lang/Object;
+
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, Lc51/s;
+
+    .line 9
+    return-object v0
+.end method
+
+.method public final h6()Lew/a;
     .registers 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
             "Lew/a<",
-            "Le13/w;",
+            "Lc51/s;",
             ">;"
         }
     .end annotation
@@ -1917,7 +2710,7 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lsinet/startup/inDriver/feature/auth/ui/enter_phone/AuthorizationEnterPhoneFragment;->W0:Lew/a;
+    iget-object v0, p0, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->T0:Lew/a;
 
     .line 3
     if-eqz v0, :cond_5
@@ -1931,4 +2724,174 @@
 
     .line 7
     return-object v0
+.end method
+
+.method protected n6()V
+    .registers 14
+
+    .line 1
+    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->e6()Lq41/j;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    iget-object v1, v0, Lq41/j;->f:Lsinet/startup/inDriver/core/ui/button/FloatingButton;
+
+    .line 7
+    new-instance v4, Lc51/i;
+
+    .line 9
+    invoke-direct {v4, p0}, Lc51/i;-><init>(Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;)V
+
+    .line 12
+    const/4 v5, 0x1
+
+    .line 13
+    const/4 v6, 0x0
+
+    .line 14
+    const-wide/16 v2, 0x0
+
+    .line 16
+    invoke-static/range {v1 .. v6}, Lj72/o;->I(Landroid/view/View;JLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+
+    .line 19
+    iget-object v7, v0, Lq41/j;->g:Lsinet/startup/inDriver/core/ui/button/FloatingButton;
+
+    .line 21
+    new-instance v10, Lc51/j;
+
+    .line 23
+    invoke-direct {v10, p0}, Lc51/j;-><init>(Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;)V
+
+    .line 26
+    const/4 v11, 0x1
+
+    .line 27
+    const/4 v12, 0x0
+
+    .line 28
+    const-wide/16 v8, 0x0
+
+    .line 30
+    invoke-static/range {v7 .. v12}, Lj72/o;->I(Landroid/view/View;JLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+
+    .line 33
+    return-void
+.end method
+
+.method public onAttach(Landroid/content/Context;)V
+    .registers 4
+    .param p1  # Landroid/content/Context;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-static {p0}, Lr41/e;->a(Landroidx/fragment/app/Fragment;)Lr41/c;
+
+    .line 4
+    move-result-object v0
+
+    .line 5
+    invoke-interface {v0, p0}, Lr41/c;->e(Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;)V
+
+    .line 8
+    const/4 v0, 0x0
+
+    .line 9
+    const/4 v1, 0x2
+
+    .line 10
+    invoke-static {p0, p1, v0, v1, v0}, Lsf4/d;->b(Landroidx/fragment/app/Fragment;Landroid/content/Context;Leh4/n;ILjava/lang/Object;)Lsf4/c;
+
+    .line 13
+    move-result-object v0
+
+    .line 14
+    iput-object v0, p0, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->Y0:Lsf4/c;
+
+    .line 16
+    invoke-super {p0, p1}, Lcu1/h;->onAttach(Landroid/content/Context;)V
+
+    .line 19
+    return-void
+.end method
+
+.method public onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
+    .registers 4
+    .param p1  # Landroid/view/View;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+    .param p2  # Landroid/os/Bundle;
+        .annotation build Lorg/jetbrains/annotations/Nullable;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-super {p0, p1, p2}, Lcu1/h;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
+
+    const/16 v0, 0x8
+    
+    invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
+
+    .line 4
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getResources()Landroid/content/res/Resources;
+
+    .line 7
+    move-result-object p1
+
+    .line 8
+    sget v0, Ln41/a;->d:I
+
+    .line 10
+    invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
+
+    .line 13
+    move-result p1
+
+    .line 14
+    iput p1, p0, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->X0:I
+
+    .line 16
+    invoke-direct {p0, p2}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->m6(Landroid/os/Bundle;)V
+
+    .line 19
+    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->n6()V
+
+    .line 22
+    invoke-direct {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->r6()V
+
+    .line 25
+    return-void
+.end method
+
+.method public final x6(I)V
+    .registers 4
+
+    .line 1
+    invoke-virtual {p0, p1}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->c6(I)V
+
+    .line 4
+    invoke-virtual {p0}, Lsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;->e6()Lq41/j;
+
+    .line 7
+    move-result-object v0
+
+    .line 8
+    iget-object v0, v0, Lq41/j;->g:Lsinet/startup/inDriver/core/ui/button/FloatingButton;
+
+    .line 10
+    new-instance v1, Lc51/k;
+
+    .line 12
+    invoke-direct {v1, v0, p1, p0}, Lc51/k;-><init>(Lsinet/startup/inDriver/core/ui/button/FloatingButton;ILsinet/startup/inDriver/city/driver/order/ui/map/OrderGeoMapFragment;)V
+
+    .line 15
+    invoke-virtual {v0, v1}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
+
+    .line 18
+    return-void
 .end method
