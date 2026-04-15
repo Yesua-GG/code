@@ -232,20 +232,12 @@
     .end annotation
 .end field
 
+.field public static lastGlobalPrice:Lsinet/startup/inDriver/city/common/domain/entity/Price;
+
 .field public static final q1:I
 
 
 # instance fields
-.field public static lastGlobalPrice:Lsinet/startup/inDriver/city/common/domain/entity/Price;
-
-.field public lastKnownPrice:Lsinet/startup/inDriver/city/common/domain/entity/Price;
-
-.field public btnOffer1:Landroid/widget/Button;
-
-.field public btnOffer2:Landroid/widget/Button;
-
-.field public btnOffer3:Landroid/widget/Button;
-
 .field private final N0:Lwz0/c;
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
@@ -327,6 +319,12 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 .end field
+
+.field public btnOffer1:Landroid/widget/Button;
+
+.field public btnOffer2:Landroid/widget/Button;
+
+.field public btnOffer3:Landroid/widget/Button;
 
 .field private final c0:Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
@@ -471,6 +469,8 @@
     .annotation build Lorg/jetbrains/annotations/Nullable;
     .end annotation
 .end field
+
+.field public lastKnownPrice:Lsinet/startup/inDriver/city/common/domain/entity/Price;
 
 .field private final m0:Landroid/widget/ImageView;
     .annotation build Lorg/jetbrains/annotations/NotNull;
@@ -898,7 +898,7 @@
     move-result-object v2
 
     .line 198
-    if-eqz v2, :cond_126
+    if-eqz v2, :cond_156
 
     .line 200
     invoke-virtual {v3}, Landroid/view/View;->getMeasuredWidth()I
@@ -1093,12 +1093,12 @@
 
     invoke-virtual {v7, v8}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    :cond_155
     .line 294
+    :cond_155
     return-void
 
     .line 295
-    :cond_126
+    :cond_156
     new-instance v0, Ljava/lang/NullPointerException;
 
     .line 297
@@ -2405,22 +2405,33 @@
     :cond_2c
     instance-of v0, p1, Lpz0/c$a;
 
-    if-eqz v0, :cond_bot_price_1
+    if-eqz v0, :cond_42
+
     move-object v0, p1
+
     check-cast v0, Lpz0/c$a;
+
     invoke-virtual {v0}, Lpz0/c$a;->c()Lsinet/startup/inDriver/city/common/domain/entity/Price;
+
     move-result-object v0
+
     iput-object v0, p0, Lf01/b0;->lastKnownPrice:Lsinet/startup/inDriver/city/common/domain/entity/Price;
+
     sput-object v0, Lf01/b0;->lastGlobalPrice:Lsinet/startup/inDriver/city/common/domain/entity/Price;
-    const-string v5, "Ask Gemini Bid"
-    const-string v6, "g0: Caught c$a. Price saved."
-    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-    :cond_bot_price_1
+
+    const-string v0, "Ask Gemini Bid"
+
+    const-string v1, "g0: Caught c$a. Price saved."
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_42
     const/4 v1, 0x1
+
     instance-of v0, p1, Lpz0/c$a;
 
     .line 47
-    if-eqz v0, :cond_6e
+    if-eqz v0, :cond_85
 
     .line 49
     iget-object v0, p0, Lf01/b0;->P0:Landroidx/compose/ui/platform/ComposeView;
@@ -2468,7 +2479,7 @@
     move-result v0
 
     .line 83
-    if-nez v0, :cond_68
+    if-nez v0, :cond_7f
 
     .line 85
     invoke-virtual {p2}, Lpz0/e;->o()Ljava/lang/String;
@@ -2501,7 +2512,7 @@
     return-void
 
     .line 105
-    :cond_68
+    :cond_7f
     iget-object p1, p0, Lf01/b0;->O0:Lsinet/startup/inDriver/core/ui/button/ProgressButton;
 
     .line 107
@@ -2511,7 +2522,7 @@
     return-void
 
     .line 111
-    :cond_6e
+    :cond_85
     iget-object p1, p0, Lf01/b0;->P0:Landroidx/compose/ui/platform/ComposeView;
 
     .line 113
@@ -2782,137 +2793,98 @@
 .end method
 
 .method private final j0(Lpz0/e;)V
-    .registers 8
+    .registers 10
 
-    .line 1
     iget-object v0, p0, Lf01/b0;->g1:Lfh0/d;
 
-    .line 3
     invoke-virtual {v0}, Lfh0/d;->a()Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    .line 6
     move-result-object v0
 
-    .line 7
     const/4 v1, 0x0
 
-    .line 8
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 11
     iget-object v0, p0, Lf01/b0;->f1:Lcom/google/android/flexbox/FlexboxLayout;
 
-    .line 13
     const/16 v2, 0x8
 
-    .line 15
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 18
     iget-object v0, p0, Lf01/b0;->g1:Lfh0/d;
 
-    .line 20
     iget-object v3, v0, Lfh0/d;->e:Landroid/widget/TextView;
 
-    .line 22
     invoke-virtual {p1}, Lpz0/e;->q()Ljava/lang/String;
 
-    .line 25
     move-result-object v4
 
-    .line 26
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 29
     iget-object v3, v0, Lfh0/d;->d:Landroid/widget/TextView;
 
-    .line 31
     invoke-virtual {p1}, Lpz0/e;->r()Ljava/lang/String;
 
-    .line 34
     move-result-object v4
 
-    .line 35
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 38
     iget-object v3, v0, Lfh0/d;->d:Landroid/widget/TextView;
 
-    .line 40
     invoke-virtual {p1}, Lpz0/e;->r()Ljava/lang/String;
 
-    .line 43
     move-result-object v4
 
-    .line 44
     invoke-interface {v4}, Ljava/lang/CharSequence;->length()I
 
-    .line 47
     move-result v4
 
-    .line 48
     const/4 v5, 0x1
 
-    .line 49
     if-lez v4, :cond_3a
 
-    .line 51
     invoke-virtual {p1}, Lpz0/e;->E()Z
 
-    .line 54
     move-result v4
 
-    .line 55
     if-eqz v4, :cond_3a
 
-    .line 57
     move v4, v5
 
-    .line 58
     goto :goto_3b
 
-    .line 59
     :cond_3a
     move v4, v1
 
-    .line 60
     :goto_3b
     if-eqz v4, :cond_3f
 
-    .line 62
     move v4, v1
 
-    .line 63
     goto :goto_40
 
-    .line 64
     :cond_3f
     move v4, v2
 
-    .line 65
     :goto_40
     invoke-virtual {v3, v4}, Landroid/view/View;->setVisibility(I)V
 
-    .line 68
     iget-object v3, v0, Lfh0/d;->i:Landroid/widget/TextView;
 
-    .line 70
     invoke-virtual {p1}, Lpz0/e;->j()Ljava/lang/String;
 
-    .line 73
     move-result-object v4
 
-    .line 74
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    :try_start_1c
+    :try_start_4c
     invoke-virtual {p1}, Lpz0/e;->k()Lpz0/c;
 
     move-result-object v7
 
     instance-of v5, v7, Lpz0/c$a;
 
-    if-eqz v5, :cond_2e
+    if-eqz v5, :cond_5f
 
     move-object v5, v7
 
@@ -2926,22 +2898,22 @@
 
     sput-object v7, Lf01/b0;->lastGlobalPrice:Lsinet/startup/inDriver/city/common/domain/entity/Price;
 
-    :cond_2e
+    :cond_5f
     invoke-virtual {p1}, Lpz0/e;->q()Ljava/lang/String;
 
     move-result-object v6
 
-    if-eqz v6, :cond_dc
+    if-eqz v6, :cond_cf
 
     invoke-virtual {v6}, Ljava/lang/String;->isEmpty()Z
 
     move-result v5
 
-    if-eqz v5, :cond_3e
+    if-eqz v5, :cond_6c
 
-    goto/16 :goto_dc
+    goto :goto_cf
 
-    :cond_3e
+    :cond_6c
     const-string v5, "[^0-9.]"
 
     const-string v7, ""
@@ -2972,61 +2944,61 @@
 
     iget-object v5, p0, Lf01/b0;->btnOffer1:Landroid/widget/Button;
 
-    if-eqz v5, :cond_dc
+    if-eqz v5, :cond_cf
 
-    new-instance v8, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v8, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v3
 
-    invoke-virtual {v5, v8}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v5, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     iget-object v5, p0, Lf01/b0;->btnOffer2:Landroid/widget/Button;
 
-    new-instance v8, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
     invoke-static {v7}, Ljava/lang/String;->valueOf(F)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v4
 
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v3
 
-    invoke-virtual {v5, v8}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v5, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     iget-object v5, p0, Lf01/b0;->btnOffer3:Landroid/widget/Button;
 
-    new-instance v8, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
     invoke-static {v6}, Ljava/lang/String;->valueOf(F)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v4
 
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v3
 
-    invoke-virtual {v5, v8}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-    :try_end_dc
-    .catch Ljava/lang/Exception; {:try_start_1c .. :try_end_dc} :catch_dd
+    invoke-virtual {v5, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    :try_end_c6
+    .catch Ljava/lang/Exception; {:try_start_4c .. :try_end_c6} :catch_c7
 
-    goto :goto_e5
+    goto :goto_cf
 
-    :catch_dd
+    :catch_c7
     move-exception v5
 
     const-string v6, "Ask Gemini Bid"
@@ -3035,149 +3007,104 @@
 
     invoke-static {v6, v7, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    :cond_dc
-    :goto_e5
-    .line 77
+    :cond_cf
+    :goto_cf
     iget-object v3, v0, Lfh0/d;->i:Landroid/widget/TextView;
 
-    .line 79
     invoke-virtual {p1}, Lpz0/e;->j()Ljava/lang/String;
 
-    .line 82
     move-result-object v4
 
-    .line 83
     invoke-interface {v4}, Ljava/lang/CharSequence;->length()I
 
-    .line 86
     move-result v4
 
-    .line 87
-    if-lez v4, :cond_59
+    if-lez v4, :cond_dc
 
-    .line 89
-    goto :goto_5a
+    goto :goto_dd
 
-    .line 90
-    :cond_59
+    :cond_dc
     move v5, v1
 
-    .line 91
-    :goto_5a
-    if-eqz v5, :cond_5e
+    :goto_dd
+    if-eqz v5, :cond_e1
 
-    .line 93
     move v4, v1
 
-    .line 94
-    goto :goto_5f
+    goto :goto_e2
 
-    .line 95
-    :cond_5e
+    :cond_e1
     move v4, v2
 
-    .line 96
-    :goto_5f
+    :goto_e2
     invoke-virtual {v3, v4}, Landroid/view/View;->setVisibility(I)V
 
-    .line 99
     invoke-static {}, Lkotlin/collections/CollectionsKt;->c()Ljava/util/List;
 
-    .line 102
     move-result-object v3
 
-    .line 103
     invoke-virtual {p1}, Lpz0/e;->v()Lfw1/a;
 
-    .line 106
     move-result-object v4
 
-    .line 107
-    if-eqz v4, :cond_6f
+    if-eqz v4, :cond_f2
 
-    .line 109
     invoke-interface {v3, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 112
-    :cond_6f
+    :cond_f2
     invoke-virtual {p1}, Lpz0/e;->f()Lfw1/a;
 
-    .line 115
     move-result-object v4
 
-    .line 116
-    if-eqz v4, :cond_78
+    if-eqz v4, :cond_fb
 
-    .line 118
     invoke-interface {v3, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 121
-    :cond_78
+    :cond_fb
     invoke-static {v3}, Lkotlin/collections/CollectionsKt;->a(Ljava/util/List;)Ljava/util/List;
 
-    .line 124
     move-result-object v3
 
-    .line 125
     move-object v4, v3
 
-    .line 126
     check-cast v4, Ljava/util/Collection;
 
-    .line 128
     invoke-interface {v4}, Ljava/util/Collection;->isEmpty()Z
 
-    .line 131
     move-result v4
 
-    .line 132
-    if-nez v4, :cond_98
+    if-nez v4, :cond_11b
 
-    .line 134
     iget-object v2, v0, Lfh0/d;->h:Lcom/google/android/flexbox/FlexboxLayout;
 
-    .line 136
     invoke-virtual {v2, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 139
     sget-object v1, Log0/e;->a:Log0/e;
 
-    .line 141
     iget-object v2, p0, Landroidx/recyclerview/widget/RecyclerView$f0;->itemView:Landroid/view/View;
 
-    .line 143
     invoke-virtual {v2}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    .line 146
     move-result-object v2
 
-    .line 147
     iget-object v0, v0, Lfh0/d;->h:Lcom/google/android/flexbox/FlexboxLayout;
 
-    .line 149
     invoke-virtual {v1, v2, v0, v3}, Log0/e;->d(Landroid/content/Context;Lcom/google/android/flexbox/FlexboxLayout;Ljava/util/List;)V
 
-    .line 152
-    goto :goto_9d
+    goto :goto_120
 
-    .line 153
-    :cond_98
+    :cond_11b
     iget-object v0, v0, Lfh0/d;->h:Lcom/google/android/flexbox/FlexboxLayout;
 
-    .line 155
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 158
-    :goto_9d
+    :goto_120
     invoke-virtual {p1}, Lpz0/e;->t()Luh0/d;
 
-    .line 161
     move-result-object p1
 
-    .line 162
     invoke-direct {p0, p1}, Lf01/b0;->p0(Luh0/d;)V
 
-    .line 165
     return-void
 .end method
 
@@ -3228,13 +3155,13 @@
 
     sget-boolean v3, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->isPaused:Z
 
-    if-nez v3, :cond_50
+    if-nez v3, :cond_4f
 
     invoke-static {v0}, Lf01/Config;->shouldHide(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_50
+    if-eqz v0, :cond_4f
 
     invoke-virtual {p1}, Lpz0/e;->o()Ljava/lang/String;
 
@@ -3264,9 +3191,7 @@
 
     return-void
 
-    goto :goto_84
-
-    :cond_50
+    :cond_4f
     const/4 v0, 0x0
 
     invoke-virtual {v1, v0}, Landroid/view/View;->setVisibility(I)V
@@ -3289,7 +3214,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_84
+    if-eqz v0, :cond_83
 
     invoke-virtual {p1}, Lpz0/e;->o()Ljava/lang/String;
 
@@ -3319,15 +3244,14 @@
 
     return-void
 
-    :cond_84
-    :goto_84
+    :cond_83
     sget-boolean v0, Lf01/Config;->isOffering:Z
 
     sget-boolean v8, Lsinet/startup/inDriver/city/driver/order/ui/info/BotClient;->isPaused:Z
 
     or-int/2addr v0, v8
 
-    if-eqz v0, :cond_93
+    if-eqz v0, :cond_92
 
     const-string v0, "ConfigDebug"
 
@@ -3335,9 +3259,9 @@
 
     invoke-static {v0, v5}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_de
+    goto :goto_dd
 
-    :cond_93
+    :cond_92
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v5
@@ -3350,7 +3274,7 @@
 
     cmp-long v5, v5, v7
 
-    if-gez v5, :cond_a8
+    if-gez v5, :cond_a7
 
     const-string v5, "ConfigDebug"
 
@@ -3358,9 +3282,9 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_de
+    goto :goto_dd
 
-    :cond_a8
+    :cond_a7
     const-string v0, "ConfigDebug"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -3387,7 +3311,7 @@
 
     or-int/2addr v0, v8
 
-    if-nez v0, :cond_de
+    if-nez v0, :cond_dd
 
     const-string v0, "ConfigDebug"
 
@@ -3411,372 +3335,256 @@
 
     invoke-static {p0, v1}, Lf01/b0;->z(Lf01/b0;Landroid/view/View;)Lkotlin/Unit;
 
-    .line 4
-    :cond_de
-    :goto_de
+    :cond_dd
+    :goto_dd
     invoke-virtual {p1}, Lpz0/e;->h()Lpz0/b;
 
-    .line 7
     move-result-object v0
 
-    .line 8
     invoke-virtual {v0}, Lpz0/b;->c()Z
 
-    .line 11
     move-result v0
 
-    .line 12
     const/16 v1, 0x8
 
-    .line 14
     const/4 v2, 0x0
 
-    .line 15
-    if-eqz v0, :cond_101
+    if-eqz v0, :cond_100
 
-    .line 17
     iget-object v0, p0, Lf01/b0;->Y0:Landroidx/compose/ui/platform/ComposeView;
 
-    .line 19
     invoke-virtual {p1}, Lpz0/e;->h()Lpz0/b;
 
-    .line 22
     move-result-object v3
 
-    .line 23
     invoke-static {v0, v3}, Lg01/d;->f(Landroidx/compose/ui/platform/ComposeView;Lpz0/b;)V
 
-    .line 26
     iget-object v0, p0, Lf01/b0;->Y0:Landroidx/compose/ui/platform/ComposeView;
 
-    .line 28
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 31
     iget-object v0, p0, Lf01/b0;->g1:Lfh0/d;
 
-    .line 33
     iget-object v0, v0, Lfh0/d;->i:Landroid/widget/TextView;
 
-    .line 35
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 38
-    goto :goto_106
+    goto :goto_105
 
-    .line 39
-    :cond_101
+    :cond_100
     iget-object v0, p0, Lf01/b0;->Y0:Landroidx/compose/ui/platform/ComposeView;
 
-    .line 41
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 44
-    :goto_106
+    :goto_105
     iget-object v0, p0, Lf01/b0;->X0:Landroid/widget/TextView;
 
-    .line 46
     invoke-virtual {p1}, Lpz0/e;->w()Ljava/lang/String;
 
-    .line 49
     move-result-object v3
 
-    .line 50
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 53
     iget-object v0, p0, Lf01/b0;->Z0:Landroid/widget/TextView;
 
-    .line 55
     invoke-virtual {p1}, Lpz0/e;->s()Ljava/lang/String;
 
-    .line 58
     move-result-object v3
 
-    .line 59
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 62
     iget-object v0, p0, Lf01/b0;->e1:Landroid/widget/TextView;
 
-    .line 64
     invoke-virtual {p1}, Lpz0/e;->g()Ljava/lang/String;
 
-    .line 67
     move-result-object v3
 
-    .line 68
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 71
     invoke-interface {v3}, Ljava/lang/CharSequence;->length()I
 
-    .line 74
     move-result v3
 
-    .line 75
     const/4 v4, 0x1
 
-    .line 76
-    if-lez v3, :cond_12a
+    if-lez v3, :cond_129
 
-    .line 78
     move v3, v4
 
-    .line 79
-    goto :goto_12b
+    goto :goto_12a
 
-    .line 80
-    :cond_12a
+    :cond_129
     move v3, v2
 
-    .line 81
-    :goto_12b
-    if-eqz v3, :cond_12f
+    :goto_12a
+    if-eqz v3, :cond_12e
 
-    .line 83
     move v3, v2
 
-    .line 84
-    goto :goto_130
+    goto :goto_12f
 
-    .line 85
-    :cond_12f
+    :cond_12e
     move v3, v1
 
-    .line 86
-    :goto_130
+    :goto_12f
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 89
     iget-object v0, p0, Lf01/b0;->a1:Lsinet/startup/inDriver/core/ui/tag/TagGroup;
 
-    .line 91
     invoke-virtual {p1}, Lpz0/e;->C()Z
 
-    .line 94
     move-result v3
 
-    .line 95
-    if-nez v3, :cond_143
+    if-nez v3, :cond_142
 
-    .line 97
     invoke-virtual {p1}, Lpz0/e;->B()Z
 
-    .line 100
     move-result v3
 
-    .line 101
-    if-eqz v3, :cond_142
+    if-eqz v3, :cond_141
 
-    .line 103
-    goto :goto_143
+    goto :goto_142
 
-    .line 104
-    :cond_142
+    :cond_141
     move v4, v2
 
-    .line 105
-    :cond_143
-    :goto_143
-    if-eqz v4, :cond_147
+    :cond_142
+    :goto_142
+    if-eqz v4, :cond_146
 
-    .line 107
     move v3, v2
 
-    .line 108
-    goto :goto_148
+    goto :goto_147
 
-    .line 109
-    :cond_147
+    :cond_146
     move v3, v1
 
-    .line 110
-    :goto_148
+    :goto_147
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 113
     iget-object v0, p0, Lf01/b0;->b1:Lsinet/startup/inDriver/core/ui/tag/TagView;
 
-    .line 115
     invoke-virtual {p1}, Lpz0/e;->C()Z
 
-    .line 118
     move-result v3
 
-    .line 119
-    if-eqz v3, :cond_155
+    if-eqz v3, :cond_154
 
-    .line 121
     move v3, v2
 
-    .line 122
-    goto :goto_156
+    goto :goto_155
 
-    .line 123
-    :cond_155
+    :cond_154
     move v3, v1
 
-    .line 124
-    :goto_156
+    :goto_155
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 127
     iget-object v0, p0, Lf01/b0;->c1:Lsinet/startup/inDriver/core/ui/tag/TagView;
 
-    .line 129
     invoke-virtual {p1}, Lpz0/e;->B()Z
 
-    .line 132
     move-result v3
 
-    .line 133
-    if-eqz v3, :cond_163
+    if-eqz v3, :cond_162
 
-    .line 135
     move v3, v2
 
-    .line 136
-    goto :goto_164
+    goto :goto_163
 
-    .line 137
-    :cond_163
+    :cond_162
     move v3, v1
 
-    .line 138
-    :goto_164
+    :goto_163
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 141
     iget-object v0, p0, Lf01/b0;->Z0:Landroid/widget/TextView;
 
-    .line 143
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    .line 146
     move-result-object v3
 
-    .line 147
     const-string v4, "null cannot be cast to non-null type android.view.ViewGroup.MarginLayoutParams"
 
-    .line 149
-    if-eqz v3, :cond_1ba
+    if-eqz v3, :cond_1b9
 
-    .line 151
     check-cast v3, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    .line 153
     iget v5, p0, Lf01/b0;->n1:I
 
-    .line 155
     iput v5, v3, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
-    .line 157
     invoke-virtual {v0, v3}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 160
     iget-object v0, p0, Lf01/b0;->d1:Lcom/google/android/flexbox/FlexboxLayout;
 
-    .line 162
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    .line 165
     move-result-object v3
 
-    .line 166
-    if-eqz v3, :cond_1b4
+    if-eqz v3, :cond_1b3
 
-    .line 168
     check-cast v3, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    .line 170
     iget v4, p0, Lf01/b0;->n1:I
 
-    .line 172
     iput v4, v3, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
-    .line 174
     invoke-virtual {v0, v3}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 177
     invoke-virtual {p1}, Lpz0/e;->u()Ljava/util/List;
 
-    .line 180
     move-result-object v0
 
-    .line 181
     check-cast v0, Ljava/util/Collection;
 
-    .line 183
     invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
 
-    .line 186
     move-result v0
 
-    .line 187
-    if-nez v0, :cond_1ae
+    if-nez v0, :cond_1ad
 
-    .line 189
     iget-object v0, p0, Lf01/b0;->d1:Lcom/google/android/flexbox/FlexboxLayout;
 
-    .line 191
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 194
     sget-object v0, Log0/e;->a:Log0/e;
 
-    .line 196
     iget-object v1, p0, Landroidx/recyclerview/widget/RecyclerView$f0;->itemView:Landroid/view/View;
 
-    .line 198
     invoke-virtual {v1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    .line 201
     move-result-object v1
 
-    .line 202
     iget-object v2, p0, Lf01/b0;->d1:Lcom/google/android/flexbox/FlexboxLayout;
 
-    .line 204
     invoke-virtual {p1}, Lpz0/e;->u()Ljava/util/List;
 
-    .line 207
     move-result-object p1
 
-    .line 208
     invoke-virtual {v0, v1, v2, p1}, Log0/e;->d(Landroid/content/Context;Lcom/google/android/flexbox/FlexboxLayout;Ljava/util/List;)V
 
-    .line 211
     return-void
 
-    .line 212
-    :cond_1ae
+    :cond_1ad
     iget-object p1, p0, Lf01/b0;->d1:Lcom/google/android/flexbox/FlexboxLayout;
 
-    .line 214
     invoke-virtual {p1, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 217
     return-void
 
-    .line 218
-    :cond_1b4
+    :cond_1b3
     new-instance p1, Ljava/lang/NullPointerException;
 
-    .line 220
     invoke-direct {p1, v4}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
-    .line 223
     throw p1
 
-    .line 224
-    :cond_1ba
+    :cond_1b9
     new-instance p1, Ljava/lang/NullPointerException;
 
-    .line 226
     invoke-direct {p1, v4}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
-    .line 229
     throw p1
 .end method
 
@@ -4400,6 +4208,80 @@
 
     .line 16
     return-void
+.end method
+
+.method public static smartRound(F)F
+    .registers 4
+
+    const v0, 0x461c4000  # 10000.0f
+
+    mul-float v1, p0, v0
+
+    invoke-static {v1}, Ljava/lang/Math;->round(F)I
+
+    move-result v1
+
+    int-to-float v1, v1
+
+    div-float/2addr v1, v0
+
+    const/high16 v0, 0x41200000  # 10.0f
+
+    rem-float v2, v1, v0
+
+    const/4 v0, 0x0
+
+    cmpl-float v0, v2, v0
+
+    if-nez v0, :cond_15
+
+    return v1
+
+    :cond_15
+    const/high16 v0, 0x40a00000  # 5.0f
+
+    cmpl-float v2, v2, v0
+
+    if-ltz v2, :cond_28
+
+    const/high16 v2, 0x41200000  # 10.0f
+
+    div-float/2addr v1, v2
+
+    float-to-double v1, v1
+
+    invoke-static {v1, v2}, Ljava/lang/Math;->ceil(D)D
+
+    move-result-wide v1
+
+    double-to-float v1, v1
+
+    const/high16 v2, 0x41200000  # 10.0f
+
+    mul-float/2addr v1, v2
+
+    return v1
+
+    :cond_28
+    const/high16 v2, 0x41200000  # 10.0f
+
+    div-float/2addr v1, v2
+
+    float-to-double v1, v1
+
+    invoke-static {v1, v2}, Ljava/lang/Math;->floor(D)D
+
+    move-result-wide v1
+
+    double-to-float v1, v1
+
+    const/high16 v2, 0x41200000  # 10.0f
+
+    mul-float/2addr v1, v2
+
+    add-float/2addr v1, v0
+
+    return v1
 .end method
 
 .method public static synthetic t(Lf01/b0;Landroid/view/View;)Lkotlin/Unit;
@@ -5392,78 +5274,4 @@
 
     .line 22
     return-void
-.end method
-
-.method public static smartRound(F)F
-    .registers 4
-
-    const v0, 0x461c4000  # 10000.0f
-
-    mul-float v1, p0, v0
-
-    invoke-static {v1}, Ljava/lang/Math;->round(F)I
-
-    move-result v1
-
-    int-to-float v1, v1
-
-    div-float/2addr v1, v0
-
-    const/high16 v0, 0x41200000  # 10.0f
-
-    rem-float v2, v1, v0
-
-    const/4 v0, 0x0
-
-    cmpl-float v0, v2, v0
-
-    if-nez v0, :cond_16
-
-    return v1
-
-    :cond_16
-    const/high16 v0, 0x40a00000  # 5.0f
-
-    cmpl-float v2, v2, v0
-
-    if-ltz v2, :cond_2e
-
-    const/high16 v2, 0x41200000  # 10.0f
-
-    div-float/2addr v1, v2
-
-    float-to-double v1, v1
-
-    invoke-static {v1, v2}, Ljava/lang/Math;->ceil(D)D
-
-    move-result-wide v1
-
-    double-to-float v1, v1
-
-    const/high16 v2, 0x41200000  # 10.0f
-
-    mul-float/2addr v1, v2
-
-    return v1
-
-    :cond_2e
-    const/high16 v2, 0x41200000  # 10.0f
-
-    div-float/2addr v1, v2
-
-    float-to-double v1, v1
-
-    invoke-static {v1, v2}, Ljava/lang/Math;->floor(D)D
-
-    move-result-wide v1
-
-    double-to-float v1, v1
-
-    const/high16 v2, 0x41200000  # 10.0f
-
-    mul-float/2addr v1, v2
-
-    add-float/2addr v1, v0
-
-    return v1
 .end method
