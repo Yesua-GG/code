@@ -2793,7 +2793,7 @@
 .end method
 
 .method private final j0(Lpz0/e;)V
-    .registers 12
+    .registers 14
 
     iget-object v0, p0, Lf01/b0;->g1:Lfh0/d;
 
@@ -2882,9 +2882,9 @@
 
     move-result-object v7
 
-    instance-of v8, v7, Lpz0/c$a;
+    instance-of v11, v7, Lpz0/c$a;
 
-    if-eqz v8, :cond_5f
+    if-eqz v11, :cond_5f
 
     move-object v8, v7
 
@@ -2907,9 +2907,9 @@
 
     invoke-virtual {v6}, Ljava/lang/String;->isEmpty()Z
 
-    move-result v8
+    move-result v11
 
-    if-eqz v8, :cond_6c
+    if-eqz v11, :cond_6c
 
     goto :goto_cf
 
@@ -2924,75 +2924,75 @@
 
     invoke-static {v6}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
 
-    move-result v6
+    move-result v9
 
-    const v8, 0x3f8ccccd  # 1.1f
+    const v10, 0x3f8ccccd  # 1.1f
 
-    mul-float v7, v6, v8
+    mul-float v10, v9, v10
 
-    invoke-static {v7}, Lf01/b0;->smartRound(F)F
+    invoke-static {v10}, Lf01/b0;->smartRound(F)F
 
-    move-result v7
+    move-result v10
 
-    const v8, 0x3f99999a  # 1.2f
+    const v11, 0x3f99999a  # 1.2f
 
-    mul-float/2addr v6, v8
+    mul-float/2addr v9, v11
 
-    invoke-static {v6}, Lf01/b0;->smartRound(F)F
+    invoke-static {v9}, Lf01/b0;->smartRound(F)F
 
-    move-result v6
+    move-result v9
 
     iget-object v8, p0, Lf01/b0;->btnOffer1:Landroid/widget/Button;
 
     if-eqz v8, :cond_cf
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v7
 
-    invoke-virtual {v8, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v8, v7}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     iget-object v8, p0, Lf01/b0;->btnOffer2:Landroid/widget/Button;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-static {v7}, Ljava/lang/String;->valueOf(F)Ljava/lang/String;
+    invoke-static {v10}, Ljava/lang/String;->valueOf(F)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v6
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v7
 
-    invoke-virtual {v8, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v8, v7}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     iget-object v8, p0, Lf01/b0;->btnOffer3:Landroid/widget/Button;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-static {v6}, Ljava/lang/String;->valueOf(F)Ljava/lang/String;
+    invoke-static {v9}, Ljava/lang/String;->valueOf(F)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v6
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v7
 
-    invoke-virtual {v8, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v8, v7}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
     :try_end_c6
     .catch Ljava/lang/Exception; {:try_start_4c .. :try_end_c6} :catch_c7
 
