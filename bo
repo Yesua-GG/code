@@ -2793,7 +2793,7 @@
 .end method
 
 .method private final j0(Lpz0/e;)V
-    .registers 10
+    .registers 12
 
     iget-object v0, p0, Lf01/b0;->g1:Lfh0/d;
 
@@ -2882,15 +2882,15 @@
 
     move-result-object v7
 
-    instance-of v5, v7, Lpz0/c$a;
+    instance-of v8, v7, Lpz0/c$a;
 
-    if-eqz v5, :cond_5f
+    if-eqz v8, :cond_5f
 
-    move-object v5, v7
+    move-object v8, v7
 
-    check-cast v5, Lpz0/c$a;
+    check-cast v8, Lpz0/c$a;
 
-    invoke-virtual {v5}, Lpz0/c$a;->c()Lsinet/startup/inDriver/city/common/domain/entity/Price;
+    invoke-virtual {v8}, Lpz0/c$a;->c()Lsinet/startup/inDriver/city/common/domain/entity/Price;
 
     move-result-object v7
 
@@ -2907,18 +2907,18 @@
 
     invoke-virtual {v6}, Ljava/lang/String;->isEmpty()Z
 
-    move-result v5
+    move-result v8
 
-    if-eqz v5, :cond_6c
+    if-eqz v8, :cond_6c
 
     goto :goto_cf
 
     :cond_6c
-    const-string v5, "[^0-9.]"
+    const-string v8, "[^0-9.]"
 
     const-string v7, ""
 
-    invoke-virtual {v6, v5, v7}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v6, v8, v7}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v6
 
@@ -2926,25 +2926,25 @@
 
     move-result v6
 
-    const v5, 0x3f8ccccd  # 1.1f
+    const v8, 0x3f8ccccd  # 1.1f
 
-    mul-float v7, v6, v5
+    mul-float v7, v6, v8
 
     invoke-static {v7}, Lf01/b0;->smartRound(F)F
 
     move-result v7
 
-    const v5, 0x3f99999a  # 1.2f
+    const v8, 0x3f99999a  # 1.2f
 
-    mul-float/2addr v6, v5
+    mul-float/2addr v6, v8
 
     invoke-static {v6}, Lf01/b0;->smartRound(F)F
 
     move-result v6
 
-    iget-object v5, p0, Lf01/b0;->btnOffer1:Landroid/widget/Button;
+    iget-object v8, p0, Lf01/b0;->btnOffer1:Landroid/widget/Button;
 
-    if-eqz v5, :cond_cf
+    if-eqz v8, :cond_cf
 
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -2956,9 +2956,9 @@
 
     move-result-object v3
 
-    invoke-virtual {v5, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v8, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    iget-object v5, p0, Lf01/b0;->btnOffer2:Landroid/widget/Button;
+    iget-object v8, p0, Lf01/b0;->btnOffer2:Landroid/widget/Button;
 
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -2974,9 +2974,9 @@
 
     move-result-object v3
 
-    invoke-virtual {v5, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v8, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    iget-object v5, p0, Lf01/b0;->btnOffer3:Landroid/widget/Button;
+    iget-object v8, p0, Lf01/b0;->btnOffer3:Landroid/widget/Button;
 
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -2992,20 +2992,20 @@
 
     move-result-object v3
 
-    invoke-virtual {v5, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v8, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
     :try_end_c6
     .catch Ljava/lang/Exception; {:try_start_4c .. :try_end_c6} :catch_c7
 
     goto :goto_cf
 
     :catch_c7
-    move-exception v5
+    move-exception v8
 
     const-string v6, "Ask Gemini Bid"
 
     const-string v7, "Error parsing price in j0"
 
-    invoke-static {v6, v7, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v6, v7, v8}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     :cond_cf
     :goto_cf
