@@ -367,7 +367,7 @@
     .end annotation
 .end field
 
-.field private final e0:Luw/n;
+.field public final e0:Luw/n;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Luw/n<",
@@ -3395,6 +3395,59 @@
 
     move-result-object v3
 
+    invoke-virtual {p1}, Lpz0/e;->j()Luv1/a;
+
+    move-result-object v6
+
+    if-eqz v6, :cond_bot_append_z0
+
+    invoke-virtual {v6}, Luv1/a;->b()Lsinet/startup/inDriver/core/common/view/address_cell/a;
+
+    move-result-object v6
+
+    if-eqz v6, :cond_bot_append_z0
+
+    invoke-virtual {v6}, Lsinet/startup/inDriver/core/common/view/address_cell/a;->c()Lsinet/startup/inDriver/core/common/view/address_cell/b;
+
+    move-result-object v6
+
+    if-eqz v6, :cond_bot_append_z0
+
+    invoke-virtual {v6}, Lsinet/startup/inDriver/core/common/view/address_cell/b;->e()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v6}, Lsinet/startup/inDriver/core/common/view/address_cell/b;->f()Ljava/lang/String;
+
+    move-result-object v8
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v9, " [ "
+
+    invoke-virtual {v6, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v9, " | "
+
+    invoke-virtual {v6, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v9, " ]"
+
+    invoke-virtual {v6, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    :cond_bot_append_z0
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     iget-object v0, p0, Lf01/b0;->e1:Landroid/widget/TextView;
